@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Steady Planner</title>
+<style>
+:root{--bg:#f6f1e9;--card:#fffdf9;--ink:#2a2622;--muted:#7a716a;--line:#e7ded2;--accent:#1f7a6d;--accent-soft:#d8ece8;--coral:#e0684b;--coral-soft:#fbe3dc;--gold:#d99a1e;--gold-soft:#f8ead0;--shadow:0 1px 2px rgba(0,0,0,.04),0 6px 18px rgba(60,40,20,.07)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161412;--card:#221f1c;--ink:#f1ebe3;--muted:#a59b91;--line:#36312c;--accent:#52bba9;--accent-soft:#1c3532;--coral:#f08a6f;--coral-soft:#3b2520;--gold:#f0bd52;--gold-soft:#3a2f1a;--shadow:none}}
+:root[data-theme="dark"]{--bg:#161412;--card:#221f1c;--ink:#f1ebe3;--muted:#a59b91;--line:#36312c;--accent:#52bba9;--accent-soft:#1c3532;--coral:#f08a6f;--coral-soft:#3b2520;--gold:#f0bd52;--gold-soft:#3a2f1a;--shadow:none}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.45;padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+.wrap{max-width:560px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;padding:8px 0 14px}
+.hello{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+h1{font-size:24px;font-weight:750;letter-spacing:-.02em}
+h2{font-size:15px;font-weight:700;margin-bottom:10px}
+.iconbtn{background:var(--card);border:1px solid var(--line);color:var(--ink);width:40px;height:40px;border-radius:12px;font-size:18px;cursor:pointer}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:14px;box-shadow:var(--shadow)}
+.hero{background:var(--accent);color:#fff;border:none}
+.hero .label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.hero .big{font-size:46px;font-weight:800;letter-spacing:-.03em;line-height:1.1;margin:4px 0}
+.hero .sub{font-size:14px;opacity:.9}
+.hero.over{background:var(--coral)}
+.bar{height:8px;border-radius:99px;background:rgba(255,255,255,.25);overflow:hidden;margin-top:12px}
+.bar>i{display:block;height:100%;background:#fff;border-radius:99px}
+.pbar{height:10px;border-radius:99px;background:var(--line);overflow:hidden;margin:8px 0}
+.pbar>i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.muted{color:var(--muted);font-size:14px}
+.row{display:flex;gap:8px;align-items:center}
+.between{justify-content:space-between}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px 12px}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.btn{font:inherit;font-weight:650;border:none;border-radius:12px;padding:11px 16px;cursor:pointer;background:var(--accent);color:#fff;white-space:nowrap}
+.btn.ghost{background:var(--accent-soft);color:var(--accent)}
+.btn.warn{background:var(--coral-soft);color:var(--coral)}
+.btn.full{width:100%}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:7px 12px;border-radius:99px;cursor:pointer}
+.chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.list{list-style:none}
+.list li{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}
+.list li:last-child{border-bottom:none}
+.list .grow{flex:1;min-width:0}
+.list .t{overflow-wrap:anywhere}
+.amt{font-weight:700;font-variant-numeric:tabular-nums}
+.x{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:4px}
+.check{width:26px;height:26px;border-radius:8px;border:2px solid var(--line);background:none;cursor:pointer;flex:none;color:#fff;font-size:15px;line-height:1}
+.check.on{background:var(--accent);border-color:var(--accent)}
+.done .t{text-decoration:line-through;color:var(--muted)}
+.star{background:none;border:none;font-size:20px;cursor:pointer;color:var(--line)}
+.star.on{color:var(--gold)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--bg);border-radius:14px;padding:12px}
+.stat b{display:block;font-size:20px;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+.banner{background:var(--gold-soft);color:var(--ink);border:1px solid var(--gold)}
+.catbar{margin:8px 0}
+.catbar .row{font-size:14px}
+.pill{font-size:12px;padding:2px 8px;border-radius:99px;background:var(--accent-soft);color:var(--accent);font-weight:650}
+.pill.due{background:var(--coral-soft);color:var(--coral)}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 6px calc(8px + env(safe-area-inset-bottom));z-index:5}
+nav button{flex:1;background:none;border:none;color:var(--muted);font:inherit;font-size:11px;font-weight:650;display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px;cursor:pointer;border-radius:12px}
+nav button .ic{font-size:21px}
+nav button.on{color:var(--accent);background:var(--accent-soft)}
+.section{display:none}
+.section.on{display:block}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:14px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:9}
+.toast.show{opacity:1}
+.empty{color:var(--muted);font-size:14px;padding:6px 0}
+label.f{display:block;font-size:13px;color:var(--muted);margin:10px 0 4px}
+.focus{font-size:18px;font-weight:650}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div><div class="hello" id="hello">Hi</div><h1 id="title">Today</h1></div>
+    <div class="row"><button class="iconbtn" id="themeBtn" aria-label="Toggle theme">◐</button><button class="iconbtn" data-go="setup" aria-label="Settings">⚙</button></div>
+  </header>
+
+  <!-- TODAY -->
+  <section class="section on" id="s-today">
+    <div id="paydayBanner"></div>
+    <div id="setupNudge"></div>
+    <div class="card hero" id="heroCard">
+      <div class="label">Safe to spend today</div>
+      <div class="big" id="safeToday">$0.00</div>
+      <div class="sub" id="safeSub">Set up your paycheck to get started.</div>
+      <div class="bar"><i id="safeBar" style="width:0%"></i></div>
+    </div>
+    <div class="card">
+      <h2>Quick log</h2>
+      <div class="row"><input id="qAmt" type="number" inputmode="decimal" step="0.01" placeholder="Amount"><button class="btn" id="qLog">Log</button></div>
+      <div class="chips" id="qCats"></div>
+      <button class="btn ghost full" id="noSpend">Nothing spent today ✓</button>
+    </div>
+    <div class="card">
+      <div class="row between"><h2>Today's top 3</h2><span class="muted" id="streak"></span></div>
+      <ul class="list" id="todayTasks"></ul>
+      <div class="row" style="margin-top:8px"><input id="tQuick" placeholder="Add something for today"><button class="btn" id="tQuickAdd">+</button></div>
+    </div>
+    <div class="card">
+      <h2>Coming up before payday</h2>
+      <ul class="list" id="upcoming"></ul>
+    </div>
+  </section>
+
+  <!-- SPEND -->
+  <section class="section" id="s-spend">
+    <div class="card">
+      <h2>Log spending</h2>
+      <input id="sAmt" type="number" inputmode="decimal" step="0.01" placeholder="Amount">
+      <div class="chips" id="sCats"></div>
+      <div class="row"><input id="sNote" placeholder="Note (optional)"><button class="btn" id="sLog">Log</button></div>
+    </div>
+    <div class="card">
+      <h2>Last 7 days</h2>
+      <div class="grid2" style="margin-bottom:10px">
+        <div class="stat"><b id="wkTotal">$0</b><span>spent this week</span></div>
+        <div class="stat"><b id="wkAvg">$0</b><span>per day average</span></div>
+      </div>
+      <div id="catBars"></div>
+    </div>
+    <div class="card">
+      <h2>History</h2>
+      <ul class="list" id="history"></ul>
+    </div>
+  </section>
+
+  <!-- BILLS -->
+  <section class="section" id="s-bills">
+    <div class="card">
+      <h2>Add a bill</h2>
+      <input id="bName" placeholder="Name (Rent, Phone, Spotify…)">
+      <div class="grid2" style="margin-top:8px">
+        <input id="bAmt" type="number" inputmode="decimal" step="0.01" placeholder="Amount">
+        <input id="bDay" type="number" inputmode="numeric" min="1" max="31" placeholder="Due day (1–31)">
+      </div>
+      <button class="btn full" id="bAdd" style="margin-top:10px">Add bill</button>
+    </div>
+    <div class="card">
+      <div class="row between"><h2>This month</h2><span class="muted" id="billTotal"></span></div>
+      <ul class="list" id="bills"></ul>
+    </div>
+  </section>
+
+  <!-- PLAN -->
+  <section class="section" id="s-plan">
+    <div class="card">
+      <h2>Tasks</h2>
+      <div class="row"><input id="pText" placeholder="What needs doing?"><button class="btn" id="pAdd">Add</button></div>
+      <p class="muted" style="margin-top:8px">Tap ★ to put a task on your Today screen. Keep it to three.</p>
+      <ul class="list" id="tasks" style="margin-top:6px"></ul>
+    </div>
+    <div class="card">
+      <h2>Brain dump</h2>
+      <p class="muted" style="margin-bottom:8px">Get it out of your head. Sort it later, or never.</p>
+      <textarea id="dump" placeholder="Anything and everything…"></textarea>
+    </div>
+  </section>
+
+  <!-- GOALS -->
+  <section class="section" id="s-goals">
+    <div class="card">
+      <h2>New goal</h2>
+      <input id="gName" placeholder="Emergency fund, new phone, trip…">
+      <div class="row" style="margin-top:8px"><input id="gTarget" type="number" inputmode="decimal" placeholder="Target amount"><button class="btn" id="gAdd">Add</button></div>
+    </div>
+    <div id="goals"></div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="section" id="s-setup">
+    <div class="card">
+      <h2>Your paycheck</h2>
+      <label class="f">Your name (optional)</label><input id="cfName" placeholder="Name">
+      <label class="f">Money you have right now, after this paycheck landed</label><input id="cfBal" type="number" inputmode="decimal" step="0.01" placeholder="e.g. 1200">
+      <label class="f">Next payday</label><input id="cfPay" type="date">
+      <label class="f">How often you get paid</label>
+      <select id="cfFreq"><option value="weekly">Weekly</option><option value="biweekly">Every 2 weeks</option><option value="semimonthly">Twice a month</option><option value="monthly">Monthly</option></select>
+      <label class="f">Set aside for savings this pay period</label><input id="cfSave" type="number" inputmode="decimal" step="0.01" placeholder="0">
+      <button class="btn full" id="cfSaveBtn" style="margin-top:14px">Save</button>
+    </div>
+    <div class="card">
+      <h2>Backup</h2>
+      <p class="muted" style="margin-bottom:10px">Everything stays on this device. Export a backup now and then so you never lose it.</p>
+      <div class="row"><button class="btn ghost" id="exportBtn">Export</button><label class="btn ghost" style="text-align:center">Import<input type="file" id="importFile" accept="application/json" hidden></label><button class="btn warn" id="resetBtn">Reset all</button></div>
+    </div>
+  </section>
+</div>
+
+<nav id="nav">
+  <button data-go="today" class="on"><span class="ic">☀</span>Today</button>
+  <button data-go="spend"><span class="ic">◷</span>Spend</button>
+  <button data-go="bills"><span class="ic">▤</span>Bills</button>
+  <button data-go="plan"><span class="ic">✓</span>Plan</button>
+  <button data-go="goals"><span class="ic">◎</span>Goals</button>
+</nav>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY='steadyPlanner.v1';
+const CATS=['Food','Coffee','Gas','Groceries','Fun','Shopping','Subscriptions','Other'];
+const TITLES={today:'Today',spend:'Spending',bills:'Bills',plan:'Plan',goals:'Goals',setup:'Setup'};
+const blank={cfg:{name:'',balance:null,balSetAt:null,payday:'',freq:'biweekly',save:0},spends:[],bills:[],tasks:[],goals:[],dump:'',noSpend:[],theme:''};
+let S=load();
+let qCat='Food',sCat='Food';
+
+function load(){try{const r=localStorage.getItem(KEY);if(r){const d=JSON.parse(r);return Object.assign(structuredClone(blank),d,{cfg:Object.assign({},blank.cfg,d.cfg||{})});}}catch(e){}return structuredClone(blank);}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+const $=id=>document.getElementById(id);
+const uid=()=>Math.random().toString(36).slice(2,10);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money=n=>(n<0?'-':'')+'$'+Math.abs(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+const ymd=d=>{d=new Date(d);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');};
+const parseYmd=s=>{const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d);};
+const today=()=>{const d=new Date();d.setHours(0,0,0,0);return d;};
+const dayDiff=(a,b)=>Math.round((b-a)/86400000);
+const monthKey=d=>ymd(d).slice(0,7);
+function toast(t){const el=$('toast');el.textContent=t;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),1600);}
+
+function applyTheme(){if(S.theme)document.documentElement.setAttribute('data-theme',S.theme);else document.documentElement.removeAttribute('data-theme');}
+$('themeBtn').onclick=()=>{const dark=S.theme?S.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;S.theme=dark?'light':'dark';save();applyTheme();};
+
+function go(tab){document.querySelectorAll('.section').forEach(s=>s.classList.toggle('on',s.id==='s-'+tab));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.go===tab));$('title').textContent=TITLES[tab];if(tab==='setup')fillSetup();render();window.scrollTo(0,0);}
+document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+
+function chips(el,cur,set){el.innerHTML=CATS.map(c=>`<button class="chip${c===cur?' on':''}" data-c="${c}">${c}</button>`).join('');el.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{set(b.dataset.c);chips(el,b.dataset.c,set);});}
+
+function nextDue(day,from){const f=new Date(from);let d=new Date(f.getFullYear(),f.getMonth(),Math.min(day,daysIn(f.getFullYear(),f.getMonth())));if(d<f)d=new Date(f.getFullYear(),f.getMonth()+1,Math.min(day,daysIn(f.getFullYear(),f.getMonth()+1)));return d;}
+function daysIn(y,m){return new Date(y,m+1,0).getDate();}
+function billPaid(b,due){return (b.paid||[]).includes(monthKey(due));}
+
+function calc(){const c=S.cfg,t=today();if(c.balance==null||!c.payday)return null;const pay=parseYmd(c.payday);const daysLeft=Math.max(1,dayDiff(t,pay));const setAt=c.balSetAt?parseYmd(c.balSetAt):t;
+  const spentSince=S.spends.filter(s=>parseYmd(s.date)>=setAt).reduce((a,s)=>a+s.amt,0);
+  const todayKey=ymd(t);const spentToday=S.spends.filter(s=>s.date===todayKey).reduce((a,s)=>a+s.amt,0);
+  let billsDue=0;const upcoming=[];S.bills.forEach(b=>{const d=nextDue(b.day,t);if(d<pay&&!billPaid(b,d)){billsDue+=b.amt;upcoming.push({b,d});}});
+  upcoming.sort((a,b)=>a.d-b.d);
+  const available=c.balance-spentSince-billsDue-(+c.save||0);
+  const dailyStart=(available+spentToday)/daysLeft;const safe=dailyStart-spentToday;
+  return {daysLeft,pay,spentToday,available,dailyStart,safe,billsDue,upcoming};}
+
+function advancePayday(p,f){const d=parseYmd(p);if(f==='weekly')d.setDate(d.getDate()+7);else if(f==='biweekly')d.setDate(d.getDate()+14);else if(f==='semimonthly'){if(d.getDate()<15)d.setDate(d.getDate()+15);else{d.setMonth(d.getMonth()+1);d.setDate(1);}}else d.setMonth(d.getMonth()+1);return ymd(d);}
+
+function streak(){const days=new Set([...S.spends.map(s=>s.date),...S.noSpend]);let n=0;const d=today();if(!days.has(ymd(d)))d.setDate(d.getDate()-1);while(days.has(ymd(d))){n++;d.setDate(d.getDate()-1);}return n;}
+
+function renderToday(){const c=S.cfg,r=calc(),t=today();
+  const h=new Date().getHours();$('hello').textContent=(h<12?'Good morning':h<17?'Good afternoon':'Good evening')+(c.name?', '+c.name:'');
+  $('setupNudge').innerHTML=r?'':`<div class="card banner"><b>Start here</b><p class="muted" style="margin:4px 0 10px">Tell it what you have and when you get paid. It does the math every day.</p><button class="btn" data-go2="setup">Set up paycheck</button></div>`;
+  $('setupNudge').querySelectorAll('[data-go2]').forEach(b=>b.onclick=()=>go('setup'));
+  if(c.payday&&parseYmd(c.payday)<=t){$('paydayBanner').innerHTML=`<div class="card banner"><b>It's payday 🎉</b><p class="muted" style="margin:4px 0 10px">Enter what you have now to start the new pay period.</p><div class="row"><input id="pdBal" type="number" inputmode="decimal" placeholder="New balance"><button class="btn" id="pdGo">Start</button></div></div>`;
+    $('pdGo').onclick=()=>{const v=parseFloat($('pdBal').value);if(isNaN(v))return toast('Enter your balance');c.balance=v;c.balSetAt=ymd(t);let p=c.payday;while(parseYmd(p)<=t)p=advancePayday(p,c.freq);c.payday=p;save();render();toast('New pay period started');};
+  }else $('paydayBanner').innerHTML='';
+  const hero=$('heroCard');
+  if(r){$('safeToday').textContent=money(Math.max(r.safe,0));hero.classList.toggle('over',r.safe<0);
+    $('safeSub').innerHTML=r.safe<0?`You're ${money(-r.safe)} over today. Tomorrow resets a little lower. That's okay.`:`${money(r.spentToday)} spent today · ${r.daysLeft} day${r.daysLeft>1?'s':''} until payday · ${money(Math.max(r.available,0))} left to last`;
+    const pct=r.dailyStart>0?Math.min(100,Math.max(0,r.safe/r.dailyStart*100)):0;$('safeBar').style.width=pct+'%';}
+  else{$('safeToday').textContent='—';$('safeSub').textContent='Set up your paycheck to get started.';$('safeBar').style.width='0%';hero.classList.remove('over');}
+  const st=streak();$('streak').textContent=st?`🔥 ${st}-day logging streak`:'';
+  const tt=S.tasks.filter(x=>x.today);$('todayTasks').innerHTML=tt.length?tt.map(taskLi).join(''):'<li class="empty">Nothing yet. Pick up to three small things.</li>';bindTasks($('todayTasks'));
+  const up=r?r.upcoming:[];$('upcoming').innerHTML=up.length?up.map(({b,d})=>`<li><div class="grow"><div class="t">${esc(b.name)}</div><div class="muted">${d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})}</div></div><span class="amt">${money(b.amt)}</span></li>`).join(''):'<li class="empty">No bills due before payday. Nice.</li>';
+  $('noSpend').textContent=S.noSpend.includes(ymd(t))?'No-spend day logged ✓':'Nothing spent today ✓';}
+
+function logSpend(amt,cat,note){amt=parseFloat(amt);if(!(amt>0))return toast('Enter an amount');S.spends.unshift({id:uid(),amt,cat,note:note||'',date:ymd(today())});save();render();toast(`Logged ${money(amt)} · ${cat}`);}
+$('qLog').onclick=()=>{logSpend($('qAmt').value,qCat);$('qAmt').value='';};
+$('sLog').onclick=()=>{logSpend($('sAmt').value,sCat,$('sNote').value.trim());$('sAmt').value='';$('sNote').value='';};
+$('noSpend').onclick=()=>{const k=ymd(today());if(!S.noSpend.includes(k)){S.noSpend.push(k);save();render();toast('No-spend day. Proud of you.');}};
+
+function renderSpend(){const t=today();const wk=new Date(t);wk.setDate(wk.getDate()-6);const recent=S.spends.filter(s=>parseYmd(s.date)>=wk);const total=recent.reduce((a,s)=>a+s.amt,0);
+  $('wkTotal').textContent=money(total);$('wkAvg').textContent=money(total/7);
+  const by={};recent.forEach(s=>by[s.cat]=(by[s.cat]||0)+s.amt);const ents=Object.entries(by).sort((a,b)=>b[1]-a[1]);const max=ents[0]?ents[0][1]:1;
+  $('catBars').innerHTML=ents.length?ents.map(([c,v])=>`<div class="catbar"><div class="row between"><span>${c}</span><span class="amt">${money(v)}</span></div><div class="pbar"><i style="width:${v/max*100}%"></i></div></div>`).join(''):'<p class="empty">Log a few things and your patterns show up here.</p>';
+  const h=S.spends.slice(0,60);$('history').innerHTML=h.length?h.map(s=>`<li><div class="grow"><div class="t">${esc(s.cat)}${s.note?' · '+esc(s.note):''}</div><div class="muted">${parseYmd(s.date).toLocaleDateString(undefined,{month:'short',day:'numeric'})}</div></div><span class="amt">${money(s.amt)}</span><button class="x" data-del="${s.id}" aria-label="Delete">×</button></li>`).join(''):'<li class="empty">No spending logged yet.</li>';
+  $('history').querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{S.spends=S.spends.filter(s=>s.id!==b.dataset.del);save();render();});}
+
+$('bAdd').onclick=()=>{const name=$('bName').value.trim(),amt=parseFloat($('bAmt').value),day=parseInt($('bDay').value);if(!name||!(amt>0)||!(day>=1&&day<=31))return toast('Fill in name, amount and due day');S.bills.push({id:uid(),name,amt,day,paid:[]});$('bName').value=$('bAmt').value=$('bDay').value='';save();render();toast('Bill added');};
+function renderBills(){const t=today();const mk=monthKey(t);const list=[...S.bills].sort((a,b)=>a.day-b.day);let total=0,unpaid=0;
+  $('bills').innerHTML=list.length?list.map(b=>{const paid=(b.paid||[]).includes(mk);total+=b.amt;if(!paid)unpaid+=b.amt;const due=new Date(t.getFullYear(),t.getMonth(),Math.min(b.day,daysIn(t.getFullYear(),t.getMonth())));const late=!paid&&due<t;const soon=!paid&&!late&&dayDiff(t,due)<=3;
+    return `<li class="${paid?'done':''}"><button class="check${paid?' on':''}" data-pay="${b.id}" aria-label="Mark paid">${paid?'✓':''}</button><div class="grow"><div class="t">${esc(b.name)}</div><div class="muted">Due the ${ord(b.day)} ${late?'<span class="pill due">past due</span>':soon?'<span class="pill due">soon</span>':paid?'<span class="pill">paid</span>':''}</div></div><span class="amt">${money(b.amt)}</span><button class="x" data-del="${b.id}" aria-label="Delete">×</button></li>`;}).join(''):'<li class="empty">Add your regular bills so they never sneak up on you.</li>';
+  $('billTotal').textContent=list.length?`${money(unpaid)} left of ${money(total)}`:'';
+  $('bills').querySelectorAll('[data-pay]').forEach(b=>b.onclick=()=>{const bill=S.bills.find(x=>x.id===b.dataset.pay);bill.paid=bill.paid||[];const i=bill.paid.indexOf(mk);if(i>=0)bill.paid.splice(i,1);else bill.paid.push(mk);save();render();});
+  $('bills').querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{if(confirm('Delete this bill?')){S.bills=S.bills.filter(x=>x.id!==b.dataset.del);save();render();}});}
+function ord(n){const s=['th','st','nd','rd'],v=n%100;return n+(s[(v-20)%10]||s[v]||s[0]);}
+
+function taskLi(x){return `<li class="${x.done?'done':''}"><button class="check${x.done?' on':''}" data-done="${x.id}" aria-label="Done">${x.done?'✓':''}</button><div class="grow t">${esc(x.text)}</div><button class="star${x.today?' on':''}" data-star="${x.id}" aria-label="Today">★</button><button class="x" data-del="${x.id}" aria-label="Delete">×</button></li>`;}
+function bindTasks(el){el.querySelectorAll('[data-done]').forEach(b=>b.onclick=()=>{const x=S.tasks.find(t=>t.id===b.dataset.done);x.done=!x.done;save();render();if(x.done)toast('Done. Nice work.');});
+  el.querySelectorAll('[data-star]').forEach(b=>b.onclick=()=>{const x=S.tasks.find(t=>t.id===b.dataset.star);if(!x.today&&S.tasks.filter(t=>t.today&&!t.done).length>=3)return toast('Three is plenty for today');x.today=!x.today;save();render();});
+  el.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{S.tasks=S.tasks.filter(t=>t.id!==b.dataset.del);save();render();});}
+function addTask(text,today){text=text.trim();if(!text)return;if(today&&S.tasks.filter(t=>t.today&&!t.done).length>=3){today=false;toast('Saved to Plan. Today already has three.');}S.tasks.unshift({id:uid(),text,done:false,today:!!today});save();render();}
+$('pAdd').onclick=()=>{addTask($('pText').value,false);$('pText').value='';};
+$('tQuickAdd').onclick=()=>{addTask($('tQuick').value,true);$('tQuick').value='';};
+function renderPlan(){const open=S.tasks.filter(t=>!t.done),done=S.tasks.filter(t=>t.done).slice(0,15);$('tasks').innerHTML=(open.length||done.length)?[...open,...done].map(taskLi).join(''):'<li class="empty">Nothing here. Enjoy it.</li>';bindTasks($('tasks'));if(document.activeElement!==$('dump'))$('dump').value=S.dump;}
+$('dump').oninput=e=>{S.dump=e.target.value;save();};
+
+$('gAdd').onclick=()=>{const name=$('gName').value.trim(),target=parseFloat($('gTarget').value);if(!name||!(target>0))return toast('Add a name and target');S.goals.push({id:uid(),name,target,saved:0});$('gName').value=$('gTarget').value='';save();render();};
+function renderGoals(){$('goals').innerHTML=S.goals.length?S.goals.map(g=>{const p=Math.min(100,g.saved/g.target*100);return `<div class="card"><div class="row between"><h2 style="margin:0">${esc(g.name)}</h2><button class="x" data-del="${g.id}" aria-label="Delete">×</button></div><div class="pbar"><i style="width:${p}%"></i></div><div class="row between muted"><span>${money(g.saved)} of ${money(g.target)}</span><span>${Math.round(p)}%</span></div><div class="row" style="margin-top:10px"><input type="number" inputmode="decimal" placeholder="Add amount" id="ga-${g.id}"><button class="btn" data-add="${g.id}">Add</button></div></div>`;}).join(''):'<div class="card"><p class="empty">Small goals count. Start with one.</p></div>';
+  $('goals').querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>{const g=S.goals.find(x=>x.id===b.dataset.add);const v=parseFloat($('ga-'+g.id).value);if(isNaN(v))return;g.saved=Math.max(0,g.saved+v);save();render();toast(g.saved>=g.target?'Goal reached! 🎉':'Added '+money(v));});
+  $('goals').querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{if(confirm('Delete this goal?')){S.goals=S.goals.filter(x=>x.id!==b.dataset.del);save();render();}});}
+
+function fillSetup(){const c=S.cfg;$('cfName').value=c.name||'';$('cfBal').value=c.balance??'';$('cfPay').value=c.payday||'';$('cfFreq').value=c.freq||'biweekly';$('cfSave').value=c.save||'';}
+$('cfSaveBtn').onclick=()=>{const c=S.cfg,bal=parseFloat($('cfBal').value),pay=$('cfPay').value;if(isNaN(bal)||!pay)return toast('Add your balance and next payday');c.name=$('cfName').value.trim();if(bal!==c.balance||!c.balSetAt){c.balance=bal;c.balSetAt=ymd(today());}c.payday=pay;c.freq=$('cfFreq').value;c.save=parseFloat($('cfSave').value)||0;save();toast('Saved');go('today');};
+$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='steady-backup-'+ymd(new Date())+'.json';document.body.appendChild(a);a.click();a.remove();};
+$('importFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);S=Object.assign(structuredClone(blank),d,{cfg:Object.assign({},blank.cfg,d.cfg||{})});save();applyTheme();fillSetup();render();toast('Backup restored');}catch(err){toast('That file did not work');}};r.readAsText(f);};
+$('resetBtn').onclick=()=>{if(confirm('Erase everything on this device? Export a backup first if you want it.')){S=structuredClone(blank);save();applyTheme();fillSetup();render();toast('Fresh start');}};
+
+[['qAmt','qLog'],['sAmt','sLog'],['sNote','sLog'],['tQuick','tQuickAdd'],['pText','pAdd'],['gTarget','gAdd']].forEach(([i,b])=>$(i).addEventListener('keydown',e=>{if(e.key==='Enter')$(b).click();}));
+
+function render(){chips($('qCats'),qCat,c=>qCat=c);chips($('sCats'),sCat,c=>sCat=c);renderToday();renderSpend();renderBills();renderPlan();renderGoals();}
+applyTheme();render();
+</script>
+</body>
+</html>
