@@ -240,6 +240,56 @@ def make_scene(clip_path, dur, start, idx, workdir, drift_dir):
          "-an", "-vf", vf, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", out])
     return out
 
+# ---------------------------------------------------------------- AI cartoon images (free)
+def expand_prompt(prompt, spec):
+    for k, v in (spec.get("cast") or {}).items():
+        prompt = prompt.replace("{" + k + "}", v)
+    style = spec.get("style", "")
+    return f"{prompt}. {style}".strip()
+
+def gen_image(prompt, seed, dest, warnings):
+    """Free text-to-image (Pollinations, FLUX). Retries; returns True on success."""
+    import time
+    q = urllib.parse.quote(prompt[:1500])
+    url = (f"https://image.pollinations.ai/prompt/{q}?width=1080&height=1920&model=flux"
+           f"&seed={int(seed)}&nologo=true&private=true")
+    for attempt in range(4):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (YouTube Starship builder)"})
+            with urllib.request.urlopen(req, timeout=150) as r, open(dest, "wb") as f:
+                shutil.copyfileobj(r, f)
+            if os.path.getsize(dest) > 20000:
+                return True
+        except Exception as e:
+            warnings.append(f"image try {attempt+1} failed: {e!r}"[:200])
+        time.sleep(8 + attempt * 10)
+    return False
+
+def make_image_scene(img, dur, idx, workdir, motion):
+    """Turn a still into a moving shot: push, pull, pan, punch (zoom hit + shake)."""
+    out = os.path.join(workdir, f"scene{idx:02d}.mp4")
+    n = max(2, int(round(dur * 30)))
+    if motion == "pull":
+        z = f"1.14-0.12*on/{n}"
+    elif motion in ("panl", "panr"):
+        z = "1.16"
+    elif motion == "punch":
+        z = f"if(lt(on,8),1.30-0.03*on,1.06+0.06*on/{n})"
+    else:  # push
+        z = f"1.0+0.13*on/{n}"
+    cx = "iw/2-(iw/zoom/2)"; cy = "ih/2-(ih/zoom/2)"
+    if motion == "panl":
+        cx = f"(iw-iw/zoom)*(1-on/{n})"
+    elif motion == "panr":
+        cx = f"(iw-iw/zoom)*on/{n}"
+    if motion == "punch":
+        cx += "+if(lt(on,14),14*sin(on*2.3),0)"; cy += "+if(lt(on,14),10*cos(on*2.9),0)"
+    vf = (f"scale={W*2}:{H*2}:force_original_aspect_ratio=increase,crop={W*2}:{H*2},"
+          f"zoompan=z='{z}':x='{cx}':y='{cy}':d={n}:s={W}x{H}:fps=30,setsar=1,format=yuv420p")
+    run(["ffmpeg", "-v", "error", "-y", "-i", img, "-vf", vf, "-frames:v", str(n),
+         "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", out])
+    return out
+
 # ---------------------------------------------------------------- captions (ASS)
 def ass_time(t):
     t = max(0.0, t)
@@ -332,10 +382,14 @@ def clean_spec(spec, warnings):
             warnings.append(f"line {i} clip dropped (bad url)"); l.pop("clip", None)
         elif c and "_360_640" in c["url"]:
             warnings.append(f"line {i} clip is 360p; consider a sharper one")
-    if not any(l.get("clip") for l in lines) and not any(l.get("query") for l in lines):
+    if not any(l.get("clip") or l.get("image") for l in lines) and not any(l.get("query") for l in lines):
         raise SystemExit("no clips at all")
+    if lines[0].get("image"):
+        pass
+    elif any(l.get("image") for l in lines):
+        lines[0]["image"] = next(l["image"] for l in lines if l.get("image"))
     # the first line must have footage; borrow the first available clip
-    if not lines[0].get("clip"):
+    elif not lines[0].get("clip"):
         lines[0]["clip"] = next(l["clip"] for l in lines if l.get("clip"))
     spec["lines"] = lines
     try:
@@ -356,7 +410,8 @@ def main():
         # Dry run: same spec, synthetic footage + silent voice, to catch hangs/crashes before the real build.
         fake = True
         for i, l in enumerate(spec["lines"]):
-            l["clip"] = {"url": "lavfi:testsrc2=size=720x1280:rate=30" if i % 2 else "lavfi:smptebars=size=1080x1920:rate=30"}
+            if not l.get("image"):
+                l["clip"] = {"url": "lavfi:testsrc2=size=720x1280:rate=30" if i % 2 else "lavfi:smptebars=size=1080x1920:rate=30"}
         spec["id"] = spec["id"] + "-check"
     jid = spec["id"]; lines = spec["lines"]
     out_dir = os.path.join(os.path.dirname(os.path.dirname(spec_path)), "out")
@@ -375,11 +430,28 @@ def main():
         # 2. word timings
         words = word_times(vo, lines, windows, warnings, fake)
         # 3. scenes: one per line; a line without a clip shares the previous clip
-        scene_files = []; prev_clip = None
+        scene_files = []; prev_clip = None; prev_img = None; credits_ai = False
         for i, ln in enumerate(lines):
             s, e = windows[i]
             nxt = windows[i + 1][0] if i + 1 < len(lines) else total
             dur = nxt - s if i > 0 else nxt  # first scene starts at 0
+            if ln.get("image"):
+                im = ln["image"]; ip = os.path.join(work, f"img{i:02d}.jpg")
+                ok = False
+                if fake:
+                    run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "testsrc2=size=1080x1920", "-frames:v", "1", ip]); ok = True
+                else:
+                    ok = gen_image(expand_prompt(im.get("prompt", ln["text"]), spec), im.get("seed", 1000 + i), ip, warnings)
+                if ok:
+                    prev_img = ip
+                elif not prev_img:
+                    raise SystemExit(f"line {i}: image generation failed and nothing to reuse")
+                else:
+                    warnings.append(f"line {i}: image failed, reused previous image")
+                motions = ["push", "panr", "pull", "panl"]
+                scene_files.append(make_image_scene(prev_img, dur, i, work, im.get("motion") or motions[i % 4]))
+                credits_ai = True
+                continue
             clip = ln.get("clip")
             if not clip and ln.get("query") and not fake:
                 try:

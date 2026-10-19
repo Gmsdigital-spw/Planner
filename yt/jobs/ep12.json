@@ -1,0 +1,138 @@
+{
+ "id": "ep12",
+ "title": "Someone Kept Eating My Lunch... So I Set a Trap 😳 #shorts",
+ "hook": "WHO KEEPS EATING MY LUNCH?",
+ "end_text": "",
+ "loop": true,
+ "engine": "edge",
+ "voice": "andrew",
+ "speed": 1.03,
+ "caption_words": 3,
+ "style": "3D animated movie still in the style of a modern Pixar or Illumination film, cinematic lighting, shallow depth of field, vibrant colors, highly detailed, expressive cartoon faces, vertical 9:16 composition, no text, no words, no letters",
+ "cast": {
+  "avo": "Avo, an anthropomorphic avocado man with a cartoon avocado head, big expressive eyes and thick eyebrows, wearing a grey hoodie",
+  "melvin": "Melvin, a huge muscular anthropomorphic watermelon man with a striped green watermelon head, wearing a tight black tank top",
+  "sue": "Sue, an anthropomorphic strawberry woman with a red strawberry head with green leaves on top, wearing a pink sweater",
+  "mom": "Avo's mom, an anthropomorphic avocado woman with a cartoon avocado head, pink hair curlers and a fluffy pink bathrobe"
+ },
+ "lines": [
+  {
+   "text": "Somebody in this house has been eating my lunch for three weeks. Tonight... I find out who.",
+   "image": {
+    "prompt": "{avo} standing in front of an open glowing fridge at night holding an empty lunchbox, furious face, kitchen at night",
+    "seed": 11,
+    "motion": "push"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "Every morning I pack it. Every lunch break... empty.",
+   "image": {
+    "prompt": "{avo} at an office desk opening an empty lunchbox, shocked and sad face, office background",
+    "seed": 12,
+    "motion": "pull"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "So I hid a tiny camera inside the fridge.",
+   "image": {
+    "prompt": "{avo} carefully hiding a tiny camera between jars inside a fridge, sneaky face, fridge light glowing",
+    "seed": 13,
+    "motion": "panr"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "Suspect number one. Melvin. My roommate. Gym bro. Eats twelve meals a day.",
+   "image": {
+    "prompt": "{melvin} flexing his biceps in a kitchen, confident grin, protein shake on the counter",
+    "seed": 14,
+    "motion": "punch"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "Suspect number two. Sue. Says she's on a diet... but she's always chewing.",
+   "image": {
+    "prompt": "{sue} standing in a living room chewing with puffed cheeks, guilty side eye, hiding something behind her back",
+    "seed": 15,
+    "motion": "panl"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "Two in the morning. My phone buzzes. Motion in the fridge.",
+   "image": {
+    "prompt": "{avo} in bed in a dark bedroom, face lit up blue by his phone screen, eyes wide",
+    "seed": 16,
+    "motion": "push"
+   },
+   "pause": 0.35,
+   "label": "2:00 AM"
+  },
+  {
+   "text": "The door creaks open. I'm holding my breath.",
+   "image": {
+    "prompt": "view from inside a fridge looking out, the fridge door slowly opening in a dark kitchen, a shadowy figure in the doorway, suspenseful",
+    "seed": 17,
+    "motion": "pull"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "It's not Melvin. It's not Sue.",
+   "image": {
+    "prompt": "{melvin} and {sue} both asleep on a couch in a dark living room, snoring, moonlight",
+    "seed": 18,
+    "motion": "panr"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "It's my mom. In her bathrobe. Eating my sandwich with both hands.",
+   "image": {
+    "prompt": "{mom} standing in front of an open glowing fridge at night eating a huge sandwich with both hands, crumbs everywhere",
+    "seed": 19,
+    "motion": "punch"
+   },
+   "pause": 0.5
+  },
+  {
+   "text": "She looks straight into the camera...",
+   "image": {
+    "prompt": "extreme close-up of {mom} staring directly into the camera with a calm smirk, fridge light on her face",
+    "seed": 20,
+    "motion": "push"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "...and sticks a note on it.",
+   "image": {
+    "prompt": "close-up of a hand sticking a yellow sticky note onto a tiny camera inside a fridge, fridge light",
+    "seed": 21,
+    "motion": "pull"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "It says... pack two.",
+   "image": {
+    "prompt": "{avo} in the morning kitchen holding a yellow sticky note, jaw dropped, totally speechless",
+    "seed": 22,
+    "motion": "punch"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "So now I pack two lunches. And somehow... one is still missing.",
+   "image": {
+    "prompt": "{avo} standing in front of an open glowing fridge at night holding two empty lunchboxes, furious face, kitchen at night",
+    "seed": 11,
+    "motion": "push"
+   },
+   "pause": 0.05
+  }
+ ]
+}
