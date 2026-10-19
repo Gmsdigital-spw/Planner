@@ -73,15 +73,18 @@ jobs:
               continue
             fi
             echo "=== building $name ==="
-            if ! timeout 720 python yt/build/make_short.py "$f"; then
+            if ! timeout 720 python yt/build/make_short.py "$f" > /tmp/build1.log 2>&1; then
+              tail -15 /tmp/build1.log
               echo "=== retry $name with the backup voice ==="
               rm -f "yt/out/$name.mp4" "yt/out/$name.json"
               jq '.engine="kokoro"' "$f" > /tmp/retry.json && cp /tmp/retry.json "/tmp/$name.json"
               mkdir -p /tmp/yt/jobs && cp "/tmp/$name.json" "/tmp/yt/jobs/$name.json"
-              if timeout 600 python yt/build/make_short.py "/tmp/yt/jobs/$name.json"; then
+              if timeout 600 python yt/build/make_short.py "/tmp/yt/jobs/$name.json" > /tmp/build2.log 2>&1; then
                 cp "/tmp/yt/out/$name.mp4" "/tmp/yt/out/$name.json" yt/out/
               else
-                echo "{\"id\":\"$name\",\"error\":\"build failed twice (story voice and backup voice), see the Actions log\"}" > "yt/out/$name.json"
+                tail -15 /tmp/build2.log
+                why=$(grep -v '^\$ ' /tmp/build2.log | tail -3 | tr -d '"\\' | tr '\n' ' ' | cut -c1-400)
+                echo "{\"id\":\"$name\",\"error\":\"build failed twice: $why\"}" > "yt/out/$name.json"
               fi
             fi
           done
