@@ -70,5 +70,7 @@ jobs:
         run: |
           git config user.name "YouTube Starship"
           git config user.email "actions@users.noreply.github.com"
+          git fetch origin main
+          git reset -q origin/main
           git add yt/out yt/build/fonts
-          git diff --cached --quiet || (git commit -m "Build Shorts" && git pull --rebase && git push)
+          git diff --cached --quiet || (git commit -m "Build Shorts" && git push origin HEAD:main)

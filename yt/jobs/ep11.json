@@ -1,12 +1,22 @@
 {
  "id": "ep11",
  "title": "I Said the Game Was Too Hard for My Little Brother 💀 #shorts",
- "hook": "I SAID THE GAME WAS TOO HARD FOR HIM",
- "end_text": "Part 2?",
+ "hook": "I OWE A 6-YEAR-OLD $40",
+ "end_text": "",
  "voice": "am_michael",
  "speed": 1.08,
  "caption_words": 3,
  "lines": [
+  {
+   "text": "I owe a six-year-old forty dollars, and it's completely my fault.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/6700011/6700011-hd_1080_1920_25fps.mp4",
+    "credit": "Tima Miroshnichenko",
+    "page": "https://www.pexels.com/video/a-person-counting-money-6700011/"
+   },
+   "start": 6,
+   "pause": 0.4
+  },
   {
    "text": "My little brother Max is six, and he's been begging to play my game for a month.",
    "clip": {
@@ -113,24 +123,15 @@
    "start": 1
   },
   {
-   "text": "I'm twenty-two. I owe a six-year-old forty bucks.",
+   "text": "And this morning he raised his prices. Which is why",
    "clip": {
     "url": "https://videos.pexels.com/video-files/6700011/6700011-hd_1080_1920_25fps.mp4",
     "credit": "Tima Miroshnichenko",
     "page": "https://www.pexels.com/video/a-person-counting-money-6700011/"
    },
-   "start": 4,
-   "pause": 0.5
-  },
-  {
-   "text": "And this morning, he raised his prices.",
-   "clip": {
-    "url": "https://videos.pexels.com/video-files/6337130/6337130-hd_720_1280_25fps.mp4",
-    "credit": "Tima Miroshnichenko",
-    "page": "https://www.pexels.com/video/a-boy-eating-bread-with-chocolate-spread-6337130/"
-   },
-   "start": 2,
-   "pause": 0.7
+   "start": 1,
+   "pause": 0.0
   }
- ]
+ ],
+ "loop": true
 }

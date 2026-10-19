@@ -17,6 +17,7 @@ Spec (all keys optional except id + lines):
   "voice": "am_michael", "speed": 1.08,
   "music_url": "https://.../track.wav", "music_volume": 0.16,
   "caption_words": 3,                                   # words per caption chunk
+  "loop": true,                                         # default: end cuts hard back to the start (Shorts loop)
   "lines": [
     {"text": "My dad said games are a waste of money.",
      "clip": {"url": "https://videos.pexels.com/....mp4", "credit": "Name", "page": "https://www.pexels.com/video/..."},
@@ -109,7 +110,7 @@ def tts_fake(lines, voice, speed, workdir):
         paths.append(p)
     return paths
 
-def build_voiceover(lines, voice, speed, workdir, warnings, fake=False):
+def build_voiceover(lines, voice, speed, workdir, warnings, fake=False, loop=False):
     engines = [("fake", tts_fake)] if fake else [("kokoro", tts_kokoro), ("edge", tts_edge)]
     paths = None; used = None
     for name, fn in engines:
@@ -136,8 +137,9 @@ def build_voiceover(lines, voice, speed, workdir, warnings, fake=False):
         filt_inputs += [f"[{idx}:a]", f"[{idx+1}:a]"]
         idx += 2
         t += d + pause
-    t += 0.6  # tail so the last word is not cut
-    parts += ["-f", "lavfi", "-t", "0.6", "-i", f"anullsrc=r={SR}:cl=mono"]
+    tail = 0.18 if loop else 0.6  # a loop cuts straight back to the first word
+    t += tail
+    parts += ["-f", "lavfi", "-t", f"{tail:.2f}", "-i", f"anullsrc=r={SR}:cl=mono"]
     filt_inputs.append(f"[{idx}:a]")
     vo = os.path.join(workdir, "vo.wav")
     filt = "".join(filt_inputs) + f"concat=n={len(filt_inputs)}:v=0:a=1,loudnorm=I=-15:TP=-1.5:LRA=9[a]"
@@ -306,8 +308,9 @@ def main():
     work = tempfile.mkdtemp(prefix=f"short-{jid}-")
     try:
         # 1. voice
+        loop = bool(spec.get("loop", True))
         vo, windows, total, tts_used = build_voiceover(lines, spec.get("voice", "am_michael"),
-                                             float(spec.get("speed", 1.08)), work, warnings, fake)
+                                             float(spec.get("speed", 1.08)), work, warnings, fake, loop)
         # 2. word timings
         words = word_times(vo, lines, windows, warnings, fake)
         # 3. scenes: one per line; a line without a clip shares the previous clip
@@ -367,9 +370,9 @@ def main():
             inputs += ["-stream_loop", "-1", "-i", mpath]
             af = (f"[2:a]volume={mv},aformat=sample_rates={SR}:channel_layouts=mono[m];"
                   f"[m][1:a]sidechaincompress=threshold=0.03:ratio=6:attack=15:release=350[md];"
-                  f"[1:a][md]amix=inputs=2:duration=first:dropout_transition=0,afade=t=out:st={max(0,total-0.6):.2f}:d=0.6[a]")
+                  f"[1:a][md]amix=inputs=2:duration=first:dropout_transition=0" + ("" if loop else f",afade=t=out:st={max(0,total-0.6):.2f}:d=0.6") + "[a]")
         else:
-            af = f"[1:a]afade=t=out:st={max(0,total-0.4):.2f}:d=0.4[a]"
+            af = f"[1:a]anull[a]" if loop else f"[1:a]afade=t=out:st={max(0,total-0.4):.2f}:d=0.4[a]"
         # bitrate to land under MAX_MB
         kbps = int(max(700, min(3200, MAX_MB * 8192 / total - 96 - 40)))
         final = os.path.join(out_dir, f"{jid}.mp4")
