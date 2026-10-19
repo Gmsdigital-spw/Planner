@@ -1,0 +1,61 @@
+{
+ "id": "selftest",
+ "title": "I Said the Game Was Too Hard for My Little Brother 💀 #shorts",
+ "hook": "I OWE A 6-YEAR-OLD $40",
+ "end_text": "",
+ "voice": "andrew",
+ "speed": 1.03,
+ "caption_words": 3,
+ "lines": [
+  {
+   "text": "I owe a six-year-old forty dollars, and it's completely my fault.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/6700011/6700011-hd_1080_1920_25fps.mp4",
+    "credit": "Tima Miroshnichenko",
+    "page": "https://www.pexels.com/video/a-person-counting-money-6700011/"
+   },
+   "start": 6,
+   "pause": 0.4
+  },
+  {
+   "text": "My little brother Max is six, and he's been begging to play my game for a month.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/6952530/6952530-hd_1080_1920_30fps.mp4",
+    "credit": "Artem Podrez",
+    "page": "https://www.pexels.com/video/close-up-video-of-a-happy-little-boy-6952530/"
+   },
+   "start": 1
+  },
+  {
+   "text": "I kept telling him no. It's too hard.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/7668178/7668178-hd_1080_1920_25fps.mp4",
+    "credit": "Pavel Danilyuk",
+    "page": "https://www.pexels.com/video/a-man-playing-a-video-game-7668178/"
+   },
+   "start": 2
+  },
+  {
+   "text": "There's a boss I've been stuck on for a week. Forty-seven tries... I counted.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/7047588/7047588-hd_720_1280_25fps.mp4",
+    "credit": "Tima Miroshnichenko",
+    "page": "https://www.pexels.com/video/an-angry-woman-throwing-a-pillow-on-a-man-playing-a-video-game-7047588/"
+   },
+   "start": 2
+  },
+  {
+   "text": "Saturday he caught me rage quitting.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/8724452/8724452-hd_1080_2048_25fps.mp4",
+    "credit": "Tima Miroshnichenko",
+    "page": "https://www.pexels.com/video/angry-person-talking-8724452/"
+   },
+   "start": 3,
+   "pause": 0
+  }
+ ],
+ "loop": true,
+ "engine": "edge",
+ "rev": 4
+}
