@@ -3,8 +3,8 @@
  "title": "I Said the Game Was Too Hard for My Little Brother 💀 #shorts",
  "hook": "I OWE A 6-YEAR-OLD $40",
  "end_text": "",
- "voice": "am_michael",
- "speed": 1.08,
+ "voice": "andrew",
+ "speed": 1.03,
  "caption_words": 3,
  "lines": [
   {
@@ -36,7 +36,7 @@
    "start": 2
   },
   {
-   "text": "There's a boss I've been stuck on for a week. Forty-seven tries. I counted.",
+   "text": "There's a boss I've been stuck on for a week. Forty-seven tries... I counted.",
    "clip": {
     "url": "https://videos.pexels.com/video-files/7047588/7047588-hd_720_1280_25fps.mp4",
     "credit": "Tima Miroshnichenko",
@@ -73,7 +73,7 @@
    "pause": 0.45
   },
   {
-   "text": "He didn't lose.",
+   "text": "He... didn't lose.",
    "label": "30 SECONDS LATER",
    "clip": {
     "url": "https://videos.pexels.com/video-files/7047585/7047585-hd_720_1280_25fps.mp4",
@@ -93,7 +93,7 @@
    "start": 1
   },
   {
-   "text": "He put the controller down, looked at me, and said, that one's easy.",
+   "text": "He put the controller down, looked at me, and said... \"that one's easy.\"",
    "clip": {
     "url": "https://videos.pexels.com/video-files/8100589/8100589-hd_1080_1920_25fps.mp4",
     "credit": "Ivan S",
@@ -123,7 +123,7 @@
    "start": 1
   },
   {
-   "text": "And this morning he raised his prices. Which is why",
+   "text": "And this morning he raised his prices. Which is why...",
    "clip": {
     "url": "https://videos.pexels.com/video-files/6700011/6700011-hd_1080_1920_25fps.mp4",
     "credit": "Tima Miroshnichenko",
@@ -133,5 +133,6 @@
    "pause": 0.0
   }
  ],
- "loop": true
+ "loop": true,
+ "engine": "edge"
 }

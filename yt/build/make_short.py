@@ -14,7 +14,8 @@ Spec (all keys optional except id + lines):
   "id": "ep11",
   "hook": "MY DAD SAID GAMES ARE A WASTE OF MONEY",   # top text for the first ~3s
   "end_text": "Part 2?",                                # shown at the very end
-  "voice": "am_michael", "speed": 1.08,
+  "voice": "andrew", "speed": 1.03,                     # voices: andrew, brian, ava, emma, christopher, jenny
+  "engine": "edge",                                     # "edge" (natural story voice, default) or "kokoro"
   "music_url": "https://.../track.wav", "music_volume": 0.16,
   "caption_words": 3,                                   # words per caption chunk
   "loop": true,                                         # default: end cuts hard back to the start (Shorts loop)
@@ -70,6 +71,7 @@ def ensure_fonts():
 def tts_kokoro(lines, voice, speed, workdir):
     from kokoro import KPipeline
     import soundfile as sf, numpy as np
+    voice = KOKORO_VOICES.get(voice, voice if voice.startswith(("am_", "af_", "bm_", "bf_")) else "am_michael")
     pipe = KPipeline(lang_code="a", repo_id="hexgrad/Kokoro-82M")
     paths = []
     for i, ln in enumerate(lines):
@@ -82,11 +84,20 @@ def tts_kokoro(lines, voice, speed, workdir):
         paths.append(p)
     return paths
 
+EDGE_VOICES = {  # storytelling voices people hear in TikTok/Reddit story videos
+    "andrew": "en-US-AndrewMultilingualNeural", "brian": "en-US-BrianMultilingualNeural",
+    "ava": "en-US-AvaMultilingualNeural", "emma": "en-US-EmmaMultilingualNeural",
+    "christopher": "en-US-ChristopherNeural", "jenny": "en-US-JennyNeural",
+    "am_michael": "en-US-AndrewMultilingualNeural", "am_puck": "en-US-BrianMultilingualNeural",
+    "am_onyx": "en-US-ChristopherNeural", "af_heart": "en-US-AvaMultilingualNeural",
+}
+KOKORO_VOICES = {"andrew": "am_michael", "brian": "am_puck", "ava": "af_heart", "emma": "af_bella",
+                 "christopher": "am_onyx", "jenny": "af_nicole"}
+
 def tts_edge(lines, voice, speed, workdir):
-    # Free Microsoft neural voices. Used only if Kokoro is unavailable.
+    # Free Microsoft neural voices (edge-tts): natural, story-style delivery.
     import asyncio, edge_tts
-    v = {"am_michael": "en-US-GuyNeural", "am_puck": "en-US-ChristopherNeural",
-         "am_onyx": "en-US-DavisNeural", "af_heart": "en-US-AriaNeural"}.get(voice, "en-US-GuyNeural")
+    v = EDGE_VOICES.get(voice, voice if "Neural" in voice else "en-US-AndrewMultilingualNeural")
     rate = f"{int(round((speed - 1) * 100)):+d}%"
     paths = []
     async def one(text, out):
@@ -110,8 +121,9 @@ def tts_fake(lines, voice, speed, workdir):
         paths.append(p)
     return paths
 
-def build_voiceover(lines, voice, speed, workdir, warnings, fake=False, loop=False):
-    engines = [("fake", tts_fake)] if fake else [("kokoro", tts_kokoro), ("edge", tts_edge)]
+def build_voiceover(lines, voice, speed, workdir, warnings, fake=False, loop=False, engine="edge"):
+    order = [("edge", tts_edge), ("kokoro", tts_kokoro)] if engine == "edge" else [("kokoro", tts_kokoro), ("edge", tts_edge)]
+    engines = [("fake", tts_fake)] if fake else order
     paths = None; used = None
     for name, fn in engines:
         try:
@@ -309,8 +321,9 @@ def main():
     try:
         # 1. voice
         loop = bool(spec.get("loop", True))
-        vo, windows, total, tts_used = build_voiceover(lines, spec.get("voice", "am_michael"),
-                                             float(spec.get("speed", 1.08)), work, warnings, fake, loop)
+        vo, windows, total, tts_used = build_voiceover(lines, spec.get("voice", "andrew"),
+                                             float(spec.get("speed", 1.03)), work, warnings, fake, loop,
+                                             spec.get("engine", "edge"))
         # 2. word timings
         words = word_times(vo, lines, windows, warnings, fake)
         # 3. scenes: one per line; a line without a clip shares the previous clip
