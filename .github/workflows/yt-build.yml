@@ -1,0 +1,74 @@
+name: YouTube Starship build
+
+# Builds every job spec in yt/jobs/ into a finished Short in yt/out/ — free.
+# Voice: Kokoro (edge-tts fallback). Word timings: faster-whisper. Footage: the
+# clip URLs in the spec, or a Pexels search when the PEXELS_API_KEY secret exists.
+# Only touches the yt/ folder.
+on:
+  push:
+    paths:
+      - "yt/jobs/**"
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "Job id to (re)build, e.g. ep11 (blank = every job without an output)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency: yt-build
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ffmpeg + espeak
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng fonts-dejavu-core
+
+      - name: Cache models and packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            ~/.cache/pip
+          key: yt-build-models-v1
+
+      - name: Install voice + timing tools
+        run: |
+          python -m pip install -q --upgrade pip
+          python -m pip install -q "kokoro>=0.9.4" soundfile faster-whisper edge-tts
+
+      - name: Build the Shorts
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          HF_HUB_DISABLE_TELEMETRY: "1"
+        run: |
+          shopt -s nullglob
+          only="${{ github.event.inputs.job }}"
+          for f in yt/jobs/*.json; do
+            name=$(basename "$f" .json)
+            if [ -n "$only" ]; then
+              [ "$name" = "$only" ] || continue
+              rm -f "yt/out/$name.mp4" "yt/out/$name.json"
+            fi
+            [ -f "yt/out/$name.mp4" ] && continue
+            echo "=== building $name ==="
+            if ! python yt/build/make_short.py "$f"; then
+              echo "{\"id\":\"$name\",\"error\":\"build failed, see the Actions log\"}" > "yt/out/$name.json"
+            fi
+          done
+
+      - name: Save the finished videos
+        run: |
+          git config user.name "YouTube Starship"
+          git config user.email "actions@users.noreply.github.com"
+          git add yt/out yt/build/fonts
+          git diff --cached --quiet || (git commit -m "Build Shorts" && git pull --rebase && git push)
