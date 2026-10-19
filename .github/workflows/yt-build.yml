@@ -17,12 +17,14 @@ on:
 permissions:
   contents: write
 
-concurrency: yt-build
+concurrency:
+  group: yt-build
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
 
@@ -61,7 +63,7 @@ jobs:
             fi
             [ -f "yt/out/$name.mp4" ] && continue
             echo "=== building $name ==="
-            if ! python yt/build/make_short.py "$f"; then
+            if ! timeout 900 python yt/build/make_short.py "$f"; then
               echo "{\"id\":\"$name\",\"error\":\"build failed, see the Actions log\"}" > "yt/out/$name.json"
             fi
           done

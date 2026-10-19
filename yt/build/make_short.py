@@ -101,7 +101,7 @@ def tts_edge(lines, voice, speed, workdir):
     rate = f"{int(round((speed - 1) * 100)):+d}%"
     paths = []
     async def one(text, out):
-        await edge_tts.Communicate(text, v, rate=rate).save(out)
+        await asyncio.wait_for(edge_tts.Communicate(text, v, rate=rate).save(out), timeout=45)
     for i, ln in enumerate(lines):
         mp3 = os.path.join(workdir, f"line{i:02d}.mp3")
         asyncio.run(one(ln["text"], mp3))
