@@ -35,7 +35,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 FONT_DIR = os.path.join(ROOT, "fonts")
 W, H = 1080, 1920          # render size
 OUT_W, OUT_H = 720, 1280   # delivered size (keeps the file under Make's 5 MB limit)
-MAX_MB = 4.6
+MAX_MB = 4.45
 SR = 24000
 
 def run(cmd, **kw):
@@ -387,7 +387,7 @@ def main():
         else:
             af = f"[1:a]anull[a]" if loop else f"[1:a]afade=t=out:st={max(0,total-0.4):.2f}:d=0.4[a]"
         # bitrate to land under MAX_MB
-        kbps = int(max(700, min(3200, MAX_MB * 8192 / total - 96 - 40)))
+        kbps = int(max(420, min(3200, MAX_MB * 8192 / total - 80 - 48)))
         final = os.path.join(out_dir, f"{jid}.mp4")
         base = ["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", f"[0:v]{vf}[v];{af}",
                 "-map", "[v]", "-map", "[a]", "-t", f"{total:.3f}", "-r", "30",
@@ -395,7 +395,7 @@ def main():
                 "-maxrate", f"{int(kbps*1.3)}k", "-bufsize", f"{kbps*2}k", "-pix_fmt", "yuv420p"]
         plog = os.path.join(work, "pass")
         run([*base, "-pass", "1", "-passlogfile", plog, "-an", "-f", "mp4", "/dev/null"])
-        run([*base, "-pass", "2", "-passlogfile", plog, "-c:a", "aac", "-b:a", "96k", "-ar", "44100",
+        run([*base, "-pass", "2", "-passlogfile", plog, "-c:a", "aac", "-b:a", "80k", "-ar", "44100",
              "-movflags", "+faststart", final])
         size = os.path.getsize(final)
         meta = {"id": jid, "duration": round(ffprobe_dur(final), 2), "bytes": size, "mb": round(size / 1048576, 2),
