@@ -331,6 +331,13 @@ def main():
                     else:
                         fetch_clip(clip["url"], cp)
                     prev_clip = cp
+                    try:
+                        hh = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=height",
+                                             "-of", "csv=p=0", cp], capture_output=True, text=True).stdout.strip()
+                        if hh and int(hh.split(",")[0]) < 960:
+                            warnings.append(f"line {i} clip is low resolution ({hh}p); looks soft")
+                    except Exception:
+                        pass
                     if clip.get("credit"):
                         credits.append({"credit": clip["credit"], "page": clip.get("page", "")})
                 except Exception as ex:

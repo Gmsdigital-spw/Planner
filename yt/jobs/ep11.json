@@ -1,32 +1,136 @@
 {
-  "id": "ep11",
-  "title": "I Said the Game Was Too Hard for My Little Brother 💀 #shorts",
-  "hook": "I SAID THE GAME WAS TOO HARD FOR HIM",
-  "end_text": "Part 2?",
-  "voice": "am_michael",
-  "speed": 1.08,
-  "caption_words": 3,
-  "lines": [
-    {"text": "I told my little brother the game was too hard for him.",
-     "clip": {"url": "https://videos.pexels.com/video-files/7668178/7668178-hd_1080_1920_25fps.mp4", "credit": "Pavel Danilyuk", "page": "https://www.pexels.com/video/a-man-playing-a-video-game-7668178/"},
-     "start": 2},
-    {"text": "He begged me for one try.",
-     "clip": {"url": "https://videos.pexels.com/video-files/8127925/8127925-hd_1080_1920_25fps.mp4", "credit": "Alena Darmel", "page": "https://www.pexels.com/video/people-playing-video-games-8127925/"},
-     "start": 1},
-    {"text": "So I handed him the controller.",
-     "clip": {"url": "https://videos.pexels.com/video-files/8128420/8128420-hd_1080_1920_25fps.mp4", "credit": "Alena Darmel", "page": "https://www.pexels.com/video/a-man-holding-a-game-controller-8128420/"}},
-    {"text": "Thirty seconds.",
-     "label": "30 SECONDS LATER",
-     "clip": {"url": "https://videos.pexels.com/video-files/7047585/7047585-hd_720_1280_25fps.mp4", "credit": "Tima Miroshnichenko", "page": "https://www.pexels.com/video/a-child-playing-video-games-7047585/"},
-     "start": 3, "pause": 0.45},
-    {"text": "He beat the boss I'd been stuck on for a week.",
-     "clip": {"url": "https://videos.pexels.com/video-files/8385333/8385333-hd_720_1280_24fps.mp4", "credit": "RDNE Stock project", "page": "https://www.pexels.com/video/cute-boy-jumping-8385333/"},
-     "start": 1},
-    {"text": "He's six.",
-     "clip": {"url": "https://videos.pexels.com/video-files/8100589/8100589-hd_1080_1920_25fps.mp4", "credit": "Ivan S", "page": "https://www.pexels.com/video/boy-is-happy-while-holding-a-gift-8100589/"},
-     "start": 2, "pause": 0.5},
-    {"text": "Now he charges me five dollars a boss.",
-     "clip": {"url": "https://videos.pexels.com/video-files/6700011/6700011-hd_1080_1920_25fps.mp4", "credit": "Tima Miroshnichenko", "page": "https://www.pexels.com/video/a-person-counting-money-6700011/"},
-     "start": 4, "pause": 0.6}
-  ]
+ "id": "ep11",
+ "title": "I Said the Game Was Too Hard for My Little Brother 💀 #shorts",
+ "hook": "I SAID THE GAME WAS TOO HARD FOR HIM",
+ "end_text": "Part 2?",
+ "voice": "am_michael",
+ "speed": 1.08,
+ "caption_words": 3,
+ "lines": [
+  {
+   "text": "My little brother Max is six, and he's been begging to play my game for a month.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/6952530/6952530-hd_1080_1920_30fps.mp4",
+    "credit": "Artem Podrez",
+    "page": "https://www.pexels.com/video/close-up-video-of-a-happy-little-boy-6952530/"
+   },
+   "start": 1
+  },
+  {
+   "text": "I kept telling him no. It's too hard.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/7668178/7668178-hd_1080_1920_25fps.mp4",
+    "credit": "Pavel Danilyuk",
+    "page": "https://www.pexels.com/video/a-man-playing-a-video-game-7668178/"
+   },
+   "start": 2
+  },
+  {
+   "text": "There's a boss I've been stuck on for a week. Forty-seven tries. I counted.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/7047588/7047588-hd_720_1280_25fps.mp4",
+    "credit": "Tima Miroshnichenko",
+    "page": "https://www.pexels.com/video/an-angry-woman-throwing-a-pillow-on-a-man-playing-a-video-game-7047588/"
+   },
+   "start": 2
+  },
+  {
+   "text": "Saturday he caught me rage quitting.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/8724452/8724452-hd_1080_2048_25fps.mp4",
+    "credit": "Tima Miroshnichenko",
+    "page": "https://www.pexels.com/video/angry-person-talking-8724452/"
+   },
+   "start": 3
+  },
+  {
+   "text": "And he goes, can I just try one time?",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/7697170/7697170-hd_1080_1920_30fps.mp4",
+    "credit": "RDNE Stock project",
+    "page": "https://www.pexels.com/video/cute-little-boy-talking-7697170/"
+   },
+   "start": 1,
+   "pause": 0.35
+  },
+  {
+   "text": "So I handed him the controller. Mostly to watch him lose.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/8128420/8128420-hd_1080_1920_25fps.mp4",
+    "credit": "Alena Darmel",
+    "page": "https://www.pexels.com/video/a-man-holding-a-game-controller-8128420/"
+   },
+   "pause": 0.45
+  },
+  {
+   "text": "He didn't lose.",
+   "label": "30 SECONDS LATER",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/7047585/7047585-hd_720_1280_25fps.mp4",
+    "credit": "Tima Miroshnichenko",
+    "page": "https://www.pexels.com/video/a-child-playing-video-games-7047585/"
+   },
+   "start": 4,
+   "pause": 0.4
+  },
+  {
+   "text": "He didn't even take damage.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/8385333/8385333-hd_720_1280_24fps.mp4",
+    "credit": "RDNE Stock project",
+    "page": "https://www.pexels.com/video/cute-boy-jumping-8385333/"
+   },
+   "start": 1
+  },
+  {
+   "text": "He put the controller down, looked at me, and said, that one's easy.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/8100589/8100589-hd_1080_1920_25fps.mp4",
+    "credit": "Ivan S",
+    "page": "https://www.pexels.com/video/boy-is-happy-while-holding-a-gift-8100589/"
+   },
+   "start": 2,
+   "pause": 0.4
+  },
+  {
+   "text": "Then he went back to his juice box like nothing happened.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/6264932/6264932-hd_720_1280_50fps.mp4",
+    "credit": "Jep Gambardella",
+    "page": "https://www.pexels.com/video/a-boy-drinking-using-straw-6264932/"
+   },
+   "start": 1,
+   "pause": 0.5
+  },
+  {
+   "text": "Now every time I get stuck, he charges me five dollars a boss.",
+   "label": "ONE WEEK LATER",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/3944018/3944018-hd_720_1366_50fps.mp4",
+    "credit": "cottonbro studio",
+    "page": "https://www.pexels.com/video/money-changing-hands-3944018/"
+   },
+   "start": 1
+  },
+  {
+   "text": "I'm twenty-two. I owe a six-year-old forty bucks.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/6700011/6700011-hd_1080_1920_25fps.mp4",
+    "credit": "Tima Miroshnichenko",
+    "page": "https://www.pexels.com/video/a-person-counting-money-6700011/"
+   },
+   "start": 4,
+   "pause": 0.5
+  },
+  {
+   "text": "And this morning, he raised his prices.",
+   "clip": {
+    "url": "https://videos.pexels.com/video-files/6337130/6337130-hd_720_1280_25fps.mp4",
+    "credit": "Tima Miroshnichenko",
+    "page": "https://www.pexels.com/video/a-boy-eating-bread-with-chocolate-spread-6337130/"
+   },
+   "start": 2,
+   "pause": 0.7
+  }
+ ]
 }
