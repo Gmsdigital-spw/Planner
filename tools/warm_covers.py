@@ -162,6 +162,24 @@ COVERS = {
    deco=LIGHTS + confetti()),
 }
 
+COVERS["thanksgiving-planner"] = dict(
+   accent=TERRA, kicker="Printable · First-Time Host",
+   title_html='<h1 style="font-size:140px">Thanksgiving</h1><h1 style="font-size:140px;color:{A};font-weight:500;font-style:italic">Planner</h1><h1 style="font-size:68px;margin-top:16px">for First-Time Hosts</h1>',
+   sub="A reverse cooking timeline that tells you exactly when the turkey goes in.",
+   chips=["Turkey thaw guide","Menu","Grocery list"], badge_n="13", badge_l="PAGES", badge_top=430,
+   back=back_title("3 weeks out", "Countdown", SAGE) + rows(["Plan the menu","Order the turkey","Start thawing"], TERRA, False),
+   screen=scr_title("Dinner at 4 PM", "Cooking Timeline", TERRA) + table(["Time","Task"], [["9:00","Turkey in oven"],["12:30","Sides prep"],["2:00","Turkey out, rest"],["3:15","Rolls in"],["4:00","Dinner!"]], TERRA),
+   deco=pine(1900, 40, 160, "#8a6a2f"))
+
+COVERS["thanksgiving-games"] = dict(
+   accent=TERRA, kicker="Printable · Family Fun",
+   title_html='<h1 style="font-size:140px">Thanksgiving</h1><h1 style="font-size:140px;color:{A};font-weight:500;font-style:italic">Family</h1><h1 style="font-size:110px;margin-top:10px">Game Pack</h1>',
+   sub="Trivia, bingo, Would You Rather & more. Answer keys included.",
+   chips=["All ages","3–30 players","Print at home"], badge_n="7", badge_l="GAMES", badge_top=430,
+   back=back_title("Printable", "Find the Guest", SAGE) + grid_cells(["Loves pie","Hosted before","Can carve","Watched parade","Has a pet","Bakes"]),
+   screen=scr_title("Game 01", "Thanksgiving Trivia", TERRA) + rows(["What bird is the meal star?","What month is Thanksgiving?","Which parade is on TV?","What's in pumpkin pie?"], TERRA),
+   deco=pine(1900, 40, 160, "#8a6a2f"))
+
 if __name__ == "__main__":
     names = sys.argv[1:] or list(COVERS)
     with sync_playwright() as p:
