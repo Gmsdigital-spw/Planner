@@ -144,12 +144,12 @@ def build_voiceover(lines, voice, speed, workdir, warnings, fake=False, loop=Fal
     for i, (p, ln) in enumerate(zip(paths, lines)):
         d = wav_dur(p)
         windows.append((t, t + d))
-        pause = float(ln.get("pause", 0.28))
+        pause = max(0.05, float(ln.get("pause", 0.28)))  # a 0 s silence never ends in ffmpeg
         parts += ["-i", p, "-f", "lavfi", "-t", f"{pause:.2f}", "-i", f"anullsrc=r={SR}:cl=mono"]
         filt_inputs += [f"[{idx}:a]", f"[{idx+1}:a]"]
         idx += 2
         t += d + pause
-    tail = 0.18 if loop else 0.6  # a loop cuts straight back to the first word
+    tail = 0.12 if loop else 0.6  # a loop cuts straight back to the first word
     t += tail
     parts += ["-f", "lavfi", "-t", f"{tail:.2f}", "-i", f"anullsrc=r={SR}:cl=mono"]
     filt_inputs.append(f"[{idx}:a]")

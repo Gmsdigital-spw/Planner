@@ -130,10 +130,10 @@
     "page": "https://www.pexels.com/video/a-person-counting-money-6700011/"
    },
    "start": 1,
-   "pause": 0.0
+   "pause": 0.05
   }
  ],
  "loop": true,
  "engine": "edge",
- "rev": 3
+ "rev": 4
 }
