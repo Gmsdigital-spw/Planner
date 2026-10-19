@@ -248,21 +248,35 @@ def expand_prompt(prompt, spec):
     return f"{prompt}. {style}".strip()
 
 def gen_image(prompt, seed, dest, warnings):
-    """Free text-to-image (Pollinations, FLUX). Retries; returns True on success."""
-    import time
-    q = urllib.parse.quote(prompt[:1500])
-    url = (f"https://image.pollinations.ai/prompt/{q}?width=1080&height=1920&model=flux"
-           f"&seed={int(seed)}&nologo=true&private=true")
-    for attempt in range(4):
+    """Free text-to-image: Cloudflare Workers AI FLUX.1 schnell (free daily allowance).
+    Needs CF_ACCOUNT_ID + CF_API_TOKEN. Returns True on success."""
+    import time, base64
+    acct = os.environ.get("CF_ACCOUNT_ID", "").strip(); tok = os.environ.get("CF_API_TOKEN", "").strip()
+    if not (acct and tok):
+        warnings.append("no Cloudflare keys (CF_ACCOUNT_ID / CF_API_TOKEN), cannot make cartoon images")
+        return False
+    url = f"https://api.cloudflare.com/client/v4/accounts/{acct}/ai/run/@cf/black-forest-labs/flux-1-schnell"
+    body = json.dumps({"prompt": prompt[:2000], "steps": 8, "seed": int(seed)}).encode()
+    for attempt in range(3):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (YouTube Starship builder)"})
-            with urllib.request.urlopen(req, timeout=150) as r, open(dest, "wb") as f:
-                shutil.copyfileobj(r, f)
-            if os.path.getsize(dest) > 20000:
-                return True
+            req = urllib.request.Request(url, data=body, method="POST",
+                                         headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=90) as r:
+                d = json.load(r)
+            b64 = (d.get("result") or {}).get("image")
+            if b64:
+                open(dest, "wb").write(base64.b64decode(b64))
+                if os.path.getsize(dest) > 20000:
+                    return True
+            warnings.append(f"image try {attempt+1}: no image ({str(d.get('errors'))[:120]})")
         except Exception as e:
-            warnings.append(f"image try {attempt+1} failed: {e!r}"[:200])
-        time.sleep(8 + attempt * 10)
+            msg = ""
+            try:
+                msg = e.read().decode()[:160]
+            except Exception:
+                pass
+            warnings.append(f"image try {attempt+1} failed: {e!r} {msg}"[:220])
+        time.sleep(3 + attempt * 6)
     return False
 
 def make_image_scene(img, dur, idx, workdir, motion):
@@ -444,9 +458,10 @@ def main():
                     ok = gen_image(expand_prompt(im.get("prompt", ln["text"]), spec), im.get("seed", 1000 + i), ip, warnings)
                 if ok:
                     prev_img = ip
-                elif not prev_img:
-                    raise SystemExit(f"line {i}: image generation failed and nothing to reuse")
                 else:
+                    img_fail = globals().get("_img_fail", 0) + 1; globals()["_img_fail"] = img_fail
+                    if img_fail > 2 or not prev_img:
+                        raise SystemExit("cartoon images failed (" + "; ".join(warnings[-2:]) + "); not shipping a half-made video")
                     warnings.append(f"line {i}: image failed, reused previous image")
                 motions = ["push", "panr", "pull", "panl"]
                 scene_files.append(make_image_scene(prev_img, dur, i, work, im.get("motion") or motions[i % 4]))

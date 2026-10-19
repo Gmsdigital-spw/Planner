@@ -8,19 +8,19 @@
  "voice": "andrew",
  "speed": 1.03,
  "caption_words": 3,
- "style": "3D animated movie still in the style of a modern Pixar or Illumination film, cinematic lighting, shallow depth of field, vibrant colors, highly detailed, expressive cartoon faces, vertical 9:16 composition, no text, no words, no letters",
+ "style": "3D animated movie still, Pixar and Illumination style CGI render, cute stylized cartoon characters, soft cinematic lighting, vibrant saturated colors, glossy detailed textures, shallow depth of field, character centered in frame, no text, no letters, no watermark",
  "cast": {
-  "avo": "Avo, an anthropomorphic avocado man with a cartoon avocado head, big expressive eyes and thick eyebrows, wearing a grey hoodie",
-  "melvin": "Melvin, a huge muscular anthropomorphic watermelon man with a striped green watermelon head, wearing a tight black tank top",
-  "sue": "Sue, an anthropomorphic strawberry woman with a red strawberry head with green leaves on top, wearing a pink sweater",
-  "mom": "Avo's mom, an anthropomorphic avocado woman with a cartoon avocado head, pink hair curlers and a fluffy pink bathrobe"
+  "avo": "Avo, a cartoon character whose whole head is a giant shiny green avocado (bumpy dark green avocado skin, big round cartoon eyes and a mouth on the avocado, no hair, no human face), human body wearing a grey hoodie",
+  "melvin": "Melvin, a huge muscular cartoon character whose whole head is a round striped green watermelon (cartoon eyes and a grin on the watermelon, no hair, no human face), wearing a black tank top",
+  "sue": "Sue, a cartoon character whose whole head is a big glossy red strawberry with yellow seeds and green leaves on top (cartoon eyes and mouth on the strawberry, no hair, no human face), wearing a pink sweater",
+  "mom": "Mama Avo, a cartoon character whose whole head is a giant green avocado (cartoon eyes and mouth on the avocado, no human face) with pink hair curlers stuck on top, wearing a fluffy pink bathrobe"
  },
  "lines": [
   {
    "text": "Somebody in this house has been eating my lunch for three weeks. Tonight... I find out who.",
    "image": {
     "prompt": "{avo} standing in front of an open glowing fridge at night holding an empty lunchbox, furious face, kitchen at night",
-    "seed": 11,
+    "seed": 111,
     "motion": "push"
    },
    "pause": 0.35
@@ -29,7 +29,7 @@
    "text": "Every morning I pack it. Every lunch break... empty.",
    "image": {
     "prompt": "{avo} at an office desk opening an empty lunchbox, shocked and sad face, office background",
-    "seed": 12,
+    "seed": 112,
     "motion": "pull"
    },
    "pause": 0.35
@@ -38,7 +38,7 @@
    "text": "So I hid a tiny camera inside the fridge.",
    "image": {
     "prompt": "{avo} carefully hiding a tiny camera between jars inside a fridge, sneaky face, fridge light glowing",
-    "seed": 13,
+    "seed": 113,
     "motion": "panr"
    },
    "pause": 0.35
@@ -47,7 +47,7 @@
    "text": "Suspect number one. Melvin. My roommate. Gym bro. Eats twelve meals a day.",
    "image": {
     "prompt": "{melvin} flexing his biceps in a kitchen, confident grin, protein shake on the counter",
-    "seed": 14,
+    "seed": 114,
     "motion": "punch"
    },
    "pause": 0.35
@@ -56,7 +56,7 @@
    "text": "Suspect number two. Sue. Says she's on a diet... but she's always chewing.",
    "image": {
     "prompt": "{sue} standing in a living room chewing with puffed cheeks, guilty side eye, hiding something behind her back",
-    "seed": 15,
+    "seed": 115,
     "motion": "panl"
    },
    "pause": 0.35
@@ -65,7 +65,7 @@
    "text": "Two in the morning. My phone buzzes. Motion in the fridge.",
    "image": {
     "prompt": "{avo} in bed in a dark bedroom, face lit up blue by his phone screen, eyes wide",
-    "seed": 16,
+    "seed": 116,
     "motion": "push"
    },
    "pause": 0.35,
@@ -75,7 +75,7 @@
    "text": "The door creaks open. I'm holding my breath.",
    "image": {
     "prompt": "view from inside a fridge looking out, the fridge door slowly opening in a dark kitchen, a shadowy figure in the doorway, suspenseful",
-    "seed": 17,
+    "seed": 117,
     "motion": "pull"
    },
    "pause": 0.35
@@ -84,7 +84,7 @@
    "text": "It's not Melvin. It's not Sue.",
    "image": {
     "prompt": "{melvin} and {sue} both asleep on a couch in a dark living room, snoring, moonlight",
-    "seed": 18,
+    "seed": 118,
     "motion": "panr"
    },
    "pause": 0.35
@@ -93,7 +93,7 @@
    "text": "It's my mom. In her bathrobe. Eating my sandwich with both hands.",
    "image": {
     "prompt": "{mom} standing in front of an open glowing fridge at night eating a huge sandwich with both hands, crumbs everywhere",
-    "seed": 19,
+    "seed": 119,
     "motion": "punch"
    },
    "pause": 0.5
@@ -102,7 +102,7 @@
    "text": "She looks straight into the camera...",
    "image": {
     "prompt": "extreme close-up of {mom} staring directly into the camera with a calm smirk, fridge light on her face",
-    "seed": 20,
+    "seed": 120,
     "motion": "push"
    },
    "pause": 0.35
@@ -111,7 +111,7 @@
    "text": "...and sticks a note on it.",
    "image": {
     "prompt": "close-up of a hand sticking a yellow sticky note onto a tiny camera inside a fridge, fridge light",
-    "seed": 21,
+    "seed": 121,
     "motion": "pull"
    },
    "pause": 0.35
@@ -120,7 +120,7 @@
    "text": "It says... pack two.",
    "image": {
     "prompt": "{avo} in the morning kitchen holding a yellow sticky note, jaw dropped, totally speechless",
-    "seed": 22,
+    "seed": 122,
     "motion": "punch"
    },
    "pause": 0.35
@@ -129,10 +129,11 @@
    "text": "So now I pack two lunches. And somehow... one is still missing.",
    "image": {
     "prompt": "{avo} standing in front of an open glowing fridge at night holding two empty lunchboxes, furious face, kitchen at night",
-    "seed": 11,
+    "seed": 111,
     "motion": "push"
    },
    "pause": 0.05
   }
- ]
+ ],
+ "rev": 2
 }
