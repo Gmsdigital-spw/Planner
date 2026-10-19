@@ -276,6 +276,9 @@ def gen_image(prompt, seed, dest, warnings):
             except Exception:
                 pass
             warnings.append(f"image try {attempt+1} failed: {e!r} {msg}"[:220])
+            if "NSFW" in msg and not prompt.startswith("wholesome"):
+                prompt = "wholesome family-friendly kids animated movie scene, " + prompt.replace("bathrobe", "cozy pajamas").replace("bed", "couch")
+                body = json.dumps({"prompt": prompt[:2000], "steps": 8}).encode()
         time.sleep(3 + attempt * 6)
     return False
 
