@@ -256,7 +256,7 @@ def gen_image(prompt, seed, dest, warnings):
         warnings.append("no Cloudflare keys (CF_ACCOUNT_ID / CF_API_TOKEN), cannot make cartoon images")
         return False
     url = f"https://api.cloudflare.com/client/v4/accounts/{acct}/ai/run/@cf/black-forest-labs/flux-1-schnell"
-    body = json.dumps({"prompt": prompt[:2000], "steps": 8, "seed": int(seed)}).encode()
+    body = json.dumps({"prompt": prompt[:2000], "steps": 8}).encode()
     for attempt in range(3):
         try:
             req = urllib.request.Request(url, data=body, method="POST",
