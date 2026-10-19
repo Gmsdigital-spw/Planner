@@ -93,7 +93,12 @@ jobs:
         run: |
           git config user.name "YouTube Starship"
           git config user.email "actions@users.noreply.github.com"
-          git fetch origin main
-          git reset -q origin/main
-          git add yt/out yt/build/fonts
-          git diff --cached --quiet || (git commit -m "Build Shorts" && git push origin HEAD:main)
+          mkdir -p /tmp/save && cp -r yt/out/. /tmp/save/
+          for i in 1 2 3 4; do
+            git fetch -q --depth=1 origin main && git reset -q --hard origin/main
+            mkdir -p yt/out && cp -r /tmp/save/. yt/out/
+            git add yt/out
+            git diff --cached --quiet && { echo "nothing new"; break; }
+            git commit -q -m "Build Shorts" && git push origin HEAD:main && { echo "saved"; break; }
+            echo "push failed, retry $i"; sleep $((i*5))
+          done
