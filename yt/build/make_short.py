@@ -271,6 +271,9 @@ def build_ass(words, lines, windows, spec, total, path):
                 s = w["s"]; e = chunk[k + 1]["s"] if k + 1 < len(chunk) else max(w["e"], w["s"] + 0.12)
                 if k == len(chunk) - 1:
                     e = max(e, w["e"] + 0.05)
+                    nxt = lw[c + per]["s"] if c + per < len(lw) else None
+                    if nxt is not None:
+                        e = min(e, nxt - 0.01)
                 ev.append(f"Dialogue: 1,{ass_time(s)},{ass_time(e)},Cap,,0,0,0,,{' '.join(parts)}")
     # Hook on top for the first line's window + a little.
     if hook:
@@ -306,16 +309,61 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     with open(path, "w") as f:
         f.write(header + "\n".join(ev) + "\n")
 
+# ---------------------------------------------------------------- spec check
+def clean_spec(spec, warnings):
+    """Repair everything that can be repaired; raise only on things that cannot."""
+    if not spec.get("id") or not re.fullmatch(r"[A-Za-z0-9_-]{1,40}", str(spec["id"])):
+        raise SystemExit("spec id missing or invalid")
+    lines = [l for l in spec.get("lines", []) if isinstance(l, dict) and str(l.get("text", "")).strip()]
+    if not 3 <= len(lines) <= 22:
+        raise SystemExit(f"need 3-22 lines with text, got {len(lines)}")
+    for i, l in enumerate(lines):
+        l["text"] = re.sub(r"\s+", " ", str(l["text"])).strip()
+        try:
+            l["pause"] = min(1.5, max(0.05, float(l.get("pause", 0.28))))
+        except Exception:
+            l["pause"] = 0.28
+        try:
+            l["start"] = max(0.0, float(l.get("start", 0)))
+        except Exception:
+            l["start"] = 0.0
+        c = l.get("clip")
+        if c is not None and (not isinstance(c, dict) or not str(c.get("url", "")).startswith(("https://", "lavfi:"))):
+            warnings.append(f"line {i} clip dropped (bad url)"); l.pop("clip", None)
+        elif c and "_360_640" in c["url"]:
+            warnings.append(f"line {i} clip is 360p; consider a sharper one")
+    if not any(l.get("clip") for l in lines) and not any(l.get("query") for l in lines):
+        raise SystemExit("no clips at all")
+    # the first line must have footage; borrow the first available clip
+    if not lines[0].get("clip"):
+        lines[0]["clip"] = next(l["clip"] for l in lines if l.get("clip"))
+    spec["lines"] = lines
+    try:
+        spec["speed"] = min(1.25, max(0.85, float(spec.get("speed", 1.03))))
+    except Exception:
+        spec["speed"] = 1.03
+    return spec
+
 # ---------------------------------------------------------------- main
 def main():
     if len(sys.argv) < 2:
         raise SystemExit("usage: make_short.py yt/jobs/<id>.json [--fake-tts]")
-    spec_path = sys.argv[1]; fake = "--fake-tts" in sys.argv
+    spec_path = sys.argv[1]; fake = "--fake-tts" in sys.argv or "--check" in sys.argv
     spec = json.load(open(spec_path))
+    pre_warn = []
+    spec = clean_spec(spec, pre_warn)
+    if "--check" in sys.argv:
+        # Dry run: same spec, synthetic footage + silent voice, to catch hangs/crashes before the real build.
+        fake = True
+        for i, l in enumerate(spec["lines"]):
+            l["clip"] = {"url": "lavfi:testsrc2=size=720x1280:rate=30" if i % 2 else "lavfi:smptebars=size=1080x1920:rate=30"}
+        spec["id"] = spec["id"] + "-check"
     jid = spec["id"]; lines = spec["lines"]
     out_dir = os.path.join(os.path.dirname(os.path.dirname(spec_path)), "out")
+    if "--check" in sys.argv:
+        out_dir = tempfile.mkdtemp(prefix="check-")
     os.makedirs(out_dir, exist_ok=True)
-    warnings = []; credits = []
+    warnings = list(pre_warn); credits = []
     ensure_fonts()
     work = tempfile.mkdtemp(prefix=f"short-{jid}-")
     try:

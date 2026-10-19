@@ -24,7 +24,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
 
@@ -33,7 +33,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install ffmpeg + espeak
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng fonts-dejavu-core
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng fonts-dejavu-core jq
 
       - name: Cache models and packages
         uses: actions/cache@v4
@@ -62,9 +62,25 @@ jobs:
               rm -f "yt/out/$name.mp4" "yt/out/$name.json"
             fi
             [ -f "yt/out/$name.mp4" ] && continue
+            echo "=== checking $name ==="
+            if ! timeout 180 python yt/build/make_short.py "$f" --check > /tmp/check.log 2>&1; then
+              tail -20 /tmp/check.log
+              rm -f "yt/out/$name.mp4"
+              msg=$(tail -1 /tmp/check.log | tr -d '"\\' | cut -c1-200)
+              echo "{\"id\":\"$name\",\"error\":\"job failed the dry run: $msg\"}" > "yt/out/$name.json"
+              continue
+            fi
             echo "=== building $name ==="
-            if ! timeout 900 python yt/build/make_short.py "$f"; then
-              echo "{\"id\":\"$name\",\"error\":\"build failed, see the Actions log\"}" > "yt/out/$name.json"
+            if ! timeout 720 python yt/build/make_short.py "$f"; then
+              echo "=== retry $name with the backup voice ==="
+              rm -f "yt/out/$name.mp4" "yt/out/$name.json"
+              jq '.engine="kokoro"' "$f" > /tmp/retry.json && cp /tmp/retry.json "/tmp/$name.json"
+              mkdir -p /tmp/yt/jobs && cp "/tmp/$name.json" "/tmp/yt/jobs/$name.json"
+              if timeout 600 python yt/build/make_short.py "/tmp/yt/jobs/$name.json"; then
+                cp "/tmp/yt/out/$name.mp4" "/tmp/yt/out/$name.json" yt/out/
+              else
+                echo "{\"id\":\"$name\",\"error\":\"build failed twice (story voice and backup voice), see the Actions log\"}" > "yt/out/$name.json"
+              fi
             fi
           done
 
