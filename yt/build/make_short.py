@@ -111,10 +111,10 @@ def tts_fake(lines, voice, speed, workdir):
 
 def build_voiceover(lines, voice, speed, workdir, warnings, fake=False):
     engines = [("fake", tts_fake)] if fake else [("kokoro", tts_kokoro), ("edge", tts_edge)]
-    paths = None
+    paths = None; used = None
     for name, fn in engines:
         try:
-            paths = fn(lines, voice, speed, workdir)
+            paths = fn(lines, voice, speed, workdir); used = name
             print("TTS engine:", name)
             break
         except Exception as e:
@@ -142,7 +142,7 @@ def build_voiceover(lines, voice, speed, workdir, warnings, fake=False):
     vo = os.path.join(workdir, "vo.wav")
     filt = "".join(filt_inputs) + f"concat=n={len(filt_inputs)}:v=0:a=1,loudnorm=I=-15:TP=-1.5:LRA=9[a]"
     run(["ffmpeg", "-v", "error", "-y", *parts, "-filter_complex", filt, "-map", "[a]", "-ar", str(SR), vo])
-    return vo, windows, t
+    return vo, windows, t, used
 
 # ---------------------------------------------------------------- word timing
 def word_times(vo_path, lines, windows, warnings, fake=False):
@@ -282,9 +282,9 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Cap,{cap_font},88,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,1,0,1,8,3,2,70,70,600,1
-Style: Hook,{cap_font},66,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,3,8,90,90,230,1
-Style: Label,{cap_font},62,&H0000E5FF,&H0000E5FF,&H00000000,&H80000000,-1,0,0,0,100,100,2,0,1,6,3,8,90,90,230,1
-Style: End,{cap_font},92,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,1,0,1,8,4,8,90,90,230,1
+Style: Hook,{cap_font},76,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,3,8,90,90,230,1
+Style: Label,{cap_font},68,&H0000E5FF,&H0000E5FF,&H00000000,&H80000000,-1,0,0,0,100,100,2,0,1,6,3,8,90,90,230,1
+Style: End,{cap_font},104,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,1,0,1,8,4,8,90,90,230,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -306,7 +306,7 @@ def main():
     work = tempfile.mkdtemp(prefix=f"short-{jid}-")
     try:
         # 1. voice
-        vo, windows, total = build_voiceover(lines, spec.get("voice", "am_michael"),
+        vo, windows, total, tts_used = build_voiceover(lines, spec.get("voice", "am_michael"),
                                              float(spec.get("speed", 1.08)), work, warnings, fake)
         # 2. word timings
         words = word_times(vo, lines, windows, warnings, fake)
@@ -377,7 +377,7 @@ def main():
         size = os.path.getsize(final)
         meta = {"id": jid, "duration": round(ffprobe_dur(final), 2), "bytes": size, "mb": round(size / 1048576, 2),
                 "width": OUT_W, "height": OUT_H, "words": words, "lines": windows, "credits": credits,
-                "warnings": warnings, "fakeTts": fake}
+                "warnings": warnings, "fakeTts": fake, "tts": tts_used}
         json.dump(meta, open(os.path.join(out_dir, f"{jid}.json"), "w"), indent=1)
         print(json.dumps({k: v for k, v in meta.items() if k not in ("words", "lines")}, indent=1))
         if size > MAX_MB * 1048576 * 1.02:
