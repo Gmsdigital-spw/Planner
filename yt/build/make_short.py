@@ -447,7 +447,8 @@ def main():
         # 2. word timings
         words = word_times(vo, lines, windows, warnings, fake)
         # 3. scenes: one per line; a line without a clip shares the previous clip
-        scene_files = []; prev_clip = None; prev_img = None; credits_ai = False
+        scene_files = []; scene_durs = []; prev_clip = None; prev_img = None; credits_ai = False
+        XF = 0.3 if (any(l.get("image") for l in lines) and spec.get("transition", "dissolve") == "dissolve") else 0.0
         for i, ln in enumerate(lines):
             s, e = windows[i]
             nxt = windows[i + 1][0] if i + 1 < len(lines) else total
@@ -467,7 +468,21 @@ def main():
                         raise SystemExit("cartoon images failed (" + "; ".join(warnings[-2:]) + "); not shipping a half-made video")
                     warnings.append(f"line {i}: image failed, reused previous image")
                 motions = ["push", "panr", "pull", "panl"]
-                scene_files.append(make_image_scene(prev_img, dur, i, work, im.get("motion") or motions[i % 4]))
+                mo = im.get("motion") or motions[i % 4]
+                sdur = dur + (XF if i < len(lines) - 1 else 0.0)
+                outp = os.path.join(work, f"scene{i:02d}.mp4")
+                try:
+                    if fake:
+                        raise RuntimeError("dry run uses the quick zoom")
+                    sys.path.insert(0, ROOT)
+                    import motion as _motion
+                    _motion.render(prev_img, outp, sdur, mo, W=W, H=H, seed=i)
+                    scene_files.append(outp)
+                except Exception as ex:
+                    if not fake:
+                        warnings.append(f"line {i}: 3D motion failed ({ex!r}); used simple zoom")
+                    scene_files.append(make_image_scene(prev_img, sdur, i, work, mo if mo != "orbit" else "push"))
+                scene_durs.append(sdur)
                 credits_ai = True
                 continue
             clip = ln.get("clip")
@@ -498,7 +513,9 @@ def main():
                     warnings.append(f"clip download failed for line {i}: {ex!r}")
             if not prev_clip:
                 raise SystemExit(f"line {i} has no usable clip and nothing to reuse")
-            scene_files.append(make_scene(prev_clip, dur, float(ln.get("start", 0)), i, work, 1 if i % 2 == 0 else -1))
+            sdur = dur + (XF if i < len(lines) - 1 else 0.0)
+            scene_files.append(make_scene(prev_clip, sdur, float(ln.get("start", 0)), i, work, 1 if i % 2 == 0 else -1))
+            scene_durs.append(sdur)
         # 4. captions
         ass = os.path.join(work, "caps.ass"); build_ass(words, lines, windows, spec, total, ass)
         # 5. concat video, lay captions, mix audio
@@ -507,7 +524,20 @@ def main():
             for sf in scene_files:
                 f.write(f"file '{sf}'\n")
         joined = os.path.join(work, "joined.mp4")
-        run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", joined])
+        if XF > 0 and len(scene_files) > 1:
+            ins = []
+            for sf in scene_files:
+                ins += ["-i", sf]
+            chain = []; prev = "[0:v]"; off = 0.0
+            for k in range(1, len(scene_files)):
+                off += scene_durs[k - 1] - XF
+                lab = f"[x{k}]"
+                chain.append(f"{prev}[{k}:v]xfade=transition=fade:duration={XF}:offset={off:.3f}{lab}")
+                prev = lab
+            run(["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", ";".join(chain), "-map", prev,
+                 "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", joined])
+        else:
+            run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", joined])
         music = spec.get("music_url"); mpath = None
         if music and not fake:
             try:

@@ -1,0 +1,119 @@
+{
+ "id": "ep13",
+ "title": "I Bullied the School Janitor... Then He Did THIS 😢 #shorts",
+ "hook": "I BULLIED THE JANITOR. THEN THIS.",
+ "end_text": "",
+ "loop": true,
+ "engine": "edge",
+ "voice": "andrew",
+ "speed": 1.02,
+ "caption_words": 3,
+ "transition": "dissolve",
+ "style": "3D animated movie still, Pixar and Illumination style CGI render, cute stylized cartoon characters, soft cinematic lighting, vibrant saturated colors, glossy detailed textures, shallow depth of field, character centered in frame, no text, no letters, no watermark",
+ "cast": {
+  "kyle": "Kyle, a teenage cartoon boy whose whole head is a big fuzzy brown kiwi fruit (fuzzy brown kiwi skin, big expressive cartoon eyes and mouth on the kiwi, no hair, no human face), wearing a red varsity jacket and jeans",
+  "banks": "Mr. Banks, an old cartoon janitor whose whole head is a ripe yellow banana with a few brown spots (kind wrinkled cartoon face on the banana, bushy grey mustache, small round glasses, no human head), wearing a navy blue janitor uniform",
+  "grapes": "two teenage cartoon boys whose whole heads are big shiny purple grapes (cartoon faces on the grapes, no hair, no human faces), wearing hoodies",
+  "mom": "Kyle's mom, a cartoon woman whose whole head is a big fuzzy brown kiwi fruit (tired kind cartoon eyes and mouth on the kiwi, no human face), wearing a grey cardigan"
+ },
+ "lines": [
+  {
+   "text": "The old janitor everyone laughed at paid for my senior trip... and I was the one throwing grapes at him.",
+   "image": {
+    "prompt": "{kyle} sitting alone on a wooden bench in a sunny school courtyard holding an envelope, emotional teary eyes, golden afternoon light",
+    "motion": "push"
+   },
+   "pause": 0.4
+  },
+  {
+   "text": "His name was Mr. Banks. He ate lunch alone on the same bench every day.",
+   "image": {
+    "prompt": "{banks} sitting alone on a wooden bench in a school courtyard eating a sandwich from a brown paper bag, peaceful, students in the blurry background",
+    "motion": "panr"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "My friends and I threw grapes at him from the cafeteria window. Every single day.",
+   "image": {
+    "prompt": "{kyle} and {grapes} laughing and leaning out of a school cafeteria window, mischievous grins, bright cafeteria",
+    "motion": "punch"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "He never said a word. He just swept them up.",
+   "image": {
+    "prompt": "{banks} quietly sweeping the school hallway floor with a broom, calm humble expression, long hallway with blue lockers",
+    "motion": "panl"
+   },
+   "pause": 0.45
+  },
+  {
+   "text": "Then my mom lost her job.",
+   "image": {
+    "prompt": "{mom} sitting at a small kitchen table at night looking at bills with a worried face, {kyle} watching from the doorway, warm dim lamp light",
+    "motion": "pull"
+   },
+   "pause": 0.4,
+   "label": "THAT FALL"
+  },
+  {
+   "text": "The senior trip cost two hundred dollars. We didn't have twenty.",
+   "image": {
+    "prompt": "{kyle} holding an empty open wallet with a sad face in a school hallway, other students excitedly walking past",
+    "motion": "push"
+   },
+   "pause": 0.4
+  },
+  {
+   "text": "I sat outside the office and cried where I thought nobody could see.",
+   "image": {
+    "prompt": "{kyle} sitting on a chair outside a school office with his head down, a tear on his cheek, empty hallway",
+    "motion": "pull"
+   },
+   "pause": 0.5
+  },
+  {
+   "text": "Monday morning, the office called me in. My trip was paid. In full.",
+   "image": {
+    "prompt": "{kyle} in a school office looking shocked and confused, jaw dropped, a kind secretary smiling behind a desk",
+    "motion": "punch"
+   },
+   "pause": 0.4,
+   "label": "MONDAY"
+  },
+  {
+   "text": "No name. Just an envelope... with a little banana sticker on it.",
+   "image": {
+    "prompt": "close-up of {kyle}'s hands holding a white envelope with a small yellow banana sticker on it, soft light",
+    "motion": "push"
+   },
+   "pause": 0.5
+  },
+  {
+   "text": "I ran to his bench. He was eating his lunch like always.",
+   "image": {
+    "prompt": "{kyle} running across a sunny school courtyard toward a wooden bench where {banks} sits eating lunch",
+    "motion": "panr"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "He looked up, smiled, and said... 'Pick up your grapes, kid.'",
+   "image": {
+    "prompt": "{banks} on a bench smiling warmly and looking up, eyes twinkling behind round glasses, golden light",
+    "motion": "punch"
+   },
+   "pause": 0.6
+  },
+  {
+   "text": "I eat lunch on that bench every day now. Because the old janitor everyone laughed at...",
+   "image": {
+    "prompt": "{kyle} sitting alone on a wooden bench in a sunny school courtyard holding an envelope, emotional teary eyes, golden afternoon light",
+    "motion": "push"
+   },
+   "pause": 0.05
+  }
+ ]
+}

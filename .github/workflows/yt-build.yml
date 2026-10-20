@@ -24,7 +24,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
 
@@ -46,7 +46,7 @@ jobs:
       - name: Install voice + timing tools
         run: |
           python -m pip install -q --upgrade pip
-          python -m pip install -q "kokoro>=0.9.4" soundfile faster-whisper edge-tts
+          python -m pip install -q "kokoro>=0.9.4" soundfile faster-whisper edge-tts transformers opencv-python-headless pillow
 
       - name: Build the Shorts
         env:
@@ -65,7 +65,7 @@ jobs:
             fi
             [ -f "yt/out/$name.mp4" ] && continue
             echo "=== checking $name ==="
-            if ! timeout 180 python yt/build/make_short.py "$f" --check > /tmp/check.log 2>&1; then
+            if ! timeout 480 python yt/build/make_short.py "$f" --check > /tmp/check.log 2>&1; then
               tail -20 /tmp/check.log
               rm -f "yt/out/$name.mp4"
               msg=$(tail -1 /tmp/check.log | tr -d '"\\' | cut -c1-200)
@@ -73,7 +73,7 @@ jobs:
               continue
             fi
             echo "=== building $name ==="
-            if ! timeout 720 python yt/build/make_short.py "$f" > /tmp/build1.log 2>&1; then
+            if ! timeout 1500 python yt/build/make_short.py "$f" > /tmp/build1.log 2>&1; then
               tail -15 /tmp/build1.log
               echo "=== retry $name with the backup voice ==="
               rm -f "yt/out/$name.mp4" "yt/out/$name.json"
