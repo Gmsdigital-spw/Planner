@@ -1,0 +1,1 @@
+{"id":"auth-finish-1","stopOnError":true,"ops":[{"op":"etsy_auth_finish","code":"pOFSb6Lzgu7vAH2lpOOCxgJkfQ8kbjnZiUTPA2vEGHPcXMubqEvPhwwyLGCnB1tq7764P8eOOCSOlA9-WDs2eHJl8uOnkz5KnUA_","state":"CxGtdPjzDbN3O5S8W7UsCg"},{"op":"etsy","method":"GET","path":"/shops/68605457"}]}
