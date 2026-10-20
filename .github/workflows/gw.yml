@@ -1,0 +1,48 @@
+name: Starship free gateway
+
+# Runs Etsy + Zernio (TikTok/Pinterest) API jobs for the GM Starship for free,
+# so the crew doesn't spend Make operations. Jobs: gw/jobs/*.json -> results gw/out/*.json.
+# Only touches the gw/ folder.
+on:
+  push:
+    paths:
+      - "gw/jobs/**"
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "Job id to re-run (blank = every job without a result)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: starship-gw
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -q requests cryptography
+      - name: Run jobs
+        env:
+          ETSY_KEYSTRING: ${{ secrets.ETSY_KEYSTRING }}
+          ETSY_SHARED_SECRET: ${{ secrets.ETSY_SHARED_SECRET }}
+          ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+          STARSHIP_KEY: ${{ secrets.STARSHIP_KEY }}
+        run: python gw/run.py "${{ github.event.inputs.job }}"
+      - name: Save results
+        run: |
+          git config user.name "starship-gateway"
+          git config user.email "starship-gateway@users.noreply.github.com"
+          git add gw/out gw/state
+          git diff --cached --quiet && exit 0
+          git commit -qm "gateway: results"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep $((i*5)); done
+          exit 1
