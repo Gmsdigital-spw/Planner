@@ -215,7 +215,15 @@ def file_bytes(o):
         if ROOT.parent.resolve() not in p.parents or not p.exists():
             raise RuntimeError(f"encrypted file not found: {o['fileEnc']}")
         vf = Fernet(base64.urlsafe_b64encode(hashlib.sha256(SKEY.strip().encode()).digest()))
-        return vf.decrypt(p.read_bytes())
+        raw = p.read_bytes()
+        if raw.startswith(b"SEAL1"):
+            from cryptography.hazmat.primitives import serialization, hashes
+            from cryptography.hazmat.primitives.asymmetric import padding
+            priv = serialization.load_pem_private_key(vf.decrypt((ROOT / "state" / "vault_priv.enc").read_bytes()), None)
+            n = int.from_bytes(raw[5:7], "big")
+            fk = priv.decrypt(raw[7:7 + n], padding.OAEP(mgf=padding.MGF1(hashes.SHA256()), algorithm=hashes.SHA256(), label=None))
+            return Fernet(fk).decrypt(raw[7 + n:])
+        return vf.decrypt(raw)
     f = requests.get(o["fileUrl"], timeout=300)
     if f.status_code != 200 or not f.content:
         raise RuntimeError(f"could not download {o['fileUrl']}: {f.status_code}")
