@@ -272,9 +272,24 @@ def square_thumb_blob(url, H, size=1000):
     return dj["signed_id"]
 
 
+def gumroad_name_ok(H, o):
+    """Privacy lock: only publish when the public store name is the shop name (never the owner's real name)."""
+    want = (o.get("requireStoreName") or "").strip().lower()
+    if not want:
+        return True, None
+    u = requests.get(GUMROAD + "/user", headers=H, timeout=60).json().get("user") or {}
+    shown = (u.get("name") or u.get("display_name") or "").strip()
+    return shown.lower() == want, shown
+
+
 def op_gumroad_mirror(o, st):
     H = gumroad_hdr()
     log = []
+    if o.get("publish"):
+        ok, shown = gumroad_name_ok(H, o)
+        if not ok:
+            o = dict(o, publish=False)
+            log.append({"step": "privacy_lock", "ok": False, "msg": "store name is not the shop name yet, kept as draft"})
     ex = requests.get(GUMROAD + "/products", headers=H, timeout=60).json()
     for p in (ex.get("products") or []):
         if p.get("name") == o["name"]:
