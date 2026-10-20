@@ -11,10 +11,10 @@
  "transition": "dissolve",
  "style": "3D animated movie still, Pixar and Illumination style CGI render, cute stylized cartoon characters, soft cinematic lighting, vibrant saturated colors, glossy detailed textures, shallow depth of field, character centered in frame, no text, no letters, no watermark",
  "cast": {
-  "kyle": "Kyle, a teenage cartoon boy whose whole head is a big fuzzy brown kiwi fruit (fuzzy brown kiwi skin, big expressive cartoon eyes and mouth on the kiwi, no hair, no human face), wearing a red varsity jacket and jeans",
+  "kyle": "Kyle, a teenage cartoon boy whose whole head is a big round bright orange fruit (shiny dimpled orange peel, small green leaf on top, big expressive cartoon eyes and mouth on the orange, no hair, no human face), wearing a red varsity jacket and jeans",
   "banks": "Mr. Banks, an old cartoon janitor whose whole head is a ripe yellow banana with a few brown spots (kind wrinkled cartoon face on the banana, bushy grey mustache, small round glasses, no human head), wearing a navy blue janitor uniform",
   "grapes": "two teenage cartoon boys whose whole heads are big shiny purple grapes (cartoon faces on the grapes, no hair, no human faces), wearing hoodies",
-  "mom": "Kyle's mom, a cartoon woman whose whole head is a big fuzzy brown kiwi fruit (tired kind cartoon eyes and mouth on the kiwi, no human face), wearing a grey cardigan"
+  "mom": "Kyle's mom, a cartoon woman whose whole head is a big round orange fruit (shiny dimpled orange peel, tired kind cartoon eyes and mouth on the orange, no hair, no human face), wearing a grey cardigan"
  },
  "lines": [
   {
@@ -115,5 +115,6 @@
    },
    "pause": 0.05
   }
- ]
+ ],
+ "rev": 2
 }
