@@ -1,0 +1,1 @@
+{"id": "tt-dry-1", "at": "2026-10-20T19:45:59Z", "ok": true, "results": [{"i": 0, "op": "zernio", "tag": "dry", "status": 200, "ok": true, "data": {"dryRun": true, "canPublish": true, "tiktok": [{"accountId": "6ad7a7ecea18e081fb3894d2", "canPublish": true, "reason": "Account can publish now."}]}, "ms": 286}]}
