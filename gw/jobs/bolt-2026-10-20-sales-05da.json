@@ -1,0 +1,1 @@
+{"id":"bolt-2026-10-20-sales-05da","stopOnError":false,"ops":[{"op":"gumroad","method":"GET","path":"/sales?after=2026-10-01","tag":"sales"}]}
