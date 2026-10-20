@@ -29,7 +29,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: python -m pip install -q requests cryptography
+      - run: python -m pip install -q requests cryptography pillow
       - name: Run jobs
         env:
           ETSY_KEYSTRING: ${{ secrets.ETSY_KEYSTRING }}

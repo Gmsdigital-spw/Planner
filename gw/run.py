@@ -244,6 +244,31 @@ def op_gumroad_file(o, st):
     return c.status_code, out
 
 
+def square_thumb_blob(url, H, size=1000):
+    """Center-crop an image to a square JPEG and reserve+upload it as a Gumroad direct-upload blob."""
+    import io
+    from PIL import Image
+    r = requests.get(url, timeout=120)
+    r.raise_for_status()
+    im = Image.open(io.BytesIO(r.content)).convert("RGB")
+    w, h = im.size
+    m = min(w, h)
+    im = im.crop(((w - m) // 2, (h - m) // 2, (w - m) // 2 + m, (h - m) // 2 + m)).resize((size, size), Image.LANCZOS)
+    buf = io.BytesIO()
+    im.save(buf, "JPEG", quality=88)
+    data = buf.getvalue()
+    blob = {"filename": "thumbnail.jpg", "byte_size": len(data), "content_type": "image/jpeg",
+            "checksum": base64.b64encode(hashlib.md5(data).digest()).decode()}
+    d = requests.post(GUMROAD + "/direct_uploads", headers=H, json={"blob": blob}, timeout=60)
+    dj = body_of(d)
+    if d.status_code != 200 or not isinstance(dj, dict) or not dj.get("signed_id"):
+        raise RuntimeError(f"direct upload reservation failed: {d.status_code} {str(dj)[:200]}")
+    up = requests.put(dj["direct_upload"]["url"], data=data, headers=dj["direct_upload"].get("headers") or {}, timeout=120)
+    if up.status_code not in (200, 201, 204):
+        raise RuntimeError(f"thumbnail upload failed: {up.status_code}")
+    return dj["signed_id"]
+
+
 def op_gumroad_mirror(o, st):
     H = gumroad_hdr()
     log = []
@@ -277,7 +302,16 @@ def op_gumroad_mirror(o, st):
     for u in (o.get("covers") or [])[:8]:
         c = requests.post(GUMROAD + f"/products/{pid}/covers", headers=H, json={"url": u}, timeout=120)
         log.append({"step": "cover", "status": c.status_code, "ok": isinstance(body_of(c), dict) and body_of(c).get("success")})
-    if o.get("thumbnail"):
+    if o.get("thumbFrom"):
+        try:
+            sid = square_thumb_blob(o["thumbFrom"], H)
+            t = requests.post(GUMROAD + f"/products/{pid}/thumbnail", headers=H, json={"signed_blob_id": sid}, timeout=120)
+            tb = body_of(t)
+            log.append({"step": "thumbnail", "status": t.status_code, "ok": isinstance(tb, dict) and tb.get("success"),
+                        "msg": tb.get("message") if isinstance(tb, dict) else None})
+        except Exception as e:
+            log.append({"step": "thumbnail", "ok": False, "msg": f"{type(e).__name__}: {e}"[:300]})
+    elif o.get("thumbnail"):
         t = requests.post(GUMROAD + f"/products/{pid}/thumbnail", headers=H, json={"url": o["thumbnail"]}, timeout=120)
         tb = body_of(t)
         log.append({"step": "thumbnail", "status": t.status_code, "ok": isinstance(tb, dict) and tb.get("success"),
