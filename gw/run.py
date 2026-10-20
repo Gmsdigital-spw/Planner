@@ -300,7 +300,7 @@ def op_gumroad_mirror(o, st):
             return 200, {"skipped": "exists", "id": pid, "url": p.get("short_url"), "published": p.get("published"), "log": log}
     code, up = op_gumroad_file(o, st)
     if code != 200 or not isinstance(up, dict) or not up.get("file_url"):
-        return code, {"failedAt": "file", "body": up}
+        return (code if code >= 400 else 422), {"failedAt": "file", "body": up}
     body = {"name": o["name"], "price": int(o["price"]), "description": o.get("description", ""),
             "draft": True, "files": [{"url": up["file_url"], "display_name": o.get("displayName") or o["name"]}]}
     if o.get("summary"):
@@ -314,7 +314,7 @@ def op_gumroad_mirror(o, st):
     r = requests.post(GUMROAD + "/products", headers=H, json=body, timeout=180)
     cr = body_of(r)
     if r.status_code != 200 or not isinstance(cr, dict) or not cr.get("success"):
-        return r.status_code, {"failedAt": "create", "body": cr}
+        return (r.status_code if r.status_code >= 400 else 422), {"failedAt": "create", "body": cr}
     prod = cr.get("product") or {}
     pid = prod.get("id")
     for u in (o.get("covers") or [])[:8]:
