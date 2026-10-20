@@ -1,0 +1,1 @@
+{"id":"claude-2026-10-20-gumchk-0107","ops":[{"op":"gumroad","method":"GET","path":"/user","tag":"me"},{"op":"gumroad","method":"GET","path":"/products/Oa4iJYRbyLH0iuSHn3AWPQ==","tag":"p"}]}
