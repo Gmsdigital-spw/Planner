@@ -1,0 +1,1 @@
+{"id":"claude-2026-10-20-gumname-0c2e","ops":[{"op":"gumroad","method":"PUT","path":"/user","body":{"name":"GM's Digital Creations"},"tag":"rename"},{"op":"gumroad","method":"GET","path":"/user","tag":"me"}]}
