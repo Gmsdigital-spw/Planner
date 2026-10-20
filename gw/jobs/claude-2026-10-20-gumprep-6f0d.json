@@ -1,0 +1,1 @@
+{"id":"claude-2026-10-20-gumprep-6f0d","ops":[{"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=active&limit=100&includes=Images","tag":"listings"},{"op":"gumroad","method":"GET","path":"/categories","tag":"cats"}]}

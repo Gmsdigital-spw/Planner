@@ -17,6 +17,11 @@ Ops:
   {"op":"etsy_auth_finish","code":"...","state":"..."}
   {"op":"gumroad","method":"GET|POST|PUT|DELETE","path":"/products","body":{...}}   # path after /v2
   {"op":"gumroad_file","fileUrl":"https://...","fileName":"x.pdf"}  -> {"file_url": ...} for products' files[]
+  {"op":"gumroad_mirror","key":"<starship product id>","name":"...","price":499,"description":"<html>",
+   "summary":"...","tags":[...],"category":"<path>","fileEnc":"gw/vault/<id>.enc","fileName":"x.pdf",
+   "covers":["https://..."],"thumbnail":"https://...","publish":false}
+     -> one product end to end (skips if a product with the same name already exists).
+     fileEnc = the product file encrypted with STARSHIP_KEY (Fernet), so the public repo never holds a usable file.
 """
 import base64, hashlib, json, os, secrets, sys, time, urllib.parse
 from pathlib import Path
@@ -202,12 +207,21 @@ def op_gumroad(o, st):
     return r.status_code, body_of(r)
 
 
-def op_gumroad_file(o, st):
+def file_bytes(o):
+    if o.get("fileEnc"):
+        p = (ROOT.parent / o["fileEnc"]).resolve()
+        if ROOT.parent.resolve() not in p.parents or not p.exists():
+            raise RuntimeError(f"encrypted file not found: {o['fileEnc']}")
+        return fernet().decrypt(p.read_bytes())
     f = requests.get(o["fileUrl"], timeout=300)
     if f.status_code != 200 or not f.content:
         raise RuntimeError(f"could not download {o['fileUrl']}: {f.status_code}")
-    data = f.content
-    name = o.get("fileName") or o["fileUrl"].rsplit("/", 1)[-1] or "file"
+    return f.content
+
+
+def op_gumroad_file(o, st):
+    data = file_bytes(o)
+    name = o.get("fileName") or (o.get("fileUrl") or "file").rsplit("/", 1)[-1] or "file"
     r = requests.post(GUMROAD + "/files/presign", headers=gumroad_hdr(),
                       json={"filename": name, "file_size": len(data)}, timeout=60)
     pre = body_of(r)
@@ -230,7 +244,54 @@ def op_gumroad_file(o, st):
     return c.status_code, out
 
 
-OPS = {"gumroad": op_gumroad, "gumroad_file": op_gumroad_file, "selftest": op_selftest, "zernio": op_zernio, "etsy": op_etsy, "etsy_upload": op_etsy_upload,
+def op_gumroad_mirror(o, st):
+    H = gumroad_hdr()
+    log = []
+    ex = requests.get(GUMROAD + "/products", headers=H, timeout=60).json()
+    for p in (ex.get("products") or []):
+        if p.get("name") == o["name"]:
+            pid = p["id"]
+            if o.get("publish") and not p.get("published"):
+                e = requests.put(GUMROAD + f"/products/{pid}/enable", headers=H, timeout=60)
+                log.append({"step": "enable", "status": e.status_code, "body": body_of(e)})
+            return 200, {"skipped": "exists", "id": pid, "url": p.get("short_url"), "published": p.get("published"), "log": log}
+    code, up = op_gumroad_file(o, st)
+    if code != 200 or not isinstance(up, dict) or not up.get("file_url"):
+        return code, {"failedAt": "file", "body": up}
+    body = {"name": o["name"], "price": int(o["price"]), "description": o.get("description", ""),
+            "draft": True, "files": [{"url": up["file_url"], "display_name": o.get("displayName") or o["name"]}]}
+    if o.get("summary"):
+        body["custom_summary"] = o["summary"][:250]
+    if o.get("tags"):
+        body["tags"] = list(o["tags"])[:5]
+    if o.get("category"):
+        body["category"] = o["category"]
+    if o.get("permalink"):
+        body["custom_permalink"] = o["permalink"]
+    r = requests.post(GUMROAD + "/products", headers=H, json=body, timeout=180)
+    cr = body_of(r)
+    if r.status_code != 200 or not isinstance(cr, dict) or not cr.get("success"):
+        return r.status_code, {"failedAt": "create", "body": cr}
+    prod = cr.get("product") or {}
+    pid = prod.get("id")
+    for u in (o.get("covers") or [])[:8]:
+        c = requests.post(GUMROAD + f"/products/{pid}/covers", headers=H, json={"url": u}, timeout=120)
+        log.append({"step": "cover", "status": c.status_code, "ok": isinstance(body_of(c), dict) and body_of(c).get("success")})
+    if o.get("thumbnail"):
+        t = requests.post(GUMROAD + f"/products/{pid}/thumbnail", headers=H, json={"url": o["thumbnail"]}, timeout=120)
+        tb = body_of(t)
+        log.append({"step": "thumbnail", "status": t.status_code, "ok": isinstance(tb, dict) and tb.get("success"),
+                    "msg": tb.get("message") if isinstance(tb, dict) else None})
+    published = False
+    if o.get("publish"):
+        e = requests.put(GUMROAD + f"/products/{pid}/enable", headers=H, timeout=60)
+        eb = body_of(e)
+        published = isinstance(eb, dict) and bool(eb.get("success"))
+        log.append({"step": "enable", "status": e.status_code, "body": eb if not published else "ok"})
+    return 200, {"id": pid, "url": prod.get("short_url"), "published": published, "warning": cr.get("warning") or cr.get("message"), "log": log}
+
+
+OPS = {"gumroad": op_gumroad, "gumroad_mirror": op_gumroad_mirror, "gumroad_file": op_gumroad_file, "selftest": op_selftest, "zernio": op_zernio, "etsy": op_etsy, "etsy_upload": op_etsy_upload,
        "etsy_auth_start": op_etsy_auth_start, "etsy_auth_finish": op_etsy_auth_finish}
 
 
