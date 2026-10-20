@@ -214,7 +214,8 @@ def file_bytes(o):
         p = (ROOT.parent / o["fileEnc"]).resolve()
         if ROOT.parent.resolve() not in p.parents or not p.exists():
             raise RuntimeError(f"encrypted file not found: {o['fileEnc']}")
-        return fernet().decrypt(p.read_bytes())
+        vf = Fernet(base64.urlsafe_b64encode(hashlib.sha256(SKEY.strip().encode()).digest()))
+        return vf.decrypt(p.read_bytes())
     f = requests.get(o["fileUrl"], timeout=300)
     if f.status_code != 200 or not f.content:
         raise RuntimeError(f"could not download {o['fileUrl']}: {f.status_code}")
