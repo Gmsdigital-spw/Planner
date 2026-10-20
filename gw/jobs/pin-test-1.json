@@ -1,0 +1,4 @@
+{"id":"pin-test-1","ops":[
+ {"op":"zernio","method":"GET","path":"/accounts/6ad7b245350e86dff5e25133/pinterest-boards","tag":"boards"},
+ {"op":"zernio","method":"POST","path":"/posts","tag":"draft","idem":"pin-test-1-draft","body":{"content":"Test pin description (draft, never published)","isDraft":true,"mediaItems":[{"type":"image","url":"https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/pink-coquette-verse-art-1.jpg"}],"platforms":[{"platform":"pinterest","accountId":"6ad7b245350e86dff5e25133","platformSpecificData":{"boardId":"1096274802985595727","title":"Test pin title","link":"https://www.etsy.com/shop/GMsDigitalCreations"}}]}}
+]}
