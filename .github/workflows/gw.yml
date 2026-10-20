@@ -36,6 +36,7 @@ jobs:
           ETSY_SHARED_SECRET: ${{ secrets.ETSY_SHARED_SECRET }}
           ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
           STARSHIP_KEY: ${{ secrets.STARSHIP_KEY }}
+          GUMROAD_TOKEN: ${{ secrets.GUMROAD_TOKEN }}
         run: python gw/run.py "${{ github.event.inputs.job }}"
       - name: Save results
         run: |

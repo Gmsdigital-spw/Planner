@@ -15,6 +15,8 @@ Ops:
    "field":"image","fileName":"x.jpg","fields":{"rank":"1","alt_text":"..."}}
   {"op":"etsy_auth_start"}            -> gives the Etsy authorize link
   {"op":"etsy_auth_finish","code":"...","state":"..."}
+  {"op":"gumroad","method":"GET|POST|PUT|DELETE","path":"/products","body":{...}}   # path after /v2
+  {"op":"gumroad_file","fileUrl":"https://...","fileName":"x.pdf"}  -> {"file_url": ...} for products' files[]
 """
 import base64, hashlib, json, os, secrets, sys, time, urllib.parse
 from pathlib import Path
@@ -30,6 +32,8 @@ REDIRECT = os.environ.get("ETSY_REDIRECT", "https://gmsdigital-spw.github.io/pla
 SCOPES = "listings_r listings_w listings_d shops_r shops_w transactions_r profile_r"
 KEY, SECRET = os.environ.get("ETSY_KEYSTRING", ""), os.environ.get("ETSY_SHARED_SECRET", "")
 ZKEY, SKEY = os.environ.get("ZERNIO_API_KEY", ""), os.environ.get("STARSHIP_KEY", "")
+GKEY = os.environ.get("GUMROAD_TOKEN", "")
+GUMROAD = "https://api.gumroad.com/v2"
 SENSITIVE = ("token", "secret", "password", "authorization", "cookie", "apikey", "api_key")
 MAX_OUT = 400_000
 
@@ -110,7 +114,7 @@ def etsy_call(st, method, path, **kw):
 # ---------- ops ----------
 def op_selftest(o, st):
     return 200, {"configured": {"etsyKeystring": bool(KEY), "etsySharedSec": bool(SECRET),
-                             "zernio": bool(ZKEY), "starship": bool(SKEY)},
+                             "zernio": bool(ZKEY), "starship": bool(SKEY), "gumroad": bool(GKEY)},
                  "etsyAuthorized": bool(st.get("refresh_token")), "redirect": REDIRECT}
 
 
@@ -186,7 +190,47 @@ def op_etsy_auth_finish(o, st):
     return 200, {"authorized": True, "me": body_of(me)}
 
 
-OPS = {"selftest": op_selftest, "zernio": op_zernio, "etsy": op_etsy, "etsy_upload": op_etsy_upload,
+def gumroad_hdr():
+    if not GKEY:
+        raise RuntimeError("GUMROAD_TOKEN secret is missing")
+    return {"Authorization": f"Bearer {GKEY}"}
+
+
+def op_gumroad(o, st):
+    r = requests.request(o.get("method", "GET").upper(), GUMROAD + o["path"], headers=gumroad_hdr(),
+                         json=o.get("body"), timeout=180)
+    return r.status_code, body_of(r)
+
+
+def op_gumroad_file(o, st):
+    f = requests.get(o["fileUrl"], timeout=300)
+    if f.status_code != 200 or not f.content:
+        raise RuntimeError(f"could not download {o['fileUrl']}: {f.status_code}")
+    data = f.content
+    name = o.get("fileName") or o["fileUrl"].rsplit("/", 1)[-1] or "file"
+    r = requests.post(GUMROAD + "/files/presign", headers=gumroad_hdr(),
+                      json={"filename": name, "file_size": len(data)}, timeout=60)
+    pre = body_of(r)
+    if r.status_code != 200 or not isinstance(pre, dict) or not pre.get("success"):
+        return r.status_code, pre
+    size, parts = 100 * 1024 * 1024, []
+    for p in pre["parts"]:
+        n = int(p["part_number"])
+        u = requests.put(p["presigned_url"], data=data[(n - 1) * size:n * size], timeout=300)
+        if u.status_code != 200:
+            requests.post(GUMROAD + "/files/abort", headers=gumroad_hdr(),
+                          json={"upload_id": pre["upload_id"], "key": pre["key"]}, timeout=60)
+            raise RuntimeError(f"part {n} upload failed: {u.status_code}")
+        parts.append({"part_number": n, "etag": u.headers.get("ETag", "").strip()})
+    c = requests.post(GUMROAD + "/files/complete", headers=gumroad_hdr(),
+                      json={"upload_id": pre["upload_id"], "key": pre["key"], "parts": parts}, timeout=120)
+    out = body_of(c)
+    if isinstance(out, dict):
+        out.update(fileName=name, bytes=len(data))
+    return c.status_code, out
+
+
+OPS = {"gumroad": op_gumroad, "gumroad_file": op_gumroad_file, "selftest": op_selftest, "zernio": op_zernio, "etsy": op_etsy, "etsy_upload": op_etsy_upload,
        "etsy_auth_start": op_etsy_auth_start, "etsy_auth_finish": op_etsy_auth_finish}
 
 
