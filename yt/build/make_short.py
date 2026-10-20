@@ -37,6 +37,10 @@ W, H = 1080, 1920          # render size
 OUT_W, OUT_H = 720, 1280   # delivered size (keeps the file under Make's 5 MB limit)
 MAX_MB = 4.45
 SR = 24000
+# Clearer narration: cut rumble, thin the boxy low-mids, lift presence, even out the level.
+VOICE_FX = ("highpass=f=75,equalizer=f=280:t=q:w=1.1:g=-2.5,equalizer=f=3200:t=q:w=1.3:g=3,"
+            "equalizer=f=9000:t=q:w=1:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=5:release=90:makeup=2")
+MUSIC_MOODS = ("emotional", "tense", "uplifting", "cozy")
 
 def run(cmd, **kw):
     print("$", " ".join(str(c) for c in cmd), flush=True)
@@ -154,7 +158,7 @@ def build_voiceover(lines, voice, speed, workdir, warnings, fake=False, loop=Fal
     parts += ["-f", "lavfi", "-t", f"{tail:.2f}", "-i", f"anullsrc=r={SR}:cl=mono"]
     filt_inputs.append(f"[{idx}:a]")
     vo = os.path.join(workdir, "vo.wav")
-    filt = "".join(filt_inputs) + f"concat=n={len(filt_inputs)}:v=0:a=1,loudnorm=I=-15:TP=-1.5:LRA=9[a]"
+    filt = "".join(filt_inputs) + f"concat=n={len(filt_inputs)}:v=0:a=1,{VOICE_FX},loudnorm=I=-15:TP=-1.5:LRA=9[a]"
     run(["ffmpeg", "-v", "error", "-y", *parts, "-filter_complex", filt, "-map", "[a]", "-ar", str(SR), vo])
     return vo, windows, t, used
 
@@ -549,6 +553,17 @@ def main():
         else:
             run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", joined])
         music = spec.get("music_url"); mpath = None
+        mood = str(spec.get("music", "emotional")).lower()
+        if not music and not fake and mood in MUSIC_MOODS:
+            try:
+                sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                import music as _music
+                mpath = os.path.join(work, "music.wav")
+                seed = sum(ord(c) for c in jid) % 1000
+                _music.write_wav(mpath, _music.make(mood, total + 1.5, seed))
+                spec.setdefault("music_volume", 0.13)
+            except Exception as ex:
+                warnings.append(f"music generation failed: {ex!r}"); mpath = None
         if music and not fake:
             try:
                 mpath = os.path.join(work, "music"); fetch_clip(music, mpath)
@@ -561,7 +576,7 @@ def main():
             inputs += ["-stream_loop", "-1", "-i", mpath]
             af = (f"[2:a]volume={mv},aformat=sample_rates={SR}:channel_layouts=mono[m];"
                   f"[m][1:a]sidechaincompress=threshold=0.03:ratio=6:attack=15:release=350[md];"
-                  f"[1:a][md]amix=inputs=2:duration=first:dropout_transition=0" + ("" if loop else f",afade=t=out:st={max(0,total-0.6):.2f}:d=0.6") + "[a]")
+                  f"[1:a][md]amix=inputs=2:duration=first:dropout_transition=0:normalize=0" + ("" if loop else f",afade=t=out:st={max(0,total-0.6):.2f}:d=0.6") + "[a]")
         else:
             af = f"[1:a]anull[a]" if loop else f"[1:a]afade=t=out:st={max(0,total-0.4):.2f}:d=0.4[a]"
         # bitrate to land under MAX_MB
