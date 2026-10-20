@@ -120,7 +120,9 @@ def etsy_call(st, method, path, **kw):
 def op_selftest(o, st):
     return 200, {"configured": {"etsyKeystring": bool(KEY), "etsySharedSec": bool(SECRET),
                              "zernio": bool(ZKEY), "starship": bool(SKEY), "gumroad": bool(GKEY)},
-                 "etsyAuthorized": bool(st.get("refresh_token")), "redirect": REDIRECT}
+                 "etsyAuthorized": bool(st.get("refresh_token")), "redirect": REDIRECT,
+                 "starshipKeyFp": hashlib.sha256(SKEY.encode()).hexdigest()[:6] if SKEY else None,
+                 "starshipKeyFpStripped": hashlib.sha256(SKEY.strip().encode()).hexdigest()[:6] if SKEY else None}
 
 
 def op_zernio(o, st):
