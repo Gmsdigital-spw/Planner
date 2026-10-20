@@ -1,0 +1,1 @@
+{"id":"claude-2026-10-20-gumtest-8d9d","ops":[{"op":"selftest"},{"op":"gumroad","method":"GET","path":"/user","tag":"me"},{"op":"gumroad","method":"GET","path":"/products","tag":"products"}]}
