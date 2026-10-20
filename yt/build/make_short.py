@@ -255,6 +255,12 @@ def gen_image(prompt, seed, dest, warnings):
     if not (acct and tok):
         warnings.append("no Cloudflare keys (CF_ACCOUNT_ID / CF_API_TOKEN), cannot make cartoon images")
         return False
+    import hashlib
+    cache_dir = os.environ.get("IMG_CACHE", "/tmp/yt-img-cache"); os.makedirs(cache_dir, exist_ok=True)
+    cached = os.path.join(cache_dir, hashlib.sha1(prompt.encode()).hexdigest() + ".jpg")
+    if os.path.exists(cached) and os.path.getsize(cached) > 20000:
+        shutil.copy(cached, dest)  # a retry reuses images it already paid for
+        return True
     url = f"https://api.cloudflare.com/client/v4/accounts/{acct}/ai/run/@cf/black-forest-labs/flux-1-schnell"
     body = json.dumps({"prompt": prompt[:2000], "steps": 8}).encode()
     for attempt in range(3):
@@ -267,6 +273,7 @@ def gen_image(prompt, seed, dest, warnings):
             if b64:
                 open(dest, "wb").write(base64.b64decode(b64))
                 if os.path.getsize(dest) > 20000:
+                    shutil.copy(dest, cached)
                     return True
             warnings.append(f"image try {attempt+1}: no image ({str(d.get('errors'))[:120]})")
         except Exception as e:
@@ -276,6 +283,9 @@ def gen_image(prompt, seed, dest, warnings):
             except Exception:
                 pass
             warnings.append(f"image try {attempt+1} failed: {e!r} {msg}"[:220])
+            if "daily free allocation" in msg or "neurons" in msg:
+                warnings.append("Cloudflare free image allowance used up for today (resets 00:00 UTC)")
+                return False
             if "NSFW" in msg and not prompt.startswith("wholesome"):
                 prompt = "wholesome family-friendly kids animated movie scene, " + prompt.replace("bathrobe", "cozy pajamas").replace("bed", "couch")
                 body = json.dumps({"prompt": prompt[:2000], "steps": 8}).encode()
