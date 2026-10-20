@@ -109,8 +109,8 @@ def etsy_call(st, method, path, **kw):
 
 # ---------- ops ----------
 def op_selftest(o, st):
-    return 200, {"configured": {"ETSY_KEYSTRING": bool(KEY), "ETSY_SHARED_SECRET": bool(SECRET),
-                             "ZERNIO_API_KEY": bool(ZKEY), "STARSHIP_KEY": bool(SKEY)},
+    return 200, {"configured": {"etsyKeystring": bool(KEY), "etsySharedSec": bool(SECRET),
+                             "zernio": bool(ZKEY), "starship": bool(SKEY)},
                  "etsyAuthorized": bool(st.get("refresh_token")), "redirect": REDIRECT}
 
 
