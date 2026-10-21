@@ -23,3 +23,4 @@ Momentum/mean-reversion entries, market hours only.
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-21: Scan at 8:43 CT had only 3 five-minute bars; 6 of 7 names were under VWAP or the 20-bar average, AAPL had no pullback. Tomorrow: fetch bars with start=prior day + sort=desc (default returns today only) and skip names until 4+ bars after the open.

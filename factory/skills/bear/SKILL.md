@@ -23,3 +23,4 @@ updated: 2026-10-20
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-21: Gates passed at $25.00 equity, 0 positions; vetoed 0 orders because Bull sent none (no-trade day 1). Tomorrow: check the earnings-after-close list (TSLA/META/IBM/LRCX today) before Bull's bars job, not after.

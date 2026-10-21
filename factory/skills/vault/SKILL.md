@@ -23,3 +23,4 @@ Floor = deposits. Touch it: flatten + lock.
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-21: equityOpen $25.00 from /bankroll (paper $100k shown as realEquity, ignored). Tomorrow: write equityOpen in the same batch as the gate note so the ledger is never created half-filled.

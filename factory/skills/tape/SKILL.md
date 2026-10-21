@@ -23,3 +23,4 @@ Daily P&L, verified from Alpaca only.
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-21: SPY opened at its high (771.20) and slipped under VWAP; gap names (SMCI +12%, NFLX -6%, ISRG -7%) excluded. Tomorrow: add the 9:30 CT oil-inventory print to the calendar line and recheck XLE spread (0.015% today) as a candidate.
