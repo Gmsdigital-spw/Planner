@@ -48,10 +48,11 @@ async def main():
         for fold in ["inbox","launch","treasury","mission","settings","engine"]:
             await click(f"#fold-{fold} > summary","04_fold_"+fold,back=False)
         await pg.screenshot(path=OUT+"04b_engine_full.png",full_page=True)
-        n=await pg.locator('#engineBody .card').count(); steps.append("04c_engine_cards: "+(f"ok {n}" if n>=6 else f"FAIL {n} cards"))
+        n=await pg.locator('#engineBody .card').count(); e=await pg.locator('#engineBody .empty').count()
+        steps.append("04c_engine_cards: "+(f"ok {n}" if n>=6 else ("ok (honest empty state, no report served)" if (not REPORT and e) else f"FAIL {n} cards")))
         sw=await pg.evaluate("Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)"); cw=await pg.evaluate("document.documentElement.clientWidth")
         steps.append("04d_noscroll_engine: "+("ok" if sw<=cw else f"FAIL scrollWidth {sw} > {cw}"))
-        n=await pg.locator('#engineBody [data-eng="retry"]').count(); steps.append("04e_engine_retry_btn: "+("ok (disabled outside the Claude app)" if n else "MISSING"))
+        n=await pg.locator('#engineBody [data-eng="retry"]').count(); steps.append("04e_engine_retry_btn: "+("ok (disabled outside the Claude app)" if n else ("n/a (no report served)" if not REPORT else "MISSING")))
         await click('[data-bay="third"]',"05_marketing",back=False)
         await pg.screenshot(path=OUT+"05b_marketing_full.png",full_page=True)
         await click('#v-bay-third [data-agent="hawk"]',"05c_agent_hawk")
