@@ -1,0 +1,1 @@
+{"id":"claude-2026-10-20-list-dd30","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"}]}
