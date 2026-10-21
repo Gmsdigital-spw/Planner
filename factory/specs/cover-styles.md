@@ -1,5 +1,8 @@
 # Cover & Pin Styles (Grayson, Oct 21, 2026)
 
+## GRAYSON LOVES THIS LOOK (Oct 21, 2026, 4 PM)
+Grayson: the new bold, fun covers (bright theme color, real pages big on a white card, big count badge, benefit pills, 3D themed art) are "exactly how they're supposed to look." Keep this look as the standard for every new listing, pin and banner, and make each new one a little better than the last: sharper readability at thumbnail size, more varied layouts, better-matched art. Never drift back to beige/cream desk covers.
+
 ## UPDATE Oct 21, 2026 afternoon (wins over everything below)
 Grayson: the covers were too bland, "like they're for old people or college professors". Make them fun, colorful,
 something people want to buy. If the listing says cookie, put real cookies on it; if it says Santa, put Santa on it.
