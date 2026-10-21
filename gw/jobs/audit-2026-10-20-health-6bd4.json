@@ -1,0 +1,7 @@
+{"id":"audit-2026-10-20-health-6bd4","stopOnError":false,"ops":[
+ {"op":"selftest","tag":"selftest"},
+ {"op":"etsy","method":"GET","path":"/shops/68605457","tag":"shop"},
+ {"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=draft&limit=20","tag":"drafts"},
+ {"op":"zernio","method":"GET","path":"/accounts","tag":"zernio-accounts"},
+ {"op":"gumroad","method":"GET","path":"/products","tag":"gumroad-products"}
+]}
