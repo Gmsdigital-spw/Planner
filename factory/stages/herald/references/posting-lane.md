@@ -18,12 +18,12 @@ id. Use ONLY these actions:
   (or "publishing"); postId = tool_output.post._id, postUrl = platforms[0].platformPostUrl if
   present. NEVER use the tt_post action (draft only) and NEVER push TikTok jobs through the
   GitHub gateway (that push gets blocked in scheduled runs).
+- yt_shop_api: data {action:"yt_shop_api", url:"/v3/videos?part=statistics&id=<id1>,<id2>"}
+  -> read-only stats for the SHOP channel.
 
 ## TikTok check (next run)
 data {action:"zernio_api", method:"GET", url:"/posts/<id>"}; if the TikTok platform status is
 "failed", mark the doc "failed" with the reason.
-- yt_shop_api: data {action:"yt_shop_api", url:"/v3/videos?part=statistics&id=<id1>,<id2>"}
-  -> read-only stats for the SHOP channel.
 
 ## Posting what is due (stage 01)
 Only if signal/main.live is true and firstApprovedAt is set. For each social doc with status
