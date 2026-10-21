@@ -23,3 +23,4 @@ One real-product post per channel a day on IG, FB, shop YouTube, TikTok; built f
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-21: Oct 20 Thanksgiving Short has 26 YouTube views (only channel with real stats; TikTok published, no analytics yet). Built today from the numbers: Christmas Party Game Bundle (top candidate, 7 views/7d) on IG/YT/TikTok and Thanksgiving Game Pack on FB for the non-Christmas slot; both passed the slop gate at 92-93. Fix found: single-line captions at 64px nearly touched the frame edge, so cuts now use 58px and long hooks 66px. Tomorrow: compare YouTube views on the Christmas Short vs the Thanksgiving one before picking the YouTube product.
