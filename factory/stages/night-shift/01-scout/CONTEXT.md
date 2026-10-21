@@ -30,8 +30,9 @@
    or legal claims.
 5. The Idea Judge (judge_ideas, in this stage, with the auto-approver's reject rules from
    stage 02's Process step 2) gives each idea a verdict: drop, hold (good but no slot or window
-   not open yet), or brief for exactly 3 (the strongest; one a wall art set; while Holiday Mode
-   is on, at least one aimed at the target holiday). Then research the 3 and file them as
+   not open yet), or brief for exactly 3 (the strongest; one a wall art set; SALES PUSH: until
+   Dec 15 at least 2 of the 3 are Christmas or New Year products, each modeled on a real
+   bestselling listing in its evidence). Then research the 3 and file them as
    full briefs: briefs/<id> {title, niche, lane, buyer, competition, season, priceRange,
    score:{demand, competition, timing, shopFit, buildable, price} each 0 to 5, total (0 to 30),
    evidence:[{label, url}] (2 or more real links you really opened), summary (plain text),

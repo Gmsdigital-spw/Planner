@@ -24,7 +24,13 @@
 5. Create `../output/<day key>-run.md` (stages/night-shift/output/) with the header line "# Night Shift <day key>" and the
    settings you will use: buildsPerRun (default 2), batchSize (5), autoApprove (missing = on),
    holidayMode (from the spec's calendar and today's date).
-6. Remember for the run log: every instruction file you load from here on.
+6. Fetch the kit once for every worker: mkdir -p /home/claude/kit, then Artifact read with
+   url = the artifact url, out_dir = /home/claude/kit, path "917d03e4f21b576da506766f0aa992f8"
+   (gm_style), then path "d2fe939ea8bd7975733326b0cc836a6c" (mockup), then path
+   "d0b1821fc580b42db28e2c22b005fb85" (wall_art); one path per call; copy each saved .txt to
+   /home/claude/kit/gm_style.py, mockup.py, wall_art.py. If a read fails, note it in the run
+   doc; the Builder falls back as house-style.md says.
+7. Remember for the run log: every instruction file you load from here on.
 
 ## Outputs
 

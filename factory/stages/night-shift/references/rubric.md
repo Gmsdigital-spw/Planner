@@ -50,7 +50,7 @@ Record score.slopCheck {pass, fails:[short strings]}. A fail caps images at 12 a
   cover or any layout fault: at most 7.
 - total /100, rubric 2, verdict (one sentence, leads with PASS or FAIL and the number).
 
-## Where 86 to 91 usually lose points (check first)
+## Where 85 to 91 usually lose points (check first)
 Images (hero pages too small in the square, same layout as last time), copy (generic lines
 instead of the specific page list, count, holiday and buyer), market (weak evidence vs the top
 3), polish (any cramped or half-empty page).

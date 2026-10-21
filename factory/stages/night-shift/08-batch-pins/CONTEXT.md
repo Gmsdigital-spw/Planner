@@ -6,7 +6,8 @@
 |--------|--------------|---------------|-----|
 | Spec | `../../../specs/cover-styles.md` | "Pins", "The 6 styles" | Pin standard: 6 styles, 2:3, hook in the top third |
 | Spec | `../../../specs/foreman-rules.md` | "3. Quality gates", "4. Volume" | 3 pins in 2+ styles per product; queue never below a day |
-| Tool | `tools/cover_styles.py` docstring | size "pin", hook | How to render a pin |
+| Tool | `tools/cover_styles.py` docstring and its THEMES dict | size "pin", hook, theme keys | How to render a pin |
+| Files | `/home/claude/kit/pages/<product id>/` (rendered by stage 06) | real page images | If missing: download the product's PDF asset and gs.render_pages it there (kit in /home/claude/kit) |
 | Playbook | `../../../playbooks/tablet-mockup-pin.md` | Full file | Measured by outbound clicks |
 | Skill | `../../../skills/pixel/SKILL.md` | Full file | Checklist and lessons |
 | Shared | `../../../shared/accounts.md` | "Pinterest" | Board names |

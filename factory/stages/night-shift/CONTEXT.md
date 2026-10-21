@@ -8,14 +8,17 @@ cover swaps on live listings): Bolt publishes batched products at 7:13 AM, 12:13
 Central (2 a day); Warden swaps live covers. Never ads.
 
 ## How the coordinator runs it
-1. Read this file. Do stage 00 yourself (it is tiny). Note runId, day key, the settings
-   (buildsPerRun, batchSize, autoApprove, holidayMode) and the kit folder `/home/claude/kit`.
+1. Read this file. Do stage 00 yourself (it is tiny): it also fetches the kit into
+   `/home/claude/kit`. Note runId, day key and the settings (buildsPerRun, batchSize,
+   autoApprove, holidayMode).
 2. For each worker below, launch one fresh agent (the Agent tool, a general-purpose agent, in
    the foreground, one at a time) with this brief, filled in, and nothing else:
 
    "You are the Night Shift's <WORKER> for <day key>, runId <runId>. The repo is at
    /home/claude/planner (already pulled; do not pull again, do not push). FIRST read
-   factory/CLAUDE.md, factory/shared/database.md and factory/shared/rules.md. Then read
+   factory/CLAUDE.md, factory/shared/database.md, factory/shared/rules.md and
+   factory/stages/night-shift/CONTEXT.md (its Run notes, Load map and Conflicts sections
+   bind you; a skill's own "Exact steps" never override them). Then read
    factory/stages/night-shift/<stage folder>/CONTEXT.md for each of your stages in order, and
    load ONLY what each Inputs table names (the sections it names). Settings for tonight:
    buildsPerRun <n>, batchSize <n>, autoApprove <true/false>, holidayMode <on/off, target>.

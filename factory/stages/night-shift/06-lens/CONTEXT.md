@@ -19,7 +19,8 @@ Cover and pin rules have ONE home: `specs/cover-styles.md`. Its newest section (
 
 ## Process
 1. Set crew/lens working ("Photos: <title>"). Render the PDF pages with
-   pages = gs.render_pages(pdf, folder) (150 dpi).
+   pages = gs.render_pages(pdf, "/home/claude/kit/pages/<product id>") (150 dpi); leave them
+   there for the Pins worker.
 2. Photo 1, the cover: the coverLook picked in stage 03. Add ONE entry to
    tools/fun_covers_config.json: slug = the product id, listing_id "" (not published yet),
    root/out under listing-photos/fun/<product id>.jpg, theme = style.theme, kicker, title (one
@@ -59,4 +60,4 @@ Cover and pin rules have ONE home: `specs/cover-styles.md`. Its newest section (
 
 | Artifact | Location | Format |
 |----------|----------|--------|
-| Cover + 4 previews | assets; products/<id>.cover, .previews, .coverStyle | JPEG ids, stage inspection |
+| Cover + 4 previews | assets; products/<id>.cover, .previews, .coverLook | JPEG ids, stage inspection |

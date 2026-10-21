@@ -5,7 +5,10 @@
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
 | Reference | `../references/database-fields.md` | "products", "missions" | Field shapes |
-| Spec | `../../../specs/cover-styles.md` | "The rule" | Pick a cover style that rotates |
+| Spec | `../../../specs/cover-styles.md` | Newest section (Oct 21, 4 PM) | The cover standard |
+| Tool | `tools/fun_covers.py` | docstring and the THEMES keys (grep "^    \"" in THEMES) | Pick style.theme |
+| Tool | `ls tools/img3d` and `tools/art.py` function names | | Pick coverLook.art |
+| Database | products (newest 3 published): coverLook, style | | Rotation |
 | Database | products (stage queued, building, copy, sentback), briefs (approved, no productId) | | What to build |
 | Database | missions (newest 20), sales, stats (newest 2), bills | | Missions from real numbers |
 

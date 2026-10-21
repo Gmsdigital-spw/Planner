@@ -4,7 +4,8 @@
 
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
-| Previous stage | `../output/<day key>-run.md` | "## Build list" | What to build |
+| Brief | the PRODUCT LINE in your brief | product id, title, lane | What to build (the run notes' "## Build list" is context only) |
+| Database | products/<id> and its brief (briefs/<briefId>) | title, summary, kind, style, brief evidence and buyer | The content to write and the style to build in |
 | Reference | `../references/house-style.md` | "PDF pages" and "The kit" | How pages are built |
 | Spec | `../../../specs/product-floor-v6.md` | the lane's build spec (mug wrap, sticker, invitation) | Only for those lanes |
 | Reference | `../references/wall-art.md` | "Forge" section | Only for a wallart product |
