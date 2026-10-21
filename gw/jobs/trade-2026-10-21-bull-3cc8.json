@@ -1,0 +1,47 @@
+{
+ "id": "trade-2026-10-21-bull-3cc8",
+ "ops": [
+  {
+   "op": "alpaca",
+   "data": true,
+   "tag": "bars-NVDA",
+   "path": "/stocks/bars?symbols=NVDA&timeframe=5Min&limit=60&feed=iex&start=2026-10-20T13:30:00Z&sort=desc"
+  },
+  {
+   "op": "alpaca",
+   "data": true,
+   "tag": "bars-AAPL",
+   "path": "/stocks/bars?symbols=AAPL&timeframe=5Min&limit=60&feed=iex&start=2026-10-20T13:30:00Z&sort=desc"
+  },
+  {
+   "op": "alpaca",
+   "data": true,
+   "tag": "bars-WMT",
+   "path": "/stocks/bars?symbols=WMT&timeframe=5Min&limit=60&feed=iex&start=2026-10-20T13:30:00Z&sort=desc"
+  },
+  {
+   "op": "alpaca",
+   "data": true,
+   "tag": "bars-IWM",
+   "path": "/stocks/bars?symbols=IWM&timeframe=5Min&limit=60&feed=iex&start=2026-10-20T13:30:00Z&sort=desc"
+  },
+  {
+   "op": "alpaca",
+   "data": true,
+   "tag": "bars-XLK",
+   "path": "/stocks/bars?symbols=XLK&timeframe=5Min&limit=60&feed=iex&start=2026-10-20T13:30:00Z&sort=desc"
+  },
+  {
+   "op": "alpaca",
+   "data": true,
+   "tag": "bars-SPY",
+   "path": "/stocks/bars?symbols=SPY&timeframe=5Min&limit=60&feed=iex&start=2026-10-20T13:30:00Z&sort=desc"
+  },
+  {
+   "op": "alpaca",
+   "data": true,
+   "tag": "bars-QQQ",
+   "path": "/stocks/bars?symbols=QQQ&timeframe=5Min&limit=60&feed=iex&start=2026-10-20T13:30:00Z&sort=desc"
+  }
+ ]
+}
