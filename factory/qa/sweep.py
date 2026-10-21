@@ -30,7 +30,7 @@ async def main():
             await click(f"#fold-{fold} > summary","04_fold_"+fold,back=False)
         await click('[data-bay="third"]',"05_marketing",back=False)
         await pg.screenshot(path=OUT+"05b_marketing_full.png",full_page=True)
-        await click('[data-agent="hawk"]',"05c_agent_hawk")
+        await click('#v-bay-third [data-agent="hawk"]',"05c_agent_hawk")
         await click('#v-bay-third [data-go="command"]',"05d_back",back=False)
         await click('[data-bay="etsy"]',"06_product",back=False)
         await pg.screenshot(path=OUT+"06b_product_full.png",full_page=True)
