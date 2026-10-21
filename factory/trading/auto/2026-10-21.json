@@ -6,18 +6,7 @@
  "lostToday": [
   "QQQ"
  ],
- "positions": {
-  "SPY": {
-   "entry": 772.678,
-   "stop0": 770.15,
-   "stop": 770.15,
-   "target": 777.73,
-   "high": 774.405,
-   "stopId": "e0d2eda2-9c91-4ad9-81ad-4ab4ceda6e4d",
-   "since": "2026-10-21T15:45:00Z",
-   "qty": "0.012903175"
-  }
- },
+ "positions": {},
  "trades": [
   {
    "sym": "QQQ",
@@ -47,15 +36,21 @@
    "target": 733.4,
    "status": 200,
    "fill": 726.206
+  },
+  {
+   "t": "14:45",
+   "do": "flatten",
+   "why": "2:45 PM flat",
+   "status": 207
   }
  ],
- "done": null,
- "runs": 166,
+ "done": "closed for the day",
+ "runs": 170,
  "lastSignal": {
   "SPY": "2026-10-21T15:45:00Z",
   "QQQ": "2026-10-21T15:45:00Z"
  },
- "lastRun": "14:41",
+ "lastRun": "14:45",
  "equity": 24.97,
  "dayPnl": -0.03,
  "watch": [
@@ -86,5 +81,5 @@
   "TMO",
   "TSLA"
  ],
- "lastNote": "equity $24.97, day -0.03, 1 open, 2 entries; no new entries now (8:35-2:00 CT window)"
+ "lastNote": "flat for the day, P/L -0.03"
 }
