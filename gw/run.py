@@ -363,7 +363,7 @@ def op_fetch_images(o, st):
         if urllib.parse.urlparse(u).hostname != "i.etsystatic.com":
             continue
         r = requests.get(u, timeout=30)
-        if r.ok and len(r.content) < 600_000:
+        if r.ok and len(r.content) < 3_000_000:
             n = "".join(c for c in str(it.get("name", "img.jpg")) if c.isalnum() or c in "-_.")[:80]
             (d / n).write_bytes(r.content)
             saved.append(n)
