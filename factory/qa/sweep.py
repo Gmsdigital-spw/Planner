@@ -7,7 +7,8 @@ async def main():
     errs=[]
     async with async_playwright() as p:
         b=await p.chromium.launch()
-        pg=await b.new_page(viewport={"width":390,"height":844},device_scale_factor=2)
+        W=int(sys.argv[3]) if len(sys.argv)>3 else 390
+        pg=await b.new_page(viewport={"width":W,"height":844},device_scale_factor=2)
         pg.on("pageerror",lambda e: errs.append("PAGEERROR "+str(e)))
         pg.on("console",lambda m: errs.append("CONSOLE "+m.type+" "+m.text) if m.type in("error","warning") else None)
         await pg.goto(PAGE); await pg.wait_for_timeout(2500)
@@ -28,10 +29,17 @@ async def main():
         await click('[data-light="trades"]',"01b_today_trades_light",back=False)
         await pg.screenshot(path=OUT+"01c_trading_full.png",full_page=True)
         await click('#nav4 [data-nav="more"]',"01d_more_sheet")
+        # V7 (Oct 21 2026): Marketing tab, one card per channel; Parked sheet under More; Funnel hidden.
+        await click('#nav4 [data-nav="marketing"]',"01d2_marketing_tab",back=False)
+        await pg.screenshot(path=OUT+"01d3_marketing_tab_full.png",full_page=True)
+        await click('#mkBody [data-mk="pinterest"]',"01d4_marketing_gallery")
+        await click('#nav4 [data-nav="more"]',"01d5_more",back=False)
+        await click('[data-more="parked"]',"01d6_parked")
         await click('#nav4 [data-nav="today"]',"01e_nav_today",back=False)
         await click('#heroBtn',"01f_open_map",back=False)
         await click("#coreBtn","02_foreman")
-        for f in ["funnel","trading"]: await click(f'#fleet [data-floorinfo="{f}"]',"03_floor_"+f)
+        await click('#fleet [data-floorinfo="trading"]',"03_floor_trading")
+        n=await pg.locator('#fleet [data-floorinfo="funnel"]:visible').count(); steps.append("03b_funnel_hidden: "+("ok" if n==0 else "FAIL visible"))
         for fold in ["inbox","launch","treasury","mission","settings"]:
             await click(f"#fold-{fold} > summary","04_fold_"+fold,back=False)
         await click('[data-bay="third"]',"05_marketing",back=False)
@@ -47,6 +55,12 @@ async def main():
         await click('[data-bay="youtube"]',"07_studio",back=False)
         await pg.screenshot(path=OUT+"07b_studio_full.png",full_page=True)
         await click('#ytHead [data-go="command"]',"07c_back",back=False)
+        # no sideways scroll anywhere (V7 rule: 375px)
+        for v in ["today","marketing","trading"]:
+            await pg.locator(f'#nav4 [data-nav="{v}"]').click(); await pg.wait_for_timeout(500)
+            sw=await pg.evaluate("Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)")
+            cw=await pg.evaluate("document.documentElement.clientWidth")
+            steps.append(f"08_noscroll_{v}: "+("ok" if sw<=cw else f"FAIL scrollWidth {sw} > {cw}"))
         await b.close()
     print("\n".join(steps)); print("---ERRORS---"); print("\n".join(sorted(set(errs)))[:4000])
 asyncio.run(main())
