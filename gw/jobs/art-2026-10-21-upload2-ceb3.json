@@ -1,0 +1,42 @@
+{
+ "id": "art-2026-10-21-upload2-ceb3",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598501430/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-friendsgiving-kit-cover.jpg",
+   "field": "image",
+   "fileName": "friendsgiving-kit-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Friendsgiving potluck sign-up sheet page from a printable Friendsgiving party kit with games"
+   },
+   "tag": "4598501430"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598535050/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-debt-payoff-2027-cover.jpg",
+   "field": "image",
+   "fileName": "debt-payoff-tracker-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "2027 debt payoff tracker printable shown on laptop, tablet and phone: debt list and snowball vs avalanche pages"
+   },
+   "tag": "4598535050"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177516/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-gingerbread-contest-kit-cover.jpg",
+   "field": "image",
+   "fileName": "gingerbread-contest-kit-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Gingerbread house decorating contest judge score card page with certificates for kids, teens and adults"
+   },
+   "tag": "4600177516"
+  }
+ ]
+}
