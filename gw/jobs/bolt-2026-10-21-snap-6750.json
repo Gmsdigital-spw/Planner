@@ -1,0 +1,30 @@
+{
+ "id": "bolt-2026-10-21-snap-6750",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/active?limit=100&includes=Images",
+   "tag": "active"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457",
+   "tag": "shop"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings?state=draft&limit=100",
+   "tag": "draft"
+  },
+  {
+   "op": "gumroad",
+   "method": "GET",
+   "path": "/sales?after=2026-10-01",
+   "tag": "sales"
+  }
+ ]
+}
