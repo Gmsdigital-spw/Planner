@@ -1,0 +1,174 @@
+{
+ "id": "bolt-2026-10-21-pins-a8c5",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-gingerbread-contest-1",
+   "tag": "pin-gingerbread-contest-1",
+   "body": {
+    "content": "Run a gingerbread house contest at your Christmas party. Judge score cards rate creativity, structure, decoration, icing and wow factor from 1 to 5, plus a judging guide, rules, team sign-up, People's Choice ballots, a tally sheet and certificates for kids, teen and adult divisions. For families, classrooms and office parties. 15-page PDF, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-gingerbread-contest-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-22T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Gingerbread House Decorating Contest Printable: Judge Score Cards, Ballots and Certificates",
+       "link": "https://www.etsy.com/listing/4600177516/gingerbread-house-decorating-contest"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-cookie-exchange-1",
+   "tag": "pin-cookie-exchange-1",
+   "body": {
+    "content": "Host a Christmas cookie swap with everything printed and ready: fill-in invitations, a host countdown, guest sign-up sheet, swap rules with baking math for 6 to 15 guests, recipe cards, cookie labels with allergen checkboxes, Best Cookie ballots, award cards, thank-you cards and box tags. 13-page PDF, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-cookie-exchange-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-23T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Cookie Exchange Kit Printable: Invitations, Sign-Up Sheet, Allergen Labels and Ballots",
+       "link": "https://www.etsy.com/listing/4600177510/christmas-cookie-exchange-kit-printable"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-gingerbread-contest-2",
+   "tag": "pin-gingerbread-contest-2",
+   "body": {
+    "content": "Fair, fun judging for a gingerbread house decorating party: two judge score cards per page with five criteria scored 1 to 5, a judging guide with a sample scored card, and eight People's Choice ballots per page. Part of a 15-page printable contest kit with rules and certificates. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-gingerbread-contest-2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-25T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Gingerbread Contest Judge Score Cards and People's Choice Ballots to Print for a Christmas Party",
+       "link": "https://www.etsy.com/listing/4600177516/gingerbread-house-decorating-contest"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-cookie-exchange-2",
+   "tag": "pin-cookie-exchange-2",
+   "body": {
+    "content": "Guests write their recipe on a card and label their plate with nuts, peanuts, dairy, eggs, gluten and soy checkboxes, so everyone knows what they are tasting. Four recipe cards and eight labels per page, part of a 13-page cookie exchange host kit with invitations and ballots. Printable PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-cookie-exchange-2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-26T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Cookie Swap Recipe Cards and Cookie Labels to Print for Your Christmas Cookie Exchange",
+       "link": "https://www.etsy.com/listing/4600177510/christmas-cookie-exchange-kit-printable"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-cookie-exchange-3",
+   "tag": "pin-cookie-exchange-3",
+   "body": {
+    "content": "The easy rule: each guest bakes half a dozen for every guest plus one dozen for tasting. The printable table shows exact dozens for 6, 8, 10, 12 and 15 guests, with swap rules and a packing list. Part of a 13-page Christmas cookie exchange kit. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-cookie-exchange-3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-27T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "How Many Cookies to Bake for a Cookie Exchange: Printable Rules and Baking Math for 6 to 15 Guests",
+       "link": "https://www.etsy.com/listing/4600177510/christmas-cookie-exchange-kit-printable"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-gingerbread-contest-3",
+   "tag": "pin-gingerbread-contest-3",
+   "body": {
+    "content": "Give every age group its own winner. Grand Champion certificates for the kids, teen and adult divisions, plus Golden Gumdrop, Rooftop Royalty, Master Piper, People's Choice and a special award, with 12 award ideas. Part of a 15-page gingerbread contest kit for family Christmas parties. Printable PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-gingerbread-contest-3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-28T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Gingerbread House Contest Certificates for Kids, Teens and Adults: Printable Christmas Awards",
+       "link": "https://www.etsy.com/listing/4600177516/gingerbread-house-decorating-contest"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
