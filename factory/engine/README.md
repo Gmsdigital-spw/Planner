@@ -6,7 +6,7 @@ journal; no background workers are claimed — a worker is whatever calls `tick(
 
 ## Run it (phone-friendly)
 
-- **GitHub app → Actions → "Engine tests"**: runs on every push to this folder. Green = all 46 unit tests,
+- **GitHub app → Actions → "Engine tests"**: runs on every push to this folder. Green = all 61 unit tests,
   the V7 rules self-test and the contracts export check passed. Red = open the log; the Mechanic reads it too.
 - From any shell with Python 3.10+ (no packages needed):
 
@@ -24,6 +24,8 @@ python -m factory.engine verify proj_…    # complete only when every step succ
 python -m factory.engine providers       # which model providers are really configured (paid one is off)
 python -m factory.engine usage           # real model usage today: calls, known cost, unknown-cost calls, cache hits
 python -m factory.engine budget daily_calls 300   # set a daily hard limit (daily_usd, daily_unknown_calls too)
+python -m factory.engine products        # every product manifest: version, pipeline stage, listing + distribution status
+python -m factory.engine funnel plan_…   # created → approved → planned → published → reached → clicks → sales (unknown stays unknown)
 python -m factory.engine selftest        # the tests, locally
 ```
 

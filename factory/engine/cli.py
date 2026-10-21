@@ -19,6 +19,8 @@
   budget [daily_calls N] [daily_usd X] [daily_unknown_calls N]   show or set the daily hard limits
   cache purge            drop expired rows and rows from an older data version
   data-version <v>       bump the data version (every cached answer from before is ignored)
+  products               product manifests (latest version, stage, listing + distribution status)
+  funnel <plan_id>       the real funnel for one distribution plan (unknown stays unknown)
   export-ts              regenerate ts/contracts.d.ts and contracts.schema.json
   selftest               run the unit tests
 
@@ -125,6 +127,19 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps(store.control("budget", {"note": "defaults: daily_calls 400, daily_unknown_calls 400, daily_usd unlimited (nothing paid is configured)"}), indent=1))
         elif cmd == "cache":
             print("purged", store.cache_purge(data_version(store)), "rows;", json.dumps(store.cache_stats()))
+        elif cmd == "products":
+            from .quality import Pipeline
+            pipe = Pipeline(store)
+            seen = set()
+            for r in store._rows("SELECT DISTINCT product_id FROM products ORDER BY product_id"):
+                m = store.get_product(r["product_id"]); seen.add(m.product_id)
+                print(f"{m.product_id:16} v{m.version}  stage={pipe.stage_of(m):12} listing={m.listing_status:9} distribution={m.distribution_status}  {m.title}")
+            if not seen:
+                print("no product manifests yet")
+        elif cmd == "funnel":
+            from .distribution import funnel
+            pl = store.get_plan(args[1])
+            print(json.dumps(funnel(store, pl), indent=1) if pl else "no such plan")
         elif cmd == "data-version":
             store.set_control("data_version", args[1])
             print("data version", data_version(store), "— older cached answers are now ignored; run `cache purge` to drop them")

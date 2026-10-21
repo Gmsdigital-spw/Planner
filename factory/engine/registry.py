@@ -104,10 +104,49 @@ def sync(store, agents: dict[str, AgentContract] | None = None) -> list[dict]:
 
 
 def demo_handlers():
-    """Phase-3 placeholders so the CLI `tick` has something to run. They do no external work and say so.
-    Real handlers arrive with the orchestrator in Phase 4."""
+    """Handlers the CLI registers. Two are REAL (deterministic, no model, no network): quality.inspect runs the
+    Phase-6 validation gate on a stored product manifest; distribution.plan builds and stores a distribution plan.
+    engine.noop is a placeholder. The remaining kinds (research, build, adapt, publish, measure) still have no
+    handler: the crews do that work in their own scheduled runs until Phase 7 wires them."""
+    from pathlib import Path as _P
+    from . import distribution as D
+    from . import quality as Q
+
     def noop(task, ctx):
         ctx.heartbeat()
         ctx.checkpoint({"step": "noop", "input_ref": task.spec.input_ref})
         return {"output_ref": None, "validation": {"ok": True, "checks": ["placeholder handler: no external work done"]}}
-    return {"engine.noop": noop}
+
+    def inspect(task, ctx):
+        pid = task.spec.input_ref.split("/")[-1]
+        m = ctx.engine.store.get_product(pid)
+        if not m:
+            raise __import__("factory.engine.engine", fromlist=["PermanentError"]).PermanentError(f"no product manifest {pid}")
+        ctx.heartbeat()
+        res = Q.validate(m, copy=task.spec.meta.get("copy"), root=_P(task.spec.meta.get("root") or REPO), score=task.spec.meta.get("score"))
+        pipe = Q.Pipeline(ctx.engine.store)
+        if pipe.stage_of(m) == "generate":
+            m = pipe.advance(pid, "validate", {"result": res, "new_lane": bool(task.spec.meta.get("new_lane"))}, who=task.spec.agent_id)
+        g = Q.gate(res, new_lane=bool(task.spec.meta.get("new_lane")))
+        ctx.checkpoint({"validated": m.version, "gate": g["decision"]})
+        return {"output_ref": f"products/{pid}/v{m.version}",
+                "validation": {"ok": res["ok"] is not False, "checks": [c["name"] + ("" if c["ok"] else (" (unknown)" if c["ok"] is None else " FAILED")) for c in res["checks"]],
+                               "gate": g}}
+
+    def plan(task, ctx):
+        pid = task.spec.input_ref.split("/")[-1]
+        m = ctx.engine.store.get_product(pid)
+        meta = task.spec.meta
+        if not m:
+            raise __import__("factory.engine.engine", fromlist=["PermanentError"]).PermanentError(f"no product manifest {pid}")
+        missing = [k for k in ("target_customer", "evidence", "destination_url") if not meta.get(k)]
+        if missing:
+            raise __import__("factory.engine.engine", fromlist=["PermanentError"]).PermanentError(f"distribution.plan needs meta {missing}")
+        ctx.heartbeat()
+        p = D.build_plan(m, target_customer=meta["target_customer"], evidence=list(meta["evidence"]), destination_url=meta["destination_url"],
+                         holiday=meta.get("holiday"), days=int(meta.get("days", 7)))
+        ctx.engine.store.put_plan(p)
+        ctx.checkpoint({"plan": p.id})
+        return {"output_ref": f"plans/{p.id}", "validation": {"ok": True, "checks": [f"{len(p.channels)} channels with reasons", f"{len(p.schedule)} scheduled posts", "destination validated"]}}
+
+    return {"engine.noop": noop, "quality.inspect": inspect, "distribution.plan": plan}

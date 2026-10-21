@@ -74,6 +74,8 @@ factory/engine/
   orchestrator.py    goal → dependency graph, progress, blocked reasons, verify-before-complete (Phase 4)
   providers.py       provider-neutral model interface: mock, Claude-session hand-off, paid API (off) (Phase 4)
   router.py          routing, escalation, cache, dedup, usage tracking, hard budgets, loop guard (Phase 5)
+  quality.py         ten-stage product pipeline, offline validation, human-review gate, versioned manifests (Phase 6)
+  distribution.py    distribution plans, approval, schedule, results, next action, honest funnel (Phase 6)
   ts/contracts.d.ts  generated TypeScript types (do not edit; `export-ts` regenerates)
   db/journal.jsonl   append-only durable records (committed)
   db/state.sqlite    derived index (ignored by git)
@@ -109,10 +111,27 @@ factory/engine/
 - `RunContext.llm()` — the one way a handler reaches a model; records usage and model on the run.
 - `llm_cache` table (migration v3); CLI `usage`, `budget`, `cache purge`, `data-version`.
 
+## Added in Phase 6
+
+- `quality.py` — the ten-stage pipeline (hypothesis → … → publish → measure) enforced in order on versioned
+  manifests; `validate()` checks file integrity (exists, non-empty, sha256, real PDF/PNG/JPG/SVG header), lane
+  formats, the Etsy copy rules (140 / 13×20 / 300), revenue claims, brand and character names, and lists known
+  limitations; anything it cannot check offline is **unknown**, never pass. `gate()` → approved / needs_review /
+  rejected. Publishing requires validation not failed, the human review when one was required, an approved
+  distribution plan and an approved `publish_public` approval. Every stage writes a new manifest version.
+- `distribution.py` — `build_plan()` (channels by lane with a reason each, V7 keep-list only; assets per
+  channel from one source; validated Etsy destination + CTA; schedule inside each channel's window and free
+  daily cap, America/Chicago; measurable hypothesis + success criteria; campaign id), `approve_plan()`,
+  `mark()` (planned → approved → scheduled → published → measured, no skipping), `record_results()` (real
+  numbers; an unreported 0 is refused), `next_action()` (repeat / improve listing / improve hook / test /
+  measure first), `funnel()` (every stage real or "unknown"; sales never attributed unless recorded).
+- Two orchestrator steps are now REAL handlers: `quality.inspect` and `distribution.plan` (deterministic,
+  no model, no network). CLI `products`, `funnel <plan_id>`.
+
 ## What is NOT implemented yet (honest list)
 
 - Phase 4 leftover: the task kinds the orchestrator submits still have no real handlers — `tick` runs only the
   placeholder; the crews keep doing the real work through their own scheduled runs until Phase 7 wires them.
-- Phase 6–7: quality gate + distribution plans driving real runs; publishing adapters (today Bolt/Herald/Rocket publish through their own paths, not the engine).
+- Phase 7: publishing adapters + evidence-based analytics (today Bolt/Herald/Rocket publish through their own paths, not the engine; research/build/adapt/publish/measure task kinds have no handlers yet).
 - Phase 8: dashboard views for tasks/health (the page shows nothing from the engine yet; Phase 8 will mirror the journal into the artifact DB so the page can read it without a new tab).
 - Phase 9: regression pass across page + engine, limitations doc, rollback drill.
