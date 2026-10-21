@@ -1,0 +1,42 @@
+{
+ "id": "bolt-2026-10-21-verify-303a",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4600177510?includes=Images",
+   "tag": "c-l"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/4600177510/files",
+   "tag": "c-f"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4600177516?includes=Images",
+   "tag": "g-l"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/4600177516/files",
+   "tag": "g-f"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4600177510/images",
+   "tag": "c-i"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4600177516/images",
+   "tag": "g-i"
+  }
+ ]
+}
