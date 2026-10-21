@@ -50,12 +50,12 @@
   }
  ],
  "done": null,
- "runs": 142,
+ "runs": 148,
  "lastSignal": {
   "SPY": "2026-10-21T15:45:00Z",
   "QQQ": "2026-10-21T15:45:00Z"
  },
- "lastRun": "14:17",
+ "lastRun": "14:23",
  "equity": 24.96,
  "dayPnl": -0.04,
  "watch": [
