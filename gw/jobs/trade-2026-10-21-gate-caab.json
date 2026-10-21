@@ -1,0 +1,25 @@
+{
+ "id": "trade-2026-10-21-gate-caab",
+ "ops": [
+  {
+   "op": "alpaca",
+   "path": "/bankroll",
+   "tag": "bankroll"
+  },
+  {
+   "op": "alpaca",
+   "path": "/clock",
+   "tag": "clock"
+  },
+  {
+   "op": "alpaca",
+   "path": "/positions",
+   "tag": "positions"
+  },
+  {
+   "op": "alpaca",
+   "path": "/orders?status=open",
+   "tag": "orders"
+  }
+ ]
+}
