@@ -2,15 +2,60 @@
  "day": "2026-10-21",
  "mode": "paper",
  "equityOpen": 25.0,
- "entries": 0,
+ "entries": 2,
  "lostToday": [],
- "positions": {},
+ "positions": {
+  "SPY": {
+   "entry": 772.678,
+   "stop0": 770.15,
+   "stop": 770.15,
+   "target": 777.73,
+   "high": 772.678,
+   "stopId": "e0d2eda2-9c91-4ad9-81ad-4ab4ceda6e4d",
+   "since": "2026-10-21T15:45:00Z",
+   "qty": "0.012903175"
+  },
+  "QQQ": {
+   "entry": 726.206,
+   "stop0": 722.61,
+   "stop": 722.61,
+   "target": 733.4,
+   "high": 726.206,
+   "stopId": "484c5b6d-1fdc-4161-ba39-ad1ed8f317c7",
+   "since": "2026-10-21T15:45:00Z",
+   "qty": "0.008234578"
+  }
+ },
  "trades": [],
- "actions": [],
+ "actions": [
+  {
+   "t": "10:54",
+   "do": "buy",
+   "sym": "SPY",
+   "notional": 9.98,
+   "stop": 770.15,
+   "target": 777.73,
+   "status": 200,
+   "fill": 772.678
+  },
+  {
+   "t": "10:54",
+   "do": "buy",
+   "sym": "QQQ",
+   "notional": 5.99,
+   "stop": 722.61,
+   "target": 733.4,
+   "status": 200,
+   "fill": 726.206
+  }
+ ],
  "done": null,
- "runs": 1,
- "lastSignal": {},
- "lastRun": "10:14",
+ "runs": 2,
+ "lastSignal": {
+  "SPY": "2026-10-21T15:45:00Z",
+  "QQQ": "2026-10-21T15:45:00Z"
+ },
+ "lastRun": "10:54",
  "equity": 25.0,
  "dayPnl": 0.0,
  "watch": [
@@ -19,8 +64,27 @@
   "IWM",
   "DIA",
   "XLK",
-  "XLF"
+  "XLF",
+  "XLE",
+  "NVDA",
+  "AAPL",
+  "WMT",
+  "MSFT",
+  "AMZN",
+  "KO",
+  "BAC"
  ],
- "avoid": [],
- "lastNote": "equity $25.00, day +0.00, 0 open, 0 entries; scanned 6 names, no A+ setup"
+ "avoid": [
+  "DHR",
+  "IBM",
+  "ISRG",
+  "LRCX",
+  "META",
+  "NFLX",
+  "SMCI",
+  "SPCX",
+  "TMO",
+  "TSLA"
+ ],
+ "lastNote": "equity $25.00, day +0.00, 2 open, 2 entries"
 }
