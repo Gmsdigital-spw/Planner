@@ -6,15 +6,15 @@
  "loop": true,
  "engine": "edge",
  "voice": "andrew",
- "speed": 1.03,
+ "speed": 1.05,
  "caption_words": 3,
  "transition": "dissolve",
  "music": "uplifting",
  "style": "3D animated movie still, Pixar and Illumination style CGI render, cute stylized cartoon characters, soft cinematic lighting, vibrant saturated colors, glossy detailed textures, shallow depth of field, character centered in frame, no text, no letters, no watermark",
  "cast": {
-  "ollie": "Ollie, a teenage cartoon boy whose whole head is a big shiny round orange (dimpled orange peel skin, small green leaf on top, big expressive cartoon eyes and a mouth on the orange, no hair, no human face), human body wearing a blue hoodie and jeans",
-  "grandpa": "Grandpa, an old cartoon man whose whole head is a big shiny red tomato with a small green stem on top (kind wrinkled cartoon eyes, bushy white eyebrows and a white mustache on the tomato, no hair, no human face), human body wearing a brown cardigan, a white shirt and suspenders",
-  "chad": "Chad, a smug teenage cartoon arcade worker whose whole head is a big shiny yellow lemon (smug cartoon eyes and a smirk on the lemon, no hair, no human face), human body wearing a red staff polo shirt"
+  "ollie": "Ollie, a cartoon fruit mascot teenage boy: his entire head is one giant shiny round orange with a face on it (dimpled orange peel skin, small green leaf on top, big round cartoon eyes and a mouth on the orange, no hair, no ears, no human skin, no human face), human body wearing a blue hoodie and jeans",
+  "grandpa": "Grandpa, a cartoon fruit mascot old man: his entire head is one giant shiny round red tomato with a face on it (green stem on top, kind cartoon eyes, bushy white eyebrows and a white mustache on the tomato, no hair, no ears, no human skin, no human face), human body wearing a brown cardigan, a white shirt and suspenders",
+  "chad": "Chad, a cartoon fruit mascot teenage arcade worker: his entire head is one giant shiny yellow lemon with a face on it (smug cartoon eyes and a smirk on the lemon, no hair, no ears, no human skin, no human face), human body wearing a red staff polo shirt"
  },
  "lines": [
   {
@@ -23,23 +23,23 @@
     "prompt": "{grandpa} gripping the joystick of a glowing retro arcade cabinet with fierce focused eyes, {chad} behind him staring in shock, a colorful retro arcade full of glowing cabinets, neon purple and blue lights, dramatic rim lighting",
     "motion": "punch"
    },
-   "pause": 0.35
+   "pause": 0.3
   },
   {
-   "text": "For my birthday, Grandpa took me to the new retro arcade. He's seventy-four.",
+   "text": "Grandpa took me to the retro arcade for my birthday. He's seventy-four.",
    "image": {
     "prompt": "{grandpa} and {ollie} walking through the entrance of a colorful retro arcade full of glowing cabinets, neon purple and blue lights, Ollie excited, Grandpa calm and smiling, wide shot",
     "motion": "panr"
    },
-   "pause": 0.3
+   "pause": 0.25
   },
   {
-   "text": "He walked right past everything... straight to one dusty old machine in the corner.",
+   "text": "He walked straight to one dusty old machine in the corner.",
    "image": {
     "prompt": "{grandpa} standing still in front of a dusty old arcade cabinet in a dark corner, staring at it like he knows it, soft blue screen glow",
     "motion": "push"
    },
-   "pause": 0.35
+   "pause": 0.3
   },
   {
    "text": "The worker, Chad, laughed. 'Sir, that one's for real gamers.'",
@@ -47,31 +47,31 @@
     "prompt": "{chad} leaning on an arcade cabinet laughing and pointing, {grandpa} looking at him calmly, a colorful retro arcade full of glowing cabinets, neon purple and blue lights",
     "motion": "punch"
    },
-   "pause": 0.3
+   "pause": 0.25
   },
   {
-   "text": "They bought it from an old arcade that closed. Its top score hadn't been beaten since 1986.",
+   "text": "They bought it from an old arcade. Nobody had beaten its top score since 1986.",
    "image": {
     "prompt": "{chad} with arms crossed bragging next to a glowing old arcade cabinet, smug face, {ollie} listening, neon lights",
     "motion": "pull"
    },
-   "pause": 0.3
+   "pause": 0.25
   },
   {
-   "text": "A legend nobody ever met. Just three letters... T. J. R.",
+   "text": "Some legend called... T. J. R.",
    "image": {
-    "prompt": "close-up of a glowing retro arcade screen with colorful pixel spaceships and stars, mysterious purple light, no text",
-    "motion": "push"
+    "prompt": "{chad} pointing proudly at a glowing old arcade cabinet, {grandpa} standing beside it with a tiny secret smile, neon purple and blue arcade lights",
+    "motion": "pull"
    },
    "pause": 0.35
   },
   {
-   "text": "Grandpa held out one quarter and said... 'One game.'",
+   "text": "Grandpa held up one quarter. 'One game.'",
    "image": {
     "prompt": "close-up of {grandpa} holding up a single shiny coin between two fingers, confident small smile, neon arcade glow",
     "motion": "push"
    },
-   "pause": 0.4
+   "pause": 0.35
   },
   {
    "text": "Ten minutes later, a crowd was watching.",
@@ -79,25 +79,25 @@
     "prompt": "a crowd of cartoon fruit-headed kids gathered around {grandpa} playing an arcade cabinet, amazed faces, a colorful retro arcade full of glowing cabinets, neon purple and blue lights, wide shot",
     "motion": "panl"
    },
-   "pause": 0.3,
+   "pause": 0.25,
    "label": "10 MINUTES LATER"
   },
   {
-   "text": "Forty minutes later, Chad wasn't laughing anymore.",
+   "text": "Forty minutes later, Chad wasn't laughing.",
    "image": {
-    "prompt": "{chad} with his jaw dropped and eyes huge, frozen in shock, flashing arcade lights on his face",
+    "prompt": "{chad} behind the arcade counter with his jaw dropped and eyes huge, frozen in shock, flashing colorful lights on his face",
     "motion": "push"
    },
-   "pause": 0.35,
+   "pause": 0.3,
    "label": "40 MINUTES LATER"
   },
   {
-   "text": "One quarter. New record. And then Grandpa typed in three letters... T. J. R.",
+   "text": "New record. Then Grandpa typed three letters... T. J. R.",
    "image": {
     "prompt": "{grandpa} pressing an arcade button with one finger, glowing screen light on his face, {ollie} beside him gasping, sparkles in the air",
     "motion": "punch"
    },
-   "pause": 0.5
+   "pause": 0.4
   },
   {
    "text": "Grandpa's name is Thomas James Reed. That record was his.",
@@ -108,12 +108,12 @@
    "pause": 0.5
   },
   {
-   "text": "He quit in '86. Grandma said it was her or the machine... and he picked her.",
+   "text": "He quit in '86. Grandma made him choose... and he picked her.",
    "image": {
     "prompt": "{grandpa} sitting on an arcade stool smiling softly at a small golden heart locket in his hand, warm gentle light, {ollie} smiling next to him",
     "motion": "orbit"
    },
-   "pause": 0.45
+   "pause": 0.4
   },
   {
    "text": "Now Chad gives him free quarters every Saturday. Because the last time...",
@@ -123,5 +123,6 @@
    },
    "pause": 0.05
   }
- ]
+ ],
+ "rev": 2
 }
