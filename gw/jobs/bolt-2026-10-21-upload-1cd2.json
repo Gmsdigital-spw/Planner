@@ -1,0 +1,150 @@
+{
+ "id": "bolt-2026-10-21-upload-1cd2",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177510/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-cookie-exchange-kit/1.jpg",
+   "field": "image",
+   "fileName": "christmas-cookie-exchange-kit-printable-cookie-swap-invitati-1.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Christmas Cookie Exchange Kit Printable, Cookie Swap Invitation, Sign Up Sheet, Allergen Cookie Labels, Recipe Cards, Voting Ballots"
+   },
+   "tag": "prod-cookie-exchange-kit|img1"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177510/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-cookie-exchange-kit/2.jpg",
+   "field": "image",
+   "fileName": "christmas-cookie-exchange-kit-printable-cookie-swap-invitati-2.jpg",
+   "fields": {
+    "rank": "2",
+    "alt_text": "Printable cookie exchange invitation and sign up sheet pages"
+   },
+   "tag": "prod-cookie-exchange-kit|img2"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177510/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-cookie-exchange-kit/3.jpg",
+   "field": "image",
+   "fileName": "christmas-cookie-exchange-kit-printable-cookie-swap-invitati-3.jpg",
+   "fields": {
+    "rank": "3",
+    "alt_text": "Allergen cookie label cards for a holiday cookie swap"
+   },
+   "tag": "prod-cookie-exchange-kit|img3"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177510/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-cookie-exchange-kit/4.jpg",
+   "field": "image",
+   "fileName": "christmas-cookie-exchange-kit-printable-cookie-swap-invitati-4.jpg",
+   "fields": {
+    "rank": "4",
+    "alt_text": "Cookie swap voting ballots and recipe card printables"
+   },
+   "tag": "prod-cookie-exchange-kit|img4"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177510/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-cookie-exchange-kit/5.jpg",
+   "field": "image",
+   "fileName": "christmas-cookie-exchange-kit-printable-cookie-swap-invitati-5.jpg",
+   "fields": {
+    "rank": "5",
+    "alt_text": "Cookie exchange kit pages laid out on an oak desk"
+   },
+   "tag": "prod-cookie-exchange-kit|img5"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177510/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/fb780132afb11df1/christmas-cookie-exchange-kit-printable-cookie-swap-invitati.pdf",
+   "field": "file",
+   "fileName": "christmas-cookie-exchange-kit-printable-cookie-swap-invitati.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "christmas-cookie-exchange-kit-printable-cookie-swap-invitati.pdf"
+   },
+   "tag": "prod-cookie-exchange-kit|pdf"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177516/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-gingerbread-contest-kit/1.jpg",
+   "field": "image",
+   "fileName": "gingerbread-house-decorating-contest-printable-judge-score-c-1.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Gingerbread House Decorating Contest Printable, Judge Score Cards, Voting Ballots and Award Certificates for Kids, Teens and Adults"
+   },
+   "tag": "prod-gingerbread-contest-kit|img1"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177516/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-gingerbread-contest-kit/2.jpg",
+   "field": "image",
+   "fileName": "gingerbread-house-decorating-contest-printable-judge-score-c-2.jpg",
+   "fields": {
+    "rank": "2",
+    "alt_text": "Gingerbread contest judge score cards with five criteria"
+   },
+   "tag": "prod-gingerbread-contest-kit|img2"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177516/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-gingerbread-contest-kit/3.jpg",
+   "field": "image",
+   "fileName": "gingerbread-house-decorating-contest-printable-judge-score-c-3.jpg",
+   "fields": {
+    "rank": "3",
+    "alt_text": "Printable voting ballots for a gingerbread house contest"
+   },
+   "tag": "prod-gingerbread-contest-kit|img3"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177516/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-gingerbread-contest-kit/4.jpg",
+   "field": "image",
+   "fileName": "gingerbread-house-decorating-contest-printable-judge-score-c-4.jpg",
+   "fields": {
+    "rank": "4",
+    "alt_text": "Award certificates for kids, teens and adults divisions"
+   },
+   "tag": "prod-gingerbread-contest-kit|img4"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177516/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-gingerbread-contest-kit/5.jpg",
+   "field": "image",
+   "fileName": "gingerbread-house-decorating-contest-printable-judge-score-c-5.jpg",
+   "fields": {
+    "rank": "5",
+    "alt_text": "Gingerbread decorating contest printables on an oak desk"
+   },
+   "tag": "prod-gingerbread-contest-kit|img5"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177516/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/9123dbb6918e1bf7/gingerbread-house-decorating-contest-printable-judge-score-c.pdf",
+   "field": "file",
+   "fileName": "gingerbread-house-decorating-contest-printable-judge-score-c.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "gingerbread-house-decorating-contest-printable-judge-score-c.pdf"
+   },
+   "tag": "prod-gingerbread-contest-kit|pdf"
+  }
+ ]
+}
