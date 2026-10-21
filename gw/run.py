@@ -40,7 +40,7 @@ KEY, SECRET = os.environ.get("ETSY_KEYSTRING", ""), os.environ.get("ETSY_SHARED_
 ZKEY, SKEY = os.environ.get("ZERNIO_API_KEY", ""), os.environ.get("STARSHIP_KEY", "")
 GKEY = os.environ.get("GUMROAD_TOKEN", "")
 GUMROAD = "https://api.gumroad.com/v2"
-AKEY, ASEC = os.environ.get("ALPACA_KEY_ID", ""), os.environ.get("ALPACA_SECRET_KEY", "")
+AKEY, ASEC = os.environ.get("ALPACA_KEY_ID", "").strip(), os.environ.get("ALPACA_SECRET_KEY", "").strip()
 ALPACA_LIVE = os.environ.get("ALPACA_LIVE", "") == "1"   # stays "0": paper only until Grayson flips it himself
 ALPACA = "https://api.alpaca.markets/v2" if ALPACA_LIVE else "https://paper-api.alpaca.markets/v2"
 ALPACA_DATA = "https://data.alpaca.markets/v2"
@@ -439,8 +439,12 @@ def run_job(path):
             results.append({"i": i, "op": name, "tag": o.get("tag"), "status": code, "ok": 200 <= code < 300,
                             "data": scrub(data), "ms": int((time.time() - t0) * 1000)})
         except Exception as e:
+            err = f"{type(e).__name__}: {e}"
+            for sec in (AKEY, ASEC, KEY, SECRET, ZKEY, GKEY, SKEY):
+                if sec and len(sec) > 6:
+                    err = err.replace(sec, "[hidden]").replace(sec + "\\n", "[hidden]")
             results.append({"i": i, "op": name, "tag": o.get("tag"), "status": 0, "ok": False,
-                            "error": f"{type(e).__name__}: {e}"[:500]})
+                            "error": err[:500]})
             if job.get("stopOnError"):
                 break
     out = {"id": jid, "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
