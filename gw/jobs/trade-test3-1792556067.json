@@ -1,0 +1,1 @@
+{"id":"trade-test3-1792556067","ops":[{"op":"alpaca","path":"/bankroll","tag":"bank"},{"op":"alpaca","method":"POST","path":"/orders","body":{"symbol":"SPY","notional":"5","side":"buy","type":"market","time_in_force":"day"},"tag":"nostop-should-refuse"}]}

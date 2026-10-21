@@ -374,6 +374,29 @@ def op_fetch_images(o, st):
     return 200, {"dir": str(d.relative_to(ROOT)), "saved": saved}
 
 
+def virtual_account(hdr, st):
+    """Paper accounts start with $100k. The Trading Floor plays them as a $25 account: virtual equity =
+    ALPACA_BANKROLL (default 25) + (real equity - equity when the floor first ran). Live accounts use real numbers."""
+    acct = requests.get(ALPACA + "/account", headers=hdr, timeout=60).json()
+    real_eq = float(acct.get("equity") or 0); real_cash = float(acct.get("cash") or 0)
+    if ALPACA_LIVE:
+        return {"mode": "live", "equity": real_eq, "cash": real_cash, "realEquity": real_eq}
+    bank = float(os.environ.get("ALPACA_BANKROLL", "25") or 25)
+    base = st.get("alpaca_paper_base")
+    if base is None:
+        st["alpaca_paper_base"] = base = real_eq
+        try:
+            save_state(st)
+        except Exception:
+            pass
+    pnl = real_eq - float(base)
+    pos = requests.get(ALPACA + "/positions", headers=hdr, timeout=60).json()
+    held = sum(abs(float(p.get("market_value") or 0)) for p in pos) if isinstance(pos, list) else 0.0
+    eq = round(bank + pnl, 2)
+    return {"mode": "paper", "equity": eq, "cash": round(max(0.0, eq - held), 2), "pnl": round(pnl, 2),
+            "bankroll": bank, "held": round(held, 2), "realEquity": real_eq}
+
+
 def op_alpaca(o, st):
     """Trading Floor (V6, paper first). {"op":"alpaca","method":"GET|POST|DELETE","path":"/account" | "/orders" | "/positions" ...,"body":{...}}
     Hard rules enforced here, not just in the prompt: paper endpoint unless the ALPACA_LIVE secret is "1"; no margin
@@ -391,10 +414,12 @@ def op_alpaca(o, st):
             body = json.loads(body)
         except Exception:
             pass
+    if o.get("path") == "/bankroll" and not o.get("data"):
+        return 200, virtual_account(hdr, st)
     if m == "POST" and o["path"].startswith("/orders") and not o.get("data"):
         floor = float(os.environ.get("ALPACA_FLOOR", "20"))
-        acct = requests.get(ALPACA + "/account", headers=hdr, timeout=60).json()
-        equity = float(acct.get("equity") or 0); cash = float(acct.get("cash") or 0)
+        va = virtual_account(hdr, st)
+        equity, cash = va["equity"], va["cash"]
         side = str((body or {}).get("side", "")).lower()
         if side == "buy":
             if equity <= floor:
