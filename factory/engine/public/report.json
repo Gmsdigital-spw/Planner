@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "generated_at": "2026-10-21T18:12:36Z",
+ "generated_at": "2026-10-21T18:33:53Z",
  "worker": "python -m factory.engine worker",
  "health": {
   "engine_schema": 4,
   "kill": false,
   "paused_agents": [],
-  "last_tick": "2026-10-21T18:12:36Z",
+  "last_tick": "2026-10-21T18:33:53Z",
   "last_runner": "cli",
   "last_tick_age_s": 0,
   "counts": {
@@ -161,7 +161,7 @@
    "state": "connected",
    "last_ok_at": "2026-10-21T17:44:21Z",
    "last_error": "2026-10-21T04:15:15Z trade-test4-1792556098.json",
-   "checked_at": "2026-10-21T18:12:36Z",
+   "checked_at": "2026-10-21T18:33:53Z",
    "note": "GitHub Actions gw.yml; secrets live there only"
   },
   {
@@ -169,11 +169,36 @@
    "state": "missing",
    "last_ok_at": null,
    "last_error": null,
-   "checked_at": "2026-10-21T18:12:36Z",
+   "checked_at": "2026-10-21T18:33:53Z",
    "note": "Make is reachable only from the Factory page / crews (Claude connector); Python writes drafts"
   }
  ],
  "errors": [],
- "orders": [],
- "audit": []
+ "orders": [
+  {
+   "action": "resume",
+   "id": "herald",
+   "by": "grayson",
+   "at": "2026-10-21T18:33:53Z",
+   "ok": true,
+   "result": "agent herald resumed",
+   "order_id": "ord_test_hop"
+  }
+ ],
+ "audit": [
+  {
+   "at": "2026-10-21T18:33:53Z",
+   "who": "grayson",
+   "action": "order_applied",
+   "subject": "herald",
+   "detail": "agent herald resumed"
+  },
+  {
+   "at": "2026-10-21T18:33:53Z",
+   "who": "grayson",
+   "action": "resume",
+   "subject": "herald",
+   "detail": ""
+  }
+ ]
 }
