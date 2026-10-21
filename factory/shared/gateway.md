@@ -28,6 +28,11 @@ Load only the service section your stage names.
   "fileUrl":"<public https URL>","field":"image","fileName":"<name>.jpg",
   "fields":{"rank":"<n>","alt_text":"<text>"},"tag":"..."}.
   PDF: path ".../listings/<listingId>/files", field "file", fields {"rank":"1","name":"<file name>"}.
+- Download listing photos for inspection (Warden): {"op":"fetch_images","dir":"<name>","items":[{"name":
+  "<listing_id>-r<rank:02d>-<listing_image_id>.jpg","url":<url_570xN>}]} (max 110 items per op) ->
+  saved under gw/out/files/<dir>/ on the next gateway push.
+- Delete a listing image (Warden only, duplicates and replaced covers): {"op":"etsy","method":
+  "DELETE","path":"/shops/68605457/listings/<listingId>/images/<listing_image_id>"}.
 - Common reads: `/shops/68605457/listings/active?limit=100&includes=Images`, `/shops/68605457`,
   `/shops/68605457/listings?state=draft&limit=100`, `/listings/<id>/inventory`,
   `/shops/68605457/listings/<id>/files`, `/shops/68605457/transactions?limit=100`.
