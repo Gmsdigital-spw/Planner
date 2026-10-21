@@ -69,7 +69,10 @@ factory/engine/
   engine.py          TaskEngine: queued→running→needs_approval→succeeded|failed|cancelled,
                      idempotency keys, bounded retries with backoff, timeouts, kill switch,
                      stalled detection, checkpoints, secret-safe logging
-  cli.py             python -m factory.engine  status | tasks | kill on|off | selftest | export-ts
+  cli.py             python -m factory.engine  status | tasks | agents | plan | progress | verify | providers | kill on|off | selftest | export-ts
+  registry.py        the ten agent contracts + versioned sync into the store (Phase 4)
+  orchestrator.py    goal → dependency graph, progress, blocked reasons, verify-before-complete (Phase 4)
+  providers.py       provider-neutral model interface: mock, Claude-session hand-off, paid API (off) (Phase 4)
   ts/contracts.d.ts  generated TypeScript types (do not edit; `export-ts` regenerates)
   db/journal.jsonl   append-only durable records (committed)
   db/state.sqlite    derived index (ignored by git)
@@ -77,9 +80,24 @@ factory/engine/
 .github/workflows/engine-tests.yml   runs the suite on every push (green check in the GitHub app)
 ```
 
+## Added in Phase 4
+
+- `registry.py` — the ten agent contracts (one per add-on role, each mapped to the crew that already does the
+  job and to its `factory/skills/<agent>/SKILL.md`), **versioned in the store**: `sync()` writes a new row only
+  when the contract or its SKILL.md hash changed; old versions are kept (`agents` table, migration v2).
+- `orchestrator.py` — goal → task graph with dependencies (`launch_product`, `promote_product`,
+  `research_lane`, `health_check`), submitted through the engine so every safeguard applies; `progress()`
+  names what is blocked and why; `verify()` marks a project complete only when every task succeeded *with an
+  output*. Projects live in the `projects` table and the journal.
+- `providers.py` — provider-neutral `Provider` interface and three adapters: `MockProvider` (tests),
+  `ClaudeSessionProvider` (hand-off to the crew's own Claude session; usage unknown; available only inside a
+  crew run), `AnthropicApiProvider` (paid; unavailable until a key is configured and, in Phase 5, a budget is
+  approved). No prices anywhere; no model names hard-coded.
+
 ## What is NOT implemented yet (honest list)
 
-- Phase 4: agent registry wired to the real crews, orchestrator planning, model-provider adapters.
+- Phase 4 leftover: the task kinds the orchestrator submits still have no real handlers — `tick` runs only the
+  placeholder; the crews keep doing the real work through their own scheduled runs until Phase 7 wires them.
 - Phase 5: routing, caching, cost tracking (schema exists; nothing enforces budgets yet).
 - Phase 6–7: quality gate + distribution plans driving real runs; publishing adapters (today Bolt/Herald/Rocket publish through their own paths, not the engine).
 - Phase 8: dashboard views for tasks/health (the page shows nothing from the engine yet; Phase 8 will mirror the journal into the artifact DB so the page can read it without a new tab).

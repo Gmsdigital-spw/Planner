@@ -11,6 +11,10 @@
   pause <agent> / resume <agent>
   tick [n]               one worker pass with the registered demo handlers (n tasks max)
   rebuild                rebuild state.sqlite from journal.jsonl
+  agents                 registered agent contracts (versions, skill file state); `agents sync` re-registers
+  plan <goal> <input>    build + submit a task graph (goals: launch_product, promote_product, research_lane, health_check)
+  projects               open projects;  progress <proj_id>;  verify <proj_id>
+  providers              which model providers are really configured (none paid unless a key is set)
   export-ts              regenerate ts/contracts.d.ts and contracts.schema.json
   selftest               run the unit tests
 
@@ -24,7 +28,9 @@ from pathlib import Path
 
 from . import contracts
 from .engine import TaskEngine
-from .registry import AGENTS, demo_handlers
+from .orchestrator import PLANS, Orchestrator
+from .providers import availability
+from .registry import AGENTS, demo_handlers, sync
 from .store import Store
 
 HERE = Path(__file__).resolve().parent
@@ -32,6 +38,7 @@ HERE = Path(__file__).resolve().parent
 
 def _engine(store: Store) -> TaskEngine:
     eng = TaskEngine(store, AGENTS, runner="cli")
+    sync(store)
     for kind, fn in demo_handlers().items():
         eng.register(kind, fn)
     return eng
@@ -86,6 +93,22 @@ def main(argv: list[str] | None = None) -> int:
             print(f"{len(runs)} task(s) processed")
         elif cmd == "rebuild":
             print("replayed", store.rebuild(), "journal lines")
+        elif cmd == "agents":
+            if len(args) > 1 and args[1] == "sync":
+                print(json.dumps(sync(store), indent=1))
+            for r in store.agents():
+                print(f"{r['id']:10} v{r['version']}  {r['role']:16} skill={'ok' if r['skill_sha'] else 'missing'}  {r['registered_at']}")
+        elif cmd == "plan":
+            print(json.dumps(Orchestrator(eng).plan(args[1], args[2], who="grayson"), indent=1))
+        elif cmd == "projects":
+            for p in store.projects():
+                print(f"{p['id']}  {p['status']:8} {p['goal']:16} {p['input_ref']}")
+        elif cmd == "progress":
+            print(json.dumps(Orchestrator(eng).progress(args[1]), indent=1))
+        elif cmd == "verify":
+            print(json.dumps(Orchestrator(eng).verify(args[1], who="grayson"), indent=1))
+        elif cmd == "providers":
+            print(json.dumps(availability(), indent=1))
         else:
             print(__doc__)
             return 2

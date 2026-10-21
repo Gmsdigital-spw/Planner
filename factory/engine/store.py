@@ -19,7 +19,7 @@ import threading
 import typing as t
 from pathlib import Path
 
-from .contracts import (SCHEMA_VERSION, Approval, AuditEvent, DistributionPlan, IntegrationHealth, ModelUsage,
+from .contracts import (SCHEMA_VERSION, AgentContract, Approval, AuditEvent, DistributionPlan, IntegrationHealth, ModelUsage,
                         ProductManifest, Run, Task, TaskStatus, now_iso, scrub)
 
 HERE = Path(__file__).resolve().parent
@@ -58,6 +58,13 @@ MIGRATIONS: list[tuple[int, str]] = [
     CREATE TABLE IF NOT EXISTS integrations(
       id TEXT PRIMARY KEY, state TEXT NOT NULL, last_ok_at TEXT, last_error TEXT, checked_at TEXT, note TEXT);
     CREATE TABLE IF NOT EXISTS control(key TEXT PRIMARY KEY, value TEXT NOT NULL, updated_at TEXT NOT NULL);
+    """),
+    (2, """
+    CREATE TABLE IF NOT EXISTS agents(
+      id TEXT NOT NULL, version INTEGER NOT NULL, role TEXT NOT NULL, name TEXT NOT NULL, registered_at TEXT NOT NULL,
+      skill_sha TEXT, doc TEXT NOT NULL, PRIMARY KEY(id, version));
+    CREATE TABLE IF NOT EXISTS projects(
+      id TEXT PRIMARY KEY, goal TEXT NOT NULL, status TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, doc TEXT NOT NULL);
     """),
 ]
 
@@ -190,6 +197,15 @@ class Store:
             c.execute("""INSERT INTO integrations(id,state,last_ok_at,last_error,checked_at,note) VALUES(?,?,?,?,?,?)
                          ON CONFLICT(id) DO UPDATE SET state=excluded.state,last_ok_at=excluded.last_ok_at,last_error=excluded.last_error,checked_at=excluded.checked_at,note=excluded.note""",
                       (i.id, i.state.value, i.last_ok_at, scrub(i.last_error) if i.last_error else None, i.checked_at, i.note))
+        elif kind == "agent":
+            a = AgentContract.from_dict(data["contract"])
+            c.execute("""INSERT INTO agents(id,version,role,name,registered_at,skill_sha,doc) VALUES(?,?,?,?,?,?,?)
+                         ON CONFLICT(id,version) DO UPDATE SET skill_sha=excluded.skill_sha,doc=excluded.doc""",
+                      (a.id, a.version, a.role.value, a.name, data.get("at") or now_iso(), data.get("skill_sha"), a.to_json()))
+        elif kind == "project":
+            c.execute("""INSERT INTO projects(id,goal,status,created_at,updated_at,doc) VALUES(?,?,?,?,?,?)
+                         ON CONFLICT(id) DO UPDATE SET status=excluded.status,updated_at=excluded.updated_at,doc=excluded.doc""",
+                      (data["id"], data["goal"], data["status"], data["created_at"], data["updated_at"], json.dumps(data, sort_keys=True)))
         elif kind == "control":
             c.execute("INSERT INTO control(key,value,updated_at) VALUES(?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at",
                       (data["key"], json.dumps(data["value"]), data.get("at") or now_iso()))
@@ -206,6 +222,24 @@ class Store:
     def put_plan(self, d: DistributionPlan) -> None: self._apply("plan", d.to_dict())
     def put_integration(self, i: IntegrationHealth) -> None: self._apply("integration", i.to_dict())
     def set_control(self, key: str, value: t.Any) -> None: self._apply("control", {"key": key, "value": value, "at": now_iso()})
+    def put_agent(self, a: AgentContract, skill_sha: t.Optional[str] = None) -> None: self._apply("agent", {"at": now_iso(), "skill_sha": skill_sha, "contract": a.to_dict()})
+    def put_project(self, doc: dict) -> None: self._apply("project", doc)
+
+    def agents(self) -> list[dict]:
+        return [dict(r) for r in self._rows("SELECT id,version,role,name,registered_at,skill_sha FROM agents ORDER BY id, version")]
+
+    def get_agent(self, agent_id: str, version: t.Optional[int] = None) -> t.Optional[AgentContract]:
+        r = (self._rows("SELECT doc FROM agents WHERE id=? AND version=?", (agent_id, version)) if version is not None
+             else self._rows("SELECT doc FROM agents WHERE id=? ORDER BY version DESC LIMIT 1", (agent_id,)))
+        return AgentContract.from_dict(json.loads(r[0]["doc"])) if r else None
+
+    def get_project(self, project_id: str) -> t.Optional[dict]:
+        r = self._rows("SELECT doc FROM projects WHERE id=?", (project_id,))
+        return json.loads(r[0]["doc"]) if r else None
+
+    def projects(self, status: t.Optional[str] = None) -> list[dict]:
+        rows = self._rows("SELECT doc FROM projects WHERE status=? ORDER BY updated_at DESC", (status,)) if status else self._rows("SELECT doc FROM projects ORDER BY updated_at DESC")
+        return [json.loads(r["doc"]) for r in rows]
 
     # ---------------------------------------------------------------- reads
     def _rows(self, sql: str, args: tuple = ()) -> list[sqlite3.Row]:

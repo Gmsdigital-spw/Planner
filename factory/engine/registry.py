@@ -6,7 +6,12 @@ Nobody gets TRADE_LIVE. No Gumroad, no Funnel, no Ridgeline.
 """
 from __future__ import annotations
 
+import hashlib
+from pathlib import Path
+
 from .contracts import AgentContract, AgentRole, Budget, Capability, ErrorPolicy
+
+REPO = Path(__file__).resolve().parents[2]
 
 # tools are *names*; a handler calls ctx.use_tool(name) before touching anything outside the repo
 T_WEB = ["web.search", "web.fetch"]
@@ -71,6 +76,31 @@ AGENTS: dict[str, AgentContract] = {a.id: a for a in [
                   error_policy=ErrorPolicy(max_retries=1, timeout_s=1800), budget=Budget(max_calls_per_task=60),
                   skill_path="factory/skills/medic/SKILL.md"),
 ]}
+
+
+def skill_sha(agent: AgentContract) -> str | None:
+    """sha256 of the agent's SKILL.md (so a changed skill shows up as a new registry row), or None if missing."""
+    if not agent.skill_path:
+        return None
+    p = REPO / agent.skill_path
+    return hashlib.sha256(p.read_bytes()).hexdigest()[:16] if p.exists() else None
+
+
+def sync(store, agents: dict[str, AgentContract] | None = None) -> list[dict]:
+    """Write every contract into the store's `agents` table. A contract is re-written as a new version only
+    when its definition or its SKILL.md changed; unchanged contracts are left alone. Returns what changed."""
+    changed = []
+    for a in (agents or AGENTS).values():
+        sha = skill_sha(a)
+        cur = store.get_agent(a.id)
+        cur_sha = next((r["skill_sha"] for r in store.agents() if r["id"] == a.id and r["version"] == (cur.version if cur else -1)), None)
+        if cur and cur.to_json() == a.to_json() and cur_sha == sha:
+            continue
+        if cur and cur.version >= a.version:
+            a.version = cur.version + 1
+        store.put_agent(a, sha)
+        changed.append({"id": a.id, "version": a.version, "skill": "ok" if sha else ("missing" if a.skill_path else "none")})
+    return changed
 
 
 def demo_handlers():

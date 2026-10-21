@@ -6,7 +6,7 @@ journal; no background workers are claimed — a worker is whatever calls `tick(
 
 ## Run it (phone-friendly)
 
-- **GitHub app → Actions → "Engine tests"**: runs on every push to this folder. Green = all 22 unit tests,
+- **GitHub app → Actions → "Engine tests"**: runs on every push to this folder. Green = all 33 unit tests,
   the V7 rules self-test and the contracts export check passed. Red = open the log; the Mechanic reads it too.
 - From any shell with Python 3.10+ (no packages needed):
 
@@ -17,6 +17,11 @@ python -m factory.engine approvals       # what is waiting on you
 python -m factory.engine approve apr_…   # or decline
 python -m factory.engine kill on         # stop every new action; deletes nothing.  kill off to resume
 python -m factory.engine retry task_…    # put a failed task back
+python -m factory.engine agents          # the registered crews, versions, whether their SKILL.md is on disk
+python -m factory.engine plan launch_product briefs/<id>   # build the task graph for one brief
+python -m factory.engine progress proj_…  # done / blocked (with the reason) / failed
+python -m factory.engine verify proj_…    # complete only when every step succeeded with an output
+python -m factory.engine providers       # which model providers are really configured (paid one is off)
 python -m factory.engine selftest        # the tests, locally
 ```
 
