@@ -19,9 +19,11 @@
    number when needed. Set product.batchId and stage "batched". Never publish a batch.
 2. Set crew/pixel working ("Pins: <title>"). For each product in stage "batched" or "passed"
    with no pins (query pins where productId == id): make 3 pins in at least 2 different
-   styles, each a real 1000x1500 JPEG from tools/cover_styles.py (size "pin", a hook of 4 to 7
-   words in the top third, real pages, the product's theme), saved with gs.save_jpeg and
-   uploaded as an asset. Use a different hero page per pin. When pinstats shows one style or
+   styles, each a real 1000x1500 JPEG from tools/cover_styles.py (size "pin", styles 1 to 5,
+   a hook of 4 to 7 words in the top third, real pages, the boldest theme that fits: bright,
+   christmas, berry, evergreen, harvest or champagne; never linen or style 6 cream desk),
+   saved with gs.save_jpeg and uploaded as an asset. (A pin tool matching the bold fun_covers
+   look does not exist yet; cover_styles.py is the pin standard until Grayson approves one.) Use a different hero page per pin. When pinstats shows one style or
    title angle clearly ahead on saves and clicks to Etsy (at least 2 pins of evidence), use it
    for most pins and keep one pin per product trying something different.
 3. Pin doc: pins/<id> {productId, listing (product name), title (100 chars max: names the
@@ -36,7 +38,8 @@
    way (up to 7 per run).
 5. Pins with status "retired" are Grayson's removed old-style pins: never re-image, queue,
    copy or recreate them. Never a solid colour-block pin.
-6. Set crew/pixel idle. Count pins in the run doc and `../output/<day key>-run.md`.
+6. Set crew/pixel idle. Write `## Pins` in the run notes: pins made per product, styles used,
+   queue depth.
 
 ## Audit
 

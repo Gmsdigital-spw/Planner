@@ -6,6 +6,7 @@
 |--------|--------------|---------------|-----|
 | Spec | `../../../specs/product-floor-v6.md` | Idea Engine, lanes, Holiday Mode, SALES PUSH | The standing order for ideas |
 | Skill | `../../../skills/scout/SKILL.md` | Full file | Scout's checklist and lessons |
+| Skill | `../../../skills/judge_ideas/SKILL.md` | Full file | The Idea Judge works in this stage |
 | Lessons | `../../../LESSONS.md` | Full file | Numbers-only lessons |
 | Database | briefs (newest 60), products (newest 60) | title, niche, lane, status, rejectReason | Never repeat a niche; learn from rejections |
 | Database | sprint/main, lessons (status active), ideas (newest 3) | flags, text | Score shopFit from real results |
@@ -27,7 +28,10 @@
    budgets, meal plans, kids activities, templates), or the other lanes to the spec's sizes.
    No art-heavy products except the wall art lane, no characters, brands, trademarks, medical
    or legal claims.
-5. Hand the 15 ideas to stage 02 (the Idea Judge gives each brief/hold/drop). The best 3 become
+5. The Idea Judge (judge_ideas, in this stage, with the auto-approver's reject rules from
+   stage 02's Process step 2) gives each idea a verdict: drop, hold (good but no slot or window
+   not open yet), or brief for exactly 3 (the strongest; one a wall art set; while Holiday Mode
+   is on, at least one aimed at the target holiday). Then research the 3 and file them as
    full briefs: briefs/<id> {title, niche, lane, buyer, competition, season, priceRange,
    score:{demand, competition, timing, shopFit, buildable, price} each 0 to 5, total (0 to 30),
    evidence:[{label, url}] (2 or more real links you really opened), summary (plain text),
@@ -41,7 +45,10 @@
    refresh rules ONLY from what the official page says, in plain sentences. Never state ranking
    weights or hidden signals; unproven goes in unknowns. Append one history line. Hard cap 8
    minutes; over it, skip and log.
-8. Set crew/scout idle. Log the counts in the run doc and `../output/<day key>-run.md`.
+8. Append one JSON line per idea verdict to `factory/scores.jsonl`: {"d":"<day key>",
+   "agent":"judge_ideas","kind":"idea","item":<title>,"score":<total or null>,"metric":<verdict>}.
+9. Set crew/scout idle. Log one event (crew "Scout", "Judged 15 ideas: 3 briefs, N held, N
+   dropped") and write the counts under `## Scout` in `../output/<day key>-run.md`.
 
 ## Audit
 

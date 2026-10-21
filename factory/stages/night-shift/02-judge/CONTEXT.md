@@ -11,7 +11,7 @@ other than "Atlas auto-approver").
 |--------|--------------|---------------|-----|
 | Skill | `../../../skills/judge_ideas/SKILL.md` | Full file | The judge's checklist |
 | Database | briefs (status proposed), lessons (active) | all fields | What to decide and what Grayson likes |
-| Previous stage | ideas/<day key> | items | The 15 ideas and their verdicts |
+| Previous stage | ideas/<day key> | items (verdicts already given by the Idea Judge in stage 01) | Context only; this stage decides BRIEFS |
 | Reference | `../references/wall-art.md` | "Auto-approver" section | Only for a wall art brief |
 
 ## Process

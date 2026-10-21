@@ -49,7 +49,10 @@ C. Atlas sales review (room "bridge"). Read stats (newest 14). Fewer than 2 snap
    priceNote, notes}, etsyStep (the fixed sentence in database-fields.md), summary, createdAt,
    source "Atlas sales review <day>"}. Description ONLY by rewriting the live one from stats
    (descriptionVerified true); if stats has none, description null and descriptionVerified
-   false. Never change the live listing yourself. Weekly lesson: if no lesson with source
+   false. Follow every Quill rule (stage 05) for that copy. If an active mission has a task
+   about that listing, set the task's output to the new product id. For "working" listings,
+   say in the review what the next product should borrow from them (format, price point,
+   holiday timing). Never change the live listing yourself. Weekly lesson: if no lesson with source
    starting "Atlas weekly review" exists from the last 7 days and 7+ days of stats exist,
    write ONE lessons/<id> (under 160 chars, the numbers, confidence low under 100 views,
    expiresAt 90 days). Never a lesson without numbers.

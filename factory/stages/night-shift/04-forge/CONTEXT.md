@@ -25,13 +25,15 @@
    short items), d.table, d.lines, d.box and d.end() (adds the name and page number footer).
    Custom layouts draw on d.c with the palette colours and kit fonts; keep text inside the
    margins. Tables that are the page use fill=True so rows reach the bottom; a page is never
-   half empty. End with the thank-you page from the spec, word for word.
+   half empty. End with the thank-you page from the spec, word for word (it is not counted in
+   the 6 to 16 content pages or in the copy's page count; file.pages is the pypdf total). Wall
+   art: append it to the link PDF with pypdf after wa.link_pdf, keeping the file under 550 KB.
 4. Render every page at 50 dpi into one contact sheet and Read it yourself: fix any overlap,
    clipped text, crowded page or empty half page before moving on. Verify every answer key
    against its questions with Python.
 5. Count the pages with pypdf, upload the PDF as an asset (database.md "Files"), update the
    product: file {assetId, url, pages, sizeBytes, builtAt}, stage "copy".
-6. Set crew/forge idle. Note pages and size in `../output/<day key>-run.md`.
+6. Set crew/forge idle. Write `## Build: <title>` in the run notes: pages, size, asset id.
 
 ## Audit
 

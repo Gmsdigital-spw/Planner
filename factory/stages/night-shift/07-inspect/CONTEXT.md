@@ -33,9 +33,9 @@ better than a padded 91.
    its weakest categories), re-score. A product that fails after retries reaches 2 becomes
    stage "scrapped". Never rewrite an older product's score to a different rubric.
 6. Write one JSON line per scored product to `factory/scores.jsonl`:
-   {"d":"<day key>","agent":"atlas","kind":"product","item":"<title>","score":<total>,"metric":null}
-   (and one per Idea Judge decision from stage 02: agent "judge_ideas", kind "idea").
-7. Set crew/atlas idle. Record each score and its fails in `../output/<day key>-run.md`.
+   {"d":"<day key>","agent":"atlas","kind":"product","item":"<title>","score":<total>,"metric":null}.
+7. Set crew/atlas idle. Write `## Inspect: <title>` in the run notes: PASS/FAIL, the six
+   scores, the slop fails, the stage it ended in.
 
 ## Audit
 

@@ -22,7 +22,8 @@ something stricter, the prompt wins.
 - The repo is public. Nothing goes into it that should not be read by strangers.
 
 ## What needs Grayson's go (never do these on your own)
-- Spend money (any amount), buy credits, start or change ads, boost a post, add a paid service.
+- Spend money (any amount), buy credits, start or change ads, boost a post, add a paid service,
+  sign up for anything or create an account.
 - Publish beyond a cap, raise any cap, change a daily or monthly limit.
 - Delete, deactivate or edit a live Etsy listing's title, tags, photos or description (only
   Bolt publishes; only Ledger changes prices, within its rules; only Warden swaps a cover).

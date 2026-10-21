@@ -26,7 +26,8 @@
    Party Games"; wall art "Art & Collectibles > Prints > Digital Prints"; lane specs for the
    rest); materials "Digital download, PDF" (mug wraps add PNG).
 5. Verify every limit with Python (counts, lengths, tag uniqueness, the exact AI line). Then
-   stage "images". Set crew/quill idle.
+   stage "images". Set crew/quill idle. Write `## Copy: <title>` in the run notes: the
+   title, price, tag count.
 
 ## Audit
 

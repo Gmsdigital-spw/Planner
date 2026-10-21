@@ -19,10 +19,12 @@
 2. For each chosen brief create products/<id> {title, briefId, lane -> kind, stage "building",
    summary, createdAt, source "Night Shift <day>"} and set the brief's status "built" and
    productId.
-3. Choose now and save in product.style: the cover style (1 to 6 from cover-styles.md, never
-   the same as the last 3 published products' coverStyle; style 6 at most 1 in 4), the theme
-   colour, the PDF cover style (band / frame / split) and page_frame (rule / stripe / band /
-   none) so the shop grid shows variety. Save product.coverStyle too.
+3. Choose now and save: product.style = {palette (gs palette for the pages), coverStyle (the
+   PDF cover style: band / frame / split), pageFrame (rule / stripe / band / none), theme (a
+   tools/fun_covers.py THEMES key that fits the product), kit:"gm_kit_v4"} and
+   product.coverLook = {tool:"fun_covers", theme, art:[the 3D art names planned]}. Rotation:
+   theme and art must differ from the last 3 published products' coverLook, and no two
+   products built tonight share a palette, pageFrame or coverStyle.
 4. Missions (room "mission"). (a) For each mission with status active or blocked: mark its
    tasks doing/done as this run completes them, record outputs; set a task blocked with a
    note when it cannot proceed; if Grayson must act set needsOwner true and ownerAsk to one
@@ -41,7 +43,7 @@
 | Check | Pass condition |
 |-------|---------------|
 | Cap | Build list <= buildsPerRun |
-| Variety | No product in the list repeats the cover style of the last 3 published |
+| Variety | No product repeats the theme + art (coverLook) of the last 3 published |
 | Missions | At most 1 new, status planned, with a numeric verify |
 
 ## Outputs

@@ -6,10 +6,13 @@ cozy, real") was retired by Grayson on Oct 21, 2026 for covers and pins. The kit
 for the PDF pages and the inside photos below.
 
 ## The kit
-- Fetch it before Forge starts: Artifact read with url = the artifact url, out_dir = a new local
-  folder, path "917d03e4f21b576da506766f0aa992f8" then path "d2fe939ea8bd7975733326b0cc836a6c"
-  (one path per call). Copy the saved .txt files to gm_style.py and mockup.py in a folder of
-  your own, then sys.path.insert(0, folder); import gm_style as gs; import mockup as mk. Their
+- The kit folder is /home/claude/kit (shared by every worker tonight). If gm_style.py or
+  mockup.py is missing there: Artifact read with url = the artifact url, out_dir =
+  /home/claude/kit, path "917d03e4f21b576da506766f0aa992f8" then path
+  "d2fe939ea8bd7975733326b0cc836a6c" (one path per call), and copy the saved .txt files to
+  /home/claude/kit/gm_style.py and mockup.py (wall art: path "d0b1821fc580b42db28e2c22b005fb85"
+  to wall_art.py). Then sys.path.insert(0, "/home/claude/kit"); import gm_style as gs; import
+  mockup as mk. Their
   docstrings list every function. They use the installed Lora and Poppins fonts, fontTools and
   numpy.
 - If the kit cannot be fetched or raises an error you cannot fix, follow these same rules by

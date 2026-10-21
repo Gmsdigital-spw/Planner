@@ -8,8 +8,8 @@
 - Cover plus 4 previews, 2000 px wide JPEG, every word inside the text safe zone, title and
   count readable at 300 px.
 - Cover follows specs/cover-styles.md (newest section wins): bold theme colour, real pages
-  big, count badge, pills, themed art; style not repeating the last 3 published; no cream
-  desk; pins (if already made) in 2+ styles.
+  big, count badge, pills, themed art (tools/fun_covers.py); theme + art not repeating the
+  last 3 published; no cream desk; pins (if already made) in 2+ styles.
 - Pages full and framed; no cramped or half-empty page.
 - No real name or hometown; no brand or character names; nothing copied from another shop; no
   internet images.
