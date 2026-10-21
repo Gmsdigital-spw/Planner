@@ -1,0 +1,33 @@
+{
+ "id": "vpin-2026-10-21-post-5db3",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "vpin-2026-10-21",
+   "body": {
+    "content": "Christmas party games printable: 8 holiday games including Christmas Trivia, Find the Guest Bingo, Would You Rather and a Scavenger Hunt, with answer keys and a party scorecard. Instant download for family, office and classroom parties of 4 to 30 people.",
+    "mediaItems": [
+     {
+      "type": "video",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-21/4597749137/video.mp4"
+     }
+    ],
+    "scheduledFor": "2026-10-22T01:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Party Games Printable Bundle: 8 Holiday Games",
+       "link": "https://www.etsy.com/listing/4597749137"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
