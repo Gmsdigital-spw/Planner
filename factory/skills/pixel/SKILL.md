@@ -25,3 +25,4 @@ Follow /factory/specs/cover-styles.md: pick one of the 6 styles to fit the produ
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-21: Covers and pins now render through tools/cover_styles.py (styles 1-6 from factory/specs/cover-styles.md, JSON config, real PDF pages only); styles must rotate so no two listings in a row share one, and each product's pins use 2+ styles.
