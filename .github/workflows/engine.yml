@@ -1,0 +1,49 @@
+name: Engine worker
+
+# GM Factory engine (add-on Phase 8). One worker pass, on a schedule, on a tap, or when an order lands:
+#   recover stalled tasks → apply Grayson's orders (approve / retry / kill ...) → run queued tasks → re-check queued
+#   posts against the gateway's real results → write the credential-free dashboard report → commit.
+# State lives in factory/engine/state/journal.jsonl (append-only, committed) so every pass starts from the truth.
+# This is NOT a background daemon: it runs only when GitHub starts it (cron is best-effort, often 10–40 min late).
+# It never spends money, never publishes on its own: publishing needs an approved plan + Grayson's approval, and
+# the gateway (gw.yml) is the only thing that ever holds a key. Own concurrency group; never cancels gw / trading.
+on:
+  schedule:
+    - cron: "17 12-23 * * *"      # hourly-ish, 7am–6pm Central (UTC-5)
+  push:
+    paths:
+      - "factory/engine/orders/*.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: engine-worker
+  cancel-in-progress: false
+
+jobs:
+  worker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Worker pass (stdlib only, nothing installed)
+        env:
+          GM_ENGINE_DB_DIR: factory/engine/state
+        run: |
+          python -m factory.engine rebuild
+          python -m factory.engine worker 10
+      - name: Commit state + report (journal, orders, public report; never the sqlite index)
+        run: |
+          rm -f factory/engine/state/state.sqlite*
+          git config user.name "engine-worker"
+          git config user.email "engine-worker@users.noreply.github.com"
+          git add factory/engine/state factory/engine/orders factory/engine/public gw/jobs
+          git diff --cached --quiet && { echo "nothing changed"; exit 0; }
+          git commit -qm "engine worker: $(TZ=America/Chicago date +%H:%M) CT"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort || true; sleep $((i*5)); done
+          exit 1

@@ -42,8 +42,9 @@ def fmt_num(v: t.Optional[float], unit: str = "") -> str:
 
 
 _SECRET_RE = re.compile(
-    r"(?i)(sk-[a-z0-9]{8,}|ghp_[a-z0-9]{20,}|xox[baprs]-[a-z0-9-]{10,}|AKIA[0-9A-Z]{16}|"
-    r"ey[a-z0-9_-]{20,}\.[a-z0-9_-]{10,}\.[a-z0-9_-]{10,}|"
+    r"(?i)(sk-[a-z0-9_-]{8,}|gh[pousr]_[a-z0-9]{20,}|github_pat_[a-z0-9_]{20,}|xox[baprs]-[a-z0-9-]{10,}|AKIA[0-9A-Z]{16}|"
+    r"ey[a-z0-9_-]{20,}\.[a-z0-9_-]{10,}\.[a-z0-9_-]{10,}|bearer\s+[a-z0-9._-]{16,}|"
+    r"(?:pk|rk|key|tok)[_-](?:live|test)[_-][a-z0-9]{12,}|[a-f0-9]{40,}|"
     r"(?:api[_-]?key|secret|token|password|authorization)\s*[=:]\s*['\"]?[^\s'\",]{6,})"
 )
 

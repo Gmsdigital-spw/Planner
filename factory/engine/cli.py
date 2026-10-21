@@ -26,6 +26,9 @@
   integrations           gateway / Make health as last observed (connected · unverified · missing)
   compare [channel|product|plan] [days]   platform-reported sums per group + what is unknown
   recommend [by] [days]  repeat / improve / pause / test / measure, each labelled demonstrated or hypothesis
+  report [path]          write the credential-free dashboard report (default factory/engine/public/report.json)
+  orders                 apply the order files in factory/engine/orders/ (approve / retry / kill ... from the phone)
+  worker                 one worker pass: recover → orders → tick → refresh → integrations → report (what GitHub Actions runs)
   export-ts              regenerate ts/contracts.d.ts and contracts.schema.json
   selftest               run the unit tests
 
@@ -164,6 +167,31 @@ def main(argv: list[str] | None = None) -> int:
             from .analytics import compare, recommend
             c = compare(store, args[1] if len(args) > 1 else "channel", int(args[2]) if len(args) > 2 else 14)
             print(json.dumps(c if cmd == "compare" else recommend(c), indent=1))
+        elif cmd == "report":
+            from .report import build_report, write_report, PUBLIC
+            from .orders import recent_outcomes
+            p = write_report(build_report(store, eng, orders=recent_outcomes()), args[1] if len(args) > 1 else PUBLIC)
+            print("wrote", p)
+        elif cmd == "orders":
+            from .orders import apply_orders
+            res = apply_orders(eng)
+            for r in res:
+                print(("applied " if r["ok"] else "REFUSED ") + f"{r['action']} {r['id']}: {r.get('result') or r.get('error')}")
+            print(f"{len(res)} order(s)")
+        elif cmd == "worker":
+            from .orders import apply_orders, cleanup_done, recent_outcomes
+            from .publishing import Publisher
+            from .report import build_report, write_report, PUBLIC
+            fixed = eng.recover()
+            orders = apply_orders(eng)
+            runs = eng.tick(int(args[1]) if len(args) > 1 else 10)
+            pub = Publisher(store)
+            refreshed = [pub.refresh(r) for r in pub.publications() if r.status in ("queued", "scheduled")]
+            pub.health()
+            cleanup_done()
+            p = write_report(build_report(store, eng, orders=recent_outcomes()), PUBLIC)
+            print(json.dumps({"recovered": fixed, "orders": [(r["action"], r["id"], r["ok"]) for r in orders], "ran": [(r.task_id, r.status.value) for r in runs],
+                              "refreshed": [(r.id, r.status) for r in refreshed], "report": str(p), "kill": eng.killed()}, indent=1))
         elif cmd == "data-version":
             store.set_control("data_version", args[1])
             print("data version", data_version(store), "— older cached answers are now ignored; run `cache purge` to drop them")

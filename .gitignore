@@ -4,3 +4,5 @@ __pycache__/
 factory/engine/db/state.sqlite
 factory/engine/db/state.sqlite-*
 factory/engine/handoff/
+factory/engine/state/state.sqlite
+factory/engine/state/state.sqlite-*
