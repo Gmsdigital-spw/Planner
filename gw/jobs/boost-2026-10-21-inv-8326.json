@@ -1,0 +1,1 @@
+{"id": "boost-2026-10-21-inv-8326", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/4597749137/inventory", "tag": "inv-bundle"}, {"op": "etsy", "method": "GET", "path": "/listings/4598379368/inventory", "tag": "inv-awards"}]}
