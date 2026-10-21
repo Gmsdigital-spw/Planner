@@ -5591,7 +5591,7 @@ pullHeartbeat();setInterval(pullHeartbeat,120000);
 /* ---------- V8 ENGINE ROOM (add-on Phase 8) ----------
    Reads factory/engine/public/report.json, written by the engine worker (GitHub Actions, about hourly 7am–6pm Central;
    not a background daemon). Credential-free by construction. Every number is what the engine recorded; unknown stays unknown.
-   Taps become ORDERS in the artifact DB (engine/main/orders); a crew run carries them to the engine, which applies them on
+   Taps become ORDERS in the artifact DB (engine/main/orders); the Mechanic (5x/day) carries them to the engine, which applies them on
    its next pass and reports the outcome here. Nothing on this page changes the engine directly. */
 const ENG_URL="https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/factory/engine/public/report.json";
 const ENG={doc:null,fetchedAt:0,err:null,orders:[],busy:false};
@@ -5687,7 +5687,7 @@ function renderEngineTab(){
     +'<div class="lbl" style="margin:10px 0 4px">Agents</div><div class="crewrow">'+ag.map(a=>'<span class="chip" title="'+esc(a.role)+'"><span class="led '+({failing:"bad",working:"ok",paused:"warn",queued:"info"}[a.state]||"")+'"></span>'+esc(a.id)+' v'+esc(String(a.version))+' · '+esc(a.state)+'</span>').join("")+'</div>');
   /* 10 orders from this phone */
   const qo=ENG.orders||[];
-  if(qo.length)out+=engCard("Your orders",'<span class="small dim">'+engOrdersQueued().length+' queued</span>','<div class="col" style="gap:0">'+qo.slice(0,10).map(o=>{const oc=engOutcomeFor(o.id);return '<div class="kv"><span class="k">'+esc(o.action.replace(/_/g," "))+(o.title?' · '+esc(words(o.title,8)):'')+'<br><span class="small dim">'+esc(clk(o.at)||fmtTime(o.at))+(oc?' · '+esc(oc.result||oc.error||""):'')+'</span></span><span class="v">'+engPill(oc?(oc.ok?"applied":"refused"):o.status)+'</span></div>'}).join("")+'</div><div class="sub">A queued order waits here until a crew run carries it to the engine; the engine applies it on its next pass and the result shows up above.</div>');
+  if(qo.length)out+=engCard("Your orders",'<span class="small dim">'+engOrdersQueued().length+' queued</span>','<div class="col" style="gap:0">'+qo.slice(0,10).map(o=>{const oc=engOutcomeFor(o.id);return '<div class="kv"><span class="k">'+esc(o.action.replace(/_/g," "))+(o.title?' · '+esc(words(o.title,8)):'')+'<br><span class="small dim">'+esc(clk(o.at)||fmtTime(o.at))+(oc?' · '+esc(oc.result||oc.error||""):'')+'</span></span><span class="v">'+engPill(oc?(oc.ok?"applied":"refused"):o.status)+'</span></div>'}).join("")+'</div><div class="sub">A queued order rides to the engine with the Mechanic\'s next pass (6:47 AM, 10:47 AM, 2:47 PM, 6:47 PM, 10:47 PM Central); the engine applies it right away and the result shows up above.</div>');
   /* 11 logs behind details */
   const er=d.errors||[],au=d.audit||[];
   out+='<details class="card" data-m="fleet"><summary class="small dim" style="cursor:pointer">Logs · '+er.length+' error'+(er.length===1?'':'s')+' · '+au.length+' audit lines</summary>'
@@ -5699,7 +5699,7 @@ async function engOrder(action,id,title){
   if(S.dbState!=="live"||!S.db){toast("Open the Factory in the Claude app to send an order.",true);return}
   const L={approve:["Approve this?","The engine gets your OK on its next pass and the gated task continues through the same checks as before.","Approve"],decline:["Decline this?","The waiting task is cancelled. Nothing is deleted.","Decline"],retry:["Retry this task?","It goes back in the queue with a fresh retry budget on the engine's next pass.","Retry"],cancel:["Cancel this task?","It stops for good; its records stay.","Cancel task"],kill_on:["Switch the engine kill switch ON?","Every engine action stops until you switch it off. Gateway and trading are separate and keep running. Deletes nothing.","Kill switch ON"],kill_off:["Switch the kill switch OFF?","Queued engine tasks may run again on the next pass.","Switch off"]}[action];
   if(!L)return;
-  const ok=await confirmSheet({title:L[0],body:L[1]+(title?"\n\n"+title:""),confirm:L[2],danger:action==="kill_on"||action==="cancel",foot:"Orders ride to the engine with the next crew run; the Engine room shows when it was applied."});
+  const ok=await confirmSheet({title:L[0],body:L[1]+(title?"\n\n"+title:""),confirm:L[2],danger:action==="kill_on"||action==="cancel",foot:"Orders ride to the engine with the Mechanic's next pass (5 times a day); the Engine room shows when it was applied."});
   if(!ok)return;
   ENG.busy=true;renderAll();
   try{const at=new Date().toISOString();const oid="ord_"+at.replace(/[-:.TZ]/g,"").slice(0,14)+"_"+action+(id?"_"+String(id).slice(-6):"");

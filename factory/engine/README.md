@@ -12,7 +12,7 @@ journal; no background workers are claimed — a worker is whatever calls `tick(
   cron is best-effort, often late), on **Run workflow**, and when an order file lands. Each run commits
   `factory/engine/public/report.json`, which the Factory's **Engine room** (More → Engine room) reads.
 - **Factory page → More → Engine room**: status, approvals, tasks, quality gate, plans + publish results, channel
-  numbers, model usage, integrations, logs. Approve / Retry / Kill taps queue an order; a crew run carries it to the engine.
+  numbers, model usage, integrations, logs. Approve / Retry / Kill taps queue an order; the Mechanic carries it to the engine on its next pass (5×/day).
 - From any shell with Python 3.10+ (no packages needed):
 
 ```

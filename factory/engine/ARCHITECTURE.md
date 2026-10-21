@@ -179,9 +179,8 @@ factory/engine/
 - Phase 4 leftover: the task kinds the orchestrator submits still have no real handlers — `tick` runs only the
   placeholder; the crews keep doing the real work through their own scheduled runs until Phase 7 wires them.
 - Research and build (`research.brief`, `product.build`) stay with the Night Shift; the engine has no handler for them yet.
-- The artifact-DB → repo hop for phone orders is not automatic yet: a crew run (Night Shift or a scheduled task) has to copy
-  `engine/main/orders` docs into `factory/engine/orders/`. Wiring that into an existing scheduled task is a one-line change
-  to its prompt; it is left for Grayson's go because it adds work to a run that costs plan usage.
+- Phone orders reach the engine through the Mechanic's five daily passes (step 4b of its prompt copies `engine/main/orders`
+  docs into `factory/engine/orders/`; the push starts the worker). Latency is up to ~4 hours, not minutes.
 - Nothing submits engine work on its own yet; the Foreman / a crew calls `plan <goal> <input>`.
 - Phase 8: dashboard views for tasks/health (the page shows nothing from the engine yet; Phase 8 will mirror the journal into the artifact DB so the page can read it without a new tab).
 - Phase 9: regression pass across page + engine, limitations doc, rollback drill.

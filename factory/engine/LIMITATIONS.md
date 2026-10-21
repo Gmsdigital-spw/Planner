@@ -6,9 +6,11 @@ What the add-on does NOT do, as built. Each line is a real gap, not a disclaimer
 - **No background daemon.** The engine runs only when something calls `worker`/`tick`: the "Engine worker" GitHub
   Action (about hourly 7am–6pm Central; GitHub cron is best-effort and often 10–40 min late), a manual **Run workflow**,
   a push of an order file, or a crew run. The Engine room shows the report's age so a late worker is visible.
-- **Phone taps are one hop short.** Approve / Retry / Kill in the Engine room write an order to the artifact DB. The page
-  holds no git credentials (by design), so nothing moves that order into `factory/engine/orders/` until a crew run copies
-  it. That hop is not wired yet (one line in the Night Shift prompt, left for Grayson's go).
+- **Phone taps take up to ~4 hours.** Approve / Retry / Kill in the Engine room write an order to the artifact DB. The page
+  holds no git credentials (by design); the Mechanic (6:47 AM, 10:47 AM, 2:47 PM, 6:47 PM, 10:47 PM Central) copies queued
+  orders into `factory/engine/orders/`, and that push starts the worker at once. Repo half verified end to end on
+  Oct 21 (order pushed → worker applied it → report shows the outcome); the Mechanic half runs for the first time at its
+  next pass.
 - **Nothing submits engine work by itself.** Task graphs start from `plan <goal> <input>` (CLI or a crew run). The
   existing crews (Night Shift, Bolt, Herald, Rocket…) still do their jobs through their own paths; the engine runs beside
   them, not instead of them.
