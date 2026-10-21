@@ -12,8 +12,8 @@
 ## Process
 1. Repo: cd /home/claude/planner && git pull --rebase. Note the start time, day key, month key.
 2. Read settings/main. Stop (no message) if paused is true. If dryRun is true: do this stage
-   and stages 01 and 03 only, log one events line per candidate "DRY RUN: Bolt would publish
-   <title>", and skip 02.
+   and stage 01 only, log one events line per candidate "DRY RUN: Bolt would publish
+   <title>", then go straight to stage 04 (no publishing, no pins).
 3. dailyCap = settings.dailyCap (default 2, never more than 2). monthlyFeeCap =
    settings.monthlyFeeCap (default 20). Read spend/<month key>: publishedToday = entries with
    kind "listing" whose date (Central) is today; feesThisMonth = sum of cost. A new listing

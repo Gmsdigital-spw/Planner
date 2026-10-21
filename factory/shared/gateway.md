@@ -12,8 +12,8 @@ Load only the service section your stage names.
    job and pushes `gw/out/<job id>.json` in about 30 to 90 seconds (uploads: up to 3 minutes).
 3. Poll: `git fetch origin main` + `git show origin/main:gw/out/<job id>.json` every 10 s. Give up
    after 5 minutes (8 minutes for a job with uploads): record "gateway down" in the run log and
-   the crew doc, do not retry anything else this run, and tell Grayson one line only if the
-   stage says so.
+   the crew doc, do not retry anything else this run (Bolt's Etsy fallback below is the one
+   exception), and tell Grayson one line only if the stage says so.
 4. Result: {"ok","results":[{"i","op","tag","status","ok","data","error"}]}. data = the API's
    JSON answer with token-like fields hidden. Put independent calls in ONE job; dependent calls
    go in the next job.
@@ -31,11 +31,13 @@ Load only the service section your stage names.
 - Common reads: `/shops/68605457/listings/active?limit=100&includes=Images`, `/shops/68605457`,
   `/shops/68605457/listings?state=draft&limit=100`, `/listings/<id>/inventory`,
   `/shops/68605457/listings/<id>/files`, `/shops/68605457/transactions?limit=100`.
-- Bolt's fallback only: if the gateway gives no result in 5 minutes or Etsy is not authorized,
-  the same Etsy call may go through Make scenario 6676353 (mcp__Make__scenarios_run,
+- Bolt's fallback only: if the gateway gives no result in 5 minutes, or the result says a
+  secret is missing or Etsy is not authorized, or an etsy_upload op fails with an error that
+  is not Etsy rejecting the file itself, the same Etsy call may go through Make scenario 6676353 (mcp__Make__scenarios_run,
   responsive:true, data {action:"api", method, url, body}; uploads data {action:"uploadurl",
-  url, fileData, fileName, fieldKey, rank, nameKey, nameValue}); at most 12 calls in a run, and
-  the message to Grayson says the free gateway needs a look. Never Make for Pinterest.
+  url, fileData, fileName, fieldKey, rank, nameKey, nameValue}); Etsy's answer is in
+  outputs.tool_output.body; at most 12 calls in a run, and the message to Grayson says the
+  free gateway needs a look. Never Make for Pinterest.
 
 ## Zernio (Pinterest and TikTok)
 - Post: {"op":"zernio","method":"POST","path":"/posts","idem":"<idem>","body":{...},"tag":"..."}.

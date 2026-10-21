@@ -16,10 +16,7 @@
    publish (e); any failure goes to f. After each product, re-check publishedToday against
    dailyCap and feesThisMonth against monthlyFeeCap; stop when a cap is reached.
 3. Two products failing in one run: stop this stage (stage 03 still runs).
-4. LEARNING: when a step fails in a way that is not just a daily limit, write lessons/<"bolt-"
-   + day key + "-" + 4 hex> {text (what went wrong and what to do differently, one sentence),
-   evidence (the API's words, under 200 chars), source:"Bolt", area:"etsy"|"pins"|"setup",
-   at:now, confidence:"medium"}. Never a lesson that repeats one already on file.
+4. Learning: as bolt/CONTEXT.md "Learning" says, for any failed step.
 
 ## Audit
 

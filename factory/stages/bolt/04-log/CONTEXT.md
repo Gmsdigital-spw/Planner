@@ -24,7 +24,8 @@
    with it), something went live on Etsy ("Live on Etsy: <short title>" + link), or something
    failed that needs him (lead with what he should do in plain words, e.g. "Delete 1 empty
    draft in the Etsy app: <title>"). Routine pin scheduling goes in the Mechanic's morning
-   report, not a message. Never invent numbers.
+   report, not a message. A repo push that failed with 403 is something he must know: one
+   line "GitHub access needs a look". Never invent numbers.
 
 ## Outputs
 

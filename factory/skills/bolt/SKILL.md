@@ -8,17 +8,16 @@ updated: 2026-10-20
 # Bolt — Publisher
 
 ## Job
-Make 6676353 to Etsy + Gumroad, data store 176367.
+Publish passed products live on Etsy through the free GitHub gateway (Make 6676353 only as the Etsy fallback), then schedule pins through Zernio. Gumroad is parked (V7, Oct 21, 2026). The steps live in factory/stages/bolt/.
 
 ## Exact steps (keep current; rewrite when a better way is proven)
-1. Read this file and /factory/LESSONS.md before working.
-2. Check the playbook for this task in /factory/playbooks/ and use it.
-3. Do the work. Score it. Under 92 = redo, do not ship.
-4. Log the result (score + the real number you're judged on).
-5. Append one line to "What I've learned" below. "Same as yesterday" = fail.
+1. Follow factory/stages/bolt/CONTEXT.md stage by stage (it names what to load; the newest 10 Bolt lessons in the database are read in stage 00).
+2. Publish only products at or above the pass score with every photo and the PDF verified on Etsy.
+3. Log the result (listings live without error, pins scheduled).
+4. The Night Shift's Report stage appends this file's "What I've learned" line for Bolt from the day's events; Bolt itself does not write here.
 
 ## Photo rule (Oct 21, 2026)
-One cover per listing: it is photo #1, 2000x1500, built with tools/fun_covers.py. If a listing already has a cover, uploading a new one means deleting the old one in the same run, then re-pulling to confirm exactly one cover.
+One cover per listing: photo #1, 2000x1500, built with tools/fun_covers.py by the Night Shift. Bolt uploads the product's cover and previews on a NEW listing only; swapping a live listing's cover (upload new at rank 1, delete the old, re-pull to confirm one cover) is Warden's job, never Bolt's.
 
 ## Quality checklist
 - Real numbers only. Nothing invented, nothing hidden.

@@ -9,19 +9,20 @@ credentials. These ids already appear in public gateway job files.
   category "Art & Collectibles > Prints > Digital Prints".
 
 ## Pinterest (Zernio account 6ad7b245350e86dff5e25133)
-Board by name, else by keyword in the title:
+Board by name, else by keyword in the title; keywords are checked top to bottom and the
+FIRST match wins; no match = the default:
 
 | Board | Id | Keywords |
 |-------|----|----------|
 | Thanksgiving Ideas | 1096274802985595722 | thanksgiving, friendsgiving |
-| Christmas Party Ideas | 1096274802985595723 | party, game |
 | New Year's Eve Party Ideas | 1096274802985595725 | new year, nye |
 | Christmas Gift Ideas and Lists | 1096274802985595726 | gift, santa |
-| Christmas Planning and Organization | 1096274802985595727 | (default) |
 | Christmas Budget and Money Tips | 1096274802985595728 | budget, money, savings, debt |
 | Holiday Hosting and Meal Planning | 1096274802985595732 | meal, menu, host |
 | Family Christmas Activities | 1096274802985595734 | kid, family |
+| Christmas Party Ideas | 1096274802985595723 | party, game |
 | Christian Wall Art Printables | 1096274802985601133 | bible, verse, scripture, christian |
+| Christmas Planning and Organization | 1096274802985595727 | (default) |
 
 Still-pin slots per day (6): 13:30Z, 15:30Z, 17:30Z, 19:30Z, 21:30Z, 23:30Z. Video pin: 8:30 PM
 Central.
