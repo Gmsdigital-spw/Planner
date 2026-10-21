@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Trading Floor autopilot: runs every 5 minutes during market hours in the free GitHub Action "Trading autopilot".
+"""Trading Floor autopilot: runs ALL DAY in the free GitHub Action "Trading autopilot".
+
+V7 (Oct 21, 2026): `python autopilot.py --loop 330` keeps one runner alive for up to 5.5 hours and checks the
+market EVERY MINUTE (GitHub's cron fires only every 30-40 minutes, so the old 5-minute schedule was never 5 minutes).
+Each cycle = one run(); the loop writes factory/trading/auto/heartbeat.json every cycle and commits the day's
+state to the repo when something happened (and at least every 5 minutes as a heartbeat). When the runner's time
+is up the workflow hands off to a fresh runner, so the bot is on the floor from the opening bell to the close.
+`python autopilot.py` (no flag) still does a single cycle, same as before.
 
 Why: the Claude crew runs only a few times a day, so it misses setups and can't trail stops in between.
 This script trades the SAME strategy the Trading lab backtests (backtest.setup_at + the same exits), all day:
@@ -13,7 +20,7 @@ Pause it: set "paused": true in factory/trading/auto/control.json (or disable th
 Writes factory/trading/auto/<day>.json (state + every action) so the crew and the Factory can show it.
 Not financial advice: this can lose money. It never adds money, changes the floor, or switches to live.
 """
-import importlib.util, json, os, sys, time, urllib.parse
+import importlib.util, json, os, subprocess, sys, time, urllib.parse
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -117,19 +124,25 @@ def run():
     day["runs"] += 1
     day["lastRun"] = now.strftime("%H:%M")
 
-    def save(note=None):
+    n_actions = len(day["actions"])
+
+    def save(note=None, status="ok"):
+        """Write the day file; returns the cycle status the loop reads: ok | paused | closed | waiting | done."""
         if note:
             day["lastNote"] = note
         day["actions"] = day["actions"][-300:]
         path.write_text(json.dumps(day, indent=1))
         print(f"{key} {now:%H:%M} CT: {day.get('lastNote', '')}")
+        return {"status": status, "note": day.get("lastNote", ""), "acted": len(day["actions"]) > n_actions, "day": key}
 
     if load_json(AUTO / "control.json", {}).get("paused"):
-        return save("paused (control.json)")
-    if now.weekday() > 4 or (now.hour, now.minute) < (8, 30) or (now.hour, now.minute) > (15, 0):
-        return save("outside market hours")
+        return save("paused (control.json)", "paused")
+    if now.weekday() > 4 or (now.hour, now.minute) > (15, 0):
+        return save("outside market hours", "closed")
+    if (now.hour, now.minute) < (8, 30):
+        return save("waiting for the open (8:30 CT)", "waiting")
     if day.get("done"):
-        return save(f"done for today: {day['done']}")
+        return save(f"done for today: {day['done']}", "done")
 
     try:
         st = gw.load_state() if gw.SKEY else {}
@@ -137,7 +150,8 @@ def run():
         st = {}
     code, clock = alpaca({"op": "alpaca", "path": "/clock"}, st)
     if not (isinstance(clock, dict) and clock.get("is_open")):
-        return save("market closed")
+        # a weekday with the market shut (holiday) or the open not reached yet: wait, don't quit
+        return save("market closed", "waiting" if (now.hour, now.minute) < (9, 0) else "closed")
 
     P = backtest.load_params()
     floor = float(os.environ.get("ALPACA_FLOOR") or P["floor"])
@@ -153,15 +167,15 @@ def run():
     if equity <= floor:
         flatten(st, day, f"floor hit at ${equity:.2f}")
         day["done"] = "floor"; day["floorLocked"] = True
-        return save(f"FLOOR HIT ${equity:.2f}: flattened and locked")
+        return save(f"FLOOR HIT ${equity:.2f}: flattened and locked", "done")
     if day["dayPnl"] <= -P["daily_loss"]:
         flatten(st, day, "daily loss limit")
         day["done"] = "daily loss limit"
-        return save(f"daily loss limit hit ({day['dayPnl']}); flat for the day")
+        return save(f"daily loss limit hit ({day['dayPnl']}); flat for the day", "done")
     if hm >= P["flat_ct"]:
         flatten(st, day, "2:45 PM flat")
         day["done"] = "closed for the day"
-        return save(f"flat for the day, P/L {day['dayPnl']}")
+        return save(f"flat for the day, P/L {day['dayPnl']}", "done")
 
     _, positions = alpaca({"op": "alpaca", "path": "/positions"}, st)
     _, orders = alpaca({"op": "alpaca", "path": "/orders?status=open"}, st)
@@ -293,17 +307,126 @@ def run():
     elif not can_enter:
         note += "; no new entries now (8:35-2:00 CT window)"
     day["watch"], day["avoid"] = watch, avoid
-    save(note)
+    return save(note)
+
+
+# ---------------------------------------------------------------------------------------------
+# V7: always-on loop. One runner, one cycle a minute, heartbeat + state pushed to the repo.
+# ---------------------------------------------------------------------------------------------
+HEART = AUTO / "heartbeat.json"
+KICK = AUTO.parent / "kick"
+
+
+def scrub(msg):
+    for sec in (gw.AKEY, gw.ASEC):
+        if sec and len(sec) > 6:
+            msg = msg.replace(sec, "[hidden]")
+    return msg
+
+
+def record_error(e):
+    msg = scrub(f"{type(e).__name__}: {e}")
+    print("autopilot error:", msg[:500])
+    AUTO.mkdir(parents=True, exist_ok=True)
+    (AUTO / "last-error.json").write_text(json.dumps({"at": now_ct().isoformat(), "error": msg[:500]}))
+    return msg
+
+
+def heartbeat(status, note, cycles, started, until):
+    """factory/trading/auto/heartbeat.json: what the Factory page reads for 'Bot last checked'."""
+    now = now_ct()
+    AUTO.mkdir(parents=True, exist_ok=True)
+    HEART.write_text(json.dumps({
+        "at": now.isoformat(), "lastRun": now.strftime("%H:%M"), "day": now.strftime("%Y-%m-%d"),
+        "status": status, "note": str(note)[:160], "loop": True, "cycles": cycles,
+        "runnerStarted": started.isoformat(), "runnerUntil": until.isoformat(),
+        "cadence": "every minute during market hours", "mode": "live" if gw.ALPACA_LIVE else "paper"}, indent=1))
+
+
+def git(*args, check=False):
+    r = subprocess.run(["git", *args], cwd=str(REPO), capture_output=True, text=True)
+    if check and r.returncode:
+        raise RuntimeError((r.stderr or r.stdout)[-300:])
+    return r
+
+
+def git_save(msg):
+    """Commit the trading state and push it: pull --rebase first, up to 3 tries. Never raises; a failed push
+    is retried on the next cycle because the files stay on disk."""
+    if os.environ.get("AUTOPILOT_NO_GIT") == "1" or not (REPO / ".git").exists():
+        return False
+    try:
+        git("config", "user.name", "trading-autopilot")
+        git("config", "user.email", "trading-autopilot@users.noreply.github.com")
+        git("add", "factory/trading/auto", "gw/state")
+        # prune kick files older than 2 days so the folder never grows
+        if KICK.exists():
+            keep = {(now_ct() - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(3)}
+            for f in KICK.glob("*.txt"):
+                if f.name[:10] not in keep:
+                    git("rm", "-q", "--cached", str(f.relative_to(REPO)))
+                    f.unlink(missing_ok=True)
+        if git("diff", "--cached", "--quiet").returncode == 0:
+            return True
+        git("commit", "-qm", msg, check=True)
+        for i in range(1, 4):
+            if git("pull", "-q", "--rebase", "origin", "main").returncode == 0 and \
+               git("push", "-q", "origin", "HEAD:main").returncode == 0:
+                return True
+            git("rebase", "--abort")
+            time.sleep(i * 5)
+        print("git_save: push failed 3 times; will retry next cycle")
+    except Exception as e:
+        print("git_save:", scrub(str(e))[:200])
+    return False
+
+
+def loop(max_minutes):
+    """Run cycles every minute until the market closes, the day is done, the bot is paused, or the runner's
+    time is up (then the workflow hands off to a fresh runner). Returns the final status."""
+    started = now_ct()
+    until = started + timedelta(minutes=max_minutes)
+    last_push = 0.0
+    cycles = 0
+    status = "ok"
+    while now_ct() < until:
+        t0 = time.time()
+        cycles += 1
+        try:
+            r = run() or {"status": "ok", "note": "", "acted": False}
+        except Exception as e:
+            r = {"status": "error", "note": record_error(e), "acted": True}
+        status = r["status"]
+        heartbeat(status, r.get("note", ""), cycles, started, until)
+        if status in ("paused", "closed", "done"):
+            git_save(f"trading autopilot: {status} {now_ct():%H:%M} CT")
+            print(f"loop: {status}; runner stops")
+            return status
+        if r.get("acted") or time.time() - last_push > 300:
+            if git_save(f"trading autopilot: {now_ct():%H:%M} CT"):
+                last_push = time.time()
+        # waiting for the open: check twice a minute, otherwise one cycle a minute
+        pause = 30 if status == "waiting" else 60
+        time.sleep(max(3.0, pause - (time.time() - t0)))
+    git_save(f"trading autopilot: handoff {now_ct():%H:%M} CT")
+    print("loop: runner time is up; handing off")
+    return "handoff"
 
 
 if __name__ == "__main__":
-    try:
-        run()
-    except Exception as e:
-        msg = f"{type(e).__name__}: {e}"
-        for sec in (gw.AKEY, gw.ASEC):
-            if sec and len(sec) > 6:
-                msg = msg.replace(sec, "[hidden]")
-        print("autopilot error:", msg[:500])
-        AUTO.mkdir(parents=True, exist_ok=True)
-        (AUTO / "last-error.json").write_text(json.dumps({"at": now_ct().isoformat(), "error": msg[:500]}))
+    if "--loop" in sys.argv:
+        try:
+            mins = int(sys.argv[sys.argv.index("--loop") + 1])
+        except (IndexError, ValueError):
+            mins = 330
+        final = loop(mins)
+        out = os.environ.get("GITHUB_OUTPUT")
+        if out:
+            with open(out, "a") as f:
+                f.write(f"status={final}\n")
+    else:
+        try:
+            r = run()
+            heartbeat(r["status"], r.get("note", ""), 1, now_ct(), now_ct())
+        except Exception as e:
+            record_error(e)
