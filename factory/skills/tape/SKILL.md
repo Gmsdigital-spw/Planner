@@ -24,3 +24,4 @@ Daily P&L, verified from Alpaca only.
 
 ## What I've learned (append-only, newest last)
 - 2026-10-21: SPY opened at its high (771.20) and slipped under VWAP; gap names (SMCI +12%, NFLX -6%, ISRG -7%) excluded. Tomorrow: add the 9:30 CT oil-inventory print to the calendar line and recheck XLE spread (0.015% today) as a candidate.
+- 2026-10-21 (close): SPY +0.48% (772.80) at 14:43, off its 774.30 high; QQQ +1.13%, NVDA and XLK led all day. Tomorrow: note in the morning read when QQQ leads SPY by 2x or more, since today's QQQ gain gave back first.

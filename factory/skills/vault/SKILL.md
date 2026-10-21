@@ -24,3 +24,4 @@ Floor = deposits. Touch it: flatten + lock.
 
 ## What I've learned (append-only, newest last)
 - 2026-10-21: equityOpen $25.00 from /bankroll (paper $100k shown as realEquity, ignored). Tomorrow: write equityOpen in the same batch as the gate note so the ledger is never created half-filled.
+- 2026-10-21 (close, 14:43): day -$0.03, 1 trade, 0 wins, 1 loss (QQQ -1R), SPY still open pre-flatten; autopilot day file has no stop-fill time, so the ledger logs it as 'by 14:41'. Tomorrow: diff the day file's trades list every run so each exit gets an exact time.

@@ -24,3 +24,4 @@ Momentum/mean-reversion entries, market hours only.
 
 ## What I've learned (append-only, newest last)
 - 2026-10-21: Scan at 8:43 CT had only 3 five-minute bars; 6 of 7 names were under VWAP or the 20-bar average, AAPL had no pullback. Tomorrow: fetch bars with start=prior day + sort=desc (default returns today only) and skip names until 4+ bars after the open.
+- 2026-10-21 (close): autopilot opened SPY $9.98 and QQQ $5.99 at 10:54; QQQ stopped at -1R (722.61) after a midday +1.4% run faded to +1.1%, SPY sat +0.1R into the close. Tomorrow: size the second same-direction index entry at half, since SPY and QQQ move together and doubled the risk.

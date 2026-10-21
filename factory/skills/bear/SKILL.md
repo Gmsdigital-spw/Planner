@@ -25,3 +25,4 @@ updated: 2026-10-20
 ## What I've learned (append-only, newest last)
 - 2026-10-21: Gates passed at $25.00 equity, 0 positions; vetoed 0 orders because Bull sent none (no-trade day 1). Tomorrow: check the earnings-after-close list (TSLA/META/IBM/LRCX today) before Bull's bars job, not after.
 - 2026-10-21 (close): 14:32 CT close run could not push the cancel+flatten job (blocked by the session's safety check); SPY+QQQ left to the autopilot's 14:45 flatten. Tomorrow: the 14:30 run reads autopilot state first and treats autopilot.py as the flatten owner; the run only verifies /positions is empty after 14:45.
+- 2026-10-21 (close, 14:43): autopilot loop healthy all afternoon (166 runs, last 14:41); QQQ stop filled at -1R, equity $24.97, floor far away. Tomorrow: count combined open risk across correlated index ETFs (SPY+QQQ) as one bet when checking the daily loss limit.
