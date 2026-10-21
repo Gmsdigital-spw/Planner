@@ -424,18 +424,52 @@ def op_alpaca(o, st):
         if side == "buy":
             if equity <= floor:
                 return 423, {"refused": "floor", "equity": equity, "floor": floor, "message": "Equity is at or below the hard floor; the floor is locked. No new buys."}
-            if not (body.get("stop_loss") or body.get("order_class") == "bracket"):
-                return 422, {"refused": "no_stop", "message": "Every buy needs a stop_loss (bracket order)."}
+            if not (body.get("stop_loss") or body.get("order_class") == "bracket" or (body.get("protect") or {}).get("stop_price")):
+                return 422, {"refused": "no_stop", "message": "Every buy needs a stop: protect.stop_price (fractional) or a bracket stop_loss."}
             notional = float(body.get("notional") or 0)
             if body.get("qty") and not notional:
-                return 422, {"refused": "qty", "message": "Use notional dollars (fractional shares), not qty, so sizing stays exact."}
+                px = float(body.get("limit_price") or 0)
+                if not px:
+                    return 422, {"refused": "qty", "message": "Use notional dollars, or give limit_price with whole-share qty so size can be checked."}
+                notional = px * float(body["qty"])
             if notional > cash * 0.4 + 0.01:
                 return 422, {"refused": "size", "message": f"Position {notional:.2f} is over 40% of cash ({cash:.2f})."}
             if body.get("time_in_force", "day") != "day":
                 return 422, {"refused": "tif", "message": "Day orders only; no overnight holds."}
-            hh, mm = time.gmtime().tm_hour, time.gmtime().tm_min
-            if (hh, mm) >= (19, 45) or (hh, mm) < (14, 35):
-                return 422, {"refused": "hours", "message": "Buys only between 9:35 AM and 2:45 PM Central."}
+            from datetime import datetime
+            from zoneinfo import ZoneInfo
+            now = datetime.now(ZoneInfo("America/Chicago"))
+            if now.weekday() > 4 or (now.hour, now.minute) < (8, 35) or (now.hour, now.minute) >= (14, 45):
+                return 422, {"refused": "hours", "message": "Buys only on weekdays 8:35 AM to 2:45 PM Central (market opens 8:30 CT)."}
+            protect = body.pop("protect", None)
+            if protect:
+                # fractional entry, then a protective stop for exactly the filled quantity; no stop = sell at once
+                r = requests.post(base + "/orders", headers=hdr, json=body, timeout=120)
+                entry = body_of(r)
+                if r.status_code >= 300 or not isinstance(entry, dict):
+                    return r.status_code, {"entry": entry}
+                oid, filled = entry.get("id"), None
+                for _ in range(15):
+                    time.sleep(2)
+                    e2 = requests.get(base + f"/orders/{oid}", headers=hdr, timeout=60).json()
+                    if e2.get("status") == "filled":
+                        filled = e2; break
+                    if e2.get("status") in ("canceled", "rejected", "expired"):
+                        return 200, {"entry": e2, "stop": None, "note": "entry did not fill"}
+                if not filled:
+                    requests.delete(base + f"/orders/{oid}", headers=hdr, timeout=60)
+                    return 200, {"entry": entry, "stop": None, "note": "entry not filled in 30 s; canceled"}
+                qty = filled.get("filled_qty")
+                sr = requests.post(base + "/orders", headers=hdr, timeout=120, json={
+                    "symbol": body["symbol"], "qty": qty, "side": "sell", "type": "stop",
+                    "stop_price": str(protect["stop_price"]), "time_in_force": "day"})
+                stop = body_of(sr)
+                if sr.status_code >= 300:
+                    fx = requests.post(base + "/orders", headers=hdr, timeout=120, json={
+                        "symbol": body["symbol"], "qty": qty, "side": "sell", "type": "market", "time_in_force": "day"})
+                    return 207, {"entry": filled, "stop": stop, "flattened": body_of(fx),
+                                 "note": "stop order was refused, so the position was sold at once (no unprotected holds)"}
+                return 200, {"entry": filled, "stop": stop, "takeProfit": protect.get("take_profit")}
     r = requests.request(m, base + o["path"], headers=hdr, json=body if m in ("POST", "PATCH", "PUT") else None, timeout=120)
     return r.status_code, body_of(r)
 
