@@ -1,0 +1,24 @@
+{
+ "id": "bolt-2026-10-21-activate-78c1",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4600177510",
+   "body": {
+    "state": "active"
+   },
+   "tag": "c"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4600177516",
+   "body": {
+    "state": "active"
+   },
+   "tag": "g"
+  }
+ ]
+}
