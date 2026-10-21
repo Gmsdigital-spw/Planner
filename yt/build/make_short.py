@@ -24,6 +24,7 @@ Spec (all keys optional except id + lines):
      "clip": {"url": "https://videos.pexels.com/....mp4", "credit": "Name", "page": "https://www.pexels.com/video/..."},
      "query": "dad disappointed looking at son",      # used if clip missing and PEXELS_API_KEY set
      "label": "3 WEEKS LATER",                          # yellow top label for this line
+     "image": {"prompt": "...", "motion": "orbit", "anim": true},   # anim: free Hugging Face animation lane (needs HF_TOKEN secret)
      "start": 1.5,                                      # trim-in seconds inside the clip
      "pause": 0.35}                                     # extra silence after this line
   ]
@@ -485,13 +486,41 @@ def main():
                 mo = im.get("motion") or motions[i % 4]
                 sdur = dur + (XF if i < len(lines) - 1 else 0.0)
                 outp = os.path.join(work, f"scene{i:02d}.mp4")
+                # Free animation lane (V6): a line marked "anim": true asks a Hugging Face ZeroGPU Space to turn the
+                # still into real motion (free account quota). Any failure falls back to the parallax still below.
+                anim_done = False
+                if im.get("anim") and ok and not fake and (os.environ.get("HF_TOKEN") or im.get("anim_force")):
+                    ap = os.path.join(work, f"anim{i:02d}.mp4")
+                    try:
+                        rc = subprocess.run([sys.executable, os.path.join(ROOT, "hf_anim.py"), prev_img,
+                                             expand_prompt(im.get("anim_prompt") or im.get("prompt", ln["text"]), spec) + ", smooth natural motion, cinematic 3D cartoon",
+                                             ap, "--seconds", str(min(8.0, max(3.0, round(sdur, 1))))],
+                                            capture_output=True, text=True, timeout=600).returncode
+                        if rc == 0 and os.path.exists(ap) and os.path.getsize(ap) > 50000:
+                            adur = ffprobe_dur(ap)
+                            if adur + 0.05 < sdur:  # hold the last frame to fill the line
+                                run(["ffmpeg", "-v", "error", "-y", "-i", ap, "-vf", f"tpad=stop_mode=clone:stop_duration={sdur - adur:.3f}",
+                                     "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", outp])
+                            else:
+                                run(["ffmpeg", "-v", "error", "-y", "-i", ap, "-t", f"{sdur:.3f}", "-c:v", "libx264", "-preset", "veryfast",
+                                     "-crf", "18", "-pix_fmt", "yuv420p", outp])
+                            scene_files.append(outp); anim_done = True
+                            warnings.append(f"line {i}: real motion from the free animation lane")
+                        else:
+                            warnings.append(f"line {i}: animation lane unavailable (rc {rc}); used the still")
+                    except Exception as ex:
+                        warnings.append(f"line {i}: animation lane error {ex!r}; used the still")
                 try:
+                    if anim_done:
+                        raise StopIteration
                     if fake:
                         raise RuntimeError("dry run uses the quick zoom")
                     sys.path.insert(0, ROOT)
                     import motion as _motion
                     _motion.render(prev_img, outp, sdur, mo, W=W, H=H, seed=i)
                     scene_files.append(outp)
+                except StopIteration:
+                    pass
                 except Exception as ex:
                     if not fake:
                         warnings.append(f"line {i}: 3D motion failed ({ex!r}); used simple zoom")
