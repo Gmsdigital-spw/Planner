@@ -92,6 +92,22 @@ class RunContext:
         if cap is not None and self.calls > cap:
             raise PermanentError(f"call budget exceeded ({cap} per task)")
 
+    def llm(self, prompt: str, *, cacheable: bool = False, uncertain: bool = False, system: str | None = None, max_tokens: int = 800, ttl_s: int | None = None):
+        """Ask a model through the router (Phase 5): tier by task kind, escalation on retries, cache, budgets.
+        Raises BudgetExceeded (a PermanentError) when a hard limit is hit, so the task fails safely."""
+        router = self.engine.router
+        if router is None:
+            raise PermanentError("no model router configured on this engine")
+        kw = dict(budget=self.contract.budget, model_hint=self.task.spec.model_hint, attempt=self.task.attempts, uncertain=uncertain,
+                  cacheable=cacheable, system=system, max_tokens=max_tokens, run_id=self.run.id)
+        if ttl_s is not None:
+            kw["ttl_s"] = ttl_s
+        c = router.complete(self.task.id, self.task.spec.kind, prompt, **kw)
+        self.run.usage = c.usage
+        self.run.model = c.model
+        self.heartbeat()
+        return c
+
     def require(self, cap: Capability, title: str, why: str, cost: str | None = None, risk: str | None = None) -> None:
         """Ask for a gated capability. Approved → continue; otherwise park the task."""
         if not self.contract.has(cap):
@@ -103,9 +119,10 @@ class RunContext:
 
 
 class TaskEngine:
-    def __init__(self, store: Store, agents: dict[str, AgentContract], runner: str = "local", clock: t.Callable[[], float] = time.time):
+    def __init__(self, store: Store, agents: dict[str, AgentContract], runner: str = "local", clock: t.Callable[[], float] = time.time, router=None):
         self.store = store
         self.agents = dict(agents)
+        self.router = router  # a router.Router; None = handlers cannot call models
         self.handlers: dict[str, Handler] = {}  # task kind → handler
         self.runner = runner
         self.clock = clock

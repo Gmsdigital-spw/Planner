@@ -73,6 +73,7 @@ factory/engine/
   registry.py        the ten agent contracts + versioned sync into the store (Phase 4)
   orchestrator.py    goal → dependency graph, progress, blocked reasons, verify-before-complete (Phase 4)
   providers.py       provider-neutral model interface: mock, Claude-session hand-off, paid API (off) (Phase 4)
+  router.py          routing, escalation, cache, dedup, usage tracking, hard budgets, loop guard (Phase 5)
   ts/contracts.d.ts  generated TypeScript types (do not edit; `export-ts` regenerates)
   db/journal.jsonl   append-only durable records (committed)
   db/state.sqlite    derived index (ignored by git)
@@ -94,11 +95,24 @@ factory/engine/
   crew run), `AnthropicApiProvider` (paid; unavailable until a key is configured and, in Phase 5, a budget is
   approved). No prices anywhere; no model names hard-coded.
 
+## Added in Phase 5
+
+- `router.py` — tier by task kind or `model_hint`, escalation to "strong" after a failed validation or when the
+  caller is unsure; providers tried in order (free session hand-off first, paid API last) and only when
+  configured; the paid API is used only with an APPROVED `spend_money` approval named in control
+  `paid_provider_approval`. Cache keyed by provider+model+prompt version+**data version**+prompt, TTL per
+  call, `cacheable` only for safe repeatable work, bump `data-version` to invalidate everything older; in-process
+  dedup. Cost tracking records exactly what the provider reported — unknown is counted as unknown, no price
+  table exists. Hard budgets: per task (calls / tokens / usd from the contract), per day (`budget` control:
+  calls, known usd, and a cap on unknown-cost calls so a silent provider cannot run away), plus a runaway-loop
+  guard. A hard stop is a PermanentError: the task fails safely, nothing is deleted.
+- `RunContext.llm()` — the one way a handler reaches a model; records usage and model on the run.
+- `llm_cache` table (migration v3); CLI `usage`, `budget`, `cache purge`, `data-version`.
+
 ## What is NOT implemented yet (honest list)
 
 - Phase 4 leftover: the task kinds the orchestrator submits still have no real handlers — `tick` runs only the
   placeholder; the crews keep doing the real work through their own scheduled runs until Phase 7 wires them.
-- Phase 5: routing, caching, cost tracking (schema exists; nothing enforces budgets yet).
 - Phase 6–7: quality gate + distribution plans driving real runs; publishing adapters (today Bolt/Herald/Rocket publish through their own paths, not the engine).
 - Phase 8: dashboard views for tasks/health (the page shows nothing from the engine yet; Phase 8 will mirror the journal into the artifact DB so the page can read it without a new tab).
 - Phase 9: regression pass across page + engine, limitations doc, rollback drill.

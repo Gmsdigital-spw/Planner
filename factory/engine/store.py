@@ -66,6 +66,12 @@ MIGRATIONS: list[tuple[int, str]] = [
     CREATE TABLE IF NOT EXISTS projects(
       id TEXT PRIMARY KEY, goal TEXT NOT NULL, status TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, doc TEXT NOT NULL);
     """),
+    (3, """
+    CREATE TABLE IF NOT EXISTS llm_cache(
+      key TEXT PRIMARY KEY, provider TEXT NOT NULL, model TEXT NOT NULL, prompt_version TEXT NOT NULL, data_version TEXT NOT NULL,
+      created_at TEXT NOT NULL, expires_at TEXT NOT NULL, text TEXT NOT NULL, usage TEXT, hits INTEGER NOT NULL DEFAULT 0);
+    CREATE INDEX IF NOT EXISTS llm_cache_exp ON llm_cache(expires_at);
+    """),
 ]
 
 
@@ -206,6 +212,15 @@ class Store:
             c.execute("""INSERT INTO projects(id,goal,status,created_at,updated_at,doc) VALUES(?,?,?,?,?,?)
                          ON CONFLICT(id) DO UPDATE SET status=excluded.status,updated_at=excluded.updated_at,doc=excluded.doc""",
                       (data["id"], data["goal"], data["status"], data["created_at"], data["updated_at"], json.dumps(data, sort_keys=True)))
+        elif kind == "cache":
+            if data.get("op") == "hit":
+                c.execute("UPDATE llm_cache SET hits=hits+1 WHERE key=?", (data["key"],))
+            elif data.get("op") == "purge":
+                c.execute("DELETE FROM llm_cache WHERE expires_at < ? OR data_version <> ?", (data.get("now") or now_iso(), data.get("keep_version", "")))
+            else:
+                c.execute("""INSERT INTO llm_cache(key,provider,model,prompt_version,data_version,created_at,expires_at,text,usage,hits) VALUES(?,?,?,?,?,?,?,?,?,0)
+                             ON CONFLICT(key) DO UPDATE SET text=excluded.text,usage=excluded.usage,expires_at=excluded.expires_at,created_at=excluded.created_at""",
+                          (data["key"], data["provider"], data["model"], data["prompt_version"], data["data_version"], data["created_at"], data["expires_at"], data["text"], json.dumps(data.get("usage"))))
         elif kind == "control":
             c.execute("INSERT INTO control(key,value,updated_at) VALUES(?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at",
                       (data["key"], json.dumps(data["value"]), data.get("at") or now_iso()))
@@ -224,6 +239,32 @@ class Store:
     def set_control(self, key: str, value: t.Any) -> None: self._apply("control", {"key": key, "value": value, "at": now_iso()})
     def put_agent(self, a: AgentContract, skill_sha: t.Optional[str] = None) -> None: self._apply("agent", {"at": now_iso(), "skill_sha": skill_sha, "contract": a.to_dict()})
     def put_project(self, doc: dict) -> None: self._apply("project", doc)
+
+    # cache (Phase 5). Cache rows ARE journaled so a rebuilt index keeps its hits; `purge` drops stale rows.
+    def cache_put(self, key: str, provider: str, model: str, prompt_version: str, data_version: str, expires_at: str, text: str, usage: t.Optional[dict]) -> None:
+        self._apply("cache", {"key": key, "provider": provider, "model": model, "prompt_version": prompt_version, "data_version": data_version,
+                              "created_at": now_iso(), "expires_at": expires_at, "text": text, "usage": usage})
+
+    def cache_get(self, key: str, data_version: str, now: t.Optional[str] = None) -> t.Optional[dict]:
+        r = self._rows("SELECT * FROM llm_cache WHERE key=? AND data_version=? AND expires_at > ?", (key, data_version, now or now_iso()))
+        if not r:
+            return None
+        self._apply("cache", {"op": "hit", "key": key})
+        d = dict(r[0]); d["usage"] = json.loads(d["usage"]) if d.get("usage") else None
+        return d
+
+    def cache_purge(self, keep_version: str) -> int:
+        n = len(self._rows("SELECT key FROM llm_cache WHERE expires_at < ? OR data_version <> ?", (now_iso(), keep_version)))
+        self._apply("cache", {"op": "purge", "now": now_iso(), "keep_version": keep_version})
+        return n
+
+    def cache_stats(self) -> dict:
+        r = self._rows("SELECT COUNT(*) n, COALESCE(SUM(hits),0) h, SUM(CASE WHEN expires_at < ? THEN 1 ELSE 0 END) e FROM llm_cache", (now_iso(),))[0]
+        return {"entries": int(r["n"]), "hits": int(r["h"]), "expired": int(r["e"] or 0)}
+
+    def usage_rows(self, day: t.Optional[str] = None) -> list[dict]:
+        where, args = ("WHERE substr(at,1,10)=?", (day,)) if day else ("", ())
+        return [dict(r) for r in self._rows(f"SELECT * FROM model_usage {where} ORDER BY at", args)]
 
     def agents(self) -> list[dict]:
         return [dict(r) for r in self._rows("SELECT id,version,role,name,registered_at,skill_sha FROM agents ORDER BY id, version")]

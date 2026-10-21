@@ -15,6 +15,10 @@
   plan <goal> <input>    build + submit a task graph (goals: launch_product, promote_product, research_lane, health_check)
   projects               open projects;  progress <proj_id>;  verify <proj_id>
   providers              which model providers are really configured (none paid unless a key is set)
+  usage [YYYY-MM-DD]     real model usage: calls, known cost, unknown-cost calls, cache hits, budget
+  budget [daily_calls N] [daily_usd X] [daily_unknown_calls N]   show or set the daily hard limits
+  cache purge            drop expired rows and rows from an older data version
+  data-version <v>       bump the data version (every cached answer from before is ignored)
   export-ts              regenerate ts/contracts.d.ts and contracts.schema.json
   selftest               run the unit tests
 
@@ -31,13 +35,14 @@ from .engine import TaskEngine
 from .orchestrator import PLANS, Orchestrator
 from .providers import availability
 from .registry import AGENTS, demo_handlers, sync
+from .router import Router, data_version
 from .store import Store
 
 HERE = Path(__file__).resolve().parent
 
 
 def _engine(store: Store) -> TaskEngine:
-    eng = TaskEngine(store, AGENTS, runner="cli")
+    eng = TaskEngine(store, AGENTS, runner="cli", router=Router(store))
     sync(store)
     for kind, fn in demo_handlers().items():
         eng.register(kind, fn)
@@ -109,6 +114,20 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps(Orchestrator(eng).verify(args[1], who="grayson"), indent=1))
         elif cmd == "providers":
             print(json.dumps(availability(), indent=1))
+        elif cmd == "usage":
+            print(json.dumps(eng.router.report(args[1] if len(args) > 1 else None), indent=1))
+        elif cmd == "budget":
+            if len(args) > 1:
+                b = store.control("budget", {}) or {}
+                for k, v in zip(args[1::2], args[2::2]):
+                    b[k] = float(v) if "usd" in k else int(v)
+                store.set_control("budget", b)
+            print(json.dumps(store.control("budget", {"note": "defaults: daily_calls 400, daily_unknown_calls 400, daily_usd unlimited (nothing paid is configured)"}), indent=1))
+        elif cmd == "cache":
+            print("purged", store.cache_purge(data_version(store)), "rows;", json.dumps(store.cache_stats()))
+        elif cmd == "data-version":
+            store.set_control("data_version", args[1])
+            print("data version", data_version(store), "— older cached answers are now ignored; run `cache purge` to drop them")
         else:
             print(__doc__)
             return 2
