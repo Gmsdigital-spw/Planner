@@ -24,8 +24,14 @@ async def main():
                 try:
                     if await pg.locator("#sheet.on").count(): await pg.locator("#shClose").click(); await pg.wait_for_timeout(300)
                 except Exception: pass
+        # Simple mode (Oct 21 2026): Today is the home; the factory map is one tap away (hero banner).
+        await click('[data-light="trades"]',"01b_today_trades_light",back=False)
+        await pg.screenshot(path=OUT+"01c_trading_full.png",full_page=True)
+        await click('#nav4 [data-nav="more"]',"01d_more_sheet")
+        await click('#nav4 [data-nav="today"]',"01e_nav_today",back=False)
+        await click('#heroBtn',"01f_open_map",back=False)
         await click("#coreBtn","02_foreman")
-        for f in ["funnel","trading"]: await click(f'[data-floorinfo="{f}"]',"03_floor_"+f)
+        for f in ["funnel","trading"]: await click(f'#fleet [data-floorinfo="{f}"]',"03_floor_"+f)
         for fold in ["inbox","launch","treasury","mission","settings"]:
             await click(f"#fold-{fold} > summary","04_fold_"+fold,back=False)
         await click('[data-bay="third"]',"05_marketing",back=False)
