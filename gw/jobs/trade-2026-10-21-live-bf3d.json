@@ -1,0 +1,1 @@
+{"id": "trade-2026-10-21-live-bf3d", "ops": [{"op": "alpaca", "path": "/bankroll"}, {"op": "alpaca", "path": "/positions"}, {"op": "alpaca", "data": true, "path": "/stocks/bars?symbols=SPY&timeframe=5Min&limit=78&feed=iex"}, {"op": "alpaca", "data": true, "path": "/stocks/snapshots?symbols=SPY,QQQ,IWM,DIA,XLK,XLF,XLE,NVDA,AAPL,WMT,MSFT,AMZN,KO,BAC&feed=iex"}]}
