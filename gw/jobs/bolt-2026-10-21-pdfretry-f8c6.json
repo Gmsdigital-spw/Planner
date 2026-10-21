@@ -1,0 +1,30 @@
+{
+ "id": "bolt-2026-10-21-pdfretry-f8c6",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177510/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/fb780132afb11df1/christmas-cookie-exchange-kit-printable-cookie-swap-invitati.pdf",
+   "field": "file",
+   "fileName": "christmas-cookie-exchange-kit-printable-cookie-swap-invitati.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "christmas-cookie-exchange-kit-printable-cookie-swap-invitati.pdf"
+   },
+   "tag": "prod-cookie-exchange-kit|pdf"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177516/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/9123dbb6918e1bf7/gingerbread-house-decorating-contest-printable-judge-score-c.pdf",
+   "field": "file",
+   "fileName": "gingerbread-house-decorating-contest-printable-judge-score-c.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "gingerbread-house-decorating-contest-printable-judge-score-c.pdf"
+   },
+   "tag": "prod-gingerbread-contest-kit|pdf"
+  }
+ ]
+}
