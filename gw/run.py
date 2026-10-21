@@ -13,6 +13,7 @@ Ops:
   {"op":"etsy","method":"GET","path":"/shops/68605457","body":{...}}           # path after /v3/application
   {"op":"etsy_upload","path":"/shops/68605457/listings/<id>/images","fileUrl":"https://...",
    "field":"image","fileName":"x.jpg","fields":{"rank":"1","alt_text":"..."}}
+  {"op":"fetch_images","dir":"name","items":[{"name":"a.jpg","url":"https://i.etsystatic.com/..."}]}  -> saved under gw/out/files/<dir>/
   {"op":"etsy_auth_start"}            -> gives the Etsy authorize link
   {"op":"etsy_auth_finish","code":"...","state":"..."}
   {"op":"gumroad","method":"GET|POST|PUT|DELETE","path":"/products","body":{...}}   # path after /v2
@@ -351,7 +352,25 @@ def op_gumroad_mirror(o, st):
     return 200, {"id": pid, "url": prod.get("short_url"), "published": published, "warning": cr.get("warning") or cr.get("message"), "log": log}
 
 
-OPS = {"gumroad": op_gumroad, "gumroad_mirror": op_gumroad_mirror, "gumroad_file": op_gumroad_file, "selftest": op_selftest, "zernio": op_zernio, "etsy": op_etsy, "etsy_upload": op_etsy_upload,
+def op_fetch_images(o, st):
+    """Save small Etsy listing images into gw/out/files/<dir>/ so the crew can look at them.
+    {"op":"fetch_images","dir":"<name>","items":[{"name":"<file>.jpg","url":"https://i.etsystatic.com/..."}]}"""
+    d = OUT / "files" / "".join(c for c in str(o.get("dir", "x")) if c.isalnum() or c in "-_")[:60]
+    d.mkdir(parents=True, exist_ok=True)
+    saved = []
+    for it in (o.get("items") or [])[:120]:
+        u = str(it.get("url", ""))
+        if urllib.parse.urlparse(u).hostname != "i.etsystatic.com":
+            continue
+        r = requests.get(u, timeout=30)
+        if r.ok and len(r.content) < 600_000:
+            n = "".join(c for c in str(it.get("name", "img.jpg")) if c.isalnum() or c in "-_.")[:80]
+            (d / n).write_bytes(r.content)
+            saved.append(n)
+    return 200, {"dir": str(d.relative_to(ROOT)), "saved": saved}
+
+
+OPS = {"fetch_images": op_fetch_images, "gumroad": op_gumroad, "gumroad_mirror": op_gumroad_mirror, "gumroad_file": op_gumroad_file, "selftest": op_selftest, "zernio": op_zernio, "etsy": op_etsy, "etsy_upload": op_etsy_upload,
        "etsy_auth_start": op_etsy_auth_start, "etsy_auth_finish": op_etsy_auth_finish}
 
 
