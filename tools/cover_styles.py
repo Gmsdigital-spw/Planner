@@ -111,7 +111,7 @@ def motif_svg(t, W, H, n=26, seed=4, area=None, size=(26, 60)):
 
 def pills_html(pills, t, fs, pad, bg=None, fg=None, gap=None, border=None):
     gap = gap or fs * .6
-    items = "".join(f'<span class="pill" style="font-size:{fs}px;padding:{pad*.55:.0f}px {pad:.0f}px;background:{bg or "#fff"};color:{fg or t["ink"]};{("border:" + border) if border else ""};box-shadow:0 6px 14px rgba(0,0,0,.10)">{esc(p)}</span>' for p in pills)
+    items = "".join(f'<span class="pill" style="font-size:{fs}px;padding:{pad*.55:.0f}px {pad:.0f}px;background:{bg or "#fff"};color:{fg or t["ink"]};{("border:" + border) if border else ""};box-shadow:0 6px 14px rgba(0,0,0,.10)"><span>{esc(p)}</span></span>' for p in pills)
     return f'<div style="display:flex;gap:{gap:.0f}px;justify-content:center;flex-wrap:nowrap">{items}</div>'
 
 def split_badge(b):
