@@ -78,6 +78,8 @@ factory/engine/
   distribution.py    distribution plans, approval, schedule, results, next action, honest funnel (Phase 6)
   publishing.py      gateway + draft adapters, idempotent approval-gated publish, verify from gw/out, adapt() (Phase 7)
   analytics.py       metric rows with sources, ingest from Factory records, compare, recommend, measure_plan (Phase 7)
+  report.py          credential-free dashboard report → public/report.json (Phase 8)
+  orders.py          phone orders (approve / retry / kill ...) from files, outcomes audited (Phase 8)
   ts/contracts.d.ts  generated TypeScript types (do not edit; `export-ts` regenerates)
   db/journal.jsonl   append-only durable records (committed)
   db/state.sqlite    derived index (ignored by git)
@@ -149,11 +151,37 @@ factory/engine/
   `research.brief` and `product.build` remain with the Night Shift.
 - `publications` + `metrics` tables (migration v4); CLI `publications`, `refresh`, `integrations`, `compare`, `recommend`.
 
+## Added in Phase 8
+
+- `report.py` — one credential-free JSON (`factory/engine/public/report.json`): health (kill switch, last worker pass, report
+  age), agents' live state, workflows with what blocks them, queued / running / needs-approval / failed tasks (each failed
+  one with its error and a plain next step), pending approvals with cost + risk, products with gate decision, plans with
+  funnel + every publish attempt and whether it was verified, platform-reported channel sums with unknown kinds,
+  recommendations labelled demonstrated / hypothesis, real model usage + daily budget, integrations as last observed,
+  latest errors, order outcomes, audit tail. The whole document passes through `scrub()`; the scrubber now also catches
+  `sk-ant-…`, GitHub PATs, bearer tokens and 40+ hex secrets.
+- `orders.py` — Grayson's taps as files in `factory/engine/orders/` (approve / decline / retry / cancel / kill / pause /
+  resume). Applied oldest first, unknown ids and actions refused, every outcome audited and moved to `orders/done/`.
+- `python -m factory.engine worker` — one pass: recover → orders → tick → refresh queued posts → integration health →
+  report. `.github/workflows/engine.yml` runs it about hourly 7am–6pm Central (GitHub cron, best effort), on a tap
+  (workflow_dispatch) and when an order file lands. State is the committed journal `factory/engine/state/journal.jsonl`
+  (`GM_ENGINE_DB_DIR`); the sqlite index is rebuilt each run and never committed.
+- Dashboard: an **Engine room** fold on the factory map (More → Engine room; no new tab, the four Today lights are
+  untouched). It reads the public report every 2 minutes the same way the Trading tab reads the heartbeat, shows the
+  sections above, and folds logs behind a details toggle. Engine approvals, failed tasks, the kill switch and a stale
+  report join the existing "Needs you" list. Approve / Decline / Retry / Cancel / Kill are confirm-sheet taps that write an
+  ORDER doc to the artifact DB (`engine/main/orders`); the page cannot reach the repo (no credentials, by design), so an
+  order waits there until a crew run copies it into `factory/engine/orders/`. The Foreman's DATA now carries the engine
+  summary.
+
 ## What is NOT implemented yet (honest list)
 
 - Phase 4 leftover: the task kinds the orchestrator submits still have no real handlers — `tick` runs only the
   placeholder; the crews keep doing the real work through their own scheduled runs until Phase 7 wires them.
 - Research and build (`research.brief`, `product.build`) stay with the Night Shift; the engine has no handler for them yet.
-- Nothing is wired to *call* the engine on a schedule yet: Phase 8 adds the worker step and the page views.
+- The artifact-DB → repo hop for phone orders is not automatic yet: a crew run (Night Shift or a scheduled task) has to copy
+  `engine/main/orders` docs into `factory/engine/orders/`. Wiring that into an existing scheduled task is a one-line change
+  to its prompt; it is left for Grayson's go because it adds work to a run that costs plan usage.
+- Nothing submits engine work on its own yet; the Foreman / a crew calls `plan <goal> <input>`.
 - Phase 8: dashboard views for tasks/health (the page shows nothing from the engine yet; Phase 8 will mirror the journal into the artifact DB so the page can read it without a new tab).
 - Phase 9: regression pass across page + engine, limitations doc, rollback drill.

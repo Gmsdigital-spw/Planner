@@ -458,6 +458,8 @@ a{color:var(--hud)}
 .sysrow:first-child{border-top:0;padding-top:0}
 .sysrow .n{flex:1;min-width:0}
 .sysrow .n span{display:block;font-size:12px;color:var(--ink-3);line-height:1.3}
+#engineBody .pill{flex:none}
+.engs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px}.engs div{min-width:0}.engs b{display:block;font-size:14px;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.engs span{font:600 9.5px/1.4 var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
 .payback{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,rgba(56,217,255,.08),rgba(139,92,255,.08));border:1px solid rgba(56,217,255,.35);border-radius:6px;padding:7px 10px;min-height:38px;width:100%;text-align:left}
 .payback:active{filter:brightness(1.2)}
 .payback .px{font-size:8px;color:var(--core);flex:none;line-height:1}
@@ -993,6 +995,8 @@ body.lb-open{overflow:hidden}
         <section class="sec" id="v-treasury" data-m="fleet"><div class="vh"><h2>Treasury</h2><div class="note" id="treasNote"></div></div><div id="treasuryBody" class="col" style="gap:12px"></div></section></details>
       <details class="fold2" id="fold-mission" data-m="fleet"><summary><span class="ic2"><svg viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 3a5 5 0 110 10 5 5 0 010-10zm0 3a2 2 0 100 4 2 2 0 000-4z"/></svg></span><span class="t2"><span class="px">Missions &amp; goals</span><span class="s" id="foldMissionS">what the crew is on, and whether it's on track</span></span><span class="chev" aria-hidden="true"></span></summary>
         <section class="sec" id="v-mission" data-m="fleet"><div class="vh"><h2>Missions</h2><div class="note" id="missionNote"></div></div><div id="missionBody" class="col" style="gap:12px"></div></section></details>
+      <details class="fold2" id="fold-engine" data-m="fleet"><summary><span class="ic2"><svg viewBox="0 0 20 20"><path d="M3 8h3V6h4v2h2l2 2h3v4h-3l-2 2H8l-1-2H3zM6 11h4"/></svg></span><span class="t2"><span class="px">Engine room</span><span class="s" id="foldEngineS">tasks, quality gate, real numbers, errors</span></span><span class="badge2" id="engineBadge" hidden>0</span><span class="chev" aria-hidden="true"></span></summary>
+        <section class="sec" id="v-engine" data-m="fleet"><div class="vh"><h2>Engine room</h2><div class="note" id="engineNote"></div></div><div id="engineBody" class="col" style="gap:12px"></div></section></details>
       <details class="fold2" id="fold-settings" data-m="fleet"><summary><span class="ic2"><svg viewBox="0 0 20 20"><path d="M8 2h4l1 3 3 1 2-1 2 3-2 2v2l2 2-2 3-2-1-3 1-1 3H8l-1-3-3-1-2 1-2-3 2-2v-2L1 8l2-3 2 1 3-1zm2 5a3 3 0 100 6 3 3 0 000-6z"/></svg></span><span class="t2"><span class="px">Settings</span><span class="s">caps, schedule, switches, goals</span></span><span class="chev" aria-hidden="true"></span></summary>
         <section class="sec" id="v-settings" data-m="fleet"><div class="vh"><h2>Settings</h2><div class="note" id="setNote"></div></div><div id="settingsBody" class="col" style="gap:12px"></div></section></details>
     </section>
@@ -4373,6 +4377,7 @@ function fleetNeeds(){
   if(Y.loaded&&!yConfig().live)out.push({mod:"youtube",key:"ylive",kind:"info",title:"YouTube bay shows a copied snapshot",sub:"Live updates arrive once the daily run reports into Atlas (one approval in chat).",go:"bay:youtube",short:"YouTube snapshot"});
   for(const a of F.approvals.filter(x=>x.status==="proposed"))out.push({mod:a.mod||"fleet",key:"apr-"+a.id,kind:"info",title:"Commander proposes: "+(a.title||""),sub:a.why||"",go:"tab:inbox",short:"Proposal to approve"});
   const fp=fleetDoc().pausedAll;if(fp&&fp.at)out.push({mod:"fleet",key:"fpause",kind:"bad",title:"Fleet pause is on",sub:"Both bays are stopped until you resume.","go":"tab:settings",short:"Fleet paused"});
+  try{for(const n of engNeeds())out.push(n)}catch(e){}
   return out;
 }
 function fleetGo(go){
@@ -4444,6 +4449,7 @@ function fleetData(){
     youtube:{handle:ySettings().handle,autopilot:!!ySettings().autopilot,testMode:!!ySettings().testMode,stats:Y.stats,factory:Y.factory,postedThisWeek:yw.posted,judge:yw.judge,viewsOnCrewEpisodes:yw.views,episodes:yAllEps().slice(-10).map(e=>({num:e.num,title:e.title,step:yStepOf(e),judge:yP(e.id).qc&&yP(e.id).qc.judge&&yP(e.id).qc.judge.score,views:yP(e.id).stats&&yP(e.id).stats.views,publishAt:yP(e.id).launch&&yP(e.id).launch.publishAt})),trends:Y.trends&&Y.trends.notes?String(Y.trends.notes).slice(0,800):null,liveData:yConfig().live},
     marketing:(function(){try{const w=mkWeek();return {thisWeek:w,channels:MK_CHANNELS.map(c=>{const ps=mkPosts(c.id);const st=mkStatus(c.id,ps);return {channel:c.name,status:st.word,latest:ps[0]?{when:ps[0].at,views:ps[0].views==null?"unknown":ps[0].views,status:ps[0].status}:"none",next:(mkNext(c.id)||{}).at||"none",posts7d:mkCount7(ps)}})}}catch(e){return {status:"unknown"}}})(),
     trading:{status:"Trading Floor, paper mode",botLastChecked:(botHeartbeat().at||"unknown"),botLate:botLate()},parked:PARKED.map(x=>x[0]),
+    engine:(function(){try{return engSummary()}catch(e){return "unknown"}})(),
     scheduledRuns:Object.values(S.trigs).map(t=>({name:t.name,enabled:t.enabled,next:t.next_run_at,last:t.last_run&&t.last_run.status})),
     recentActivity:allActivity().slice(0,15).map(e=>"["+e.mod+"] "+(e.who?e.who+": ":"")+e.text)};
 }
@@ -5072,11 +5078,11 @@ function renderTicker(force){
 }
 /* ---------- navigation ---------- */
 /* V6.0: one page. The old tab views are folds under the factory map; "showing" one opens its fold and scrolls to it. */
-const TABS=["command","mission","inbox","launch","treasury","settings"];
-const FOLDS=["mission","inbox","launch","treasury","settings"];
+const TABS=["command","mission","inbox","launch","treasury","settings","engine"];
+const FOLDS=["mission","inbox","launch","treasury","settings","engine"];
 const VIEWS=["today","marketing","trading","command","bay-etsy","bay-youtube","bay-third"];
 let currentView="today";
-function renderFold(f){try{if(f==="launch")renderLaunchTab();else if(f==="treasury")renderTreasuryTab();else if(f==="settings"){if(!settingsDirty)renderSettingsTab()}else if(f==="mission")renderMissionTab();else if(f==="inbox")renderInbox()}catch(e){console.error(e)}}
+function renderFold(f){try{if(f==="launch")renderLaunchTab();else if(f==="treasury")renderTreasuryTab();else if(f==="settings"){if(!settingsDirty)renderSettingsTab()}else if(f==="mission")renderMissionTab();else if(f==="inbox")renderInbox();else if(f==="engine")renderEngineTab()}catch(e){console.error(e)}}
 function foldOpen(f){const d=$("#fold-"+f);return !!(d&&d.open)}
 function renderOpenFolds(){for(const f of FOLDS)if(foldOpen(f))renderFold(f)}
 function showView(v){
@@ -5123,6 +5129,7 @@ document.addEventListener("click",async e=>{
   if(e.target.closest("#orderSend")){const v=$("#orderInput")?$("#orderInput").value:"";await giveOrder(v);if($("#orderInput"))$("#orderInput").value="";return}
   if(d.fleet){if(d.fleet==="pause")fleetPause(true);else if(d.fleet==="resume")fleetPause(false);else if(d.fleet==="goals")saveGoals();else if(d.fleet==="lowmotion"){lowMotion=!lowMotion;try{localStorage.setItem("atlas-lowmotion",lowMotion?"on":"off")}catch(err){}renderSettingsTab();startFleet()}return}
   if(d.apr){decideApproval(d.id,d.apr);return}
+  if(d.eng){engOrder(d.eng,d.id||"",d.title||"");return}
   if(d.third){if(d.third==="tick")thirdTick(d.id);else if(d.third==="save")saveThird();return}
   if(d.run==="yt"){fireYouTubeRun();return}
   if(e.target.closest("#coreBtn")){openForeman();return}
@@ -5244,6 +5251,7 @@ async function connect(){
   db.collection("fleet/commander/orders").orderBy("createdAt","desc").limit(20).onSnapshot(s=>{F.orders=docList(s);renderAll()},onErr);
   db.collection("fleet/commander/standups").orderBy("createdAt","desc").limit(3).onSnapshot(s=>{F.standups=docList(s);renderAll()},onErr);
   db.doc("modules/third/config/main").onSnapshot(d=>{F.third=d.exists?d.data():null;renderAll()},onErr);
+  try{db.collection("engine/main/orders").orderBy("at","desc").limit(20).onSnapshot(s=>{ENG.orders=docList(s);renderAll()},onErr)}catch(e){}
   renderAll();
 }
 async function connectSample(){try{const s=await claude.use("sample");S.sample=s||null}catch(e){S.sample=null}renderAll()}
@@ -5579,13 +5587,135 @@ function botLate(){ /* true when no check-in for 70+ min during market hours (8:
 async function pullHeartbeat(){try{const r=await fetch(HB_URL+"?t="+Math.floor(Date.now()/60000),{cache:"no-store"});if(!r.ok)return;const j=await r.json();if(j&&j.at){HB.doc=j;HB.fetchedAt=Date.now();if(currentView==="trading"||currentView==="today")renderAll()}}catch(e){}}
 pullHeartbeat();setInterval(pullHeartbeat,120000);
 
+
+/* ---------- V8 ENGINE ROOM (add-on Phase 8) ----------
+   Reads factory/engine/public/report.json, written by the engine worker (GitHub Actions, about hourly 7am–6pm Central;
+   not a background daemon). Credential-free by construction. Every number is what the engine recorded; unknown stays unknown.
+   Taps become ORDERS in the artifact DB (engine/main/orders); a crew run carries them to the engine, which applies them on
+   its next pass and reports the outcome here. Nothing on this page changes the engine directly. */
+const ENG_URL="https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/factory/engine/public/report.json";
+const ENG={doc:null,fetchedAt:0,err:null,orders:[],busy:false};
+async function pullEngine(){try{const r=await fetch(ENG_URL+"?t="+Math.floor(Date.now()/60000),{cache:"no-store"});if(!r.ok){ENG.err="HTTP "+r.status;return}const j=await r.json();if(j&&j.generated_at){ENG.doc=j;ENG.fetchedAt=Date.now();ENG.err=null;renderAll()}}catch(e){ENG.err="offline"}}
+pullEngine();setInterval(pullEngine,120000);
+function engAgeMin(){const d=ENG.doc;if(!d)return null;const t=Date.parse(d.generated_at);return isNaN(t)?null:Math.max(0,Math.round((Date.now()-t)/60000))}
+function engAgeText(){const m=engAgeMin();if(m==null)return "not loaded";if(m<2)return "just now";if(m<60)return m+" min old";if(m<48*60)return Math.round(m/60)+" h old";return Math.round(m/1440)+" days old"}
+function engStale(){const m=engAgeMin();const d=ENG.doc;return m==null||m*60>((d&&d.health&&d.health.stale_after_s)||7200)}
+const engN=v=>v==null?"unknown":(typeof v==="number"?(Math.round(v*100)/100).toLocaleString("en-US"):String(v));
+function engPill(s){s=({publish_public:"publish",spend_money:"spend",change_credentials:"credentials",destructive_change:"destructive",trade_live:"live trade"})[s]||s;const m={queued:"info",running:"info",needs_approval:"warn",failed:"bad",succeeded:"ok",cancelled:"",draft:"info",scheduled:"ok",published:"ok",measured:"ok",planned:"",approved:"ok",connected:"ok",unverified:"warn",missing:"bad",mocked:"info",rejected:"bad",needs_review:"warn",idle:"",failing:"bad",working:"ok",paused:"warn",open:"info",complete:"ok",demonstrated:"ok",hypothesis:"warn",applied:"ok",refused:"bad"};return '<span class="pill '+(m[s]||"")+'">'+esc(String(s==null?"unknown":s).replace(/_/g," "))+'</span>'}
+function engOrdersQueued(){return (ENG.orders||[]).filter(o=>o.status==="queued")}
+function engOutcomeFor(id){const d=ENG.doc;return d&&Array.isArray(d.orders)?d.orders.find(o=>o.order_id===id):null}
+function engNeeds(){ /* joins fleetNeeds(): approvals, failed tasks, kill switch, stale report */
+  const d=ENG.doc;const out=[];if(!d)return out;
+  for(const a of (d.approvals||[]))out.push({mod:"fleet",key:"eng-apr-"+a.id,kind:"info",title:"Engine asks: "+(a.title||a.capability),sub:(a.why||"")+(a.cost?" · cost: "+a.cost:""),go:"tab:engine",short:"Engine approval"});
+  const failed=(d.tasks&&d.tasks.failed)||[];if(failed.length)out.push({mod:"fleet",key:"eng-failed",kind:"bad",title:failed.length+" engine task"+(failed.length===1?"":"s")+" failed",sub:words(failed[0].error||"",14),go:"tab:engine",short:"Engine task failed"});
+  if(d.health&&d.health.kill)out.push({mod:"fleet",key:"eng-kill",kind:"bad",title:"Engine kill switch is ON",sub:"No engine task runs until you switch it off.",go:"tab:engine",short:"Engine killed"});
+  if(ENG.fetchedAt&&engStale())out.push({mod:"fleet",key:"eng-stale",kind:"warn",title:"Engine report is "+engAgeText(),sub:"The worker hasn't checked in. GitHub's schedule runs late at times; it catches up on its own.",go:"tab:engine",short:"Engine report old"});
+  return out;
+}
+function engSummary(){const d=ENG.doc;if(!d)return "report not loaded";const h=d.health||{};return {reportAge:engAgeText(),lastWorkerPass:h.last_tick||"unknown",killSwitch:!!h.kill,counts:h.counts,pendingApprovals:(d.approvals||[]).length,failedTasks:((d.tasks||{}).failed||[]).map(t=>t.kind+": "+t.error),products:(d.products||[]).map(p=>p.product_id+" v"+p.version+" "+p.stage+" gate="+p.gate),plans:(d.plans||[]).map(p=>p.id+" "+p.status+" next="+(p.next_action||"unknown")),channels:(d.metrics||{}).by_channel,recommendations:(d.metrics||{}).recommendations,usageToday:d.usage,integrations:(d.integrations||[]).map(i=>i.id+"="+i.state)}}
+function engCard(title,meta,inner,glow){return '<div class="card'+(glow?' glow':'')+'" data-m="fleet"'+(glow?' style="--g:'+glow+'"':'')+'><div class="ch"><span class="px">'+title+'</span><span class="small dim">'+meta+'</span></div>'+inner+'</div>'}
+function engKv(k,v,cls){return '<div class="kv"><span class="k">'+k+'</span><span class="v wrap '+(cls||"")+'">'+v+'</span></div>'}
+function engTaskRow(t,btn){
+  return '<div class="item"><div class="row" style="justify-content:space-between;gap:8px;align-items:flex-start"><span style="min-width:0"><b>'+esc(t.kind)+'</b> <span class="small dim">'+esc(t.agent)+' · try '+esc(String(t.attempts))+'</span></span>'+engPill(t.status)+'</div>'
+    +(t.error?'<div class="notes" style="color:var(--bad)">'+esc(words(t.error,40))+'</div>':'')+(t.next_step?'<div class="sub">Next: '+esc(String(t.next_step).replace(/,?\s*then:?\s*python -m factory\.engine retry \S+/i,", then tap Retry"))+'</div>':'')
+    +'<div class="small dim">'+esc(t.id)+' · '+esc(fmtTime(t.updated_at))+'</div>'+(btn||'')+'</div>';
+}
+function engOrderBtn(action,id,label,cls,title){const q=engOrdersQueued().find(o=>o.action===action&&o.id===id);return q?'<span class="pill info">queued '+esc(clk(q.at)||"")+'</span>':'<button type="button" class="btn sm '+(cls||"")+'" data-eng="'+esc(action)+'" data-id="'+esc(id)+'" data-title="'+esc(title||"")+'"'+(S.dbState!=="live"||ENG.busy?' disabled':'')+'>'+esc(label)+'</button>'}
+function renderEngineTab(){
+  const el=$("#engineBody");if(!el)return;const d=ENG.doc;const note=$("#engineNote");
+  const fs=$("#foldEngineS");const needs=engNeeds();const b=$("#engineBadge");if(b){b.hidden=!needs.length;b.textContent=needs.length}
+  if(!d){if(note)note.textContent=ENG.err?"can't load the report ("+ENG.err+")":"loading…";if(fs)fs.textContent="report not loaded yet";
+    el.innerHTML='<div class="empty"><b>No engine report yet.</b><span>The worker writes one on GitHub about every hour (7am–6pm Central). Nothing here is estimated: until a report lands, every number is unknown.</span></div>';return}
+  const h=d.health||{};const c=h.counts||{};const tk=d.tasks||{};const stale=engStale();
+  if(note)note.textContent="report "+engAgeText()+(stale?" · late":"");
+  if(fs)fs.textContent=(c.queued||0)+" queued · "+(c.running||0)+" running · "+((tk.needs_approval||[]).length)+" need you · "+(c.failed||0)+" failed";
+  let out="";
+  /* 1 status */
+  out+=engCard("Engine status",stale?'<span class="pill warn">report late</span>':'<span class="pill ok">report '+esc(engAgeText())+'</span>',
+    '<div class="col" style="gap:0">'+engKv("Last worker pass",esc(h.last_tick?fmtTime(h.last_tick):"unknown")+(h.last_runner?' <span class="small dim">('+esc(h.last_runner)+')</span>':''))
+    +engKv("Kill switch",(h.kill?'<span class="pill bad">ON · nothing runs</span>':'<span class="pill ok">off</span>'))
+    +engKv("Tasks",esc((c.queued||0)+" queued · "+(c.running||0)+" running · "+(c.needs_approval||0)+" waiting · "+(c.failed||0)+" failed · "+(c.succeeded||0)+" done"))
+    +(h.paused_agents&&h.paused_agents.length?engKv("Paused agents",esc(h.paused_agents.join(", "))):'')+'</div>'
+    +'<div class="btns" style="margin-top:8px">'+(h.kill?engOrderBtn("kill_off","","Switch kill off","pri","Switch the engine kill switch OFF"):engOrderBtn("kill_on","","Kill switch ON","danger","Stop every engine action"))+'</div>'
+    +'<div class="sub">Runs only when GitHub starts the worker (about hourly, 7am–6pm Central; the schedule runs late at times). Not a background daemon. Report time is the truth.</div>');
+  /* 2 approvals */
+  const aps=d.approvals||[];
+  out+=engCard("Needs you",aps.length?'<span class="pill warn">'+aps.length+' waiting</span>':'<span class="pill ok">nothing</span>',
+    aps.length?'<div class="col" style="gap:8px">'+aps.map(a=>'<div class="item"><div class="row" style="justify-content:space-between;gap:8px"><b style="min-width:0">'+esc(a.title)+'</b>'+engPill(a.capability)+'</div>'+(a.why?'<div class="notes">'+esc(a.why)+'</div>':'')+(a.cost||a.risk?'<div class="small dim">'+(a.cost?"Cost: "+esc(a.cost)+" ":"")+(a.risk?"· Risk: "+esc(a.risk):"")+'</div>':'')+'<div class="small dim">asked '+esc(fmtTime(a.requested_at))+' · '+esc(a.id)+'</div><div class="btns">'+engOrderBtn("approve",a.id,"Approve","pri",a.title)+engOrderBtn("decline",a.id,"Decline","",a.title)+'</div></div>').join("")+'</div>'
+    :'<div class="sub">Every publish, spend or destructive change stops here first. Nothing is waiting.</div>');
+  /* 3 tasks */
+  const failed=tk.failed||[],na=tk.needs_approval||[],run=tk.running||[],q=tk.queued||[],done=d.recent_done||[];
+  out+=engCard("Tasks",'<span class="small dim">'+(failed.length+na.length+run.length+q.length)+' open</span>',
+    (failed.length?'<div class="lbl" style="margin-bottom:4px">Failed · fix and retry</div><div class="col" style="gap:8px">'+failed.map(t=>engTaskRow(t,'<div class="btns">'+engOrderBtn("retry",t.id,"Retry","pri",t.kind)+engOrderBtn("cancel",t.id,"Cancel","",t.kind)+'</div>')).join("")+'</div>':'')
+    +(na.length?'<div class="lbl" style="margin:8px 0 4px">Waiting for your OK</div><div class="col" style="gap:8px">'+na.map(t=>engTaskRow(t)).join("")+'</div>':'')
+    +(run.length?'<div class="lbl" style="margin:8px 0 4px">Running</div><div class="col" style="gap:8px">'+run.map(t=>engTaskRow(t)).join("")+'</div>':'')
+    +(q.length?'<div class="lbl" style="margin:8px 0 4px">Queued</div><div class="col" style="gap:0">'+q.slice(0,8).map(t=>'<div class="kv"><span class="k">'+esc(t.kind)+' <span class="small dim">'+esc(t.agent)+'</span></span><span class="v small">'+(t.next_eligible_at?'backoff until '+esc(clk(t.next_eligible_at)):'ready')+'</span></div>').join("")+(q.length>8?'<div class="small dim">+'+(q.length-8)+' more</div>':'')+'</div>':'')
+    +(!failed.length&&!na.length&&!run.length&&!q.length?'<div class="sub">No open tasks. The Foreman submits work with a plan (launch_product, promote_product, research_lane, health_check).</div>':'')
+    +(done.length?'<details style="margin-top:6px"><summary class="small dim" style="cursor:pointer">'+done.length+' recently done</summary><div class="col" style="gap:0;margin-top:6px">'+done.map(t=>'<div class="kv"><span class="k">'+esc(t.kind)+' <span class="small dim">'+esc(t.agent)+'</span></span><span class="v small wrap">'+esc(t.output_ref||"no output ref")+'</span></div>').join("")+'</div></details>':''));
+  /* 4 workflows */
+  const wf=d.workflows||[];
+  if(wf.length)out+=engCard("Workflows",'<span class="small dim">'+wf.length+'</span>','<div class="col" style="gap:8px">'+wf.map(w=>'<div class="item"><div class="row" style="justify-content:space-between;gap:8px"><b style="min-width:0">'+esc(w.goal)+' · '+esc(w.input_ref)+'</b>'+engPill(w.status)+'</div><div class="small dim">'+esc(String(w.done==null?"?":w.done))+' of '+esc(String(w.total==null?"?":w.total))+' steps done</div>'+((w.blocked||[]).length?'<div class="notes">'+w.blocked.map(x=>esc(x.step+": "+(Array.isArray(x.why)?x.why.join("; "):x.why||x.status))).join("<br>")+'</div>':'')+((w.problems||[]).length?'<div class="notes" style="color:var(--warn)">'+esc(w.problems.join("; "))+'</div>':'')+'</div>').join("")+'</div>');
+  /* 5 quality */
+  const pr=d.products||[];
+  out+=engCard("Product quality gate",'<span class="small dim">'+pr.length+' product'+(pr.length===1?'':'s')+'</span>',
+    pr.length?'<div class="col" style="gap:8px">'+pr.map(p=>'<div class="item"><div class="row" style="justify-content:space-between;gap:8px"><b style="min-width:0">'+esc(p.title)+' <span class="small dim">v'+esc(String(p.version))+' · '+esc(p.lane)+'</span></b>'+engPill(p.gate)+'</div><div class="small dim">stage '+esc(p.stage)+' · score '+esc(engN(p.score))+' · '+esc(p.checks_failed==null?"not checked":p.checks_failed+" failed, "+p.checks_unknown+" unknown")+' · listing '+esc(p.listing_status)+' · distribution '+esc(p.distribution_status)+'</div>'+((p.gate_reasons||[]).length?'<div class="notes">'+esc(p.gate_reasons.join("; "))+'</div>':'')+((p.known_limitations||[]).length?'<div class="sub">Limits: '+esc(p.known_limitations.join("; "))+'</div>':'')+'</div>').join("")+'</div>'
+    :'<div class="sub">No product has entered the engine\'s 10-stage gate yet. The Etsy bay\'s own checks still run as before.</div>');
+  /* 6 distribution + publishing */
+  const pl=d.plans||[];
+  out+=engCard("Distribution &amp; publishing",'<span class="small dim">'+pl.length+' plan'+(pl.length===1?'':'s')+'</span>',
+    pl.length?'<div class="col" style="gap:8px">'+pl.map(p=>{const f=p.funnel||{};return '<div class="item"><div class="row" style="justify-content:space-between;gap:8px"><b style="min-width:0">'+esc(p.product_id)+' v'+esc(String(p.product_version))+' · '+esc((p.channels||[]).join(", "))+'</b>'+engPill(p.status)+'</div>'
+      +'<div class="small dim">for '+esc(p.target_customer||"?")+' · '+esc(p.campaign||p.id)+'</div>'
+      +'<div class="col" style="gap:0">'+engKv("Scheduled / published",esc(engN(f.scheduled))+" / "+esc(engN(f.published)))+engKv("Reached / clicks / sales",esc(engN(f.audience_reached))+" / "+esc(engN(f.clicks))+" / "+esc(engN(f.conversions_or_sales)))+engKv("Source",esc(f.source||"unknown"))+'</div>'
+      +'<div class="sub">Next: '+esc(p.next_action||f.next_action||"unknown")+'</div>'
+      +((p.publications||[]).length?'<div class="col" style="gap:0;margin-top:4px">'+p.publications.map(x=>'<div class="kv"><span class="k">'+esc(x.channel)+' <span class="small dim">via '+esc(x.adapter)+(x.verified===true?' · verified':(x.verified===false?' · refused':' · not verified yet'))+'</span>'+(x.url?' <a href="'+esc(x.url)+'" target="_blank" rel="noopener">open</a>':'')+'</span><span class="v">'+engPill(x.status)+'</span></div>').join("")+'</div>':'<div class="sub">No publish attempt yet.</div>')+'</div>'}).join("")+'</div>'
+    :'<div class="sub">No distribution plan yet. A plan needs dated evidence, an Etsy destination and your publish approval before anything goes out.</div>');
+  /* 7 channel numbers */
+  const mt=d.metrics||{};const bc=mt.by_channel||{};const keys=Object.keys(bc);const recs=mt.recommendations||[];
+  out+=engCard("Channel numbers",'<span class="small dim">last '+esc(String(mt.days||14))+' days · platform-reported only</span>',
+    (keys.length?'<div class="col" style="gap:8px">'+keys.map(k=>{const g=bc[k];const st=[["reach",g.impressions!=="unknown"?g.impressions:g.views],["clicks",g.clicks],["saves",g.saves],["sales",g.sales]];return '<div class="item" style="gap:2px"><div class="row" style="justify-content:space-between"><b>'+esc(k)+'</b><span class="small dim">'+esc(String(g.items||0))+' item'+(g.items===1?'':'s')+(g.latest?' · '+esc(fmtTime(g.latest)):'')+'</span></div><div class="engs">'+st.map(x=>'<div><b'+(x[1]==null||x[1]==="unknown"?' class="dim" style="font-weight:500"':'')+'>'+esc(x[1]==null||x[1]==="unknown"?"?":engN(x[1]))+'</b><span>'+x[0]+'</span></div>').join("")+'</div></div>'}).join("")+'</div><div class="sub">? = nothing reported by the platform</div>':'<div class="sub">Nothing reported by any platform into the engine yet. Unknown stays unknown; nothing is estimated.</div>')
+    +(recs.length?'<div class="lbl" style="margin:8px 0 4px">What to do</div><div class="col" style="gap:6px">'+recs.map(r=>'<div class="row" style="gap:8px;align-items:flex-start"><span style="flex:1;min-width:0;font-size:13.5px"><b>'+esc(r.group)+'</b>: '+esc(r.action)+' — '+esc(r.why)+'</span>'+engPill(r.basis)+'</div>').join("")+'</div>':''));
+  /* 8 usage */
+  const u=d.usage||{};const bg=u.budget||{};
+  out+=engCard("Model usage &amp; budget",'<span class="small dim">today '+esc(u.today||"")+'</span>','<div class="col" style="gap:0">'
+    +engKv("Calls",esc(engN(u.calls))+(u.cached_calls?' <span class="small dim">('+esc(String(u.cached_calls))+' from cache)</span>':''))
+    +engKv("Cost reported",(u.cost_usd_known==="unknown"?'<span class="pill warn">unknown</span>':esc(money(u.cost_usd_known)))+(u.cost_unknown_calls?' <span class="small dim">'+esc(String(u.cost_unknown_calls))+' call'+(u.cost_unknown_calls===1?'':'s')+' with no price reported</span>':''))
+    +engKv("Daily limits",esc(engN(bg.daily_calls)+" calls · "+(typeof bg.daily_usd==="number"?money(bg.daily_usd)+" spend":"no paid spend")))
+    +engKv("Paid provider",u.paid_provider_allowed?'<span class="pill warn">allowed</span>':'<span class="pill ok">not allowed</span>')+'</div><div class="sub">'+esc(u.note||"")+'</div>');
+  /* 9 integrations + agents */
+  const ig=d.integrations||[];const ag=d.agents||[];
+  out+=engCard("Integrations",'<span class="small dim">as last observed</span>',(ig.length?'<div class="col" style="gap:0">'+ig.map(i=>'<div class="sysrow"><span class="led '+({connected:"ok",unverified:"warn",missing:"bad",mocked:"info"}[i.state]||"")+'"></span><span class="n">'+esc(i.id)+'<span>'+esc(i.note||"")+(i.last_ok_at?" · last ok "+fmtTime(i.last_ok_at):"")+'</span></span><span class="state">'+engPill(i.state)+'</span></div>').join("")+'</div>':'<div class="sub">Not checked yet.</div>')
+    +'<div class="lbl" style="margin:10px 0 4px">Agents</div><div class="crewrow">'+ag.map(a=>'<span class="chip" title="'+esc(a.role)+'"><span class="led '+({failing:"bad",working:"ok",paused:"warn",queued:"info"}[a.state]||"")+'"></span>'+esc(a.id)+' v'+esc(String(a.version))+' · '+esc(a.state)+'</span>').join("")+'</div>');
+  /* 10 orders from this phone */
+  const qo=ENG.orders||[];
+  if(qo.length)out+=engCard("Your orders",'<span class="small dim">'+engOrdersQueued().length+' queued</span>','<div class="col" style="gap:0">'+qo.slice(0,10).map(o=>{const oc=engOutcomeFor(o.id);return '<div class="kv"><span class="k">'+esc(o.action.replace(/_/g," "))+(o.title?' · '+esc(words(o.title,8)):'')+'<br><span class="small dim">'+esc(clk(o.at)||fmtTime(o.at))+(oc?' · '+esc(oc.result||oc.error||""):'')+'</span></span><span class="v">'+engPill(oc?(oc.ok?"applied":"refused"):o.status)+'</span></div>'}).join("")+'</div><div class="sub">A queued order waits here until a crew run carries it to the engine; the engine applies it on its next pass and the result shows up above.</div>');
+  /* 11 logs behind details */
+  const er=d.errors||[],au=d.audit||[];
+  out+='<details class="card" data-m="fleet"><summary class="small dim" style="cursor:pointer">Logs · '+er.length+' error'+(er.length===1?'':'s')+' · '+au.length+' audit lines</summary>'
+    +(er.length?'<div class="lbl" style="margin:8px 0 4px">Errors</div><div class="col" style="gap:0">'+er.map(e=>'<div class="actrow"><span class="ab"><b>'+esc(e.agent)+' · '+esc(e.error_class||"error")+':</b> '+esc(words(e.error,30))+(e.recovery?'<br><span class="dim">'+esc(e.recovery)+'</span>':'')+'</span><span class="at">'+esc(fmtTime(e.at))+'</span></div>').join("")+'</div>':'')
+    +'<div class="lbl" style="margin:8px 0 4px">Audit</div><div class="col" style="gap:0">'+au.slice(0,25).map(a=>'<div class="actrow"><span class="ab"><b>'+esc(a.who)+' '+esc(a.action)+':</b> '+esc(a.subject)+(a.detail?' — '+esc(words(a.detail,18)):'')+'</span><span class="at">'+esc(fmtTime(a.at))+'</span></div>').join("")+'</div></details>';
+  el.innerHTML=out;
+}
+async function engOrder(action,id,title){
+  if(S.dbState!=="live"||!S.db){toast("Open the Factory in the Claude app to send an order.",true);return}
+  const L={approve:["Approve this?","The engine gets your OK on its next pass and the gated task continues through the same checks as before.","Approve"],decline:["Decline this?","The waiting task is cancelled. Nothing is deleted.","Decline"],retry:["Retry this task?","It goes back in the queue with a fresh retry budget on the engine's next pass.","Retry"],cancel:["Cancel this task?","It stops for good; its records stay.","Cancel task"],kill_on:["Switch the engine kill switch ON?","Every engine action stops until you switch it off. Gateway and trading are separate and keep running. Deletes nothing.","Kill switch ON"],kill_off:["Switch the kill switch OFF?","Queued engine tasks may run again on the next pass.","Switch off"]}[action];
+  if(!L)return;
+  const ok=await confirmSheet({title:L[0],body:L[1]+(title?"\n\n"+title:""),confirm:L[2],danger:action==="kill_on"||action==="cancel",foot:"Orders ride to the engine with the next crew run; the Engine room shows when it was applied."});
+  if(!ok)return;
+  ENG.busy=true;renderAll();
+  try{const at=new Date().toISOString();const oid="ord_"+at.replace(/[-:.TZ]/g,"").slice(0,14)+"_"+action+(id?"_"+String(id).slice(-6):"");
+    await S.db.doc("engine/main/orders/"+oid).set({action,id:id||"",by:"Grayson",at,status:"queued",title:String(title||"").slice(0,120)});
+    toast("Order queued for the engine.");fleetAudit("Grayson","fleet","Engine order: "+action+(id?" "+id:""))}
+  catch(e){toast("Couldn't queue the order.",true)}
+  finally{ENG.busy=false;renderAll()}
+}
+
 /* ---------- MORE sheet (every old tab and view, one tap away) ---------- */
-const MORE=[["map","Factory map","the full floor plan"],["inbox","Inbox","approvals and alerts"],["launch","Loading Dock","what's ready to ship"],["treasury","Money","verified dollars only"],["mission","Missions & goals","what the crew is on"],["report","Daily report","every run, every post"],["foreman","Foreman's office","standup, clock, verdicts"],["youtube","Studio Floor","YouTube Shorts"],["third","Marketing Wing","socials and pins"],["tradefloor","Trading rules","how the bots trade"],["parked","Parked","switched off, data kept"],["settings","Settings","caps, schedule, switches"]];
+const MORE=[["map","Factory map","the full floor plan"],["inbox","Inbox","approvals and alerts"],["launch","Loading Dock","what's ready to ship"],["treasury","Money","verified dollars only"],["mission","Missions & goals","what the crew is on"],["engine","Engine room","tasks, quality gate, numbers, errors"],["report","Daily report","every run, every post"],["foreman","Foreman's office","standup, clock, verdicts"],["youtube","Studio Floor","YouTube Shorts"],["third","Marketing Wing","socials and pins"],["tradefloor","Trading rules","how the bots trade"],["parked","Parked","switched off, data kept"],["settings","Settings","caps, schedule, switches"]];
 /* V7: parked lanes. Switched OFF and hidden; nothing deleted. One word brings any of them back. */
 const PARKED=[["Funnel Floor","Instagram comment-to-DM daily Reel. Task disabled; @digitalcreationsbyridge untouched."],["Gumroad","Bolt no longer publishes here. Existing Gumroad products stay up as they are."],["Ridgeline","parked business · files kept"],["Frontier Nav","parked business · files kept"],["Brain Arcade","parked business · files kept"]];
 function openParked(){sheetRoom=null;ySheet=null;fleetSheet=null;openSheet("Parked","switched off · data and files kept · say the word to bring one back","#8a94a6",'<div class="col" style="gap:10px">'+PARKED.map(([n,s])=>'<div class="card" style="padding:12px 14px;gap:4px"><div class="row" style="justify-content:space-between"><b>'+esc(n)+'</b><span class="pill">OFF</span></div><div class="dim small">'+esc(s)+'</div></div>').join("")+'</div>',"parked","fleet")}
 function openMore(){sheetRoom=null;ySheet=null;fleetSheet=null;openSheet("More","everything else in the factory","#ffb347",'<div class="more">'+MORE.map(([k,t,s])=>'<button type="button" data-more="'+k+'"><b>'+esc(t)+'</b><span>'+esc(s)+'</span></button>').join("")+'</div>',"more","fleet")}
-function moreGo(k){closeSheet();if(k==="map")showView("command");else if(["inbox","launch","treasury","mission","settings"].includes(k))showTab(k);else if(k==="report")openReport();else if(k==="foreman"){showView("command");openForeman()}else if(k==="youtube"||k==="third")showBay(k);else if(k==="parked")openParked();else if(k==="funnel")openParked();else if(k==="tradefloor"){showView("trading");openFloorInfo("trading")}}
+function moreGo(k){closeSheet();if(k==="map")showView("command");else if(["inbox","launch","treasury","mission","settings","engine"].includes(k))showTab(k);else if(k==="report")openReport();else if(k==="foreman"){showView("command");openForeman()}else if(k==="youtube"||k==="third")showBay(k);else if(k==="parked")openParked();else if(k==="funnel")openParked();else if(k==="tradefloor"){showView("trading");openFloorInfo("trading")}}
 function navOf(v){return v==="today"?"today":(v==="bay-etsy"?"shop":(v==="marketing"?"marketing":(v==="trading"?"trading":"more")))}
 function paintNav(v){document.querySelectorAll("#nav4 [data-nav]").forEach(b=>b.classList.toggle("on",b.dataset.nav===navOf(v)))}
 /* ---------- the Foreman: chat with page tools ---------- */

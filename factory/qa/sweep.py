@@ -11,6 +11,11 @@ async def main():
         pg=await b.new_page(viewport={"width":W,"height":844},device_scale_factor=2)
         pg.on("pageerror",lambda e: errs.append("PAGEERROR "+str(e)))
         pg.on("console",lambda m: errs.append("CONSOLE "+m.type+" "+m.text) if m.type in("error","warning") else None)
+        # V8 (Oct 21 2026): the Engine room reads the repo's public report; serve a local fixture so the fold renders with data.
+        REPORT=sys.argv[4] if len(sys.argv)>4 else None
+        if REPORT:
+            body=open(REPORT,"rb").read()
+            await pg.route("**/factory/engine/public/report.json*",lambda r: r.fulfill(status=200,content_type="application/json",body=body))
         await pg.goto(PAGE); await pg.wait_for_timeout(2500)
         await pg.screenshot(path=OUT+"01_home.png")
         steps=[]
@@ -40,8 +45,13 @@ async def main():
         await click("#coreBtn","02_foreman")
         await click('#fleet [data-floorinfo="trading"]',"03_floor_trading")
         n=await pg.locator('#fleet [data-floorinfo="funnel"]:visible').count(); steps.append("03b_funnel_hidden: "+("ok" if n==0 else "FAIL visible"))
-        for fold in ["inbox","launch","treasury","mission","settings"]:
+        for fold in ["inbox","launch","treasury","mission","settings","engine"]:
             await click(f"#fold-{fold} > summary","04_fold_"+fold,back=False)
+        await pg.screenshot(path=OUT+"04b_engine_full.png",full_page=True)
+        n=await pg.locator('#engineBody .card').count(); steps.append("04c_engine_cards: "+(f"ok {n}" if n>=6 else f"FAIL {n} cards"))
+        sw=await pg.evaluate("Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)"); cw=await pg.evaluate("document.documentElement.clientWidth")
+        steps.append("04d_noscroll_engine: "+("ok" if sw<=cw else f"FAIL scrollWidth {sw} > {cw}"))
+        n=await pg.locator('#engineBody [data-eng="retry"]').count(); steps.append("04e_engine_retry_btn: "+("ok (disabled outside the Claude app)" if n else "MISSING"))
         await click('[data-bay="third"]',"05_marketing",back=False)
         await pg.screenshot(path=OUT+"05b_marketing_full.png",full_page=True)
         await click('#v-bay-third [data-agent="hawk"]',"05c_agent_hawk")

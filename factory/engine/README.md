@@ -6,8 +6,13 @@ journal; no background workers are claimed — a worker is whatever calls `tick(
 
 ## Run it (phone-friendly)
 
-- **GitHub app → Actions → "Engine tests"**: runs on every push to this folder. Green = all 70 unit tests,
+- **GitHub app → Actions → "Engine tests"**: runs on every push to this folder. Green = all 75 unit tests,
   the V7 rules self-test and the contracts export check passed. Red = open the log; the Mechanic reads it too.
+- **GitHub app → Actions → "Engine worker"**: the engine's heartbeat. Runs about hourly 7am–6pm Central (GitHub's
+  cron is best-effort, often late), on **Run workflow**, and when an order file lands. Each run commits
+  `factory/engine/public/report.json`, which the Factory's **Engine room** (More → Engine room) reads.
+- **Factory page → More → Engine room**: status, approvals, tasks, quality gate, plans + publish results, channel
+  numbers, model usage, integrations, logs. Approve / Retry / Kill taps queue an order; a crew run carries it to the engine.
 - From any shell with Python 3.10+ (no packages needed):
 
 ```
@@ -29,6 +34,9 @@ python -m factory.engine funnel plan_…   # created → approved → planned �
 python -m factory.engine publications    # every publish attempt: draft / queued / scheduled / published / failed (verified or not)
 python -m factory.engine refresh         # re-check queued posts against the gateway's real results
 python -m factory.engine recommend       # repeat / improve / pause / test, each labelled demonstrated or hypothesis
+python -m factory.engine worker          # one worker pass (what GitHub Actions runs about hourly)
+python -m factory.engine report          # rewrite public/report.json for the dashboard's Engine room
+python -m factory.engine orders          # apply the order files a crew run dropped in factory/engine/orders/
 python -m factory.engine selftest        # the tests, locally
 ```
 
