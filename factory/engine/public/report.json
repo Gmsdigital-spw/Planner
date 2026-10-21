@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "generated_at": "2026-10-21T18:33:53Z",
+ "generated_at": "2026-10-21T18:48:34Z",
  "worker": "python -m factory.engine worker",
  "health": {
   "engine_schema": 4,
   "kill": false,
   "paused_agents": [],
-  "last_tick": "2026-10-21T18:33:53Z",
+  "last_tick": "2026-10-21T18:48:34Z",
   "last_runner": "cli",
   "last_tick_age_s": 0,
   "counts": {
@@ -159,9 +159,9 @@
   {
    "id": "gateway",
    "state": "connected",
-   "last_ok_at": "2026-10-21T17:44:21Z",
+   "last_ok_at": "2026-10-21T18:44:22Z",
    "last_error": "2026-10-21T04:15:15Z trade-test4-1792556098.json",
-   "checked_at": "2026-10-21T18:33:53Z",
+   "checked_at": "2026-10-21T18:48:34Z",
    "note": "GitHub Actions gw.yml; secrets live there only"
   },
   {
@@ -169,7 +169,7 @@
    "state": "missing",
    "last_ok_at": null,
    "last_error": null,
-   "checked_at": "2026-10-21T18:33:53Z",
+   "checked_at": "2026-10-21T18:48:34Z",
    "note": "Make is reachable only from the Factory page / crews (Claude connector); Python writes drafts"
   }
  ],
