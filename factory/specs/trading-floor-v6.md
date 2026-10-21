@@ -12,7 +12,7 @@ _Standing instructions written with Grayson on Oct 20, 2026. Not financial advic
 | Stop-loss | on every buy, placed with the entry as a bracket order; a buy without one is refused |
 | Take-profit | at least 2:1 reward-to-risk or the trade is skipped |
 | Position size | risk ÷ (entry − stop) in notional dollars (fractional shares); max 40% of cash in one name; max 2 open positions |
-| Hours | buys 9:35 AM to 2:45 PM Central only; everything flat by 2:45 PM; no overnight holds; day orders only |
+| Hours | buys 8:35 AM to 2:45 PM Central only (market opens 8:30 CT); everything flat by 2:45 PM; no overnight holds; day orders only |
 | Daily loss limit | $1.50 (6% of $25): hit it and Bear closes the day |
 | No margin | cash only; buying power = cash; never short, never options, never crypto |
 | Paper → live | 2 paper trading days (Grayson shortened it from 14 on Oct 20, 2026) with the report below, then Grayson's separate "live go"; live uses a different key and the ALPACA_LIVE variable set to 1 by Grayson himself |
