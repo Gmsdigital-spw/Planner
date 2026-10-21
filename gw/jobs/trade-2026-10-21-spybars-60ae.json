@@ -1,0 +1,1 @@
+{"id":"trade-2026-10-21-spybars-60ae","ops":[{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY&timeframe=5Min&limit=78&feed=iex&start=2026-10-21T13:30:00Z"}]}
