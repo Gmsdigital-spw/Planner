@@ -1,0 +1,510 @@
+{
+ "id": "bolt-2026-10-21-pins-ecb8",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-legacy-xmas-game-bundle-s1",
+   "tag": "pin-legacy-xmas-game-bundle-s1",
+   "body": {
+    "content": "8 printable Christmas party games in one bundle: trivia, word scramble, Would You Rather, This or That, bingo, Who Am I, carol fill-in and a scavenger hunt, with answer keys. For family, office and classroom parties of 4 to 30.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/legacy-xmas-game-bundle-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-21T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "8 Christmas Party Games, Ready to Print",
+       "link": "https://www.etsy.com/listing/4597749137/christmas-party-games-printable-bundle-8"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-legacy-xmas-planner-listing-update-s1",
+   "tag": "pin-legacy-xmas-planner-listing-update-s1",
+   "body": {
+    "content": "Plan your whole Christmas on a few printable pages: a December calendar, gift tracker, holiday budget, countdown, to-do list and Christmas dinner planner. Print the pages you need and fill them in over coffee. Instant download PDF, US Letter.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/legacy-xmas-planner-listing-update-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-21T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595727",
+       "title": "Plan Christmas on One Page a Week",
+       "link": "https://www.etsy.com/listing/4596203264/christmas-planner-printable-2026-holiday"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-adhd-savings-tracker-s1",
+   "tag": "pin-prod-adhd-savings-tracker-s1",
+   "body": {
+    "content": "Color a box every time you save, any amount, any week. Printable 2027 savings challenges for $1,000, $2,500 and $5,000 plus a 52-week classic, made with big boxes and low text for ADHD and busy brains. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-adhd-savings-tracker-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-22T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595728",
+       "title": "Color In Your Way to $1,000",
+       "link": "https://www.etsy.com/listing/4598358161/2027-savings-challenge-printable-adhd"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-advent-activities-s1",
+   "tag": "pin-prod-advent-activities-s1",
+   "body": {
+    "content": "24 simple, screen-free Christmas activities for families, one card for each day of December, each with a Talk About It question. Most use what you already have at home. Printable cut-out cards plus a countdown tracker. Instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-advent-activities-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-22T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "24 Screen-Free Christmas Activities",
+       "link": "https://www.etsy.com/listing/4597998190/christmas-countdown-activity-cards"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-cookie-exchange-kit-s1",
+   "tag": "pin-prod-cookie-exchange-kit-s1",
+   "body": {
+    "content": "Host a Christmas cookie swap without the guesswork: invitations, guest sign-up, baking math for 6 to 15 guests, cookie labels with allergen checkboxes, recipe cards and ballots. Printable kit, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-cookie-exchange-kit-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-22T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595732",
+       "title": "Host a Cookie Swap This December",
+       "link": "https://www.etsy.com/listing/4600177510/christmas-cookie-exchange-kit-printable"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-debt-payoff-2027-s1",
+   "tag": "pin-prod-debt-payoff-2027-s1",
+   "body": {
+    "content": "Compare the debt snowball and the debt avalanche on a worked example, pick your payoff order and log every payment until you are debt-free. Printable 2027 debt payoff tracker, 16 pages, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-debt-payoff-2027-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-22T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595728",
+       "title": "Snowball or Avalanche? See Both on Paper",
+       "link": "https://www.etsy.com/listing/4598535050/2027-debt-payoff-tracker-printable-debt"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-friendsgiving-kit-s1",
+   "tag": "pin-prod-friendsgiving-kit-s1",
+   "body": {
+    "content": "A potluck sign-up sheet with 16 slots and an allergens column so nobody brings the same dish. Part of a printable Friendsgiving kit with a host timeline and 7 games for grown-up friends. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-friendsgiving-kit-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-23T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "No More Three Mac and Cheese Dishes",
+       "link": "https://www.etsy.com/listing/4598501430/friendsgiving-games-printable"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-gingerbread-contest-kit-s1",
+   "tag": "pin-prod-gingerbread-contest-kit-s1",
+   "body": {
+    "content": "Judge score cards rate every gingerbread house on creativity, structure, decoration, icing and wow factor, with a judging guide and a worked example. Printable contest kit for families and parties. Instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-gingerbread-contest-kit-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-24T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Judge a Gingerbread House Contest Fairly",
+       "link": "https://www.etsy.com/listing/4600177516/gingerbread-house-decorating-contest"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-goal-workbook-2027-s1",
+   "tag": "pin-prod-goal-workbook-2027-s1",
+   "body": {
+    "content": "Review 2026, choose 3 big goals and turn them into a 12-week action plan with a simple weekly check-in. A short, calm printable goal setting workbook for 2027, no giant binder. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-goal-workbook-2027-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-23T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595725",
+       "title": "Pick 3 Goals. Plan 12 Weeks.",
+       "link": "https://www.etsy.com/listing/4598358317/2027-goal-setting-workbook-printable-12"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-no-buy-year-2027-s1",
+   "tag": "pin-prod-no-buy-year-2027-s1",
+   "body": {
+    "content": "Try a no-buy or low-buy year in 2027: write your rules once, tick off every no-spend day on 12 monthly calendars and park impulse wants on a 30-day list. Printable planner, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-no-buy-year-2027-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-23T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595728",
+       "title": "Try a No-Buy Year in 2027",
+       "link": "https://www.etsy.com/listing/4599444986/2027-no-buy-year-planner-printable-low"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-nye-games-s1",
+   "tag": "pin-prod-nye-games-s1",
+   "body": {
+    "content": "Have everyone write their predictions for 2027 and open them next New Year's Eve. Part of 8 printable family-friendly NYE games with trivia, bingo, This or That and a countdown scavenger hunt. No drinking games. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-nye-games-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-23T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595725",
+       "title": "Write Your 2027 Predictions Tonight",
+       "link": "https://www.etsy.com/listing/4597755593/new-years-eve-games-printable-8-family"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-pink-christmas-verse-art-s1",
+   "tag": "pin-prod-pink-christmas-verse-art-s1",
+   "body": {
+    "content": "Behold, I bring you good tidings of great joy, Luke 2:10, as a soft pink Christmas print. Part of a set of 6 matching KJV Christmas verse prints with bows, stripes and gingham. Printable, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-pink-christmas-verse-art-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-25T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985601133",
+       "title": "Behold, I Bring You Good Tidings",
+       "link": "https://www.etsy.com/listing/4598721247/pink-christmas-bible-verse-wall-art-set"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-pink-coquette-verse-art-s1",
+   "tag": "pin-prod-pink-coquette-verse-art-s1",
+   "body": {
+    "content": "Be still, and know that I am God, Psalm 46:10, in soft pink coquette style. A set of KJV Bible verse prints with bows, hearts and florals to frame for a girls room, teen room or dorm. Printable wall art, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-pink-coquette-verse-art-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-24T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985601133",
+       "title": "Be Still, and Know That I Am God",
+       "link": "https://www.etsy.com/listing/4598659189/pink-bible-verse-wall-art-set-of-6"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-secret-santa-kit-s1",
+   "tag": "pin-prod-secret-santa-kit-s1",
+   "body": {
+    "content": "Everything an organizer needs for Secret Santa: sign-up sheet, questionnaire, name-draw slips, rules, white elephant rules, a who-has-who tracker, gift tags and thank-you notes. For offices, families and friend groups. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-secret-santa-kit-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-24T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Run Secret Santa Without the Stress",
+       "link": "https://www.etsy.com/listing/4597755725/secret-santa-questionnaire-printable-kit"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-thanksgiving-games-s1",
+   "tag": "pin-prod-thanksgiving-games-s1",
+   "body": {
+    "content": "Thanksgiving trivia with 20 questions and an answer key, part of a 7-game printable pack with bingo, word scramble, Would You Rather and a scavenger hunt. Easy for kids, teens and grown-ups to play around the table. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-thanksgiving-games-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-26T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "Thanksgiving Trivia the Whole Table Can Play",
+       "link": "https://www.etsy.com/listing/4597743627/thanksgiving-games-printable-pack-7"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-thanksgiving-host-planner-s1",
+   "tag": "pin-prod-thanksgiving-host-planner-s1",
+   "body": {
+    "content": "Pick your dinner time and this reverse cooking timeline tells you exactly when the turkey goes in, when the sides start and when the rolls go in. Part of a printable Thanksgiving planner for first-time hosts. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-thanksgiving-host-planner-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-25T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595732",
+       "title": "When Does the Turkey Go In?",
+       "link": "https://www.etsy.com/listing/4597977363/thanksgiving-planner-printable-for-first"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-party-awards-s1",
+   "tag": "pin-prod-xmas-party-awards-s1",
+   "body": {
+    "content": "36 funny, kind Christmas party awards with nomination cards, ballots, a vote tally sheet, host script and certificates. Perfect for office parties, teams and family gatherings. Printable kit, ready to print tonight.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-xmas-party-awards-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-25T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "36 Funny Awards for Your Office Party",
+       "link": "https://www.etsy.com/listing/4598379368/christmas-party-awards-printable-office"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-scavenger-hunt-s1",
+   "tag": "pin-prod-xmas-scavenger-hunt-s1",
+   "body": {
+    "content": "Turn Christmas morning into a treasure hunt: 24 hiding spots, each with an easy rhyme for little kids and a riddle for big kids, plus a setup sheet and answer key. Printable clue cards, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-xmas-scavenger-hunt-1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-26T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "A Christmas Morning Treasure Hunt",
+       "link": "https://www.etsy.com/listing/4599447958/christmas-scavenger-hunt-clues-printable"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
