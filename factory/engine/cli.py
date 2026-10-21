@@ -21,6 +21,11 @@
   data-version <v>       bump the data version (every cached answer from before is ignored)
   products               product manifests (latest version, stage, listing + distribution status)
   funnel <plan_id>       the real funnel for one distribution plan (unknown stays unknown)
+  publications [plan]    every publish attempt: draft / queued / scheduled / published / failed, verified or not
+  refresh                re-check queued publications against gw/out (the gateway's real results)
+  integrations           gateway / Make health as last observed (connected · unverified · missing)
+  compare [channel|product|plan] [days]   platform-reported sums per group + what is unknown
+  recommend [by] [days]  repeat / improve / pause / test / measure, each labelled demonstrated or hypothesis
   export-ts              regenerate ts/contracts.d.ts and contracts.schema.json
   selftest               run the unit tests
 
@@ -140,6 +145,25 @@ def main(argv: list[str] | None = None) -> int:
             from .distribution import funnel
             pl = store.get_plan(args[1])
             print(json.dumps(funnel(store, pl), indent=1) if pl else "no such plan")
+        elif cmd == "publications":
+            from .publishing import Publisher
+            for r in Publisher(store).publications(args[1] if len(args) > 1 else None):
+                print(f"{r.id}  {r.channel.value:12} {r.status:10} via {r.adapter:8} verified={r.verified}  {r.job_id or r.draft_path or ''}  {r.note}")
+        elif cmd == "refresh":
+            from .publishing import Publisher
+            pub = Publisher(store)
+            for r in pub.publications():
+                if r.status in ("queued", "scheduled"):
+                    r = pub.refresh(r)
+                    print(f"{r.id}  {r.channel.value:12} {r.status:10} verified={r.verified}  {r.note}")
+        elif cmd == "integrations":
+            from .publishing import Publisher
+            for h in Publisher(store).health():
+                print(f"{h.id:10} {h.state.value:11} last_ok={h.last_ok_at or '—'}  {h.note}")
+        elif cmd in ("compare", "recommend"):
+            from .analytics import compare, recommend
+            c = compare(store, args[1] if len(args) > 1 else "channel", int(args[2]) if len(args) > 2 else 14)
+            print(json.dumps(c if cmd == "compare" else recommend(c), indent=1))
         elif cmd == "data-version":
             store.set_control("data_version", args[1])
             print("data version", data_version(store), "— older cached answers are now ignored; run `cache purge` to drop them")

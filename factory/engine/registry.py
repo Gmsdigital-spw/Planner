@@ -106,8 +106,10 @@ def sync(store, agents: dict[str, AgentContract] | None = None) -> list[dict]:
 def demo_handlers():
     """Handlers the CLI registers. Two are REAL (deterministic, no model, no network): quality.inspect runs the
     Phase-6 validation gate on a stored product manifest; distribution.plan builds and stores a distribution plan.
-    engine.noop is a placeholder. The remaining kinds (research, build, adapt, publish, measure) still have no
-    handler: the crews do that work in their own scheduled runs until Phase 7 wires them."""
+    Phase 7 adds channel.adapt (deterministic per-channel copy), publish.listing / publish.social (gateway jobs for
+    Pinterest, TikTok, Etsy; review-ready drafts for Make channels; approval-gated) and analytics.measure (refresh
+    gateway results, fold platform metrics into the plan). research.brief and product.build still have no handler:
+    the Night Shift does that work. engine.noop is a placeholder."""
     from pathlib import Path as _P
     from . import distribution as D
     from . import quality as Q
@@ -149,4 +151,80 @@ def demo_handlers():
         ctx.checkpoint({"plan": p.id})
         return {"output_ref": f"plans/{p.id}", "validation": {"ok": True, "checks": [f"{len(p.channels)} channels with reasons", f"{len(p.schedule)} scheduled posts", "destination validated"]}}
 
-    return {"engine.noop": noop, "quality.inspect": inspect, "distribution.plan": plan}
+    from . import analytics as A
+    from . import publishing as P
+    from .contracts import Capability as _Cap
+    PE = __import__("factory.engine.engine", fromlist=["PermanentError"]).PermanentError
+
+    def _plan_for(ctx, task):
+        """The plan this task works on: meta.plan_id, else the newest plan for the product in input_ref."""
+        store = ctx.engine.store
+        pid = task.spec.meta.get("plan_id")
+        if pid:
+            pl = store.get_plan(pid)
+        else:
+            prod = task.spec.input_ref.split("/")[-1]
+            rows = store._rows("SELECT id FROM distribution_plans WHERE product_id=? ORDER BY rowid DESC LIMIT 1", (prod,))
+            pl = store.get_plan(rows[0]["id"]) if rows else None
+        if not pl:
+            raise PE("no distribution plan for this task (run distribution.plan first or pass meta.plan_id)")
+        return pl
+
+    def adapt(task, ctx):
+        pl = _plan_for(ctx, task)
+        meta = task.spec.meta
+        if not meta.get("copy"):
+            raise PE("channel.adapt needs meta.copy (title, description, tags)")
+        ctx.heartbeat()
+        assets = P.adapt(pl, meta["copy"], meta.get("media") or {}, meta.get("boards"))
+        pl.assets = {a.channel.value: {"status": "ready", "asset": a.to_dict()} for a in assets}
+        ctx.engine.store.put_plan(pl)
+        ctx.checkpoint({"assets": len(assets)})
+        return {"output_ref": f"plans/{pl.id}/assets", "validation": {"ok": True, "checks": [f"{a.channel.value}: {len(a.text)} chars" for a in assets]}}
+
+    def publish(task, ctx):
+        pl = _plan_for(ctx, task)
+        store = ctx.engine.store
+        ctx.require(_Cap.PUBLISH_PUBLIC, f"Publish {pl.product_id} to {', '.join(c.value for c in pl.channels)}", f"Plan {pl.id}: {pl.hypothesis}")
+        from .distribution import approve_plan, mark
+        if pl.status == "planned":
+            if not task.approval_id:
+                raise PE("plan is not approved and the task carries no approval")
+            pl = approve_plan(store, pl, task.approval_id)
+        if pl.status == "approved":
+            pl = mark(store, pl, "scheduled")
+        pub = P.Publisher(store)
+        pub.health()
+        out, checks = [], []
+        for ch in pl.channels:
+            a = (pl.assets.get(ch.value) or {}).get("asset")
+            if not a:
+                checks.append(f"{ch.value}: no asset (channel.adapt first)")
+                continue
+            ctx.use_tool("gateway.job" if ch in P.GATEWAY_CHANNELS else "artifact_db.write")
+            r = pub.publish(pl, P.Asset.from_dict(a), who=task.spec.agent_id)
+            out.append(r.id)
+            checks.append(f"{ch.value}: {r.status} via {r.adapter}")
+            ctx.heartbeat()
+        ctx.checkpoint({"publications": out})
+        any_sent = any("queued" in c or "scheduled" in c or "published" in c for c in checks)
+        if any_sent and pl.status == "scheduled":
+            pass  # 'published' is set by refresh() when the gateway confirms; never here
+        return {"output_ref": f"plans/{pl.id}/publications", "validation": {"ok": bool(out), "checks": checks}}
+
+    def measure(task, ctx):
+        pl = _plan_for(ctx, task)
+        store = ctx.engine.store
+        ctx.heartbeat()
+        pub = P.Publisher(store)
+        for r in pub.publications(pl.id):
+            if r.status in ("queued", "scheduled"):
+                pub.refresh(r)
+        pl = A.measure_plan(store, pl)
+        f = __import__("factory.engine.distribution", fromlist=["funnel"]).funnel(store, pl)
+        ctx.checkpoint({"funnel": f})
+        known = [k for k in ("audience_reached", "clicks", "conversions_or_sales") if f[k] != "unknown"]
+        return {"output_ref": f"plans/{pl.id}/results", "validation": {"ok": True, "checks": [f"known: {known or 'nothing yet'}", f"next: {f['next_action']}"]}}
+
+    return {"engine.noop": noop, "quality.inspect": inspect, "distribution.plan": plan, "channel.adapt": adapt,
+            "publish.listing": publish, "publish.social": publish, "analytics.measure": measure}

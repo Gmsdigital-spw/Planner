@@ -40,9 +40,9 @@ LANE_CHANNELS: dict[str, list[tuple[Channel, str]]] = {
              (Channel.YOUTUBE_SHOP, "a 20-second how-to-play Short on the shop channel")],
 }
 # posting windows (local hour) and free daily caps the Factory already honours
-WINDOWS: dict[Channel, tuple[int, int]] = {Channel.PINTEREST: (8, 22), Channel.INSTAGRAM: (11, 20), Channel.FACEBOOK: (9, 20),
+WINDOWS: dict[Channel, tuple[int, int]] = {Channel.ETSY: (7, 7), Channel.PINTEREST: (8, 22), Channel.INSTAGRAM: (11, 20), Channel.FACEBOOK: (9, 20),
                                            Channel.TIKTOK: (17, 21), Channel.YOUTUBE_SHOP: (18, 20), Channel.GMULA: (19, 19)}
-DAILY_CAP = {Channel.PINTEREST: 9, Channel.INSTAGRAM: 2, Channel.FACEBOOK: 1, Channel.TIKTOK: 2, Channel.YOUTUBE_SHOP: 1, Channel.GMULA: 1}
+DAILY_CAP = {Channel.ETSY: 2, Channel.PINTEREST: 9, Channel.INSTAGRAM: 2, Channel.FACEBOOK: 1, Channel.TIKTOK: 2, Channel.YOUTUBE_SHOP: 1, Channel.GMULA: 1}
 ETSY_URL = re.compile(r"^https://www\.etsy\.com/(listing/\d+|shop/[A-Za-z0-9_-]+)")
 
 
@@ -95,7 +95,8 @@ def build_plan(m: ProductManifest, *, target_customer: str, evidence: list[str],
 def _asset_need(c: Channel) -> str:
     return {Channel.PINTEREST: "1000x1500 pin, real pages on a warm desk", Channel.INSTAGRAM: "9:16 flip-through Reel + 3-slide carousel",
             Channel.FACEBOOK: "4:5 photo post, caption under 150 words", Channel.TIKTOK: "9:16 12–20 s video, caption ≤ 150 chars",
-            Channel.YOUTUBE_SHOP: "9:16 Short ≤ 60 s, #shorts in the tags", Channel.GMULA: "not a shop channel"}[c]
+            Channel.YOUTUBE_SHOP: "9:16 Short ≤ 60 s, #shorts in the tags", Channel.GMULA: "not a shop channel",
+            Channel.ETSY: "the listing itself: state → active"}[c]
 
 
 def approve_plan(store: Store, plan: DistributionPlan, approval_id: str) -> DistributionPlan:

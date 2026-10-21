@@ -76,6 +76,8 @@ factory/engine/
   router.py          routing, escalation, cache, dedup, usage tracking, hard budgets, loop guard (Phase 5)
   quality.py         ten-stage product pipeline, offline validation, human-review gate, versioned manifests (Phase 6)
   distribution.py    distribution plans, approval, schedule, results, next action, honest funnel (Phase 6)
+  publishing.py      gateway + draft adapters, idempotent approval-gated publish, verify from gw/out, adapt() (Phase 7)
+  analytics.py       metric rows with sources, ingest from Factory records, compare, recommend, measure_plan (Phase 7)
   ts/contracts.d.ts  generated TypeScript types (do not edit; `export-ts` regenerates)
   db/journal.jsonl   append-only durable records (committed)
   db/state.sqlite    derived index (ignored by git)
@@ -128,10 +130,30 @@ factory/engine/
 - Two orchestrator steps are now REAL handlers: `quality.inspect` and `distribution.plan` (deterministic,
   no model, no network). CLI `products`, `funnel <plan_id>`.
 
+## Added in Phase 7
+
+- `publishing.py` — authorized routes only, nothing new: Pinterest/TikTok/Etsy go through the existing free
+  GitHub gateway as `gw/jobs/<id>.json` in exactly the shape `gw/run.py` runs today (Zernio POST /posts with an
+  Idempotency-Key; Etsy PATCH state=active). The adapter cannot run the job; a publication is `queued` until
+  `refresh` reads the gateway's real result in `gw/out` and marks it scheduled / published / failed. Instagram,
+  Facebook, shop YouTube and Gmula (Make lanes, reachable only from the page/crews) become **review-ready drafts**
+  (`factory/engine/drafts/`), status `draft`, never "published". `Publisher.publish()` requires an approved plan,
+  honours the kill switch, never sends the same (plan, channel, asset) twice, and audits every attempt.
+  `adapt()` makes one channel asset per plan channel inside each platform's limits, deterministically.
+- `analytics.py` — metric rows with source and retrieval time; an unreported zero is refused; `ingest_pins /
+  ingest_social / ingest_youtube` read the Factory's own records with the page's availability rules; `compare`
+  sums known numbers per channel / product / plan and lists what is unknown; `recommend` labels every line
+  demonstrated or hypothesis; `measure_plan` folds rows into the plan through Phase 6's rules.
+- Real handlers now: `channel.adapt`, `publish.listing`, `publish.social` (approval-gated), `analytics.measure`.
+  `promote_product` runs end to end through the orchestrator with the mock gateway in tests. Only
+  `research.brief` and `product.build` remain with the Night Shift.
+- `publications` + `metrics` tables (migration v4); CLI `publications`, `refresh`, `integrations`, `compare`, `recommend`.
+
 ## What is NOT implemented yet (honest list)
 
 - Phase 4 leftover: the task kinds the orchestrator submits still have no real handlers — `tick` runs only the
   placeholder; the crews keep doing the real work through their own scheduled runs until Phase 7 wires them.
-- Phase 7: publishing adapters + evidence-based analytics (today Bolt/Herald/Rocket publish through their own paths, not the engine; research/build/adapt/publish/measure task kinds have no handlers yet).
+- Research and build (`research.brief`, `product.build`) stay with the Night Shift; the engine has no handler for them yet.
+- Nothing is wired to *call* the engine on a schedule yet: Phase 8 adds the worker step and the page views.
 - Phase 8: dashboard views for tasks/health (the page shows nothing from the engine yet; Phase 8 will mirror the journal into the artifact DB so the page can read it without a new tab).
 - Phase 9: regression pass across page + engine, limitations doc, rollback drill.

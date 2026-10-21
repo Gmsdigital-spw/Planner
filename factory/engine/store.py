@@ -72,6 +72,17 @@ MIGRATIONS: list[tuple[int, str]] = [
       created_at TEXT NOT NULL, expires_at TEXT NOT NULL, text TEXT NOT NULL, usage TEXT, hits INTEGER NOT NULL DEFAULT 0);
     CREATE INDEX IF NOT EXISTS llm_cache_exp ON llm_cache(expires_at);
     """),
+    (4, """
+    CREATE TABLE IF NOT EXISTS publications(
+      id TEXT PRIMARY KEY, plan_id TEXT NOT NULL, channel TEXT NOT NULL, idem_key TEXT NOT NULL UNIQUE, status TEXT NOT NULL,
+      adapter TEXT NOT NULL, created_at TEXT NOT NULL, checked_at TEXT, verified INTEGER, external_id TEXT, doc TEXT NOT NULL);
+    CREATE INDEX IF NOT EXISTS publications_plan ON publications(plan_id);
+    CREATE TABLE IF NOT EXISTS metrics(
+      id TEXT PRIMARY KEY, at TEXT NOT NULL, channel TEXT NOT NULL, ref TEXT NOT NULL, plan_id TEXT, product_id TEXT,
+      kind TEXT NOT NULL, value REAL NOT NULL, source TEXT NOT NULL, retrieved_at TEXT NOT NULL);
+    CREATE INDEX IF NOT EXISTS metrics_ref ON metrics(ref, kind, at);
+    CREATE INDEX IF NOT EXISTS metrics_plan ON metrics(plan_id, kind);
+    """),
 ]
 
 
@@ -221,6 +232,16 @@ class Store:
                 c.execute("""INSERT INTO llm_cache(key,provider,model,prompt_version,data_version,created_at,expires_at,text,usage,hits) VALUES(?,?,?,?,?,?,?,?,?,0)
                              ON CONFLICT(key) DO UPDATE SET text=excluded.text,usage=excluded.usage,expires_at=excluded.expires_at,created_at=excluded.created_at""",
                           (data["key"], data["provider"], data["model"], data["prompt_version"], data["data_version"], data["created_at"], data["expires_at"], data["text"], json.dumps(data.get("usage"))))
+        elif kind == "publication":
+            d = data
+            c.execute("""INSERT INTO publications(id,plan_id,channel,idem_key,status,adapter,created_at,checked_at,verified,external_id,doc) VALUES(?,?,?,?,?,?,?,?,?,?,?)
+                         ON CONFLICT(id) DO UPDATE SET status=excluded.status,checked_at=excluded.checked_at,verified=excluded.verified,external_id=excluded.external_id,doc=excluded.doc""",
+                      (d["id"], d["plan_id"], d["channel"], d["idem_key"], d["status"], d["adapter"], d["created_at"], d.get("checked_at"),
+                       None if d.get("verified") is None else int(bool(d["verified"])), d.get("external_id"), json.dumps(d, sort_keys=True)))
+        elif kind == "metric":
+            d = data
+            c.execute("INSERT OR IGNORE INTO metrics(id,at,channel,ref,plan_id,product_id,kind,value,source,retrieved_at) VALUES(?,?,?,?,?,?,?,?,?,?)",
+                      (d["id"], d["at"], d["channel"], d["ref"], d.get("plan_id"), d.get("product_id"), d["kind"], float(d["value"]), d["source"], d["retrieved_at"]))
         elif kind == "control":
             c.execute("INSERT INTO control(key,value,updated_at) VALUES(?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at",
                       (data["key"], json.dumps(data["value"]), data.get("at") or now_iso()))
@@ -265,6 +286,28 @@ class Store:
     def usage_rows(self, day: t.Optional[str] = None) -> list[dict]:
         where, args = ("WHERE substr(at,1,10)=?", (day,)) if day else ("", ())
         return [dict(r) for r in self._rows(f"SELECT * FROM model_usage {where} ORDER BY at", args)]
+
+    # publications + metrics (Phase 7)
+    def put_publication(self, pub) -> None: self._apply("publication", pub.to_dict())
+
+    def find_publication(self, idem: str):
+        from .publishing import Publication
+        r = self._rows("SELECT doc FROM publications WHERE idem_key=?", (idem,))
+        return Publication.from_dict(json.loads(r[0]["doc"])) if r else None
+
+    def publications(self, plan_id: t.Optional[str] = None) -> list:
+        from .publishing import Publication
+        rows = self._rows("SELECT doc FROM publications WHERE plan_id=? ORDER BY created_at", (plan_id,)) if plan_id else self._rows("SELECT doc FROM publications ORDER BY created_at")
+        return [Publication.from_dict(json.loads(r["doc"])) for r in rows]
+
+    def put_metric(self, d: dict) -> None: self._apply("metric", d)
+
+    def metrics(self, plan_id: t.Optional[str] = None, ref: t.Optional[str] = None, since: t.Optional[str] = None) -> list[dict]:
+        sql, args = "SELECT * FROM metrics WHERE 1=1", []
+        if plan_id: sql += " AND plan_id=?"; args.append(plan_id)
+        if ref: sql += " AND ref=?"; args.append(ref)
+        if since: sql += " AND at>=?"; args.append(since)
+        return [dict(r) for r in self._rows(sql + " ORDER BY at", tuple(args))]
 
     def agents(self) -> list[dict]:
         return [dict(r) for r in self._rows("SELECT id,version,role,name,registered_at,skill_sha FROM agents ORDER BY id, version")]
