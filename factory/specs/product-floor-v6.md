@@ -27,11 +27,11 @@ These rules sit on top of the Night Shift prompt. Where this file and an earlier
 - Next Move (10e) and the report: while sales are 0, the top recommendation is about getting the first sale (a Christmas bestseller-style product, a bundle, or a sale/discount Grayson can tap on in the Etsy app), never a nice-to-have.
 
 ## THANK-YOU PAGE (Oct 21, 2026, Grayson approved)
-Every product PDF ends with ONE thank-you page (not counted in the page count) in the product's own palette and fonts, with exactly this text:
-- Heading: "Thank you for your order!"
-- "You just supported a small, independent shop, and that genuinely means a lot."
-- "If this made your party or planning a little easier, would you take 30 seconds to leave a review on Etsy? Reviews are the #1 way small shops get found, and every single one gets read."
-- "How: open Etsy → You → Purchases → Leave a review."
-- "Something not right? Message me before leaving a review and I'll fix it fast."
-- Footer: "GM's Digital Creations"
-Never offer anything in exchange for a review (no freebies, discounts or bonuses for reviewing): Etsy forbids it. Mug wraps, sticker sheets and single-image files get the page as a separate last page of their PDF.
+Every product PDF ends with ONE thank-you page (not counted in the page count) in the product's own palette and fonts, warm and friendly, with exactly this text:
+- Heading: "You just made my day!"
+- "Thank you for choosing a small, one-person shop over the big guys."
+- "Quick favor? If this made your party or planning even a little easier, a 30-second review helps the next family find it. I read every single one."
+- "How: Etsy app → You → Purchases → Leave a review"
+- "Something not right? Message me first and I'll fix it fast."
+- Footer: "With thanks, GM's Digital Creations"
+Never offer anything in exchange for a review (no freebies, discounts or bonuses for reviewing): Etsy forbids it. Never guilt-trip or pressure. Mug wraps, sticker sheets and single-image files get the page as a separate last page of their PDF.
