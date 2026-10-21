@@ -10,6 +10,8 @@ updated: 2026-10-20
 ## Job
 2-3 tablet-mockup pins per product, linked to the live listing.
 
+Follow /factory/specs/cover-styles.md: pick one of the 6 styles to fit the product, never the same style as the last listing.
+
 ## Exact steps (keep current; rewrite when a better way is proven)
 1. Read this file and /factory/LESSONS.md before working.
 2. Check the playbook for this task in /factory/playbooks/ and use it.
