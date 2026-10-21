@@ -1,0 +1,206 @@
+{
+ "updatedAt": "2026-10-21",
+ "note": "Pricing agent state. basePrice = the normal price before any change (from backups/listings-backup-2026-10-21.json).",
+ "listings": {
+  "4600177510": {
+   "title": "Christmas Cookie Swap Party Kit, Printable Invites, Labels, Ballots (PDF Downloa",
+   "basePrice": 4.99,
+   "price": 4.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4600177516": {
+   "title": "Gingerbread House Contest Kit, Judge Score Cards, Voting Ballots, Certificates (",
+   "basePrice": 4.49,
+   "price": 4.49,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4599444986": {
+   "title": "2027 No-Buy Year Planner, Low-Spend Tracker, 30-Day Want List (Digital Download)",
+   "basePrice": 4.49,
+   "price": 4.49,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4599447958": {
+   "title": "Christmas Scavenger Hunt Clues, 24 Rhymes & Riddles (Digital Download)",
+   "basePrice": 3.99,
+   "price": 3.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4598721247": {
+   "title": "Pink Christmas Bible Verse Prints, KJV Scripture Wall Art Set (Digital Download)",
+   "basePrice": 7.99,
+   "price": 7.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4598659189": {
+   "title": "Pink Bible Verse Prints Set of 6, Coquette Christian Wall Art (Digital Download)",
+   "basePrice": 7.49,
+   "price": 7.49,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4598535050": {
+   "title": "2027 Debt Payoff Planner, Snowball & Avalanche Tracker (PDF Download)",
+   "basePrice": 4.99,
+   "price": 4.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4598501430": {
+   "title": "Friendsgiving Party Kit, Potluck Sign-Up, 7 Games (Digital Download)",
+   "basePrice": 4.49,
+   "price": 4.49,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4598358161": {
+   "title": "2027 Savings Challenge Printable, ADHD-Friendly Color-In Tracker (PDF)",
+   "basePrice": 4.49,
+   "price": 4.49,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4598358317": {
+   "title": "2027 Goal Setting Workbook, 12-Week Planner, Year in Review (PDF Download)",
+   "basePrice": 4.49,
+   "price": 4.49,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4598379368": {
+   "title": "36 Funny Christmas Party Awards Kit, Office Holiday Superlatives (PDF Download)",
+   "basePrice": 3.99,
+   "price": 1.99,
+   "starter": true,
+   "lastChange": "2026-10-21",
+   "history": [
+    {
+     "d": "2026-10-21",
+     "from": 3.99,
+     "to": 1.99,
+     "why": "starter price to get first sales and reviews (approved by Grayson)"
+    }
+   ],
+   "starterSince": "2026-10-21"
+  },
+  "4597977363": {
+   "title": "First-Time Host Thanksgiving Planner, Turkey Thaw Guide, Dinner Timeline (PDF)",
+   "basePrice": 4.49,
+   "price": 4.49,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4597998190": {
+   "title": "24 Days of Christmas Family Activities, Screen-Free Advent Calendar (PDF Downloa",
+   "basePrice": 3.99,
+   "price": 3.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4597743627": {
+   "title": "Thanksgiving Family Game Pack, 7 Printable Party Games (Digital Download)",
+   "basePrice": 4.99,
+   "price": 4.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4597755725": {
+   "title": "Secret Santa Exchange Kit, Questionnaire, Name Slips, Rules (PDF Download)",
+   "basePrice": 3.49,
+   "price": 3.49,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4597755593": {
+   "title": "Family Friendly NYE Party Games, Trivia, Bingo, 2027 Predictions (Digital Downlo",
+   "basePrice": 4.99,
+   "price": 4.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4597749137": {
+   "title": "Christmas Party Games Bundle, 8 Holiday Trivia, Bingo, Would You Rather (Digital",
+   "basePrice": 5.49,
+   "price": 2.99,
+   "starter": true,
+   "lastChange": "2026-10-21",
+   "history": [
+    {
+     "d": "2026-10-21",
+     "from": 5.49,
+     "to": 2.99,
+     "why": "starter price to get first sales and reviews (approved by Grayson)"
+    }
+   ],
+   "starterSince": "2026-10-21"
+  },
+  "4597096306": {
+   "title": "Irregular Income Budget Planner, Commission & Tip Tracker (PDF)",
+   "basePrice": 4.99,
+   "price": 4.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4596406689": {
+   "title": "ADHD Budget Planner App | Daily Spending, Bills, Tasks (Digital Download)",
+   "basePrice": 12.99,
+   "price": 12.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4596311765": {
+   "title": "Undated ADHD Planner, Hyperlinked Digital & Printable, Brain Dump Toolkit (PDF)",
+   "basePrice": 6.99,
+   "price": 6.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4596203264": {
+   "title": "2026 Christmas Planner Printable, Holiday Budget, Gift Tracker, Meal Plan (PDF)",
+   "basePrice": 6.99,
+   "price": 6.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4596144943": {
+   "title": "2027 Sage Green Minimalist Planner, Monthly Calendar, Goals & Birthdays (PDF Dow",
+   "basePrice": 4.99,
+   "price": 4.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4596095937": {
+   "title": "Monthly Budget Tracker Spreadsheet | Automatic Income & Expense Planner (Digital",
+   "basePrice": 6.99,
+   "price": 6.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  }
+ }
+}
