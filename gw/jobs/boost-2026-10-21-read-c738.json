@@ -1,0 +1,1 @@
+{"id": "boost-2026-10-21-read-c738", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/shops/68605457/listings/active?limit=100", "tag": "active"}, {"op": "etsy", "method": "GET", "path": "/shops/68605457", "tag": "shop"}]}
