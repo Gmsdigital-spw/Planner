@@ -52,9 +52,11 @@ for the PDF pages and the inside photos below.
 - Original design only: no logos, characters, stock photos, claims about sales or reviews,
   confetti, dot patterns, neon, sticker-yellow badges on inside photos, clip art, emoji.
 
-## Text safe zone
-- Every word on a listing photo sits between x 260 and x 1740 of the 2000-wide image (the Etsy
-  app crops to the centred square). The kit raises an error if text falls outside: shorten or
-  rewrap, never switch the check off. Props never carry text.
+## Text safe zone (photos 2 to 5 only)
+- On the kit's inside photos every word sits between x 260 and x 1740 of the 2000-wide image
+  (the Etsy app crops to the centred square). The kit raises an error if text falls outside:
+  shorten or rewrap, never switch the check off. Props never carry text. The cover (photo 1)
+  is NOT under this rule: tools/fun_covers.py runs its banner edge to edge by design; the
+  cover passes on the thumbnail test (title and count readable at 300 px centred crop).
 - Thumbnail test: gs.thumb_check(image, path) saves the centred square at 400 px; also check
   at 300 px (the Etsy search grid). Title and count must read.

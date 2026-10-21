@@ -53,7 +53,7 @@ Cover and pin rules have ONE home: `specs/cover-styles.md`. Its newest section (
 | Rotation | Theme + art differ from the last 3 published covers; not a recolour of any |
 | Thumbnail | Title and count readable at 300 px; product fills the frame |
 | Rights | No internet images; art from tools/img3d or the kit only |
-| Text zone | Every word inside the safe zone house-style.md names; kit check not switched off |
+| Text zone | Photos 2 to 5: every word inside the safe zone; the cover is judged by the thumbnail test only |
 | Format | 5 JPEGs, 2000 px wide, each under 400 KB |
 
 ## Outputs

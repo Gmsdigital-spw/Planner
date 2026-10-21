@@ -5,8 +5,10 @@
   line last; price > 0.
 - File with 3+ pages (not for mugwrap, sticker, invitation: their lane spec's counts), plus
   the thank-you page last; the PDF opens; every answer key verified.
-- Cover plus 4 previews, 2000 px wide JPEG, every word inside the text safe zone, title and
-  count readable at 300 px.
+- Cover plus 4 previews, 2000 px wide JPEG. The COVER (photo 1, tools/fun_covers.py) is judged
+  by the thumbnail test only: title and count readable in the centred 300 px square; its
+  banner may run edge to edge, that is the approved design. The text safe zone (x 260 to
+  1740) applies to photos 2 to 5 (the kit's inside photos) only.
 - Cover follows specs/cover-styles.md (newest section wins): bold theme colour, real pages
   big, count badge, pills, themed art (tools/fun_covers.py); theme + art not repeating the
   last 3 published; no cream desk; pins (if already made) in 2+ styles.
