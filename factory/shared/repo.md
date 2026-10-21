@@ -45,7 +45,7 @@ mirrors those lists so they have one home to drift from.
 | Trading scans | factory/trading/kick/, factory/trading/watchlist.json, gw/jobs/trade-*.json (read ops), factory/skills/{bull,bear,vault,tape}/ |
 | Trading close | gw/jobs/trade-*.json, factory/skills/{bull,bear,vault,tape}/ |
 | Trading lab | factory/trading/{backtest.py,params.json,lab/jobs/}, factory/skills/{bull,bear,vault,tape}/, factory/LESSONS.md |
-| Studio (Vega) | yt/, factory/skills/ (memory step only) |
+| Studio (Vega) | yt/, factory/skills/{vega,gags,judge,cutter,graph}/ (memory step only), factory/runlog.jsonl, factory/stages/studio/output/ |
 | Atlas Prime | nothing in the repo |
 
 Never touch: `.github/`, `gw/run.py`, `gw/tools/`, `gw/vault/`, `factory/trading/autopilot.py`,

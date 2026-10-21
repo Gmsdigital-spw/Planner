@@ -17,7 +17,7 @@ they only use `shared/` files when their prompt says so.
 | Etsy Listing Check-up (Warden) | not yet moved (prompt) | Daily listing health and cover audit |
 | GM Starship Day Watch (Medic) | not yet moved (prompt) | Morning system health |
 | Trading Floor scans / close / lab | not yet moved (prompt) | Paper trading, live board, nightly backtests |
-| Studio Floor daily Short (Vega) | not yet moved (prompt) | One Gmula Short a day |
+| Studio Floor daily Short (Vega) | `stages/studio/CONTEXT.md` | One Gmula Short a day |
 | Atlas Prime weekly review (Sun) | not yet moved (prompt) | Fleet review, orders, proposals |
 
 ## Shared resources (Layer 3, canonical: one home each)
