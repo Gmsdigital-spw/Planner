@@ -39,6 +39,7 @@ THEMES = {
     "sage":       dict(bg="#7fb27a", bg2="#4f8a4f", ink="#ffffff", accent="#fff1b8", pill="#ffffff", pilltx="#3f7a42", badge="#e8742c", badgetx="#ffffff", pattern="dots"),
     "fall":       dict(bg="#c4452a", bg2="#8a2a17", ink="#ffffff", accent="#ffd36b", pill="#fff4e6", pilltx="#9a3219", badge="#5c8a2e", badgetx="#ffffff", pattern="dots"),
     "berry":      dict(bg="#c2185b", bg2="#7d0f3a", ink="#ffffff", accent="#ffd34d", pill="#ffffff", pilltx="#a3144d", badge="#1f7a4a", badgetx="#ffffff", pattern="snow"),
+    "teal":       dict(bg="#12b5a5", bg2="#0a7f74", ink="#ffffff", accent="#ffe066", pill="#ffffff", pilltx="#0a7f74", badge="#ff5a8a", badgetx="#ffffff", pattern="dots"),
     "coral":      dict(bg="#ff6b5b", bg2="#e23d4f", ink="#ffffff", accent="#ffe066", pill="#ffffff", pilltx="#d1334a", badge="#1fb58f", badgetx="#ffffff", pattern="dots"),
 }
 

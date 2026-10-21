@@ -1608,5 +1608,222 @@
   "badge_x": 560,
   "badge_y": 760,
   "card_rot": 2
+ },
+ {
+  "slug": "irregular-income",
+  "listing_id": 4597096306,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/irregular-income.jpg",
+  "kicker": "Tips, Commission + Gig Pay",
+  "title": "Irregular *Income* Budget Planner",
+  "badge": [
+   "14",
+   "PAGES"
+  ],
+  "pills": [
+   "Paycheck-by-paycheck plan",
+   "Tip + commission log",
+   "Slow-month plan"
+  ],
+  "theme": "violet",
+  "pages": {
+   "src": "gw/out/files/hires-1021/4597096306-r2.jpg",
+   "crop": [
+    0.04,
+    0.12,
+    0.96,
+    0.96
+   ]
+  },
+  "decor": [
+   [
+    "img:1f4b0",
+    {},
+    1640,
+    1020,
+    360,
+    -8
+   ],
+   [
+    "img:1f4b5",
+    {},
+    1720,
+    40,
+    230,
+    10
+   ],
+   [
+    "img:1f4c8",
+    {},
+    760,
+    1080,
+    220,
+    -8
+   ],
+   [
+    "img:1fa99",
+    {},
+    1880,
+    640,
+    150,
+    15
+   ],
+   [
+    "img:2728",
+    {},
+    1440,
+    40,
+    140,
+    0
+   ]
+  ],
+  "badge_x": 560,
+  "badge_y": 760,
+  "card_rot": 2
+ },
+ {
+  "slug": "adhd-app",
+  "listing_id": 4596406689,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/adhd-app.jpg",
+  "kicker": "Phone App \u00b7 No Subscription",
+  "title": "ADHD *Budget* Planner App",
+  "badge": [
+   "5",
+   "TOOLS IN 1"
+  ],
+  "pills": [
+   "Safe-to-spend today",
+   "Bills + goals",
+   "Light + dark mode"
+  ],
+  "theme": "teal",
+  "pages": {
+   "src": "gw/out/files/hires-1021/4596406689-r1.jpg",
+   "crop": [
+    0.52,
+    0.08,
+    1.0,
+    0.95
+   ]
+  },
+  "decor": [
+   [
+    "img:1f9e0",
+    {},
+    1640,
+    1020,
+    330,
+    -8
+   ],
+   [
+    "img:1f4f1",
+    {},
+    1720,
+    40,
+    220,
+    10
+   ],
+   [
+    "img:1fa99",
+    {},
+    760,
+    1080,
+    220,
+    -12
+   ],
+   [
+    "img:2705",
+    {},
+    1880,
+    640,
+    150,
+    0
+   ],
+   [
+    "img:2728",
+    {},
+    1440,
+    40,
+    140,
+    0
+   ]
+  ],
+  "badge_x": 560,
+  "badge_y": 760,
+  "card_rot": -2
+ },
+ {
+  "slug": "adhd-planner",
+  "listing_id": 4596311765,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/adhd-planner.jpg",
+  "kicker": "Digital + Printable",
+  "title": "Undated *ADHD* Planner",
+  "badge": [
+   "117",
+   "PAGES"
+  ],
+  "pills": [
+   "Tap-to-jump tabs",
+   "Brain dump toolkit",
+   "GoodNotes + Notability"
+  ],
+  "theme": "coral",
+  "pages": {
+   "src": "gw/out/files/hires-1021/4596311765-r1.jpg",
+   "crop": [
+    0.18,
+    0.24,
+    0.82,
+    0.9
+   ]
+  },
+  "decor": [
+   [
+    "img:1f9e0",
+    {},
+    1640,
+    1020,
+    330,
+    -8
+   ],
+   [
+    "img:1f4a1",
+    {},
+    1720,
+    40,
+    220,
+    10
+   ],
+   [
+    "img:270f",
+    {},
+    760,
+    1080,
+    230,
+    -10
+   ],
+   [
+    "img:1f4cc",
+    {},
+    1880,
+    640,
+    150,
+    0
+   ],
+   [
+    "img:2728",
+    {},
+    1440,
+    40,
+    140,
+    0
+   ]
+  ],
+  "sub": "Start any day, skip a week, pick right back up",
+  "badge_x": 560,
+  "badge_y": 760,
+  "badge_size": 120
  }
 ]
