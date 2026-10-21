@@ -18,8 +18,10 @@ id. Use ONLY these actions:
   (or "publishing"); postId = tool_output.post._id, postUrl = platforms[0].platformPostUrl if
   present. NEVER use the tt_post action (draft only) and NEVER push TikTok jobs through the
   GitHub gateway (that push gets blocked in scheduled runs).
-- TikTok check (next run): zernio_api GET /posts/<id>; if the TikTok platform status is
-  "failed", mark the doc "failed" with the reason.
+
+## TikTok check (next run)
+data {action:"zernio_api", method:"GET", url:"/posts/<id>"}; if the TikTok platform status is
+"failed", mark the doc "failed" with the reason.
 - yt_shop_api: data {action:"yt_shop_api", url:"/v3/videos?part=statistics&id=<id1>,<id2>"}
   -> read-only stats for the SHOP channel.
 
@@ -38,5 +40,6 @@ YouTube: for SHOP Shorts posted in the last 14 days, one yt_shop_api call -> met
 {availability:"available", views, likes, comments, retrievedAt, source:"YouTube API"}.
 TikTok: zernio_api GET /posts/<id> returns analytics when available; use only what comes
 back. Instagram and Facebook stats are not wired yet: metrics {availability:"unavailable",
-reason:"stats lane not built yet"} (never 0). A one-line lesson (lessons: {at, crew:"Herald",
-text, evidence, status:"active", area:"socials"}) at most once a week, only from real numbers.
+reason:"stats lane not built yet"} (never 0). A one-line lesson at most once a week, only from real numbers. Herald's lesson shape (use
+this one, not the generic one in database.md): {at, crew:"Herald", text, evidence (the
+numbers), status:"active", area:"socials"}.

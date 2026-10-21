@@ -13,7 +13,8 @@
 - Captions: cream rounded boxes like the kit, max 7 words per line, max 3 lines, facts from
   the real copy. First caption is the hook (matches the plan theme). Last scene: fanned page
   stack with the cover on top and "Instant download · link in bio".
-- Video 1080x1920, 12 to 20 s, 30 fps, H.264 + AAC 48 kHz. Make two files: video.mp4 (IG/FB,
+- Video 1080x1920, 12 to 20 s (a Sunday Spot may run to 27 s with its pages tail), 30 fps,
+  H.264 + AAC 48 kHz. Make two files: video.mp4 (IG/FB,
   under 5 Mbps) and video-small.mp4 under 4.5 MB (-b:v 2100k -maxrate 2400k) for YouTube and
   TikTok.
 - MUSIC IS REQUIRED on every video: an original track from the music tool at the video's

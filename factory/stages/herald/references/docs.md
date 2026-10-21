@@ -38,6 +38,6 @@ invent included pages, discounts, reviews, scarcity or income claims.
 Candidates: products with etsy.state "active", a listing url (etsy.url or
 https://www.etsy.com/listing/<listingId>) and a file.assetId (the real PDF). Order: sprint/main
 flags "working" first, then "looks, no sale", then most views in 7 days (newest two stats
-docs), then not featured in 7 days (check social). While Holiday Mode is ON (Christmas
+docs), then seasonal fit, skipping anything featured in the last 7 days (check social). While Holiday Mode is ON (Christmas
 window: 70 days before Dec 25 until Dec 15), 2 or 3 of the 4 channels feature a holiday
 product (pick a second product for them if the first is not seasonal).
