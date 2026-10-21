@@ -1,0 +1,204 @@
+{
+ "id": "art-2026-10-21-upload-51a9",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4598501430/images",
+   "tag": "4598501430"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4598535050/images",
+   "tag": "4598535050"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4600177516/images",
+   "tag": "4600177516"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4596203264/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/legacy-xmas-planner-listing-update-cover.jpg",
+   "field": "image",
+   "fileName": "christmas-planner-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Printable Christmas planner pages: December calendar, gift tracker, holiday budget, countdown, to-do list and Christmas dinner planner"
+   },
+   "tag": "4596203264"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597743627/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-thanksgiving-games-cover.jpg",
+   "field": "image",
+   "fileName": "thanksgiving-games-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Thanksgiving trivia page from a printable Thanksgiving family game pack with bingo and Would You Rather"
+   },
+   "tag": "4597743627"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597749137/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/legacy-xmas-game-bundle-cover.jpg",
+   "field": "image",
+   "fileName": "christmas-party-games-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Collage of printable Christmas party game pages: trivia, word scramble, bingo, Who Am I and Would You Rather"
+   },
+   "tag": "4597749137"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597755593/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-nye-games-cover.jpg",
+   "field": "image",
+   "fileName": "new-years-eve-games-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "My Predictions for 2027 page from printable New Year's Eve party games, family friendly"
+   },
+   "tag": "4597755593"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597755725/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-secret-santa-kit-cover.jpg",
+   "field": "image",
+   "fileName": "secret-santa-kit-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Collage of printable Secret Santa kit pages: questionnaire, name slips, rules, organizer page and gift tags"
+   },
+   "tag": "4597755725"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597977363/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-thanksgiving-host-planner-cover.jpg",
+   "field": "image",
+   "fileName": "thanksgiving-host-planner-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Thanksgiving host planner shown on a tablet: reverse cooking timeline and turkey thaw guide pages"
+   },
+   "tag": "4597977363"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597998190/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-advent-activities-cover.jpg",
+   "field": "image",
+   "fileName": "christmas-countdown-activities-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Grid of printable Christmas countdown activity cards for families, 24 screen-free activities"
+   },
+   "tag": "4597998190"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598358161/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-adhd-savings-tracker-cover.jpg",
+   "field": "image",
+   "fileName": "savings-challenge-tracker-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "2027 savings challenge printable shown on laptop, tablet and phone: color-in $1,000 challenge and 52-week tracker"
+   },
+   "tag": "4598358161"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598358317/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-goal-workbook-2027-cover.jpg",
+   "field": "image",
+   "fileName": "goal-setting-workbook-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "2027 goal setting workbook pages on a tablet: My 3 Big Goals and 12-week action plan"
+   },
+   "tag": "4598358317"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598379368/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-xmas-party-awards-cover.jpg",
+   "field": "image",
+   "fileName": "christmas-party-awards-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Collage of printable Christmas party award pages: 36 award list, nomination cards, ballots and certificates"
+   },
+   "tag": "4598379368"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598659189/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-pink-coquette-verse-art-cover.jpg",
+   "field": "image",
+   "fileName": "pink-coquette-verse-art-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Pink coquette Bible verse wall art prints in frames: Psalm 46:10, Proverbs 31:25 and Philippians 4:13"
+   },
+   "tag": "4598659189"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598721247/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-pink-christmas-verse-art-cover.jpg",
+   "field": "image",
+   "fileName": "pink-christmas-verse-art-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Pink Christmas Bible verse printable wall art, Luke 2:10 Behold I bring you good tidings of great joy"
+   },
+   "tag": "4598721247"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4599444986/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-no-buy-year-2027-cover.jpg",
+   "field": "image",
+   "fileName": "no-buy-year-planner-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Printable 2027 no-buy year planner pages: monthly no-spend calendars, no-buy rules and 30-day want list"
+   },
+   "tag": "4599444986"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4599447958/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-xmas-scavenger-hunt-cover.jpg",
+   "field": "image",
+   "fileName": "christmas-scavenger-hunt-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Collage of printable Christmas scavenger hunt clue cards for kids, rhymes and riddles, with answer key"
+   },
+   "tag": "4599447958"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177510/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/styled/prod-cookie-exchange-kit-cover.jpg",
+   "field": "image",
+   "fileName": "cookie-exchange-kit-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Printable Christmas cookie exchange kit on a wood desk: allergen cookie labels, swap rules and invitations"
+   },
+   "tag": "4600177510"
+  }
+ ]
+}
