@@ -8,6 +8,7 @@
 | Reference | `../references/db.md` | "pipeline" | What to save |
 | Skill | `../../../skills/rocket/SKILL.md` | Full file | Checklist |
 | Previous stages | run notes `## QC`; pipeline/<id> | | Only post a PASS with no videoId |
+| Database | episodes/<id> (ytTitle, description, tags) | | What to upload with |
 
 ## Process
 Skip (status "built-awaiting-launch") when settings.autopilot is false, the build has an
@@ -20,7 +21,7 @@ error, QC failed, or pipeline/<id> already has a videoId (never upload the same 
 2. Save pipeline/<id>: {made:{clips:true,voice:true,edit:true}, videoId, videoTitle,
    privacy:"scheduled", duration:"PT<n>S", launch:{mode:"schedule", privacy:"private",
    publishAt, at}, qc, autoVideo:{url, note:"Built free in the factory", credits:0}}. Update
-   factory/main.postedThisWeek and stats/channel.vidiqCredits. Crew idle.
+   factory/main.postedThisWeek. Crew idle.
 3. Write `## Launch` in the run notes: videoId, publishAt (Central), or why not posted.
 
 ## Outputs

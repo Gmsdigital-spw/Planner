@@ -9,7 +9,8 @@ member working while they work and idle after; leave everyone idle at the end. R
 every write; if_version.
 
 ## episodes/<id>
-{id, num, title, ytTitle, logline, hook, beats, shots, vo, pinned, tags, sound}. The loser of
+{id, num, title, ytTitle, logline, hook, beats, shots, vo (the lines), pinned, tags,
+description, sound:{voice, speed, music, music_volume, anim}}. The loser of
 the two drafts is saved as episodes/<id>-b with status "unbuilt" so its premise is never
 repeated. Next id = one more than the highest ep number in episodes/ and yt/jobs/. Ignore job
 ids that do not start with "ep".
@@ -18,8 +19,9 @@ ids that do not start with "ep".
 {made:{clips, voice, edit}, videoId, videoTitle, privacy:"scheduled", duration:"PT<n>S",
 launch:{mode:"schedule", privacy:"private", publishAt, at}, qc:{judge:{score, hook, story,
 twist, logic, slop, improvedOver, drafts:{a:{logline, scores}, b:{logline, scores}, chosen},
-at}}, stats:{views, likes, comments, at}, autoVideo:{url, note:"Built free in the factory",
-credits:0}}. Status "built-awaiting-launch" when autopilot is false.
+at}, file:{pass, duration, mb, frames, rebuilt, at}}, stats:{views, likes, comments, at},
+autoVideo:{url, note:"Built free in the factory", credits:0}}. Status
+"built-awaiting-launch" when autopilot is false.
 
 ## factory/main
 {lastBuildAt, lastBuildId, lastDuration, lastMb, lastError (or ""), builtThisWeek,

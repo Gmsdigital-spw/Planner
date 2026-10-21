@@ -18,17 +18,18 @@ pipeline launch.publishAt; if today's is past or taken, use tomorrow's. Never to
 or Pinterest lanes of the scenario.
 
 ## GitHub build
-Only ever write inside yt/ (and factory/skills/ in stage 06). Pushing yt/jobs/<id>.json
+Write only inside yt/, factory/skills/ (stage 06), factory/runlog.jsonl and
+factory/stages/studio/output/. Pushing yt/jobs/<id>.json
 starts the free "YouTube Starship build" Action, which writes yt/out/<id>.mp4 (under 4.6 MB)
 and yt/out/<id>.json in about 15 to 25 minutes. Files are public at
 https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/<path>. If a push fails with
-403, write the exact error into factory/main.lastError and tell Grayson "GitHub access needs
-a look" in one line. Images come from Cloudflare Workers AI (GitHub secrets CF_ACCOUNT_ID /
+403: as shared/repo.md says, plus write the exact error into factory/main.lastError; stage
+06 tells Grayson "GitHub access needs a look" in one line. Images come from Cloudflare Workers AI (GitHub secrets CF_ACCOUNT_ID /
 CF_API_TOKEN); if yt/out/<id>.json says the keys are missing or rejected, do not post and
 message Grayson one line: "Cloudflare key needs a refresh".
 
 ## vidIQ budget
-vidiq_balance (free) every run; report it in stats/channel.vidiqCredits. vidiq_outliers (5
+vidiq_balance (free) every run; stage 00 writes it to stats/channel.vidiqCredits. vidiq_outliers (5
 credits) on Sundays only (contentType short, threeMonths, maxSubscribers 500000, keyword
 "AI 3D cartoon story drama twist"). Nothing else. HERO-SHOT LANE stays OFF: never call
 vidiq_generate_video; Grayson decides in chat.

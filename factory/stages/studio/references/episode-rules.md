@@ -42,8 +42,9 @@ no price-tag dumps, no AI-slop phrasing, nothing that needs on-screen gameplay t
 - Pacing: "..." where a narrator would pause; a yellow label (label field) on every time jump.
 
 ## Voice
-Engine "edge", voice "andrew" (male) or "ava" (female), speed 1.00 to 1.05 (0.98 when the
-story is mostly heart). Write lines the way people talk.
+Engine "edge", voice "andrew" (male) or "ava" (female), speed 1.00 to 1.05, default 1.03
+(0.98 when the story is mostly heart). Write lines the way people talk. Never a scene with
+no character when the line is about a person (the spec's bar).
 
 ## Two drafts (V6)
 Gags writes TWO different scripts (different premise, different emotional engine: one

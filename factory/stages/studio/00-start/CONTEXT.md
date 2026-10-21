@@ -14,10 +14,12 @@
 2. Read settings (autopilot), factory/main, intel/trends, the episode list (ids, loglines,
    premises; through out_dir), pipeline newest 5. vidiq_balance. Next episode id = one more
    than the highest ep number in episodes/ and yt/jobs/.
-3. Drop zone (tools.md): note any unused clip for the Writer's brief.
+3. Drop zone (tools.md): note any unused clip for the Writer's brief. Write
+   stats/channel.vidiqCredits from vidiq_balance (every run, read first, if_version).
 4. Set modules/youtube/crew/vega working ("Running the daily Short"). Create
-   `../output/<day key>-run.md` with the header and the settings line. If settings.autopilot
-   is false: still build, but stage 05 does not post (pipeline status "built-awaiting-launch").
+   `../output/<day key>-run.md` with the header, the settings line and `## Premises` (one line
+   per existing episode from the out_dir script: id, logline). If settings.autopilot is
+   false: still build, but stage 05 does not post (pipeline status "built-awaiting-launch").
 
 ## Outputs
 

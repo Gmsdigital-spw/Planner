@@ -9,12 +9,14 @@
 | Builder | `yt/build/make_short.py` | docstring only | The format |
 | Reference | `../references/tools.md` | "GitHub build" | Push rules, Cloudflare |
 | Skill | `../../../skills/cutter/SKILL.md` | Full file | Checklist |
-| Database | episodes/<id> | | The script |
+| Database | episodes/<id> (vo, hook, title, description, tags, sound) | | The script, voice, speed, music mood |
+| Previous stage | `../output/<day key>-run.md` "## Drafts" | | The choices in one place |
 
 ## Process
 1. Set crew/cutter working. Write yt/jobs/<id>.json per job-format.md from episodes/<id>.
 2. Dry-run, push only a passing job (commit "Studio <day key>: <id>", pull --rebase, push),
-   wait for the build, one rebuild at most, exactly as job-format.md says.
+   wait for the build, one rebuild at most, exactly as job-format.md says. You may git pull
+   to receive the build output; that is the one exception to "do not pull again".
 3. Update modules/youtube/factory/main {lastBuildAt, lastBuildId, lastDuration, lastMb,
    lastError (or ""), builtThisWeek, totalBuilt, usedClips, nextRun:"tomorrow 8:12 PM CT",
    tts}. Crew idle. Write `## Build` in the run notes (duration, MB, rebuilds, warnings).

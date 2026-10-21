@@ -18,7 +18,9 @@
 2. Radar (Sundays only): one vidiq_outliers search (tools.md); save 3 observations to
    intel/trends.notes. Set crew idle.
 3. Write `## Numbers` in the run notes: the 5 episodes' views, the lesson, the weakness of
-   the last episode to fix tonight.
+   the last episode to fix tonight, the last posted episode's Judge score (pipeline qc.judge
+   .score; the Writer must match or beat it), and Radar's newest trend notes (intel/trends
+   .notes) in one line each.
 
 ## Outputs
 
