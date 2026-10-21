@@ -1,0 +1,1 @@
+{"id":"trade-2026-10-21-verify-07d2","ops":[{"op":"alpaca","path":"/positions"},{"op":"alpaca","path":"/orders?status=open"},{"op":"alpaca","path":"/bankroll"}]}
