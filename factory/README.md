@@ -15,7 +15,8 @@ This folder is the factory's memory. No agent starts from zero again.
   grades on trend, not vibes.
 - `specs/` — standing instructions the scheduled runs read in STEP 0 (`product-floor-v6.md`: Idea Engine,
   lanes, Holiday Mode, mug wrap / sticker / invitation build specs; `marketing-wing-v6.md`: plan-from-numbers,
-  holiday share, hooks, channel separation; `studio-floor-v6.md`: the Shorts bar, two drafts, hero-shot lane, Spot commercials). Same authority as the run prompt, below it on conflict.
+  holiday share, hooks, channel separation; `studio-floor-v6.md`: the Shorts bar, two drafts, hero-shot lane, Spot commercials; `funnel-floor-v6.md`: comment-the-word business + Frontier Nav).
+- `../apps/frontier-nav/` — Frontier Nav v0.1, the original old-west map app (GitHub Pages). Same authority as the run prompt, below it on conflict.
 - `gm_factory_v6.py` — the Python brain (registry, Foreman grading, Idea Engine, holiday calendar,
   marketing plan-from-stats, DM keyword map, trading risk manager). Runs with no dependencies.
 

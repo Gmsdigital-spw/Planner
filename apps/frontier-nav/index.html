@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Frontier Nav</title>
+<meta name="description" content="An old-west style map and trail finder. Original design: parchment map, ink roads, a compass rose and plain-spoken directions. Free and open map data.">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+:root{--paper:#e8d7b1;--paper2:#dcc89c;--ink:#3a2a18;--ink2:#6b4a2b;--rust:#9a4a2a;--cream:#f6ecd6;--shadow:0 6px 24px rgba(40,25,10,.35)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;overflow:hidden}
+#map{position:fixed;inset:0}
+#grain{position:fixed;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.55;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .55 0 0 0 0 .45 0 0 0 0 .3 0 0 0 .35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");}
+#vign{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(60,35,10,.35) 100%)}
+.top{position:fixed;left:0;right:0;top:0;padding:calc(10px + env(safe-area-inset-top)) 12px 8px;display:flex;gap:8px;align-items:center;z-index:5}
+.brand{font-weight:700;letter-spacing:.06em;font-size:14px;text-transform:uppercase;color:var(--cream);background:var(--ink);padding:8px 10px;border-radius:6px;border:2px solid var(--paper2);box-shadow:var(--shadow);white-space:nowrap}
+.search{flex:1;display:flex;background:var(--cream);border:2px solid var(--ink2);border-radius:6px;box-shadow:var(--shadow);min-width:0}
+.search input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:16px;padding:9px 10px;color:var(--ink);outline:none}
+.search button{border:0;background:var(--ink2);color:var(--cream);font:inherit;padding:0 12px;cursor:pointer}
+.side{position:fixed;right:12px;top:calc(72px + env(safe-area-inset-top));display:flex;flex-direction:column;gap:8px;z-index:5}
+.rb{width:44px;height:44px;border-radius:8px;background:var(--cream);border:2px solid var(--ink2);color:var(--ink);font-size:20px;box-shadow:var(--shadow);cursor:pointer;display:grid;place-items:center}
+.rb:active{transform:translateY(1px)}
+.rose{position:fixed;left:12px;bottom:calc(112px + env(safe-area-inset-bottom));width:84px;height:84px;z-index:4;opacity:.92;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
+.card{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:6;background:var(--cream);border:2px solid var(--ink2);border-radius:10px;padding:12px 14px;box-shadow:var(--shadow);display:none;max-height:42vh;overflow:auto}
+.card.on{display:block}
+.card h2{font-size:17px;margin-bottom:4px}
+.card .sub{color:var(--ink2);font-size:14px;line-height:1.45}
+.card .row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.btn{border:2px solid var(--ink2);background:var(--ink);color:var(--cream);font:inherit;font-size:15px;padding:9px 12px;border-radius:7px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)}
+.res{list-style:none;margin-top:8px}
+.res li{padding:8px 0;border-top:1px dashed var(--paper2);cursor:pointer;font-size:15px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);top:calc(70px + env(safe-area-inset-top));background:var(--ink);color:var(--cream);padding:8px 12px;border-radius:6px;font-size:14px;z-index:7;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+.maplibregl-ctrl-attrib{font-family:Georgia,serif;background:rgba(246,236,214,.85)!important}
+.pin{width:26px;height:26px;border-radius:50% 50% 50% 0;background:var(--rust);border:2px solid var(--cream);transform:rotate(-45deg);box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.me{width:18px;height:18px;border-radius:50%;background:#2e5a7a;border:3px solid var(--cream);box-shadow:0 0 0 6px rgba(46,90,122,.25)}
+</style>
+</head>
+<body>
+<div id="map" role="application" aria-label="Map"></div>
+<div id="grain"></div><div id="vign"></div>
+<div class="top">
+  <div class="brand">Frontier Nav</div>
+  <form class="search" id="sf"><input id="q" type="search" placeholder="Where to, partner?" autocomplete="off" aria-label="Search a place"><button type="submit" aria-label="Search">Go</button></form>
+</div>
+<div class="side">
+  <button class="rb" id="loc" aria-label="Find me" title="Find me">◎</button>
+  <button class="rb" id="zin" aria-label="Zoom in">+</button>
+  <button class="rb" id="zout" aria-label="Zoom out">−</button>
+</div>
+<svg class="rose" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#f6ecd6" stroke="#6b4a2b" stroke-width="3"/><circle cx="50" cy="50" r="36" fill="none" stroke="#6b4a2b" stroke-width="1" stroke-dasharray="2 3"/><polygon points="50,8 56,50 50,92 44,50" fill="#3a2a18"/><polygon points="8,50 50,44 92,50 50,56" fill="#9a4a2a"/><polygon points="50,8 56,50 44,50" fill="#9a4a2a"/><text x="50" y="7" font-size="9" text-anchor="middle" font-family="Georgia" fill="#3a2a18" font-weight="700">N</text><circle cx="50" cy="50" r="4" fill="#f6ecd6" stroke="#3a2a18" stroke-width="2"/></svg>
+<div class="card" id="card"></div>
+<div class="toast" id="toast"></div>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script>
+(function(){
+"use strict";
+const $=s=>document.querySelector(s);
+const toast=(m,ms)=>{const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("on"),ms||2200)};
+const STYLE_URL="https://tiles.openfreemap.org/styles/liberty";
+let me=null,dest=null,meMarker=null,destMarker=null;
+const map=new maplibregl.Map({container:"map",style:STYLE_URL,center:[-86.78,36.16],zoom:11,attributionControl:true,pitchWithRotate:false});
+map.addControl(new maplibregl.AttributionControl({compact:true,customAttribution:"Frontier Nav · map data © OpenStreetMap contributors · tiles OpenFreeMap"}));
+/* Parchment re-ink: recolor the open style's layers into an old-west paper map. Original look; no game art. */
+const PAPER="#e8d7b1",PAPER2="#dcc89c",GREEN="#cdbf8c",WATER="#9fb7ad",INK="#3a2a18",INK2="#6b4a2b",RUST="#9a4a2a",CREAM="#f6ecd6",BUILD="#d4c097";
+function reink(){
+  const st=map.getStyle();if(!st||!st.layers)return;
+  for(const l of st.layers){const id=l.id.toLowerCase();try{
+    if(l.type==="background"){map.setPaintProperty(l.id,"background-color",PAPER);continue}
+    if(l.type==="fill"){
+      if(/water|ocean|river|lake/.test(id))map.setPaintProperty(l.id,"fill-color",WATER);
+      else if(/park|wood|forest|grass|green|cemetery|golf|farm|meadow|scrub|orchard|vineyard/.test(id))map.setPaintProperty(l.id,"fill-color",GREEN);
+      else if(/building/.test(id)){map.setPaintProperty(l.id,"fill-color",BUILD);if(l.paint&&"fill-outline-color" in l.paint)map.setPaintProperty(l.id,"fill-outline-color",INK2)}
+      else if(/landcover|landuse|residential|commercial|industrial|sand|beach|glacier|ice|snow|aero|pitch|school|hospital/.test(id))map.setPaintProperty(l.id,"fill-color",PAPER2);
+      else map.setPaintProperty(l.id,"fill-color",PAPER2);
+      if(l.paint&&"fill-opacity" in l.paint){}
+      continue}
+    if(l.type==="fill-extrusion"){map.setLayoutProperty(l.id,"visibility","none");continue}
+    if(l.type==="line"){
+      if(/water|river|stream|canal|waterway/.test(id)){map.setPaintProperty(l.id,"line-color",WATER);continue}
+      if(/boundary|admin/.test(id)){map.setPaintProperty(l.id,"line-color",RUST);map.setPaintProperty(l.id,"line-dasharray",[3,2]);continue}
+      if(/rail|transit/.test(id)){map.setPaintProperty(l.id,"line-color",INK2);map.setPaintProperty(l.id,"line-dasharray",[1,2]);continue}
+      if(/casing|outline/.test(id)){map.setPaintProperty(l.id,"line-color",INK);continue}
+      if(/motorway|trunk|primary|highway/.test(id)){map.setPaintProperty(l.id,"line-color",RUST);continue}
+      if(/road|street|minor|secondary|tertiary|path|track|service|link|bridge|tunnel/.test(id)){map.setPaintProperty(l.id,"line-color",INK2);continue}
+      map.setPaintProperty(l.id,"line-color",INK2);continue}
+    if(l.type==="symbol"){
+      if(l.paint&&("text-color" in l.paint||true)){try{map.setPaintProperty(l.id,"text-color",/water|river|lake|ocean|sea/.test(id)?"#2f5a60":INK)}catch(e){}try{map.setPaintProperty(l.id,"text-halo-color",CREAM)}catch(e){}try{map.setPaintProperty(l.id,"text-halo-width",1.4)}catch(e){}}
+      try{map.setLayoutProperty(l.id,"text-font",["Noto Sans Italic","Noto Sans Regular"])}catch(e){}
+      if(/poi|shop|amenity/.test(id)&&!/label|name|place/.test(id)){try{map.setLayoutProperty(l.id,"visibility","none")}catch(e){}}
+      continue}
+  }catch(e){}}
+}
+map.on("load",()=>{reink();
+  map.addSource("trail",{type:"geojson",data:{type:"FeatureCollection",features:[]}});
+  map.addLayer({id:"trail-casing",type:"line",source:"trail",paint:{"line-color":CREAM,"line-width":7,"line-opacity":.9}});
+  map.addLayer({id:"trail",type:"line",source:"trail",paint:{"line-color":RUST,"line-width":4,"line-dasharray":[2,1.4]}});
+  toast("Frontier Nav. Tap ◎ to find yourself.",2600);
+});
+map.on("styledata",()=>{if(map.isStyleLoaded())reink()});
+$("#zin").onclick=()=>map.zoomIn();$("#zout").onclick=()=>map.zoomOut();
+function setMe(lng,lat){me=[lng,lat];if(!meMarker){const el=document.createElement("div");el.className="me";meMarker=new maplibregl.Marker({element:el}).setLngLat(me).addTo(map)}else meMarker.setLngLat(me)}
+$("#loc").onclick=()=>{if(!navigator.geolocation){toast("No compass on this device (geolocation off).");return}toast("Taking a bearing…");
+  navigator.geolocation.getCurrentPosition(p=>{setMe(p.coords.longitude,p.coords.latitude);map.easeTo({center:me,zoom:Math.max(map.getZoom(),13)});toast("You are here.");if(dest)route()},
+  e=>toast("Couldn't get a fix: "+(e.message||"location blocked")),{enableHighAccuracy:true,timeout:12000,maximumAge:30000})};
+const card=$("#card");
+function showCard(html){card.innerHTML=html;card.classList.add("on")}
+function hideCard(){card.classList.remove("on")}
+$("#sf").addEventListener("submit",async e=>{e.preventDefault();const q=$("#q").value.trim();if(!q)return;toast("Asking around…");
+  try{const c=map.getCenter();const url="https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&addressdetails=0&q="+encodeURIComponent(q)+"&viewbox="+[c.lng-1.5,c.lat+1,c.lng+1.5,c.lat-1].join(",")+"&bounded=0";
+    const r=await fetch(url,{headers:{"Accept":"application/json"}});const js=await r.json();
+    if(!js.length){showCard('<h2>Nothing by that name.</h2><div class="sub">Try the town or the street too.</div><div class="row"><button class="btn ghost" id="cl">Close</button></div>');$("#cl").onclick=hideCard;return}
+    showCard('<h2>Pick a spot</h2><ul class="res">'+js.map((x,i)=>'<li data-i="'+i+'">'+esc(x.display_name)+'</li>').join("")+'</ul><div class="row"><button class="btn ghost" id="cl">Close</button></div>');
+    $("#cl").onclick=hideCard;card.querySelectorAll("li").forEach(li=>li.onclick=()=>pick(js[+li.dataset.i]));
+  }catch(err){toast("The wire is down (search failed). Try again.")}});
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function pick(x){dest={lng:+x.lon,lat:+x.lat,name:x.display_name.split(",")[0]};if(!destMarker){const el=document.createElement("div");el.className="pin";destMarker=new maplibregl.Marker({element:el,anchor:"bottom"}).setLngLat([dest.lng,dest.lat]).addTo(map)}else destMarker.setLngLat([dest.lng,dest.lat]);
+  map.easeTo({center:[dest.lng,dest.lat],zoom:14});
+  showCard('<h2>'+esc(dest.name)+'</h2><div class="sub">'+esc(x.display_name)+'</div><div class="row"><button class="btn" id="go">Blaze the trail</button><button class="btn ghost" id="cl">Close</button></div>');
+  $("#cl").onclick=hideCard;$("#go").onclick=()=>{if(!me){toast("Find yourself first (◎), then I'll draw the trail.");$("#loc").click();return}route()}}
+function rideWords(min){if(min<2)return "a stone's throw";if(min<10)return "a short walk's worth, "+Math.round(min)+" min by road";if(min<60)return Math.round(min)+" minutes down the road";const h=Math.floor(min/60),m=Math.round(min%60);return h+" hour"+(h===1?"":"s")+(m?" and "+m+" min":"")+" on the trail"}
+async function route(){if(!me||!dest)return;toast("Scouting the trail…");
+  try{const url="https://router.project-osrm.org/route/v1/driving/"+me[0]+","+me[1]+";"+dest.lng+","+dest.lat+"?overview=full&geometries=geojson&steps=true";
+    const r=await fetch(url);const js=await r.json();if(!js.routes||!js.routes.length)throw new Error("no route");
+    const rt=js.routes[0];map.getSource("trail").setData({type:"FeatureCollection",features:[{type:"Feature",geometry:rt.geometry,properties:{}}]});
+    const mi=rt.distance/1609.34,min=rt.duration/60;const b=new maplibregl.LngLatBounds();for(const c of rt.geometry.coordinates)b.extend(c);map.fitBounds(b,{padding:{top:120,bottom:260,left:40,right:60}});
+    const steps=(rt.legs[0].steps||[]).filter(s=>s.maneuver&&s.name).slice(0,8).map(s=>'<li>'+esc(cap(s.maneuver.modifier?s.maneuver.type+" "+s.maneuver.modifier:s.maneuver.type))+' onto <b>'+esc(s.name)+'</b> · '+(s.distance/1609.34).toFixed(1)+' mi</li>').join("");
+    showCard('<h2>'+mi.toFixed(1)+' miles · '+esc(rideWords(min))+'</h2><div class="sub">To '+esc(dest.name)+'. Drawn on free open map data; drive the real road signs, not the parchment.</div>'+(steps?'<ul class="res">'+steps+'</ul>':"")+'<div class="row"><a class="btn" target="_blank" rel="noopener" href="https://www.openstreetmap.org/directions?from='+me[1]+','+me[0]+'&to='+dest.lat+','+dest.lng+'">Open full directions</a><button class="btn ghost" id="cl">Close</button></div>');
+    $("#cl").onclick=hideCard;
+  }catch(err){toast("No trail found between here and there.")}}
+const cap=s=>String(s||"").replace(/[-_]/g," ").replace(/^\w/,c=>c.toUpperCase());
+})();
+</script>
+</body>
+</html>
