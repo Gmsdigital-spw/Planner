@@ -417,7 +417,7 @@ def op_alpaca(o, st):
     if o.get("path") == "/bankroll" and not o.get("data"):
         return 200, virtual_account(hdr, st)
     if m == "POST" and o["path"].startswith("/orders") and not o.get("data"):
-        floor = float(os.environ.get("ALPACA_FLOOR", "20"))
+        floor = float(os.environ.get("ALPACA_FLOOR") or "20")
         va = virtual_account(hdr, st)
         equity, cash = va["equity"], va["cash"]
         side = str((body or {}).get("side", "")).lower()
