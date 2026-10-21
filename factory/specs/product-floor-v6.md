@@ -25,3 +25,13 @@ These rules sit on top of the Night Shift prompt. Where this file and an earlier
 - SEARCH-FIRST COPY (Quill). The title starts with the exact phrase a buyer types (check it against Etsy autocomplete via WebSearch when possible), stays readable, and every tag is a real search phrase (no tags that only describe one page, like "cookie ballot"; no "digital download" tag, Etsy already knows).
 - PRICES: new products use normal prices in copy.price ($3.99 to $7.99 for single kits and planners, $8 to $14 for bundles). Never change a live listing's price: the separate Pricing agent (scheduled task "Pricing agent (Ledger)") is the only crew member allowed to change live prices, and it runs its own rules.
 - Next Move (10e) and the report: while sales are 0, the top recommendation is about getting the first sale (a Christmas bestseller-style product, a bundle, or a sale/discount Grayson can tap on in the Etsy app), never a nice-to-have.
+
+## THANK-YOU PAGE (Oct 21, 2026, Grayson approved)
+Every product PDF ends with ONE thank-you page (not counted in the page count) in the product's own palette and fonts, with exactly this text:
+- Heading: "Thank you for your order!"
+- "You just supported a small, independent shop, and that genuinely means a lot."
+- "If this made your party or planning a little easier, would you take 30 seconds to leave a review on Etsy? Reviews are the #1 way small shops get found, and every single one gets read."
+- "How: open Etsy → You → Purchases → Leave a review."
+- "Something not right? Message me before leaving a review and I'll fix it fast."
+- Footer: "GM's Digital Creations"
+Never offer anything in exchange for a review (no freebies, discounts or bonuses for reviewing): Etsy forbids it. Mug wraps, sticker sheets and single-image files get the page as a separate last page of their PDF.
