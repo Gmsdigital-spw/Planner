@@ -6,8 +6,8 @@
 |--------|--------------|---------------|-----|
 | Reference | `../references/channels.md` | Full file | signal/main shape, connection ids, URLs, repo paths |
 | Spec | `../../../specs/marketing-wing-v6.md` | Full file | Plan-from-numbers, holiday share, hooks, channel separation |
-| Spec | `../../../specs/foreman-rules.md` | "1. Focus", "3. Quality gates" | Etsy first; 92 + slop gate |
-| Skill | `../../../skills/herald/SKILL.md` | Full file; also `skills/flame`, `tick`, `santa`, `hawk`, `spot` only when stage 05 or spot.md names them | Checklist and lessons |
+| Spec | `../../../specs/foreman-rules.md` | "1. Focus", "2. Judged on evidence", "3. Quality gates", "6. Self-repair" | Etsy first; never invent a number; 92 + slop gate; exact blocker lines |
+| Skill | `../../../skills/herald/SKILL.md` | Full file | Checklist and lessons |
 | Database | settings/main, signal/main, lessons (newest 10 with crew Herald) | | Gates and lessons |
 
 ## Process

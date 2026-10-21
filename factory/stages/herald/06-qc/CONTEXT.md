@@ -13,10 +13,12 @@
    every doc of today to "qc_failed", writes a lesson, and tells Grayson in one line.
 2. Score (qc.md B) only after the gate passes. Pass = signal/main.passScore (92). Below it: one
    rewrite, then "qc_failed" with notes.
-3. Set status "awaiting_approval" or "approved" per qc.md; save qc {scores, notes, slopGate}.
+3. Create each social/<idem> in the database now (query the idem first; never a second doc
+   with the same idem) with status "awaiting_approval" or "approved" per qc.md (or
+   "qc_failed") and qc {scores, notes, slopGate}.
 
 ## Outputs
 
 | Artifact | Location | Format |
 |----------|----------|--------|
-| Graded docs | social/<idem> | status + qc |
+| Graded docs | social/<idem> (created here) | status + qc |

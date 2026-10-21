@@ -4,7 +4,7 @@
 
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
-| Spec | `../../../specs/marketing-wing-v6.md` | product pick and Holiday Mode share | The rule |
+| Spec | `../../../specs/marketing-wing-v6.md` | "Rules every marketing run follows" (rules 1 and 2) | The rule |
 | Reference | `../references/docs.md` | "Product pick", "Plan day and due times" | Candidates, order, plan day |
 | Database | products (via out_dir + script: id, title, kind, etsy.state, etsy.url, etsy.listingId, file.assetId, copy.title), sprint/main, stats (newest 2), social (last 7 days: productId) | | Candidates and recency |
 

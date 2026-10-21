@@ -14,9 +14,11 @@
    {t, who:"Herald", mod:"etsy", text}. Keep both at the newest 200.
 2. A lesson ({at, crew:"Herald", text, evidence, status:"active", area:"socials"}) when
    something failed in a way that is not a one-off.
-3. Memory, once per day (the evening run): append ONE dated line to "What I've learned" at the
+3. Memory, once per day (the first run of the day that has not yet appended today's line):
+   append ONE dated line to "What I've learned" at the
    end of skills/herald/SKILL.md (what the numbers said, what scored high or failed, the one
-   change for tomorrow; "same as yesterday" is a fail). Write nothing else in factory/.
+   change for tomorrow; "same as yesterday" is a fail). Write nothing else in factory/
+   except factory/runlog.jsonl (step 4).
 4. Run log: `python3 factory/shared/runlog.py add --task herald --started <iso> --finished
    <now> --stages <list> --skipped <list> --loaded <every instruction file you opened>
    --gateway-jobs 0 --db-writes N --outcome done|failed --note "<posted N, made N, qc>"

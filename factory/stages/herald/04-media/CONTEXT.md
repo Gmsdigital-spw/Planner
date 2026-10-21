@@ -9,6 +9,7 @@
 | Reference | `../references/spot.md` | Full file, Sundays only (first full-day run) | The Sunday commercial |
 | Spec | `../../../specs/studio-floor-v6.md` | "Spot" section, Sundays only | Spot rules |
 | Shared | `../../../shared/database.md` | "Files (assets)" | Downloading the PDF |
+| Shared | `../../../shared/repo.md` | "Committing" | The push of the videos |
 | Previous stage | the pick note | product id, listing url, theme | What to film |
 
 ## Process
@@ -25,7 +26,7 @@
 | Real pages | Every scene shows real rendered pages on the desk; no preview or listing images |
 | Captions | <= 3 lines, <= 7 words per line, facts from the copy |
 | Music | Present, original, loudnorm I=-16, fades |
-| Sizes | 1080x1920, 12 to 20 s; video-small.mp4 under 4.5 MB |
+| Sizes | 1080x1920, 12 to 20 s (a Sunday Spot: up to 27 s with its tail); video-small.mp4 under 4.5 MB |
 
 ## Outputs
 

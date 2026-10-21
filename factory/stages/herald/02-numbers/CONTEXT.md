@@ -4,7 +4,7 @@
 
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
-| Reference | `../references/posting-lane.md` | "Real numbers", "TikTok check" | What to call |
+| Reference | `../references/posting-lane.md` | "Real numbers", "TikTok check" | What to call (the GET shape is there) |
 | Database | social (posted in the last 14 days) | postId, platform, metrics | Whose numbers |
 
 ## Process

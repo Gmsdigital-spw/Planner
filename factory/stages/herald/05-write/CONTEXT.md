@@ -5,15 +5,15 @@
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
 | Reference | `../references/docs.md` | "Per-channel post rules", "Plan day and due times", "social/<id>", "idem" | The doc shape and rules |
-| Skill | `../../../skills/flame/SKILL.md` | Full file | Hook rules |
-| Skill | `../../../skills/tick/SKILL.md` | Full file | TikTok lane |
-| Database | the product's copy and the rendered pages from stage 04 | | Facts only |
+| Database | products/<id> (copy.title, copy.description, copy.tags, kind) and the rendered pages from stage 04 | | Facts only |
 
 ## Process
 1. Write the four posts to docs.md rules, facts only from the product's copy and PDF pages.
-2. Create social/<idem> for each (query the idem first; never a second doc with the same
-   idem), with media URLs, planDate, planDay, due (Instagram and Facebook 11:00 AM Central,
-   YouTube and TikTok 6:00 PM Central; next window if past), status "draft" until stage 06.
+2. Prepare the four docs LOCALLY (a JSON file each, shape in docs.md) with media URLs,
+   planDate, planDay, due (Instagram and Facebook 11:00 AM Central, YouTube and TikTok 6:00
+   PM Central; next window if past). Do NOT write them to the database yet: stage 06 grades
+   them and creates each social/<idem> with its final status, so a run that dies here leaves
+   no half-made docs that would make the next run skip the day.
 
 ## Audit
 
@@ -27,4 +27,4 @@
 
 | Artifact | Location | Format |
 |----------|----------|--------|
-| Four docs | social/<idem> | status draft |
+| Four docs | local JSON files for stage 06 | docs.md shape, no status yet |
