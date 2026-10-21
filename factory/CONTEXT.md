@@ -10,7 +10,7 @@ they only use `shared/` files when their prompt says so.
 |----------------|-------|--------------|
 | GM Factory Night Shift (1:54 AM CT) | `stages/night-shift/CONTEXT.md` | Research, judge, build, copy, photos, inspect, pins, review, report |
 | Mechanic · self-fix + morning report (5x daily) | not yet moved (prompt) | Check every lane, fix once, one morning report |
-| Bolt Etsy publisher (7:13 / 12:13 / 4:13 CT) | not yet moved (prompt) | Publish passed products on Etsy, schedule pins |
+| Bolt Etsy publisher (7:13 / 12:13 / 4:13 CT) | `stages/bolt/CONTEXT.md` | Publish passed products on Etsy, schedule pins |
 | Herald social run (11:16 / 6:16 CT) | not yet moved (prompt) | One post per channel per day |
 | Pixel · daily video pin | not yet moved (prompt) | One Pinterest video pin a day |
 | Pricing agent (Ledger) | not yet moved (prompt) | Starter prices, raises, lowers within rules |
