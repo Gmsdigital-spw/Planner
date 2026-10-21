@@ -1,0 +1,8 @@
+{"id":"trade-2026-10-21-live-25b9","ops":[
+{"op":"alpaca","path":"/clock"},
+{"op":"alpaca","path":"/bankroll"},
+{"op":"alpaca","path":"/positions"},
+{"op":"alpaca","path":"/orders?status=open"},
+{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY&timeframe=5Min&limit=78&feed=iex"},
+{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SPY,QQQ,IWM,DIA,XLK,XLF,XLE,AAPL,NVDA,WMT,MSFT,AMZN,GOOGL,AMD,AVGO,JPM,COST,KO,XOM,UNH,BAC,TSLA,META,NFLX&feed=iex"}
+]}
