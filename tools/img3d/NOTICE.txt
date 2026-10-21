@@ -1,0 +1,4 @@
+3D images in this folder come from Google's Noto Emoji project (github.com/googlefonts/noto-emoji, 3D/png/512).
+Image resources are licensed under the Apache License 2.0, which allows commercial use. Copyright Google LLC.
+Codes: emoji_u<unicode>.png  e.g. 1f36a cookie, 1f385 Santa, 1f381 gift, 1f384 tree, 1f983 turkey, 1f967 pie.
+Avoid 1f4c5/1f4c6 (they print "July 17").

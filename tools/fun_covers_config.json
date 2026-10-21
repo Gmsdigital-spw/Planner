@@ -1,0 +1,1612 @@
+[
+ {
+  "slug": "cookie",
+  "listing_id": 4600177510,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/cookie-swap.jpg",
+  "kicker": "Christmas Party Kit",
+  "title": "Cookie *Swap* Party Kit",
+  "badge": [
+   "13",
+   "PAGES"
+  ],
+  "pills": [
+   "Invites + sign-up",
+   "Allergen labels",
+   "Best Cookie ballots"
+  ],
+  "theme": "xmas_red",
+  "pages": {
+   "src": "listing-photos/styled/prod-cookie-exchange-kit-cover.jpg",
+   "crop": [
+    0.0,
+    0.05,
+    0.56,
+    1.0
+   ]
+  },
+  "decor": [
+   [
+    "img:1f36a",
+    {},
+    1640,
+    1080,
+    380,
+    -12
+   ],
+   [
+    "img:1f36a",
+    {},
+    1800,
+    900,
+    230,
+    18
+   ],
+   [
+    "gingerbread_man",
+    {},
+    760,
+    1010,
+    280,
+    -14
+   ],
+   [
+    "img:1f95b",
+    {},
+    1590,
+    40,
+    230,
+    8
+   ],
+   [
+    "img:1f36a",
+    {},
+    1430,
+    -20,
+    200,
+    -25
+   ],
+   [
+    "candy_cane",
+    {},
+    700,
+    30,
+    170,
+    -20
+   ],
+   [
+    "img:1f384",
+    {},
+    1880,
+    330,
+    170,
+    0
+   ],
+   [
+    "sugar_star",
+    {},
+    590,
+    1160,
+    170,
+    15
+   ],
+   [
+    "img:2744",
+    {},
+    20,
+    1330,
+    120,
+    0,
+    2
+   ]
+  ],
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "gingerbread",
+  "listing_id": 4600177516,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/gingerbread.jpg",
+  "kicker": "Christmas Party Contest",
+  "title": "Gingerbread *House* Contest",
+  "badge": [
+   "15",
+   "PAGES"
+  ],
+  "pills": [
+   "Judge score cards",
+   "People's Choice ballots",
+   "Kid, teen + adult awards"
+  ],
+  "theme": "ginger",
+  "pages": {
+   "src": "listing-photos/styled/prod-gingerbread-contest-kit-cover.jpg",
+   "crop": [
+    0.02,
+    0.05,
+    0.58,
+    1.0
+   ]
+  },
+  "decor": [
+   [
+    "gingerbread_house",
+    {},
+    1560,
+    980,
+    440,
+    -6
+   ],
+   [
+    "gingerbread_man",
+    {},
+    760,
+    1020,
+    270,
+    -14
+   ],
+   [
+    "img:1f3c6",
+    {},
+    1700,
+    20,
+    240,
+    10
+   ],
+   [
+    "candy_cane",
+    {},
+    700,
+    40,
+    160,
+    -20
+   ],
+   [
+    "img:1f36d",
+    {},
+    1880,
+    520,
+    160,
+    20
+   ],
+   [
+    "img:1f36c",
+    {},
+    1440,
+    40,
+    150,
+    -15
+   ],
+   [
+    "sugar_star",
+    {},
+    600,
+    1180,
+    150,
+    12
+   ]
+  ],
+  "sub": "Score it fair, crown the best house",
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "no-buy",
+  "listing_id": 4599444986,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/no-buy.jpg",
+  "kicker": "2027 Money Challenge",
+  "title": "No-Buy *Year* Planner",
+  "badge": [
+   "12",
+   "CALENDARS"
+  ],
+  "pills": [
+   "Tick off no-spend days",
+   "30-day want list",
+   "Year money tally"
+  ],
+  "theme": "money",
+  "pages": {
+   "src": "listing-photos/styled/prod-no-buy-year-2027-cover.jpg",
+   "crop": [
+    0,
+    0.27,
+    1,
+    1
+   ]
+  },
+  "decor": [
+   [
+    "img:1f4b0",
+    {},
+    1620,
+    1020,
+    380,
+    -8
+   ],
+   [
+    "img:1fa99",
+    {},
+    1880,
+    860,
+    170,
+    15
+   ],
+   [
+    "img:1f4b5",
+    {},
+    760,
+    1060,
+    260,
+    -18
+   ],
+   [
+    "img:2705",
+    {},
+    1700,
+    40,
+    200,
+    10
+   ],
+   [
+    "img:1fa99",
+    {},
+    620,
+    1220,
+    140,
+    0
+   ],
+   [
+    "img:2728",
+    {},
+    1450,
+    40,
+    150,
+    0
+   ]
+  ],
+  "badge_x": 560,
+  "badge_y": 760,
+  "badge_size": 125
+ },
+ {
+  "slug": "scavenger",
+  "listing_id": 4599447958,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/scavenger.jpg",
+  "kicker": "Christmas Morning Game",
+  "title": "Christmas *Scavenger* Hunt",
+  "badge": [
+   "24",
+   "CLUES"
+  ],
+  "pills": [
+   "Easy rhymes, ages 4-7",
+   "Riddles, ages 8-12",
+   "Answer key included"
+  ],
+  "theme": "xmas_green",
+  "pages": {
+   "src": "listing-photos/styled/prod-xmas-scavenger-hunt-cover.jpg",
+   "crop": [
+    0,
+    0.28,
+    0.85,
+    0.86
+   ]
+  },
+  "decor": [
+   [
+    "img:1f381",
+    {},
+    1640,
+    1040,
+    360,
+    -8
+   ],
+   [
+    "img:1f50d",
+    {},
+    760,
+    1040,
+    280,
+    -12
+   ],
+   [
+    "img:1f385",
+    {},
+    1700,
+    30,
+    240,
+    8
+   ],
+   [
+    "img:1f463",
+    {},
+    1880,
+    620,
+    150,
+    20
+   ],
+   [
+    "img:1f384",
+    {},
+    1450,
+    30,
+    160,
+    0
+   ],
+   [
+    "stocking",
+    {},
+    620,
+    1210,
+    140,
+    -10
+   ]
+  ],
+  "sub": "Clue cards lead the kids to their gift",
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "pink-christmas-verse",
+  "listing_id": 4598721247,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/pink-christmas-verse.jpg",
+  "kicker": "KJV Christmas Wall Art",
+  "title": "Pink Christmas *Bible Verse* Prints",
+  "badge": [
+   "6",
+   "PRINTS"
+  ],
+  "pills": [
+   "3 print sizes",
+   "Bows, stripes + gingham",
+   "Print tonight"
+  ],
+  "theme": "pink_xmas",
+  "pages": {
+   "src": "listing-photos/pink-christmas-verse/photo-2.jpg",
+   "crop": [
+    0.12,
+    0.17,
+    0.73,
+    0.83
+   ]
+  },
+  "decor": [
+   [
+    "img:1f380",
+    {},
+    1640,
+    1060,
+    340,
+    -10
+   ],
+   [
+    "img:1f54a",
+    {},
+    1700,
+    20,
+    240,
+    6
+   ],
+   [
+    "img:1f31f",
+    {},
+    760,
+    1080,
+    220,
+    -12
+   ],
+   [
+    "img:2744",
+    {},
+    1880,
+    620,
+    150,
+    0
+   ],
+   [
+    "img:1f384",
+    {},
+    1450,
+    30,
+    160,
+    0
+   ],
+   [
+    "img:1fa77",
+    {},
+    620,
+    1230,
+    120,
+    10
+   ]
+  ],
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "pink-coquette-verse",
+  "listing_id": 4598659189,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/pink-coquette-verse.jpg",
+  "kicker": "Coquette Christian Decor",
+  "title": "Pink *Bible Verse* Wall Art",
+  "badge": [
+   "6",
+   "PRINTS"
+  ],
+  "pills": [
+   "Leopard + florals",
+   "8x10 + 11x14",
+   "Girls room ready"
+  ],
+  "theme": "pink",
+  "pages": {
+   "src": "listing-photos/styled/prod-pink-coquette-verse-art-cover.jpg",
+   "crop": [
+    0.03,
+    0.22,
+    0.97,
+    0.92
+   ]
+  },
+  "decor": [
+   [
+    "img:1f380",
+    {},
+    1660,
+    1020,
+    330,
+    -10
+   ],
+   [
+    "img:1f337",
+    {},
+    760,
+    1040,
+    250,
+    -12
+   ],
+   [
+    "img:1f338",
+    {},
+    1720,
+    140,
+    200,
+    10
+   ],
+   [
+    "img:1f496",
+    {},
+    1880,
+    700,
+    150,
+    10
+   ],
+   [
+    "img:1f339",
+    {},
+    620,
+    1220,
+    140,
+    10
+   ],
+   [
+    "img:2728",
+    {},
+    1400,
+    120,
+    140,
+    0
+   ]
+  ],
+  "badge_x": 560,
+  "badge_y": 760,
+  "card_rot": -2
+ },
+ {
+  "slug": "debt-payoff",
+  "listing_id": 4598535050,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/debt-payoff.jpg",
+  "kicker": "2027 Money Planner",
+  "title": "Debt *Payoff* Tracker",
+  "badge": [
+   "16",
+   "PAGES"
+  ],
+  "pills": [
+   "Snowball vs avalanche",
+   "Payment log",
+   "Color-in 100 squares"
+  ],
+  "theme": "coral",
+  "pages": {
+   "src": "listing-photos/styled/prod-debt-payoff-2027-cover.jpg",
+   "crop": [
+    0.18,
+    0.33,
+    0.82,
+    0.86
+   ]
+  },
+  "decor": [
+   [
+    "img:1f4b8",
+    {},
+    1640,
+    1020,
+    360,
+    -8
+   ],
+   [
+    "img:1f4c8",
+    {},
+    1720,
+    60,
+    220,
+    8
+   ],
+   [
+    "img:1fa99",
+    {},
+    760,
+    1080,
+    220,
+    -12
+   ],
+   [
+    "img:2705",
+    {},
+    1880,
+    640,
+    150,
+    0
+   ],
+   [
+    "img:1f389",
+    {},
+    620,
+    1220,
+    150,
+    0
+   ]
+  ],
+  "sub": "Watch every balance shrink to zero",
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "friendsgiving",
+  "listing_id": 4598501430,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/friendsgiving.jpg",
+  "kicker": "Grown-Up Party Kit",
+  "title": "*Friendsgiving* Party Kit",
+  "badge": [
+   "7",
+   "GAMES"
+  ],
+  "pills": [
+   "Potluck sign-up",
+   "Trivia + bingo",
+   "Host timeline"
+  ],
+  "theme": "harvest",
+  "pages": {
+   "src": "listing-photos/styled/prod-friendsgiving-kit-cover.jpg",
+   "crop": [
+    0.02,
+    0.05,
+    0.58,
+    1.0
+   ]
+  },
+  "decor": [
+   [
+    "img:1f983",
+    {},
+    1620,
+    1000,
+    380,
+    -6
+   ],
+   [
+    "img:1f967",
+    {},
+    760,
+    1080,
+    250,
+    -10
+   ],
+   [
+    "img:1f942",
+    {},
+    1720,
+    40,
+    220,
+    8
+   ],
+   [
+    "img:1f341",
+    {},
+    1880,
+    620,
+    160,
+    20
+   ],
+   [
+    "img:1f342",
+    {},
+    1450,
+    40,
+    150,
+    -15
+   ],
+   [
+    "img:1f33d",
+    {},
+    620,
+    1220,
+    150,
+    20
+   ]
+  ],
+  "sub": "For friend groups of 6 to 20",
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "savings",
+  "listing_id": 4598358161,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/savings.jpg",
+  "kicker": "ADHD-Friendly 2027",
+  "title": "Savings *Challenge* Tracker",
+  "badge": [
+   "14",
+   "PAGES"
+  ],
+  "pills": [
+   "Color a box",
+   "Any amount",
+   "Missed a week? Still counts"
+  ],
+  "theme": "sunny",
+  "pages": {
+   "src": "listing-photos/styled/prod-adhd-savings-tracker-cover.jpg",
+   "crop": [
+    0.18,
+    0.28,
+    0.82,
+    0.86
+   ]
+  },
+  "decor": [
+   [
+    "img:1f4b0",
+    {},
+    1640,
+    1020,
+    360,
+    -8
+   ],
+   [
+    "img:1f58d",
+    {},
+    760,
+    1060,
+    250,
+    -30
+   ],
+   [
+    "img:1fa99",
+    {},
+    1720,
+    40,
+    220,
+    8
+   ],
+   [
+    "img:1fa99",
+    {},
+    1880,
+    640,
+    150,
+    20
+   ],
+   [
+    "img:1f4b5",
+    {},
+    1430,
+    40,
+    160,
+    -15
+   ],
+   [
+    "img:2728",
+    {},
+    620,
+    1220,
+    140,
+    0
+   ]
+  ],
+  "sub": "$1,000, $2,500 and $5,000 challenges",
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "goal-workbook",
+  "listing_id": 4598358317,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/goal-workbook.jpg",
+  "kicker": "New Year 2027",
+  "title": "Goal *Setting* Workbook",
+  "badge": [
+   "12",
+   "WEEKS"
+  ],
+  "pills": [
+   "Pick 3 big goals",
+   "Weekly check-in",
+   "2026 year in review"
+  ],
+  "theme": "violet",
+  "pages": {
+   "src": "listing-photos/styled/prod-goal-workbook-2027-cover.jpg",
+   "crop": [
+    0,
+    0.33,
+    0.75,
+    1.0
+   ]
+  },
+  "decor": [
+   [
+    "img:1f3af",
+    {},
+    1640,
+    1020,
+    360,
+    -6
+   ],
+   [
+    "img:1f680",
+    {},
+    1700,
+    30,
+    250,
+    10
+   ],
+   [
+    "img:270f",
+    {},
+    760,
+    1060,
+    240,
+    -10
+   ],
+   [
+    "img:1f3c1",
+    {},
+    1880,
+    620,
+    150,
+    10
+   ],
+   [
+    "img:2b50",
+    {},
+    1440,
+    50,
+    150,
+    0
+   ],
+   [
+    "img:2728",
+    {},
+    620,
+    1220,
+    140,
+    0
+   ]
+  ],
+  "sub": "Turn big goals into a 12-week plan",
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "party-awards",
+  "listing_id": 4598379368,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/party-awards.jpg",
+  "kicker": "Office + Family Party",
+  "title": "Christmas Party *Awards*",
+  "badge": [
+   "36",
+   "AWARDS"
+  ],
+  "pills": [
+   "Nomination cards",
+   "Certificates",
+   "Host script"
+  ],
+  "theme": "xmas_red",
+  "pages": {
+   "src": "listing-photos/styled/prod-xmas-party-awards-cover.jpg",
+   "crop": [
+    0,
+    0.28,
+    0.75,
+    0.86
+   ]
+  },
+  "decor": [
+   [
+    "img:1f3c6",
+    {},
+    1620,
+    1000,
+    380,
+    -6
+   ],
+   [
+    "img:1f451",
+    {},
+    1700,
+    30,
+    240,
+    10
+   ],
+   [
+    "img:1f947",
+    {},
+    760,
+    1060,
+    250,
+    -12
+   ],
+   [
+    "img:1f385",
+    {},
+    1880,
+    600,
+    160,
+    10
+   ],
+   [
+    "img:1f389",
+    {},
+    1440,
+    40,
+    150,
+    0
+   ],
+   [
+    "img:1f381",
+    {},
+    620,
+    1220,
+    140,
+    0
+   ]
+  ],
+  "sub": "Funny, kind awards everyone will talk about",
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "thanksgiving-planner",
+  "listing_id": 4597977363,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/thanksgiving-planner.jpg",
+  "kicker": "First-Time Host",
+  "title": "Thanksgiving *Host* Planner",
+  "badge": [
+   "13",
+   "PAGES"
+  ],
+  "pills": [
+   "Turkey thaw guide",
+   "Reverse cooking timeline",
+   "Grocery list"
+  ],
+  "theme": "fall",
+  "pages": {
+   "src": "listing-photos/styled/prod-thanksgiving-host-planner-cover.jpg",
+   "crop": [
+    0,
+    0.27,
+    1,
+    1
+   ]
+  },
+  "decor": [
+   [
+    "img:1f983",
+    {},
+    1620,
+    1000,
+    380,
+    -6
+   ],
+   [
+    "img:23f0",
+    {},
+    1720,
+    40,
+    220,
+    10
+   ],
+   [
+    "img:1f967",
+    {},
+    760,
+    1060,
+    250,
+    -10
+   ],
+   [
+    "img:1f341",
+    {},
+    1880,
+    620,
+    160,
+    20
+   ],
+   [
+    "img:1f33d",
+    {},
+    1440,
+    40,
+    150,
+    -15
+   ],
+   [
+    "img:1f342",
+    {},
+    620,
+    1220,
+    150,
+    0
+   ]
+  ],
+  "sub": "Dinner on the table on time, no panic",
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "advent",
+  "listing_id": 4597998190,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/advent.jpg",
+  "kicker": "Screen-Free Family Advent",
+  "title": "24 Days of *Christmas* Fun",
+  "badge": [
+   "24",
+   "ACTIVITIES"
+  ],
+  "pills": [
+   "One card a day",
+   "Talk About It questions",
+   "Ages 4 to 12"
+  ],
+  "theme": "xmas_green",
+  "pages": {
+   "src": "listing-photos/styled/prod-advent-activities-cover.jpg",
+   "crop": [
+    0,
+    0.27,
+    1,
+    1
+   ]
+  },
+  "decor": [
+   [
+    "img:26c4",
+    {},
+    1640,
+    1000,
+    370,
+    -6
+   ],
+   [
+    "img:1f385",
+    {},
+    1700,
+    30,
+    240,
+    8
+   ],
+   [
+    "img:1f36a",
+    {},
+    760,
+    1080,
+    220,
+    -12
+   ],
+   [
+    "img:1f381",
+    {},
+    1880,
+    620,
+    160,
+    10
+   ],
+   [
+    "img:2744",
+    {},
+    1440,
+    40,
+    150,
+    0
+   ],
+   [
+    "img:1f9e3",
+    {},
+    620,
+    1220,
+    150,
+    0
+   ]
+  ],
+  "sub": "Moments, not more stuff, all December",
+  "badge_x": 560,
+  "badge_y": 760,
+  "badge_size": 140
+ },
+ {
+  "slug": "thanksgiving-games",
+  "listing_id": 4597743627,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/thanksgiving-games.jpg",
+  "kicker": "Family Game Pack",
+  "title": "Thanksgiving *Family* Games",
+  "badge": [
+   "7",
+   "GAMES"
+  ],
+  "pills": [
+   "Trivia + answer keys",
+   "Would You Rather",
+   "Fun for all ages"
+  ],
+  "theme": "fall",
+  "pages": {
+   "src": "listing-photos/styled/prod-thanksgiving-games-cover.jpg",
+   "crop": [
+    0.02,
+    0.05,
+    0.58,
+    1.0
+   ]
+  },
+  "decor": [
+   [
+    "img:1f983",
+    {},
+    1620,
+    1000,
+    380,
+    -6
+   ],
+   [
+    "img:1f3b2",
+    {},
+    760,
+    1080,
+    230,
+    -12
+   ],
+   [
+    "img:1f967",
+    {},
+    1720,
+    40,
+    220,
+    8
+   ],
+   [
+    "img:1f342",
+    {},
+    1880,
+    620,
+    160,
+    20
+   ],
+   [
+    "img:1f9e9",
+    {},
+    1440,
+    40,
+    150,
+    -10
+   ],
+   [
+    "img:1f330",
+    {},
+    620,
+    1220,
+    140,
+    0
+   ]
+  ],
+  "sub": "Keep the whole table laughing",
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "secret-santa",
+  "listing_id": 4597755725,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/secret-santa.jpg",
+  "kicker": "Gift Exchange Kit",
+  "title": "*Secret Santa* Exchange Kit",
+  "badge": [
+   "24",
+   "NAME SLIPS"
+  ],
+  "pills": [
+   "Questionnaire",
+   "White elephant rules",
+   "Gift tags + thank-yous"
+  ],
+  "theme": "xmas_red",
+  "pages": {
+   "src": "listing-photos/styled/prod-secret-santa-kit-cover.jpg",
+   "crop": [
+    0,
+    0.27,
+    0.82,
+    0.86
+   ]
+  },
+  "decor": [
+   [
+    "img:1f385",
+    {},
+    1600,
+    980,
+    400,
+    -6
+   ],
+   [
+    "img:1f381",
+    {},
+    1720,
+    40,
+    230,
+    10
+   ],
+   [
+    "img:1f98c",
+    {},
+    760,
+    1040,
+    260,
+    -6
+   ],
+   [
+    "img:1f381",
+    {},
+    1880,
+    640,
+    150,
+    -10
+   ],
+   [
+    "img:1f514",
+    {},
+    1440,
+    40,
+    150,
+    10
+   ],
+   [
+    "img:1f384",
+    {},
+    620,
+    1220,
+    150,
+    0
+   ]
+  ],
+  "badge_x": 560,
+  "badge_y": 760,
+  "badge_size": 125
+ },
+ {
+  "slug": "nye-games",
+  "listing_id": 4597755593,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/nye-games.jpg",
+  "kicker": "Family-Friendly NYE",
+  "title": "New Year's Eve *Party* Games",
+  "badge": [
+   "8",
+   "GAMES"
+  ],
+  "pills": [
+   "2027 predictions",
+   "Trivia + bingo",
+   "No drinking games"
+  ],
+  "theme": "midnight",
+  "pages": {
+   "src": "listing-photos/styled/prod-nye-games-cover.jpg",
+   "crop": [
+    0.02,
+    0.05,
+    0.58,
+    1.0
+   ]
+  },
+  "decor": [
+   [
+    "img:1f942",
+    {},
+    1620,
+    1020,
+    360,
+    -8
+   ],
+   [
+    "img:23f0",
+    {},
+    1720,
+    40,
+    220,
+    10
+   ],
+   [
+    "img:1f973",
+    {},
+    760,
+    1060,
+    250,
+    -10
+   ],
+   [
+    "img:1f388",
+    {},
+    1880,
+    560,
+    170,
+    10
+   ],
+   [
+    "img:1f389",
+    {},
+    1440,
+    40,
+    150,
+    0
+   ],
+   [
+    "img:2728",
+    {},
+    620,
+    1220,
+    140,
+    0
+   ]
+  ],
+  "sub": "Play all the way to midnight",
+  "badge_x": 560,
+  "badge_y": 760,
+  "confetti": 60
+ },
+ {
+  "slug": "christmas-games",
+  "listing_id": 4597749137,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/christmas-games.jpg",
+  "kicker": "Holiday Party Bundle",
+  "title": "Christmas Party *Games* Bundle",
+  "badge": [
+   "8",
+   "GAMES"
+  ],
+  "pills": [
+   "Trivia + bingo",
+   "Kids to grandparents",
+   "4 to 30 players"
+  ],
+  "theme": "berry",
+  "pages": {
+   "src": "listing-photos/styled/legacy-xmas-game-bundle-cover.jpg",
+   "crop": [
+    0,
+    0.28,
+    0.72,
+    0.86
+   ]
+  },
+  "decor": [
+   [
+    "img:1f385",
+    {},
+    1600,
+    990,
+    390,
+    -6
+   ],
+   [
+    "img:1f3b2",
+    {},
+    760,
+    1070,
+    230,
+    -12
+   ],
+   [
+    "img:1f381",
+    {},
+    1720,
+    40,
+    230,
+    10
+   ],
+   [
+    "candy_cane",
+    {},
+    1880,
+    600,
+    160,
+    15
+   ],
+   [
+    "img:1f384",
+    {},
+    1440,
+    40,
+    150,
+    0
+   ],
+   [
+    "img:1f36c",
+    {},
+    620,
+    1220,
+    140,
+    10
+   ]
+  ],
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "christmas-planner",
+  "listing_id": 4596203264,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/christmas-planner.jpg",
+  "kicker": "Holiday Organizer",
+  "title": "2026 Christmas *Planner*",
+  "badge": [
+   "16",
+   "PAGES"
+  ],
+  "pills": [
+   "Gift tracker",
+   "Holiday budget",
+   "Christmas dinner plan"
+  ],
+  "theme": "xmas_green",
+  "pages": {
+   "src": "listing-photos/styled/legacy-xmas-planner-listing-update-cover.jpg",
+   "crop": [
+    0,
+    0.27,
+    1,
+    1
+   ]
+  },
+  "decor": [
+   [
+    "img:1f381",
+    {},
+    1640,
+    1020,
+    360,
+    -8
+   ],
+   [
+    "img:1f384",
+    {},
+    1720,
+    30,
+    240,
+    6
+   ],
+   [
+    "img:1f4dd",
+    {},
+    760,
+    1080,
+    230,
+    -10
+   ],
+   [
+    "img:1f514",
+    {},
+    1880,
+    640,
+    150,
+    10
+   ],
+   [
+    "img:2744",
+    {},
+    1440,
+    40,
+    150,
+    0
+   ],
+   [
+    "img:1f36a",
+    {},
+    620,
+    1220,
+    140,
+    0
+   ]
+  ],
+  "sub": "Gifts, budget, cards and dinner in one place",
+  "badge_x": 560,
+  "badge_y": 760
+ },
+ {
+  "slug": "sage-planner",
+  "listing_id": 4596144943,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/sage-planner.jpg",
+  "kicker": "Printable 2027",
+  "title": "2027 *Minimalist* Planner",
+  "badge": [
+   "12",
+   "MONTHS"
+  ],
+  "pills": [
+   "Year at a glance",
+   "Goals page",
+   "Birthday tracker"
+  ],
+  "theme": "sage",
+  "pages": {
+   "src": "listing-photos/warm-covers/sage/2-months.jpg",
+   "crop": [
+    0.125,
+    0.055,
+    0.875,
+    0.7
+   ]
+  },
+  "decor": [
+   [
+    "img:1fab4",
+    {},
+    1640,
+    1000,
+    360,
+    -4
+   ],
+   [
+    "img:1f33f",
+    {},
+    1720,
+    60,
+    220,
+    10
+   ],
+   [
+    "img:270f",
+    {},
+    760,
+    1080,
+    230,
+    -10
+   ],
+   [
+    "img:2728",
+    {},
+    1880,
+    640,
+    150,
+    0
+   ],
+   [
+    "img:1f331",
+    {},
+    1440,
+    60,
+    150,
+    0
+   ]
+  ],
+  "sub": "Calm sage green, US holidays marked",
+  "badge_x": 560,
+  "badge_y": 760,
+  "card_rot": 2
+ },
+ {
+  "slug": "budget-spreadsheet",
+  "listing_id": 4596095937,
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/budget-spreadsheet.jpg",
+  "kicker": "Google Sheets + Excel",
+  "title": "Monthly *Budget* Tracker",
+  "badge": [
+   "12",
+   "MONTHS"
+  ],
+  "pills": [
+   "Does the math for you",
+   "Year summary tab",
+   "Easy yellow cells"
+  ],
+  "theme": "sky",
+  "pages": {
+   "src": "listing-photos/warm-covers/budget/2-month.jpg",
+   "crop": [
+    0.44,
+    0.14,
+    0.96,
+    0.74
+   ]
+  },
+  "decor": [
+   [
+    "img:1f4b0",
+    {},
+    1640,
+    1000,
+    360,
+    -8
+   ],
+   [
+    "img:1f4ca",
+    {},
+    1720,
+    40,
+    220,
+    8
+   ],
+   [
+    "img:1fa99",
+    {},
+    760,
+    1080,
+    220,
+    -12
+   ],
+   [
+    "img:1f4b5",
+    {},
+    1880,
+    640,
+    160,
+    15
+   ],
+   [
+    "img:2705",
+    {},
+    1440,
+    40,
+    150,
+    0
+   ]
+  ],
+  "sub": "Type your numbers in. Done.",
+  "badge_x": 560,
+  "badge_y": 760,
+  "card_rot": 2
+ }
+]
