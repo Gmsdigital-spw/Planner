@@ -1,0 +1,47 @@
+name: Trading lab (backtests)
+
+# Replays the Trading Floor strategy on real past market days (free Alpaca IEX data).
+# Jobs: factory/trading/lab/jobs/*.json -> results factory/trading/lab/<id>.json. Paper keys only; places no orders.
+on:
+  push:
+    paths:
+      - "factory/trading/lab/jobs/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trading-lab
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run backtests
+        env:
+          ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: |
+          shopt -s nullglob
+          for f in factory/trading/lab/jobs/*.json; do
+            id=$(basename "$f" .json)
+            [ -f "factory/trading/lab/$id.json" ] && continue
+            echo "=== $id ==="
+            timeout 1800 python factory/trading/backtest.py "$f" || echo "{\"id\":\"$id\",\"error\":\"backtest failed\"}" > "factory/trading/lab/$id.json"
+          done
+      - name: Save results
+        run: |
+          git config user.name "trading-lab"
+          git config user.email "trading-lab@users.noreply.github.com"
+          git add factory/trading/lab
+          git diff --cached --quiet && exit 0
+          git commit -qm "trading lab: results"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep $((i*5)); done
+          exit 1

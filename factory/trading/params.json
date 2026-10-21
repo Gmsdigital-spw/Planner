@@ -1,0 +1,5 @@
+{
+ "params": {},
+ "history": [],
+ "note": "Strategy settings the Trading lab may tune (never the money rules). Empty = defaults in backtest.py."
+}
