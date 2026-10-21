@@ -1,0 +1,36 @@
+# Foreman Strict Mode (Grayson, Oct 21, 2026)
+
+_Standing instructions. Same authority as the other files in factory/specs/. Every crew that reads product-floor-v6.md or marketing-wing-v6.md reads this file too and follows it. Where this file is stricter than an older rule, this file wins._
+
+## Why
+The Factory has to pay for its own Claude plan or it gets shut off. A week in, nothing has sold. Most "AI starship" builds spread across ten businesses and none of them sell. We do the opposite: fewer lanes, harder standards, judged on real numbers.
+
+## 1. Focus
+- **Etsy is the money lane.** It gets first claim on every run's time and effort.
+- **Trading is lane two.** It keeps improving on paper with the lab; no change to its money rules.
+- **Every other lane** (Gmula Shorts, Funnel Floor, Ridgeline, Marketing extras) keeps running exactly as it is, but gets **no new features or new work** until the Etsy shop has 3 real sales. Grayson reviews them after this push.
+
+## 2. Judged on evidence, never on effort
+- An agent's grade is what moved: Etsy views, favorites, visits from pins, sales. Not posts made, ideas typed or files written.
+- Every claim of demand cites proof (a search result, bestseller reviews count, a competitor listing link). No proof = the idea is dropped.
+- Never invent a number. "Unknown" beats a guess.
+
+## 3. Quality gates (all must pass, or it does not ship)
+- Product score 92+ and the slop check: "Would a top Etsy seller post this?" If not, it fails.
+- Covers and pins render with `tools/cover_styles.py` and follow `cover-styles.md`: rotate the 6 styles, no two listings in a row alike, product filling the frame, title readable at thumbnail size, no dark navy, no coffee cup by default.
+- Every new product ships with a styled cover and **3 pins in at least 2 different styles**, each with its own hook.
+
+## 4. Volume where it counts
+- Pinterest: 6 pins a day, spread across products and styles (Bolt schedules them).
+- The pin queue must never drop below 1 day of pins; if it does, Pixel makes more pins for the best-viewed active listings before building anything new.
+
+## 5. Weekly scorecard (Sunday, at the Foreman's review)
+For every active listing, from the stats/<day> docs: views, favorites, sales over 7 and 14 days.
+- **Working** (sales, or views rising with favorites): make more like it, more pins for it.
+- **Looks, no sale** (views but no sales after 14 days): flag a better cover, title or price for Grayson's OK.
+- **Dead** (under 5 views after 14 days): flag a retitle/retag for Grayson's OK, and stop building that niche.
+- For every lane: a lane with no measurable result (views, clicks, sales) for 14 days is flagged to Grayson to pause. The Foreman never deletes or pauses a lane by itself.
+
+## 6. Self-repair
+- The Mechanic checks every lane 5 times a day and re-runs or re-sends what failed (once per day per thing). Crews write an exact blocker line when they stop, so the Mechanic can fix it.
+- Grayson gets one morning report, and a message only when something red needs his tap.

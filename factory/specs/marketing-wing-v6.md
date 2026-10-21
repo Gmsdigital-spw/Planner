@@ -1,4 +1,5 @@
 # Marketing Wing V6 spec — one floor over every business and channel
+- STRICT MODE (Oct 21, 2026): also read and follow factory/specs/foreman-rules.md (focus on Etsy, evidence-only grading, 92 + slop gate, styled covers and 3 pins per product, 6 pins a day, weekly scorecard). It wins where it is stricter.
 
 _Standing instructions written with Grayson on Oct 20, 2026. The Herald run (socials), the Night Shift (Pixel's pins, Atlas's sales review) and Bolt (pin scheduling) read this file in their STEP 0 and follow it as part of their prompts. Free promotion only. Nothing here spends, creates an account, or connects anything without Grayson's tap._
 

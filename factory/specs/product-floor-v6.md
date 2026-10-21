@@ -1,4 +1,5 @@
 # Product Floor V6 spec — Idea Engine, lanes, Holiday Mode
+- STRICT MODE (Oct 21, 2026): also read and follow factory/specs/foreman-rules.md (focus on Etsy, evidence-only grading, 92 + slop gate, styled covers and 3 pins per product, 6 pins a day, weekly scorecard). It wins where it is stricter.
 - COVER STYLES (Oct 21, 2026): every cover and pin follows factory/specs/cover-styles.md (6 rotating styles, no two listings in a row alike, cream desk + coffee look at most 1 in 4). Where this file says "warm desk" for a cover, read it as "style 6 when the rotation allows; otherwise the cover-styles style that fits the product".
 
 _Standing instructions written with Grayson on Oct 20, 2026. The Night Shift reads this file in STEP 0 and follows it as part of its prompt._
