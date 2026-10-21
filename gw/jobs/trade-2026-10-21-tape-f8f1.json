@@ -1,0 +1,11 @@
+{
+ "id": "trade-2026-10-21-tape-f8f1",
+ "ops": [
+  {
+   "op": "alpaca",
+   "data": true,
+   "tag": "snap",
+   "path": "/stocks/snapshots?symbols=SPY,QQQ,IWM,XLK,XLF,XLV,XLE,SMH,AAPL,MSFT,NVDA,AMZN,GOOGL,AMD,AVGO,JPM,BAC,XOM,WMT,PLTR,MU,ORCL,SMCI&feed=iex"
+  }
+ ]
+}
