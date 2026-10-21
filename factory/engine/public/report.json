@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "generated_at": "2026-10-21T21:41:39Z",
+ "generated_at": "2026-10-21T22:39:51Z",
  "worker": "python -m factory.engine worker",
  "health": {
   "engine_schema": 4,
   "kill": false,
   "paused_agents": [],
-  "last_tick": "2026-10-21T21:41:39Z",
+  "last_tick": "2026-10-21T22:39:51Z",
   "last_runner": "cli",
   "last_tick_age_s": 0,
   "counts": {
@@ -36,7 +36,7 @@
    "id": "bolt",
    "name": "Bolt + Rocket",
    "role": "publishing",
-   "version": 5,
+   "version": 7,
    "state": "idle",
    "counts": {},
    "last_activity": null,
@@ -161,7 +161,7 @@
    "state": "connected",
    "last_ok_at": "2026-10-21T20:40:29Z",
    "last_error": "2026-10-21T04:15:15Z trade-test4-1792556098.json",
-   "checked_at": "2026-10-21T21:41:39Z",
+   "checked_at": "2026-10-21T22:39:51Z",
    "note": "GitHub Actions gw.yml; secrets live there only"
   },
   {
@@ -169,7 +169,7 @@
    "state": "missing",
    "last_ok_at": null,
    "last_error": null,
-   "checked_at": "2026-10-21T21:41:39Z",
+   "checked_at": "2026-10-21T22:39:51Z",
    "note": "Make is reachable only from the Factory page / crews (Claude connector); Python writes drafts"
   }
  ],
