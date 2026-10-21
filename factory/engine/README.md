@@ -1,0 +1,35 @@
+# factory/engine — the durable task engine (add-on Phase 3)
+
+Read `ARCHITECTURE.md` first: it maps the add-on onto what the Factory already does and lists every
+conflict and how it was resolved (dashboard stays the artifact; SQL = SQLite + a git-committed JSONL
+journal; no background workers are claimed — a worker is whatever calls `tick()`).
+
+## Run it (phone-friendly)
+
+- **GitHub app → Actions → "Engine tests"**: runs on every push to this folder. Green = all 22 unit tests,
+  the V7 rules self-test and the contracts export check passed. Red = open the log; the Mechanic reads it too.
+- From any shell with Python 3.10+ (no packages needed):
+
+```
+python -m factory.engine status          # counts, kill switch, last tick, real usage (unknown stays unknown)
+python -m factory.engine tasks queued    # or running | needs_approval | failed …
+python -m factory.engine approvals       # what is waiting on you
+python -m factory.engine approve apr_…   # or decline
+python -m factory.engine kill on         # stop every new action; deletes nothing.  kill off to resume
+python -m factory.engine retry task_…    # put a failed task back
+python -m factory.engine selftest        # the tests, locally
+```
+
+## Guarantees (each one is a test in `tests/test_engine.py`)
+
+queued → running → needs_approval → succeeded | failed | cancelled · idempotency keys · tool allow-list
+per agent · publish/spend/credentials/destructive gated behind an approval id · bounded retries with
+exponential backoff · timeouts · kill switch · pause/resume per agent · stalled-task recovery from the last
+checkpoint · secrets scrubbed from every error and audit line · product versions never overwritten ·
+unknown numbers reported as unknown, never 0 · no agent can hold `trade_live`.
+
+## Rollback
+
+Everything here is additive. `git revert` the commit (or delete `factory/engine/` and
+`.github/workflows/engine-tests.yml`) and nothing else in the Factory changes: the page, the crews, the
+gateway and the trading autopilot never import it.

@@ -1,1 +1,5 @@
 __pycache__/
+
+# engine: derived SQLite index (rebuilt from journal.jsonl)
+factory/engine/db/state.sqlite
+factory/engine/db/state.sqlite-*

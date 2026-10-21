@@ -1,0 +1,916 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "GM Factory engine contracts",
+ "version": 1,
+ "$defs": {
+  "TaskStatus": {
+   "type": "string",
+   "enum": [
+    "queued",
+    "running",
+    "needs_approval",
+    "succeeded",
+    "failed",
+    "cancelled"
+   ]
+  },
+  "AgentRole": {
+   "type": "string",
+   "enum": [
+    "orchestrator",
+    "research",
+    "product_factory",
+    "quality",
+    "distribution",
+    "channel_adapter",
+    "publishing",
+    "analytics",
+    "model_cost",
+    "engineering"
+   ]
+  },
+  "Capability": {
+   "type": "string",
+   "enum": [
+    "publish_public",
+    "spend_money",
+    "change_credentials",
+    "destructive_change",
+    "trade_live"
+   ]
+  },
+  "Channel": {
+   "type": "string",
+   "enum": [
+    "etsy",
+    "pinterest",
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube_shop",
+    "gmula"
+   ]
+  },
+  "ApprovalStatus": {
+   "type": "string",
+   "enum": [
+    "proposed",
+    "approved",
+    "declined",
+    "expired"
+   ]
+  },
+  "IntegrationState": {
+   "type": "string",
+   "enum": [
+    "connected",
+    "mocked",
+    "missing",
+    "unverified"
+   ]
+  },
+  "ErrorPolicy": {
+   "type": "object",
+   "properties": {
+    "max_retries": {
+     "type": "integer"
+    },
+    "backoff_base_s": {
+     "type": "number"
+    },
+    "backoff_cap_s": {
+     "type": "number"
+    },
+    "timeout_s": {
+     "type": "integer"
+    },
+    "stalled_after_s": {
+     "type": "integer"
+    },
+    "retry_on": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "required": [],
+   "additionalProperties": false
+  },
+  "Budget": {
+   "type": "object",
+   "properties": {
+    "max_calls_per_task": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "max_tokens_per_task": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "max_usd_per_task": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "max_usd_per_day": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [],
+   "additionalProperties": false
+  },
+  "AgentContract": {
+   "type": "object",
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "name": {
+     "type": "string"
+    },
+    "role": {
+     "$ref": "#/$defs/AgentRole"
+    },
+    "responsibilities": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "inputs": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "outputs": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "tools": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "capabilities": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Capability"
+     }
+    },
+    "error_policy": {
+     "$ref": "#/$defs/ErrorPolicy"
+    },
+    "budget": {
+     "$ref": "#/$defs/Budget"
+    },
+    "skill_path": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "version": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "id",
+    "name",
+    "role",
+    "responsibilities",
+    "inputs",
+    "outputs",
+    "tools"
+   ],
+   "additionalProperties": false
+  },
+  "TaskSpec": {
+   "type": "object",
+   "properties": {
+    "agent_id": {
+     "type": "string"
+    },
+    "kind": {
+     "type": "string"
+    },
+    "input_ref": {
+     "type": "string"
+    },
+    "tools": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "capabilities": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Capability"
+     }
+    },
+    "idempotency_key": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "depends_on": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "priority": {
+     "type": "integer"
+    },
+    "model_hint": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "meta": {
+     "type": "object"
+    }
+   },
+   "required": [
+    "agent_id",
+    "kind",
+    "input_ref"
+   ],
+   "additionalProperties": false
+  },
+  "Task": {
+   "type": "object",
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "spec": {
+     "$ref": "#/$defs/TaskSpec"
+    },
+    "status": {
+     "$ref": "#/$defs/TaskStatus"
+    },
+    "created_at": {
+     "type": "string"
+    },
+    "updated_at": {
+     "type": "string"
+    },
+    "attempts": {
+     "type": "integer"
+    },
+    "run_ids": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "approval_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "last_error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "checkpoint": {
+     "type": "object"
+    },
+    "next_eligible_at": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "output_ref": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "id",
+    "spec",
+    "status",
+    "created_at",
+    "updated_at"
+   ],
+   "additionalProperties": false
+  },
+  "ModelUsage": {
+   "type": "object",
+   "properties": {
+    "provider": {
+     "type": "string"
+    },
+    "model": {
+     "type": "string"
+    },
+    "tokens_in": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "tokens_out": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "cost_usd": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "cached": {
+     "type": "boolean"
+    },
+    "calls": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "provider",
+    "model"
+   ],
+   "additionalProperties": false
+  },
+  "Run": {
+   "type": "object",
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "task_id": {
+     "type": "string"
+    },
+    "agent_id": {
+     "type": "string"
+    },
+    "attempt": {
+     "type": "integer"
+    },
+    "started_at": {
+     "type": "string"
+    },
+    "finished_at": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "status": {
+     "anyOf": [
+      {
+       "$ref": "#/$defs/TaskStatus"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "model": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "usage": {
+     "anyOf": [
+      {
+       "$ref": "#/$defs/ModelUsage"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "validation": {
+     "type": "object"
+    },
+    "output_ref": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "error_class": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "recovery": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "heartbeat_at": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "runner": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "id",
+    "task_id",
+    "agent_id",
+    "attempt",
+    "started_at"
+   ],
+   "additionalProperties": false
+  },
+  "Approval": {
+   "type": "object",
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "task_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "capability": {
+     "$ref": "#/$defs/Capability"
+    },
+    "title": {
+     "type": "string"
+    },
+    "why": {
+     "type": "string"
+    },
+    "status": {
+     "$ref": "#/$defs/ApprovalStatus"
+    },
+    "requested_at": {
+     "type": "string"
+    },
+    "decided_at": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "decided_by": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "expires_at": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "cost": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "risk": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "id",
+    "task_id",
+    "capability",
+    "title",
+    "why"
+   ],
+   "additionalProperties": false
+  },
+  "AuditEvent": {
+   "type": "object",
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "at": {
+     "type": "string"
+    },
+    "who": {
+     "type": "string"
+    },
+    "action": {
+     "type": "string"
+    },
+    "subject": {
+     "type": "string"
+    },
+    "detail": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "id",
+    "at",
+    "who",
+    "action",
+    "subject"
+   ],
+   "additionalProperties": false
+  },
+  "FileRef": {
+   "type": "object",
+   "properties": {
+    "path": {
+     "type": "string"
+    },
+    "sha256": {
+     "type": "string"
+    },
+    "bytes": {
+     "type": "integer"
+    },
+    "format": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "path",
+    "sha256",
+    "bytes",
+    "format"
+   ],
+   "additionalProperties": false
+  },
+  "ProductManifest": {
+   "type": "object",
+   "properties": {
+    "product_id": {
+     "type": "string"
+    },
+    "version": {
+     "type": "integer"
+    },
+    "created_at": {
+     "type": "string"
+    },
+    "files": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/FileRef"
+     }
+    },
+    "format": {
+     "type": "string"
+    },
+    "title": {
+     "type": "string"
+    },
+    "lane": {
+     "type": "string"
+    },
+    "validation": {
+     "type": "object"
+    },
+    "known_limitations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "listing_status": {
+     "type": "string"
+    },
+    "distribution_status": {
+     "type": "string"
+    },
+    "supersedes": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "product_id",
+    "version",
+    "created_at",
+    "files",
+    "format",
+    "title",
+    "lane"
+   ],
+   "additionalProperties": false
+  },
+  "DistributionPlan": {
+   "type": "object",
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "product_id": {
+     "type": "string"
+    },
+    "product_version": {
+     "type": "integer"
+    },
+    "target_customer": {
+     "type": "string"
+    },
+    "evidence": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "channels": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Channel"
+     }
+    },
+    "channel_reasons": {
+     "type": "object"
+    },
+    "assets": {
+     "type": "object"
+    },
+    "destination_url": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "cta": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "schedule": {
+     "type": "array",
+     "items": {
+      "type": "object"
+     }
+    },
+    "timezone": {
+     "type": "string"
+    },
+    "hypothesis": {
+     "type": "string"
+    },
+    "success_criteria": {
+     "type": "string"
+    },
+    "approval_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "status": {
+     "type": "string"
+    },
+    "tracking": {
+     "type": "object"
+    },
+    "results": {
+     "type": "object"
+    },
+    "next_action": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "id",
+    "product_id",
+    "product_version",
+    "target_customer",
+    "evidence",
+    "channels",
+    "channel_reasons"
+   ],
+   "additionalProperties": false
+  },
+  "IntegrationHealth": {
+   "type": "object",
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "state": {
+     "$ref": "#/$defs/IntegrationState"
+    },
+    "last_ok_at": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "last_error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "checked_at": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "note": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "id",
+    "state"
+   ],
+   "additionalProperties": false
+  }
+ }
+}
