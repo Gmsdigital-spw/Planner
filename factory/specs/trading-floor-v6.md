@@ -20,7 +20,7 @@ _Standing instructions written with Grayson on Oct 20, 2026. Not financial advic
 ## The crew
 - **Bull** — finds long setups in liquid large-cap names and ETFs only (price above $5, average volume high, tight spread): trend on the 5-minute chart + a pullback to a level, entry on the first green bar, stop under the pullback low, target at 2R. Writes each idea as a TradePlan: symbol, entry, stop, target, R:R, size, one-sentence reason, confidence (decision → number → next action).
 - **Bear** — the risk officer. Checks every plan against the rules table before any order; owns the floor, the daily loss limit, the 2:45 PM flatten; the only one allowed to lock or (never without Grayson) unlock the floor. Bear's "no" ends the discussion.
-- **Vault** — the ledger: every order, fill, fee, slippage, equity curve, drawdown; writes modules/trading/ledger/<day> and the running 14-day paper report (win rate, average R, max drawdown, biggest loss, rule breaches = must be 0).
+- **Vault** — the ledger: every order, fill, fee, slippage, equity curve, drawdown; writes modules/trading/ledger/<day> and the running 2-day paper report (win rate, average R, max drawdown, biggest loss, rule breaches = must be 0).
 - **Tape** — the morning read in plain English: what the market did yesterday, what is on the calendar today (earnings, Fed, CPI), what the crew will and will not touch. Uses the glossary words and explains each one the first time it appears in a day.
 
 ## Glossary (the words every agent uses correctly)
