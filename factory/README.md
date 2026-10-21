@@ -13,6 +13,8 @@ This folder is the factory's memory. No agent starts from zero again.
   engagement; updated only when a later version beats its number. Use the playbook before inventing.
 - `scores.jsonl` — one JSON line per scored item (agent, kind, item, score, metric, day) so the Foreman
   grades on trend, not vibes.
+- `specs/` — standing instructions the scheduled runs read in STEP 0 (`product-floor-v6.md`: Idea Engine,
+  lanes, Holiday Mode, mug wrap / sticker / invitation build specs). Same authority as the run prompt, below it on conflict.
 - `gm_factory_v6.py` — the Python brain (registry, Foreman grading, Idea Engine, holiday calendar,
   marketing plan-from-stats, DM keyword map, trading risk manager). Runs with no dependencies.
 

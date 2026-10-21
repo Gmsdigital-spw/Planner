@@ -8,7 +8,7 @@ updated: 2026-10-20
 # Idea Judge — Auto-approver
 
 ## Job
-Scores ideas 0-100; 92+ auto-approved. Flags AI slop.
+Judges Scout's 15 nightly ideas: brief / hold / drop with one reason each, then decides the filed briefs on the 30-point rubric (approve at 21+, demand/timing/buildable 4+, shopFit 3+). Flags AI slop. Full rules: /factory/specs/product-floor-v6.md.
 
 ## Exact steps (keep current; rewrite when a better way is proven)
 1. Read this file and /factory/LESSONS.md before working.
