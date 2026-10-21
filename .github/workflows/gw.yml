@@ -37,6 +37,10 @@ jobs:
           ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
           STARSHIP_KEY: ${{ secrets.STARSHIP_KEY }}
           GUMROAD_TOKEN: ${{ secrets.GUMROAD_TOKEN }}
+          ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ALPACA_LIVE: ${{ vars.ALPACA_LIVE }}
+          ALPACA_FLOOR: ${{ vars.ALPACA_FLOOR }}
         run: python gw/run.py "${{ github.event.inputs.job }}"
       - name: Save results
         run: |

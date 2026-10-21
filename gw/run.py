@@ -40,6 +40,10 @@ KEY, SECRET = os.environ.get("ETSY_KEYSTRING", ""), os.environ.get("ETSY_SHARED_
 ZKEY, SKEY = os.environ.get("ZERNIO_API_KEY", ""), os.environ.get("STARSHIP_KEY", "")
 GKEY = os.environ.get("GUMROAD_TOKEN", "")
 GUMROAD = "https://api.gumroad.com/v2"
+AKEY, ASEC = os.environ.get("ALPACA_KEY_ID", ""), os.environ.get("ALPACA_SECRET_KEY", "")
+ALPACA_LIVE = os.environ.get("ALPACA_LIVE", "") == "1"   # stays "0": paper only until Grayson flips it himself
+ALPACA = "https://api.alpaca.markets/v2" if ALPACA_LIVE else "https://paper-api.alpaca.markets/v2"
+ALPACA_DATA = "https://data.alpaca.markets/v2"
 SENSITIVE = ("token", "secret", "password", "authorization", "cookie", "apikey", "api_key")
 MAX_OUT = 400_000
 
@@ -370,8 +374,49 @@ def op_fetch_images(o, st):
     return 200, {"dir": str(d.relative_to(ROOT)), "saved": saved}
 
 
+def op_alpaca(o, st):
+    """Trading Floor (V6, paper first). {"op":"alpaca","method":"GET|POST|DELETE","path":"/account" | "/orders" | "/positions" ...,"body":{...}}
+    Hard rules enforced here, not just in the prompt: paper endpoint unless the ALPACA_LIVE secret is "1"; no margin
+    (notional orders only, buying power capped by cash); every buy must carry a stop_loss (bracket); no order after
+    19:45 UTC (2:45 PM CT); the floor: if equity would drop below ALPACA_FLOOR (default 20) all new buys are refused.
+    Data reads: {"op":"alpaca","data":true,"path":"/stocks/AAPL/bars?timeframe=5Min&limit=50"}"""
+    if not (AKEY and ASEC):
+        raise RuntimeError("ALPACA_KEY_ID / ALPACA_SECRET_KEY secrets are missing (paper keys from a free Alpaca account)")
+    hdr = {"APCA-API-KEY-ID": AKEY, "APCA-API-SECRET-KEY": ASEC, "Content-Type": "application/json"}
+    base = ALPACA_DATA if o.get("data") else ALPACA
+    m = o.get("method", "GET").upper()
+    body = o.get("body")
+    if isinstance(body, str):
+        try:
+            body = json.loads(body)
+        except Exception:
+            pass
+    if m == "POST" and o["path"].startswith("/orders") and not o.get("data"):
+        floor = float(os.environ.get("ALPACA_FLOOR", "20"))
+        acct = requests.get(ALPACA + "/account", headers=hdr, timeout=60).json()
+        equity = float(acct.get("equity") or 0); cash = float(acct.get("cash") or 0)
+        side = str((body or {}).get("side", "")).lower()
+        if side == "buy":
+            if equity <= floor:
+                return 423, {"refused": "floor", "equity": equity, "floor": floor, "message": "Equity is at or below the hard floor; the floor is locked. No new buys."}
+            if not (body.get("stop_loss") or body.get("order_class") == "bracket"):
+                return 422, {"refused": "no_stop", "message": "Every buy needs a stop_loss (bracket order)."}
+            notional = float(body.get("notional") or 0)
+            if body.get("qty") and not notional:
+                return 422, {"refused": "qty", "message": "Use notional dollars (fractional shares), not qty, so sizing stays exact."}
+            if notional > cash * 0.4 + 0.01:
+                return 422, {"refused": "size", "message": f"Position {notional:.2f} is over 40% of cash ({cash:.2f})."}
+            if body.get("time_in_force", "day") != "day":
+                return 422, {"refused": "tif", "message": "Day orders only; no overnight holds."}
+            hh, mm = time.gmtime().tm_hour, time.gmtime().tm_min
+            if (hh, mm) >= (19, 45) or (hh, mm) < (14, 35):
+                return 422, {"refused": "hours", "message": "Buys only between 9:35 AM and 2:45 PM Central."}
+    r = requests.request(m, base + o["path"], headers=hdr, json=body if m in ("POST", "PATCH", "PUT") else None, timeout=120)
+    return r.status_code, body_of(r)
+
+
 OPS = {"fetch_images": op_fetch_images, "gumroad": op_gumroad, "gumroad_mirror": op_gumroad_mirror, "gumroad_file": op_gumroad_file, "selftest": op_selftest, "zernio": op_zernio, "etsy": op_etsy, "etsy_upload": op_etsy_upload,
-       "etsy_auth_start": op_etsy_auth_start, "etsy_auth_finish": op_etsy_auth_finish}
+       "etsy_auth_start": op_etsy_auth_start, "etsy_auth_finish": op_etsy_auth_finish, "alpaca": op_alpaca}
 
 
 def run_job(path):
