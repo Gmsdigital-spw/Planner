@@ -1,5 +1,18 @@
 # Cover & Pin Styles (Grayson, Oct 21, 2026)
 
+## UPDATE Oct 21, 2026 afternoon (wins over everything below)
+Grayson: the covers were too bland, "like they're for old people or college professors". Make them fun, colorful,
+something people want to buy. If the listing says cookie, put real cookies on it; if it says Santa, put Santa on it.
+- Every cover: a bold theme color (red/green for Christmas, orange for Thanksgiving, navy + gold for New Year's,
+  pink for coquette, bright green/teal/yellow for money and planners), the real product pages big on a white card,
+  a big count badge, 3 short benefit pills, and 4-7 realistic 3D pieces of themed art from tools/img3d.
+- Built with tools/fun_covers.py from tools/fun_covers_config.json. Beige/cream desk covers are retired.
+- Never use pictures pulled off the internet: other people's photos are copyrighted and can get listings removed.
+  The 3D art in tools/img3d is Apache-2.0 (Google Noto), safe for business use.
+- Exactly ONE cover per listing. Replacing = upload new at rank 1 + delete the old one in the same run.
+- Warden checks every cover daily with factory/qa/listing_audit.py (bold color, one cover, no duplicates).
+
+
 Grayson's standing instructions for listing photo 1 (the cover) and Pinterest pins. Same authority as the other files in factory/specs/.
 
 ## Why this exists

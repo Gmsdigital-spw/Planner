@@ -2,3 +2,5 @@
 - 2026-10-20: Posts that reuse flat title-card listing images read as AI slop and got taken down; build promos from real PDF pages on a desk — evidence: Herald's first promo was removed Oct 20, 2026 after Grayson rejected the look
 - 2026-10-20: Night Shift must never publish; Bolt publishes max 2/day with every photo + PDF attached — evidence: standing rule since Oct 20, 2026; broken listings cost more than skipped days
 - 2026-10-21: Covers/pins must render via tools/cover_styles.py with rotating styles 1-6, not the single cream-desk look; evidence: 18 live covers re-uploaded at rank 1 and 54 styled pins queued Oct 21, 2026 after Grayson flagged every listing looked alike
+- 2026-10-21: Replacing a cover = upload new at rank 1 + delete old in the same run, then verify exactly one 2000x1500 image; evidence: a refresh that only uploaded left 18 listings with two covers in a row, found by Grayson
+- 2026-10-21: Covers are bold theme color + real pages + count badge + big themed 3D art (tools/fun_covers.py); beige cream-desk covers are retired (supersedes the cover_styles.py line above); evidence: Grayson rejected the beige covers as bland on Oct 21, 2026
