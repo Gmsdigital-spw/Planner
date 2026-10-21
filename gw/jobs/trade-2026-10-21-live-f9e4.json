@@ -1,0 +1,1 @@
+{"id":"trade-2026-10-21-live-f9e4","ops":[{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY,QQQ&timeframe=5Min&limit=78&feed=iex&start=2026-10-21T13:30:00Z"},{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SPY,QQQ,IWM,DIA,XLK,XLF,XLE,NVDA,AAPL,WMT,MSFT,AMZN,KO,BAC&feed=iex"},{"op":"alpaca","path":"/bankroll"}]}
