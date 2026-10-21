@@ -1,0 +1,123 @@
+{
+ "id": "bolt-2026-10-20-run-bc44",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/active?limit=100&includes=Images",
+   "tag": "active"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457",
+   "tag": "shop"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings?state=draft&limit=100",
+   "tag": "drafts"
+  },
+  {
+   "op": "gumroad_mirror",
+   "tag": "prod-secret-santa-kit",
+   "key": "prod-secret-santa-kit",
+   "name": "Secret Santa Gift Exchange Kit",
+   "price": 349,
+   "description": "<p>Run your Secret Santa or white elephant exchange without the stress. This printable kit has every page an organizer needs, from sign-up to the thank-you notes.</p><p>Perfect for offices, classrooms, clubs, friend groups and big families.</p><p>WHAT&#x27;S INCLUDED (11-page PDF)</p><ul><li>How to use page with 4 simple steps</li><li>Organizer page (date, budget, drop-off spot) and sign-up sheet</li><li>Secret Santa questionnaire (14 questions: favorites, sizes, allergies, wish ideas)</li><li>Gift idea starter list by budget (under $10, $20, $30)</li><li>24 name-draw slips to cut and fold</li><li>Secret Santa rules plus optional twists</li><li>White elephant rules and a dice swap game chart</li><li>Who has who tracker for the organizer</li><li>12 cut-out gift tags</li><li>6 thank-you notes</li></ul><h3>DETAILS</h3><ul><li>US Letter size, also prints on A4 (choose Fit or Actual Size)</li><li>Mostly black and white with a green accent, so it is ink friendly</li><li>Print as many questionnaires as your group needs</li></ul><h3>HOW TO DOWNLOAD</h3><p>This is a digital PDF download. Nothing will be shipped. Right after purchase, Gumroad emails you the download link and the file is saved in your Gumroad Library. Print at home or at a local print shop.</p><p>For personal use only. Please do not resell or share the file.</p><p>This design was created with AI assistance under the creative direction of the seller.</p>",
+   "summary": "Organizer kit for Secret Santa and white elephant exchanges: questionnaire, draw slips, rules, tracker.",
+   "tags": [
+    "secret santa",
+    "secret santa form",
+    "gift exchange",
+    "white elephant rules",
+    "office gift exchange"
+   ],
+   "category": "self-improvement/crafts-and-dyi/board-games",
+   "fileEnc": "gw/vault/prod-secret-santa-kit.enc",
+   "fileName": "secret-santa-gift-exchange-kit.pdf",
+   "displayName": "Secret Santa Gift Exchange Kit",
+   "covers": [
+    "https://i.etsystatic.com/68605457/r/il/97667a/8754161431/il_fullxfull.8754161431_3hnm.jpg",
+    "https://i.etsystatic.com/68605457/r/il/39a71c/8697049874/il_fullxfull.8697049874_px1f.jpg",
+    "https://i.etsystatic.com/68605457/r/il/a7428e/8697050010/il_fullxfull.8697050010_cdde.jpg",
+    "https://i.etsystatic.com/68605457/r/il/94ba18/8744873207/il_fullxfull.8744873207_6bed.jpg",
+    "https://i.etsystatic.com/68605457/r/il/905470/8697050330/il_fullxfull.8697050330_4go3.jpg",
+    "https://i.etsystatic.com/68605457/r/il/3f7dc3/8697050468/il_fullxfull.8697050468_4tdh.jpg"
+   ],
+   "thumbFrom": "https://i.etsystatic.com/68605457/r/il/97667a/8754161431/il_fullxfull.8754161431_3hnm.jpg",
+   "publish": true,
+   "requireStoreName": "GM's Digital Creations"
+  },
+  {
+   "op": "gumroad_mirror",
+   "tag": "prod-thanksgiving-games",
+   "key": "prod-thanksgiving-games",
+   "name": "Thanksgiving Family Game Pack",
+   "price": 499,
+   "description": "<p>Keep everyone laughing at the Thanksgiving table with 7 printable games in one pack. Print, hand out pens, and kids, teens and grown-ups can play before, during or after dinner.</p><p>Great for family Thanksgiving, Friendsgiving, classrooms and church or office gatherings with 3 to 30 people.</p><p>WHAT&#x27;S INCLUDED (11-page PDF)</p><ul><li>How to play and print page with host tips</li><li>Thanksgiving Trivia (20 questions) with answer key</li><li>Thanksgiving Word Scramble (20 words) with answer key</li><li>This or That: Thanksgiving Edition (20 pairs)</li><li>Would You Rather: Thanksgiving Edition (20 cut-out cards)</li><li>Gratitude A to Z (a thankful race for all ages)</li><li>Find the Guest Bingo (mingle game)</li><li>Thanksgiving Scavenger Hunt (kids list and grown-ups list)</li><li>Party Scorecard to crown your champion</li></ul><h3>DETAILS</h3><ul><li>US Letter size, also prints on A4 (choose Fit or Actual Size)</li><li>Mostly black and white with a warm orange accent, so it is ink friendly</li><li>Print as many copies as you need for your own gathering</li></ul><h3>HOW TO DOWNLOAD</h3><p>This is a digital PDF download. Nothing will be shipped. Right after purchase, Gumroad emails you the download link and the file is saved in your Gumroad Library. Print at home or at a local print shop.</p><p>For personal use only. Please do not resell or share the file.</p><p>This design was created with AI assistance under the creative direction of the seller.</p>",
+   "summary": "6 printable Thanksgiving table games with answer keys and a scorecard.",
+   "tags": [
+    "thanksgiving games",
+    "thanksgiving trivia",
+    "friendsgiving games",
+    "thanksgiving party",
+    "family game night"
+   ],
+   "category": "self-improvement/crafts-and-dyi/board-games",
+   "fileEnc": "gw/vault/prod-thanksgiving-games.enc",
+   "fileName": "thanksgiving-family-game-pack.pdf",
+   "displayName": "Thanksgiving Family Game Pack",
+   "covers": [
+    "https://i.etsystatic.com/68605457/r/il/a479c6/8754222507/il_fullxfull.8754222507_k1lz.jpg",
+    "https://i.etsystatic.com/68605457/r/il/076ed7/8697047504/il_fullxfull.8697047504_46kq.jpg",
+    "https://i.etsystatic.com/68605457/r/il/a8c2f3/8744870651/il_fullxfull.8744870651_jxlv.jpg",
+    "https://i.etsystatic.com/68605457/r/il/019da3/8744870869/il_fullxfull.8744870869_rj3o.jpg",
+    "https://i.etsystatic.com/68605457/r/il/eedb6d/8697048096/il_fullxfull.8697048096_cq54.jpg",
+    "https://i.etsystatic.com/68605457/r/il/de465c/8697048246/il_fullxfull.8697048246_t7se.jpg"
+   ],
+   "thumbFrom": "https://i.etsystatic.com/68605457/r/il/a479c6/8754222507/il_fullxfull.8754222507_k1lz.jpg",
+   "publish": true,
+   "requireStoreName": "GM's Digital Creations"
+  },
+  {
+   "op": "gumroad_mirror",
+   "tag": "prod-thanksgiving-host-planner",
+   "key": "prod-thanksgiving-host-planner",
+   "name": "First-Time Host Thanksgiving Planner",
+   "price": 449,
+   "description": "<p>Host your first Thanksgiving without the panic. This printable planner walks you from three weeks out to the moment dinner hits the table, with a reverse cooking timeline that tells you exactly when the turkey goes in.</p><p>Perfect for first-time hosts, Friendsgiving organizers and anyone who wants the big meal on time and stress free.</p><p>WHAT&#x27;S INCLUDED (13-page PDF)</p><ul><li>How to use page with a step-by-step plan</li><li>3-Week Countdown checklist</li><li>Guest List and Who Brings What</li><li>Menu Planner (who makes it, oven or stove, temp and time)</li><li>Turkey Size and Thaw Guide based on USDA guidance</li><li>Reverse Cooking Timeline: a worked example for a 4 PM dinner</li><li>Reverse Cooking Timeline: blank, for your own day</li><li>Grocery List sorted by store section</li><li>Day-Before and Morning-Of checklist with kitchen helper jobs</li><li>Serving Dish and Table Plan</li><li>Leftovers and Thank-You List</li><li>Notes for Next Year</li></ul><h3>DETAILS</h3><ul><li>US Letter size, also prints on A4 (choose Fit to Page)</li><li>White pages with a warm accent color, easy on ink</li><li>Print as many copies as you need for your own home</li></ul><h3>HOW TO DOWNLOAD</h3><p>This is a digital PDF download. Nothing will be shipped. Right after purchase, Gumroad emails you the download link and the file is saved in your Gumroad Library. Print at home or at a local print shop.</p><p>For personal use only. Please do not resell or share the file.</p><p>This design was created with AI assistance under the creative direction of the seller.</p>",
+   "summary": "Printable Thanksgiving host planner with a reverse cooking timeline, menu, grocery list, guest sheet and prep checklists.",
+   "tags": [
+    "thanksgiving planner",
+    "thanksgiving menu",
+    "dinner timeline",
+    "thanksgiving host",
+    "turkey thaw guide"
+   ],
+   "category": "self-improvement/productivity",
+   "fileEnc": "gw/vault/prod-thanksgiving-host-planner.enc",
+   "fileName": "first-time-host-thanksgiving-planner.pdf",
+   "displayName": "First-Time Host Thanksgiving Planner",
+   "covers": [
+    "https://i.etsystatic.com/68605457/r/il/b0c670/8706404710/il_fullxfull.8706404710_5hwp.jpg",
+    "https://i.etsystatic.com/68605457/r/il/861909/8746807593/il_fullxfull.8746807593_hvoz.jpg",
+    "https://i.etsystatic.com/68605457/r/il/f7b666/8698989722/il_fullxfull.8698989722_a1st.jpg",
+    "https://i.etsystatic.com/68605457/r/il/97fbbf/8746808105/il_fullxfull.8746808105_5a1a.jpg",
+    "https://i.etsystatic.com/68605457/r/il/25dd46/8746808391/il_fullxfull.8746808391_kpv6.jpg",
+    "https://i.etsystatic.com/68605457/r/il/8e9e31/8698990474/il_fullxfull.8698990474_4xs3.jpg"
+   ],
+   "thumbFrom": "https://i.etsystatic.com/68605457/r/il/b0c670/8706404710/il_fullxfull.8706404710_5hwp.jpg",
+   "publish": true,
+   "requireStoreName": "GM's Digital Creations"
+  },
+  {
+   "op": "gumroad",
+   "method": "GET",
+   "path": "/sales?after=2026-10-01",
+   "tag": "sales"
+  }
+ ]
+}
