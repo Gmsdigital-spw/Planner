@@ -1,4 +1,132 @@
 {
  "done": {},
- "skipped": {}
+ "skipped": {
+  "4597096306": "5 files (start-here + 4 versions)",
+  "4596311765": "2 PDF files",
+  "4596144943": "file is a zip",
+  "4596095937": "file is a zip (spreadsheet)",
+  "4596203264": "file is a zip",
+  "4596406689": "no source PDF on file"
+ },
+ "failed": {
+  "4597749137": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1525228616375,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4599447958": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1525914395319,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4598721247": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1524386234146,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4597755725": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1523978427146,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4597755593": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1523978366210,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4597977363": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1525333386011,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4598358161": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1524238578674,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4598535050": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1525556750345,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4597998190": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1525333458493,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4600177516": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1526194410731,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4598358317": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1525488557667,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4597743627": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1525228674349,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4598379368": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1524238061538,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4598659189": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1525610661453,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4598501430": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1525542464103,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4600177510": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1526194389739,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  },
+  "4599444986": {
+   "at": "2026-10-22T03:53:57Z",
+   "oldFileId": 1525914471213,
+   "step": "upload",
+   "error": "Etsy 400: An error ocurred while uploading your file, please try again. (free gateway etsy_upload to /files; old file untouched)",
+   "job": "thanks-2026-10-21-upload-4ac1"
+  }
+ }
 }
