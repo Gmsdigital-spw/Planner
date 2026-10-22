@@ -35,7 +35,8 @@ Central.
 - Gateway scenario 6676353 (Instagram, Facebook, shop YouTube, TikTok via zernio_api, YouTube
   stats, Etsy fallback). The old "Starship Pinterest poster" scenario 6676393 stays OFF.
 - Connections: 11830197 "Instagram GM" (@gmsdigitalcreations, 17841469346530680);
-  11830277 "Facebook GM Page" (Gmsdigitalcreations, 1358210974045889); 11830335 "YouTube SHOP"
+  11863175 "Facebook GM Page v2" (Gmsdigitalcreations, 1358210974045889; re-authorized Oct 21,
+  2026 and wired into fb_reel/fb_photo; the old 11830277 is no longer used); 11830335 "YouTube SHOP"
   (GMsDigitalCreations, UCBEMIih_sKOxjZvQ9oeqYWw); 11830987 "Zernio TikTok GM".
   Connection 11806532 (@gmulaishere) belongs to the Studio floor and is never used for the shop.
 
