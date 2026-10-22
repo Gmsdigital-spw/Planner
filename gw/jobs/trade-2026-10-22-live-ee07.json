@@ -1,0 +1,1 @@
+{"id":"trade-2026-10-22-live-ee07","ops":[{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY,DIA,WMT&timeframe=5Min&limit=78&feed=iex&start=2026-10-22T13:30:00Z"},{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SPY,QQQ,IWM,DIA,XLF,XLV,XLE,AAPL,MSFT,WMT,KO,JPM,BAC,XOM&feed=iex"},{"op":"alpaca","path":"/bankroll"}]}
