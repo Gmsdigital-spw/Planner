@@ -1,0 +1,510 @@
+{
+ "id": "bolt-2026-10-22-pins-6703",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-no-buy-year-2027-s2",
+   "tag": "pin-prod-no-buy-year-2027-s2",
+   "body": {
+    "content": "Write your no-buy rules once: what you stop buying, what you still allow and why. Plus a 30-day want list, temptation log and monthly no-spend calendars. Printable 2027 no-buy year planner, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-no-buy-year-2027-2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-30T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595728",
+       "title": "Write Your No-Buy Rules Once",
+       "link": "https://www.etsy.com/listing/4599444986"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-nye-games-s2",
+   "tag": "pin-prod-nye-games-s2",
+   "body": {
+    "content": "8 printable New Year's Eve games for kids, teens and adults: trivia, word scramble, This or That, Would You Rather, Find the Guest bingo, 2026 in review, 2027 predictions and a scavenger hunt. Family friendly, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-nye-games-2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-30T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595725",
+       "title": "8 New Year's Eve Games for All Ages",
+       "link": "https://www.etsy.com/listing/4597755593"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-pink-christmas-verse-art-s2",
+   "tag": "pin-prod-pink-christmas-verse-art-s2",
+   "body": {
+    "content": "Pink Christmas decor with scripture: six matching prints with Luke 2, Isaiah 9:6 and Matthew 2:10 in blush and rose. Frame them for a shelf, gallery wall or girls room. Printable wall art, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-pink-christmas-verse-art-2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-30T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985601133",
+       "title": "Pink Christmas Decor With Scripture",
+       "link": "https://www.etsy.com/listing/4598721247"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-pink-coquette-verse-art-s2",
+   "tag": "pin-prod-pink-coquette-verse-art-s2",
+   "body": {
+    "content": "Pink scripture prints for a girls room: pink leopard, hydrangea, gingham and polka dot backgrounds with scalloped frames and KJV verses. Printable Christian wall art in 8x10 and 11x14. Instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-pink-coquette-verse-art-2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-31T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985601133",
+       "title": "Pink Scripture Prints for a Girls Room",
+       "link": "https://www.etsy.com/listing/4598659189"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-secret-santa-kit-s2",
+   "tag": "pin-prod-secret-santa-kit-s2",
+   "body": {
+    "content": "A Secret Santa questionnaire with 14 questions covering favorites, sizes, allergies and wish lists, so every gift lands. Part of a printable gift exchange kit with name slips, rules and tags. Instant download, print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-secret-santa-kit-2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-01T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "The Secret Santa Questionnaire Everyone Needs",
+       "link": "https://www.etsy.com/listing/4597755725"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-thanksgiving-games-s2",
+   "tag": "pin-prod-thanksgiving-games-s2",
+   "body": {
+    "content": "Keep everyone at the table after dinner with 7 printable Thanksgiving games: trivia, bingo, word scramble, This or That, Would You Rather, Gratitude A to Z and a scavenger hunt. For 3 to 30 players. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-thanksgiving-games-2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-31T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "7 Games for After Turkey",
+       "link": "https://www.etsy.com/listing/4597743627"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-thanksgiving-host-planner-s2",
+   "tag": "pin-prod-thanksgiving-host-planner-s2",
+   "body": {
+    "content": "Hosting Thanksgiving for the first time? This printable planner walks you from three weeks out to dinner on the table: countdown, guest list, menu, turkey size and thaw guide, grocery list and a reverse cooking timeline.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-thanksgiving-host-planner-2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-31T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "First Time Hosting Thanksgiving?",
+       "link": "https://www.etsy.com/listing/4597977363"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-party-awards-s2",
+   "tag": "pin-prod-xmas-party-awards-s2",
+   "body": {
+    "content": "Best Ugly Sweater, Cookie Monster, Chief Elf Officer and 33 more funny awards for your Christmas party, with ballots and fill-in certificates. Printable office party superlatives game, instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-xmas-party-awards-2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-02T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Who Gets Best Ugly Sweater?",
+       "link": "https://www.etsy.com/listing/4598379368"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-scavenger-hunt-s2",
+   "tag": "pin-prod-xmas-scavenger-hunt-s2",
+   "body": {
+    "content": "Hide the big gift and let them hunt for it. Printable Christmas scavenger hunt clue cards lead kids from the tree to the fridge to the sock drawer. Two reading levels, answer key included. Instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-xmas-scavenger-hunt-2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-03T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Hide the Big Gift. Let Them Hunt.",
+       "link": "https://www.etsy.com/listing/4599447958"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-no-buy-year-2027-s3",
+   "tag": "pin-prod-no-buy-year-2027-s3",
+   "body": {
+    "content": "Tick off every no-spend day in 2027 on printable monthly calendars, then tally the year. Includes no-buy rules, 30-day want list and monthly check-in. Low-buy year planner, instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-no-buy-year-2027-3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-31T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595728",
+       "title": "Tick Off Every No-Spend Day",
+       "link": "https://www.etsy.com/listing/4599444986"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-nye-games-s3",
+   "tag": "pin-prod-nye-games-s3",
+   "body": {
+    "content": "Keep the kids busy until the midnight countdown with printable New Year's Eve bingo, a scavenger hunt and Would You Rather cards. Family friendly NYE party games, no drinking games, answer keys included. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-nye-games-3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-31T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595725",
+       "title": "NYE Games the Kids Can Play Too",
+       "link": "https://www.etsy.com/listing/4597755593"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-pink-christmas-verse-art-s3",
+   "tag": "pin-prod-pink-christmas-verse-art-s3",
+   "body": {
+    "content": "Six pink Christmas Bible verse prints in three frame sizes, ready to print and frame tonight. Coquette bows, stripes and gingham with KJV verses. Printable Christian Christmas wall art, instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-pink-christmas-verse-art-3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-01T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985601133",
+       "title": "Six Pink Christmas Verse Prints",
+       "link": "https://www.etsy.com/listing/4598721247"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-pink-coquette-verse-art-s3",
+   "tag": "pin-prod-pink-coquette-verse-art-s3",
+   "body": {
+    "content": "Build a coquette Bible verse gallery wall with matching pink prints: Psalm 46:10, Proverbs 31:25, Psalm 118:24, Philippians 4:13 and more. Printable Christian decor, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-pink-coquette-verse-art-3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-02T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985601133",
+       "title": "Coquette Bible Verse Gallery Wall",
+       "link": "https://www.etsy.com/listing/4598659189"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-secret-santa-kit-s3",
+   "tag": "pin-prod-secret-santa-kit-s3",
+   "body": {
+    "content": "Organize your office gift exchange in one evening: organizer page with date, budget and drop-off spot, sign-up sheet, questionnaire and name-draw slips. Printable Secret Santa and white elephant kit, instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-secret-santa-kit-3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-31T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Office Gift Exchange, Organized",
+       "link": "https://www.etsy.com/listing/4597755725"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-thanksgiving-games-s3",
+   "tag": "pin-prod-thanksgiving-games-s3",
+   "body": {
+    "content": "Give the kids table something fun to do: printable Thanksgiving bingo, a scavenger hunt, Would You Rather and Gratitude A to Z. Part of a 7-game family pack with answer keys. Print at home, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-thanksgiving-games-3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-03T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "Kids Table Games for Thanksgiving",
+       "link": "https://www.etsy.com/listing/4597743627"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-thanksgiving-host-planner-s3",
+   "tag": "pin-prod-thanksgiving-host-planner-s3",
+   "body": {
+    "content": "Plan Thanksgiving dinner backwards from the time you want to eat. Printable host planner with a 3-week countdown, menu planner, turkey thaw guide, grocery list by store section and day-before checklist. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-thanksgiving-host-planner-3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-04T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595732",
+       "title": "Thanksgiving Dinner, Planned Backwards",
+       "link": "https://www.etsy.com/listing/4597977363"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-party-awards-s3",
+   "tag": "pin-prod-xmas-party-awards-s3",
+   "body": {
+    "content": "Give your holiday party a moment everyone talks about: guests nominate, vote and crown the winners of 36 lighthearted Christmas awards. Includes host script and certificates. Printable, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-xmas-party-awards-3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-01T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Party Awards Everyone Will Laugh At",
+       "link": "https://www.etsy.com/listing/4598379368"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-scavenger-hunt-s3",
+   "tag": "pin-prod-xmas-scavenger-hunt-s3",
+   "body": {
+    "content": "Rhyming Christmas clues little kids can follow and riddles for older kids, so siblings can hunt together. 24 printable clue spots, blank cards and final gift cards. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/pins/styled/prod-xmas-scavenger-hunt-3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-01T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Rhyming Clues Little Kids Can Follow",
+       "link": "https://www.etsy.com/listing/4599447958"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
