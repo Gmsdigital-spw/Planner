@@ -7,18 +7,7 @@
   "XLV",
   "DIA"
  ],
- "positions": {
-  "WMT": {
-   "entry": 120.316,
-   "stop0": 119.78,
-   "stop": 119.78,
-   "target": 121.39,
-   "high": 120.84,
-   "stopId": "b6bfc147-4888-4ce3-a837-dc2b13587494",
-   "since": "2026-10-22T16:35:00Z",
-   "qty": "0.070813524"
-  }
- },
+ "positions": {},
  "trades": [
   {
    "sym": "XLF",
@@ -100,19 +89,28 @@
    "target": 121.39,
    "status": 200,
    "fill": 120.316
+  },
+  {
+   "t": "14:35",
+   "do": "sell",
+   "sym": "WMT",
+   "qty": "0",
+   "why": "trail stop refused",
+   "status": 422,
+   "id": null
   }
  ],
  "done": null,
- "runs": 355,
+ "runs": 360,
  "lastSignal": {
   "XLF": "2026-10-22T15:15:00Z",
   "XLV": "2026-10-22T15:15:00Z",
   "DIA": "2026-10-22T16:20:00Z",
   "WMT": "2026-10-22T16:35:00Z"
  },
- "lastRun": "14:30",
- "equity": 24.97,
- "dayPnl": 0.01,
+ "lastRun": "14:35",
+ "equity": 24.98,
+ "dayPnl": 0.02,
  "watch": [
   "SPY",
   "QQQ",
@@ -144,5 +142,5 @@
   "TSLA",
   "UNP"
  ],
- "lastNote": "equity $24.97, day +0.01, 1 open, 4 entries; no new entries now (8:35-2:00 CT window)"
+ "lastNote": "equity $24.98, day +0.02, 0 open, 4 entries; no new entries now (8:35-2:00 CT window)"
 }
