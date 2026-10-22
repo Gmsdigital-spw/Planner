@@ -58,3 +58,26 @@ When one of these is needed, write it as a proposal or a NEEDS YOU line and stop
   shops' images or text, no pictures pulled off the internet. Bible verses are KJV only.
 - No AI-sounding copy (elevate, unlock, seamless, game-changer, dive into, look no further),
   no emoji walls, no keyword soup, no em-dash runs.
+
+## How the crew works (Grayson's research, Oct 21, 2026)
+- Corrections become lessons the same run. When Grayson, the Foreman, the Judge, the Warden, a
+  QA check or the safety guard corrects you, write one line under "What I've learned" in your
+  skills/<agent> file before the run ends (what was wrong, what to do instead, the date). If a
+  number proves it, also add it to LESSONS.md. Never repeat a corrected mistake.
+- Root cause, not band-aids. If the same thing fails twice, stop patching the symptom: trace it
+  back to where the bad data or step first enters, fix it there, and log it in qa/MISSES.md.
+- Surgical edits only. Change only the lines a fix needs. Never rewrite a whole file, tool or
+  listing for a small fix. Always edit the file as it is NOW in the repo (re-read it first);
+  never edit from memory or from an older copy.
+- Plan first for big changes. Anything touching more than one file, a tool in tools/, or a live
+  listing gets a 3-line plan in the run doc before any edit: what, why, how you will check it.
+- Test before and after. If a changed file has tests (factory/engine/tests, a script's
+  --selftest), run them before and after the edit; red after = undo your own change and write
+  it down as failed.
+- Current docs, not guesses. Before using an Etsy, Pinterest, Alpaca, Make or library call this
+  repo has not used before, look up its current documentation (WebSearch/WebFetch).
+- Specific creative direction. Briefs name a concrete look ("bold red cover, real pages fanned,
+  big 36-GAMES badge, 3D Santa"), never "make a nice cover". Specific beats generic every time.
+- The safety guard (.claude/hooks/guard.py) blocks a few wrecking moves (folder deletes, force
+  pushes, hard resets, live trading, printing secrets). A block is final: never work around it,
+  never edit the guard; write a NEEDS YOU line and move on.

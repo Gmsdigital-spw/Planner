@@ -1,0 +1,28 @@
+name: Security scan
+
+# Free Semgrep scan (Grayson's Oct 21 research). Report-only: it never blocks a push or a crew
+# run. Findings show in the run log; the Mechanic reads a red/yellow result in the morning.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.py"
+      - "**/*.js"
+      - "**/*.sh"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    container:
+      image: semgrep/semgrep
+    steps:
+      - uses: actions/checkout@v4
+      - name: Semgrep (secrets, Python, workflows)
+        continue-on-error: true
+        run: semgrep scan --config p/secrets --config p/python --config p/github-actions --metrics=off --exclude "*.enc" --error

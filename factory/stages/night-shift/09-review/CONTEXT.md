@@ -72,12 +72,23 @@ E. Next Move (room "core"). Pick the ONE thing that most moves the shop toward i
    justifies a move: title "Nothing urgent: let tonight's build land", go "room:core". Log one
    event (crew "Atlas", "Next move: <title>").
 
+F. Dream (sleep on it, then wake up smarter). Skip if no run log line exists from the last 7
+   days. Read only: the last 7 days of factory/runlog.jsonl (`python3 factory/shared/runlog.py
+   --summary 7` plus failed/paused lines), tonight's run doc, events/<day key> failures, and
+   factory/qa/MISSES.md rows from the last 7 days. Find at most 3 repeated patterns (the same
+   failure, block, rejection or slow stage at least twice). For each: write ONE line under
+   "What I've learned" in the responsible agent's skills/<agent> file (dated, what happened
+   with the count, what to do instead), and if it is the same failure again, follow the
+   root-cause rule in shared/rules.md. Never invent a pattern; no repeat = write nothing. List
+   what you wrote in the run doc under "Dream".
+
 ## Outputs
 
 | Artifact | Location | Format |
 |----------|----------|--------|
 | Experiment results / proposals | experiments/<id>, lessons/<id> | shapes in database-fields.md |
 | Sales review | sprint/main, products/<id> (stage ready) | |
+| Dream lessons | skills/<agent> "What I've learned", run doc "Dream" | one dated line each, max 3 |
 | Ads note | ads/main.review | only this field |
 | Next move | nextmove/main | set once per run |
 | Money lines | `../output/<day key>-run.md` "## Money" | the numbers for the report |
