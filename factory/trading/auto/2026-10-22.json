@@ -2,19 +2,9 @@
  "day": "2026-10-22",
  "mode": "paper",
  "equityOpen": 24.96,
- "entries": 2,
+ "entries": 3,
  "lostToday": [],
  "positions": {
-  "XLF": {
-   "entry": 56.358,
-   "stop0": 56.13,
-   "stop": 56.13,
-   "target": 56.81,
-   "high": 56.585,
-   "stopId": "9cd0fc6d-9170-4c4c-98b6-efcefe8ef533",
-   "since": "2026-10-22T15:15:00Z",
-   "qty": "0.176549913"
-  },
   "XLV": {
    "entry": 181.898,
    "stop0": 180.66,
@@ -24,6 +14,16 @@
    "stopId": "c20fe0a1-ddcc-4f6c-ad5c-c6f2be3f0126",
    "since": "2026-10-22T15:15:00Z",
    "qty": "0.032820591"
+  },
+  "DIA": {
+   "entry": 528.374,
+   "stop0": 526.06,
+   "stop": 526.06,
+   "target": 533.0,
+   "high": 528.374,
+   "stopId": "9892a54d-5803-4813-a717-7d9a0a3e63a6",
+   "since": "2026-10-22T16:20:00Z",
+   "qty": "0.006794429"
   }
  },
  "trades": [],
@@ -47,17 +47,37 @@
    "target": 184.37,
    "status": 200,
    "fill": 181.898
+  },
+  {
+   "t": "11:29",
+   "do": "sell",
+   "sym": "XLF",
+   "qty": "0",
+   "why": "trail stop refused",
+   "status": 422,
+   "id": null
+  },
+  {
+   "t": "11:29",
+   "do": "buy",
+   "sym": "DIA",
+   "notional": 3.6,
+   "stop": 526.06,
+   "target": 533.0,
+   "status": 200,
+   "fill": 528.374
   }
  ],
  "done": null,
- "runs": 171,
+ "runs": 174,
  "lastSignal": {
   "XLF": "2026-10-22T15:15:00Z",
-  "XLV": "2026-10-22T15:15:00Z"
+  "XLV": "2026-10-22T15:15:00Z",
+  "DIA": "2026-10-22T16:20:00Z"
  },
- "lastRun": "11:26",
- "equity": 24.99,
- "dayPnl": 0.03,
+ "lastRun": "11:29",
+ "equity": 25.01,
+ "dayPnl": 0.05,
  "watch": [
   "SPY",
   "QQQ",
@@ -89,5 +109,5 @@
   "TSLA",
   "UNP"
  ],
- "lastNote": "equity $24.99, day +0.03, 2 open, 2 entries"
+ "lastNote": "equity $25.01, day +0.05, 2 open, 3 entries"
 }
