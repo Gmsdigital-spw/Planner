@@ -103,16 +103,16 @@
   }
  ],
  "done": null,
- "runs": 349,
+ "runs": 355,
  "lastSignal": {
   "XLF": "2026-10-22T15:15:00Z",
   "XLV": "2026-10-22T15:15:00Z",
   "DIA": "2026-10-22T16:20:00Z",
   "WMT": "2026-10-22T16:35:00Z"
  },
- "lastRun": "14:24",
- "equity": 24.96,
- "dayPnl": 0.0,
+ "lastRun": "14:30",
+ "equity": 24.97,
+ "dayPnl": 0.01,
  "watch": [
   "SPY",
   "QQQ",
@@ -144,5 +144,5 @@
   "TSLA",
   "UNP"
  ],
- "lastNote": "equity $24.96, day +0.00, 1 open, 4 entries; no new entries now (8:35-2:00 CT window)"
+ "lastNote": "equity $24.97, day +0.01, 1 open, 4 entries; no new entries now (8:35-2:00 CT window)"
 }
