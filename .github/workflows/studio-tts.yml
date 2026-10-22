@@ -1,0 +1,51 @@
+name: Shop studio voice
+
+# The office pushes social/studio/tts/<id>.json = {"id":..., "lines":[{"voice":"en-US-AndrewMultilingualNeural","text":"...","path":"social/studio/media/<name>.mp3","rate":"+0%","pitch":"+0Hz"}]}.
+# This speaks each line with a free Microsoft neural voice and pushes the MP3 back. No key, no cost.
+on:
+  push:
+    paths:
+      - "social/studio/tts/*.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: studio-tts
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q edge-tts
+      - name: Speak every line not yet rendered
+        run: |
+          python3 - <<'PY'
+          import json, glob, os, re, subprocess
+          for f in sorted(glob.glob("social/studio/tts/*.json")):
+              job = json.load(open(f))
+              for it in job.get("lines", []):
+                  path = it.get("path", "")
+                  if not re.fullmatch(r"social/studio/media/[A-Za-z0-9._/-]+\.mp3", path) or ".." in path: print("skip bad path", path); continue
+                  if os.path.exists(path): continue
+                  os.makedirs(os.path.dirname(path), exist_ok=True)
+                  cmd = ["edge-tts", "--voice", it.get("voice", "en-US-AndrewMultilingualNeural"), "--rate", it.get("rate", "+0%"), "--pitch", it.get("pitch", "+0Hz"), "--text", it["text"][:5000], "--write-media", path]
+                  r = subprocess.run(cmd)
+                  print(("ok " if r.returncode == 0 else "FAILED ") + path)
+                  if r.returncode and os.path.exists(path): os.remove(path)
+          PY
+      - name: Push the audio
+        run: |
+          git config user.name "shop-studio"
+          git config user.email "shop-studio@users.noreply.github.com"
+          git add social/studio/media || true
+          git diff --cached --quiet && exit 0
+          git commit -m "studio voice: audio"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
