@@ -28,6 +28,7 @@ DEFAULT = {
     "max_entries": 4, "daily_loss": 1.5, "sma_len": 20, "pullback_bars": 6, "pullback_pct": 0.25,
     "min_stop_pct": 0.30, "be_at_r": 1.0, "trail_at_r": 1.5, "trail_r": 1.0, "target_r": 2.0,
     "start_ct": "08:35", "last_entry_ct": "14:00", "flat_ct": "14:45", "cost_bps": 6.0, "min_price": 5.0,
+    "setup": "pullback",   # entry rule: "pullback" (default) or "orb" (opening-range breakout)
 }
 # Hard limits the lab may never change (the money rules belong to Grayson)
 LOCKED = {"bankroll", "floor", "risk_pct", "max_pos_pct", "max_positions", "daily_loss", "flat_ct", "min_rr"}
@@ -103,9 +104,32 @@ def setup_at(bars, i, P):
         return None
     return entry, stop
 
+def setup_orb(bars, i, P):
+    """Opening-range breakout at bar i: the range is the first 15 minutes (bars before 08:45 CT).
+    Entry on the first green bar that closes above the range high with volume above the session's
+    average bar volume so far; stop under the range midpoint (at least min_stop_pct away)."""
+    rng = [x for x in bars[:i + 1] if ct_hm(x["t"]) < "08:45"]
+    if len(rng) < 2 or ct_hm(bars[i]["t"]) < "08:45":
+        return None
+    b = bars[i]; prev = bars[i - 1]
+    hi = max(x["h"] for x in rng); lo = min(x["l"] for x in rng); mid = (hi + lo) / 2
+    if b["c"] < P["min_price"] or not (b["c"] > hi and b["c"] > b["o"] and prev["c"] <= hi):
+        return None
+    avg_v = sum(x["v"] for x in bars[:i]) / i
+    if b["v"] <= avg_v:
+        return None
+    entry = b["c"]
+    stop = min(mid * 0.999, entry * (1 - P["min_stop_pct"] / 100))
+    if stop >= entry:
+        return None
+    return entry, stop
+
+SETUPS = {"pullback": setup_at, "orb": setup_orb}
+
 def simulate(data_by_day, P):
     eq = P["bankroll"]; peak = eq; mdd = 0.0; trades = []; days = []; breaches = 0
     cost = P["cost_bps"] / 10000.0
+    setup_fn = SETUPS.get(P.get("setup", "pullback"), setup_at)
     for day, data in data_by_day:
         if eq <= P["floor"]:
             days.append({"day": day, "pnl": 0.0, "locked": True}); continue
@@ -164,7 +188,7 @@ def simulate(data_by_day, P):
                 j = idx[sym].get(ts)
                 if j is None:
                     continue
-                s = setup_at(bars, j, P)
+                s = setup_fn(bars, j, P)
                 if not s:
                     continue
                 entry, stop = s
