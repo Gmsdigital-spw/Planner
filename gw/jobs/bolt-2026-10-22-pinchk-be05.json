@@ -1,0 +1,4 @@
+{"id":"bolt-2026-10-22-pinchk-be05","stopOnError":false,"ops":[
+{"op":"zernio","method":"GET","path":"/posts/6ad8f37fe0f45f343e2a5717","tag":"pin-prod-advent-activities-s1"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"}
+]}
