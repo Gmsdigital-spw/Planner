@@ -23,3 +23,4 @@ Story: beginning, twist, loop.
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-21: EP 14 got 14 views in hour one (gaming + family) but every cartoon EP has 0 likes; EP 15 cut to 119 words (49 s) and ended on a question anyone can answer. Tomorrow: put the 'why' logic check (where is the console, who could see it) in the first draft, not the rewrite.

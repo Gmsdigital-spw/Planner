@@ -23,3 +23,4 @@ Reads vidIQ stats into LESSONS.
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-21: EP 10 1,294 / EP 12 26 / EP 13 24 / EP 14 14 in its first hour (best first hour of the cartoon eps); all cartoon eps 0 likes, 0 comments. Tomorrow: compare EP 15's 24 h views and likes against EP 14 to see if the comment question moved likes.

@@ -23,3 +23,4 @@ Scores story/voice/music/motion separately; any <92 = rebuild.
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-21: B scored 8.25 (story 9) vs A 7.5 because A's hook spoiled its twist. Frame QC caught human faces in every two-character scene. Tomorrow: dock logic a point for any scene prompt with two characters until the factory proves it can draw them.

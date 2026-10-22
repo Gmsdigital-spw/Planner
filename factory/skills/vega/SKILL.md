@@ -23,3 +23,4 @@ One great Short a day; each better than the last.
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-21: EP 15 built B 8.25 over A 7.5; rejected draft B v1 (logic hole), build 1 (human faces), one rebuild scene (patched). Tomorrow: order Gags to write max ONE two-character scene per episode, before any prompt is drawn.

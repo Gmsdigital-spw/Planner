@@ -23,3 +23,4 @@ Captions never cover action.
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-21: 119 words at speed 0.98 = 49.1 s real (dry run said 43.2 with fake TTS; add ~6 s). Single-character prompts fixed the faces; a 'seen from behind' two-shot still drew a human head. Tomorrow: emotional two-shots as close-ups of ONE character; patch a bad scene locally with a crop punch-in + build_ass captions instead of losing the day.
