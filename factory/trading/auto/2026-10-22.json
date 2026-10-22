@@ -8,9 +8,9 @@
  "trades": [],
  "actions": [],
  "done": null,
- "runs": 13,
+ "runs": 19,
  "lastSignal": {},
- "lastRun": "08:48",
+ "lastRun": "08:54",
  "equity": 24.96,
  "dayPnl": 0.0,
  "watch": [
@@ -18,9 +18,31 @@
   "QQQ",
   "IWM",
   "DIA",
-  "XLK",
-  "XLF"
+  "XLF",
+  "XLV",
+  "XLE",
+  "AAPL",
+  "MSFT",
+  "WMT",
+  "KO",
+  "JPM",
+  "BAC",
+  "XOM"
  ],
- "avoid": [],
- "lastNote": "equity $24.96, day +0.00, 0 open, 0 entries; scanned 6 names, no A+ setup"
+ "avoid": [
+  "AAL",
+  "AMD",
+  "AMZN",
+  "AVGO",
+  "HON",
+  "IBM",
+  "INTC",
+  "LRCX",
+  "META",
+  "SMH",
+  "T",
+  "TSLA",
+  "UNP"
+ ],
+ "lastNote": "equity $24.96, day +0.00, 0 open, 0 entries; scanned 14 names, no A+ setup"
 }
