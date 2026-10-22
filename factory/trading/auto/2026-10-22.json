@@ -2,19 +2,11 @@
  "day": "2026-10-22",
  "mode": "paper",
  "equityOpen": 24.96,
- "entries": 3,
- "lostToday": [],
+ "entries": 4,
+ "lostToday": [
+  "XLV"
+ ],
  "positions": {
-  "XLV": {
-   "entry": 181.898,
-   "stop0": 180.66,
-   "stop": 180.66,
-   "target": 184.37,
-   "high": 182.215,
-   "stopId": "c20fe0a1-ddcc-4f6c-ad5c-c6f2be3f0126",
-   "since": "2026-10-22T15:15:00Z",
-   "qty": "0.032820591"
-  },
   "DIA": {
    "entry": 528.374,
    "stop0": 526.06,
@@ -24,6 +16,16 @@
    "stopId": "9892a54d-5803-4813-a717-7d9a0a3e63a6",
    "since": "2026-10-22T16:20:00Z",
    "qty": "0.006794429"
+  },
+  "WMT": {
+   "entry": 120.316,
+   "stop0": 119.78,
+   "stop": 119.78,
+   "target": 121.39,
+   "high": 120.316,
+   "stopId": "b6bfc147-4888-4ce3-a837-dc2b13587494",
+   "since": "2026-10-22T16:35:00Z",
+   "qty": "0.070813524"
   }
  },
  "trades": [
@@ -33,6 +35,13 @@
    "exit": 56.59,
    "r": 1.37,
    "why": "no stop"
+  },
+  {
+   "sym": "XLV",
+   "entry": 181.898,
+   "exit": 180.66,
+   "r": -1.0,
+   "why": "stop filled"
   }
  ],
  "actions": [
@@ -83,18 +92,29 @@
    "why": "no stop found",
    "status": 200,
    "id": "3c02341f-f080-49b4-a860-9aa7d5c004e2"
+  },
+  {
+   "t": "11:40",
+   "do": "buy",
+   "sym": "WMT",
+   "notional": 8.53,
+   "stop": 119.78,
+   "target": 121.39,
+   "status": 200,
+   "fill": 120.316
   }
  ],
  "done": null,
- "runs": 181,
+ "runs": 185,
  "lastSignal": {
   "XLF": "2026-10-22T15:15:00Z",
   "XLV": "2026-10-22T15:15:00Z",
-  "DIA": "2026-10-22T16:20:00Z"
+  "DIA": "2026-10-22T16:20:00Z",
+  "WMT": "2026-10-22T16:35:00Z"
  },
- "lastRun": "11:36",
- "equity": 24.98,
- "dayPnl": 0.02,
+ "lastRun": "11:40",
+ "equity": 24.95,
+ "dayPnl": -0.01,
  "watch": [
   "SPY",
   "QQQ",
@@ -126,5 +146,5 @@
   "TSLA",
   "UNP"
  ],
- "lastNote": "equity $24.98, day +0.02, 2 open, 3 entries"
+ "lastNote": "equity $24.95, day -0.01, 2 open, 4 entries"
 }
