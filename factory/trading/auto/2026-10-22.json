@@ -10,7 +10,7 @@
    "stop0": 180.66,
    "stop": 180.66,
    "target": 184.37,
-   "high": 182.08,
+   "high": 182.11,
    "stopId": "c20fe0a1-ddcc-4f6c-ad5c-c6f2be3f0126",
    "since": "2026-10-22T15:15:00Z",
    "qty": "0.032820591"
@@ -26,7 +26,15 @@
    "qty": "0.006794429"
   }
  },
- "trades": [],
+ "trades": [
+  {
+   "sym": "XLF",
+   "entry": 56.358,
+   "exit": 56.59,
+   "r": 1.37,
+   "why": "no stop"
+  }
+ ],
  "actions": [
   {
    "t": "10:20",
@@ -66,16 +74,25 @@
    "target": 533.0,
    "status": 200,
    "fill": 528.374
+  },
+  {
+   "t": "11:30",
+   "do": "sell",
+   "sym": "XLF",
+   "qty": "0.176549913",
+   "why": "no stop found",
+   "status": 200,
+   "id": "3c02341f-f080-49b4-a860-9aa7d5c004e2"
   }
  ],
  "done": null,
- "runs": 174,
+ "runs": 175,
  "lastSignal": {
   "XLF": "2026-10-22T15:15:00Z",
   "XLV": "2026-10-22T15:15:00Z",
   "DIA": "2026-10-22T16:20:00Z"
  },
- "lastRun": "11:29",
+ "lastRun": "11:30",
  "equity": 25.01,
  "dayPnl": 0.05,
  "watch": [
