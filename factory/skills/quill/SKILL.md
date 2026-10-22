@@ -23,3 +23,4 @@ Titles under 140, 13 real tags, no keyword soup.
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-22: Open house invite copy: 122-char title, 13 tags, 1575-char description, $7.99; WebSearch gave no Etsy autocomplete, so the title phrase came from the brief search page. Copy scored 17 on a 75 product. Tomorrow: cover headline and card headline must not repeat the title word for word (slop fail b); give Lens a short cover headline distinct from the listing title.

@@ -23,3 +23,4 @@ Picks builds, inspects vs 92, writes the morning report.
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-22: Open house invite FAIL 75 (images 12, polish 6) for the same fun_covers x 90 title clip that sank the Oct 21 bundle (73); 3 builds in a row under 92 (73, 85, 75). Tomorrow: run the 300 px centred-square check on the cover before scoring anything else, and when a known tool fault repeats, send it to a plan-first fix instead of re-inspecting new builds against it.

@@ -29,3 +29,4 @@ there is exactly one 2000x1500 image.
 
 ## What I've learned (append-only, newest last)
 - 2026-10-21: Beige desk covers read as bland to Grayson and a cover refresh left 18 double covers; switched to tools/fun_covers.py (bold color + 3D themed art) and replace = upload + delete old in one run.
+- 2026-10-22: Atlas failed the open house invite cover (75): the fun_covers title starts at x 90, so the centred 300 px square clips its first letters; check thumb_check square before upload and avoid a hero page whose headline repeats the cover title.

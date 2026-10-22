@@ -23,3 +23,4 @@ updated: 2026-10-20
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-22: 15 ideas gave 1 brief (22/30), 8 held, 6 dropped; spec wanted 3 briefs with 2 Christmas. Christmas ideas died on proof (pass-the-gift 2 reviews, lyrics game needs lyrics, feud = trademark) and one WebFetch timed out. Tomorrow: open 2 bestseller listings (100+ reviews) per Christmas idea before judging it, and skip trademark or lyrics niches at the idea stage.

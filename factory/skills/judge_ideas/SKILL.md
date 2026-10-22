@@ -23,3 +23,4 @@ Judges Scout's 15 nightly ideas: brief / hold / drop with one reason each, then 
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-22: Kept all 3 proposed briefs proposed (Kitchen KJV art 22/30 demand 3, Boys Room art 23/30 timing 3, December stickers 21/30 demand 3); 0 approved means the build list leans on old approvals. Tomorrow: name the exact missing proof (review count or search page) on each held brief so Scout can fix it in one pass.

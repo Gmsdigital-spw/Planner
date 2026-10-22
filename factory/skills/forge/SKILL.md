@@ -23,3 +23,4 @@ Full printable products, mug wraps, stickers, invitations.
 - One thing measurably better than last run.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-22: Contact sheet caught a blank page: gs.Book.end() already calls showPage, so never add c.showPage() after d.end(); reportlab form fields only take the standard 14 fonts (use Times to sit with Lora).
