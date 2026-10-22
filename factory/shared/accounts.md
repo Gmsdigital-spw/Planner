@@ -54,7 +54,7 @@ Central.
   factory/trading/auto/last-error.json, watchlist at factory/trading/watchlist.json.
 
 ## Scheduled task ids (for the Mechanic and the schedule sync only)
-- Night Shift trig_01AAr8ck2SDQBQUNtAvm58YF · Bolt trig_01QWbpg22o89x2sFANkEcG67 ·
+- Night Shift trig_01AKhkcKn5cgKDgpZavQEun1 (re-created Oct 21, 2026; the old trig_01AAr8ck2SDQBQUNtAvm58YF is disabled) · Bolt trig_01QWbpg22o89x2sFANkEcG67 ·
   Herald trig_01WukPSxb5DtW4tL2Zs9EKhu · Mechanic trig_01LjWHeBBnHMDPfAyT752hPJ ·
   Pricing trig_011d8uPA25L1BVvMwXAWGHfa · Video pin trig_01MQhG8MqAZ6F8ugWSoJjnmg ·
   Check-up trig_018st1EXDopgRYYnYQHVbhsY · Day Watch trig_01KHgYQk9YXzkiM7bsHjRNKH ·
