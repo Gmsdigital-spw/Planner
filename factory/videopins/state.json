@@ -1,5 +1,23 @@
 {
   "posted": [
-    {"day": "2026-10-21", "listingId": "4597749137", "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-21/4597749137/video.mp4", "zernioPostId": "6ad9233d933867f35063ada8", "status": "scheduled", "postUrl": null, "error": null}
+    {
+      "day": "2026-10-21",
+      "listingId": "4597749137",
+      "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-21/4597749137/video.mp4",
+      "zernioPostId": "6ad9233d933867f35063ada8",
+      "status": "failed",
+      "postUrl": null,
+      "error": "Pinterest: \"This site doesn't allow you to save Pins\" (link/domain refused) after 3 attempts. Link was bare etsy.com/listing/<id>; still pins using the full slug URL publish fine."
+    },
+    {
+      "day": "2026-10-22",
+      "listingId": "4598358161",
+      "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-22/4598358161/video.mp4",
+      "zernioPostId": "6ada4e25d3c3e15d35779e3e",
+      "status": "scheduled",
+      "postUrl": null,
+      "error": null,
+      "link": "https://www.etsy.com/listing/4598358161/2027-savings-challenge-printable-adhd"
+    }
   ]
 }
