@@ -1,14 +1,14 @@
 {
  "schema": 1,
- "generated_at": "2026-10-22T15:42:26Z",
+ "generated_at": "2026-10-22T16:42:37Z",
  "worker": "python -m factory.engine worker",
  "health": {
   "engine_schema": 4,
   "kill": false,
   "paused_agents": [],
-  "last_tick": "2026-10-22T15:42:26Z",
+  "last_tick": "2026-10-22T16:42:36Z",
   "last_runner": "cli",
-  "last_tick_age_s": 0,
+  "last_tick_age_s": 1,
   "counts": {
    "queued": 0,
    "running": 0,
@@ -26,7 +26,7 @@
    "id": "atlas",
    "name": "Atlas (inspection)",
    "role": "quality",
-   "version": 9,
+   "version": 11,
    "state": "idle",
    "counts": {},
    "last_activity": null,
@@ -36,7 +36,7 @@
    "id": "bolt",
    "name": "Bolt + Rocket",
    "role": "publishing",
-   "version": 17,
+   "version": 19,
    "state": "idle",
    "counts": {},
    "last_activity": null,
@@ -56,7 +56,7 @@
    "id": "forge",
    "name": "Forge + Quill + Lens",
    "role": "product_factory",
-   "version": 9,
+   "version": 11,
    "state": "idle",
    "counts": {},
    "last_activity": null,
@@ -66,7 +66,7 @@
    "id": "graph",
    "name": "Graph + Medic (analytics)",
    "role": "analytics",
-   "version": 9,
+   "version": 11,
    "state": "idle",
    "counts": {},
    "last_activity": null,
@@ -86,11 +86,11 @@
    "id": "herald",
    "name": "Herald + Pixel + Tick",
    "role": "channel_adapter",
-   "version": 1,
+   "version": 3,
    "state": "idle",
    "counts": {},
    "last_activity": null,
-   "skill_sha": "cda29d82"
+   "skill_sha": "019b5b4d"
   },
   {
    "id": "ledger",
@@ -116,7 +116,7 @@
    "id": "scout",
    "name": "Scout",
    "role": "research",
-   "version": 9,
+   "version": 11,
    "state": "idle",
    "counts": {},
    "last_activity": null,
@@ -159,9 +159,9 @@
   {
    "id": "gateway",
    "state": "connected",
-   "last_ok_at": "2026-10-22T15:28:57Z",
+   "last_ok_at": "2026-10-22T15:50:09Z",
    "last_error": "2026-10-21T04:15:15Z trade-test4-1792556098.json",
-   "checked_at": "2026-10-22T15:42:26Z",
+   "checked_at": "2026-10-22T16:42:36Z",
    "note": "GitHub Actions gw.yml; secrets live there only"
   },
   {
@@ -169,7 +169,7 @@
    "state": "missing",
    "last_ok_at": null,
    "last_error": null,
-   "checked_at": "2026-10-22T15:42:26Z",
+   "checked_at": "2026-10-22T16:42:36Z",
    "note": "Make is reachable only from the Factory page / crews (Claude connector); Python writes drafts"
   }
  ],
