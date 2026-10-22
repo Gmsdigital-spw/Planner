@@ -8,9 +8,9 @@
  "trades": [],
  "actions": [],
  "done": null,
- "runs": 97,
+ "runs": 103,
  "lastSignal": {},
- "lastRun": "10:12",
+ "lastRun": "10:18",
  "equity": 24.96,
  "dayPnl": 0.0,
  "watch": [
