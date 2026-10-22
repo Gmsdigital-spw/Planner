@@ -1,0 +1,3 @@
+{"id":"vpin-2026-10-22-read-2aba","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100","tag":"active"},
+{"op":"zernio","method":"GET","path":"/posts/6ad9233d933867f35063ada8","tag":"yday"}]}
