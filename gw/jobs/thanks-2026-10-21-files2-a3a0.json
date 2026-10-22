@@ -1,0 +1,51 @@
+{
+ "id": "thanks-2026-10-21-files2-a3a0",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/4598535050/files",
+   "tag": "4598535050"
+  },
+  {
+   "op": "selftest"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/4597998190/files",
+   "tag": "4597998190"
+  },
+  {
+   "op": "selftest"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/4597743627/files",
+   "tag": "4597743627"
+  },
+  {
+   "op": "selftest"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/4597755725/files",
+   "tag": "4597755725"
+  },
+  {
+   "op": "selftest"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/4596203264/files",
+   "tag": "4596203264"
+  },
+  {
+   "op": "selftest"
+  }
+ ]
+}
