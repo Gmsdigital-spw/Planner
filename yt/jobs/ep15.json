@@ -20,7 +20,7 @@
   {
    "text": "Every night at 2 AM, my dad sneaks downstairs... and the reason made me cry.",
    "image": {
-    "prompt": "{dad} sitting on the floor of a cozy dark living room at night lit only by a glowing TV, holding a game controller, blue TV light on his face, {leo} peeking around the doorway behind him with wide eyes",
+    "prompt": "{dad} sitting alone on the floor of a cozy dark living room at night lit only by a glowing TV, holding a game controller, blue TV light on his face, no other people",
     "motion": "punch"
    },
    "pause": 0.3
@@ -28,7 +28,7 @@
   {
    "text": "He works double shifts. He's never played a game with me.",
    "image": {
-    "prompt": "{dad} coming home through the front door late at night, exhausted, carrying a lunch box, {leo} on the couch holding a game controller looking up hopefully, warm lamp light",
+    "prompt": "{dad} alone, coming home through the front door late at night, exhausted, carrying a lunch box, warm lamp light, no other people",
     "motion": "panr"
    },
    "pause": 0.25
@@ -36,7 +36,7 @@
   {
    "text": "He always said... 'I'm too old for that, buddy.'",
    "image": {
-    "prompt": "{dad} smiling tiredly and patting {leo} on the shoulder in a kitchen at night, {leo} looking down disappointed, soft warm light",
+    "prompt": "{dad} alone in a kitchen at night, smiling tiredly and shrugging, soft warm light, no other people",
     "motion": "push"
    },
    "pause": 0.3
@@ -95,7 +95,7 @@
   {
    "text": "I didn't say a word. I sat down... and picked up player two.",
    "image": {
-    "prompt": "close-up of {leo} sitting on the floor next to {dad}, a single tear running down his cheek, holding a second game controller, warm TV glow, a cozy dark living room at night lit only by a glowing TV",
+    "prompt": "close-up of {leo} alone sitting on the living room floor, a single tear running down his strawberry cheek, holding a game controller, warm TV glow, no other people",
     "motion": "orbit",
     "anim": true
    },
@@ -104,7 +104,7 @@
   {
    "text": "We lost eleven times. Best night of my life.",
    "image": {
-    "prompt": "{dad} and {leo} laughing together on the living room floor with game controllers in their hands, his arm around Leo's shoulders, warm TV glow, cozy night",
+    "prompt": "seen from behind, {dad} and {leo} sitting side by side on the living room floor facing a glowing TV, both holding game controllers, Dad's arm around Leo's shoulders, both heads are giant fruit, no human heads, warm cozy night",
     "motion": "orbit"
    },
    "pause": 0.4
@@ -112,10 +112,11 @@
   {
    "text": "Mom can't figure out why we're both so tired. Because...",
    "image": {
-    "prompt": "{dad} sitting on the floor of a cozy dark living room at night lit only by a glowing TV, holding a game controller, blue TV light on his face, {leo} peeking around the doorway behind him with wide eyes",
+    "prompt": "{dad} sitting alone on the floor of a cozy dark living room at night lit only by a glowing TV, holding a game controller, blue TV light on his face, no other people",
     "motion": "punch"
    },
    "pause": 0.05
   }
- ]
+ ],
+ "rev": 2
 }
