@@ -1,0 +1,11 @@
+{
+ "id": "thanks-2026-10-21-list-9e4e",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/active?limit=100"
+  }
+ ]
+}
