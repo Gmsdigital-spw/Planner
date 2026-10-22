@@ -1,0 +1,121 @@
+{
+ "id": "ep15",
+ "title": "What My Dad Does at 2 AM Made Me Cry 😢 #shorts",
+ "hook": "WHAT MY DAD DOES AT 2 AM",
+ "end_text": "",
+ "loop": true,
+ "engine": "edge",
+ "voice": "andrew",
+ "speed": 0.98,
+ "caption_words": 3,
+ "transition": "dissolve",
+ "music": "emotional",
+ "music_volume": 0.14,
+ "style": "3D animated movie still, Pixar and Illumination style CGI render, cute stylized cartoon characters, soft cinematic lighting, vibrant saturated colors, glossy detailed textures, shallow depth of field, character centered in frame, no text, no letters, no watermark",
+ "cast": {
+  "leo": "Leo, a cartoon fruit mascot teenage boy: his entire head is one giant shiny red strawberry with a face on it (glossy red strawberry skin with tiny yellow seeds, leafy green top, big round cartoon eyes and a mouth on the strawberry, no hair, no ears, no human skin, no human face), human body wearing a grey hoodie and black sweatpants",
+  "dad": "Dad, a cartoon fruit mascot father: his entire head is one giant shiny round green watermelon with a face on it (dark green stripes, kind tired cartoon eyes and a small smile on the watermelon, no hair, no ears, no human skin, no human face), human body wearing a navy blue work uniform shirt and dark work pants"
+ },
+ "lines": [
+  {
+   "text": "Every night at 2 AM, my dad sneaks downstairs... and the reason made me cry.",
+   "image": {
+    "prompt": "{dad} sitting on the floor of a cozy dark living room at night lit only by a glowing TV, holding a game controller, blue TV light on his face, {leo} peeking around the doorway behind him with wide eyes",
+    "motion": "punch"
+   },
+   "pause": 0.3
+  },
+  {
+   "text": "He works double shifts. He's never played a game with me.",
+   "image": {
+    "prompt": "{dad} coming home through the front door late at night, exhausted, carrying a lunch box, {leo} on the couch holding a game controller looking up hopefully, warm lamp light",
+    "motion": "panr"
+   },
+   "pause": 0.25
+  },
+  {
+   "text": "He always said... 'I'm too old for that, buddy.'",
+   "image": {
+    "prompt": "{dad} smiling tiredly and patting {leo} on the shoulder in a kitchen at night, {leo} looking down disappointed, soft warm light",
+    "motion": "push"
+   },
+   "pause": 0.3
+  },
+  {
+   "text": "Then I kept hearing clicking downstairs. 2 AM. Every night.",
+   "image": {
+    "prompt": "{leo} sitting up awake in a dark room at night, moonlight through the window, hugging a pillow, listening with wide worried eyes",
+    "motion": "push"
+   },
+   "pause": 0.25,
+   "label": "LAST WEEK"
+  },
+  {
+   "text": "I checked the console. A new profile.",
+   "image": {
+    "prompt": "{leo} sitting on the couch in the morning holding a game controller, staring at a glowing TV with a curious frown, morning sunlight through the window",
+    "motion": "push"
+   },
+   "pause": 0.2
+  },
+  {
+   "text": "Forty-seven hours... all on level one.",
+   "image": {
+    "prompt": "close-up of {leo} with his jaw dropped and eyes huge, blue TV light on his face, sunny living room in the background",
+    "motion": "punch"
+   },
+   "pause": 0.3
+  },
+  {
+   "text": "Friday, I snuck down and caught him.",
+   "image": {
+    "prompt": "{leo} tiptoeing down dark stairs at night, peeking over the railing toward a glowing TV light below",
+    "motion": "panl"
+   },
+   "pause": 0.2,
+   "label": "FRIDAY, 2 AM"
+  },
+  {
+   "text": "Still in his work uniform. Losing. Again.",
+   "image": {
+    "prompt": "{dad} sitting on the floor of a cozy dark living room at night lit only by a glowing TV, squinting hard at the screen, gripping a game controller, tired but determined",
+    "motion": "push"
+   },
+   "pause": 0.3
+  },
+  {
+   "text": "'Your birthday's Saturday. I didn't want to be bad... when I finally play with you.'",
+   "image": {
+    "prompt": "close-up of {dad} looking up shyly and embarrassed, holding a game controller to his chest, blue TV glow on his face, a cozy dark living room at night lit only by a glowing TV",
+    "motion": "punch",
+    "anim": true
+   },
+   "pause": 0.5
+  },
+  {
+   "text": "I didn't say a word. I sat down... and picked up player two.",
+   "image": {
+    "prompt": "close-up of {leo} sitting on the floor next to {dad}, a single tear running down his cheek, holding a second game controller, warm TV glow, a cozy dark living room at night lit only by a glowing TV",
+    "motion": "orbit",
+    "anim": true
+   },
+   "pause": 0.4
+  },
+  {
+   "text": "We lost eleven times. Best night of my life.",
+   "image": {
+    "prompt": "{dad} and {leo} laughing together on the living room floor with game controllers in their hands, his arm around Leo's shoulders, warm TV glow, cozy night",
+    "motion": "orbit"
+   },
+   "pause": 0.4
+  },
+  {
+   "text": "Mom can't figure out why we're both so tired. Because...",
+   "image": {
+    "prompt": "{dad} sitting on the floor of a cozy dark living room at night lit only by a glowing TV, holding a game controller, blue TV light on his face, {leo} peeking around the doorway behind him with wide eyes",
+    "motion": "punch"
+   },
+   "pause": 0.05
+  }
+ ]
+}
