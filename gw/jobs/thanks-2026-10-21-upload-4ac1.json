@@ -1,0 +1,210 @@
+{
+ "id": "thanks-2026-10-21-upload-4ac1",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597749137/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/68a67d64a9817ba8/christmas-party-game-bundle.pdf",
+   "field": "file",
+   "fileName": "christmas-party-game-bundle.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "christmas-party-game-bundle.pdf"
+   },
+   "tag": "4597749137"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4599447958/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/dddcc0f5a5ab8d76/christmas-morning-scavenger-hunt-clue-cards.pdf",
+   "field": "file",
+   "fileName": "christmas-morning-scavenger-hunt-clue-cards.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "christmas-morning-scavenger-hunt-clue-cards.pdf"
+   },
+   "tag": "4599447958"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598721247/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/462ccaa2104a47ed/Pink-Christmas-Bible-Verse-Wall-Art.pdf",
+   "field": "file",
+   "fileName": "Pink-Christmas-Bible-Verse-Wall-Art.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "Pink-Christmas-Bible-Verse-Wall-Art.pdf"
+   },
+   "tag": "4598721247"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597755725/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/71659579dbb1ba30/secret-santa-gift-exchange-kit.pdf",
+   "field": "file",
+   "fileName": "secret-santa-gift-exchange-kit.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "secret-santa-gift-exchange-kit.pdf"
+   },
+   "tag": "4597755725"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597755593/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/704f07d71d4ffede/new-year-s-eve-party-game-pack.pdf",
+   "field": "file",
+   "fileName": "new-year-s-eve-party-game-pack.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "new-year-s-eve-party-game-pack.pdf"
+   },
+   "tag": "4597755593"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597977363/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/e4e800ac1adb9c8a/first-time-host-thanksgiving-planner.pdf",
+   "field": "file",
+   "fileName": "first-time-host-thanksgiving-planner.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "first-time-host-thanksgiving-planner.pdf"
+   },
+   "tag": "4597977363"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598358161/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/906cf042c72acafd/adhd-friendly-2027-savings-challenge-tracker.pdf",
+   "field": "file",
+   "fileName": "adhd-friendly-2027-savings-challenge-tracker.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "adhd-friendly-2027-savings-challenge-tracker.pdf"
+   },
+   "tag": "4598358161"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598535050/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/e719c0f29c77741b/2027-debt-payoff-tracker-snowball-and-avalanche-planner.pdf",
+   "field": "file",
+   "fileName": "2027-debt-payoff-tracker-snowball-and-avalanche-planner.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "2027-debt-payoff-tracker-snowball-and-avalanche-planner.pdf"
+   },
+   "tag": "4598535050"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597998190/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/3ebc535b8731cde3/24-days-of-christmas-family-activity-countdown.pdf",
+   "field": "file",
+   "fileName": "24-days-of-christmas-family-activity-countdown.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "24-days-of-christmas-family-activity-countdown.pdf"
+   },
+   "tag": "4597998190"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177516/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/dde2c710277c9799/gingerbread-house-decorating-contest-printable-judge-score-c.pdf",
+   "field": "file",
+   "fileName": "gingerbread-house-decorating-contest-printable-judge-score-c.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "gingerbread-house-decorating-contest-printable-judge-score-c.pdf"
+   },
+   "tag": "4600177516"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598358317/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/2859de32a1e115dc/2027-goal-setting-workbook-12-week-plan.pdf",
+   "field": "file",
+   "fileName": "2027-goal-setting-workbook-12-week-plan.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "2027-goal-setting-workbook-12-week-plan.pdf"
+   },
+   "tag": "4598358317"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597743627/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/2f12acbc1d7b3203/thanksgiving-family-game-pack.pdf",
+   "field": "file",
+   "fileName": "thanksgiving-family-game-pack.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "thanksgiving-family-game-pack.pdf"
+   },
+   "tag": "4597743627"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598379368/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/21763f640f5c4c42/christmas-party-awards-and-superlatives-kit.pdf",
+   "field": "file",
+   "fileName": "christmas-party-awards-and-superlatives-kit.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "christmas-party-awards-and-superlatives-kit.pdf"
+   },
+   "tag": "4598379368"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598659189/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/f9918e3a8f0a2c35/pink-coquette-bible-verse-wall-art-set-of-6-kjv.pdf",
+   "field": "file",
+   "fileName": "pink-coquette-bible-verse-wall-art-set-of-6-kjv.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "pink-coquette-bible-verse-wall-art-set-of-6-kjv.pdf"
+   },
+   "tag": "4598659189"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598501430/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/aaa829b5277658ce/friendsgiving-party-game-and-planning-kit.pdf",
+   "field": "file",
+   "fileName": "friendsgiving-party-game-and-planning-kit.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "friendsgiving-party-game-and-planning-kit.pdf"
+   },
+   "tag": "4598501430"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177510/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/807439d46034c591/christmas-cookie-exchange-kit-printable-cookie-swap-invitati.pdf",
+   "field": "file",
+   "fileName": "christmas-cookie-exchange-kit-printable-cookie-swap-invitati.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "christmas-cookie-exchange-kit-printable-cookie-swap-invitati.pdf"
+   },
+   "tag": "4600177510"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4599444986/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/51997040563d54dd/2027-no-buy-year-planner.pdf",
+   "field": "file",
+   "fileName": "2027-no-buy-year-planner.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "2027-no-buy-year-planner.pdf"
+   },
+   "tag": "4599444986"
+  }
+ ]
+}
