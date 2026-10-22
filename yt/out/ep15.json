@@ -1,8 +1,8 @@
 {
  "id": "ep15",
  "duration": 49.07,
- "bytes": 4338471,
- "mb": 4.14,
+ "bytes": 4353940,
+ "mb": 4.15,
  "width": 720,
  "height": 1280,
  "words": [
@@ -774,7 +774,8 @@
  "credits": [],
  "warnings": [
   "line 8: real motion from the free animation lane",
-  "line 9: real motion from the free animation lane"
+  "line 9: real motion from the free animation lane",
+  "line 10: Cutter patched the scene (dad came out with a human grey-haired head from behind); replaced with a punch-in on Leo, captions re-burned, 41.55-45.5 s"
  ],
  "fakeTts": false,
  "tts": "edge"
