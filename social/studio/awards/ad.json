@@ -1,0 +1,208 @@
+{
+ "dur": 17.1,
+ "vo": "social/studio/media/vo/awards-vo.mp3",
+ "music": "social/studio/media/vo/awards-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/awards",
+   "cover": "cover.jpg",
+   "price": "1.99",
+   "pages": 13,
+   "listTitle": "36 Funny Christmas Party Awards Kit, Office Holiday Superlatives (PDF Download)",
+   "strip": [
+    "p-03.png",
+    "p-05.png",
+    "p-09.png",
+    "p-08.png"
+   ],
+   "bg": [
+    "#c8323c",
+    "#4a0d16"
+   ],
+   "accent": "#d6243a",
+   "hl": "#ffd34d",
+   "dot": "#ffe3a8"
+  },
+  "scenes": [
+   {
+    "type": "hook",
+    "t0": 0,
+    "t1": 2.9,
+    "page": "p-01.png",
+    "badge": "36 awards"
+   },
+   {
+    "type": "pan",
+    "t0": 2.9,
+    "t1": 7.21,
+    "page": "p-03.png",
+    "path": [
+     -40,
+     430,
+     -130,
+     -260
+    ],
+    "cut": "whip"
+   },
+   {
+    "type": "grid",
+    "t0": 7.21,
+    "t1": 11.0,
+    "pages": [
+     "p-05.png",
+     "p-07.png",
+     "p-08.png",
+     "p-09.png"
+    ],
+    "beats": [
+     7.25,
+     8.65,
+     9.8,
+     10.55
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 11.0,
+    "t1": 14.1,
+    "beats": [
+     0.35,
+     1.1,
+     1.35,
+     1.85,
+     2.25
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 14.1,
+    "t1": 17.4
+   }
+  ]
+ },
+ "captions": [
+  [
+   0,
+   1.19,
+   "Your office | *Christmas* party..."
+  ],
+  [
+   1.69,
+   2.4,
+   "*needs* *this.*"
+  ],
+  [
+   2.9,
+   4.19,
+   "*36* funny | awards"
+  ],
+  [
+   4.6,
+   6.81,
+   "each with a line | the host reads | *out* *loud*"
+  ],
+  [
+   7.21,
+   8.22,
+   "Nomination *cards*"
+  ],
+  [
+   8.63,
+   9.38,
+   "A vote *tally*"
+  ],
+  [
+   9.78,
+   10.53,
+   "A host *script*"
+  ],
+  [
+   11.0,
+   11.86,
+   "and *certificates*"
+  ],
+  [
+   12.29,
+   12.8,
+   "Print it *tonight*"
+  ],
+  [
+   13.25,
+   13.88,
+   "Tap the *link*"
+  ],
+  [
+   14.1,
+   15.4,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   2.85,
+   "whoosh"
+  ],
+  [
+   7.2,
+   "whoosh"
+  ],
+  [
+   7.25,
+   "pop"
+  ],
+  [
+   8.65,
+   "pop"
+  ],
+  [
+   9.8,
+   "pop"
+  ],
+  [
+   10.55,
+   "pop"
+  ],
+  [
+   10.95,
+   "whoosh"
+  ],
+  [
+   11.35,
+   "whoosh"
+  ],
+  [
+   13.25,
+   "tap"
+  ],
+  [
+   13.5,
+   "pop"
+  ],
+  [
+   14.05,
+   "whoosh"
+  ],
+  [
+   14.45,
+   "impact"
+  ],
+  [
+   14.9,
+   "pop"
+  ]
+ ]
+}
