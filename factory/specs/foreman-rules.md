@@ -17,7 +17,7 @@ The Factory has to pay for its own Claude plan or it gets shut off. A week in, n
 
 ## 3. Quality gates (all must pass, or it does not ship)
 - Product score 92+ and the slop check: "Would a top Etsy seller post this?" If not, it fails.
-- Covers and pins render with `tools/cover_styles.py` and follow `cover-styles.md`: rotate the 6 styles, no two listings in a row alike, product filling the frame, title readable at thumbnail size, no dark navy, no coffee cup by default.
+- Covers render with `tools/fun_covers.py` and pins with `tools/fun_pins.py` (its portrait twin), both following `cover-styles.md` (newest section wins): bold theme color, real pages on a white card, count badge, benefit pills, themed 3D art; no two listings in a row alike (vary theme and layout), product filling the frame, title readable at thumbnail size, never beige/cream desk covers, no coffee cup by default. Dark backgrounds only as a theme color with white text (navy + gold for New Year's is fine); the Warden's DARK_COVER check is the limit. Wall art covers follow `wall-art.md` (real-frame photos) instead. (Updated Oct 21, 2026: this line used to say cover_styles.py and "no dark navy".)
 - Every new product ships with a styled cover and **3 pins in at least 2 different styles**, each with its own hook.
 
 ## 4. Volume where it counts

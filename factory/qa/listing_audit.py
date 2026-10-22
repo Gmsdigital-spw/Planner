@@ -46,9 +46,16 @@ def load_listings(p):
     return d if isinstance(d, list) else d.get("results", d)
 
 def is_cover_shape(im):
-    # Every cover our crew renders is exactly 2000x1500 (tools/fun_covers.py, cover_styles.py, warm_covers.py
-    # downscaled). Detail photos are 2000x1600, 1000x1500 pins, or the old listings' own sizes.
+    # Every fun/styled cover our crew renders is exactly 2000x1500 (tools/fun_covers.py, cover_styles.py,
+    # warm_covers.py downscaled). Detail photos are 2000x1600, 1000x1500 pins, or the old listings' own sizes.
     return (im.get("full_width"), im.get("full_height")) == (2000, 1500)
+
+def is_wall_art(ims):
+    # Wall art (references/wall-art.md): every photo is a real-frame mockup at 2000x1600, including the cover,
+    # and there is no 2000x1500 card cover at all. Real room photos are mostly neutral, so the bold-color rule
+    # for fun covers does not apply to them, and several 2000x1600 photos are normal, not "two covers".
+    return bool(ims) and (ims[0].get("full_width"), ims[0].get("full_height")) == (2000, 1600) \
+        and not any(is_cover_shape(i) for i in ims)
 
 def pic_stats(path):
     from PIL import Image
@@ -104,7 +111,10 @@ def audit(listings, photos=None):
             if f:
                 stats[i["listing_image_id"]] = pic_stats(f)
         c = stats.get(ims[0]["listing_image_id"])
-        if c:
+        if c and is_wall_art(ims):
+            if c["bright"] < 0.35:
+                add("DARK_COVER", f"brightness {c['bright']} (wall art real-photo cover)", "pick a brighter wall photo record (wall-art.md)")
+        elif c:
             if c["bright"] < 0.35:
                 add("DARK_COVER", f"brightness {c['bright']}", "rebuild with tools/fun_covers.py")
             elif c["bold"] < 0.30:

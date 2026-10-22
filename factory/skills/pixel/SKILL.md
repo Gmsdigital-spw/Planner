@@ -26,3 +26,4 @@ Follow /factory/specs/cover-styles.md: pick one of the 6 styles to fit the produ
 
 ## What I've learned (append-only, newest last)
 - 2026-10-21: Covers and pins now render through tools/cover_styles.py (styles 1-6 from factory/specs/cover-styles.md, JSON config, real PDF pages only); styles must rotate so no two listings in a row share one, and each product's pins use 2+ styles.
+- 2026-10-21 (evening): Pins now render with tools/fun_pins.py (the bold fun_covers look in portrait: theme color, real pages on a card, badge, pills, 3D art, hook in the top third); cover_styles.py and its cream/linen looks are retired. Grayson OKd the sample pins (cookie swap, savings tracker).

@@ -14,6 +14,11 @@ something people want to buy. If the listing says cookie, put real cookies on it
   The 3D art in tools/img3d is Apache-2.0 (Google Noto), safe for business use.
 - Exactly ONE cover per listing. Replacing = upload new at rank 1 + delete the old one in the same run.
 - Warden checks every cover daily with factory/qa/listing_audit.py (bold color, one cover, no duplicates).
+- Pins (added Oct 21, 2026, evening, with Grayson's OK): built with tools/fun_pins.py, the 1000x1500
+  portrait twin of fun_covers.py (same themes, art and config keys; the hook sits in the top third).
+  cover_styles.py is no longer used for new pins; its cream and linen looks are retired with the covers.
+- Wall art is the one exception: its covers and pins are real-frame photos per factory/stages/night-shift/references/wall-art.md
+  (2000x1600 cover, 1000x1500 pins), never a fun_covers card. The listing audit knows a wall art listing by that cover size.
 
 
 Grayson's standing instructions for listing photo 1 (the cover) and Pinterest pins. Same authority as the other files in factory/specs/.

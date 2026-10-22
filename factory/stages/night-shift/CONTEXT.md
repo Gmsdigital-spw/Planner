@@ -87,8 +87,8 @@ stage, write the run doc failed with the reason, and tell Grayson in one line.
 ## Time budget and conflicts
 About 25 minutes of work. Over budget: skip 01's intel refresh, then 08's extra pins, then the
 second product in the build list; say so in the log. Any single wait: 5 minutes max.
-`specs/cover-styles.md` newest section (Oct 21, 2026, 4 PM: bold covers via tools/fun_covers.py)
-wins over every older cover rule, including the 6-style rotation lines above it and
-foreman-rules' "no dark navy" and "tools/cover_styles.py" lines; cover_styles.py remains the
-pin tool. SALES PUSH wins over older spec lines. `shared/rules.md` wins over anything softer.
+`specs/cover-styles.md` newest sections (Oct 21, 2026: bold covers via tools/fun_covers.py,
+bold pins via tools/fun_pins.py, wall art excepted) win over every older cover rule, including
+the 6-style rotation lines below them; foreman-rules.md line 20 now says the same thing, so
+there is no conflict left. cover_styles.py is not used for new covers or pins. SALES PUSH wins over older spec lines. `shared/rules.md` wins over anything softer.
 The task prompt wins over all.
