@@ -10,6 +10,7 @@
 | Lessons | `../../../LESSONS.md` | Full file | Numbers-only lessons |
 | Database | briefs (newest 60), products (newest 60) | title, niche, lane, status, rejectReason | Never repeat a niche; learn from rejections |
 | Database | sprint/main, lessons (status active), ideas (newest 3) | flags, text | Score shopFit from real results |
+| Database | intel docs whose source is "Scout Intel" (newest 12, i.e. the last day of all-day research) | findings, ideas | Start from today's fresh research: competitors, trends, our numbers. Use its ideas first when they pass the Idea Judge; never copy competitors |
 | Reference | `../references/wall-art.md` | "Scout" section only | Only when writing the wall art idea |
 
 ## Process
