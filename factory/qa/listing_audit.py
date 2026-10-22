@@ -67,11 +67,16 @@ def pic_stats(path):
         sats.append(s); vals.append(v)
     # share of strongly colored pixels = "is this a bold cover or beige?"
     bold = sum(1 for s, v in zip(sats, vals) if s > 0.45 and v > 0.35) / len(px)
+    # Oct 22, 2026: soft theme colors (light pink coquette, sage green) are bold covers too, but sit under s 0.45.
+    # "theme" = clearly colored pixels that are NOT the tan/wood/beige band (hue 14-50 deg at low saturation),
+    # so cream desks and oak tables still fail. Measured: all 23 live fun covers >= 0.37, desk/beige photos <= 0.13.
+    hs = [colorsys.rgb_to_hsv(r / 255, g / 255, b / 255)[0] for r, g, b in px]
+    theme = sum(1 for h, s, v in zip(hs, sats, vals) if s > 0.25 and v > 0.35 and not (0.04 < h < 0.14 and s < 0.6)) / len(px)
     from PIL import Image as _I
     g = _I.open(path).convert("L").resize((33, 32))
     gp = list(g.get_flattened_data()) if hasattr(g, "get_flattened_data") else list(g.getdata())
     dhash = "".join("1" if gp[y * 33 + x] > gp[y * 33 + x + 1] else "0" for y in range(32) for x in range(32))
-    return {"bold": round(bold, 3), "bright": round(sum(vals) / len(vals), 3), "hash": dhash}
+    return {"bold": round(bold, 3), "theme": round(theme, 3), "bright": round(sum(vals) / len(vals), 3), "hash": dhash}
 
 def hamming(a, b):
     return sum(x != y for x, y in zip(a, b))
@@ -117,8 +122,8 @@ def audit(listings, photos=None):
         elif c:
             if c["bright"] < 0.35:
                 add("DARK_COVER", f"brightness {c['bright']}", "rebuild with tools/fun_covers.py")
-            elif c["bold"] < 0.30:
-                add("BLAND_COVER", f"only {int(c['bold']*100)}% bold color (needs 30%+)", "rebuild with tools/fun_covers.py (bold theme color + themed 3D art)")
+            elif c["bold"] < 0.30 and c.get("theme", 0) < 0.30:
+                add("BLAND_COVER", f"only {int(c['bold']*100)}% bold / {int(c.get('theme',0)*100)}% theme color (needs 30%+)", "rebuild with tools/fun_covers.py (bold theme color + themed 3D art)")
         ids = [i["listing_image_id"] for i in ims if i["listing_image_id"] in stats]
         for a in range(len(ids)):
             for b in range(a + 1, len(ids)):

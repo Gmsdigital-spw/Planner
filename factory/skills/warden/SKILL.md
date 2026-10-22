@@ -54,3 +54,4 @@ My old job only looked for "dark covers", so I passed all of it. Never again: I 
 
 ## What I've learned (append-only, newest last)
 - 2026-10-21: Missed 18 double covers, 2 duplicate photos and 23 bland covers because I only checked brightness and never looked at the pictures; now I download every photo, run listing_audit.py and read the contact sheet every run. Rebuilt all 23 covers with tools/fun_covers.py (bold color + 3D themed art), audit after = 0 cover problems.
+- 2026-10-22: Audit flagged the light-pink and sage covers as BLAND (bold 18% and 6%) though they are clearly on-theme; added a 'theme' colour share that excludes the tan/wood band (live covers >= 0.37, desk photos <= 0.13), BLAND now needs both under 30%. Found 1 byte-identical duplicate on No-Buy (images 8758890859 = 8758865857); the Etsy delete was blocked by this run's permission check, so it is left for next run or Grayson.
