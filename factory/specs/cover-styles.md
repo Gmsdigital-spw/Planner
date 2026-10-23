@@ -55,3 +55,5 @@ Third time this has happened (Oct 20 cream desk, Oct 21 cream desk again, Oct 23
 - SIDE-BY-SIDE TEST (required, no exceptions): before a cover can pass, render it in a contact sheet next to every live cover in the shop and next to 3 top-seller covers for the same search. If a stranger would say it came from the same template as one of ours, it FAILS (cap the score at 80), whatever else it scores.
 - Our own score is not proof. Report what the side-by-side showed in one line.
 - Order of redo: listings with the fewest views first (0-3 views), max 6 per run, then the rest.
+- Worked examples of 5 families (live Oct 23): tools/varied_covers/ (README there). Examples, not a template.
+- Covers redone so far (Oct 23): 4601798994, 4599447958, 4597998190, 4597977363, 4600177516. The other 19 still carry the retired template: Warden redoes them, fewest views first.
