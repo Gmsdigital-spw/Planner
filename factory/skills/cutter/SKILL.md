@@ -24,3 +24,4 @@ Captions never cover action.
 
 ## What I've learned (append-only, newest last)
 - 2026-10-21: 119 words at speed 0.98 = 49.1 s real (dry run said 43.2 with fake TTS; add ~6 s). Single-character prompts fixed the faces; a 'seen from behind' two-shot still drew a human head. Tomorrow: emotional two-shots as close-ups of ONE character; patch a bad scene locally with a crop punch-in + build_ass captions instead of losing the day.
+- 2026-10-22: 77 words at speed 1.03 = 33.03 s real (fake-TTS dry run said 28.33; add ~5 s again). Single-character prompts gave zero rebuilds; Mom's hair drifted slightly between scenes. Tomorrow: repeat the exact hair/outfit phrase from the cast line in every scene prompt.

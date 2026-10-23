@@ -24,3 +24,4 @@ Scores story/voice/music/motion separately; any <92 = rebuild.
 
 ## What I've learned (append-only, newest last)
 - 2026-10-21: B scored 8.25 (story 9) vs A 7.5 because A's hook spoiled its twist. Frame QC caught human faces in every two-character scene. Tomorrow: dock logic a point for any scene prompt with two characters until the factory proves it can draw them.
+- 2026-10-22: A 8.25 beat B 7.75; B docked a logic point for two two-character scenes per the Oct 21 rule, A written with none. Next: score whether the last line gives viewers a side to take (comments are 0 on every cartoon ep).

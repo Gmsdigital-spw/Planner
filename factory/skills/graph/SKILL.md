@@ -24,3 +24,4 @@ Reads vidIQ stats into LESSONS.
 
 ## What I've learned (append-only, newest last)
 - 2026-10-21: EP 10 1,294 / EP 12 26 / EP 13 24 / EP 14 14 in its first hour (best first hour of the cartoon eps); all cartoon eps 0 likes, 0 comments. Tomorrow: compare EP 15's 24 h views and likes against EP 14 to see if the comment question moved likes.
+- 2026-10-22: the comment question did not move likes: EP 14 at 25 h = 18 views, 0 likes, 0 comments (only +4 after its first hour). EP 15 has 3 views at 74 min vs EP 14's 14. Next run: compare EP 16 at the same 74-min mark against both, and note its length vs EP 10's 24 s.

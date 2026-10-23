@@ -24,3 +24,4 @@ One great Short a day; each better than the last.
 
 ## What I've learned (append-only, newest last)
 - 2026-10-21: EP 15 built B 8.25 over A 7.5; rejected draft B v1 (logic hole), build 1 (human faces), one rebuild scene (patched). Tomorrow: order Gags to write max ONE two-character scene per episode, before any prompt is drawn.
+- 2026-10-22: EP 16 'The Wi-Fi War' built A 8.25 over B 7.75, 33.03 s (vs ep15's 49 s with 3 views at 74 min), zero rebuilds, scheduled Fri 7 PM CT (269iQNHHolk). Tomorrow: order Graph to check EP 16 at the 74-min mark against ep14's 14 and ep15's 3 before Gags writes.
