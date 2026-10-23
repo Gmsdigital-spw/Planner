@@ -16,6 +16,9 @@ This script trades the SAME strategy the Trading lab backtests (backtest.setup_a
     $20 floor, stop on every buy, 40% cash cap, day orders only, buys 8:35 AM-2:45 PM CT, paper unless ALPACA_LIVE=1
   - Bear rules here too: $1.50 daily loss limit, max 2 positions, max 4 entries a day, no re-entry after a loss,
     flat by 2:45 PM CT, floor hit = flatten + lock for the day.
+  - Oct 23, 2026 fix: a stop re-place (breakeven, trail) sends the WHOLE position qty and waits for the old stop's cancel
+    to be confirmed. On Oct 22 both re-places used Alpaca's qty_available, which is "0" while the stop order holds the
+    shares, so they were refused (422) and both winners were dumped at market without a stop.
 Pause it: set "paused": true in factory/trading/auto/control.json (or disable the workflow in GitHub).
 Writes factory/trading/auto/<day>.json (state + every action) so the crew and the Factory can show it.
 Not financial advice: this can lose money. It never adds money, changes the floor, or switches to live.
@@ -92,15 +95,103 @@ def last_price(sym, bars, st):
         return float(b[-1]["c"]) if b else None
 
 
-def cancel_and_sell(sym, qty, stop_id, st, why, day):
+def position_qty(p):
+    """The whole position as Alpaca reports it ("qty"). Never "qty_available": while the protective stop order
+    holds the shares it is "0" (a truthy string, so `qty_available or qty` kept it). Oct 22, 2026: both trail
+    re-places went out with qty "0", were refused (422), and the fail-safe sell with qty "0" was refused too."""
+    q = p.get("qty")
+    return str(q) if q not in (None, "") else str(p.get("qty_available") or "0")
+
+
+def cancel_order(order_id, st, wait=8.0):
+    """Cancel one order and wait until Alpaca confirms it. Cancels are asynchronous: the shares an order holds are
+    released only once its status is 'canceled', so a stop re-placed straight after the DELETE can be refused.
+    Returns (outcome, order): outcome 'canceled' | 'filled' (it filled before the cancel landed) | 'unknown' (no
+    confirmation in `wait` s); order = the last order JSON read back (filled_qty / filled_avg_price when it filled,
+    in part or in full), or None."""
+    if not order_id:
+        return "unknown", None
+    alpaca({"op": "alpaca", "method": "DELETE", "path": f"/orders/{order_id}"}, st)
+    if DRY:
+        return "canceled", None
+    t0 = time.time()
+    last = None
+    while True:
+        time.sleep(1.0)
+        code, js = alpaca({"op": "alpaca", "path": f"/orders/{order_id}"}, st)
+        last = js if isinstance(js, dict) else last
+        status = js.get("status") if isinstance(js, dict) else None
+        if status in ("canceled", "expired", "rejected", "replaced") or code == 404:
+            return "canceled", last
+        if status == "filled":
+            return "filled", last
+        if time.time() - t0 >= wait:
+            return "unknown", last
+
+
+def fill_of(order, default_px):
+    """(filled_qty, filled_avg_price) of an order read back from Alpaca; the stop price stands in when Alpaca gave
+    no fill price, so the journal never invents a number it did not read."""
+    if not isinstance(order, dict):
+        return 0.0, default_px
+    try:
+        q = float(order.get("filled_qty") or 0)
+    except (TypeError, ValueError):
+        q = 0.0
+    try:
+        px = float(order.get("filled_avg_price")) if order.get("filled_avg_price") else default_px
+    except (TypeError, ValueError):
+        px = default_px
+    return q, px
+
+
+def live_qty(sym, st, fallback):
+    """Quantity that can be sold right now, read fresh from /positions/<sym> after a cancel.
+    None = the position is gone (its stop filled first). Falls back to the cycle's snapshot qty on any read error."""
+    if DRY:
+        return fallback
+    code, p = alpaca({"op": "alpaca", "path": f"/positions/{sym}"}, st)
+    if code == 404:
+        return None
+    if not isinstance(p, dict) or not p.get("qty"):
+        return fallback
+    try:
+        qty, avail = float(p["qty"]), float(p.get("qty_available") or 0)
+    except (TypeError, ValueError):
+        return fallback
+    return str(p["qty"]) if avail <= 0 or avail >= qty else str(p["qty_available"])
+
+
+def cancel_and_sell(sym, qty, stop_id, st, why, day, stop_px=None):
+    """Cancel the stop (and wait for it), then sell the whole position at market. Returns a dict:
+    code (HTTP status of the sell, 200 when nothing had to be sent), qty (what was sold; None when the position was
+    already gone because the stop filled first), fill (price the old stop filled at, when it did, else stop_px),
+    partial (qty the old stop filled before the cancel landed, 0.0 when none)."""
+    fill_px, partial = stop_px, 0.0
     if stop_id:
-        alpaca({"op": "alpaca", "method": "DELETE", "path": f"/orders/{stop_id}"}, st)
-        time.sleep(1.5)
+        outcome, order = cancel_order(stop_id, st)
+        pq, fill_px = fill_of(order, stop_px)
+        if outcome == "filled":
+            return {"code": 200, "qty": None, "fill": fill_px, "partial": 0.0}
+        partial = pq
+        qty = live_qty(sym, st, qty)
+        if qty is None:
+            return {"code": 200, "qty": None, "fill": fill_px, "partial": 0.0}
     code, js = alpaca({"op": "alpaca", "method": "POST", "path": "/orders", "body": {
         "symbol": sym, "qty": str(qty), "side": "sell", "type": "market", "time_in_force": "day"}}, st)
     day["actions"].append({"t": now_ct().strftime("%H:%M"), "do": "sell", "sym": sym, "qty": qty, "why": why,
                            "status": code, "id": (js or {}).get("id") if isinstance(js, dict) else None})
-    return code
+    return {"code": code, "qty": qty, "fill": fill_px, "partial": partial}
+
+
+def journal_exit(day, sym, rec, exit_px, why, R, qty=None):
+    """One trades[] line with the real exit price and R; a losing exit marks the name as lost for today."""
+    t = {"sym": sym, "entry": rec["entry"], "exit": exit_px, "r": round((exit_px - rec["entry"]) / R, 2), "why": why}
+    if qty is not None:
+        t["qty"] = qty
+    day["trades"].append(t)
+    if exit_px < rec["entry"] and sym not in day["lostToday"]:
+        day["lostToday"].append(sym)
 
 
 def flatten(st, day, why):
@@ -199,7 +290,7 @@ def run():
 
     # ---- manage open positions (same exits as the backtest) ----
     for sym, p in held.items():
-        qty = p.get("qty_available") or p.get("qty")
+        qty = position_qty(p)
         rec = day["positions"].get(sym)
         so = stops.get(sym)
         if not rec:   # opened outside the autopilot: adopt it using its stop
@@ -218,15 +309,24 @@ def run():
         rec["high"] = max(rec["high"], px)
         R = rec["entry"] - rec["stop0"]
         if px >= rec["target"]:
-            cancel_and_sell(sym, qty, rec.get("stopId"), st, f"target {rec['target']:.2f} hit", day)
-            day["trades"].append({"sym": sym, "entry": rec["entry"], "exit": px,
-                                  "r": round((px - rec["entry"]) / R, 2), "why": "target"})
+            r = cancel_and_sell(sym, qty, rec.get("stopId"), st, f"target {rec['target']:.2f} hit", day,
+                                stop_px=float(so["stop_price"]) if so else rec["stop"])
+            if r["partial"] > 0:   # part of the position left at the old stop before the cancel landed
+                journal_exit(day, sym, rec, r["fill"], "stop filled (partial)", R, qty=r["partial"])
+            if r["qty"] is None:   # the stop filled while we were canceling it
+                journal_exit(day, sym, rec, r["fill"], "stop filled", R)
+            elif r["code"] < 300:
+                journal_exit(day, sym, rec, px, "target", R, qty=r["qty"])
+            else:   # sell refused; the stop is gone, so the next cycle's "no stop found" exit takes over
+                rec["stopId"] = None
+                continue
             day["positions"].pop(sym, None)
             continue
         if not so:   # never hold without a stop
-            cancel_and_sell(sym, qty, None, st, "no stop found", day)
-            day["trades"].append({"sym": sym, "entry": rec["entry"], "exit": px,
-                                  "r": round((px - rec["entry"]) / R, 2), "why": "no stop"})
+            r = cancel_and_sell(sym, qty, None, st, "no stop found", day)
+            if r["code"] >= 300:   # refused: keep the record and try again next cycle
+                continue
+            journal_exit(day, sym, rec, px, "no stop", R, qty=r["qty"])
             day["positions"].pop(sym, None)
             continue
         gain_r = (rec["high"] - rec["entry"]) / R if R > 0 else 0
@@ -237,17 +337,49 @@ def run():
             new_stop = max(new_stop, rec["entry"])
         new_stop = round(min(new_stop, px * 0.999), 2)
         if new_stop > float(so["stop_price"]) + 0.01:
-            alpaca({"op": "alpaca", "method": "DELETE", "path": f"/orders/{so['id']}"}, st)
-            time.sleep(1.5)
-            c, js = alpaca({"op": "alpaca", "method": "POST", "path": "/orders", "body": {
-                "symbol": sym, "qty": str(qty), "side": "sell", "type": "stop", "stop_price": f"{new_stop:.2f}",
-                "time_in_force": "day"}}, st)
-            if c >= 300:   # could not re-protect: get out
-                cancel_and_sell(sym, qty, None, st, "trail stop refused", day)
+            # cancel the old stop, WAIT for Alpaca to confirm it, then re-place it for the whole position
+            outcome, old = cancel_order(so["id"], st)
+            if outcome == "unknown":   # no confirmation in 8 s: the old stop is still live, so re-read next cycle
+                day["actions"].append({"t": hm, "do": "cancel unconfirmed", "sym": sym, "id": so["id"]})
+                continue
+            part_qty, fill_px = fill_of(old, float(so["stop_price"]))
+            if outcome == "filled":   # the old stop filled while we were canceling it
+                journal_exit(day, sym, rec, fill_px, "stop filled", R)
                 day["positions"].pop(sym, None)
                 continue
-            rec["stop"], rec["stopId"] = new_stop, (js or {}).get("id") if isinstance(js, dict) else None
-            day["actions"].append({"t": hm, "do": "raise stop", "sym": sym, "stop": new_stop,
+            if part_qty > 0:   # part of the position left at the old stop before the cancel landed
+                journal_exit(day, sym, rec, fill_px, "stop filled (partial)", R, qty=part_qty)
+            sell_qty, c, js = qty, 0, None
+            try:
+                sell_qty = live_qty(sym, st, qty)
+                if sell_qty is None:   # position gone after all
+                    journal_exit(day, sym, rec, fill_px, "stop filled", R)
+                    day["positions"].pop(sym, None)
+                    continue
+                for attempt in range(2):   # one retry: a cancel can take a moment to release the shares
+                    if attempt:
+                        time.sleep(2)
+                    c, js = alpaca({"op": "alpaca", "method": "POST", "path": "/orders", "body": {
+                        "symbol": sym, "qty": sell_qty, "side": "sell", "type": "stop",
+                        "stop_price": f"{new_stop:.2f}", "time_in_force": "day"}}, st)
+                    if c < 300:
+                        break
+            except Exception as e:   # a transport error here must still end with a stop or a sell, never a bare hold
+                c, js = 599, scrub(f"{type(e).__name__}: {e}")
+                sell_qty = sell_qty or qty
+            if c >= 300:   # could not re-protect: get out (never hold without a stop)
+                day["actions"].append({"t": hm, "do": "trail refused", "sym": sym, "qty": sell_qty, "stop": new_stop,
+                                       "status": c, "result": str(js)[:200]})
+                r = cancel_and_sell(sym, sell_qty, None, st, "trail stop refused", day)
+                if r["code"] >= 300:   # even the sell was refused: the next cycle's "no stop found" exit takes over
+                    rec["stopId"] = None
+                    continue
+                journal_exit(day, sym, rec, px, "trail refused", R, qty=r["qty"])
+                day["positions"].pop(sym, None)
+                continue
+            rec["stop"], rec["qty"] = new_stop, sell_qty
+            rec["stopId"] = js.get("id") if isinstance(js, dict) else None
+            day["actions"].append({"t": hm, "do": "raise stop", "sym": sym, "stop": new_stop, "qty": sell_qty,
                                    "gainR": round(gain_r, 2)})
 
     # ---- new entries (Bull's setup, Bear's limits) ----

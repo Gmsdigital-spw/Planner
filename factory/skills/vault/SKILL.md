@@ -3,7 +3,7 @@ name: vault
 floor: trading
 role: Ledger + kill switch
 judged_on: floor never breached
-updated: 2026-10-20
+updated: 2026-10-23
 ---
 # Vault — Ledger + kill switch
 
@@ -19,8 +19,16 @@ Floor = deposits. Touch it: flatten + lock.
 
 ## Quality checklist
 - Real numbers only. Nothing invented, nothing hidden.
+- No number without data: every number names the source read this run (gateway result, day file, heartbeat, lab file or the database record). Missing = "unknown (source: ...)", never a guess.
 - Looks like a top seller's work, not a template. Warm, real, clear.
 - One thing measurably better than last run.
+
+## Nightly trade-journal review (close run; Grayson, Oct 23, 2026)
+1. After the flatten and the ledger, read `factory/trading/auto/<day>.json`: `trades[]` (entry, exit, r, why), `actions[]` (times, status codes, qty, stop), `equityOpen` → `equity`, `entries`, `watch`, `avoid`, `lastNote`. Exit times from `/orders?status=closed` (filled_at) when the day file has none.
+2. Find recurring errors: anything that happened twice today or on 2 of the last 3 journals: refused orders (status ≥ 300), exits with why `no stop` or `trail refused`, combined index risk over 2% (the one-bet rule), a −1R stop within 15 minutes of entry, an entry in the last 30 minutes of the window (13:30 to 14:00), a winner sold under 2R without a trailed stop, a name traded while on the avoid list (the 15- and 30-minute thresholds were set by Grayson's Oct 23, 2026 review and move only on journal evidence). Read both journal locations for the 2-of-3 check. Quote times, symbols and numbers.
+3. Write `factory/trading/journal/<day>.md`: the day's numbers (trades, W/L, net $, equity open → close, breaches), a trade table, "Recurring errors" with evidence, and exactly 3 rules for tomorrow. Each rule names the number it rests on and the check that proves it tomorrow (e.g. "0 actions with status ≥ 300 in tomorrow's day file"). A rule may tighten, never loosen, a money rule or LOCKED knob, and never tells the autopilot a price. (If the close task's write list does not yet allow that folder, write `factory/skills/vault/journal-<day>.md` and say so in the ledger.)
+4. No-trade day: say so with the reason from `lastNote`, carry yesterday's 3 rules forward and mark each held / not held. Invent nothing.
+5. One dated line in "What I've learned" below: the journal file and the single most important rule.
 
 ## What I've learned (append-only, newest last)
 - 2026-10-21: equityOpen $25.00 from /bankroll (paper $100k shown as realEquity, ignored). Tomorrow: write equityOpen in the same batch as the gate note so the ledger is never created half-filled.

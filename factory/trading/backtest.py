@@ -5,7 +5,8 @@ Trading Floor lab: replay the crew's exact strategy on real past market days it 
 Runs inside the free GitHub Action "Trading lab" (it has the Alpaca keys); reads historical 5-minute bars
 from Alpaca's free IEX feed, simulates the $25 account with every rule (2% risk, 2:1, 40% cap, 2 positions,
 4 entries/day, $1.50 daily loss limit, flat by 2:45 PM CT, $20 floor) plus a realistic cost per trade
-(spread + slippage), and writes results to factory/trading/lab/<id>.json.
+(spread + slippage), and writes results to factory/trading/lab/<id>.json. Each result carries trades, win rate,
+average R, profit factor (gross profit / gross loss; added Oct 23, 2026), net P/L, max drawdown and breaches.
 
 Walk-forward test (the honest kind): the job picks TUNE days and HOLDOUT days that do not overlap.
 Every candidate parameter set is scored on TUNE days; the best one is then judged on HOLDOUT days the
@@ -236,8 +237,14 @@ def simulate(data_by_day, P):
         days.append({"day": day, "pnl": round(day_pnl, 4), "equity": round(eq, 4)})
     wins = [t for t in trades if t["pnl"] > 0]
     n = len(trades)
+    gross_profit = sum(t["pnl"] for t in wins)                       # dollars the winners made (after costs)
+    gross_loss = -sum(t["pnl"] for t in trades if t["pnl"] < 0)      # dollars the losers lost (after costs)
     return {"trades": n, "wins": len(wins), "winRate": round(len(wins) / n * 100, 1) if n else None,
             "avgR": round(sum(t["r"] for t in trades) / n, 3) if n else None,
+            # profit factor = gross profit / gross loss from the replayed trades; above 1.0 = winners paid for the
+            # losers. None when there was no losing trade to divide by (never a made-up value).
+            "profitFactor": round(gross_profit / gross_loss, 3) if gross_loss > 0 else None,
+            "grossProfit": round(gross_profit, 4), "grossLoss": round(gross_loss, 4),
             "netPnl": round(eq - P["bankroll"], 4), "endEquity": round(eq, 4), "maxDrawdown": round(mdd, 4),
             "worstDay": min((d["pnl"] for d in days), default=0), "bestDay": max((d["pnl"] for d in days), default=0),
             "breaches": breaches, "days": days, "sample": trades[:40]}
@@ -286,7 +293,7 @@ def main():
            "note": "Past days only. A strategy that worked on past days can still lose on the next one."}
     os.makedirs(os.path.join(ROOT, "lab"), exist_ok=True)
     json.dump(out, open(os.path.join(ROOT, "lab", f"{jid}.json"), "w"), indent=1)
-    print(json.dumps({"id": jid, "baselineHoldout": {k: baseline["holdout"][k] for k in ("trades", "winRate", "avgR", "netPnl", "maxDrawdown")},
+    print(json.dumps({"id": jid, "baselineHoldout": {k: baseline["holdout"][k] for k in ("trades", "winRate", "avgR", "profitFactor", "netPnl", "maxDrawdown")},
                       "adoptable": adopt}))
     return 0
 

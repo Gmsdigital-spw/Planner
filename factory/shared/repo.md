@@ -43,7 +43,7 @@ mirrors those lists so they have one home to drift from.
 | Warden (check-up) | shopcheck/, listing-photos/warm-covers/, gw/jobs/warden-*.json, tools/warm_covers.py (config only) |
 | Medic (Day Watch) | gw/jobs/medic-*.json |
 | Trading scans | factory/trading/kick/, factory/trading/watchlist.json, gw/jobs/trade-*.json (read ops), factory/skills/{bull,bear,vault,tape}/ |
-| Trading close | gw/jobs/trade-*.json, factory/skills/{bull,bear,vault,tape}/ |
+| Trading close | gw/jobs/trade-*.json, factory/trading/journal/<day>.md (the nightly trade-journal review; until Grayson adds that folder to the close task's write list, Vault writes factory/skills/vault/journal-<day>.md instead), factory/skills/{bull,bear,vault,tape}/ |
 | Trading lab | factory/trading/{backtest.py,params.json,lab/jobs/}, factory/skills/{bull,bear,vault,tape}/, factory/LESSONS.md |
 | Studio (Vega) | yt/, factory/skills/{vega,gags,judge,cutter,graph}/ (memory step only), factory/runlog.jsonl, factory/stages/studio/output/ |
 | Atlas Prime | nothing in the repo |
