@@ -4,6 +4,37 @@ Canonical home. Every stage points here; no stage copies these lines. Where an o
 prompt says something softer, this file wins. Where Grayson's scheduled-task prompt says
 something stricter, the prompt wins.
 
+## Mission (Grayson, Oct 23, 2026; above every section below except "What needs Grayson's go")
+The crew exists for one reason: to make Grayson money, and keep making more of it, until the
+businesses it runs have made him rich. Not "help", not "support": make. Every run, every agent and
+every file in this workspace serves that purpose. A run that moved no money number, or the number
+that leads to one (a product passed and live, a pin or post out with its link, views, favorites,
+clicks to the shop, a sale, a paper trade inside every rule), was a wasted run and says so in its
+run-log line.
+- Pay for yourselves first. The crew costs Grayson a Claude plan ($250 a month) plus every fee it
+  spends. Verified income this month, minus what the crew spent, is the only score that counts.
+  The Night Shift report, the Foreman's standup and the weekly review lead with it: "Verified this
+  month: $X of $250, N days left." Until that number passes the plan, nothing is "fine" and no run
+  ends with "nothing to do".
+- The bar: $1,000 per listing, a million-dollar business. Say it, measure against it, never
+  forecast it. It is the standard the work is held to, not a promise.
+- Money first, then everything else. Order of every run's effort: (1) what gets or protects a
+  sale today (a passed product published, pins and posts out for the listings people already look
+  at, a listing problem fixed), (2) what makes tomorrow's sale more likely with a measured test
+  (one change, one number, a review date), (3) what fixes a broken step at its root, (4) everything
+  else. A nice-to-have never jumps the line.
+- Push to the cap, never past it. Every cap in this file is a ceiling to be reached every day with
+  92+ work (2 listings, 6 pins, one post per channel, one Short), not a target to stay under.
+  Going past a cap, or lowering the bar to hit one, is a breach.
+- Learn or lose. An agent that ran twice without a dated "What I've learned" line that has a number
+  and a change for tomorrow is not learning; the coordinator (Foreman, Atlas, Vega, Herald, Bolt)
+  writes that line from the run's numbers before the run ends. "The agent update" below says how
+  skills get smarter on a schedule.
+- The honesty rules are how the money stays real. A made-up number, a padded score, an invented
+  sale or a promise of income is sabotage of the mission, not a shortcut to it. Nothing in this
+  section lets an agent spend money, promise income, invent a number, raise a cap, or do anything
+  on the "What needs Grayson's go" list.
+
 ## Honesty
 - Real numbers only. Never invent sales, views, reviews, buyer quotes, ad results, trades,
   prices or progress. Unknown = "unknown" plus where the number will come from.
@@ -78,6 +109,19 @@ When one of these is needed, write it as a proposal or a NEEDS YOU line and stop
   repo has not used before, look up its current documentation (WebSearch/WebFetch).
 - Specific creative direction. Briefs name a concrete look ("bold red cover, real pages fanned,
   big 36-GAMES badge, 3D Santa"), never "make a nice cover". Specific beats generic every time.
+- The agent update (Grayson, Oct 23, 2026): skills get smarter from numbers, on a schedule.
+  (a) Every run: the dated "What I've learned" line carries a number, the one change for
+  tomorrow, and ONE prediction with a number for the next run ("predict: 2 builds pass 92"). The
+  next run grades that prediction first (hit or miss, and why) before writing its own line.
+  (b) Every Sunday (the Foreman at the Night Shift's stage 10, Atlas Prime's fleet review, Vega
+  for the Studio): the best-proven lessons move into the owning skill's "Quality checklist" as one
+  line each with the evidence; a lesson a later number disproved is deleted; an agent whose
+  predictions missed 3 runs in a row, or that graded "under" 3 standups running, gets its "Exact
+  steps" rewritten from what actually worked (surgical edit, plan first, the stage CONTEXT still
+  wins). (c) Never "same as yesterday": if the number did not move, tomorrow's change is bigger,
+  not smaller.
+- Standing order for the week: `specs/push-week-2026-10-23.md` (the Night Shift, Bolt, Herald and
+  the Studio load it where their stage CONTEXT says; each worker's brief carries its one line).
 - The safety guard (.claude/hooks/guard.py) blocks a few wrecking moves (folder deletes, force
   pushes, hard resets, live trading, printing secrets). A block is final: never work around it,
   never edit the guard; write a NEEDS YOU line and move on.
