@@ -1,0 +1,229 @@
+{
+ "dur": 21.31,
+ "vo": "social/studio/media/vo/santa-vo.mp3",
+ "music": "social/studio/media/vo/santa-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/santa",
+   "cover": "cover.jpg",
+   "price": "3.49",
+   "pages": 11,
+   "listTitle": "Secret Santa Exchange Kit, Questionnaire, Name Slips, Rules (PDF Download)",
+   "strip": [
+    "p-04.png",
+    "p-05.png",
+    "p-06.png",
+    "p-08.png"
+   ],
+   "bg": [
+    "#2f8a5c",
+    "#0e3a26"
+   ],
+   "accent": "#c8323c",
+   "hl": "#ffd34d",
+   "dot": "#d6f5e3"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-03.png",
+     "p-04.png",
+     "p-06.png",
+     "p-08.png"
+    ],
+    "type": "grid",
+    "t0": 0,
+    "t1": 2.96,
+    "beats": [
+     0.1,
+     0.73,
+     1.36,
+     1.99
+    ]
+   },
+   {
+    "page": "p-04.png",
+    "type": "pan",
+    "t0": 2.96,
+    "t1": 5.66,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "page": "p-05.png",
+    "badge": "$10 $20 $30",
+    "type": "hook",
+    "t0": 5.66,
+    "t1": 10.43
+   },
+   {
+    "pages": [
+     "p-06.png",
+     "p-08.png",
+     "p-10.png"
+    ],
+    "type": "fan",
+    "t0": 10.43,
+    "t1": 14.25,
+    "beats": [
+     10.53,
+     11.82,
+     13.11
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 14.25,
+    "t1": 18.19,
+    "beats": [
+     0.43,
+     1.29,
+     1.66,
+     2.46,
+     2.86
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 18.19,
+    "t1": 21.61
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.5,
+   "Your *Secret Santa* | *sorted.*"
+  ],
+  [
+   2.96,
+   5.26,
+   "A *14-question* form | for everyone"
+  ],
+  [
+   5.66,
+   6.64,
+   "Stuck on a *gift?*"
+  ],
+  [
+   7.1,
+   9.99,
+   "Ideas under | *$10* *$20* *$30*"
+  ],
+  [
+   10.43,
+   13.84,
+   "*24* name slips | *white elephant* rules | dice *swap* game"
+  ],
+  [
+   14.25,
+   15.18,
+   "*11* pages"
+  ],
+  [
+   15.67,
+   16.56,
+   "Instant *download*"
+  ],
+  [
+   17.06,
+   17.77,
+   "Tap the *link*"
+  ],
+  [
+   18.19,
+   19.28,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.73,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.36,
+   "pop"
+  ],
+  [
+   1.99,
+   "pop"
+  ],
+  [
+   2.91,
+   "whoosh"
+  ],
+  [
+   5.61,
+   "whoosh"
+  ],
+  [
+   10.38,
+   "whoosh"
+  ],
+  [
+   10.53,
+   "pop"
+  ],
+  [
+   11.82,
+   "pop"
+  ],
+  [
+   13.11,
+   "pop"
+  ],
+  [
+   14.2,
+   "whoosh"
+  ],
+  [
+   14.68,
+   "whoosh"
+  ],
+  [
+   17.11,
+   "tap"
+  ],
+  [
+   17.36,
+   "pop"
+  ],
+  [
+   18.14,
+   "whoosh"
+  ],
+  [
+   18.54,
+   "impact"
+  ],
+  [
+   18.99,
+   "pop"
+  ]
+ ]
+}
