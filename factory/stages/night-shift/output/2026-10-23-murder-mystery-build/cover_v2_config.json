@@ -1,0 +1,91 @@
+[
+ {
+  "slug": "prod-xmas-murder-mystery-8",
+  "listing_id": "",
+  "root": "/home/claude/planner/factory/stages/night-shift/output/2026-10-23-murder-mystery-build",
+  "out": "cover_v2.jpg",
+  "kicker": "Murder Mystery",
+  "title": "Who Stole the *Star*?",
+  "badge": [
+   "8",
+   "PLAYERS"
+  ],
+  "pills": [
+   "Host can play",
+   "9 clue cards",
+   "1 fair answer"
+  ],
+  "theme": "midnight",
+  "pages": {
+   "src": "/tmp/claude-0/-home-claude/a8dc3ea4-9e15-504f-8d9b-e1930aca3bec/scratchpad/fix/pages/p-13.png",
+   "crop": [
+    0.06,
+    0.03,
+    0.94,
+    0.925
+   ]
+  },
+  "decor": [
+   [
+    "img:1f56f",
+    {},
+    20,
+    50,
+    230,
+    -6
+   ],
+   [
+    "img:1f384",
+    {},
+    1735,
+    30,
+    240,
+    6
+   ],
+   [
+    "footprints",
+    {},
+    45,
+    640,
+    190,
+    -12
+   ],
+   [
+    "img:2b50",
+    {},
+    1760,
+    660,
+    180,
+    10
+   ],
+   [
+    "img:1f50d",
+    {},
+    30,
+    1170,
+    240,
+    -8
+   ],
+   [
+    "img:1f381",
+    {},
+    1745,
+    1190,
+    230,
+    8
+   ]
+  ],
+  "card_box": [
+   900,
+   1250
+  ],
+  "card_cx": 1268,
+  "left_w": 500,
+  "card_rot": 2,
+  "title_size": 118,
+  "badge_x": 300,
+  "badge_y": 700,
+  "badge_word_size": 38,
+  "badge_word_spacing": 2
+ }
+]
