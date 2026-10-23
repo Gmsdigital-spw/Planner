@@ -30,6 +30,7 @@ RULES = {
     "MISSING_ALT":    "Cover has no alt text.",
     "FEW_PHOTOS":     "Fewer than 5 photos. Top sellers use 7-10.",
     "COVER_NOT_FIRST":"The cover-style image is not photo #1.",
+    "SQUARE_CLIP":    "Cover title runs outside the centred square Etsy's app grid shows (x 280-1720 of 2000x1500). Report by id; re-render only after Grayson's tap.",
 }
 
 STOP = set("the a an and or of for with to in on your my 2026 2027 pdf digital download printable kit set planner tracker games game party".split())
@@ -78,6 +79,18 @@ def pic_stats(path):
     dhash = "".join("1" if gp[y * 33 + x] > gp[y * 33 + x + 1] else "0" for y in range(32) for x in range(32))
     return {"bold": round(bold, 3), "theme": round(theme, 3), "bright": round(sum(vals) / len(vals), 3), "hash": dhash}
 
+def square_edge_ink(path):
+    # Oct 23, 2026 (Warden, eyes-on): Etsy's app grid crops a 4:3 cover to its centred square. If the title starts
+    # left of that square, letters cross its left edge. Measure: share of pixels in a 10 px column on the square's
+    # left edge (title band, 8-40% height, 570px thumb) that differ strongly from the column's median colour.
+    # Measured: square-safe renders (bingo, santa mail, murder mystery) 0.00-0.02; all 23 live clipped covers 0.15-0.45.
+    from PIL import Image
+    import statistics as st
+    im = Image.open(path).convert("RGB").resize((570, 427)); w, h = im.size; x0 = (w - h) // 2; px = im.load()
+    P = [px[x, y] for x in range(x0 - 5, x0 + 5) for y in range(int(h * .08), int(h * .40))]
+    med = [st.median(c[i] for c in P) for i in range(3)]
+    return round(sum(1 for q in P if sum(abs(q[i] - med[i]) for i in range(3)) > 120) / len(P), 3)
+
 def hamming(a, b):
     return sum(x != y for x, y in zip(a, b))
 
@@ -124,6 +137,10 @@ def audit(listings, photos=None):
                 add("DARK_COVER", f"brightness {c['bright']}", "rebuild with tools/fun_covers.py")
             elif c["bold"] < 0.30 and c.get("theme", 0) < 0.30:
                 add("BLAND_COVER", f"only {int(c['bold']*100)}% bold / {int(c.get('theme',0)*100)}% theme color (needs 30%+)", "rebuild with tools/fun_covers.py (bold theme color + themed 3D art)")
+            if is_cover_shape(ims[0]):
+                ink = square_edge_ink(files[ims[0]["listing_image_id"]])
+                if ink > 0.08:
+                    add("SQUARE_CLIP", f"edge ink {ink} (safe <= 0.02)", "report by id for Grayson's tap; re-render with the square-safe tools/fun_covers.py only after his go")
         ids = [i["listing_image_id"] for i in ims if i["listing_image_id"] in stats]
         for a in range(len(ids)):
             for b in range(a + 1, len(ids)):
