@@ -1,0 +1,80 @@
+{
+ "id": "lab-2026-10-22",
+ "symbols": [
+  "SPY",
+  "QQQ",
+  "IWM",
+  "DIA",
+  "XLF",
+  "XLV",
+  "AAPL",
+  "MSFT",
+  "NVDA",
+  "GOOGL",
+  "AMZN",
+  "WMT",
+  "KO",
+  "JPM"
+ ],
+ "tune": [
+  "2025-10-23",
+  "2025-11-13",
+  "2026-01-05",
+  "2026-01-28",
+  "2026-01-30",
+  "2026-02-02",
+  "2026-02-18",
+  "2026-03-25",
+  "2026-07-20",
+  "2026-08-31"
+ ],
+ "holdout": [
+  "2025-11-18",
+  "2025-12-16",
+  "2026-01-12",
+  "2026-01-13",
+  "2026-02-27",
+  "2026-06-30",
+  "2026-08-14",
+  "2026-08-21",
+  "2026-09-08",
+  "2026-09-11"
+ ],
+ "candidates": [
+  {
+   "setup": "orb",
+   "orb_min": 30,
+   "orb_stop": "low"
+  },
+  {
+   "setup": "orb",
+   "orb_min": 30
+  },
+  {
+   "setup": "orb",
+   "orb_min": 30,
+   "orb_stop": "low",
+   "max_entries": 2
+  },
+  {
+   "setup": "pullback_orh"
+  },
+  {
+   "setup": "pullback_orh",
+   "last_entry_ct": "12:30"
+  },
+  {
+   "setup": "pullback_orh",
+   "sma_len": 30,
+   "pullback_bars": 4
+  },
+  {
+   "sma_len": 30,
+   "pullback_bars": 4,
+   "last_entry_ct": "12:30"
+  },
+  {
+   "max_entries": 2
+  }
+ ]
+}

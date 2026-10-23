@@ -28,7 +28,9 @@ DEFAULT = {
     "max_entries": 4, "daily_loss": 1.5, "sma_len": 20, "pullback_bars": 6, "pullback_pct": 0.25,
     "min_stop_pct": 0.30, "be_at_r": 1.0, "trail_at_r": 1.5, "trail_r": 1.0, "target_r": 2.0,
     "start_ct": "08:35", "last_entry_ct": "14:00", "flat_ct": "14:45", "cost_bps": 6.0, "min_price": 5.0,
-    "setup": "pullback",   # entry rule: "pullback" (default) or "orb" (opening-range breakout)
+    "setup": "pullback",   # entry rule: "pullback" (default), "orb" (opening-range breakout), "pullback_orh"
+    "orb_min": 15,         # opening-range length in minutes (orb, pullback_orh)
+    "orb_stop": "mid",     # orb stop: "mid" (range midpoint) or "low" (range low)
 }
 # Hard limits the lab may never change (the money rules belong to Grayson)
 LOCKED = {"bankroll", "floor", "risk_pct", "max_pos_pct", "max_positions", "daily_loss", "flat_ct", "min_rr"}
@@ -108,11 +110,13 @@ def setup_orb(bars, i, P):
     """Opening-range breakout at bar i: the range is the first 15 minutes (bars before 08:45 CT).
     Entry on the first green bar that closes above the range high with volume above the session's
     average bar volume so far; stop under the range midpoint (at least min_stop_pct away)."""
-    rng = [x for x in bars[:i + 1] if ct_hm(x["t"]) < "08:45"]
-    if len(rng) < 2 or ct_hm(bars[i]["t"]) < "08:45":
+    cut = orb_cut(P)
+    rng = [x for x in bars[:i + 1] if ct_hm(x["t"]) < cut]
+    if len(rng) < 2 or ct_hm(bars[i]["t"]) < cut:
         return None
     b = bars[i]; prev = bars[i - 1]
-    hi = max(x["h"] for x in rng); lo = min(x["l"] for x in rng); mid = (hi + lo) / 2
+    hi = max(x["h"] for x in rng); lo = min(x["l"] for x in rng)
+    mid = lo if P.get("orb_stop", "mid") == "low" else (hi + lo) / 2
     if b["c"] < P["min_price"] or not (b["c"] > hi and b["c"] > b["o"] and prev["c"] <= hi):
         return None
     avg_v = sum(x["v"] for x in bars[:i]) / i
@@ -124,7 +128,23 @@ def setup_orb(bars, i, P):
         return None
     return entry, stop
 
-SETUPS = {"pullback": setup_at, "orb": setup_orb}
+def orb_cut(P):
+    """CT time (HH:MM) when the opening range ends: 08:30 + orb_min minutes (15 -> 08:45)."""
+    m = 8 * 60 + 30 + int(P.get("orb_min", 15))
+    return f"{m // 60:02d}:{m % 60:02d}"
+
+def setup_pullback_orh(bars, i, P):
+    """Pullback setup, taken only while the name trades above its opening-range high (first orb_min minutes):
+    the same entry and stop as setup_at, plus the bar must close above that range high."""
+    cut = orb_cut(P)
+    if ct_hm(bars[i]["t"]) < cut:
+        return None
+    rng = [x for x in bars[:i + 1] if ct_hm(x["t"]) < cut]
+    if len(rng) < 2 or bars[i]["c"] <= max(x["h"] for x in rng):
+        return None
+    return setup_at(bars, i, P)
+
+SETUPS = {"pullback": setup_at, "orb": setup_orb, "pullback_orh": setup_pullback_orh}
 
 def simulate(data_by_day, P):
     eq = P["bankroll"]; peak = eq; mdd = 0.0; trades = []; days = []; breaches = 0
