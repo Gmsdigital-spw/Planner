@@ -16,6 +16,7 @@ at #1 and never deleted the old ones), the same photo twice on two listings, and
 My old job only looked for "dark covers", so I passed all of it. Never again: I LOOK at every photo now.
 
 ## Exact steps (every run)
+0. Run `python3 factory/notebook/nb.py show --lane etsy` and follow its "Grayson's rules" (Oct 23: covers must all look different and pass the side-by-side test in specs/cover-styles.md; never re-apply the retired fun_covers template).
 0. Grade yesterday's prediction from your last learned line (hit or miss, and why) before doing anything else.
 1. Read this file, factory/qa/MISSES.md and factory/LESSONS.md.
 2. Pull listings (gateway etsy GET /shops/68605457/listings?state=active&limit=100&includes=Images).

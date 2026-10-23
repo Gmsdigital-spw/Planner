@@ -14,7 +14,7 @@ does stages 03 to 06. Stage 07 always runs. One session; load each stage when yo
 
 | Stage | Loads | Skip when |
 |-------|-------|-----------|
-| 00-gates | `references/channels.md`, `specs/marketing-wing-v6.md` (full), `specs/foreman-rules.md` (1, 2, 3, 6), `skills/herald/SKILL.md`, `specs/push-week-2026-10-23.md` (the Herald row) | never |
+| 00-gates | `notebook/social.md` (full; run `python3 factory/notebook/nb.py show --lane social`), `references/channels.md`, `specs/marketing-wing-v6.md` (full), `specs/foreman-rules.md` (1, 2, 3, 6), `skills/herald/SKILL.md`, `specs/push-week-2026-10-23.md` (the Herald row) | never |
 | 01-post-due | `references/posting-lane.md` | signal/main.live false or firstApprovedAt null |
 | 02-numbers | `references/posting-lane.md` ("Real numbers", "TikTok check") | never |
 | 03-pick | `specs/marketing-wing-v6.md` ("Rules every marketing run follows", rules 1 and 2), `references/docs.md` | social docs exist for today |

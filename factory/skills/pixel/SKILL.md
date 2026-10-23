@@ -13,6 +13,7 @@ Get every passed product in front of Pinterest buyers: 3 pins per product in 2+ 
 Follow /factory/specs/cover-styles.md (newest section wins: tools/fun_pins.py): pick one of the 6 styles to fit the product, never the same style as the last listing.
 
 ## Exact steps (keep current; rewrite when a better way is proven)
+0. Run `python3 factory/notebook/nb.py show --lane pins` and follow its "Grayson's rules" and "Proven" lines.
 1. Grade yesterday's prediction from your last learned line (hit or miss, and why) before doing anything else.
 2. Read this file and /factory/LESSONS.md before working.
 3. Use only the playbook the stage's Inputs table names (08: playbooks/tablet-mockup-pin.md); never browse /factory/playbooks/ (night-shift CONTEXT.md load map).

@@ -61,15 +61,15 @@ product `## Build: <title>` (04), `## Copy: <title>` (05), `## Photos: <title>` 
 | Stage | Loads |
 |-------|-------|
 | 00 | `shared/repo.md` ("Getting it"), `specs/push-week-2026-10-23.md` ("Daily targets": the coordinator puts each worker's line into its brief) |
-| 01 | `specs/product-floor-v6.md` (Idea Engine, lanes, Holiday Mode, SALES PUSH), `skills/scout/SKILL.md`, `skills/judge_ideas/SKILL.md`, `LESSONS.md`; `references/wall-art.md` (Scout section) |
+| 01 | `notebook/etsy.md` (full) + `notebook/business.md` (Grayson's rules), `specs/product-floor-v6.md` (Idea Engine, lanes, Holiday Mode, SALES PUSH), `skills/scout/SKILL.md`, `skills/judge_ideas/SKILL.md`, `LESSONS.md`; `references/wall-art.md` (Scout section) |
 | 02 | wall-art.md (Auto-approver section) for a wall art brief |
 | 03 | `references/database-fields.md` ("products", "missions"), `specs/cover-styles.md` (newest section) |
-| 04 | `references/preflight.md` ("File"), `references/house-style.md` ("The kit", "PDF pages"), `skills/forge/SKILL.md`, `LESSONS.md`, `specs/product-floor-v6.md` (THANK-YOU PAGE; the lane's spec); wall-art.md (Forge) for wallart |
-| 05 | `skills/quill/SKILL.md`, `specs/product-floor-v6.md` (SEARCH-FIRST COPY, PRICES) |
-| 06 | `references/preflight.md` (full: the gate before inspection), `specs/cover-styles.md` (newest section first), `playbooks/fun-listing-cover.md` (steps 1 to 4 only), `references/house-style.md` ("Photos 2 to 5", "Text safe zone"), `skills/lens/SKILL.md`, `LESSONS.md` |
-| 07 | `references/rubric.md` (full), `references/preflight.md` (full), `skills/atlas/SKILL.md` |
-| 08 | `specs/cover-styles.md` ("Pins"), `specs/foreman-rules.md` (3, 4), `skills/pixel/SKILL.md`, `playbooks/tablet-mockup-pin.md`, `shared/accounts.md` ("Pinterest"), `LESSONS.md` |
-| 09 | `references/database-fields.md` (experiments, sprint, lessons, nextmove, ads), `specs/product-floor-v6.md` (SALES PUSH last bullet) |
+| 04 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `references/preflight.md` ("File"), `references/house-style.md` ("The kit", "PDF pages"), `skills/forge/SKILL.md`, `LESSONS.md`, `specs/product-floor-v6.md` (THANK-YOU PAGE; the lane's spec); wall-art.md (Forge) for wallart |
+| 05 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `skills/quill/SKILL.md`, `specs/product-floor-v6.md` (SEARCH-FIRST COPY, PRICES) |
+| 06 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `references/preflight.md` (full: the gate before inspection), `specs/cover-styles.md` (newest section first), `playbooks/fun-listing-cover.md` (steps 1 to 4 only), `references/house-style.md` ("Photos 2 to 5", "Text safe zone"), `skills/lens/SKILL.md`, `LESSONS.md` |
+| 07 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `references/rubric.md` (full), `references/preflight.md` (full), `skills/atlas/SKILL.md` |
+| 08 | `notebook/pins.md` (full), `specs/cover-styles.md` ("Pins"), `specs/foreman-rules.md` (3, 4), `skills/pixel/SKILL.md`, `playbooks/tablet-mockup-pin.md`, `shared/accounts.md` ("Pinterest"), `LESSONS.md` |
+| 09 | `notebook/README.md`, all `notebook/*.md` (for step G), `references/database-fields.md` (experiments, sprint, lessons, nextmove, ads), `specs/product-floor-v6.md` (SALES PUSH last bullet) |
 | 10 | `specs/foreman-rules.md`, `skills/foreman/SKILL.md`, `shared/logging.md`, `shared/repo.md` ("Committing", Night Shift write paths), `specs/push-week-2026-10-23.md` ("Scoreboard", "Daily targets": target vs actual in the report and the standup) |
 
 Do NOT load: every skill, every playbook, the other floors' specs, `gm_factory_v6.py`,

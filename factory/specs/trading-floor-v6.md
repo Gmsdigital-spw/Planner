@@ -105,3 +105,9 @@ Bear writes one line per plan: `GO|NO <SYM>: floor room $x.xx, day room $x.xx, e
 | 4 | Trail-stop bug fixed and seen working | a day file with a `raise stop` action carrying a `qty`, no status ≥ 300 and no buy with status 207 | fixed in code Oct 23, 2026; not yet seen live |
 The lab's `readyForLive` flag (and the Factory page's "Ready for real money" pill) reads only holdout net > 0 with 20+ trades; gate 1 here also requires 0 holdout breaches and is the authoritative check, so the pill can say yes while this table says no.
 "Ready" describes the mechanics and the past-day evidence; it is not a prediction. The account can still lose the $25.
+
+## Notebook (Grayson, Oct 23, 2026)
+Every trading run (scans, close, lab) first runs `python3 factory/notebook/nb.py show --lane trading`
+and follows its "Grayson's rules" and "Proven" lines. The Night Shift's keeper writes each trading
+day's results into the notebook from modules/trading/ledger/<day>; the lab's proven or retired
+setups go there too. Past days only; not financial advice.

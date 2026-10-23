@@ -82,6 +82,25 @@ F. Dream (sleep on it, then wake up smarter). Skip if no run log line exists fro
    root-cause rule in shared/rules.md. Never invent a pattern; no repeat = write nothing. List
    what you wrote in the run doc under "Dream".
 
+G. Notebook keeper (Grayson, Oct 23, 2026: "notes with everything we do so they get smarter
+   and smarter"). Never skipped. Use `python3 factory/notebook/nb.py` (see notebook/README.md).
+   (a) CAPTURE: add one results line for everything that went out since the last run and is not
+       in results.jsonl yet: listings Bolt published (products with etsy.listingId; tags layout =
+       product.coverStyle or the cover's look, theme, price, lane), pins posted (pins docs: style,
+       coverLook, board, productId), Herald's posts (social docs: channel, hook, format), the
+       trading day (modules/trading/ledger/<day>: trades, setup, pnl), price changes (pricing/main).
+   (b) OUTCOMES: `nb.py pending --days 7`; fill up to 40 from stats/ (views, favs for the listing
+       now minus at publish), pinstats/ (impressions, saves, clicks), social doc stats, the ledger.
+       Missing stays missing; never 0 for unknown.
+   (c) LEARN: run `nb.py compare` on the tags that have 3+ outcomes per side. A clear winner
+       (2x or better, enough views to mean something; under 100 views both sides = too early)
+       becomes a Testing line, or Proven when it held on a different week (then also one line
+       in LESSONS.md). Numbers that contradict a Proven line move it to Retired.
+   (d) Copy any Grayson correction from the last day (run notes, events, LESSONS.md) into the
+       lane's "Grayson's rules" if it is not there yet. Keep each lane file under 120 lines.
+   (e) Update business.md's Scoreboard row for this week. Report what you wrote in the run
+       notes under "## Notebook" (3 lines max), committed with the Night Shift's push.
+
 ## Outputs
 
 | Artifact | Location | Format |
@@ -91,4 +110,5 @@ F. Dream (sleep on it, then wake up smarter). Skip if no run log line exists fro
 | Dream lessons | skills/<agent> "What I've learned", run doc "Dream" | one dated line each, max 3 |
 | Ads note | ads/main.review | only this field |
 | Next move | nextmove/main | set once per run |
+| Notebook | factory/notebook/*.md, factory/notebook/results.jsonl, run notes "## Notebook" | step G |
 | Money lines | `../output/<day key>-run.md` "## Money" | the numbers for the report |

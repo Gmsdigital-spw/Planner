@@ -74,6 +74,20 @@ run log with the exact one-step fix, and the Emergency Watch tells him. "Logged 
 stopped" is never an acceptable outcome for a bug in our own code. Never edit secrets,
 money rules, trading LOCKED knobs or scheduled tasks under this rule.
 
+## Notebook rule: learn from everything (Grayson, Oct 23, 2026)
+
+Every crew gets smarter from `factory/notebook/` (read `notebook/README.md` once if unsure how it works).
+1. BEFORE working: `python3 factory/notebook/nb.py show --lane <your lane>` (etsy, pins, social,
+   trading) and follow its "Grayson's rules" and "Proven" lines. They beat your skill file's
+   habits; they never beat this prompt, specs or shared/rules.md.
+2. AFTER working, if your write paths include `factory/notebook/`: one `nb.py add` line per thing
+   you made, published, posted, re-priced or traded, with tags that could explain its result
+   later (layout, hook, theme, price, board, time, symbol, setup). Crews without that write path
+   skip this: the Night Shift's keeper step collects their work from the database.
+3. Grayson's corrections go in "Grayson's rules" the same day, dated, in his words.
+4. Never a "Proven" line without real buyer or market numbers. Our own inspection score is not proof.
+5. Repeating a "Retired" idea needs a written reason in the run notes.
+
 ## Rules that never change
 
 Mission (Grayson, Oct 23, 2026): the crew exists to make Grayson money until it has made him rich;

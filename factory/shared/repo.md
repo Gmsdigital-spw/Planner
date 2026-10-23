@@ -34,7 +34,7 @@ mirrors those lists so they have one home to drift from.
 
 | Crew / task | May write |
 |-------------|-----------|
-| Night Shift | factory/skills/, factory/LESSONS.md, factory/playbooks/, factory/scores.jsonl, factory/runlog.jsonl, factory/stages/night-shift/output/, tools/fun_covers_config.json (add entries only), prints/<hex>/ (wall art) |
+| Night Shift | factory/notebook/, factory/skills/, factory/LESSONS.md, factory/playbooks/, factory/scores.jsonl, factory/runlog.jsonl, factory/stages/night-shift/output/, tools/fun_covers_config.json (add entries only), prints/<hex>/ (wall art) |
 | Mechanic | gw/jobs/mech-*.json, factory/trading/kick/<day>-<HHMM>.txt, factory/engine/orders/<doc id>.json |
 | Bolt | listing-photos/auto/, dl-temp/, gw/jobs/bolt-*.json, factory/runlog.jsonl |
 | Herald | social/, factory/skills/herald/, yt/jobs/spot-*.json, factory/runlog.jsonl |
@@ -46,7 +46,7 @@ mirrors those lists so they have one home to drift from.
 | Trading close | gw/jobs/trade-*.json, factory/trading/journal/<day>.md (the nightly trade-journal review; until Grayson adds that folder to the close task's write list, Vault writes factory/skills/vault/journal-<day>.md instead), factory/skills/{bull,bear,vault,tape}/ |
 | Trading lab | factory/trading/{backtest.py,params.json,lab/jobs/}, factory/skills/{bull,bear,vault,tape}/, factory/LESSONS.md |
 | Studio (Vega) | yt/, factory/skills/{vega,gags,judge,cutter,graph}/ (memory step only), factory/runlog.jsonl, factory/stages/studio/output/ |
-| Atlas Prime | nothing in the repo |
+| Atlas Prime | factory/notebook/, factory/runlog.jsonl |
 
 Never touch: `.github/`, `gw/run.py`, `gw/tools/`, `gw/vault/`, `factory/trading/autopilot.py`,
 `factory/trading/auto/`, `control.json`, `index.html`, `factory/page/`, any secret, any file that
