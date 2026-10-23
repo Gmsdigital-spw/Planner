@@ -57,6 +57,23 @@ factory/
 | `status` | `python3 factory/shared/runlog.py --status` prints the last run of every task |
 | `runlog` | `python3 factory/shared/runlog.py --summary 7` prints the last 7 days per task |
 
+## Bug rule: fix it, don't stop (Grayson, Oct 22, 2026)
+
+When a run hits a bug in our own code or tools (a tool crashes, a check fails because of the
+tool, a cover clips, a script errors), the crew FIXES IT IN THE SAME RUN and keeps going:
+1. Find the cause (read the error and the few lines of code it points at).
+2. Make the smallest fix in the tool itself (tools/, factory/qa/, factory/shared/, kit code),
+   never by switching a check off or lowering the bar.
+3. Test the fix on the thing that failed, plus one older item so nothing else breaks.
+4. Commit it ("fix: <what> (bug rule)"), add one line to `qa/MISSES.md` if a check missed it,
+   and one line to the agent's "What I've learned".
+5. Re-run the step that failed and carry on with the run.
+Up to 2 fix attempts per bug per run. If it still fails, or the fix needs something only
+Grayson can do (a login, a payment, an approval), finish everything else, mark it red in the
+run log with the exact one-step fix, and the Emergency Watch tells him. "Logged it and
+stopped" is never an acceptable outcome for a bug in our own code. Never edit secrets,
+money rules, trading LOCKED knobs or scheduled tasks under this rule.
+
 ## Rules that never change
 
 Real numbers only. Nothing ships under 92. No paid service, no money spent, no live trading, no

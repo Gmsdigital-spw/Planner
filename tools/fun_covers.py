@@ -21,6 +21,11 @@ sys.path.insert(0, HERE)
 import art  # noqa: E402
 
 W, H = 2000, 1500
+# Etsy's app grid shows the CENTRED SQUARE of a 4:3 photo (x 250..1750 on 2000x1500).
+# Every word, the badge and the product card must sit inside SAFE_X0..SAFE_X1 or the
+# thumbnail clips it (Night Shift failed inspection on this twice, Oct 21-22, 2026).
+# Only background pattern, confetti and decor art may use the outer bands.
+SAFE_X0, SAFE_X1 = 280, 1720
 FONTS = os.path.join(HERE, "fonts")
 
 THEMES = {
@@ -82,13 +87,22 @@ def build_html(c):
     th = THEMES[c["theme"]]
     img, ratio = crop_to_data(os.path.join(c.get("root", "."), c["pages"]["src"]), c["pages"]["crop"])
     # product card box: right side, fit image ratio inside 980x1180 area
-    box_w, box_h = 1000, 1160
+    safe = c.get("safe", True)
+    if safe:  # card fills the right half of the centred square
+        box_w, box_h = 760, 1120
+        centre_x = 1325
+    else:     # legacy full-width layout (old live covers only)
+        box_w, box_h = 1000, 1160
+        centre_x = 1440
     if ratio >= box_w / box_h:
         cw, ch = box_w, int(box_w / ratio)
     else:
         ch, cw = box_h, int(box_h * ratio)
-    cx = 1440 - cw // 2
+    cx = centre_x - cw // 2
     cy = 760 - ch // 2
+    lx, lw = (SAFE_X0 + 10, 640) if safe else (90, 860)
+    badge_d = 270 if safe else 330
+    default_bx = (SAFE_X1 - badge_d + 20) if safe else cx - 150
     decor = []
     for d in c.get("decor", []):
         name, kw, x, y, size, rot = d[:6]
@@ -113,26 +127,26 @@ html,body{{width:{W}px;height:{H}px;overflow:hidden}}
 body{{background:radial-gradient(ellipse at 30% 30%, {th['bg']} 0%, {th['bg']} 45%, {th['bg2']} 100%);font-family:Outfit;position:relative}}
 .pat{{position:absolute;inset:0;background:{pattern_css(th['pattern'])};}}
 .conf{{position:absolute;inset:0;z-index:1;opacity:.9}}
-.left{{position:absolute;left:90px;top:120px;width:860px;z-index:5}}
+.left{{position:absolute;left:{lx}px;top:120px;width:{lw}px;z-index:5}}
 .kick{{display:inline-block;background:{th['accent']};color:{th['bg2']};font-family:Outfit;font-weight:700;font-size:40px;letter-spacing:4px;padding:14px 30px;border-radius:999px;text-transform:uppercase}}
-.title{{margin-top:34px;font-family:Brico;font-weight:700;color:{th['ink']};font-size:{c.get('title_size',150)}px;line-height:.98;letter-spacing:-2px;text-shadow:0 6px 0 rgba(0,0,0,.18)}}
+.title{{margin-top:34px;font-family:Brico;font-weight:700;color:{th['ink']};font-size:{c.get('title_size',130 if safe else 150)}px;line-height:.98;letter-spacing:-2px;text-shadow:0 6px 0 rgba(0,0,0,.18)}}
 .acc{{font-family:LoraBI;color:{th['accent']};letter-spacing:0}}
 .sub{{margin-top:30px;color:{th['ink']};opacity:.95;font-size:44px;line-height:1.25;font-family:Outfit;font-weight:400}}
-.pills{{position:absolute;left:90px;bottom:90px;display:flex;flex-direction:column;gap:22px;z-index:5;align-items:flex-start}}
-.pill{{background:{th['pill']};color:{th['pilltx']};font-weight:700;font-size:46px;padding:16px 38px;border-radius:999px;box-shadow:0 8px 0 rgba(0,0,0,.15)}}
+.pills{{position:absolute;left:{lx}px;bottom:90px;max-width:{lw}px;display:flex;flex-direction:column;gap:22px;z-index:5;align-items:flex-start}}
+.pill{{background:{th['pill']};color:{th['pilltx']};font-weight:700;font-size:{40 if safe else 46}px;padding:{'14px 32px' if safe else '16px 38px'};white-space:nowrap;border-radius:999px;box-shadow:0 8px 0 rgba(0,0,0,.15)}}
 .card{{position:absolute;left:{cx}px;top:{cy}px;width:{cw}px;height:{ch}px;background:#fff;padding:18px;border-radius:22px;transform:rotate({c.get('card_rot',3)}deg);
   box-shadow:0 30px 60px rgba(0,0,0,.35),0 8px 18px rgba(0,0,0,.25);z-index:4}}
 .card img{{width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:10px;display:block}}
-.badge{{position:absolute;left:{c.get('badge_x', cx-150)}px;top:{c.get('badge_y', cy-110)}px;width:330px;height:330px;border-radius:50%;background:{th['badge']};color:{th['badgetx']};
+.badge{{position:absolute;left:{c.get('badge_x', default_bx)}px;top:{c.get('badge_y', (cy - 90) if safe else (cy - 110))}px;width:{badge_d}px;height:{badge_d}px;border-radius:50%;background:{th['badge']};color:{th['badgetx']};
   display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:8;border:12px solid #fff;box-shadow:0 18px 40px rgba(0,0,0,.35);transform:rotate(-10deg)}}
-.badge .n{{font-family:Brico;font-size:{c.get('badge_size',150)}px;line-height:.9}}
+.badge .n{{font-family:Brico;font-size:{c.get('badge_size',125 if safe else 150)}px;line-height:.9}}
 .badge .w{{font-family:Outfit;font-weight:700;font-size:44px;letter-spacing:3px;margin-top:4px}}
 .dec{{position:absolute;filter:drop-shadow(0 12px 14px rgba(0,0,0,.28))}}
-.dl{{position:absolute;right:70px;bottom:46px;color:{th['ink']};font-family:Outfit;font-weight:700;font-size:34px;letter-spacing:3px;z-index:9;opacity:.9}}
+.dl{{position:absolute;right:{(W-SAFE_X1+10) if safe else 70}px;bottom:46px;color:{th['ink']};font-family:Outfit;font-weight:700;font-size:34px;letter-spacing:3px;z-index:9;opacity:.9}}
 </style></head><body>
 <div class="pat"></div>{confetti}
-<div class="left"><div class="kick">{html.escape(c['kicker'])}</div>
-<div class="title" data-fit="860" data-fith="{c.get('title_h',640)}">{title_html(c['title'], th['accent'])}</div>
+<div class="left"><div class="kick" data-fitk="{lw}">{html.escape(c['kicker'])}</div>
+<div class="title" data-fit="{lw}" data-fith="{c.get('title_h',640)}">{title_html(c['title'], th['accent'])}</div>
 {f'<div class="sub">{html.escape(c["sub"])}</div>' if c.get('sub') else ''}</div>
 <div class="pills">{pills}</div>
 <div class="card"><img src="{img}"></div>
@@ -144,7 +158,85 @@ for (const el of document.querySelectorAll('[data-fit]')) {{
   let fs = parseFloat(getComputedStyle(el).fontSize); const mw=+el.dataset.fit, mh=+el.dataset.fith;
   while ((el.scrollWidth > mw || el.scrollHeight > mh) && fs > 40) {{ fs -= 4; el.style.fontSize = fs + 'px'; }}
 }}
+for (const el of document.querySelectorAll('[data-fitk], .pill')) {{
+  const mw = {lw}; let fs = parseFloat(getComputedStyle(el).fontSize);
+  while (el.getBoundingClientRect().width > mw && fs > 22) {{ fs -= 2; el.style.fontSize = fs + 'px'; }}
+}}
 </script></body></html>"""
+
+CHECK_JS = """() => {
+  const out = [];
+  const box = (sel, label) => document.querySelectorAll(sel).forEach((el, i) => {
+    const r = el.getBoundingClientRect();
+    out.push({label: label + (i ? ' ' + (i + 1) : ''), x0: r.left, x1: r.right, y0: r.top, y1: r.bottom,
+              ow: el.scrollWidth > el.clientWidth + 2 || el.scrollHeight > el.clientHeight + 2});
+  });
+  box('.kick', 'kicker'); box('.title', 'title'); box('.sub', 'subtitle'); box('.pill', 'pill');
+  box('.badge', 'badge'); box('.card', 'product card'); box('.dec', 'decor');
+  // real text extent of the title (spans/lines can overflow the block)
+  const t = document.querySelector('.title');
+  if (t) { const rg = document.createRange(); rg.selectNodeContents(t);
+    for (const r of rg.getClientRects()) out.push({label: 'title text', x0: r.left, x1: r.right, y0: r.top, y1: r.bottom, ow: false}); }
+  return out;
+}"""
+
+def check_safe(pg, tol=6):
+    """Return a list of problems: any word/badge/card outside the centred square, or decor over words."""
+    items = pg.evaluate(CHECK_JS)
+    probs = []
+    words = [i for i in items if not i["label"].startswith(("decor", "product card"))]
+    for i in items:
+        if i["label"].startswith("decor"):
+            continue
+        if i["x0"] < SAFE_X0 - 30 - tol or i["x1"] > SAFE_X1 + 30 + tol:
+            probs.append(f"{i['label']} runs outside the Etsy square (x {int(i['x0'])}-{int(i['x1'])}, safe {SAFE_X0}-{SAFE_X1})")
+        if i["y0"] < -tol or i["y1"] > H + tol:
+            probs.append(f"{i['label']} runs off the top/bottom")
+    for d in [i for i in items if i["label"].startswith("decor")]:
+        for w in words:
+            if not w["label"].startswith(("title text", "kicker", "pill", "subtitle")):
+                continue
+            ix = min(d["x1"], w["x1"]) - max(d["x0"], w["x0"]); iy = min(d["y1"], w["y1"]) - max(d["y0"], w["y0"])
+            if ix > 25 and iy > 25:
+                probs.append(f"{d['label']} covers the {w['label']}")
+                break
+    return sorted(set(probs))
+
+def self_heal(pg, c, rounds=6):
+    """Fix a cover that fails the square check instead of stopping (Grayson, Oct 22, 2026:
+    "when it runs into these bugs, it fixes it"). Each round: drop decor that covers words,
+    pull decor that sits on the card edge outward, shrink the title/kicker/pills a step.
+    Prints every fix so the run log shows what happened; only gives up after 6 rounds."""
+    import copy
+    c = copy.deepcopy(c)
+    for n in range(rounds):
+        probs = check_safe(pg)
+        if not probs:
+            if n:
+                print(f"self-heal: {c['slug']} fixed in {n} round(s)")
+            return c
+        print(f"self-heal round {n + 1} ({c['slug']}): " + "; ".join(probs))
+        dec = c.get("decor", [])
+        bad = {int(p.split()[1]) - 1 if p.split()[1].isdigit() else 0
+               for p in probs if p.startswith("decor") and "covers" in p}
+        if bad:
+            c["decor"] = [d for i, d in enumerate(dec) if i not in bad]
+        if any(p.startswith(("title", "kicker", "subtitle")) for p in probs):
+            c["title_size"] = int(c.get("title_size", 130) * 0.88)
+            c["title_h"] = int(c.get("title_h", 640))
+        if any(p.startswith("pill") for p in probs):
+            c["pills"] = [p if len(p) <= 22 else p[:22].rsplit(" ", 1)[0] for p in c.get("pills", [])]
+        if any(p.startswith("badge") for p in probs):
+            c.pop("badge_x", None); c.pop("badge_y", None)
+        if any(p.startswith("product card") for p in probs):
+            c["card_rot"] = 0
+        pg.set_content(build_html(c), wait_until="load")
+        pg.evaluate("document.fonts.ready"); pg.wait_for_timeout(300)
+    probs = check_safe(pg)
+    if probs:
+        raise SystemExit(f"COVER STILL NOT SQUARE-SAFE after {rounds} self-heal rounds ({c['slug']}): "
+                         + "; ".join(probs) + " -> fix tools/fun_covers.py itself (bug rule), never switch the check off")
+    return c
 
 def render(configs, only=None):
     with sync_playwright() as p:
@@ -155,6 +247,8 @@ def render(configs, only=None):
                 continue
             pg.set_content(build_html(c), wait_until="load")
             pg.evaluate('document.fonts.ready'); pg.wait_for_timeout(400)
+            if c.get("safe", True):
+                c = self_heal(pg, c)
             png = pg.screenshot(type="png")
             out = os.path.join(c.get("root", "."), c["out"])
             os.makedirs(os.path.dirname(out), exist_ok=True)
