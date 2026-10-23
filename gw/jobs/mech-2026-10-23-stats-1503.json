@@ -1,0 +1,71 @@
+{
+ "id": "mech-2026-10-23-stats-1503",
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad7c26cd598aa9ba3fdf8b6",
+   "tag": "pin-friendsgiving-1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad7c26d95cadcb73a9a2126",
+   "tag": "pin-pink-christmas-verse-art-1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad7c26c95cadcb73a9a2121",
+   "tag": "pin-debt-payoff-2027-1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad8f37fe0f45f343e2a5717",
+   "tag": "pin-prod-advent-activities-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad8f3808c105982dc04b00a",
+   "tag": "pin-prod-debt-payoff-2027-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad8f37e8c105982dc04aff4",
+   "tag": "pin-legacy-xmas-game-bundle-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad8f37fe0f45f343e2a5712",
+   "tag": "pin-prod-adhd-savings-tracker-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad8f380e0f45f343e2a571c",
+   "tag": "pin-prod-cookie-exchange-kit-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad8b0e6cf9fb6b481139a08",
+   "tag": "pin-gingerbread-contest-1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad8f37ee0f45f343e2a570d",
+   "tag": "pin-legacy-xmas-planner-listing-update-s1"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/active?limit=100",
+   "tag": "etsy"
+  }
+ ]
+}
