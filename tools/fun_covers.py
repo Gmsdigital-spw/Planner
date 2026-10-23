@@ -150,7 +150,7 @@ body{{background:radial-gradient(ellipse at 30% 30%, {th['bg']} 0%, {th['bg']} 4
 {f'<div class="sub">{html.escape(c["sub"])}</div>' if c.get('sub') else ''}</div>
 <div class="pills">{pills}</div>
 <div class="card"><img src="{img}"></div>
-<div class="badge"><div class="n">{html.escape(str(num))}</div><div class="w" style="font-size:{44 if len(word) <= 7 else 32}px">{html.escape(word)}</div></div>
+<div class="badge"><div class="n">{html.escape(str(num))}</div><div class="w" style="font-size:{c.get('badge_word_size', 44 if len(word) <= 7 else 32)}px{';letter-spacing:%spx' % c['badge_word_spacing'] if 'badge_word_spacing' in c else ''}">{html.escape(word)}</div></div>
 {''.join(decor)}
 <div class="dl">INSTANT DOWNLOAD</div>
 <script>

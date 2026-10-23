@@ -2129,6 +2129,8 @@
   "card_cx": 1300,
   "left_w": 580,
   "badge_x": 330,
-  "badge_y": 745
+  "badge_y": 745,
+  "badge_word_size": 36,
+  "badge_word_spacing": 2
  }
 ]
