@@ -2,15 +2,60 @@
  "day": "2026-10-23",
  "mode": "paper",
  "equityOpen": 24.96,
- "entries": 0,
+ "entries": 2,
  "lostToday": [],
- "positions": {},
+ "positions": {
+  "IWM": {
+   "entry": 275.618,
+   "stop0": 274.64,
+   "stop": 274.64,
+   "target": 277.57,
+   "high": 275.618,
+   "stopId": "f019ec32-6733-45b7-86d7-f40a6c6e2ef4",
+   "since": "2026-10-23T15:15:00Z",
+   "qty": "0.03610069"
+  },
+  "BAC": {
+   "entry": 50.788,
+   "stop0": 50.53,
+   "stop": 50.53,
+   "target": 51.3,
+   "high": 50.788,
+   "stopId": "63e74b63-b9d8-4edd-9f94-caa4babe512a",
+   "since": "2026-10-23T15:15:00Z",
+   "qty": "0.117547452"
+  }
+ },
  "trades": [],
- "actions": [],
+ "actions": [
+  {
+   "t": "10:20",
+   "do": "buy",
+   "sym": "IWM",
+   "notional": 9.96,
+   "stop": 274.64,
+   "target": 277.57,
+   "status": 200,
+   "fill": 275.618
+  },
+  {
+   "t": "10:20",
+   "do": "buy",
+   "sym": "BAC",
+   "notional": 5.98,
+   "stop": 50.53,
+   "target": 51.3,
+   "status": 200,
+   "fill": 50.788
+  }
+ ],
  "done": null,
- "runs": 103,
- "lastSignal": {},
- "lastRun": "10:14",
+ "runs": 109,
+ "lastSignal": {
+  "IWM": "2026-10-23T15:15:00Z",
+  "BAC": "2026-10-23T15:15:00Z"
+ },
+ "lastRun": "10:20",
  "equity": 24.96,
  "dayPnl": 0.0,
  "watch": [
@@ -40,5 +85,5 @@
   "SLB",
   "WDC"
  ],
- "lastNote": "equity $24.96, day +0.00, 0 open, 0 entries; scanned 14 names, no A+ setup"
+ "lastNote": "equity $24.96, day +0.00, 2 open, 2 entries"
 }
