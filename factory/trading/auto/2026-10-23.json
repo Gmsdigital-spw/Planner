@@ -35,12 +35,12 @@
   }
  ],
  "done": "closed for the day",
- "runs": 378,
+ "runs": 379,
  "lastSignal": {
   "IWM": "2026-10-23T15:15:00Z",
   "BAC": "2026-10-23T15:15:00Z"
  },
- "lastRun": "16:23",
+ "lastRun": "16:56",
  "equity": 24.97,
  "dayPnl": 0.01,
  "watch": [
