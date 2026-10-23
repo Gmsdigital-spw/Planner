@@ -55,7 +55,10 @@ Load only the service section your stage names.
   Idem: "pin-<pin id>" for still pins (retries "pin-<pin id>-r<n>"), "vpin-<day key>" for the
   video pin. 201 or 200 = created (post._id); 409 = duplicate (use existingPostId).
 - Published check: the Pinterest platform entry's status "published" gives platformPostId and
-  platformPostUrl; "failed" gives a reason. Analytics come back on the same GET when available.
+  platformPostUrl; "failed" gives a reason. Analytics do NOT come back on GET /posts (fixed Oct 22, 2026).
+  Pin stats: {"op":"zernio","method":"GET","path":"/analytics?postId=<zernio post id>"} -> data.platformAnalytics[0].analytics
+  {impressions, saves, clicks, ...}. syncStatus "pending" (HTTP 202) = Zernio is syncing; ask again next run.
+  Pinterest numbers lag 1-2 days behind the Pinterest app; all zeros on a pin under 48 h old means "not in yet", not "no saves".
 - TikTok (Herald, through Make's zernio_api action, not a gateway push): body
   {"content":<caption + hashtags, under 2200 chars>,"mediaItems":[{"type":"video","url":<under
   4.5 MB>}],"publishNow":true,"platforms":[{"platform":"tiktok","accountId":
