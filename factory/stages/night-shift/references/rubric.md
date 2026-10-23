@@ -5,13 +5,14 @@
   line last; price > 0.
 - File with 3+ pages (not for mugwrap, sticker, invitation: their lane spec's counts), plus
   the thank-you page last; the PDF opens; every answer key verified.
-- Cover plus 4 previews, 2000 px wide JPEG. The COVER (photo 1, tools/fun_covers.py) is judged
+- Cover plus 4 previews, 2000 px wide JPEG. The COVER (photo 1) is judged
   by the thumbnail test only: title and count readable in the centred 300 px square; its
   banner may run edge to edge, that is the approved design. The text safe zone (x 260 to
   1740) applies to photos 2 to 5 (the kit's inside photos) only.
-- Cover follows specs/cover-styles.md (newest section wins): bold theme colour, real pages
-  big, count badge, pills, themed art (tools/fun_covers.py); theme + art not repeating the
-  last 3 published; no cream desk; pins (if already made) in 2+ styles.
+- Cover follows specs/cover-styles.md (newest section, Oct 23, wins): a layout family not on
+  the last 5 published covers; real product 60%+ of the frame; passes the side-by-side test
+  against EVERY live cover (fails = images capped so the product cannot reach 92); no cream
+  desk; pins (if already made) in 2+ styles. Count badge, pills and 3D art are optional.
 - Pages full and framed; no cramped or half-empty page.
 - No real name or hometown; no brand or character names; nothing copied from another shop; no
   internet images.
@@ -26,7 +27,7 @@ image and Read it. Fail if ANY of these is true:
     page, or more than 7 art pieces;
 (d) any garbled, misspelled, cut-off or nonsense text anywhere on a page or photo;
 (e) badges or claims like bestseller, top rated, reviews, #1, sale stickers, emoji (a count
-    badge is required and fine);
+    badge is optional and fine);
 (f) the copy uses AI-sounding phrases (elevate, unlock, seamless, game-changer, dive into,
     whether you're, look no further, in today's busy world), em-dash runs, or keyword soup;
 (g) the cover looks like a recolour of one of the last 3 covers (same layout + same theme +

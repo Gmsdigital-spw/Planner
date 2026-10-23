@@ -134,9 +134,9 @@ def audit(listings, photos=None):
                 add("DARK_COVER", f"brightness {c['bright']} (wall art real-photo cover)", "pick a brighter wall photo record (wall-art.md)")
         elif c:
             if c["bright"] < 0.35:
-                add("DARK_COVER", f"brightness {c['bright']}", "rebuild with tools/fun_covers.py")
+                add("DARK_COVER", f"brightness {c['bright']}", "rebuild per specs/cover-styles.md Oct 23 (tools/varied_covers/)")
             elif c["bold"] < 0.30 and c.get("theme", 0) < 0.30:
-                add("BLAND_COVER", f"only {int(c['bold']*100)}% bold / {int(c.get('theme',0)*100)}% theme color (needs 30%+)", "rebuild with tools/fun_covers.py (bold theme color + themed 3D art)")
+                add("BLAND_COVER", f"only {int(c['bold']*100)}% bold / {int(c.get('theme',0)*100)}% theme color (needs 30%+)", "rebuild in a layout family not on the last 5 covers (specs/cover-styles.md Oct 23; tools/varied_covers/)")
             if is_cover_shape(ims[0]):
                 ink = square_edge_ink(files[ims[0]["listing_image_id"]])
                 if ink > 0.08:

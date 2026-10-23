@@ -1,8 +1,11 @@
 # 06 Lens: the five listing photos (room "studio")
 
-Cover and pin rules have ONE home: `specs/cover-styles.md`. Its newest section (Oct 21, 2026,
-4 PM) wins: bold theme colour, the real pages big, a big count badge, 3 benefit pills, themed
-3D art from tools/img3d, built with tools/fun_covers.py. Beige/cream desk covers are retired.
+Cover and pin rules have ONE home: `specs/cover-styles.md`. Its newest section (Oct 23, 2026)
+wins: Grayson found all 24 covers looked like ONE copy-pasted template (tools/fun_covers.py,
+colour swapped). That template is retired as the default (max 1 in 6 live listings). Every cover
+uses a layout family that is NOT on any of the last 5 published covers, the real product is the
+hero (60%+ of the frame), and it must pass the side-by-side test against EVERY live cover.
+Worked examples of 5 families: tools/varied_covers/ (examples, never a new single template).
 
 ## Inputs
 
@@ -10,19 +13,24 @@ Cover and pin rules have ONE home: `specs/cover-styles.md`. Its newest section (
 |--------|--------------|---------------|-----|
 | Reference | `../references/preflight.md` | the lines for this stage (File / Copy / Images) | Faults that failed the last 5 builds: check and fix before handing over |
 | Spec | `../../../specs/cover-styles.md` | Full file | The cover standard |
-| Playbook | `../../../playbooks/fun-listing-cover.md` | Steps 1 to 4 ONLY (step 5 uploads to Etsy: that is Warden's job, never the Night Shift's) | The proven way to build one |
+| Tool | `../../../../tools/varied_covers/README.md` + the one function in covers.py for the family you pick | that family only | Worked example to adapt |
 | Database | lessons (status active), sprint/main, pinstats (newest) | | Build more of what gets views, saves and clicks |
 | Reference | `../references/house-style.md` | "Photos 2 to 5", "Text safe zone" | The other four photos |
-| Tool | `tools/fun_covers.py` docstring, `tools/fun_covers_config.json` | config shape | How to render |
+| Tool | `tools/fun_covers.py` docstring | only if the fun_covers family is allowed (under 1 in 6 live) | The old card, rarely |
 | Skill | `../../../skills/lens/SKILL.md` | Full file | Checklist and lessons |
-| Database | products (newest 3 published): coverLook, cover | | Rotate theme and art |
+| Database | products (newest 5 published): coverStyle, cover; every live cover (listing-photos/fun/, listing-photos/fun/v2/, stats/) | | The side-by-side test |
 | Reference | `../references/wall-art.md` | "Lens" section | Only for a wallart product |
 
 ## Process
 1. Set crew/lens working ("Photos: <title>"). Render the PDF pages with
    pages = gs.render_pages(pdf, "/home/claude/kit/pages/<product id>") (150 dpi); leave them
    there for the Pins worker.
-2. Photo 1, the cover: the coverLook picked in stage 03. Add ONE entry to
+2. Photo 1, the cover. Pick a layout family (collage, hero page, grid, device, flat-lay or
+   frame, tablet on linen) that is on none of the last 5 published covers and on at most 1 in 4
+   live listings; write it to product.coverStyle. Build it from the real rendered pages, using
+   the matching function in tools/varied_covers/covers.py as a worked example (copy it into a
+   new function for this product; change palette, composition and props so it is not a copy).
+   Only if the family picked is the old fun_covers card, use the old steps: add ONE entry to
    tools/fun_covers_config.json: slug = the product id, listing_id "" (not published yet),
    root/out under listing-photos/fun/<product id>.jpg, theme = style.theme, kicker, title (one
    *word* in the accent font), badge [count, word], 3 pills from real facts, pages.src = a
@@ -41,7 +49,9 @@ Cover and pin rules have ONE home: `specs/cover-styles.md`. Its newest section (
    300 px square, and Read them next to the question "would this win a tap next to the top
    sellers?": the product and its count must read clearly at 300 px, the title readable. Fix
    it if not. Then put this cover next to the 3 newest published covers in one image and Read
-   it: it must not look like a recolour of any of them.
+   it: it must not look like a recolour of any of them. THEN the full side-by-side: this cover
+   next to EVERY live cover in the shop (contact sheet). If a stranger would say it came from
+   the same template as any of ours, rebuild it (up to 2 rounds) or fail it.
 5. Upload each photo as an asset; set product.cover (id) and product.previews (4 ids); confirm
    product.coverLook; stage "inspection". Set crew/lens idle. Write `## Photos: <title>` in the
    run notes (theme, art used, thumbnail check result).
@@ -50,8 +60,8 @@ Cover and pin rules have ONE home: `specs/cover-styles.md`. Its newest section (
 
 | Check | Pass condition |
 |-------|---------------|
-| Standard | Bold theme colour, real pages big, count badge, 3 pills, themed art; no cream desk |
-| Rotation | Theme + art differ from the last 3 published covers; not a recolour of any |
+| Standard | Layout family not on the last 5 covers; real product 60%+ of the frame; count badge, pills and 3D art optional (stickers on at most 1 in 4 covers, max 2); no cream desk |
+| Rotation | Passes the side-by-side against every live cover; not a recolour or re-layout of any |
 | Thumbnail | Title and count readable at 300 px; product fills the frame |
 | Rights | No internet images; art from tools/img3d or the kit only |
 | Text zone | Photos 2 to 5: every word inside the safe zone; the cover is judged by the thumbnail test only |

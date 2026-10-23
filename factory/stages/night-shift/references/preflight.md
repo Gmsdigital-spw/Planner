@@ -26,7 +26,7 @@ below on its own product and fixes what fails BEFORE setting stage "inspection".
 - [ ] Render EVERY page to PNG and look at a contact sheet (Read it) before going on.
 
 ## Images (lost 3 to 9)
-- [ ] Cover: title and count badge fully inside the square, nothing clipped, readable at 300 px
+- [ ] Cover: layout family not on the last 5 covers; title (and count badge, if any) fully inside the square, nothing clipped, readable at 300 px
       (save gs.thumb_check and Read it). Real pages are the biggest thing, about 40%+ of the
       square.
 - [ ] Cover theme + art differ from the last 3 published (read their coverLook).
