@@ -4,28 +4,7 @@
  "equityOpen": 24.96,
  "entries": 2,
  "lostToday": [],
- "positions": {
-  "IWM": {
-   "entry": 275.618,
-   "stop0": 274.64,
-   "stop": 274.64,
-   "target": 277.57,
-   "high": 276.23,
-   "stopId": "f019ec32-6733-45b7-86d7-f40a6c6e2ef4",
-   "since": "2026-10-23T15:15:00Z",
-   "qty": "0.03610069"
-  },
-  "BAC": {
-   "entry": 50.788,
-   "stop0": 50.53,
-   "stop": 50.53,
-   "target": 51.3,
-   "high": 50.92,
-   "stopId": "63e74b63-b9d8-4edd-9f94-caa4babe512a",
-   "since": "2026-10-23T15:15:00Z",
-   "qty": "0.117547452"
-  }
- },
+ "positions": {},
  "trades": [],
  "actions": [
   {
@@ -47,17 +26,23 @@
    "target": 51.3,
    "status": 200,
    "fill": 50.788
+  },
+  {
+   "t": "14:45",
+   "do": "flatten",
+   "why": "2:45 PM flat",
+   "status": 207
   }
  ],
- "done": null,
- "runs": 373,
+ "done": "closed for the day",
+ "runs": 374,
  "lastSignal": {
   "IWM": "2026-10-23T15:15:00Z",
   "BAC": "2026-10-23T15:15:00Z"
  },
- "lastRun": "14:44",
- "equity": 24.96,
- "dayPnl": 0.0,
+ "lastRun": "14:45",
+ "equity": 24.97,
+ "dayPnl": 0.01,
  "watch": [
   "SPY",
   "QQQ",
@@ -85,5 +70,5 @@
   "SLB",
   "WDC"
  ],
- "lastNote": "equity $24.96, day +0.00, 2 open, 2 entries; no new entries now (8:35-2:00 CT window)"
+ "lastNote": "flat for the day, P/L 0.01"
 }
