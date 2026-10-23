@@ -57,3 +57,4 @@ Third time this has happened (Oct 20 cream desk, Oct 21 cream desk again, Oct 23
 - Order of redo: listings with the fewest views first (0-3 views), max 6 per run, then the rest.
 - Worked examples of 5 families (live Oct 23): tools/varied_covers/ (README there). Examples, not a template.
 - Covers redone so far (Oct 23): 4601798994, 4599447958, 4597998190, 4597977363, 4600177516. The other 19 still carry the retired template: Warden redoes them, fewest views first.
+- Pins (Oct 23 check of all 61 queued pins): most already vary (headline block + real pages, tablets, framed prints, different colours) and stay scheduled. The tools/fun_pins.py card (the pin twin of the retired cover card: big round count badge, emoji stickers, saturated theme colour) is retired as the default the same way: at most 1 in 6 new pins. No two pins posting on back-to-back slots may share a layout.
