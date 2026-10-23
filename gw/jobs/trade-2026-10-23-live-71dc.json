@@ -1,0 +1,1 @@
+{"id":"trade-2026-10-23-live-71dc","ops":[{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY,IWM,BAC&timeframe=5Min&limit=78&feed=iex&start=2026-10-23T13:30:00Z"},{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SPY,QQQ,IWM,XLE,XLK,SMH,AAPL,NVDA,INTC,WMT,XLP,KO,XLV,BAC&feed=iex"}]}
