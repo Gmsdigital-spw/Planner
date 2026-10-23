@@ -78,3 +78,6 @@ SHOP YouTube channel), use or imitate existing characters, brands or celebrities
 name, hometown or personal details of Grayson anywhere. Never wait on any single step
 longer than 45 minutes; never loop retries; one rebuild and one upload retry at most. If the
 database or GitHub cannot be reached, stop and say so in one line.
+
+## Notebook (Grayson, Oct 23, 2026)
+Before stage 01, run `python3 factory/notebook/nb.py show --lane shorts` and follow its "Grayson's rules", "What works" and "What doesn't work" lines. The Night Shift's keeper records each Short's results.

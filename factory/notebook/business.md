@@ -9,13 +9,13 @@
 - 2026-10-23: Take notes on everything (listings, pins, posts, trades, the business) and get better every day from them.
 - 2026-10-23: Deadline Grayson set himself: keep going daily through Dec 31, 2026; if nothing happens, he stops. Nov-Dec is the shop's best window.
 
-## Proven
+## What works (proven by numbers)
 - 2026-10-23: A small Pinterest ad moves views on the listing it targets: Christmas Party Games Bundle +24 views in 2 days during the ~$35 ad (Oct 21-23); shop-wide views barely moved otherwise. Held: 1 time.
 
-## Testing
+## Testing (not proven yet)
 - Shop has 188 views, 0 favorites, 0 sales, 0 reviews on 24 listings (Oct 23). Theory: look-alike covers + new shop trust. Check Nov 6: do the redone covers get favorites?
 
-## Retired
+## What doesn't work (tried, failed, or Grayson rejected)
 - (none yet)
 
 ## Scoreboard (keeper updates weekly)

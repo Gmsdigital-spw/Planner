@@ -12,7 +12,7 @@ from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RESULTS = os.path.join(HERE, "results.jsonl")
-LANES = ["business", "etsy", "pins", "social", "trading"]
+LANES = ["business", "etsy", "pins", "social", "trading", "shorts", "ops"]
 
 
 def today():
@@ -60,7 +60,7 @@ def save(rows):
 
 def cmd_show(a):
     biz = open(os.path.join(HERE, "business.md")).read()
-    print(biz.split("## Proven")[0].strip())  # business rules only
+    print(biz.split("## What works")[0].strip())  # business rules only
     if a.lane != "business":
         print("\n" + open(os.path.join(HERE, a.lane + ".md")).read().strip())
     rows = [r for r in load() if r.get("lane") == a.lane]

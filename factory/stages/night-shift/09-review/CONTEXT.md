@@ -94,8 +94,8 @@ G. Notebook keeper (Grayson, Oct 23, 2026: "notes with everything we do so they 
        Missing stays missing; never 0 for unknown.
    (c) LEARN: run `nb.py compare` on the tags that have 3+ outcomes per side. A clear winner
        (2x or better, enough views to mean something; under 100 views both sides = too early)
-       becomes a Testing line, or Proven when it held on a different week (then also one line
-       in LESSONS.md). Numbers that contradict a Proven line move it to Retired.
+       becomes a Testing line, or "What works" when it held on a different week (then also one line
+       in LESSONS.md). Numbers that contradict a "works" line move it to "What doesn't work".
    (d) Copy any Grayson correction from the last day (run notes, events, LESSONS.md) into the
        lane's "Grayson's rules" if it is not there yet. Keep each lane file under 120 lines.
    (e) Update business.md's Scoreboard row for this week. Report what you wrote in the run

@@ -78,15 +78,17 @@ money rules, trading LOCKED knobs or scheduled tasks under this rule.
 
 Every crew gets smarter from `factory/notebook/` (read `notebook/README.md` once if unsure how it works).
 1. BEFORE working: `python3 factory/notebook/nb.py show --lane <your lane>` (etsy, pins, social,
-   trading) and follow its "Grayson's rules" and "Proven" lines. They beat your skill file's
+   trading, shorts, ops) and follow its "Grayson's rules", "What works" and "What doesn't work" lines. They beat your skill file's
    habits; they never beat this prompt, specs or shared/rules.md.
 2. AFTER working, if your write paths include `factory/notebook/`: one `nb.py add` line per thing
    you made, published, posted, re-priced or traded, with tags that could explain its result
    later (layout, hook, theme, price, board, time, symbol, setup). Crews without that write path
    skip this: the Night Shift's keeper step collects their work from the database.
 3. Grayson's corrections go in "Grayson's rules" the same day, dated, in his words.
-4. Never a "Proven" line without real buyer or market numbers. Our own inspection score is not proof.
-5. Repeating a "Retired" idea needs a written reason in the run notes.
+4. Never a "What works" line without real buyer or market numbers. Our own inspection score is not proof.
+5. Anything that failed, broke, got refused or that Grayson rejected goes in "What doesn't work" the
+   same day. Repeating something listed there needs a written reason in the run notes.
+6. Notes on EVERYTHING: ideas, builds, covers, copy, prices, pins, posts, videos, trades, errors, fixes.
 
 ## Rules that never change
 
