@@ -32,3 +32,6 @@ _Filled Oct 23, 2026 from the week brief (Oct 16 to 22): the Oct 21 and 22 stand
 - Studio (Vega, Gags, Judge, Cutter): ep16 Judge 8.25 vs 7.75, 33.03 s, scheduled Fri Oct 23 7 PM CT; channel views unknown here (vidIQ) (week brief "Studio").
 - Trading (Bull, Bear, Vault, Tape): paper only; Oct 21 1 trade -$0.03; Oct 22 4 trades 2W/2L +$0.02, equity $24.98, 0 breaches; lab holdout 28 trades, 14.3% wins, -$0.54; not ready for live (week brief "Trading").
 - Beacon (ads): locked, cap $0, Etsy Ads open Oct 30; no spend this month (week brief "Ads").
+
+## What I've learned (append-only, newest last)
+- 2026-10-23: first scoreboard: verified this month $0 of $250, 8 days left, builds 0 passed / 1 failed (83) / 1 skipped for time; no earlier Foreman prediction on file to grade. Tomorrow: the run starts Santa Mail first and the budget cut goes to pins extras, never to a build. Predict: 1 build passes 92 next run.

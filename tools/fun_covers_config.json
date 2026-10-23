@@ -1904,5 +1904,76 @@
   ],
   "badge_x": 560,
   "badge_y": 760
+ },
+ {
+  "slug": "prod-xmas-word-search",
+  "listing_id": "",
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/prod-xmas-word-search.jpg",
+  "kicker": "Christmas Word Search, Ages 7-12",
+  "title": "Holiday *Word* Hunt",
+  "badge": [
+   "12",
+   "PUZZLES"
+  ],
+  "pills": [
+   "Easy, medium, hard",
+   "Answer keys included",
+   "Print at home"
+  ],
+  "theme": "xmas_green",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-xmas-word-search/p-07.png",
+   "crop": [
+    0.06,
+    0.135,
+    0.94,
+    0.97
+   ]
+  },
+  "decor": [
+   [
+    "magnifier",
+    {},
+    1560,
+    1020,
+    330,
+    -12
+   ],
+   [
+    "holly",
+    {},
+    1760,
+    30,
+    240,
+    12
+   ],
+   [
+    "ornament",
+    {
+     "c": "#e8323c"
+    },
+    60,
+    1180,
+    200,
+    -8
+   ],
+   [
+    "stocking",
+    {},
+    1840,
+    1180,
+    220,
+    8
+   ],
+   [
+    "img:1f514",
+    {},
+    1480,
+    60,
+    130,
+    0
+   ]
+  ]
  }
 ]
