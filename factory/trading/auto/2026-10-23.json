@@ -10,7 +10,7 @@
    "stop0": 274.64,
    "stop": 274.64,
    "target": 277.57,
-   "high": 276.215,
+   "high": 276.23,
    "stopId": "f019ec32-6733-45b7-86d7-f40a6c6e2ef4",
    "since": "2026-10-23T15:15:00Z",
    "qty": "0.03610069"
@@ -50,14 +50,14 @@
   }
  ],
  "done": null,
- "runs": 163,
+ "runs": 169,
  "lastSignal": {
   "IWM": "2026-10-23T15:15:00Z",
   "BAC": "2026-10-23T15:15:00Z"
  },
- "lastRun": "11:14",
- "equity": 24.98,
- "dayPnl": 0.02,
+ "lastRun": "11:20",
+ "equity": 24.97,
+ "dayPnl": 0.01,
  "watch": [
   "SPY",
   "QQQ",
@@ -85,5 +85,5 @@
   "SLB",
   "WDC"
  ],
- "lastNote": "equity $24.98, day +0.02, 2 open, 2 entries"
+ "lastNote": "equity $24.97, day +0.01, 2 open, 2 entries"
 }
