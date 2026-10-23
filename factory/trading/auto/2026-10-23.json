@@ -50,14 +50,14 @@
   }
  ],
  "done": null,
- "runs": 193,
+ "runs": 199,
  "lastSignal": {
   "IWM": "2026-10-23T15:15:00Z",
   "BAC": "2026-10-23T15:15:00Z"
  },
- "lastRun": "11:44",
- "equity": 24.99,
- "dayPnl": 0.03,
+ "lastRun": "11:50",
+ "equity": 24.98,
+ "dayPnl": 0.02,
  "watch": [
   "SPY",
   "QQQ",
@@ -85,5 +85,5 @@
   "SLB",
   "WDC"
  ],
- "lastNote": "equity $24.99, day +0.03, 2 open, 2 entries"
+ "lastNote": "equity $24.98, day +0.02, 2 open, 2 entries"
 }
