@@ -1,0 +1,109 @@
+{
+ "id": "ep16",
+ "title": "I Got Revenge on My Mom... Then the Whole Street Joined In #shorts",
+ "hook": "MOM UNPLUGGED IT AT 1 HP",
+ "end_text": "",
+ "loop": true,
+ "engine": "edge",
+ "voice": "andrew",
+ "speed": 1.03,
+ "caption_words": 3,
+ "music": "tense",
+ "music_volume": 0.14,
+ "style": "3D animated movie still, Pixar and Illumination style CGI render, cute stylized cartoon characters, soft cinematic lighting, vibrant saturated colors, glossy detailed textures, shallow depth of field, character centered in frame, no text, no letters, no watermark",
+ "cast": {
+  "rio": "Rio, a teenage cartoon character whose whole head is a smooth round shiny orange (bumpy orange peel skin, big expressive cartoon eyes and a mouth on the orange, a short green leafy stem on top, no hair, no human face), human body wearing a baggy green hoodie and gray sweatpants",
+  "mom": "Mom, a cartoon character whose whole head is a smooth bright yellow lemon (big warm cartoon eyes and a mouth on the lemon, no human face) with dark hair in a messy bun on top, wearing a blue cardigan over a white shirt",
+  "neighbor": "Mr. Pell, an old cartoon character whose whole head is a green avocado (cartoon eyes, big round glasses and a bushy gray mustache on the avocado, no human face) wearing a flat cap, a brown vest"
+ },
+ "lines": [
+  {
+   "text": "Mom unplugged my console with the boss at one HP... so I got revenge.",
+   "image": {
+    "prompt": "close-up of {rio} sitting on a living room couch at night frozen in shock, jaw dropped, gripping a game controller, the TV in front of him suddenly black, an unplugged power cord dangling on the floor beside it, dim lamp light",
+    "seed": 1601,
+    "motion": "push"
+   },
+   "pause": 0.25
+  },
+  {
+   "text": "Okay... she did call me to dinner three times.",
+   "image": {
+    "prompt": "{mom} standing in a kitchen doorway at night with her arms crossed, holding a wooden spoon, one eyebrow raised, three steaming plates on the dinner table behind her, warm kitchen light",
+    "seed": 1602,
+    "motion": "panr"
+   },
+   "pause": 0.25
+  },
+  {
+   "text": "Sunday. Her mystery show finale. One minute left.",
+   "image": {
+    "prompt": "{mom} sitting on the edge of a living room couch at night leaning toward a glowing TV, clutching a bowl of popcorn, eyes wide with suspense, blue TV light on her face",
+    "seed": 1603,
+    "motion": "push"
+   },
+   "label": "SUNDAY",
+   "pause": 0.25
+  },
+  {
+   "text": "I pulled the Wi-Fi plug.",
+   "image": {
+    "prompt": "{rio} crouched in a dark hallway at night next to a small blinking internet router on a low shelf, pulling its power cord out of the wall with a sneaky grin, the router lights going dark",
+    "seed": 1604,
+    "motion": "push"
+   },
+   "pause": 0.25
+  },
+  {
+   "text": "She didn't yell. She just turned around... and smiled.",
+   "image": {
+    "prompt": "close-up of {mom} slowly turning her head over her shoulder on a living room couch at night, a calm, too-sweet smile, eyes half closed, a dark TV behind her, dim blue light",
+    "seed": 1605,
+    "motion": "orbit",
+    "anim": true
+   },
+   "pause": 0.4
+  },
+  {
+   "text": "Next morning: new password... and a new Wi-Fi name.",
+   "image": {
+    "prompt": "{rio} standing in a sunny kitchen in the morning holding a phone high above his head searching for a signal, frustrated frown, a cereal bowl on the counter",
+    "seed": 1606,
+    "motion": "panl"
+   },
+   "label": "NEXT MORNING",
+   "pause": 0.25
+  },
+  {
+   "text": "'Say sorry to your mother.'",
+   "image": {
+    "prompt": "close-up of {rio} staring down at his phone in horror, eyes huge, mouth wide open, phone glow on his face, sunny kitchen blurred behind him",
+    "seed": 1607,
+    "motion": "punch",
+    "anim": true
+   },
+   "pause": 0.5
+  },
+  {
+   "text": "Day two, the neighbor's Wi-Fi became... 'Just say it, kid.'",
+   "image": {
+    "prompt": "{neighbor} standing on his front porch on a sunny suburban street, grinning and giving a big thumbs-up toward the camera, holding a phone in his other hand, neat hedges and other houses in the background",
+    "seed": 1608,
+    "motion": "panr"
+   },
+   "label": "DAY TWO",
+   "pause": 0.25
+  },
+  {
+   "text": "Day four. I'm still not saying it, because...",
+   "image": {
+    "prompt": "close-up of {rio} sitting on a living room couch at night frozen in shock, jaw dropped, gripping a game controller, the TV in front of him suddenly black, an unplugged power cord dangling on the floor beside it, dim lamp light",
+    "seed": 1601,
+    "motion": "push"
+   },
+   "label": "DAY FOUR",
+   "pause": 0.05
+  }
+ ],
+ "rev": 1
+}
