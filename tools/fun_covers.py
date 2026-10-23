@@ -102,7 +102,7 @@ def build_html(c):
     cy = 760 - ch // 2
     lx, lw = (SAFE_X0 + 10, 640) if safe else (90, 860)
     badge_d = 270 if safe else 330
-    default_bx = (SAFE_X1 - badge_d + 20) if safe else cx - 150
+    default_bx = (SAFE_X1 - (badge_d + 24) - 30) if safe else cx - 150  # 24 = 12px white border both sides; 30 = room for the -10deg tilt (bug rule fix Oct 23)
     decor = []
     for d in c.get("decor", []):
         name, kw, x, y, size, rot = d[:6]
