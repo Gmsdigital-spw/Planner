@@ -46,7 +46,7 @@ Helper: `python3 factory/notebook/nb.py add|outcome|show|pending` (see `--help`)
 1. Something gets made/posted/traded -> a results line with tags.
 2. 7 days later the keeper fills its outcome from stats/, pinstats/, social stats, trading ledger.
 3. When one tag clearly beats another (at least 2x, 3+ items each side, enough views to mean
-   something) -> a Testing line, then Proven when it holds again on a different week.
+   something) -> a Testing line, then "What works" when it holds again on a different week.
 4. When new numbers contradict a "works" line -> move it to "What doesn't work" with the numbers.
 6. A failure or a Grayson rejection -> "What doesn't work" the same day, with what happened.
 5. Small data honesty: under 100 views on both sides = "too early", not a lesson.
