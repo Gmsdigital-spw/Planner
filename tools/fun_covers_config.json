@@ -1975,5 +1975,160 @@
     0
    ]
   ]
+ },
+ {
+  "slug": "prod-xmas-bingo-50",
+  "listing_id": "",
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/prod-xmas-bingo-50.jpg",
+  "kicker": "Large Print",
+  "title": "Holly Jolly *Bingo*",
+  "badge": [
+   "50",
+   "CARDS"
+  ],
+  "pills": [
+   "4 cards per page",
+   "Every card unique",
+   "Caller sheet included"
+  ],
+  "theme": "berry",
+  "card_box": [
+   880,
+   1200
+  ],
+  "card_cx": 1262,
+  "left_w": 520,
+  "card_rot": 2,
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-xmas-bingo-50/p-04.png",
+   "crop": [
+    0.07,
+    0.045,
+    0.93,
+    0.94
+   ]
+  },
+  "decor": [
+   [
+    "img:26c4",
+    {},
+    1730,
+    1130,
+    260,
+    8
+   ],
+   [
+    "img:1f98c",
+    {},
+    20,
+    80,
+    230,
+    -6
+   ],
+   [
+    "img:1f514",
+    {},
+    1760,
+    560,
+    190,
+    12
+   ],
+   [
+    "img:1f381",
+    {},
+    1740,
+    60,
+    200,
+    10
+   ],
+   [
+    "img:1f385",
+    {},
+    40,
+    620,
+    230,
+    -6
+   ]
+  ],
+  "badge_x": 330,
+  "badge_y": 760
+ },
+ {
+  "slug": "prod-santa-mail-bundle",
+  "listing_id": "",
+  "root": "/home/claude/planner",
+  "out": "listing-photos/fun/prod-santa-mail-bundle.jpg",
+  "kicker": "No Canva needed",
+  "title": "Letters from *Santa*",
+  "badge": [
+   "6",
+   "LETTERS"
+  ],
+  "pills": [
+   "Type in free Adobe Reader",
+   "Nice List certificate",
+   "Wish list + 12 gift tags"
+  ],
+  "theme": "xmas_green",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-santa-mail-bundle/p-03.png",
+   "crop": [
+    0.06,
+    0.0,
+    0.94,
+    1.0
+   ]
+  },
+  "decor": [
+   [
+    "img:1f385",
+    {},
+    -20,
+    1130,
+    290,
+    -8
+   ],
+   [
+    "img:1f98c",
+    {},
+    1745,
+    1180,
+    240,
+    6
+   ],
+   [
+    "img:1f381",
+    {},
+    1765,
+    40,
+    210,
+    10
+   ],
+   [
+    "img:2744",
+    {},
+    40,
+    40,
+    190,
+    0
+   ],
+   [
+    "holly",
+    {},
+    1745,
+    640,
+    210,
+    -14
+   ]
+  ],
+  "card_box": [
+   840,
+   1230
+  ],
+  "card_cx": 1300,
+  "left_w": 580,
+  "badge_x": 330,
+  "badge_y": 745
  }
 ]

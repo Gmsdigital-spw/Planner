@@ -89,8 +89,8 @@ def build_html(c):
     # product card box: right side, fit image ratio inside 980x1180 area
     safe = c.get("safe", True)
     if safe:  # card fills the right half of the centred square
-        box_w, box_h = 760, 1120
-        centre_x = 1325
+        box_w, box_h = c.get("card_box", (760, 1120))  # optional bigger hero card (Oct 23: 40%+ of the square)
+        centre_x = c.get("card_cx", 1325)
     else:     # legacy full-width layout (old live covers only)
         box_w, box_h = 1000, 1160
         centre_x = 1440
@@ -100,7 +100,7 @@ def build_html(c):
         ch, cw = box_h, int(box_h * ratio)
     cx = centre_x - cw // 2
     cy = 760 - ch // 2
-    lx, lw = (SAFE_X0 + 10, 640) if safe else (90, 860)
+    lx, lw = (SAFE_X0 + 10, c.get("left_w", 640)) if safe else (90, 860)
     badge_d = 270 if safe else 330
     default_bx = (SAFE_X1 - (badge_d + 24) - 30) if safe else cx - 150  # 24 = 12px white border both sides; 30 = room for the -10deg tilt (bug rule fix Oct 23)
     decor = []
