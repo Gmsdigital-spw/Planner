@@ -46,3 +46,12 @@ Pins follow the same 6 styles in 2:3 format. Each product's 2 to 3 pins use at l
 
 ## Scoring
 A cover scores under 92 if it repeats the previous listing's style, if the product isn't clearly visible, or if the title can't be read at thumbnail size.
+
+## Oct 23, 2026 — Grayson: the covers ALL look like one copy-pasted template (this section overrides everything above)
+Third time this has happened (Oct 20 cream desk, Oct 21 cream desk again, Oct 23 fun_covers). Each "fix" swapped one look every listing shares for another look every listing shares. The fix is a variety GATE, not a new favourite style.
+- The fun_covers card (title left, round count badge, 3 pills, tilted page on the right, emoji stickers, colour swapped) is retired as the default. At most 1 in 6 live listings may use it.
+- Use the 6 layout families in "The 6 styles" above (collage, device dashboard, tablet, hero page, month grid, flat-lay/frame). A new cover must not share a layout family with ANY of the last 5 covers published, and no family may be on more than 1 in 4 live listings.
+- The product is the hero: real pages fill at least 60% of the frame and are readable at 300 px. 3D emoji stickers on at most 1 in 4 covers, max 2 per cover.
+- SIDE-BY-SIDE TEST (required, no exceptions): before a cover can pass, render it in a contact sheet next to every live cover in the shop and next to 3 top-seller covers for the same search. If a stranger would say it came from the same template as one of ours, it FAILS (cap the score at 80), whatever else it scores.
+- Our own score is not proof. Report what the side-by-side showed in one line.
+- Order of redo: listings with the fewest views first (0-3 views), max 6 per run, then the rest.
