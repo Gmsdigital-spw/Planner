@@ -2138,7 +2138,7 @@
     "listing_id": "",
     "root": "/home/claude/planner",
     "out": "listing-photos/fun/prod-xmas-murder-mystery-8.jpg",
-    "kicker": "Murder Mystery Game",
+    "kicker": "Murder Mystery",
     "title": "Who Stole the *Star*?",
     "badge": [
       "8",
@@ -2218,6 +2218,8 @@
     "card_rot": 2,
     "title_size": 118,
     "badge_x": 300,
-    "badge_y": 700
+    "badge_y": 700,
+    "badge_word_size": 36,
+    "badge_word_spacing": 2
   }
 ]

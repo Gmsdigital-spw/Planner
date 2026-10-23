@@ -1,0 +1,176 @@
+[
+ {
+  "slug": "santa-1",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-santa-mail-bundle-1.jpg",
+  "kicker": "Type in, print, done",
+  "hook": "Their Name in a Letter from *Santa*",
+  "hook_size": 104,
+  "badge": [
+   "6",
+   "LETTERS"
+  ],
+  "pills": [
+   "No Canva needed",
+   "Nice List certificate"
+  ],
+  "theme": "xmas_green",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-santa-mail-bundle/p-03.png",
+   "crop": [
+    0.0,
+    0.0,
+    1.0,
+    0.72
+   ]
+  },
+  "card_rot": -3,
+  "decor": [
+   [
+    "img:1f385",
+    {},
+    -30,
+    1180,
+    220,
+    -8
+   ],
+   [
+    "img:1f98c",
+    {},
+    810,
+    1170,
+    190,
+    6
+   ],
+   [
+    "img:2744",
+    {},
+    30,
+    500,
+    120,
+    0
+   ],
+   [
+    "holly",
+    {},
+    860,
+    560,
+    130,
+    -14
+   ]
+  ]
+ },
+ {
+  "slug": "santa-2",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-santa-mail-bundle-2.jpg",
+  "kicker": "For kids ages 2 to 9",
+  "hook": "A Santa Letter for *Every* Kind of Year",
+  "hook_size": 100,
+  "badge": [
+   "6",
+   "LETTERS"
+  ],
+  "pills": [
+   "New big sibling",
+   "First Christmas",
+   "New home"
+  ],
+  "theme": "xmas_red",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-santa-mail-bundle/p-05.png",
+   "crop": [
+    0.0,
+    0.0,
+    1.0,
+    0.72
+   ]
+  },
+  "card_rot": 3,
+  "badge_x": 730,
+  "badge_y": 1040,
+  "confetti": 40,
+  "decor": [
+   [
+    "img:1f381",
+    {},
+    -10,
+    500,
+    170,
+    -8
+   ],
+   [
+    "img:1f98c",
+    {},
+    -20,
+    1150,
+    200,
+    -6
+   ],
+   [
+    "img:2744",
+    {},
+    860,
+    500,
+    120,
+    0
+   ]
+  ]
+ },
+ {
+  "slug": "santa-3",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-santa-mail-bundle-3.jpg",
+  "kicker": "13 printable pages",
+  "hook": "*North Pole* Mail Kit, Ready Tonight",
+  "hook_size": 104,
+  "badge": [
+   "12",
+   "GIFT TAGS"
+  ],
+  "pills": [
+   "Envelope labels",
+   "Wish list",
+   "Nice List"
+  ],
+  "theme": "xmas_green",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-santa-mail-bundle/p-13.png",
+   "crop": [
+    0.0,
+    0.0,
+    1.0,
+    0.75
+   ]
+  },
+  "card_rot": 2,
+  "badge_x": 740,
+  "badge_y": 1060,
+  "decor": [
+   [
+    "img:1f385",
+    {},
+    -30,
+    480,
+    210,
+    -10
+   ],
+   [
+    "img:1f381",
+    {},
+    10,
+    1150,
+    190,
+    -6
+   ],
+   [
+    "holly",
+    {},
+    860,
+    500,
+    120,
+    12
+   ]
+  ]
+ }
+]
