@@ -1,3 +1,5 @@
+> RETIRED for promo videos on Oct 22, 2026: use social/studio/README.md (commercials). The listing-photo tool below is still in use.
+
 # Herald promo video kit (Oct 20, 2026)
 
 Reference build that Grayson approved after the first promo looked AI-made.

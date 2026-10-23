@@ -1,0 +1,19 @@
+{
+ "vo": "social/studio/media/vo/savings-vo.mp3",
+ "music": "social/studio/media/vo/savings-music.wav",
+ "product": {"dir": "/social/studio/media/savings", "cover": "cover.jpg", "price": "4.49", "pages": 14,
+   "listTitle": "2027 Savings Challenge Printable, ADHD-Friendly Color-In Tracker (PDF)",
+   "strip": ["p-04.png", "p-06.png", "p-08.png", "p-09.png"],
+   "bg": ["#2f9e6a", "#0b3524"], "accent": "#1f8a55", "hl": "#ffd34d", "dot": "#c9ffe0"},
+ "phrases": [
+  {"say": "Want to save a thousand dollars in 2027?", "cap": "Save *$1,000* | in *2027?*", "scene": "hook", "page": "p-04.png", "badge": "$1,000"},
+  {"say": "Color in one box every time you save.", "cap": "Color in | *one* *box* | every time you save", "scene": "pan", "page": "p-04.png"},
+  {"say": "Missed a week?", "cap": "Missed a week?"},
+  {"say": "Still counts.", "cap": "*Still* *counts.*"},
+  {"say": "You get the one thousand, twenty-five hundred, and five thousand dollar challenges...", "cap": "*$1,000* | *$2,500* | *$5,000* | challenges", "scene": "fan", "pages": ["p-04.png", "p-05.png", "p-06.png"]},
+  {"say": "plus the fifty-two week.", "cap": "plus the | *52-week*", "scene": "phone"},
+  {"say": "Instant download.", "cap": "Instant *download*"},
+  {"say": "Tap the link,", "cap": "Tap the *link*", "tap": true},
+  {"say": "and grab it on Etsy.", "cap": "grab it on *Etsy!*", "scene": "end"}
+ ]
+}

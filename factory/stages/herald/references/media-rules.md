@@ -1,26 +1,35 @@
-# Media rules (stage 04; free tools only: the video kit, ffmpeg, Pillow, Playwright, the music tool)
+# Media rules (stage 04; free tools only: the shop studio, ffmpeg, Playwright, the music tool)
 
-- Build from the REAL PRODUCT PAGES: download the PDF (file.assetId), render pages with
-  pdftoppm -r 220, and follow social/tools/README.md: pages printed on a warm wood desk with a
-  mug, pen or autumn/holiday props, slow zooms, a close-up pan on the product's hero page,
-  short crossfades. Pick the 4 to 6 pages that sell this product best. Mug wraps and sticker
-  sheets (product.kind "mugwrap" / "sticker") are shown flat on the desk the same way; never
-  draw a mug, a hand or a kitchen.
-- NEVER use the product's preview images or the Etsy listing slideshow photos in videos: many
-  are the old flat title-card style Grayson rejected. Never use flat solid-colour backgrounds,
-  "What's Inside" / "How It Works" boxes, stock-template text slides, fake AI hands or people,
-  dark navy designs, or emoji walls.
-- Captions: cream rounded boxes like the kit, max 7 words per line, max 3 lines, facts from
-  the real copy. First caption is the hook (matches the plan theme). Last scene: fanned page
-  stack with the cover on top and "Instant download · link in bio".
-- Video 1080x1920, 12 to 20 s (a Sunday Spot may run to 27 s with its pages tail), 30 fps,
-  H.264 + AAC 48 kHz. Make two files: video.mp4 (IG/FB,
-  under 5 Mbps) and video-small.mp4 under 4.5 MB (-b:v 2100k -maxrate 2400k) for YouTube and
-  TikTok.
-- MUSIC IS REQUIRED on every video: an original track from the music tool at the video's
-  length, mood matched to the product (cozy default; uplifting for New Year, goals, savings
-  wins; emotional for heartfelt family/holiday), loudnorm I=-16, fade in/out. Never
-  copyrighted or downloaded music. A different seed each day.
-- Save to /home/claude/planner/social/<day key>/<listingId>/. Push and wait for 200. New file
-  names if a file of that name was already posted (never overwrite a posted video).
-- No paid tools, no vidIQ generation.
+GRAYSON'S STANDARD (Oct 22, 2026): every promo video is a COMMERCIAL built with the shop studio
+(`/home/claude/planner/social/studio/README.md`, read it every run). The Oct 20 wood-desk kit
+(social/tools/promo_*.py) is RETIRED for videos: he dropped the cozy cream-desk coffee look on Oct 21.
+
+- Build from the REAL PRODUCT PAGES (PDF from file.assetId) and the product's styled cover.
+- Every video has: a voiceover from the free studio voice Action; captions that pop in 3 to 6 words
+  at a time; real pages cut on the beat (hook / pan / fan / grid scenes); the listing on a phone
+  with a scroll and an "Add to cart" tap; an end card with the cover, the LIVE price and
+  "Tap the link · grab it on Etsy"; original music from the music tool, ducked under the voice;
+  sound effects from the renderer.
+- Variety: follow the README's "Keep it fresh" rotation (voice by weekday, a different opening and
+  scene order from yesterday, palette from the product). Note today's voice and opening in the log
+  line so tomorrow's run can pick different ones.
+- Facts only from the product copy, its PDF pages and the live Etsy read (price, title). Never a
+  sale, review, scarcity or income claim that is not real.
+- NEVER use the old flat title-card listing images, stock people, AI hands, Etsy's logo, emoji walls,
+  or a caption over the phone screen.
+- Video 1080x1920, 15 to 22 s, 30 fps, H.264 + AAC 48 kHz. Two files: video.mp4 (IG/FB, about
+  4 Mbps) and video-small.mp4 under 4.5 MB for YouTube and TikTok. Loudness: mean about -15 dB,
+  max under -1 dB.
+- Save to social/<day key>/<listingId>/ (videos, cover.jpg) and the build folder to
+  social/studio/<day key>-<listingId>/; push and wait for 200. New file names if a file of that
+  name was already posted (never overwrite a posted video). Don't commit the master render.
+- Sunday Spot: spot.md still applies for the skit; its pages tail uses the studio's end scene.
+- If the voice MP3 has not arrived 5 minutes after the push, or a render fails twice, do NOT fall
+  back to the old look: skip today's video posts and tell Grayson right away in one line (what
+  broke). Never let a run stop silently.
+- No paid tools, no vidIQ credits.
+
+## Two-week check (Grayson's call, Oct 22, 2026)
+The commercial format is a bet until the numbers say so. From Nov 5, 2026, compare real views
+(YouTube, TikTok) and Etsy visits for commercial posts (from Oct 22) against the older slideshow
+posts, and put one numbers-only lesson in the log and one line to Grayson: keep, tweak or change.

@@ -1,12 +1,13 @@
 # Quality control (stage 06; Atlas grades, not Herald)
 
 ## A. Slop gate (pass/fail, before any score)
-Extract 6 frames spread across the video and Read every one, plus the cover. FAIL if ANY
-frame: shows a flat solid-colour card or template slide instead of real pages on the desk;
-reuses an Etsy listing or preview image; has text cut off, overlapping the page title, or
-unreadable at phone size; has more than 3 caption lines; looks like generic AI art (fake
-hands, warped text, plastic people); or if the audio is silent (volumedetect mean_volume below
--30 dB). Ask honestly: "Would a top Etsy seller post this?" If not, FAIL. On FAIL: fix and
+Extract 8 frames spread across the video and Read every one, plus the cover. FAIL if ANY frame:
+shows a flat template slide or the old cozy coffee-desk look; reuses an old flat title-card listing
+image; has text cut off or a caption covering the phone screen; looks like generic AI art (fake
+hands, warped text, plastic people); or if the video has no voiceover, no phone scene with the
+"Add to cart" tap, or no end card with the live price; or the audio is silent (mean_volume below
+-30 dB) or the voice is buried under the music; or the voice AND opening repeat yesterday's.
+Ask honestly: "Would a top Etsy seller post this?" If not, FAIL. On FAIL: fix and
 rebuild once, re-run the gate; a second FAIL = status "qc_failed" for all of today's docs, a
 lesson, and one line to Grayson. Write qc.slopGate "pass" or "fail" plus which frame failed.
 (A Spot commercial's cartoon scenes are allowed in the skit part: judge them on consistent
