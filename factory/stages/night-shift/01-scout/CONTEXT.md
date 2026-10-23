@@ -39,6 +39,14 @@
    evidence:[{label, url}] (2 or more real links you really opened), summary (plain text),
    status:"proposed", createdAt, source:"Scout · Night Shift <day>"}. Never invent sales
    figures; mark estimates as estimates.
+5b. MARKET PROOF (Oct 23, 2026; 03 Pick refuses briefs without it): every brief carries
+   `competitors`: 3 Etsy listings you actually OPENED (WebFetch the listing or read the
+   search card), each {url, reviews as shown, price, includes}, at least one 100+, plus
+   `gap`: one line on what ours does better that buyers will see. If Etsy pages will not open,
+   use WebSearch results that show the listing's review count and price; never invent one.
+   Prefer ideas where the gap is big (bundles, more items, editable without Canva, bigger
+   print) over crowded free-everywhere lanes (word search, plain coloring pages), which cap
+   market at about 9 and fail at 92. See `../references/preflight.md` "Market".
 6. Write ideas/<day key> {day, createdAt, holidayMode, target, items:[{title, lane, buyer,
    holiday, why, verdict, reason, briefId}], note, source}.
 7. Intel refresh (room "intel"), only if intel/etsy or intel/pinterest has lastChecked older

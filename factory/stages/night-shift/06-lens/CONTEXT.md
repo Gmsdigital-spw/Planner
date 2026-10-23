@@ -8,6 +8,7 @@ Cover and pin rules have ONE home: `specs/cover-styles.md`. Its newest section (
 
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
+| Reference | `../references/preflight.md` | the lines for this stage (File / Copy / Images) | Faults that failed the last 5 builds: check and fix before handing over |
 | Spec | `../../../specs/cover-styles.md` | Full file | The cover standard |
 | Playbook | `../../../playbooks/fun-listing-cover.md` | Steps 1 to 4 ONLY (step 5 uploads to Etsy: that is Warden's job, never the Night Shift's) | The proven way to build one |
 | Database | lessons (status active), sprint/main, pinstats (newest) | | Build more of what gets views, saves and clicks |
@@ -55,6 +56,11 @@ Cover and pin rules have ONE home: `specs/cover-styles.md`. Its newest section (
 | Rights | No internet images; art from tools/img3d or the kit only |
 | Text zone | Photos 2 to 5: every word inside the safe zone; the cover is judged by the thumbnail test only |
 | Format | 5 JPEGs, 2000 px wide, each under 400 KB |
+
+## Pre-flight gate (Oct 23, 2026)
+Before setting stage "inspection": run EVERY line of `../references/preflight.md` on the whole
+product (file, copy, images, market, price) and fix what fails. Write
+`Pre-flight: N of M lines pass; fixed: <short list>` under the Photos heading in the run notes.
 
 ## Outputs
 

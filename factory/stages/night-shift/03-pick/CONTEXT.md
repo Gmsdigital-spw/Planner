@@ -14,11 +14,17 @@
 
 ## Process
 1. Set crew/atlas working ("Picking builds"). Build list, in this order, up to
-   settings.buildsPerRun (default 2): (a) products in stage queued, building, copy or sentback
-   that have no file or were sent back (finish them first); (b) briefs with status "approved"
+   settings.buildsPerRun (default 2): (a) products in stage "inspection" scoring 80 to 91 with retries under 4,
+   highest score first (a near-miss is the fastest way to a live listing: the Builder
+   reworks it against its inspect note and preflight.md), then products in stage queued,
+   building, copy or sentback that have no file or were sent back (finish them first); (b) briefs with status "approved"
    that have no productId; (c) only when settings.autoApprove is false: briefs "proposed" with
    total 20 or more, highest first, skipping anything Grayson rejected. Holiday Mode share
    applies to new builds (product-floor spec). If nothing to build, log it and go to stage 09.
+   MARKET PROOF GATE (Oct 23, 2026): a brief is built only if it names 3 opened Etsy
+   listings (links, review counts as shown, at least one 100+) and our gap, as
+   `../references/preflight.md` "Market" says. A brief without them goes back to status
+   "proposed" with note "needs opened competitor proof" and the next brief takes its place.
 2. For each chosen brief create products/<id> {title, briefId, lane -> kind, stage "building",
    summary, createdAt, source "Night Shift <day>"} and set the brief's status "built" and
    productId.

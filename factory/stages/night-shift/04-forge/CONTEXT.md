@@ -4,6 +4,7 @@
 
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
+| Reference | `../references/preflight.md` | the lines for this stage (File / Copy / Images) | Faults that failed the last 5 builds: check and fix before handing over |
 | Brief | the PRODUCT LINE in your brief | product id, title, lane | What to build (the run notes' "## Build list" is context only) |
 | Database | products/<id> and its brief (briefs/<briefId>) | title, summary, kind, style, brief evidence and buyer | The content to write and the style to build in |
 | Reference | `../references/house-style.md` | "PDF pages" and "The kit" | How pages are built |

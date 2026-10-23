@@ -4,6 +4,7 @@
 
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
+| Reference | `../references/preflight.md` | the lines for this stage (File / Copy / Images) | Faults that failed the last 5 builds: check and fix before handing over |
 | Previous stage | products in stage "copy" (this run's builds) | title, summary, file, brief | What to write for |
 | Spec | `../../../specs/product-floor-v6.md` | SALES PUSH ("SEARCH-FIRST COPY", "PRICES"), the lane's spec (Quill lines) | Search-first titles, prices, lane categories |
 | Skill | `../../../skills/quill/SKILL.md` | Full file | Checklist and lessons |
