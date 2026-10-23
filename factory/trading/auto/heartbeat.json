@@ -1,13 +1,13 @@
 {
- "at": "2026-10-22T17:08:53.548470-05:00",
- "lastRun": "17:08",
- "day": "2026-10-22",
- "status": "closed",
- "note": "outside market hours",
+ "at": "2026-10-23T08:32:14.849608-05:00",
+ "lastRun": "08:32",
+ "day": "2026-10-23",
+ "status": "ok",
+ "note": "equity $24.96, day +0.00, 0 open, 0 entries; no new entries now (8:35-2:00 CT window)",
  "loop": true,
  "cycles": 1,
- "runnerStarted": "2026-10-22T17:08:53.547969-05:00",
- "runnerUntil": "2026-10-22T22:38:53.547969-05:00",
+ "runnerStarted": "2026-10-23T08:32:13.003551-05:00",
+ "runnerUntil": "2026-10-23T14:02:13.003551-05:00",
  "cadence": "every minute during market hours",
  "mode": "paper"
 }

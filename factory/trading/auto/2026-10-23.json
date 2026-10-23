@@ -1,0 +1,26 @@
+{
+ "day": "2026-10-23",
+ "mode": "paper",
+ "equityOpen": 24.96,
+ "entries": 0,
+ "lostToday": [],
+ "positions": {},
+ "trades": [],
+ "actions": [],
+ "done": null,
+ "runs": 1,
+ "lastSignal": {},
+ "lastRun": "08:32",
+ "equity": 24.96,
+ "dayPnl": 0.0,
+ "watch": [
+  "SPY",
+  "QQQ",
+  "IWM",
+  "DIA",
+  "XLK",
+  "XLF"
+ ],
+ "avoid": [],
+ "lastNote": "equity $24.96, day +0.00, 0 open, 0 entries; no new entries now (8:35-2:00 CT window)"
+}
