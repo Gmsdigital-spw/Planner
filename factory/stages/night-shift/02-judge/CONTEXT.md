@@ -27,11 +27,25 @@ other than "Atlas auto-approver").
    bundle ("500 pages", "ultimate mega bundle"), a gimmick with no clear problem, filler words
    in the title (ultimate, aesthetic, boho, minimalist, unlock, elevate) instead of what it does,
    or a flooded niche with no different angle.
+2b. MARKET PROOF GATE (Grayson, Oct 23, 2026: four builds in a row died on the market score,
+   9 to 11 of 15, because proof was hunted AFTER building; the only pass, Santa Mail, had it).
+   Before approving, open real Etsy ITEM pages (not search cards, not shop totals) in the same
+   niche and record them in brief.marketProof = {listings:[{url, itemReviews, price, whatItHas}],
+   gap: "<the one specific thing we do that they don't>", checkedAt}. Approve ONLY with at least
+   2 opened item pages showing 100+ item reviews AND a written gap. Fewer: leave it "proposed"
+   with note "needs market proof: <what is missing>"; never approve on hope. Build only what
+   buyers have already proven they buy.
+2c. PRE-SCORE. Estimate the final inspection score from rubric.md for the brief as it would be
+   built: market from 2b (2 proven 100+ rivals + clear gap = 13; 3 or more = 14-15; fewer = 11
+   or less), price vs those rivals, and file/copy/images/polish at the crew's recent level
+   (factory/scores.jsonl, last 10 products). Write brief.preScore {market, price, total, why}.
+   Approve only when preScore.total is 93 or more; aim for 95+. Under 93: leave "proposed"
+   with the weakest category named.
 3. APPROVE (status "approved", decidedBy "Atlas auto-approver", decidedAt now, approveReason one
    plain sentence naming the buyer, the problem and the evidence) only when no reject rule
    applies AND total is 21 or more AND demand, timing and buildable are each 4 or more AND
    shopFit is 3 or more AND you can name the one specific thing that beats the top 3 competing
-   listings you saw. Approve at most settings.buildsPerRun (default 2) per run, best first; at
+   listings you saw AND the 2b proof and 2c pre-score pass. Approve at most settings.buildsPerRun (default 2) per run, best first; at
    most 1 wall art brief per run. Good ones over the limit stay "proposed".
 4. Borderline (total 18 to 20, or one score at 3 where 4 is required): leave "proposed" with a
    note saying what would push it over. Under 18: reject with the reason.

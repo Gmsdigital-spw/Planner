@@ -14,7 +14,7 @@
 
 ## Process
 1. Set crew/atlas working ("Picking builds"). Build list, in this order, up to
-   settings.buildsPerRun (default 2): (a) products in stage "inspection" scoring 80 to 91 with retries under 4,
+   settings.buildsPerRun (default 2): (a) products in stage "inspection" scoring 80 to 91 with retries under 4 and market 12 or more (market 11 or less = scrap it, see 07; one exception: prod-xmas-murder-mystery-8 gets ONE final finish try on the Oct 24, 2026 night run with its staged v2 fixes, then is scrapped if still under 92),
    highest score first (a near-miss is the fastest way to a live listing: the Builder
    reworks it against its inspect note and preflight.md), then products in stage queued,
    building, copy or sentback that have no file or were sent back (finish them first); (b) briefs with status "approved"

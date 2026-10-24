@@ -38,8 +38,10 @@ better than a padded 91.
    re-score honestly. Stop early only when it passes or a round raised nothing. A product
    still under 92 stays stage "inspection" with a note of the exact next fixes; the next
    run's 03 Pick finishes it FIRST. It becomes "scrapped" only when retries reach 4 or the
-   lane itself caps it (market 9 or less after real evidence was gathered: the idea is weak,
-   say so in the Scout lesson). Never rewrite an older product's score to a different rubric.
+   lane itself caps it: market 11 or less after a fix round that went looking for 100+ item-review
+   rivals and found none (Oct 23, 2026: such ideas top out near 89 and waste whole nights).
+   Scrap it, say so in the Scout lesson, and build the next approved brief instead. Pass stays
+   92; the crew's aim is 95+. Never rewrite an older product's score to a different rubric.
 6. Write one JSON line per scored product to `factory/scores.jsonl`:
    {"d":"<day key>","agent":"atlas","kind":"product","item":"<title>","score":<total>,"metric":null}.
 7. Set crew/atlas idle. Write `## Inspect: <title>` in the run notes: PASS/FAIL, the six
