@@ -11,6 +11,7 @@
 - 2026-10-23: Web app and spreadsheet listings pull the most views: ADHD Budget Planner App 41 views (top of 24), Monthly Budget Tracker 21 (3rd). Held: 1 time (includes a paid Pinterest ad on the app).
 
 ## Testing (not proven yet)
+- Oct 23: titles/tags rewritten around buyer search phrases on the 12 lowest-view listings (before values in notebook/seo-before-2026-10-23.json). 5 of them also got new covers the same day, so their result mixes both changes. Check Nov 6: views and favorites vs the Oct 23 baseline.
 - Varied cover layouts vs the single fun_covers template. 5 zero-view listings got new covers Oct 23 (all at 0 views/0 favs before; baseline in results.jsonl). Check Nov 6: favorites and views per listing before vs after (stats/ snapshots).
 - Christmas listings under $3 (Christmas Party Games Bundle $2.99, Awards Kit $1.99): views yes, sales no so far. Check Nov 6.
 
