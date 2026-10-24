@@ -1,0 +1,9 @@
+C1 L1 [19, 5, 22, 5, 14] = SEVEN -> 7
+C1 L2 'WKH ILUVW GLJLW LV VHYHQ' signed 'MXQLSHU' back 3 = 'THE FIRST DIGIT IS SEVEN' -> 7
+C2 L1 trees 4 + gifts 5 - stars 6 = 3
+C2 L2 tree 5, gift 4, star 2 unique; 5 + 2 - 4 = 3
+C3 L1 star plug -> bulb 9
+C3 L2 maze 11x13 perfect (edges 142), path 85 cells, bells on path 9, off path 9 -> 9
+C4 L1 4x4 sudoku unique (7 givens), snowflake square = 4
+C4 L2 logic grid unique: bench 1 Pip kite, bench 2 Holly drum, bench 3 Juniper yo-yo, bench 4 Sprout train; trains at bench 4
+Vault code 7394
