@@ -1,4 +1,4 @@
-import asyncio, sys, json
+import asyncio, sys, json, os
 from playwright.async_api import async_playwright
 # Atlas Hub page sweep (V8 "The Turning Point", Oct 24 2026). Same call as before:
 #   python3 factory/qa/sweep.py <page.html> [out dir] [width] [engine report fixture]
@@ -10,7 +10,8 @@ OUT=(sys.argv[2] if len(sys.argv)>2 else "/tmp/qa")+"/"
 async def main():
     errs=[]
     async with async_playwright() as p:
-        b=await p.chromium.launch()
+        exe=os.environ.get("PW_CHROMIUM")   # optional: a preinstalled Chromium when the Python driver has no browser of its own
+        b=await p.chromium.launch(**({"executable_path":exe} if exe else {}))
         W=int(sys.argv[3]) if len(sys.argv)>3 else 390
         pg=await b.new_page(viewport={"width":W,"height":844},device_scale_factor=2)
         pg.on("pageerror",lambda e: errs.append("PAGEERROR "+str(e)))
