@@ -1,0 +1,1 @@
+{"id":"bolt-2026-10-24-pinchk-9ec8","stopOnError":false,"ops":[{"op":"zernio","method":"GET","path":"/posts/6ad8f381c2a079c5bb730de5","tag":"pin-prod-gingerbread-contest-kit-s1"},{"op":"zernio","method":"GET","path":"/posts/6ad8f383e0f45f343e2a5738","tag":"pin-prod-pink-coquette-verse-art-s1"}]}
