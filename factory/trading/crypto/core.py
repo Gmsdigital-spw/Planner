@@ -64,7 +64,7 @@ def iso(t):
 def _get(path, q):
     url = f"{DATA}{path}?{urllib.parse.urlencode(q)}"
     hdr = {"Accept": "application/json", "User-Agent": "gm-crypto-paper"}
-    k, s = os.environ.get("ALPACA_KEY_ID"), os.environ.get("ALPACA_SECRET_KEY")
+    k, s = (os.environ.get("ALPACA_KEY_ID") or "").strip(), (os.environ.get("ALPACA_SECRET_KEY") or "").strip()
     if k and s:
         hdr.update({"APCA-API-KEY-ID": k, "APCA-API-SECRET-KEY": s})
     with urllib.request.urlopen(urllib.request.Request(url, headers=hdr), timeout=30) as r:
