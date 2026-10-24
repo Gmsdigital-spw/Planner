@@ -1,0 +1,53 @@
+name: Crypto paper bot
+
+# Grayson's crypto PAPER bot (Oct 23, 2026). VIRTUAL ONLY: reads Alpaca's free crypto prices and fakes fills in
+# factory/trading/crypto/state.json. It never places an order and never touches the stock bot's Alpaca account.
+# One cycle every 5 minutes, 24/7. Missed runs are safe: the next run replays every bar it missed.
+# The first run after a code push also runs the 60-day lab test once (lab/first-test.json) if it is missing.
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - "factory/trading/crypto/*.py"
+      - "factory/trading/crypto/params.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-paper
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: One virtual cycle
+        env:
+          ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python factory/trading/crypto/bot.py
+      - name: Lab first test (only if missing)
+        if: always() && hashFiles('factory/trading/crypto/lab/first-test.json') == ''
+        env:
+          ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: timeout 1200 python factory/trading/crypto/backtest.py --first-test || echo "{\"error\":\"first test failed, see the Action log\"}" > factory/trading/crypto/lab/first-test.json
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name "crypto-paper"
+          git config user.email "crypto-paper@users.noreply.github.com"
+          git add factory/trading/crypto/state.json factory/trading/crypto/heartbeat.json factory/trading/crypto/last-error.json factory/trading/crypto/lab 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -qm "crypto paper: $(TZ=America/Chicago date +%H:%M) CT"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort || true; sleep $((i*5)); done
+          exit 1

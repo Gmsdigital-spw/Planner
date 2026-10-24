@@ -1,0 +1,43 @@
+{
+ "params": {
+  "symbols": [
+   "BTC/USD",
+   "ETH/USD",
+   "SOL/USD",
+   "DOGE/USD",
+   "AVAX/USD"
+  ],
+  "startBalance": 25.0,
+  "floor": 15.0,
+  "feePct": 0.25,
+  "assumedSpreadPct": 0.1,
+  "maxSpreadPct": 0.5,
+  "minScore": 75,
+  "maxPositionPct": 50,
+  "maxOpen": 2,
+  "stopAtr": 1.5,
+  "targetR": 2.0,
+  "takeFraction": 0.5,
+  "trailAtr": 2.0,
+  "timeStopHours": 24,
+  "emaFast": 20,
+  "emaFastSlopeBars": 3,
+  "emaHourly": 50,
+  "breakoutBars": 12,
+  "rsiLen": 14,
+  "rsiMax": 75,
+  "atrLen": 14,
+  "rvolBars": 288,
+  "rvolTop": 1.5,
+  "minBars24h": 200,
+  "cooldownBars": 1,
+  "weights": {
+   "aboveHourlyEma": 13,
+   "fastEmaRising": 12,
+   "breakout": 25,
+   "rvol": 30,
+   "rsiOk": 20
+  }
+ },
+ "note": "Crypto paper bot knobs (VIRTUAL ledger only, never orders). Edit here; core.py DEFAULTS are the fallback. Grayson's spec Oct 23, 2026: score >= 75, 50% of equity per trade, max 2 open, 1.5 ATR stop, half off at +2R, 2 ATR trail, 24h time stop, $15 virtual floor."
+}
