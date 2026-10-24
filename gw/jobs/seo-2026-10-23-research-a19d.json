@@ -1,0 +1,78 @@
+{
+ "id": "seo-2026-10-23-research-a19d",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4599447958",
+   "tag": "4599447958"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=debt%20payoff%20planner&sort_on=score&limit=25",
+   "tag": "s:debt payoff planner"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=cookie%20exchange%20party%20printable&sort_on=score&limit=25",
+   "tag": "s:cookie exchange party printable"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=friendsgiving%20games&sort_on=score&limit=25",
+   "tag": "s:friendsgiving games"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=christmas%20bible%20verse%20wall%20art&sort_on=score&limit=25",
+   "tag": "s:christmas bible verse wall art"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=no%20buy%20year&sort_on=score&limit=25",
+   "tag": "s:no buy year"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=thanksgiving%20games&sort_on=score&limit=25",
+   "tag": "s:thanksgiving games"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=secret%20santa%20questionnaire&sort_on=score&limit=25",
+   "tag": "s:secret santa questionnaire"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=thanksgiving%20planner&sort_on=score&limit=25",
+   "tag": "s:thanksgiving planner"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=advent%20calendar%20activities&sort_on=score&limit=25",
+   "tag": "s:advent calendar activities"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=gingerbread%20house%20contest&sort_on=score&limit=25",
+   "tag": "s:gingerbread house contest"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=letter%20from%20santa%20editable&sort_on=score&limit=25",
+   "tag": "s:letter from santa editable"
+  }
+ ]
+}
