@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en" data-biz="atlas">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Atlas Hub</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* Atlas Hub, V8 "The Turning Point" (Oct 24, 2026). One look for both businesses: cream, white cards,
+   one brand colour (navy here, green for Ridgeline Local), Today first. Real numbers only; unknown is "—". */
+:root{
+  color-scheme:light;
+  --bg:#F6F4EF; --card:#FFFFFF; --raised:#F6F4EF; --sunk:#EFECE5; --ink:#111511; --muted:#5E655F; --dim:#858C86; --line:#ECE9E2; --line2:#DCD8CE;
+  --ok:#2E8F3C; --ok-dot:#3BAA4A; --ok-soft:rgba(59,170,74,.13);
+  --warn:#9A6B00; --warn-dot:#E3A21A; --warn-soft:rgba(227,162,26,.16);
+  --bad:#C6412F; --bad-dot:#D94B3D; --bad-soft:rgba(217,75,61,.12);
+  --brand:#12305A; --brand-2:#1F4A82; --brand-ink:#FFFFFF; --pill:#E6EEF8; --pill-ink:#12305A;
+  --radius:22px; --r:14px; --shadow:0 6px 24px rgba(20,30,20,.07);
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:#0E110F; --card:#171B18; --raised:#1E241F; --sunk:#0A0D0B; --ink:#F2F4F1; --muted:#9AA39C; --dim:#6F786F; --line:#232925; --line2:#30382F;
+  --ok:#4FD18B; --ok-dot:#4FD18B; --ok-soft:rgba(79,209,139,.14);
+  --warn:#FFB020; --warn-dot:#FFB020; --warn-soft:rgba(255,176,32,.16);
+  --bad:#FF6B6B; --bad-dot:#FF6B6B; --bad-soft:rgba(255,107,107,.16);
+  --brand:#7FB0F0; --brand-2:#A6C8F6; --brand-ink:#061427; --pill:#1A2638; --pill-ink:#BFD3F2;
+  --shadow:0 18px 50px rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E110F; --card:#171B18; --raised:#1E241F; --sunk:#0A0D0B; --ink:#F2F4F1; --muted:#9AA39C; --dim:#6F786F; --line:#232925; --line2:#30382F;
+  --ok:#4FD18B; --ok-dot:#4FD18B; --ok-soft:rgba(79,209,139,.14);
+  --warn:#FFB020; --warn-dot:#FFB020; --warn-soft:rgba(255,176,32,.16);
+  --bad:#FF6B6B; --bad-dot:#FF6B6B; --bad-soft:rgba(255,107,107,.16);
+  --brand:#7FB0F0; --brand-2:#A6C8F6; --brand-ink:#061427; --pill:#1A2638; --pill-ink:#BFD3F2;
+  --shadow:0 18px 50px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+h1,h2,h3,h4,p,ul{margin:0}
+h1,h2,h3,h4{font-weight:800;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+:where(a,button,summary,input,select,textarea,[tabindex]):focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mono{font-variant-numeric:tabular-nums}
+.app{min-height:100%;display:grid;grid-template-rows:auto 1fr}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;gap:12px;min-height:60px;padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px));max-width:640px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.02em;white-space:nowrap;color:var(--brand)}
+.brand svg{width:34px;height:34px;flex:none}
+.brand small{display:block;font-weight:600;font-size:11.5px;color:var(--muted);letter-spacing:.01em;line-height:1.1;margin-top:2px}
+.mode{margin-left:auto;display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-weight:800;font-size:11px;letter-spacing:.04em;border:1px solid var(--line2);background:var(--card);color:var(--muted);white-space:nowrap}
+.mode[data-m="live"]{color:var(--ok);border-color:rgba(59,170,74,.5)}
+.mode[data-m="paused"]{color:var(--bad);border-color:rgba(217,75,61,.5)}
+.mode[data-m="dry"]{color:var(--warn);border-color:rgba(227,162,26,.5)}
+.main{max-width:640px;margin:0 auto;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(100px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));min-width:0}
+.page{display:none}.page.on{display:block}
+.big{font-size:40px;letter-spacing:-.02em;margin:4px 0 6px;font-weight:800}
+.head{margin:6px 0 14px}.head h2{font-size:30px;letter-spacing:-.02em}.head p{color:var(--muted);font-size:14.5px;margin-top:4px;max-width:62ch}
+.status{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:15px;min-height:24px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--ok-dot);box-shadow:0 0 0 0 rgba(59,170,74,.5);animation:pulsedot 2s infinite;flex:none}
+.dot.warn{background:var(--warn-dot);animation:none}.dot.bad{background:var(--bad-dot);animation:none}.dot.off{background:var(--dim);animation:none}
+@keyframes pulsedot{70%{box-shadow:0 0 0 8px rgba(59,170,74,0)}100%{box-shadow:0 0 0 0 rgba(59,170,74,0)}}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:14px 0;min-width:0}
+.card h3{font-size:16px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h3 .sp{margin-left:auto;font-weight:600;font-size:12.5px;color:var(--dim)}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:700}
+.next h2{font-size:22px;margin:8px 0 2px}.next p{color:var(--muted);margin:0 0 14px;font-size:15px}
+.next.alert{outline:2px solid var(--bad-dot)}.next.alert .eyebrow{color:var(--bad)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 16px;border-radius:12px;border:1px solid var(--line2);background:var(--raised);font-weight:700;font-size:14.5px;color:var(--ink);text-decoration:none}
+.btn:active{transform:scale(.98)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.p{background:var(--brand);color:var(--brand-ink);border-color:transparent}
+.btn.good{color:var(--ok);background:var(--ok-soft);border-color:transparent}
+.btn.bad{color:var(--bad);background:var(--bad-soft);border-color:transparent}
+.btn.sm{min-height:34px;padding:5px 11px;font-size:13px;border-radius:9px}
+.btn.block{width:100%}
+.btn.cta{width:100%;justify-content:space-between;min-height:54px;border-radius:14px;background:var(--brand);color:var(--brand-ink);border:0;font-size:17px;padding:14px 20px}
+.next.alert .btn.cta{background:var(--bad-dot);color:#fff}
+.section{font-size:22px;font-weight:800;margin:22px 0 4px;letter-spacing:-.02em}
+.section.sm{font-size:18px}
+.wrow{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:18px;padding:14px 16px;margin:10px 0;box-shadow:var(--shadow);width:100%;text-align:left;border:0;color:inherit}
+.wrow .ic{width:44px;height:44px;border-radius:14px;background:var(--pill);color:var(--pill-ink);display:grid;place-items:center;flex:none}
+.wrow .ic svg{width:24px;height:24px}
+.wrow .t{flex:1;min-width:0}.wrow .t b{display:block;font-weight:700;font-size:17px;line-height:1.25}.wrow .t small{display:block;color:var(--muted);font-size:14px;line-height:1.35;margin-top:2px}
+.wrow .chev{color:var(--dim);flex:none;width:18px;height:18px}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:700;background:var(--pill);color:var(--pill-ink);white-space:nowrap;flex:none}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}.pill.warn{background:var(--warn-soft);color:var(--warn)}.pill.bad{background:var(--bad-soft);color:var(--bad)}.pill.dim{background:var(--raised);color:var(--muted)}
+.agentsbar{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--pill);color:var(--pill-ink);border-radius:18px;padding:14px 16px;font-weight:700;margin-top:14px;width:100%;border:0;text-align:left;font-size:16px}
+.agentsbar .dot{display:inline-block;margin-right:6px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:14px 16px;min-width:0}
+.tile b{display:block;font-weight:900;font-size:28px;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.tile span{display:block;color:var(--muted);font-size:12.5px;font-weight:600;margin-top:5px}
+.tile small{display:block;color:var(--dim);font-size:11.5px;margin-top:3px}
+.list{display:grid}
+.row{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);min-width:0}
+.row:last-child{border-bottom:0}
+.row .t{flex:1;min-width:0}
+.row .t b{display:block;font-weight:700;font-size:14.5px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.row .t small{display:block;color:var(--muted);font-size:12.5px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.row.click{cursor:pointer}
+.row>.pill,.row>.btn,.row>small{flex:none}
+.empty{padding:20px 14px;text-align:center;color:var(--muted);font-size:14px;border:1px dashed var(--line2);border-radius:var(--r)}
+.empty b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
+.muted{color:var(--muted)}.dim{color:var(--dim)}.small{font-size:12.5px}
+.note{padding:10px 12px;border-radius:12px;font-size:13.5px;background:var(--raised)}
+.note.warn{background:var(--warn-soft)}.note.bad{background:var(--bad-soft)}.note.ok{background:var(--ok-soft)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:5px 12px;font-size:13.5px}
+.kv dt{color:var(--dim);font-weight:600}.kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.sw{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.sw:last-child{border-bottom:0}
+.sw .t b{display:block;font-weight:700}.sw .t small{display:block;color:var(--muted);font-size:12.5px;max-width:52ch}
+.toggle{width:50px;height:30px;border-radius:999px;border:1px solid var(--line2);background:var(--sunk);position:relative;flex:none;transition:background .2s}
+.toggle::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--dim);transition:transform .2s,background .2s}
+.toggle[aria-checked="true"]{background:var(--brand);border-color:var(--brand)}
+.toggle[aria-checked="true"]::after{transform:translateX(20px);background:#fff}
+.toggle:disabled{opacity:.5;cursor:not-allowed}
+.field{margin-top:10px}.field label{display:block;font-weight:700;font-size:13px;margin-bottom:5px}
+.field input,.field select,.field textarea{width:100%;min-height:42px;padding:9px 12px;border-radius:10px;border:1px solid var(--line2);background:var(--sunk);color:var(--ink)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.inline{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 12px;border-radius:10px;background:var(--warn-soft);font-size:13px;margin-top:8px}
+.score{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;font-weight:900;font-size:14px;background:var(--raised);flex:none;font-variant-numeric:tabular-nums}
+.score.hi{color:var(--ok)}.score.mid{color:var(--warn)}.score.lo{color:var(--dim)}
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px))}
+.tabs button{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:0;padding:6px 2px;font-size:12px;font-weight:600;color:var(--muted);position:relative}
+.tabs button svg{width:24px;height:24px}
+.tabs button[aria-current="page"]{color:var(--brand);font-weight:800}
+.tabs .cnt{position:absolute;top:2px;right:calc(50% - 22px);font-size:10px;font-weight:800;background:var(--bad-dot);color:#fff;border-radius:999px;padding:0 5px;min-width:16px;text-align:center}
+.sheet-nav{position:fixed;inset:0;z-index:35;background:rgba(0,0,0,.45);display:none;align-items:flex-end}
+.sheet-nav.on{display:flex}
+.sheet-nav .in{width:100%;max-width:640px;margin:0 auto;background:var(--card);border-radius:22px 22px 0 0;padding:14px 16px calc(18px + env(safe-area-inset-bottom,0px));max-height:85vh;overflow:auto}
+.sheet-nav a{display:flex;align-items:center;gap:12px;padding:14px 6px;border-bottom:1px solid var(--line);font-weight:700;font-size:16px;text-decoration:none}
+.sheet-nav a svg{width:22px;height:22px;color:var(--brand)}
+.sheet-nav a small{margin-left:auto;color:var(--dim);font-weight:600;font-size:12px}
+.drawer-bg{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.5);display:none}.drawer-bg.on{display:block}
+.drawer{position:fixed;z-index:51;left:0;right:0;bottom:0;max-height:92%;background:var(--card);border-radius:22px 22px 0 0;box-shadow:var(--shadow);transform:translateY(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;max-width:640px;margin:0 auto}
+.drawer.on{transform:none}
+.drawer .dh{display:flex;align-items:center;gap:10px;padding:14px 16px 10px;border-bottom:1px solid var(--line)}
+.drawer .dh h3{font-size:18px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.drawer .db{flex:1;overflow:auto;padding:14px 16px calc(24px + env(safe-area-inset-bottom,0px));display:grid;gap:14px;align-content:start}
+.x{width:36px;height:36px;border-radius:10px;border:1px solid var(--line2);background:var(--raised);display:grid;place-items:center}.x svg{width:16px;height:16px}
+.sec{display:grid;gap:8px}.sec h4{font-size:12px;letter-spacing:.06em;color:var(--dim);font-weight:800;text-transform:uppercase}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(10px);background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:12px;font-weight:600;font-size:14px;opacity:0;transition:opacity .2s,transform .2s;z-index:60;pointer-events:none;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.fade-in{animation:fadein .35s ease both}@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{padding:6px 11px;border-radius:999px;border:1px solid var(--line2);background:var(--card);font-size:12.5px;font-weight:700;color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--pill);color:var(--pill-ink);border-color:transparent}
+details.card summary{cursor:pointer;font-weight:700;list-style:none}
+details.card summary::-webkit-details-marker{display:none}
+.bar{height:8px;border-radius:999px;background:var(--sunk);overflow:hidden}.bar i{display:block;height:100%;background:var(--brand);border-radius:999px}
+.lane{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}.lane:last-child{border-bottom:0}
+.lane .t{flex:1;min-width:0}.lane .t b{display:block;font-size:14px}.lane .t small{display:block;color:var(--muted);font-size:12.5px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs></defs>
+  <symbol id="i-logo" viewBox="0 0 32 32"><rect width="32" height="32" rx="10" fill="#12305A"/><path d="M8 23 L16 8 L24 23 Z" fill="#F6F4EF"/><circle cx="16" cy="19" r="2.2" fill="#12305A"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></symbol>
+  <symbol id="i-work" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></symbol>
+  <symbol id="i-agents" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20a6 6 0 0 1 12 0M16 4a3.5 3.5 0 0 1 0 7M21 20a6 6 0 0 0-5-5.9"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="19" cy="12" r="2.2"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M17 9a4 4 0 0 1 0 6"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-money" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4h12l-2 4 2 4H5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="i-engine" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9zM4 10h-2M4 14H2M22 10h-2M22 14h-2M10 4V2M14 4V2M10 22v-2M14 22v-2"/></symbol>
+  <symbol id="i-park" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 16V8h3.5a2.5 2.5 0 0 1 0 5H9"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7Z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h5l2 3h4l2-3h5"/><path d="M5 4h14l2 9v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-7z"/></symbol>
+  <symbol id="i-qa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+</svg>
+
+<div class="app">
+  <header class="top"><div class="top-in">
+    <a class="brand" href="#today" aria-label="Atlas Hub home"><svg aria-hidden="true"><use href="#i-logo"/></svg><span>Atlas Hub<small id="brandSub">GM Agency</small></span></a>
+    <span class="mode" id="mode" data-m="off">LOADING</span>
+  </div></header>
+  <main class="main" id="main">
+    <section class="page" id="p-today"></section>
+    <section class="page" id="p-work"></section>
+    <section class="page" id="p-agents"></section>
+    <section class="page" id="p-etsy"></section>
+    <section class="page" id="p-marketing"></section>
+    <section class="page" id="p-shorts"></section>
+    <section class="page" id="p-trading"></section>
+    <section class="page" id="p-money"></section>
+    <section class="page" id="p-missions"></section>
+    <section class="page" id="p-approvals"></section>
+    <section class="page" id="p-engine"></section>
+    <section class="page" id="p-settings"></section>
+    <section class="page" id="p-parked"></section>
+  </main>
+  <nav class="tabs" id="tabs" aria-label="Pages"></nav>
+</div>
+<div class="sheet-nav" id="sheetNav"><div class="in" id="sheetNavIn"></div></div>
+<div class="drawer-bg" id="drawerBg"></div>
+<aside class="drawer" id="drawer" aria-label="Details"><div class="dh"><h3 id="dTitle">Details</h3><button class="x" id="dClose" type="button" aria-label="Close"><svg aria-hidden="true"><use href="#i-x"/></svg></button></div><div class="db" id="dBody"></div></aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+/* ============================ constants ============================ */
+const TZ="America/Chicago";
+const SHOP_ID=68605457;
+const RAW="https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/";
+const MEDIC_URL=RAW+"medic/public/medic_report.json";
+const HB_URL=RAW+"factory/trading/auto/heartbeat.json";
+const CRYPTO_HB_URL=RAW+"factory/trading/crypto/heartbeat.json";
+const CRYPTO_STATE_URL=RAW+"factory/trading/crypto/state.json";
+const ENG_URL=RAW+"factory/engine/public/report.json";
+const RL_URL=RAW+"factory/runlog.jsonl";
+const YT_NS="modules/youtube/";
+const FLEET_DOC="fleet/commander";
+const PLAN_USD=250;
+const TRIGS={night:{id:"trig_01AKhkcKn5cgKDgpZavQEun1",name:"Night Shift"},bolt:{id:"trig_01QWbpg22o89x2sFANkEcG67",name:"Bolt Etsy publisher"},herald:{id:"trig_01WukPSxb5DtW4tL2Zs9EKhu",name:"Herald social run"},mechanic:{id:"trig_01LjWHeBBnHMDPfAyT752hPJ",name:"Mechanic"},studio:{id:"trig_01VNPpEQuRoSAGg9F9SAeWYo",name:"Studio Floor daily Short"},pixel:{id:"trig_01MQhG8MqAZ6F8ugWSoJjnmg",name:"Pixel video pin"},pricing:{id:"trig_011d8uPA25L1BVvMwXAWGHfa",name:"Pricing agent"},scout:{id:"trig_01Up7bqVQSVzUqcJrR1DDuZK",name:"Scout Intel"}};
+const PAGES=[
+  {id:"today",label:"Today",icon:"i-home",title:"Today"},
+  {id:"work",label:"Work",icon:"i-work",title:"Work"},
+  {id:"agents",label:"Agents",icon:"i-agents",title:"Agents"},
+  {id:"etsy",label:"Etsy",icon:"i-tag",title:"Etsy shop"},
+  {id:"marketing",label:"Marketing",icon:"i-mega",title:"Marketing"},
+  {id:"shorts",label:"Shorts",icon:"i-play",title:"YouTube Shorts"},
+  {id:"trading",label:"Trading",icon:"i-chart",title:"Paper trading"},
+  {id:"money",label:"Money",icon:"i-money",title:"Money"},
+  {id:"approvals",label:"Approvals",icon:"i-inbox",title:"Approvals"},
+  {id:"missions",label:"Missions",icon:"i-flag",title:"Missions"},
+  {id:"engine",label:"Engine room",icon:"i-engine",title:"Engine room"},
+  {id:"settings",label:"Settings",icon:"i-gear",title:"Settings & safety"},
+  {id:"parked",label:"Parked",icon:"i-park",title:"Parked lanes"}
+];
+/* The crew. Judged on real results; the skill files live in factory/skills/<id>/SKILL.md. TikTok's agent is
+   not listed: TikTok is Grayson's own. Funnel, Gumroad, Frontier Nav are parked. */
+const AGENTS=[
+  {id:"atlas",name:"Atlas",role:"Commander",floor:"Etsy",desc:"Picks what gets built, inspects every product against the 92 bar, writes the morning report and the next move."},
+  {id:"scout",name:"Scout",role:"Research",floor:"Etsy",desc:"Finds product ideas buyers already search for, with evidence; all-day intel every 2 hours."},
+  {id:"forge",name:"Forge",role:"Builder",floor:"Etsy",desc:"Builds the real product file, every page full and printable."},
+  {id:"quill",name:"Quill",role:"Copy",floor:"Etsy",desc:"Titles, tags and descriptions buyers actually type."},
+  {id:"lens",name:"Lens",role:"Covers & photos",floor:"Etsy",desc:"The cover that wins the tap: real pages, real mockups, every cover different."},
+  {id:"judge",name:"Judge",role:"Inspection",floor:"Etsy",desc:"Scores every product honestly; under 92 goes back for a rebuild."},
+  {id:"warden",name:"Warden",role:"Listing check-up",floor:"Etsy",desc:"Daily listing health: photos, tags, covers on the live shop."},
+  {id:"ledger",name:"Ledger",role:"Pricing & books",floor:"Etsy",desc:"Prices within the rules; every dollar honest."},
+  {id:"bolt",name:"Bolt",role:"Publisher",floor:"Etsy",desc:"Publishes passed products on Etsy and schedules the pins. The only one who publishes."},
+  {id:"rocket",name:"Rocket",role:"Launch",floor:"Etsy",desc:"Launch checks before a listing goes live."},
+  {id:"pixel",name:"Pixel",role:"Pinterest",floor:"Marketing",desc:"Still pins and one video pin a day, measured by clicks to Etsy."},
+  {id:"herald",name:"Herald",role:"Socials",floor:"Marketing",desc:"One real-product post a day on Instagram, Facebook and the shop YouTube."},
+  {id:"hawk",name:"Hawk",role:"Plan from numbers",floor:"Marketing",desc:"Reads views, favorites, clicks and tells the crew what to push and drop."},
+  {id:"flame",name:"Flame",role:"Hooks & QC",floor:"Marketing",desc:"Grades every caption and hook on the 92 bar."},
+  {id:"santa",name:"Santa",role:"Holiday push",floor:"Marketing",desc:"Which holiday is open and how much of the work aims at it."},
+  {id:"spot",name:"Spot",role:"Commercials",floor:"Marketing",desc:"The Etsy promo videos: real listing, real tap, natural voice."},
+  {id:"beacon",name:"Beacon",role:"Ads watch",floor:"Marketing",desc:"Locked until the shop is ready; not one ad dollar wasted."},
+  {id:"mirror",name:"Mirror",role:"Mockups",floor:"Marketing",desc:"Mockups and backgrounds for listings and videos."},
+  {id:"vega",name:"Vega",role:"Studio lead",floor:"Shorts",desc:"Runs the daily Short: research, story, build, scorecard, post."},
+  {id:"radar",name:"Radar",role:"Research",floor:"Shorts",desc:"What is working right now in 3D cartoon story Shorts."},
+  {id:"gags",name:"Gags",role:"Story",floor:"Shorts",desc:"Setup, problem, twist, payoff, loop."},
+  {id:"reel",name:"Reel",role:"Animation",floor:"Shorts",desc:"Real animation in the free lane; no slideshow zooms."},
+  {id:"cutter",name:"Cutter",role:"Edit",floor:"Shorts",desc:"Hook in 1.5 s, a new beat every 2 to 3 s, captions in the safe zone."},
+  {id:"echo",name:"Echo",role:"Voice",floor:"Shorts",desc:"The natural narrator voice."},
+  {id:"graph",name:"Graph",role:"Analytics",floor:"Shorts",desc:"Reads the last 7 Shorts every day and writes what worked."},
+  {id:"bull",name:"Bull",role:"Setups",floor:"Trading",desc:"Finds long setups in liquid names. Paper only."},
+  {id:"bear",name:"Bear",role:"Risk",floor:"Trading",desc:"The floor, the daily loss limit, the stop on every buy."},
+  {id:"vault",name:"Vault",role:"Books",floor:"Trading",desc:"Equity, P/L, the ledger."},
+  {id:"tape",name:"Tape",role:"Close report",floor:"Trading",desc:"The honest close report every day."},
+  {id:"mechanic",name:"Mechanic",role:"Self-repair",floor:"Fleet",desc:"Works the Medic's tickets, fixes once, morning report."},
+  {id:"medic",name:"Medic",role:"Day watch",floor:"Fleet",desc:"Checks every lane every 30 minutes on GitHub; fixes for free, verifies, learns."},
+  {id:"foreman",name:"Foreman",role:"Weekly review",floor:"Fleet",desc:"Grades every agent on evidence each week."}
+];
+const FLOORS=["Etsy","Marketing","Shorts","Trading","Fleet"];
+const PARKED=[["Gumroad","Store parked Oct 21, 2026. Records kept; Bolt no longer touches it."],["Funnel Floor","Instagram comment-the-word funnel. Switched off on purpose; data kept."],["Frontier Nav","Old-west map app, v0.1 live and parked."],["Brain Arcade","Parked."],["TikTok","Grayson's own channel. The crew never posts, checks or mentions it."]];
+const DEFAULT_SETTINGS={mode:"autopilot",paused:false,batchSize:4,dailyCap:2,monthlyFeeCap:20,buildsPerRun:2,dryRun:false,passScore:92,schedule:{time:"01:54",tz:TZ,applied:null},shop:{liveListings:null,salesTotal:null},costs:{claudePlan:null,ads:0}};
+
+/* ============================ state ============================ */
+const S={db:null,dbState:"loading",user:null,canWrite:null,readOnly:false,mcp:null,page:"today",drawer:null,confirm:{},busy:{},
+  settings:null,settingsVersion:null,products:[],crew:{},runs:[],pins:[],social:[],signal:null,stats:[],medicDoc:null,trade:null,sales:[],bills:[],spend:{},revenue:{},months:{},missions:[],fleet:null,approvals:[],billing:{},mech:null,ytPipe:{},ytFactory:null,ytStats:null,ytSettings:null,engOrders:[],events:[],reports:[],nextmove:null,lessons:[],briefs:[],
+  medic:null,hb:null,cryptoHb:null,cryptoState:null,eng:null,runlog:[],fetchedAt:null};
+const settings=()=>Object.assign({},DEFAULT_SETTINGS,S.settings||{});
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const v=x=>(x===null||x===undefined||x===""||(typeof x==="number"&&isNaN(x)))?"—":x;
+const money=n=>n==null||isNaN(Number(n))?"—":(Number(n)<0?"-":"")+"$"+Math.abs(Number(n)).toFixed(2);
+const sgn=n=>n==null||isNaN(Number(n))?"—":(Number(n)>=0?"+":"")+money(n).replace("-","");
+const nowIso=()=>new Date().toISOString();
+function dayKey(t){const d=t?new Date(t):new Date();if(isNaN(d.getTime()))return "";return new Intl.DateTimeFormat("en-CA",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit"}).format(d)}
+function ctParts(t){const d=t?new Date(t):new Date();const p=new Intl.DateTimeFormat("en-US",{timeZone:TZ,hour12:false,weekday:"short",hour:"2-digit",minute:"2-digit"}).formatToParts(d);const g=k=>(p.find(x=>x.type===k)||{}).value;return {wd:g("weekday"),h:Number(g("hour"))%24,m:Number(g("minute"))}}
+function ago(t){if(!t)return "never";const ms=Date.now()-Date.parse(t);if(isNaN(ms))return "—";const m=Math.round(ms/60000);if(m<1)return "just now";if(m<60)return m+" min ago";const h=Math.round(m/60);if(h<48)return h+" h ago";return Math.round(h/24)+" d ago"}
+function fmtT(t){if(!t)return "—";const d=new Date(t);if(isNaN(d.getTime()))return "—";return new Intl.DateTimeFormat("en-US",{timeZone:TZ,month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}).format(d)}
+function fmtH(hh,mm){return ((hh%12)||12)+":"+String(mm).padStart(2,"0")+(hh<12?" AM":" PM")}
+function docList(snap){return snap.docs.map(d=>Object.assign({id:d.id},d.data()))}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove("on"),2600)}
+let renderQueued=false;function queue(){if(renderQueued)return;renderQueued=true;requestAnimationFrame(()=>{renderQueued=false;renderAll()})}
+const ls={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,x)=>{try{localStorage.setItem(k,x)}catch(e){}}};
+
+/* ============================ data ============================ */
+async function fetchJson(url,opts){try{const r=await fetch(url+(url.includes("?")?"&":"?")+"t="+Math.floor(Date.now()/300000),{cache:"no-store"});if(!r.ok)return null;return opts&&opts.text?await r.text():await r.json()}catch(e){return null}}
+async function loadRaw(){
+  const [medic,hb,chb,cst,eng,rl]=await Promise.all([fetchJson(MEDIC_URL),fetchJson(HB_URL),fetchJson(CRYPTO_HB_URL),fetchJson(CRYPTO_STATE_URL),fetchJson(ENG_URL),fetchJson(RL_URL,{text:true})]);
+  if(medic&&medic.board)S.medic=medic;if(hb)S.hb=hb;if(chb)S.cryptoHb=chb;if(cst)S.cryptoState=cst;if(eng)S.eng=eng;
+  if(rl){S.runlog=rl.split("\n").filter(Boolean).slice(-150).map(l=>{try{return JSON.parse(l)}catch(e){return null}}).filter(Boolean)}
+  S.fetchedAt=nowIso();queue();
+}
+async function boot(){
+  renderAll();loadRaw();setInterval(loadRaw,10*60*1000);
+  let db=null;try{db=await window.claude.use("db")}catch(e){db=null}
+  if(!db){S.dbState="none";queue();return}
+  S.db=db;S.dbState="ok";
+  try{const user=await window.claude.use("user");S.user=user;if(user){S.canWrite=await user.can("data.write")}}catch(e){}
+  const onErr=e=>{console.error("db",e);if(e&&e.code==="revoked"){S.dbState="revoked";queue()}};
+  const sub=(ref,fn)=>{try{ref.onSnapshot(fn,onErr)}catch(e){console.error(e)}};
+  sub(db.doc("settings/main"),s=>{S.settings=s.exists?s.data():null;S.settingsExists=s.exists;queue()});
+  sub(db.collection("products").orderBy("createdAt","desc").limit(80),s=>{S.products=docList(s);queue()});
+  sub(db.collection("crew"),s=>{S.crew={};docList(s).forEach(d=>S.crew[d.id]=d);queue()});
+  sub(db.collection("runs").orderBy("startedAt","desc").limit(8),s=>{S.runs=docList(s);queue()});
+  sub(db.collection("pins").orderBy("createdAt","desc").limit(80),s=>{S.pins=docList(s).filter(p=>p.status!=="retired");queue()});
+  sub(db.collection("social").orderBy("createdAt","desc").limit(120),s=>{S.social=docList(s).filter(x=>x.status!=="retired");queue()});
+  sub(db.doc("signal/main"),s=>{S.signal=s.exists?s.data():null;queue()});
+  sub(db.collection("stats").orderBy("day","desc").limit(8),s=>{S.stats=docList(s);queue()});
+  sub(db.doc("medic/latest"),s=>{S.medicDoc=s.exists?s.data():null;queue()});
+  sub(db.doc("modules/trading/report/main"),s=>{S.trade=s.exists?s.data():null;queue()});
+  sub(db.collection("sales").orderBy("date","desc").limit(300),s=>{S.sales=docList(s);queue()});
+  sub(db.collection("bills"),s=>{S.bills=docList(s);queue()});
+  sub(db.collection("spend"),s=>{S.spend={};docList(s).forEach(d=>S.spend[d.id]=d);queue()});
+  sub(db.collection("revenue"),s=>{S.revenue={};docList(s).forEach(d=>S.revenue[d.id]=d);queue()});
+  sub(db.collection("months"),s=>{S.months={};docList(s).forEach(d=>S.months[d.id]=d);queue()});
+  sub(db.collection("billing"),s=>{S.billing={};docList(s).forEach(d=>S.billing[d.id]=d);queue()});
+  sub(db.collection("missions").orderBy("createdAt","desc").limit(30),s=>{S.missions=docList(s);queue()});
+  sub(db.doc(FLEET_DOC),s=>{S.fleet=s.exists?s.data():null;queue()});
+  sub(db.collection("fleet/commander/approvals").orderBy("createdAt","desc").limit(30),s=>{S.approvals=docList(s);queue()});
+  sub(db.doc("fleet/mechanic"),s=>{S.mech=s.exists?s.data():null;queue()});
+  sub(db.collection(YT_NS+"pipeline"),s=>{S.ytPipe={};s.docs.forEach(d=>{const x=d.data();if(x)S.ytPipe[d.id]=x});queue()});
+  sub(db.doc(YT_NS+"factory/main"),s=>{S.ytFactory=s.exists?s.data():null;queue()});
+  sub(db.doc(YT_NS+"stats/channel"),s=>{S.ytStats=s.exists?s.data():null;queue()});
+  sub(db.doc(YT_NS+"settings/main"),s=>{S.ytSettings=s.exists?s.data():null;queue()});
+  sub(db.collection("engine/main/orders").orderBy("at","desc").limit(20),s=>{S.engOrders=docList(s);queue()});
+  sub(db.collection("events").orderBy("day","desc").limit(2),s=>{S.events=docList(s);queue()});
+  sub(db.collection("reports").orderBy("createdAt","desc").limit(2),s=>{S.reports=docList(s);queue()});
+  sub(db.doc("nextmove/main"),s=>{S.nextmove=s.exists?s.data():null;queue()});
+  sub(db.collection("lessons").orderBy("at","desc").limit(20),s=>{S.lessons=docList(s);queue()});
+  sub(db.collection("briefs").orderBy("createdAt","desc").limit(20),s=>{S.briefs=docList(s);queue()});
+}
+async function write(path,data,mode){
+  if(!S.db){toast("Database not available in this view");return false}
+  try{const ref=S.db.doc(path);if(mode==="update")await ref.update(data);else await ref.set(data);return true}
+  catch(e){console.error(e);if(e&&e.code==="invalid_argument"&&S.canWrite!==true){S.readOnly=true;queue();toast("You can view the hub but not change it")}else toast("Save failed: "+(e&&e.message?e.message:"try again"));return false}
+}
+const updDoc=(p,d)=>write(p,Object.assign({},d,{updatedAt:nowIso()}),"update");
+const setDoc=(p,d)=>write(p,d,"set");
+const rid=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
+async function logEvent(crew,text){if(!S.db)return;const key=dayKey();const ref=S.db.doc("events/"+key);try{const snap=await ref.get();const cur=snap.exists?snap.data():{day:key,items:[]};const items=Array.isArray(cur.items)?cur.items.slice(-199):[];items.push({t:nowIso(),crew:crew||"",text:String(text).slice(0,200)});await ref.set({day:key,items})}catch(e){}}
+function twoTap(key,btn,label){if(S.confirm[key]){S.confirm[key]=false;return true}S.confirm[key]=true;if(btn){btn.dataset.orig=btn.dataset.orig||btn.textContent;btn.textContent=label||"Tap again to confirm"}toast("Tap again to confirm");setTimeout(()=>{S.confirm[key]=false;if(btn&&btn.dataset.orig)btn.textContent=btn.dataset.orig},3500);return false}
+async function fireTask(key,btn){
+  const t=TRIGS[key];if(!t)return;if(settings().paused){toast("The agency is paused. Resume first.");return}
+  if(btn)btn.disabled=true;
+  try{const mcp=await window.claude.use("mcp");if(!mcp){toast("Run-now is not available in this view");if(btn)btn.disabled=false;return}
+    const r=await mcp.callTool("Claude Code Remote","fire_trigger",{trigger_id:t.id,text:"Grayson tapped Run now in Atlas Hub at "+fmtT(nowIso())+" Central. Do a full run now."});
+    if(r&&r.isError){toast("Could not start: "+String((r.content&&r.content[0]&&r.content[0].text)||"error").slice(0,120));if(btn)btn.disabled=false;return}
+    if(key==="night"){try{await S.db.doc("requests/nightshift").set({requestedAt:nowIso(),status:"requested",by:"Grayson"})}catch(e){}}
+    toast(t.name+" started. It leaves a run-log line when it finishes.");logEvent("Grayson","Started "+t.name+" from Atlas Hub");audit("Started "+t.name,"fleet");
+  }catch(e){toast("Could not start: "+(e&&e.message?e.message:"error").slice(0,120));if(btn)btn.disabled=false}
+}
+async function audit(text,mod){const day=dayKey();const path="fleet/commander/audit/"+day;try{const ref=S.db.doc(path);const snap=await ref.get();const items=(snap.exists&&Array.isArray(snap.data().items))?snap.data().items.slice(-199):[];items.push({t:nowIso(),who:"Grayson",mod:mod||"hub",text});await ref.set({day,items,updatedAt:nowIso()})}catch(e){console.error(e)}}
+
+/* ============================ numbers (real only) ============================ */
+function today(){return dayKey()}
+function month(){return today().slice(0,7)}
+function liveListings(){const st=settings();const sd=S.stats[0];if(sd&&sd.listings&&typeof sd.listings==="object")return Object.keys(sd.listings).length;return st.shop&&st.shop.liveListings!=null?st.shop.liveListings:null}
+function publishedToday(){const t=today();return S.products.filter(p=>p.etsy&&p.etsy.publishedAt&&dayKey(p.etsy.publishedAt)===t).length}
+function feesThisMonth(){const sp=S.spend[month()];if(!sp)return null;if(typeof sp.total==="number")return sp.total;if(Array.isArray(sp.entries))return sp.entries.reduce((a,e)=>a+(Number(e.amount)||0),0);if(typeof sp.fees==="number")return sp.fees;return null}
+function salesThisMonth(){const m=month();const rows=S.sales.filter(s=>String(s.date||"").slice(0,7)===m);return {n:rows.length,usd:rows.reduce((a,s)=>a+(Number(s.net!=null?s.net:s.amount)||0),0)}}
+function salesAll(){return {n:S.sales.length,usd:S.sales.reduce((a,s)=>a+(Number(s.net!=null?s.net:s.amount)||0),0)}}
+function pinsToday(){const t=today();return S.pins.filter(p=>(p.postedAt&&dayKey(p.postedAt)===t)||(p.status==="posted"&&p.auto&&p.auto.due&&dayKey(p.auto.due)===t)).length}
+function pinsQueued(){return S.pins.filter(p=>p.status==="queued").length}
+function socialToday(){const t=today();const out={instagram:null,facebook:null,youtube:null};S.social.forEach(x=>{if(x.platform==="tiktok")return;const d=x.planDate||(x.due?dayKey(x.due):dayKey(x.createdAt));if(d!==t)return;const k=x.platform;if(!(k in out))return;const st=x.status||"queued";const rank={posted:3,scheduled:2,queued:1,failed:0,qc_failed:0,rejected:0};if(out[k]==null||rank[st]>rank[out[k]])out[k]=st});return out}
+function ytNewest(){const eps=Object.entries(S.ytPipe).map(([id,x])=>Object.assign({id},x));eps.sort((a,b)=>String(b.updatedAt||"").localeCompare(String(a.updatedAt||"")));return eps}
+function scoreBand(n){n=Number(n);if(isNaN(n))return "lo";return n>=92?"hi":n>=85?"mid":"lo"}
+function passFor(p){return settings().passScore||92}
+function productScore(p){return p.score&&p.score.total!=null?Number(p.score.total):null}
+function stageOf(p){return p.stage||(p.etsy&&p.etsy.listingId?"published":"queued")}
+const STAGES=[["queued","Queued"],["building","Building"],["copy","Copy"],["photos","Photos"],["inspection","Inspection"],["sentback","Sent back"],["passed","Passed"],["batched","Ready to publish"],["publishing","Publishing"],["published","Live on Etsy"],["scrapped","Scrapped"]];
+function working(){const st=settings();if(st.paused)return [];return AGENTS.map(a=>({a,c:S.crew[a.id]||{}})).filter(x=>x.c.state==="working")}
+function mechLights(){return (S.mech&&S.mech.lights)||{}}
+function medicLane(id){return S.medic&&(S.medic.board||[]).find(b=>b.lane===id)}
+function needsYou(){
+  const st=settings();const out=[];
+  if(st.paused)out.push({t:"The agency is paused",s:"Nothing runs until you tap Resume.",go:"settings"});
+  S.approvals.filter(a=>a.status==="pending").forEach(a=>out.push({t:a.title||a.summary||"An approval is waiting",s:a.detail||a.why||"",go:"approvals"}));
+  if(S.medic&&Array.isArray(S.medic.needs_you))S.medic.needs_you.forEach(n=>out.push({t:n.msg||String(n),s:"The Medic tried what it can for free and could not fix this.",go:"agents"}));
+  if(S.mech&&Array.isArray(S.mech.needsYou))S.mech.needsYou.forEach(x=>{if(!out.some(o=>o.t===x))out.push({t:x,s:"The Mechanic could not fix this by itself.",go:"agents"})});
+  if(S.trade&&S.trade.floorLocked)out.push({t:"Paper trading hit the $20 floor and locked",s:"The bot is flat and stopped. Open Trading to read the report.",go:"trading"});
+  return out;
+}
+function nextScheduled(){
+  const p=ctParts();const mins=p.h*60+p.m;const wk=!["Sat","Sun"].includes(p.wd);
+  const cands=[[1*60+54,"Night Shift builds tonight's products"],[6*60+47,"Mechanic morning report"],[7*60+13,"Bolt publishes passed products"],[7*60+51,"Scout Intel research"],[9*60+22,"Ledger pricing check"],[11*60+16,"Herald posts to Instagram, Facebook and YouTube"],[12*60+13,"Bolt publishes passed products"],[12*60+52,"Pixel video pin"],[14*60+47,"Mechanic check"],[15*60+51,"Scout Intel research"],[16*60+13,"Bolt publishes passed products"],[18*60+16,"Herald evening posts"],[22*60+47,"Mechanic night check"]];
+  if(wk)cands.push([8*60+40,"Paper trading bot wakes for the open"]);
+  cands.sort((a,b)=>a[0]-b[0]);
+  const n=cands.find(c=>c[0]>mins)||cands[0];
+  const hh=Math.floor(n[0]/60),mm=n[0]%60;
+  return {title:n[1]+" at "+fmtH(hh,mm),sub:(n[0]>mins?"Next on the schedule today.":"First thing tomorrow.")+" Every crew runs by itself and leaves a line in the run log."};
+}
+
+/* ============================ chrome ============================ */
+function renderAll(){renderChrome();renderPage()}
+function renderChrome(){
+  const st=settings();const mode=$("#mode");
+  if(S.dbState==="loading"){mode.dataset.m="off";mode.textContent="LOADING"}
+  else if(S.dbState==="none"){mode.dataset.m="off";mode.textContent="NO DATABASE"}
+  else if(st.paused){mode.dataset.m="paused";mode.textContent="PAUSED"}
+  else if(st.dryRun){mode.dataset.m="dry";mode.textContent="DRY RUN"}
+  else{mode.dataset.m="live";mode.textContent="LIVE · AUTOPILOT"}
+  const ny=needsYou().length;
+  const tabs=PAGES.slice(0,3);
+  $("#tabs").innerHTML=tabs.map(p=>'<button type="button" data-go="'+p.id+'" '+(S.page===p.id?'aria-current="page"':'')+'><svg aria-hidden="true"><use href="#'+p.icon+'"/></svg>'+esc(p.label)+(p.id==="today"&&ny?'<span class="cnt">'+ny+'</span>':'')+'</button>').join("")+'<button type="button" data-go="more" '+(!["today","work","agents"].includes(S.page)?'aria-current="page"':'')+'><svg aria-hidden="true"><use href="#i-more"/></svg>More</button>';
+  $("#sheetNavIn").innerHTML=PAGES.slice(3).map(p=>'<a href="#'+p.id+'"><svg aria-hidden="true"><use href="#'+p.icon+'"/></svg>'+esc(p.title)+(p.id==="approvals"&&S.approvals.filter(a=>a.status==="pending").length?'<small>'+S.approvals.filter(a=>a.status==="pending").length+' waiting</small>':'')+'</a>').join("")+'<div class="inline" style="margin-top:12px"><button class="btn block '+(st.paused?"good":"bad")+'" type="button" id="sheetPause">'+(st.paused?"Resume the agency":"Pause everything")+'</button></div><p class="dim small" style="margin-top:8px">Atlas Hub v8.1 · the crew does the work; this screen shows the truth.</p>';
+  $("#brandSub").textContent=(S.readOnly?"view only · ":"")+AGENTS.length+" agents · "+(S.dbState==="ok"?(st.paused?"paused":"on duty"):"offline");
+}
+function renderPage(){
+  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("on",p.id==="p-"+S.page));
+  const el=$("#p-"+S.page);if(!el)return;
+  const fn={today:rToday,work:rWork,agents:rAgents,etsy:rEtsy,marketing:rMarketing,shorts:rShorts,trading:rTrading,money:rMoney,missions:rMissions,approvals:rApprovals,engine:rEngine,settings:rSettings,parked:rParked}[S.page];
+  try{el.innerHTML=fn?fn():""}catch(e){console.error(e);el.innerHTML='<div class="note bad">This screen hit an error: '+esc(e.message)+'. The data is unchanged.</div>'}
+  if(S.drawer)renderDrawer();
+}
+function pageHead(id,sub){const p=PAGES.find(x=>x.id===id);return '<div class="head"><h2>'+esc(p.title)+'</h2>'+(sub?'<p>'+esc(sub)+'</p>':'')+'</div>'}
+function dbBanner(){
+  if(S.dbState==="loading")return '<div class="note">Connecting to the agency database…</div>';
+  if(S.dbState==="none")return '<div class="note warn">This view has no database access, so nothing is loaded. Open the hub from your own Claude account.</div>';
+  if(S.dbState==="revoked")return '<div class="note bad">Access to the database was withdrawn while the page was open. Reload to continue.</div>';
+  return "";
+}
+function go(id){if(!PAGES.some(p=>p.id===id))id="today";S.page=id;ls.set("atlas.page",id);$("#sheetNav").classList.remove("on");renderAll();window.scrollTo({top:0})}
+function wrow(r){return '<button type="button" class="wrow fade-in" '+(r.go?'data-go="'+r.go+'"':r.act?'data-act="'+r.act+'"':'')+(r.id?' data-id="'+esc(r.id)+'"':'')+'><span class="ic"><svg aria-hidden="true"><use href="#'+r.icon+'"/></svg></span><span class="t"><b>'+esc(r.title)+'</b><small>'+esc(r.sub)+'</small></span>'+(r.pill!=null?'<span class="pill '+(r.tone||"")+'">'+esc(r.pill)+'</span>':'')+'<svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></button>'}
+
+/* ============================ Today ============================ */
+function bizRows(){
+  const st=settings();const live=liveListings();const pub=publishedToday();const fees=feesThisMonth();const L=mechLights();
+  const passed=S.products.filter(p=>["passed","batched"].includes(stageOf(p))).length;
+  const etsySub=v(live)+" live listings · "+pub+" published today · fees "+(fees==null?"—":money(fees))+" of "+money(st.monthlyFeeCap);
+  const etsyPill=L.listings==="red"?"needs a fix":pub?pub+" live today":passed?passed+" ready":(L.listings==="green"?"on track":"—");
+  const etsyTone=L.listings==="red"?"bad":pub||passed?"ok":L.listings==="yellow"?"warn":"dim";
+  const sd=socialToday();const chan=["instagram","facebook","youtube"].map(k=>({k,st:sd[k]}));
+  const posted=chan.filter(c=>c.st==="posted").length,failed=chan.filter(c=>c.st==="failed"||c.st==="qc_failed").length;
+  const mkSub=(S.mech&&S.mech.pins24h!=null?S.mech.pins24h+" pins in 24 h":pinsToday()+" pins today")+" · "+pinsQueued()+" queued · "+posted+" of 3 channels posted today"+(failed?" · "+failed+" failed":"");
+  const mkPill=L.pins==="red"||L.posts==="red"?"needs a fix":(L.posts==="yellow"||L.pins==="yellow")?"late":posted===3?"all posted":posted+"/3 posts";
+  const mkTone=mkPill==="needs a fix"?"bad":mkPill==="late"?"warn":posted===3?"ok":"dim";
+  const eps=ytNewest();const ep=eps[0];const paused=S.ytSettings?S.ytSettings.autopilot===false:true;
+  const ytSub=ep?("Latest "+ep.id+": "+(ep.status||"—")+(ep.launch&&ep.launch.publishAt?" for "+fmtT(ep.launch.publishAt):"")+(ep.qc&&ep.qc.judge&&ep.qc.judge.score!=null?" · judge "+ep.qc.judge.score:"")):"No Short in the pipeline yet";
+  const ytPill=paused?"paused":ep&&ep.status==="posted"?"posted":ep?ep.status:"—";
+  const T=S.trade||{};const cs=S.cryptoState||{};const hbOk=S.hb&&S.hb.at?ago(S.hb.at):null;
+  const trSub="Stocks: equity "+money(T.equity)+" · day "+sgn(T.dayPnl)+" · total "+sgn(T.totalPnl)+(cs.equity!=null?" · crypto bot "+money(cs.equity)+(cs.startBalance!=null?" of "+money(cs.startBalance):""):"");
+  return [
+    {icon:"i-tag",title:"Etsy",sub:etsySub,pill:etsyPill,tone:etsyTone,go:"etsy"},
+    {icon:"i-mega",title:"Marketing",sub:mkSub,pill:mkPill,tone:mkTone,go:"marketing"},
+    {icon:"i-play",title:"YouTube Shorts",sub:ytSub,pill:ytPill,tone:paused?"warn":ep&&ep.status==="posted"?"ok":"dim",go:"shorts"},
+    {icon:"i-chart",title:"Paper trading",sub:trSub,pill:T.floorLocked?"floor locked":(T.mode==="live"?"LIVE":"Paper"),tone:T.floorLocked?"bad":"",go:"trading"}
+  ];
+}
+function rToday(){
+  const st=settings();const ny=needsYou();const w=working();
+  let h='<h1 class="big">Today</h1>';
+  let dot="",line="";
+  if(S.dbState!=="ok"){dot="off";line=S.dbState==="loading"?"Connecting to the agency…":"No database in this view"}
+  else if(st.paused){dot="bad";line="Paused. Nothing runs until you tap Resume."}
+  else if(w.length){line=w[0].a.name+" is working: "+(w[0].c.task||"a task")}
+  else{line="All quiet"+(S.mech&&S.mech.at?" · Mechanic checked "+ago(S.mech.at):"")+(S.runs[0]?" · Night Shift "+ago(S.runs[0].finishedAt||S.runs[0].startedAt):"")}
+  h+='<div class="status"><span class="dot '+dot+'"></span><span>'+esc(line)+'</span></div>'+dbBanner();
+  if(ny.length){const n=ny[0];h+='<div class="card next alert fade-in"><div class="eyebrow">Needs you</div><h2>'+esc(n.t)+'</h2><p>'+esc(n.s||"")+'</p><button class="btn cta" type="button" data-go="'+esc(n.go||"settings")+'"><span>Fix it now</span><span aria-hidden="true">→</span></button>'+(ny.length>1?'<p class="dim small" style="margin:10px 0 0">'+(ny.length-1)+' more below.</p>':'')+'</div>'}
+  else{let title,sub;if(w.length){title=w[0].a.name+": "+(w[0].c.task||"working");sub=w.length>1?w.length+" agents working now":"Started "+(w[0].c.updatedAt?ago(w[0].c.updatedAt):"just now")}else{const nx=nextScheduled();title=nx.title;sub=nx.sub}
+    h+='<div class="card next fade-in"><div class="eyebrow">Crew is on it</div><h2>'+esc(title)+'</h2><p>'+esc(sub)+'</p><button class="btn cta" type="button" data-go="work"><span>See it live</span><span aria-hidden="true">→</span></button></div>'}
+  h+='<div class="section">Your businesses</div>'+bizRows().map(wrow).join("");
+  h+='<button type="button" class="agentsbar fade-in" data-go="agents"><span>Agents</span><span><span class="dot '+(st.paused?"bad":w.length?"":"off")+'"></span>'+(st.paused?"paused":w.length?w.length+" working · "+(AGENTS.length-w.length)+" idle":"all idle · on schedule")+'</span></button>';
+  if(ny.length>1)h+='<div class="section sm">Also needs you</div><div class="card"><div class="list">'+ny.slice(1).map(n=>'<div class="row click" data-go="'+esc(n.go)+'"><div class="t"><b>'+esc(n.t)+'</b><small>'+esc(n.s)+'</small></div><span class="pill bad">open</span></div>').join("")+'</div></div>';
+  const sm=salesThisMonth();
+  h+='<div class="section sm">This month</div><div class="tiles"><div class="tile"><b class="mono">'+money(sm.usd)+'</b><span>Verified income</span><small>'+sm.n+' sale'+(sm.n===1?"":"s")+' · plan costs '+money(PLAN_USD)+'</small></div><div class="tile"><b class="mono">'+(feesThisMonth()==null?"—":money(feesThisMonth()))+'</b><span>Etsy fees</span><small>cap '+money(st.monthlyFeeCap)+'</small></div></div>';
+  h+='<details class="card"><summary>Today\'s activity</summary><div style="margin-top:10px">'+eventsHtml()+'</div></details>';
+  return h;
+}
+function eventsHtml(){const t=today();const ev=S.events.find(e=>e.id===t||e.day===t);const items=ev&&Array.isArray(ev.items)?ev.items.slice(-14).reverse():[];return items.length?'<div class="list">'+items.map(i=>'<div class="row"><span class="pill dim">'+esc(i.crew||i.who||"")+'</span><div class="t"><small style="color:var(--ink)">'+esc(i.text)+'</small></div><small class="dim mono">'+esc(fmtT(i.t).split(", ").pop()||"")+'</small></div>').join("")+'</div>':'<div class="empty"><b>Quiet so far today</b>Every step the crew takes shows up here.</div>'}
+
+/* ============================ Work ============================ */
+function rWork(){
+  let h=pageHead("work","Every lane, one row each. Tap a row to open it.")+dbBanner();
+  h+=bizRows().map(wrow).join("");
+  const pend=S.approvals.filter(a=>a.status==="pending").length;const act=S.missions.filter(m=>m.active!==false&&m.status!=="done").length;
+  h+='<div class="section sm">Also</div>';
+  h+=wrow({icon:"i-money",title:"Money",sub:"Sales, fees, bills and the plan payback",pill:money(salesThisMonth().usd),go:"money"});
+  h+=wrow({icon:"i-inbox",title:"Approvals",sub:pend?pend+" waiting for your OK":"Nothing waiting",pill:pend?pend+" waiting":"clear",tone:pend?"warn":"ok",go:"approvals"});
+  h+=wrow({icon:"i-flag",title:"Missions",sub:act?act+" active mission"+(act>1?"s":""):"No active missions",pill:act||"—",go:"missions"});
+  h+=wrow({icon:"i-engine",title:"Engine room",sub:S.eng&&S.eng.generated_at?"Report "+ago(S.eng.generated_at)+" · queued "+v((S.eng.health||{}).counts&&S.eng.health.counts.queued):"No engine report fetched",pill:S.eng?"ok":"—",go:"engine"});
+  h+='<div class="section sm">Recent runs</div><div class="card">'+runLogHtml(8)+'</div>';
+  return h;
+}
+function runLogHtml(n){
+  const lines=S.runlog.slice(-n).reverse();
+  if(!lines.length&&!S.runs.length)return '<div class="empty"><b>No run log yet</b>Every crew leaves one line per run in factory/runlog.jsonl.</div>';
+  const src=lines.length?lines.map(r=>({k:r.task,t:r.finished||r.started,note:r.note,st:r.outcome,min:r.minutes,ny:r.needsYou})):S.runs.map(r=>({k:"night-shift",t:r.finishedAt||r.startedAt,note:r.summary,st:r.status,min:null}));
+  return '<div class="list">'+src.map(r=>'<div class="row"><div class="t"><b>'+esc(r.k)+' · '+esc(fmtT(r.t))+(r.min!=null?' · '+esc(r.min)+' min':'')+'</b><small>'+esc(String(r.note||"").split("\n")[0])+(r.ny?' · needs you: '+esc(r.ny):'')+'</small></div><span class="pill '+(r.st==="done"?"ok":r.st==="failed"?"bad":"dim")+'">'+esc(r.st||"")+'</span></div>').join("")+'</div>';
+}
+
+/* ============================ Agents ============================ */
+function medicBoard(){
+  const m=S.medic;if(!m)return '<div class="card"><h3>The Medic</h3><p class="dim small">No board yet. The Medic writes one every 30 minutes once its Action runs from the main branch.</p></div>';
+  const tone=s=>({ok:"ok",off_hours:"dim",off_day:"dim",pending:"dim",manual:"dim",paused:"dim",unknown:"dim",late:"warn",under_goal:"warn",failed:"bad",missing:"bad"})[s]||"dim";
+  const word=s=>({ok:"fine",off_hours:"off hours",off_day:"no goal today",pending:"in progress",manual:"you",paused:"paused",unknown:"unknown",late:"late",under_goal:"under goal",failed:"needs a fix",missing:"missing"})[s]||s;
+  let h='<div class="card"><h3>The Medic <span class="sp">'+esc(ago(m.generated_at))+'</span></h3><div class="list">'+(m.board||[]).map(b=>'<div class="lane"><div class="t"><b>'+esc(b.label)+(b.goal!=null?' <span class="dim mono">'+v(b.done)+'/'+b.goal+'</span>':'')+'</b><small>'+esc(b.detail||"")+'</small></div><span class="pill '+tone(b.status)+'">'+esc(word(b.status))+'</span></div>').join("")+'</div>';
+  if((m.crews||[]).length)h+='<div class="section sm" style="font-size:14px;margin:12px 0 4px">Crews</div><div class="list">'+m.crews.map(c=>'<div class="lane"><div class="t"><b>'+esc(c.label)+'</b><small>'+(c.age_h!=null?'last run '+c.age_h+' h ago · ':'')+esc(c.note||"")+'</small></div><span class="pill '+({ok:"ok",late:"warn",failed:"bad",paused:"dim",unknown:"dim"}[c.status]||"dim")+'">'+esc(c.status)+'</span></div>').join("")+'</div>';
+  if((m.fixed_today||[]).length)h+='<p class="small" style="margin-top:10px"><b>Fixed today (verified):</b> '+esc(m.fixed_today.map(f=>f.lane+" ("+f.fix_step+")").join(", "))+'</p>';
+  if((m.tickets_open||[]).length)h+='<p class="small dim" style="margin-top:6px">'+m.tickets_open.length+' ticket'+(m.tickets_open.length>1?"s":"")+' waiting for the Mechanic.</p>';
+  return h+'</div>';
+}
+function rAgents(){
+  const st=settings();let h=pageHead("agents","Every agent is judged on real results. Tap one for what it is doing and what it learned.")+dbBanner();
+  const L=mechLights();
+  if(S.mech)h+='<div class="card"><h3>Mechanic <span class="sp">'+esc(ago(S.mech.at))+'</span></h3><div class="chips">'+["listings","pins","posts","trades","page"].map(k=>'<span class="chip"><span class="dot '+(L[k]==="green"?"":L[k]==="yellow"?"warn":L[k]==="red"?"bad":"off")+'" style="display:inline-block;width:8px;height:8px;margin-right:6px"></span>'+k+'</span>').join("")+'</div>'+((S.mech.fixed||[]).length?'<p class="small" style="margin-top:10px"><b>Fixed:</b> '+esc(S.mech.fixed.join(" · "))+'</p>':'')+((S.mech.watching||[]).length?'<p class="small dim" style="margin-top:6px"><b>Watching:</b> '+esc(S.mech.watching.slice(0,3).join(" · "))+'</p>':'')+'</div>';
+  h+=medicBoard();
+  FLOORS.forEach(f=>{const list=AGENTS.filter(a=>a.floor===f);h+='<div class="section sm">'+esc(f)+'</div><div class="card"><div class="list">'+list.map(a=>{const c=S.crew[a.id]||{};const state=st.paused?"paused":(c.state||"idle");return '<div class="row click" data-agent="'+a.id+'"><span class="dot '+(state==="working"?"":state==="error"?"bad":"off")+'" style="animation:none"></span><div class="t"><b>'+esc(a.name)+' <span class="dim" style="font-weight:600">· '+esc(a.role)+'</span></b><small>'+esc(c.task||a.desc)+'</small></div><span class="pill '+(state==="working"?"warn":state==="error"?"bad":"dim")+'">'+esc(state)+'</span></div>'}).join("")+'</div></div>'});
+  h+='<div class="section sm">Run now</div><div class="card"><p class="dim small" style="margin-bottom:8px">Starts that crew\'s scheduled run once, right now. Each crew still follows its own rules and caps.</p><div class="chips">'+["night","bolt","herald","pixel","pricing","scout","mechanic"].map(k=>'<button class="chip" type="button" data-fire="'+k+'" '+(S.readOnly||st.paused?"disabled":"")+'>'+esc(TRIGS[k].name)+'</button>').join("")+'</div></div>';
+  h+='<div class="section sm">Lessons</div><div class="card">'+(S.lessons.length?'<div class="list">'+S.lessons.slice(0,8).map(l=>'<div class="row"><div class="t"><b>'+esc(l.text||"")+'</b><small>'+esc(l.evidence||"")+(l.source?' · '+esc(l.source):'')+(l.at?' · '+esc(fmtT(l.at)):'')+'</small></div>'+(l.status?'<span class="pill dim">'+esc(l.status)+'</span>':'')+'</div>').join("")+'</div>':'<p class="dim small">No lessons in the database yet. Scout Intel and the Night Shift write them from real numbers.</p>')+(S.readOnly?'':'<form id="lessonForm" style="margin-top:10px"><div class="field" style="margin:0"><label for="lsText">Add a lesson</label><input id="lsText" maxlength="160" placeholder="One plain sentence the crew should act on" required></div><div class="field"><label for="lsEv">Evidence</label><input id="lsEv" maxlength="120" placeholder="the number behind it (optional)"></div><button class="btn sm p" type="submit" style="margin-top:8px">Save lesson</button></form>')+'</div>';
+  h+='<div class="section sm">Run log</div><div class="card">'+runLogHtml(12)+'</div>';
+  return h;
+}
+function agentDrawer(a){
+  const c=S.crew[a.id]||{};const st=settings();const state=st.paused?"paused":(c.state||"idle");const lines=S.runlog.filter(r=>r.task===a.id||(a.id==="atlas"&&r.task==="night-shift")||(a.id==="vega"&&r.task==="studio")||(a.id==="warden"&&r.task==="check-up")||(a.id==="pixel"&&r.task==="video-pin")||(a.id==="ledger"&&r.task==="pricing")||(a.id==="scout"&&r.task==="scout-intel")).slice(-5).reverse();
+  let h='<p class="muted">'+esc(a.desc)+'</p><div class="kv"><dt>Floor</dt><dd>'+esc(a.floor)+'</dd><dt>State</dt><dd><span class="pill '+(state==="working"?"warn":state==="error"?"bad":"dim")+'">'+esc(state)+'</span></dd><dt>Doing</dt><dd>'+esc(c.task||"Available")+'</dd><dt>Updated</dt><dd>'+esc(c.updatedAt?ago(c.updatedAt):"never")+'</dd>'+(c.lastError?'<dt>Last error</dt><dd style="color:var(--bad)">'+esc(c.lastError)+'</dd>':'')+'</div>';
+  h+='<div class="sec"><h4>Skill file</h4><p class="small muted">Starts with "My job is to make Grayson money. I\'m judged on real results." <a href="https://github.com/Gmsdigital-spw/Planner/blob/main/factory/skills/'+a.id+'/SKILL.md" target="_blank" rel="noopener">factory/skills/'+a.id+'/SKILL.md</a></p></div>';
+  h+='<div class="sec"><h4>Recent runs</h4>'+(lines.length?'<div class="list">'+lines.map(r=>'<div class="row"><div class="t"><b>'+esc(fmtT(r.finished||r.started))+' · '+esc(r.minutes!=null?r.minutes+" min":"")+'</b><small>'+esc(r.note||"")+'</small></div><span class="pill '+(r.outcome==="done"?"ok":r.outcome==="failed"?"bad":"dim")+'">'+esc(r.outcome||"")+'</span></div>').join("")+'</div>':'<p class="dim small">No run-log lines for this agent yet (it runs inside another crew\'s run).</p>')+'</div>';
+  return h;
+}
+
+/* ============================ Etsy ============================ */
+function rEtsy(){
+  const st=settings();const live=liveListings();const sd=S.stats[0];const sa=salesAll();
+  let h=pageHead("etsy","GM's Digital Creations. Real numbers from Etsy, the products collection and the run log.")+dbBanner();
+  h+='<div class="tiles"><div class="tile"><b class="mono">'+v(live)+'</b><span>Live listings</span><small>'+(sd?"stats "+ago(sd.at):"")+'</small></div><div class="tile"><b class="mono">'+publishedToday()+'</b><span>Published today</span><small>cap '+st.dailyCap+' a day</small></div><div class="tile"><b class="mono">'+sa.n+'</b><span>Sales all time</span><small>'+money(sa.usd)+' verified</small></div><div class="tile"><b class="mono">'+(feesThisMonth()==null?"—":money(feesThisMonth()))+'</b><span>Fees this month</span><small>cap '+money(st.monthlyFeeCap)+'</small></div></div>';
+  if(sd&&sd.listings){const rows=Object.entries(sd.listings).map(([id,x])=>Object.assign({id},x)).sort((a,b)=>(b.views||0)-(a.views||0));const views=rows.reduce((a,x)=>a+(Number(x.views)||0),0),favs=rows.reduce((a,x)=>a+(Number(x.favs)||0),0);
+    h+='<div class="card"><h3>The shop <span class="sp">'+views+' views · '+favs+' favorites</span></h3><div class="list">'+rows.slice(0,12).map(x=>'<div class="row"><div class="t"><b>'+esc(x.title)+'</b><small>'+money(x.price)+' · '+v(x.views)+' views · '+v(x.favs)+' favs · '+v(x.photos)+' photos'+(x.tags!=null?' · '+x.tags+' tags':'')+'</small></div><a class="btn sm" href="'+esc(x.url||("https://www.etsy.com/listing/"+x.id))+'" target="_blank" rel="noopener">Open</a></div>').join("")+'</div>'+(rows.length>12?'<p class="dim small" style="margin-top:8px">'+(rows.length-12)+' more on Etsy.</p>':'')+'</div>'}
+  const byStage={};S.products.forEach(p=>{const s=stageOf(p);(byStage[s]=byStage[s]||[]).push(p)});
+  h+='<div class="card"><h3>Product line <span class="sp">'+S.products.length+' products</span></h3><div class="chips">'+STAGES.filter(s=>byStage[s[0]]).map(s=>'<span class="chip">'+esc(s[1])+' <b>'+byStage[s[0]].length+'</b></span>').join("")+'</div>';
+  const active=S.products.filter(p=>!["published","scrapped"].includes(stageOf(p))).slice(0,15);
+  h+=active.length?'<div class="list" style="margin-top:10px">'+active.map(p=>{const sc=productScore(p);return '<div class="row click" data-product="'+esc(p.id)+'"><span class="score '+scoreBand(sc)+'">'+(sc==null?"–":sc)+'</span><div class="t"><b>'+esc((p.copy&&p.copy.title)||p.title||p.id)+'</b><small>'+esc((STAGES.find(s=>s[0]===stageOf(p))||[])[1]||stageOf(p))+(p.kind?' · '+esc(p.kind):'')+(p.retries?' · rebuilt '+p.retries+'x':'')+'</small></div><span class="pill '+(stageOf(p)==="passed"||stageOf(p)==="batched"?"ok":stageOf(p)==="sentback"?"warn":"dim")+'">'+esc(stageOf(p))+'</span></div>'}).join("")+'</div>':'<p class="dim small" style="margin-top:8px">Nothing on the bench. The Night Shift builds at 1:54 AM.</p>';
+  h+='</div>';
+  if(S.nextmove&&S.nextmove.title)h+='<div class="card"><h3>Next move <span class="sp">'+esc(S.nextmove.by||"Atlas")+'</span></h3><p><b>'+esc(S.nextmove.title)+'</b></p><p class="muted small">'+esc(S.nextmove.why||S.nextmove.detail||"")+'</p></div>';
+  if(S.briefs.length)h+='<details class="card"'+(S.briefs.some(b=>b.status==="proposed")?' open':'')+'><summary>Briefs ('+S.briefs.length+')'+(S.briefs.some(b=>b.status==="proposed")?' · '+S.briefs.filter(b=>b.status==="proposed").length+' waiting':'')+'</summary><p class="dim small" style="margin-top:6px">Scout\'s product ideas with evidence. Atlas decides by itself at 21/30 if you don\'t.</p><div class="list" style="margin-top:6px">'+S.briefs.slice(0,8).map(b=>'<div class="row"><div class="t"><b>'+esc(b.title||b.niche||b.id)+'</b><small>'+esc(b.status||"")+(b.decidedBy?' · '+esc(b.decidedBy):'')+(b.why?' · '+esc(String(b.why).slice(0,90)):'')+'</small></div>'+(b.status==="proposed"&&!S.readOnly?'<button class="btn sm good" type="button" data-brief="approve" data-id="'+esc(b.id)+'">Build it</button><button class="btn sm" type="button" data-brief="reject" data-id="'+esc(b.id)+'">No</button>':'')+'</div>').join("")+'</div></details>';
+  return h;
+}
+function productDrawer(p){
+  const sc=productScore(p);const st=stageOf(p);const parts=p.score&&typeof p.score==="object"?Object.entries(p.score).filter(([k,x])=>k!=="total"&&typeof x==="number"):[];
+  let h='<div class="inline"><span class="score '+scoreBand(sc)+'">'+(sc==null?"–":sc)+'</span><span class="pill">'+esc((STAGES.find(s=>s[0]===st)||[])[1]||st)+'</span>'+(p.kind?'<span class="pill dim">'+esc(p.kind)+'</span>':'')+'</div>';
+  h+='<div class="kv"><dt>Title</dt><dd>'+esc((p.copy&&p.copy.title)||p.title||"—")+'</dd><dt>Price</dt><dd>'+esc(p.copy&&p.copy.price!=null?money(p.copy.price):"—")+'</dd><dt>Built</dt><dd>'+esc(p.file&&p.file.builtAt?fmtT(p.file.builtAt)+" · "+p.file.pages+" pages":"not yet")+'</dd>'+(p.etsy&&p.etsy.listingId?'<dt>Etsy</dt><dd><a href="'+esc(p.etsy.url||("https://www.etsy.com/listing/"+p.etsy.listingId))+'" target="_blank" rel="noopener">listing '+esc(p.etsy.listingId)+'</a> · '+esc(p.etsy.state||"")+'</dd>':'')+(p.retries?'<dt>Rebuilds</dt><dd>'+p.retries+'</dd>':'')+'</div>';
+  if(parts.length)h+='<div class="sec"><h4>Score</h4><div class="kv">'+parts.map(([k,x])=>'<dt>'+esc(k)+'</dt><dd class="mono">'+x+'</dd>').join("")+'</div></div>';
+  if(Array.isArray(p.notes)&&p.notes.length)h+='<div class="sec"><h4>Notes</h4><div class="list">'+p.notes.slice(-5).reverse().map(n=>'<div class="row"><div class="t"><b>'+esc(n.by||"")+' · '+esc(fmtT(n.t))+'</b><small>'+esc(n.text)+'</small></div></div>').join("")+'</div></div>';
+  if(!S.readOnly&&!["published","scrapped","publishing"].includes(st))h+='<div class="sec"><h4>Your call</h4><div class="inline"><button class="btn" type="button" data-prod="sendback" data-id="'+esc(p.id)+'">Send back for a rebuild</button><button class="btn bad" type="button" data-prod="scrap" data-id="'+esc(p.id)+'">Scrap</button></div><p class="dim small">Sent back: Forge rebuilds it on the next Night Shift. Scrap: gone for good. Both take two taps.</p></div>';
+  h+='<p class="dim small">Only Bolt publishes; the crew rebuilds anything under '+passFor(p)+' until it passes. Nothing here changes a live listing.</p>';
+  return h;
+}
+
+/* ============================ Marketing ============================ */
+function rMarketing(){
+  const sd=socialToday();const L=mechLights();const t=today();
+  let h=pageHead("marketing","Pinterest, Instagram, Facebook and the shop YouTube, every day on autopilot. Judged by real numbers after two weeks. TikTok is yours and is not here.")+dbBanner();
+  const pinsNext=(S.mech&&S.mech.nextPins)||[];
+  h+='<div class="tiles"><div class="tile"><b class="mono">'+(S.mech&&S.mech.pins24h!=null?S.mech.pins24h:pinsToday())+'</b><span>Pins in 24 h</span><small>goal 6 + 1 video pin</small></div><div class="tile"><b class="mono">'+pinsQueued()+'</b><span>Pins queued</span><small>'+(pinsNext[0]?"next "+fmtT(pinsNext[0]):"")+'</small></div></div>';
+  h+='<div class="card"><h3>Channels today</h3><div class="list">'+[["pinterest","Pinterest",L.pins==="green"?"posting":L.pins||"—"],["instagram","Instagram",sd.instagram||"nothing yet"],["facebook","Facebook",sd.facebook||"nothing yet"],["youtube","Shop YouTube",sd.youtube||"nothing yet"]].map(c=>{const conn=S.signal&&S.signal.channels&&S.signal.channels[c[0]];const ok=["posted","posting","scheduled","green"].includes(c[2]);return '<div class="row"><div class="t"><b>'+esc(c[1])+'</b><small>'+(conn&&conn.connected===false?"disconnected: "+esc(conn.note||"reconnect in Zernio"):esc(c[2]))+'</small></div><span class="pill '+(conn&&conn.connected===false?"bad":ok?"ok":c[2]==="failed"||c[2]==="qc_failed"?"bad":"dim")+'">'+esc(conn&&conn.connected===false?"needs you":c[2])+'</span></div>'}).join("")+'</div></div>';
+  const posts=S.social.filter(x=>x.platform!=="tiktok").slice(0,10);
+  const sigBtns=x=>x.status==="awaiting_approval"?'<button class="btn sm good" type="button" data-sig="approve" data-id="'+esc(x.id)+'">OK</button><button class="btn sm" type="button" data-sig="reject" data-id="'+esc(x.id)+'">No</button>':x.status==="failed"?'<button class="btn sm" type="button" data-sig="retry" data-id="'+esc(x.id)+'">Retry</button>':'';
+  h+='<div class="card"><h3>Recent posts</h3>'+(posts.length?'<div class="list">'+posts.map(x=>'<div class="row"><div class="t"><b>'+esc(x.platform)+' · '+esc(x.planDate||dayKey(x.createdAt))+(x.format?' · '+esc(x.format):'')+'</b><small>'+esc(x.error||String(x.caption||"").split("\n")[0].slice(0,100))+(x.metrics&&x.metrics.views!=null?' · '+x.metrics.views+' views':'')+'</small></div>'+(S.readOnly?'':sigBtns(x))+'<span class="pill '+(x.status==="posted"?"ok":x.status==="failed"||x.status==="qc_failed"?"bad":x.status==="awaiting_approval"?"warn":"dim")+'">'+esc(x.status||"")+'</span></div>').join("")+'</div>':'<div class="empty"><b>No posts yet</b>Herald posts at 11:16 AM and 6:16 PM.</div>')+'</div>';
+  const pins=S.pins.slice(0,10);
+  h+='<div class="card"><h3>Recent pins</h3>'+(pins.length?'<div class="list">'+pins.map(p=>'<div class="row"><div class="t"><b>'+esc(p.imageText||p.listing||p.productId||"")+'</b><small>'+esc(p.board||"")+(p.auto&&p.auto.due?' · '+esc(fmtT(p.auto.due)):'')+(p.stats&&p.stats.impressions!=null?' · '+p.stats.impressions+' impressions · '+v(p.stats.saves)+' saves · '+v(p.stats.outboundClicks!=null?p.stats.outboundClicks:p.stats.clicks)+' clicks':'')+'</small></div>'+(p.auto&&p.auto.postUrl?'<a class="btn sm" href="'+esc(p.auto.postUrl)+'" target="_blank" rel="noopener">Open</a>':'')+(!S.readOnly&&!p.auto&&(p.status==="ready"||p.status==="queued")?'<button class="btn sm" type="button" data-pin="posted" data-id="'+esc(p.id)+'">Mark posted</button>':!S.readOnly&&!p.auto&&p.status==="posted"&&p.postedBy==="Grayson"?'<button class="btn sm" type="button" data-pin="back" data-id="'+esc(p.id)+'">Undo</button>':'')+'<span class="pill '+(p.status==="posted"?"ok":p.status==="failed"?"bad":"dim")+'">'+esc(p.status||"")+'</span></div>').join("")+'</div>':'<div class="empty"><b>No pins yet</b>Bolt schedules pins at 7:13 AM and 4:13 PM.</div>')+'</div>';
+  return h;
+}
+
+/* ============================ Shorts ============================ */
+function rShorts(){
+  const eps=ytNewest();const ys=S.ytSettings||{};const paused=ys.autopilot===false||!S.ytSettings;const st=S.ytStats||{};
+  let h=pageHead("shorts","@gmulaishere. One great Short a day: research first, hook in 1.5 seconds, a real story, real animation, the scorecard at 85 before anything posts.")+dbBanner();
+  h+='<div class="note '+(paused?"warn":"ok")+'">'+(paused?"The daily Short is switched off on purpose until the V8 Shorts rules are merged. Unpausing it is one tap in the scheduled tasks list.":"The daily Short is on.")+'</div>';
+  h+='<div class="tiles" style="margin-top:12px"><div class="tile"><b class="mono">'+v(st.subscribers!=null?st.subscribers:st.subs)+'</b><span>Subscribers</span><small>'+(st.at?ago(st.at):"")+'</small></div><div class="tile"><b class="mono">'+v(st.views!=null?st.views:st.views28)+'</b><span>Views</span><small>'+esc(st.window||st.period||"")+'</small></div></div>';
+  if(S.ytFactory&&S.ytFactory.lastError)h+='<div class="note bad" style="margin-top:12px">Factory: '+esc(S.ytFactory.lastError)+'</div>';
+  h+='<div class="card"><h3>Pipeline</h3>'+(eps.length?'<div class="list">'+eps.slice(0,8).map(e=>{const j=e.qc&&e.qc.judge;const sc=e.scorecard&&e.scorecard.score!=null?e.scorecard.score:null;return '<div class="row"><span class="score '+(sc!=null?(sc>=85?"hi":"lo"):"lo")+'">'+(sc!=null?sc:(j&&j.score!=null?j.score:"–"))+'</span><div class="t"><b>'+esc(e.id)+' · '+esc(e.videoTitle||e.title||"")+'</b><small>'+esc(e.status||"")+(e.launch&&e.launch.publishAt?' · '+esc(fmtT(e.launch.publishAt)):'')+(e.duration?' · '+esc(e.duration).replace("PT","").toLowerCase():'')+(e.metrics&&e.metrics.views!=null?' · '+e.metrics.views+' views':'')+(sc==null?' · scorecard not run yet':' · scorecard '+sc)+'</small></div>'+(e.videoId?'<a class="btn sm" href="https://www.youtube.com/shorts/'+esc(e.videoId)+'" target="_blank" rel="noopener">Watch</a>':'')+'</div>'}).join("")+'</div>':'<div class="empty"><b>No Shorts in the pipeline</b></div>')+'</div>';
+  return h;
+}
+
+/* ============================ Trading ============================ */
+function rTrading(){
+  const T=S.trade||{};const pr=T.paperReport||{};const cs=S.cryptoState||{};const chb=S.cryptoHb||{};const hb=S.hb||{};
+  let h=pageHead("trading","Paper money on real prices. $25 bankroll, $20 hard floor, a stop on every buy, flat by close. Not financial advice; past days do not predict the next one.")+dbBanner();
+  h+='<div class="inline" style="margin:0 0 10px"><span class="pill '+(T.mode==="live"?"bad":"warn")+'">'+(T.mode==="live"?"LIVE MONEY":"PAPER · stocks")+'</span><span class="pill warn">PAPER · crypto</span>'+(T.floorLocked?'<span class="pill bad">floor locked</span>':'')+'</div>';
+  h+='<div class="tiles"><div class="tile"><b class="mono">'+money(T.equity)+'</b><span>Stocks equity</span><small>floor $20 · bankroll $25</small></div><div class="tile"><b class="mono">'+sgn(T.dayPnl)+'</b><span>Day P/L</span><small>total '+sgn(T.totalPnl)+'</small></div><div class="tile"><b class="mono">'+v(T.trades)+'</b><span>Trades</span><small>'+(T.winRate!=null?T.winRate+"% wins":"")+(T.maxDrawdown!=null?" · drawdown "+money(T.maxDrawdown):"")+'</small></div><div class="tile"><b class="mono">'+(hb.lastRun?esc(hb.lastRun):"—")+'</b><span>Bot last check (CT)</span><small>'+esc(hb.status||"")+(hb.at?" · "+ago(hb.at):"")+'</small></div></div>';
+  h+='<div class="card"><h3>Crypto paper bot <span class="sp">'+(chb.at?ago(chb.at):"no heartbeat")+'</span></h3><div class="kv"><dt>Mode</dt><dd>'+esc(cs.mode||chb.mode||"virtual")+' (fake fills on real prices)</dd><dt>Equity</dt><dd class="mono">'+money(cs.equity)+' of '+money(cs.startBalance)+'</dd><dt>Cash</dt><dd class="mono">'+money(cs.cash)+'</dd><dt>Open positions</dt><dd>'+v(Array.isArray(cs.positions)?cs.positions.length:chb.openPositions)+'</dd><dt>Trades</dt><dd>'+v(Array.isArray(cs.history)?cs.history.length:chb.trades)+'</dd><dt>Bars processed</dt><dd>'+v(cs.barsProcessed)+'</dd><dt>Runs</dt><dd>'+esc(chb.cadence||"every 5 minutes")+'</dd></div></div>';
+  if(pr.at)h+='<div class="card"><h3>Paper report <span class="sp">'+esc(ago(pr.at))+'</span></h3><div class="kv"><dt>Verdict</dt><dd>'+esc(pr.verdict||"—")+'</dd><dt>Days</dt><dd>'+v(pr.days)+' · net '+sgn(pr.netPnl)+' · '+v(pr.wins)+' wins / '+v(pr.losses)+' losses</dd><dt>Breaches</dt><dd>'+v(pr.breaches)+'</dd></div><p class="small muted" style="margin-top:8px">'+esc(pr.notes||T.lastNote||"")+'</p></div>';
+  if(T.lab)h+='<div class="card"><h3>Lab <span class="sp">'+esc(T.lab.labId||"")+'</span></h3><p class="small">'+esc(T.lab.note||"")+'</p><p class="small dim" style="margin-top:6px">Ready for live: <b>'+(T.lab.readyForLive?"yes":"no")+'</b>. Going live needs your go in any case.</p></div>';
+  if(Array.isArray(pr.trades)&&pr.trades.length)h+='<details class="card"><summary>Recent paper trades ('+pr.trades.length+')</summary><div class="list" style="margin-top:10px">'+pr.trades.slice(-10).reverse().map(x=>'<div class="row"><div class="t"><b>'+esc(x.symbol)+' · '+esc(x.day)+'</b><small>'+(x.r!=null?x.r+" R":"")+'</small></div><span class="pill '+((x.usd||0)>=0?"ok":"bad")+'">'+sgn(x.usd)+'</span></div>').join("")+'</div></details>';
+  return h;
+}
+
+/* ============================ Money ============================ */
+function rMoney(){
+  const sm=salesThisMonth();const sa=salesAll();const fees=feesThisMonth();const net=sm.usd-(fees||0);const pct=Math.max(0,Math.min(100,Math.round(sm.usd/PLAN_USD*100)));
+  let h=pageHead("money","Verified income only: sales Etsy paid out, fees logged once, bills as they are. No forecasts.")+dbBanner();
+  h+='<div class="card"><div class="eyebrow">This month</div><h2 style="font-size:28px;margin:6px 0">'+money(sm.usd)+' <span class="dim" style="font-size:15px;font-weight:600">of '+money(PLAN_USD)+' plan</span></h2><div class="bar"><i style="width:'+pct+'%"></i></div><p class="muted small" style="margin-top:8px">'+sm.n+' sale'+(sm.n===1?"":"s")+' · fees '+(fees==null?"—":money(fees))+' · net '+money(net)+'. The crew pays for itself when this passes '+money(PLAN_USD)+'.</p></div>';
+  h+='<div class="tiles"><div class="tile"><b class="mono">'+sa.n+'</b><span>Sales all time</span><small>'+money(sa.usd)+'</small></div><div class="tile"><b class="mono">'+S.bills.length+'</b><span>Bills on file</span><small>'+money(S.bills.reduce((a,b)=>a+(Number(b.amount)||0),0))+'/mo</small></div></div>';
+  h+='<div class="card"><h3>Sales</h3>'+(S.sales.length?'<div class="list">'+S.sales.slice(0,12).map(s=>'<div class="row"><div class="t"><b>'+esc(s.listing||s.title||s.listingId||"sale")+'</b><small>'+esc(s.date||"")+(s.source?' · '+esc(s.source):'')+(s.refundAmount?' · refunded '+money(s.refundAmount):'')+'</small></div>'+(S.readOnly||s.refundAmount?'':'<button class="btn sm" type="button" data-sale="refund" data-id="'+esc(s.id)+'">Refund</button>')+'<span class="pill '+(s.refundAmount?"dim":"ok")+'">'+money(s.gross!=null?s.gross:(s.net!=null?s.net:s.amount))+'</span></div>').join("")+'</div>':'<div class="empty"><b>No sales yet</b>Sales land here from Etsy Payments. Nothing is invented.</div>')
+    +(S.readOnly?'':'<details style="margin-top:10px"><summary class="small" style="cursor:pointer;font-weight:700">Log a sale (from Etsy Payments only)</summary><form id="saleForm" style="margin-top:8px"><div class="g2"><div class="field" style="margin:0"><label for="slDate">Date</label><input id="slDate" type="date" value="'+today()+'" required></div><div class="field" style="margin:0"><label for="slGross">Gross ($)</label><input id="slGross" type="number" step="0.01" min="0.01" inputmode="decimal" required></div></div><div class="field"><label for="slList">Listing</label><select id="slList"><option value="">Other</option>'+(S.stats[0]&&S.stats[0].listings?Object.entries(S.stats[0].listings).map(([id,x])=>'<option value="'+esc(id)+'">'+esc(String(x.title||id).slice(0,60))+'</option>').join(""):'')+'</select></div><div class="field"><label for="slNote">Note</label><input id="slNote" maxlength="120" placeholder="optional"></div><label class="small" style="display:flex;gap:8px;align-items:center;margin-top:8px"><input id="slVer" type="checkbox" checked> Verified in Etsy Payments</label><button class="btn p" type="submit" style="margin-top:10px">Log it</button></form></details>')+'</div>';
+  const paidDoc=S.months["billing-"+month()]||null;
+  h+='<div class="card"><h3>Bills <span class="sp">'+money(S.bills.filter(b=>b.active!==false).reduce((a,b)=>a+(Number(b.amount)||0),0))+'/mo</span></h3>'+(S.bills.length?'<div class="list">'+S.bills.map(b=>{const paid=S.billing[month()]&&S.billing[month()].paid&&S.billing[month()].paid[b.id];return '<div class="row"><div class="t"><b>'+esc(b.name||b.id)+'</b><small>'+(b.dueDay?'due day '+esc(b.dueDay)+' · ':'')+(b.autoPay?'auto-pay · ':'')+esc(b.note||"")+'</small></div>'+(S.readOnly?'':'<button class="btn sm '+(paid?"good":"")+'" type="button" data-bill="'+(paid?"unpaid":"paid")+'" data-id="'+esc(b.id)+'">'+(paid?"Paid":"Mark paid")+'</button>')+'<span class="pill dim">'+money(b.amount)+'</span></div>'}).join("")+'</div>':'<p class="dim small">No bills on file.</p>')
+    +(S.readOnly?'':'<details style="margin-top:10px"><summary class="small" style="cursor:pointer;font-weight:700">Add a bill</summary><form id="billForm" style="margin-top:8px"><div class="g2"><div class="field" style="margin:0"><label for="bfName">Name</label><input id="bfName" required maxlength="60"></div><div class="field" style="margin:0"><label for="bfAmt">Amount ($/mo)</label><input id="bfAmt" type="number" step="0.01" min="0" inputmode="decimal" value="0"></div></div><div class="g2"><div class="field"><label for="bfDay">Due day</label><input id="bfDay" type="number" min="1" max="31" inputmode="numeric"></div><div class="field"><label for="bfLink">Link</label><input id="bfLink" type="url" placeholder="https://"></div></div><button class="btn p" type="submit" style="margin-top:10px">Save bill</button></form></details>')+'</div>';
+  return h;
+}
+
+/* ============================ Missions / Approvals / Engine / Settings / Parked ============================ */
+function rMissions(){
+  let h=pageHead("missions","The standing orders the crew works toward. The Foreman grades progress on evidence each week.")+dbBanner();
+  const mBtns=m=>S.readOnly?'':(m.status==="proposed"?'<button class="btn sm good" type="button" data-mission="approve" data-id="'+esc(m.id)+'">Approve</button>':'')+(m.status==="active"||m.status==="proposed"?'<button class="btn sm" type="button" data-mission="done" data-id="'+esc(m.id)+'">Done</button><button class="btn sm" type="button" data-mission="cancel" data-id="'+esc(m.id)+'">Cancel</button>':'');
+  h+=S.missions.length?'<div class="card"><div class="list">'+S.missions.map(m=>'<div class="row"><div class="t"><b>'+esc(m.title||m.id)+'</b><small>'+esc(m.goal||m.detail||m.why||"")+(m.deadline?' · by '+esc(m.deadline):'')+(m.progress!=null?' · '+esc(m.progress):'')+'</small></div>'+mBtns(m)+'<span class="pill '+(m.status==="done"?"ok":m.status==="cancelled"||m.active===false?"dim":m.status==="proposed"?"warn":"ok")+'">'+esc(m.status||(m.active===false?"off":"active"))+'</span></div>').join("")+'</div></div>':'<div class="empty"><b>No missions yet</b></div>';
+  return h;
+}
+function rApprovals(){
+  const pend=S.approvals.filter(a=>a.status==="pending");const done=S.approvals.filter(a=>a.status!=="pending").slice(0,10);
+  let h=pageHead("approvals","Only what truly needs your go: spending, caps, a scheduled task, a live trade, a connection. Everything else runs by itself.")+dbBanner();
+  h+=pend.length?pend.map(a=>'<div class="card next alert"><div class="eyebrow">Needs you</div><h2 style="font-size:19px">'+esc(a.title||a.summary||"Approval")+'</h2><p>'+esc(a.detail||a.why||"")+(a.by?' · asked by '+esc(a.by):'')+'</p><div class="inline"><button class="btn good" type="button" data-approve="'+esc(a.id)+'" '+(S.readOnly?"disabled":"")+'>Approve</button><button class="btn bad" type="button" data-reject="'+esc(a.id)+'" '+(S.readOnly?"disabled":"")+'>No</button></div></div>').join(""):'<div class="empty"><b>Nothing waiting on you</b>You get a notification when something does.</div>';
+  if(done.length)h+='<details class="card"><summary>Decided ('+done.length+')</summary><div class="list" style="margin-top:10px">'+done.map(a=>'<div class="row"><div class="t"><b>'+esc(a.title||a.summary||"")+'</b><small>'+esc(a.decidedAt?fmtT(a.decidedAt):"")+'</small></div><span class="pill '+(a.status==="approved"?"ok":"dim")+'">'+esc(a.status)+'</span></div>').join("")+'</div></details>';
+  return h;
+}
+function rEngine(){
+  const E=S.eng;let h=pageHead("engine","The engine runs on GitHub Actions and applies your taps as orders. The report below is the repo's public report, not a guess.")+dbBanner();
+  if(!E)return h+'<div class="empty"><b>No engine report fetched</b>It lives at factory/engine/public/report.json on the main branch.</div>';
+  const hl=E.health||{};const c=hl.counts||{};
+  h+='<div class="card"><h3>Health <span class="sp">'+esc(ago(E.generated_at))+'</span></h3><div class="kv"><dt>Kill switch</dt><dd>'+(hl.kill?'<span class="pill bad">ON</span>':'off')+'</dd><dt>Queued</dt><dd class="mono">'+v(c.queued)+'</dd><dt>Running</dt><dd class="mono">'+v(c.running)+'</dd><dt>Needs approval</dt><dd class="mono">'+v(c.needs_approval)+'</dd><dt>Failed</dt><dd class="mono">'+v(c.failed)+'</dd><dt>Last runner</dt><dd>'+esc(hl.last_runner||"—")+'</dd></div><p class="dim small" style="margin-top:8px">'+esc(hl.note||"")+'</p></div>';
+  if(Array.isArray(E.agents))h+='<div class="card"><h3>Engine agents</h3><div class="list">'+E.agents.map(a=>'<div class="row"><div class="t"><b>'+esc(a.name)+'</b><small>'+esc(a.role||"")+' · v'+v(a.version)+'</small></div><span class="pill dim">'+esc(a.state||"")+'</span></div>').join("")+'</div></div>';
+  const tk=E.tasks||{};const queuedOrd=S.engOrders.filter(o=>o.status==="queued");
+  const ob=(action,id,label,cls,title)=>{const q=queuedOrd.find(o=>o.action===action&&(o.id||"")===(id||""));return q?'<span class="pill dim">queued '+esc(fmtT(q.at).split(", ").pop()||"")+'</span>':'<button type="button" class="btn sm '+(cls||"")+'" data-eng="'+esc(action)+'" data-id="'+esc(id||"")+'" data-title="'+esc(title||"")+'" '+(S.readOnly?"disabled":"")+'>'+esc(label)+'</button>'};
+  const tname=t=>t.title||t.kind||t.name||t.id;
+  if((E.approvals||[]).length)h+='<div class="card"><h3>Engine approvals <span class="sp">'+E.approvals.length+'</span></h3><div class="list">'+E.approvals.map(a=>'<div class="row"><div class="t"><b>'+esc(a.title||a.id)+'</b><small>'+esc(a.detail||a.why||a.kind||"")+'</small></div>'+ob("approve",a.id,"Approve","good",a.title)+ob("decline",a.id,"Decline","",a.title)+'</div>').join("")+'</div></div>';
+  if((tk.failed||[]).length||(tk.queued||[]).length||(tk.running||[]).length)h+='<div class="card"><h3>Tasks</h3><div class="list">'+(tk.failed||[]).map(t=>'<div class="row"><div class="t"><b>'+esc(tname(t))+'</b><small>'+esc(t.error||t.last_error||"failed")+'</small></div>'+ob("retry",t.id,"Retry","good",t.kind)+'<span class="pill bad">failed</span></div>').join("")+(tk.running||[]).concat(tk.queued||[]).map(t=>'<div class="row"><div class="t"><b>'+esc(tname(t))+'</b><small>'+esc(t.agent||t.state||"")+'</small></div>'+ob("cancel",t.id,"Cancel","",t.kind)+'<span class="pill dim">'+esc(t.state||t.status||"queued")+'</span></div>').join("")+'</div></div>';
+  h+='<div class="card"><h3>Kill switch</h3><p class="small muted" style="margin-bottom:10px">'+(hl.kill?"ON: every engine action is stopped.":"Off: the engine applies orders as they land.")+'</p><div class="inline">'+(hl.kill?ob("kill_off","","Switch kill off","good","Switch the engine kill switch OFF"):ob("kill_on","","Kill switch ON","bad","Stop every engine action"))+'</div><p class="dim small" style="margin-top:8px">Orders reach the engine on the Mechanic\'s next run (it carries them into the repo). Nothing here spends money.</p></div>';
+  h+='<div class="card"><h3>Orders <span class="sp">'+S.engOrders.length+'</span></h3>'+(S.engOrders.length?'<div class="list">'+S.engOrders.map(o=>'<div class="row"><div class="t"><b>'+esc(o.action||"")+' · '+esc(o.title||o.id)+'</b><small>'+esc(fmtT(o.at))+'</small></div><span class="pill '+(o.status==="sent"?"ok":"dim")+'">'+esc(o.status||"")+'</span></div>').join("")+'</div>':'<p class="dim small">No orders. The Mechanic carries queued orders into the repo on its next run.</p>')+'</div>';
+  return h;
+}
+function rSettings(){
+  const st=settings();
+  let h=pageHead("settings","The few switches that matter. Caps are ceilings the crew reaches every day with 92+ work, never passes.")+dbBanner();
+  h+='<div class="card">'+sw("paused","Pause everything",st.paused,"On: no crew publishes, posts, pins or trades. The Medic keeps watching.")+sw("dryRun","Dry run",st.dryRun,"On: the crew builds and writes but publishes nothing.")+'</div>';
+  h+='<div class="card"><h3>Caps and bars</h3><form id="capsForm"><div class="g2">'+num("dailyCap","Listings a day",st.dailyCap,1,5)+num("monthlyFeeCap","Fee cap a month ($)",st.monthlyFeeCap,5,100)+num("buildsPerRun","Builds a night",st.buildsPerRun,1,4)+num("passScore","Pass score",st.passScore,85,100)+'</div><button class="btn p" type="submit" style="margin-top:12px" '+(S.readOnly?"disabled":"")+'>Save</button><p class="dim small" style="margin-top:8px">Raising a cap is a decision only you make. The crew never changes these.</p></form></div>';
+  h+='<div class="card"><h3>Schedule</h3><div class="kv"><dt>Night Shift</dt><dd>1:54 AM CT</dd><dt>Bolt</dt><dd>7:13 AM · 12:13 PM · 4:13 PM CT</dd><dt>Herald</dt><dd>11:16 AM · 6:16 PM CT</dd><dt>Pixel video pin</dt><dd>12:52 PM CT</dd><dt>Pricing</dt><dd>9:22 AM CT</dd><dt>Scout Intel</dt><dd>7:51 AM · 3:51 PM CT</dd><dt>Mechanic</dt><dd>6:47 AM · 2:47 PM · 10:47 PM CT</dd><dt>Medic</dt><dd>every 30 min (GitHub)</dd><dt>Studio Short</dt><dd>paused on purpose</dd></div><p class="dim small" style="margin-top:8px">Changing a schedule is a tap in the Claude app, never something the crew does.</p></div>';
+  h+='<div class="card"><h3>Links</h3><div class="kv"><dt>Etsy</dt><dd><a href="https://www.etsy.com/your/shops/me/tools/listings" target="_blank" rel="noopener">Shop manager</a></dd><dt>Repo</dt><dd><a href="https://github.com/Gmsdigital-spw/Planner" target="_blank" rel="noopener">Gmsdigital-spw/Planner</a></dd><dt>Medic report</dt><dd><a href="'+MEDIC_URL+'" target="_blank" rel="noopener">medic_report.json</a></dd><dt>YouTube</dt><dd><a href="https://www.youtube.com/@gmulaishere" target="_blank" rel="noopener">@gmulaishere</a></dd></div></div>';
+  const q=S.medicDoc;if(q)h+='<details class="card"><summary>Day Watch (last)</summary><div class="list" style="margin-top:10px">'+(q.checks||[]).map(c=>'<div class="row"><span class="dot '+(c.ok?"":"bad")+'" style="animation:none"></span><div class="t"><b>'+esc(c.name)+'</b><small>'+esc(c.note)+'</small></div></div>').join("")+'</div></details>';
+  return h;
+}
+function sw(k,label,on,desc){return '<div class="sw"><div class="t"><b>'+esc(label)+'</b><small>'+esc(desc)+'</small></div><button class="toggle" type="button" role="switch" aria-checked="'+(!!on)+'" data-sw="'+k+'" aria-label="'+esc(label)+'" '+(S.readOnly?"disabled":"")+'></button></div>'}
+function num(k,label,val,min,max){return '<div class="field"><label for="n-'+k+'">'+esc(label)+'</label><input id="n-'+k+'" name="'+k+'" type="number" inputmode="numeric" min="'+min+'" max="'+max+'" value="'+esc(val)+'"></div>'}
+function rParked(){return pageHead("parked","Switched off on purpose. Data kept, nothing runs, nothing is checked, nothing is mentioned unless you ask.")+'<div class="card"><div class="list">'+PARKED.map(p=>'<div class="row"><div class="t"><b>'+esc(p[0])+'</b><small>'+esc(p[1])+'</small></div><span class="pill dim">parked</span></div>').join("")+'</div></div>'}
+
+/* ============================ drawer ============================ */
+function openDrawer(kind,id){S.drawer={kind,id};renderDrawer();$("#drawer").classList.add("on");$("#drawerBg").classList.add("on");document.body.style.overflow="hidden"}
+function closeDrawer(){S.drawer=null;$("#drawer").classList.remove("on");$("#drawerBg").classList.remove("on");document.body.style.overflow=""}
+function renderDrawer(){
+  const d=S.drawer;if(!d)return;const body=$("#dBody"),title=$("#dTitle");
+  if(d.kind==="agent"){const a=AGENTS.find(x=>x.id===d.id);title.textContent=a?a.name+" · "+a.role:"Agent";body.innerHTML=a?agentDrawer(a):""}
+  else if(d.kind==="product"){const p=S.products.find(x=>x.id===d.id);title.textContent=p?((p.copy&&p.copy.title)||p.title||p.id):"Product";body.innerHTML=p?productDrawer(p):'<div class="empty"><b>Not found</b></div>'}
+}
+
+/* ============================ actions ============================ */
+async function saveSettings(patch){const path="settings/main";if(S.settingsExists===false){return setDoc(path,Object.assign({},DEFAULT_SETTINGS,patch,{updatedAt:nowIso()}))}return updDoc(path,patch)}
+document.addEventListener("click",async e=>{
+  const b=e.target.closest("button,a,.row.click");if(!b)return;
+  if(b.matches(".sheet-nav a, .brand")){e.preventDefault();go(b.getAttribute("href").replace("#",""));return}
+  if(b.dataset.go){if(b.dataset.go==="more"){$("#sheetNav").classList.add("on")}else go(b.dataset.go);return}
+  if(b.id==="sheetPause"){const st=settings();if(st.paused){if(await saveSettings({paused:false})){toast("Resumed");audit("Resumed the agency","settings")}}else{if(!S.confirm.pause){S.confirm.pause=true;b.textContent="Tap again to pause everything";setTimeout(()=>{S.confirm.pause=false;renderChrome()},3000);return}S.confirm.pause=false;if(await saveSettings({paused:true})){toast("Paused");audit("Paused the agency","settings")}}return}
+  if(b.dataset.agent){openDrawer("agent",b.dataset.agent);return}
+  if(b.dataset.product){openDrawer("product",b.dataset.product);return}
+  if(b.dataset.sw){const k=b.dataset.sw;const on=b.getAttribute("aria-checked")==="true";if(k==="paused"&&!on&&!S.confirm.pause){S.confirm.pause=true;toast("Tap again to pause everything");setTimeout(()=>{S.confirm.pause=false},3000);return}S.confirm.pause=false;if(await saveSettings({[k]:!on})){toast(k+(!on?" on":" off"));audit((!on?"Turned on ":"Turned off ")+k,"settings")}return}
+  if(b.dataset.fire){await fireTask(b.dataset.fire,b);return}
+  if(b.dataset.eng){const action=b.dataset.eng,id=b.dataset.id||"",title=b.dataset.title||"";if(action==="kill_on"&&!twoTap("eng-kill",b,"Tap again to stop the engine"))return;if(action==="cancel"&&!twoTap("eng-cancel-"+id,b))return;
+    const at=nowIso();const oid="ord_"+at.replace(/[-:.TZ]/g,"").slice(0,14)+"_"+action+(id?"_"+String(id).slice(-6):"");
+    if(await setDoc("engine/main/orders/"+oid,{action,id,by:"Grayson",at,status:"queued",title:String(title).slice(0,120)})){toast("Order queued for the engine.");audit("Engine order: "+action+(id?" "+id:""),"fleet")}return}
+  if(b.dataset.sig){const id=b.dataset.id,k=b.dataset.sig,now=nowIso();const x=S.social.find(y=>y.id===id);if(!x)return;let ok=false;
+    if(k==="approve")ok=await write("social/"+id,{status:"approved",approvedBy:"Grayson",approvedAt:now,updatedAt:now},"update");
+    else if(k==="reject"){if(!twoTap("sig-"+id,b,"Tap again to reject"))return;ok=await write("social/"+id,{status:"rejected",updatedAt:now},"update")}
+    else if(k==="retry")ok=await write("social/"+id,{status:"approved",error:null,updatedAt:now},"update");
+    if(ok){toast(k==="approve"?"Approved. Herald posts it on the next run.":k==="reject"?"Rejected. Herald learns from it.":"Back in the queue.");logEvent("Grayson",(k==="approve"?"Approved":k==="reject"?"Rejected":"Retried")+" a "+(x.platform||"")+" post")}return}
+  if(b.dataset.pin){const id=b.dataset.id,p=S.pins.find(y=>y.id===id);if(!p)return;const posted=b.dataset.pin==="posted";if(await write("pins/"+id,posted?{status:"posted",postedAt:nowIso(),postedBy:"Grayson"}:{status:"ready",postedAt:null},"update")){toast(posted?"Marked posted.":"Back in the queue.");if(posted)logEvent("Grayson","Posted a pin: "+String(p.imageText||p.title||"").slice(0,60))}return}
+  if(b.dataset.brief){const id=b.dataset.id,act=b.dataset.brief,br=S.briefs.find(y=>y.id===id);if(!br)return;if(act==="reject"&&!twoTap("brief-"+id,b,"Tap again to reject"))return;
+    if(await write("briefs/"+id,{status:act==="approve"?"approved":"rejected",decidedAt:nowIso(),decidedBy:"Grayson",rejectReason:act==="approve"?"":"Rejected by Grayson"},"update")){logEvent("Grayson",(act==="approve"?"Approved":"Rejected")+" brief: "+(br.title||br.niche||id));toast(act==="approve"?"Approved. Forge builds it on the next run.":"Rejected.")}return}
+  if(b.dataset.prod){const id=b.dataset.id,act=b.dataset.prod,p=S.products.find(y=>y.id===id);if(!p)return;if(!twoTap("prod-"+act+"-"+id,b,act==="scrap"?"Tap again to scrap":"Tap again to send back"))return;const title=(p.copy&&p.copy.title)||p.title||id;
+    if(act==="sendback"){const notes=Array.isArray(p.notes)?p.notes.slice(-19):[];notes.push({t:nowIso(),by:"Grayson",text:"Sent back by Grayson"});if(await write("products/"+id,{stage:"sentback",notes,retries:(Number(p.retries)||0)+1},"update")){logEvent("Grayson","Sent back: "+title);toast("Sent back.");closeDrawer()}}
+    else if(act==="scrap"){if(await write("products/"+id,{stage:"scrapped",scrappedAt:nowIso(),scrappedBy:"Grayson"},"update")){logEvent("Grayson","Scrapped: "+title);toast("Scrapped.");closeDrawer()}}return}
+  if(b.dataset.mission){const id=b.dataset.id,act=b.dataset.mission,m=S.missions.find(y=>y.id===id);if(!m)return;const now=nowIso();if(act!=="approve"&&!twoTap("mission-"+act+"-"+id,b))return;
+    const patch=act==="approve"?{status:"active",approvedBy:"Grayson",approvedAt:now,updatedAt:now}:act==="cancel"?{status:"cancelled",cancelledBy:"Grayson",cancelledAt:now,updatedAt:now}:{status:"done",doneBy:"Grayson",doneAt:now,updatedAt:now};
+    if(await write("missions/"+id,patch,"update")){logEvent("Grayson",(act==="approve"?"Approved":act==="cancel"?"Cancelled":"Finished")+" mission: "+(m.title||id));toast(act==="approve"?"Mission is on.":act==="cancel"?"Cancelled.":"Marked done.")}else toast("Couldn\'t update the mission.");return}
+  if(b.dataset.sale){const id=b.dataset.id,sl=S.sales.find(y=>y.id===id);if(!sl)return;if(!twoTap("sale-"+id,b,"Tap again to refund"))return;if(await write("sales/"+id,{refundAmount:Number(sl.gross)||0,refundedAt:nowIso()},"update")){logEvent("Ledger","Refund logged: "+money(sl.gross)+" · "+String(sl.listing||"").slice(0,40));toast("Refund logged.")}return}
+  if(b.dataset.bill){const id=b.dataset.id,bl=S.bills.find(y=>y.id===id);if(!bl)return;const on=b.dataset.bill==="paid";const k=month();try{const ref=S.db.doc("billing/"+k);const snap=await ref.get();const cur=snap.exists?snap.data():{month:k,paid:{}};const paid=Object.assign({},cur.paid||{});if(on)paid[id]={t:nowIso(),amount:Number(bl.amount)||0};else delete paid[id];await ref.set({month:k,paid});toast(on?"Marked paid for this month.":"Undone.");if(on)logEvent("Grayson","Paid "+bl.name+" for "+k)}catch(e){toast("Couldn\'t update the bill.")}return}
+  if(b.dataset.approve||b.dataset.reject){const id=b.dataset.approve||b.dataset.reject;const a=S.approvals.find(x=>x.id===id);if(!a)return;const status=b.dataset.approve?"approved":"declined";if(await updDoc("fleet/commander/approvals/"+id,{status,decidedBy:"Grayson",decidedAt:nowIso()})){toast(status==="approved"?"Approved. The next run carries it out.":"Declined.");audit((status==="approved"?"Approved":"Declined")+" proposal: "+(a.title||a.summary||id),a.mod||"fleet")}return}
+});
+document.addEventListener("submit",async e=>{
+  const f=e.target;
+  if(f.id==="saleForm"){e.preventDefault();const date=$("#slDate").value||today();const gross=Number($("#slGross").value);if(!(gross>0)){toast("Enter the gross amount");return}const lid=$("#slList").value||"";const listing=lid&&S.stats[0]&&S.stats[0].listings&&S.stats[0].listings[lid]?String(S.stats[0].listings[lid].title||lid):"Other";const now=nowIso();const id="sale-"+date+"-"+rid().slice(-5);
+    const doc={date,listingId:lid||null,listing,gross:Math.round(gross*100)/100,refundAmount:0,offsite:false,verified:!!$("#slVer").checked,note:($("#slNote").value||"").trim().slice(0,120),source:"manual · Etsy Payments",by:"Grayson",createdAt:now};
+    if(await setDoc("sales/"+id,doc)){toast("Logged. "+money(doc.gross)+" gross.");logEvent("Ledger","Sale logged by Grayson: "+money(doc.gross)+" · "+listing.slice(0,40))}return}
+  if(f.id==="billForm"){e.preventDefault();const name=($("#bfName").value||"").trim();if(!name){toast("Name the bill");return}const id="bill-"+name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")+"-"+rid().slice(-4);let link=($("#bfLink").value||"").trim();if(link&&!/^https?:/i.test(link))link="https://"+link;const a=$("#bfAmt").value,d=$("#bfDay").value;
+    const doc={kind:"other",order:50,createdAt:nowIso(),name,link:link||null,autoPay:false,active:true,updatedAt:nowIso(),amount:a===""?0:Math.max(0,Number(a)),dueDay:d===""?null:Math.min(31,Math.max(1,Number(d)))};
+    if(await setDoc("bills/"+id,doc)){toast("Bill saved.");logEvent("Grayson","Added a bill: "+name)}return}
+  if(f.id==="lessonForm"){e.preventDefault();const text=($("#lsText").value||"").trim();const ev=($("#lsEv").value||"").trim();if(text.length<4){toast("Write the lesson first");return}const now=nowIso();const id="lesson-"+today()+"-"+rid().slice(-5);
+    if(await setDoc("lessons/"+id,{text:text.slice(0,160),evidence:ev.slice(0,120)||null,source:"Grayson",by:"Grayson",confidence:"owner",at:now,createdAt:now})){toast("Lesson saved.");logEvent("Grayson","Added a lesson: "+text.slice(0,60))}return}
+  if(f.id!=="capsForm")return;e.preventDefault();
+  const patch={};["dailyCap","monthlyFeeCap","buildsPerRun","passScore"].forEach(k=>{const el=f.querySelector('[name="'+k+'"]');if(el&&el.value!=="")patch[k]=Number(el.value)});
+  if(patch.passScore!=null&&patch.passScore<85)patch.passScore=85;
+  if(await saveSettings(patch)){toast("Saved");audit("Changed caps: "+JSON.stringify(patch),"settings")}
+});
+$("#drawerBg").addEventListener("click",closeDrawer);$("#dClose").addEventListener("click",closeDrawer);
+$("#sheetNav").addEventListener("click",e=>{if(e.target===e.currentTarget)e.currentTarget.classList.remove("on")});
+window.addEventListener("hashchange",()=>{const t=location.hash.replace("#","");if(PAGES.some(p=>p.id===t))go(t)});
+(function start(){
+  const h=location.hash.replace("#","");const saved=ls.get("atlas.page");
+  S.page=PAGES.some(p=>p.id===h)?h:(PAGES.some(p=>p.id===saved)?saved:"today");
+  if(window.claude&&window.claude.hot&&window.claude.hot.snapshot){try{window.claude.hot.snapshot(()=>({page:S.page}))}catch(e){}}
+  const data=(window.claude&&window.claude.hot&&window.claude.hot.data)||{};if(data.page&&PAGES.some(p=>p.id===data.page))S.page=data.page;
+  boot();
+})();
+})();
+</script>
+</body>
+</html>
