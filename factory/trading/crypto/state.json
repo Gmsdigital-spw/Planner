@@ -1,0 +1,53 @@
+{
+ "mode": "virtual",
+ "startBalance": 25.0,
+ "cash": 25.0,
+ "positions": [],
+ "history": [],
+ "floorLocked": false,
+ "lastBarT": 1792814700,
+ "lastClose": {
+  "BTC/USD": 80830.881,
+  "ETH/USD": 2378.8985,
+  "SOL/USD": 102.5355,
+  "DOGE/USD": 0.0787766,
+  "AVAX/USD": 9.02725
+ },
+ "lastExit": {},
+ "updatedAt": "2026-10-23T23:13:14.957412-05:00",
+ "equity": 25.0,
+ "lastScores": {
+  "BTC/USD": {
+   "score": 32.0,
+   "rvol": 0.2,
+   "rsi": 48.8,
+   "thin": false
+  },
+  "ETH/USD": {
+   "score": 20.0,
+   "rvol": 0.99,
+   "rsi": 47.1,
+   "thin": false
+  },
+  "SOL/USD": {
+   "score": 32.0,
+   "rvol": 0.0,
+   "rsi": 48.6,
+   "thin": false
+  },
+  "DOGE/USD": {
+   "score": 32.0,
+   "rvol": 0.0,
+   "rsi": 51.3,
+   "thin": false
+  },
+  "AVAX/USD": {
+   "score": 20.0,
+   "rvol": 0.0,
+   "rsi": 40.5,
+   "thin": false
+  }
+ },
+ "barsProcessed": 1,
+ "missingSymbols": []
+}
