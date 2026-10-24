@@ -1,0 +1,1 @@
+{"id":"bolt-2026-10-24-sale-af45","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/shops/68605457/transactions?limit=5","tag":"tx"}]}
