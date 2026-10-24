@@ -1,0 +1,1 @@
+{"id":"vpin-2026-10-24-etsy-379c","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100"}]}
