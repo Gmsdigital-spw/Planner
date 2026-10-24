@@ -12,6 +12,7 @@ on:
     paths:
       - "factory/trading/crypto/*.py"
       - "factory/trading/crypto/params.json"
+      - ".github/workflows/crypto-paper.yml"
   workflow_dispatch:
 
 permissions:
@@ -40,7 +41,7 @@ jobs:
         env:
           ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-        run: timeout 1200 python factory/trading/crypto/backtest.py --first-test || echo "{\"error\":\"first test failed, see the Action log\"}" > factory/trading/crypto/lab/first-test.json
+        run: timeout 1200 python factory/trading/crypto/backtest.py --first-test || echo "{\"error\":\"first test failed, see the Action log\"}" > factory/trading/crypto/lab/first-test-error.json
       - name: Save state
         if: always()
         run: |
