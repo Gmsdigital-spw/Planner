@@ -5,7 +5,10 @@
  "score": 50,
  "pass": false,
  "passmark": 85,
- "at": "2026-10-24T07:43:09Z",
+ "hard_gate": {
+  "twist_has_real_motion": false
+ },
+ "at": "2026-10-24T08:05:25Z",
  "checks": {
   "hook_motion_first_1_5s": {
    "ok": false,
@@ -30,7 +33,7 @@
   "new_beat_every_3s": {
    "ok": false,
    "pts": 10,
-   "evidence": "13 scenes, mean 4.3 s, longest 5.4 s; too long: lines 1 (4.6 s), 2 (4.7 s), 4 (4.9 s), 5 (5.4 s), 10 (5.4 s), 11 (4.5 s), 12 (5.1 s), 13 (5.0 s). Split long lines (9 words or fewer each) so every scene is a new beat"
+   "evidence": "13 scenes, mean 4.3 s, longest 5.4 s; too long: lines 1 (5.0 s), 2 (4.7 s), 4 (4.9 s), 5 (5.4 s), 10 (5.4 s), 11 (4.5 s), 12 (5.1 s), 13 (5.0 s). Split long lines (9 words or fewer each) so every scene is a new beat"
   },
   "real_animation_not_zoom": {
    "ok": false,
@@ -40,7 +43,7 @@
   "natural_voice": {
    "ok": true,
    "pts": 10,
-   "evidence": "voice engine edge, speed 1.05"
+   "evidence": "voice engine edge, voice andrew, speed 1.05"
   },
   "captions_in_safe_zone": {
    "ok": true,

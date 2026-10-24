@@ -5,7 +5,10 @@
  "score": 40,
  "pass": false,
  "passmark": 85,
- "at": "2026-10-24T07:43:09Z",
+ "hard_gate": {
+  "twist_has_real_motion": false
+ },
+ "at": "2026-10-24T08:05:25Z",
  "checks": {
   "hook_motion_first_1_5s": {
    "ok": true,
@@ -40,7 +43,7 @@
   "natural_voice": {
    "ok": true,
    "pts": 10,
-   "evidence": "voice engine edge, speed 1.03"
+   "evidence": "voice engine edge, voice andrew, speed 1.03"
   },
   "captions_in_safe_zone": {
    "ok": true,

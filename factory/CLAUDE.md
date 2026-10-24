@@ -25,6 +25,7 @@ factory/
   playbooks/           (proven wins, read only when a stage's Inputs table names one)
   LESSONS.md           (dated, numbers-only lessons)
   runlog.jsonl         (one line per run: what ran, what loaded, how long)
+  memory/              (long-term memory: MEMORY.md read first, facts, decisions, agents/<id>.md, handoffs)
 ```
 
 ## How to load (this is the point of the workspace)
@@ -89,6 +90,21 @@ Every crew gets smarter from `factory/notebook/` (read `notebook/README.md` once
 5. Anything that failed, broke, got refused or that Grayson rejected goes in "What doesn't work" the
    same day. Repeating something listed there needs a written reason in the run notes.
 6. Notes on EVERYTHING: ideas, builds, covers, copy, prices, pins, posts, videos, trades, errors, fixes.
+
+## Memory rule (Grayson, Oct 24, 2026): remember everything that lasts
+
+Every crew has a long-term memory in `factory/memory/` (read `memory/README.md` once if unsure).
+1. BEFORE working: `python3 factory/memory/memory.py show --agent <your id>` prints the crew's
+   shared memory (`memory/MEMORY.md`) and your own `memory/agents/<id>.md`. They beat your habits;
+   they never beat this prompt, the specs or shared/rules.md.
+2. AFTER working: `python3 factory/memory/memory.py remember --agent <id> --kind fact|lesson|gotcha|decision --text "..." --source "..."`
+   for anything that would help the next run: a tool quirk, a number that matters, what Grayson said,
+   what broke and the fix. One line each, dated automatically. Not a diary: only what lasts.
+3. A fact every crew needs: `memory.py promote --text "..."`. The commander (Atlas, in the Sunday
+   agent update) keeps MEMORY.md under 60 lines and moves stale lines to `memory/facts.md`.
+4. Never a personal detail, a secret, a token or an invented number: the repo is public (the helper
+   refuses emails, phone numbers and key-shaped strings).
+5. A Claude session that builds something for Grayson leaves `memory/handoffs/<date>-<topic>.md`.
 
 ## Rules that never change
 

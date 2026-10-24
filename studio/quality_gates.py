@@ -10,9 +10,9 @@ Three gates, all free (Python stdlib; Pillow + imagehash only for the cover uniq
            of the 10 checks is decided from those files, with the evidence written next to it. --write saves
            yt/out/ep17.score.json {score, pass, checks, fixes}. Exit 0 = PASS (85+), 1 = FAIL, 2 = cannot judge.
   Cover    python3 studio/quality_gates.py cover new.png --recent <dir or files...> [--checks k=1,k=0,...]
-           Perceptual-hash distance of the new cover against the last 20 covers (unique = every distance >= 18)
+           Perceptual-hash distance of the new cover against the first 20 covers given, newest first (unique = every distance >= 18)
            plus the five judged checks the inspector passes in with --checks. Exit 0 = PASS (92+), 1 = FAIL.
-  Blueprint python3 studio/quality_gates.py blueprint       prints the 15 to 25 second commercial blueprint.
+  Blueprint python3 studio/quality_gates.py blueprint       prints the 15 to 22 second commercial blueprint.
   Selftest  python3 studio/quality_gates.py --selftest      synthetic PASS and FAIL cases; exits non-zero on a bug.
 
 Honesty: a check the files cannot prove is FALSE, never assumed. "unknown" costs the points; it never
@@ -45,7 +45,7 @@ def score_short(checks: dict) -> tuple:
 
 COVER_RUBRIC = {             # pass = 92+
     "real_product_pages_fill_frame": 20,
-    "big_count_badge": 10,           # e.g. "36 GAMES"
+    "big_count_badge": 10,           # the count big and readable on the label card ("36 GAMES"); never a sticker (V8, Oct 24)
     "realistic_mockup": 20,          # hands, wall, tablet; never drawn/fake
     "unique_vs_last_20_covers": 20,  # perceptual-hash distance check below
     "readable_at_thumbnail_size": 15,
@@ -71,7 +71,7 @@ def score_cover(checks: dict) -> tuple:
     score = sum(pts for k, pts in COVER_RUBRIC.items() if checks.get(k))
     return score, [k for k in COVER_RUBRIC if not checks.get(k)]
 
-COMMERCIAL_BLUEPRINT = [     # the Etsy promo video, 15-25 seconds
+COMMERCIAL_BLUEPRINT = [     # the Etsy promo video, 15-22 seconds (media-rules.md)
     ("0.0-1.5s", "Hook: the finished product in hand + bold 4-word caption"),
     ("1.5-6s",   "Phone screen: scroll the real Etsy listing"),
     ("6-12s",    "Tap in: show 3 real pages up close, quick cuts"),
@@ -110,17 +110,23 @@ def anim_lines(out):
         if m:
             found.add(int(m.group(1)))
     for i in out.get("animLines") or []:
-        found.add(int(i))
+        try:
+            found.add(int(i))
+        except (TypeError, ValueError):
+            pass
     return found
 
 def scene_spans(out):
     """Seconds each scene is on screen: from its voice start to the next scene's voice start (the last one to the end)."""
     wins = out.get("lines") or []
-    dur = float(out.get("duration") or 0)
+    try:
+        dur = float(out.get("duration") or 0)
+    except (TypeError, ValueError):
+        dur = 0.0
     spans = []
     for i, w in enumerate(wins):
         try:
-            s = float(w[0])
+            s = 0.0 if i == 0 else float(w[0])          # scene 1 runs from t=0, not from the first word
             nxt = float(wins[i + 1][0]) if i + 1 < len(wins) else dur
         except (TypeError, ValueError, IndexError):
             continue
@@ -130,7 +136,7 @@ def scene_spans(out):
 def check_short(job, out, research=None):
     """Decide the 10 checks from the job, the builder's output and the crew's research sidecar.
     Returns (checks, evidence) where evidence[k] says what was seen and, on a fail, what to redo."""
-    lines = job.get("lines") or []
+    lines = [l for l in (job.get("lines") or []) if isinstance(l, dict)]
     n = len(lines)
     warnings = [str(w) for w in (out.get("warnings") or [])]
     anim = anim_lines(out)
@@ -153,19 +159,19 @@ def check_short(job, out, research=None):
                                          ": needs 3 to 8 words with a question mark, a number or a shock word"))
 
     # 3. twist: a "punch" scene that is neither the opening nor the loop line
-    punch = [i for i, l in enumerate(lines) if ((l.get("image") or {}).get("motion") == "punch")]
-    twist = [i for i in punch if 1 <= i < n - 1]
+    punch = [i for i, l in enumerate(lines) if isinstance(l.get("image"), dict) and l["image"].get("motion") == "punch"]
+    twist = sorted([i for i in punch if 1 <= i < n - 1], key=lambda i: i not in anim)   # an animated punch line is the twist
     checks["story_has_twist"] = bool(twist)
     ev["story_has_twist"] = (f"twist at line {twist[0] + 1} (punch)" if twist else
                              "no twist line: mark the reveal with motion \"punch\" (not the first or last line)")
 
     # 4. loop: loop true, the last line reuses line 1's scene and cuts straight back (pause <= 0.1)
     try:
-        last_pause = float(lines[-1].get("pause", 0)) if n else 9
+        last_pause = float(lines[-1].get("pause", 0.28)) if n else 9      # the builder's default pause is 0.28 s
     except (TypeError, ValueError):
         last_pause = 9
     same = n >= 2 and _prompt(lines[0]) == _prompt(lines[-1]) and _prompt(lines[0]) != ""
-    checks["ending_loops_to_start"] = bool(job.get("loop")) and same and last_pause <= 0.1
+    checks["ending_loops_to_start"] = bool(job.get("loop", True)) and same and last_pause <= 0.1   # the builder defaults loop to true
     ev["ending_loops_to_start"] = ("loop true, last scene = first scene, last pause %.2f" % last_pause if checks["ending_loops_to_start"] else
                                    "loop needs: loop true, the last line's image prompt identical to line 1's, last pause 0.05")
 
@@ -182,11 +188,13 @@ def check_short(job, out, research=None):
     # 6. real animation, not a slideshow: the twist line and at least one more line got real motion; no zoom fallback
     zoom_fallback = [w for w in warnings if "used simple zoom" in w]
     anim_fail = [w for w in warnings if "animation lane unavailable" in w or "animation lane error" in w]
-    checks["real_animation_not_zoom"] = len(anim) >= 2 and bool(twist) and twist[0] in anim and not zoom_fallback
+    checks["real_animation_not_zoom"] = 2 <= len(anim) <= 3 and bool(twist) and twist[0] in anim and not zoom_fallback
+    checks["_twist_moved"] = bool(twist) and twist[0] in anim      # V8 rule 4: a hard gate, not points
     ev["real_animation_not_zoom"] = (f"real motion on lines {', '.join(str(i + 1) for i in sorted(anim))}" if anim else "no line got real motion") + \
                                     ("" if checks["real_animation_not_zoom"] else
                                      ("; the free lane failed: " + anim_fail[0][:90] if anim_fail else "") +
                                      ("; a scene fell back to a simple zoom" if zoom_fallback else "") +
+                                     ("; over 3 animated shots (the free quota rule)" if len(anim) > 3 else "") +
                                      ". Needs anim:true on the twist line and line 1 (max 3 animated shots) and a working HF_TOKEN")
 
     # 7. natural voice: the edge story voice at a natural speed, not the fallback engine, not a dry run
@@ -195,8 +203,9 @@ def check_short(job, out, research=None):
     except (TypeError, ValueError):
         speed = 0
     tts = str(out.get("tts") or "")
-    checks["natural_voice"] = tts == "edge" and not out.get("fakeTts") and 0.95 <= speed <= 1.06 and not any("TTS edge failed" in w for w in warnings)
-    ev["natural_voice"] = f"voice engine {tts or 'unknown'}, speed {speed}" + ("" if checks["natural_voice"] else ": needs engine edge (andrew/ava) at 0.95 to 1.06, real TTS")
+    voice = str(job.get("voice", "andrew")).lower()
+    checks["natural_voice"] = tts == "edge" and voice in ("andrew", "ava") and not out.get("fakeTts") and 0.95 <= speed <= 1.06 and not any("TTS edge failed" in w for w in warnings)
+    ev["natural_voice"] = f"voice engine {tts or 'unknown'}, voice {voice}, speed {speed}" + ("" if checks["natural_voice"] else ": needs engine edge, voice andrew or ava, speed 0.95 to 1.06, real TTS")
 
     # 8. captions in the safe zone: the hook below the top 10%, the captions above the bottom 25%
     caps = out.get("captions") if isinstance(out.get("captions"), dict) else BUILDER_CAPTIONS
@@ -221,17 +230,20 @@ def check_short(job, out, research=None):
     r = research or {}
     ts = r.get("title_score", (job.get("vidiq") or {}).get("title_score") if isinstance(job.get("vidiq"), dict) else None)
     checks["title_vidiq_score_70plus"] = isinstance(ts, (int, float)) and not isinstance(ts, bool) and ts >= 70
-    ev["title_vidiq_score_70plus"] = (f"vidIQ title score {ts}" if isinstance(ts, (int, float)) else "title not scored by vidIQ") + \
+    ev["title_vidiq_score_70plus"] = (f"vidIQ title score {ts}" if isinstance(ts, (int, float)) and not isinstance(ts, bool) else
+                                      ("title_score must be a number" if ts is not None else "title not scored by vidIQ")) + \
                                      ("" if checks["title_vidiq_score_70plus"] else
-                                      (f" (credits {r['credits']})" if r.get("credits") is not None else "") +
+                                      (f" ({r['why']})" if r.get("why") else (f" (credits {r['credits']})" if r.get("credits") is not None else "")) +
                                       ": score it with vidiq_score_title (type short) when 5 or more credits are left; 70+ passes")
     return checks, ev
 
 def scorecard(job, out, research=None):
     checks, ev = check_short(job, out, research)
     score, fixes = score_short(checks)
-    return {"schema": "shorts-scorecard/1", "version": VERSION, "id": job.get("id") or out.get("id"), "score": score, "pass": score >= PASS_SHORT,
-            "passmark": PASS_SHORT, "at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    twist_moved = bool(checks.get("_twist_moved"))
+    return {"schema": "shorts-scorecard/1", "version": VERSION, "id": job.get("id") or out.get("id"), "score": score,
+            "pass": score >= PASS_SHORT and twist_moved, "passmark": PASS_SHORT,
+            "hard_gate": {"twist_has_real_motion": twist_moved}, "at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "checks": {k: {"ok": bool(checks.get(k)), "pts": SHORTS_RUBRIC[k], "evidence": ev.get(k, "")} for k in SHORTS_RUBRIC},
             "fixes": fixes}
 
@@ -261,6 +273,8 @@ def print_card(card):
     print(f"{card['id']}: {'PASS' if card['pass'] else 'FAIL'} {card['score']}/100 (pass {card['passmark']}+)")
     for k, c in card["checks"].items():
         print(f"  [{'x' if c['ok'] else ' '}] {c['pts']:>2} {k}: {c['evidence']}")
+    if not card.get("hard_gate", {}).get("twist_has_real_motion", True):
+        print("  hard gate: the twist line has no real motion (V8 rule 4): not a pass at any score")
     if card["fixes"]:
         print("  redo: " + ", ".join(card["fixes"]))
     if card.get("saved"):
@@ -326,6 +340,10 @@ def selftest():
               "real_animation_not_zoom", "natural_voice", "length_20_to_45s", "title_vidiq_score_70plus"}
     assert not card["pass"] and set(card["fixes"]) == expect, ("failing case fixes", card["fixes"])
     assert card["score"] == 15 + 5, card["score"]
+    job, out, research = _synthetic(True)
+    out["warnings"] = ["line 0: real motion from the free animation lane", "line 2: real motion from the free animation lane"]
+    card = scorecard(job, out, research)
+    assert card["score"] == 85 and not card["pass"] and card["hard_gate"]["twist_has_real_motion"] is False, ("twist without motion must not pass at 85", card["score"], card["pass"])
     # cover uniqueness: a colour swap of the same layout is NOT unique; a different layout is
     from PIL import Image, ImageDraw
     import tempfile, random
@@ -373,8 +391,13 @@ def main(argv):
         if len(argv) < 2:
             print("usage: quality_gates.py short <ep id> [--write] [--root <repo>]"); return 2
         ep = argv[1]; write = "--write" in argv
+        if not re.fullmatch(r"ep[A-Za-z0-9_-]{1,38}", ep):
+            print(f"cannot judge {ep}: the Shorts gate is for ep* ids only"); return 2
         root = argv[argv.index("--root") + 1] if "--root" in argv else _find_root(os.path.dirname(__file__) or ".")
-        card, err = gate_short(root, ep, write)
+        try:
+            card, err = gate_short(root, ep, write)
+        except Exception as e:                      # a broken job or build file: cannot judge, never a pass
+            print(f"cannot judge {ep}: {type(e).__name__}: {e}"); return 2
         if err:
             print(err); return 2
         print_card(card)
@@ -390,9 +413,12 @@ def main(argv):
                     recent.append(argv[i]); i += 1
                 continue
             if argv[i] == "--checks":
-                checks = argv[i + 1]; i += 2; continue
+                checks = argv[i + 1] if i + 1 < len(argv) else ""; i += 2; continue
             i += 1
-        c = gate_cover(new, recent, checks)
+        try:
+            c = gate_cover(new, recent, checks)
+        except Exception as e:                      # a file that is not an image: cannot judge, never a pass
+            print(f"cannot judge {new}: {type(e).__name__}: {e}"); return 2
         if "--json" in argv:
             print(json.dumps(c, indent=1))
         else:

@@ -34,6 +34,7 @@ they only use `shared/` files when their prompt says so.
 | Floor specs | `specs/` | Grayson's standing orders per floor (load by section) |
 | The week's standing order (Oct 23-30, 2026) | `specs/push-week-2026-10-23.md` | Mission numbers, daily targets per crew, the scoreboard, Grayson's taps, cap proposals |
 | V8 "The Turning Point" (Oct 24, 2026) | `specs/etsy-v8.md`, `specs/studio-floor-v8.md`, `studio/quality_gates.py` | Grayson's V8 orders for the shop, the promo channels and the Gmula Shorts; the scorecards in code |
+| Crew memory | `memory/MEMORY.md` (read first), `memory/agents/<id>.md`, `memory/handoffs/` | What lasts: standing truths, gotchas, Grayson's decisions, each agent's durable memory (CLAUDE.md "Memory rule") |
 | Agent skills | `skills/<agent>/SKILL.md` | Load only the agents acting in the current stage |
 | Lessons | `LESSONS.md` | Numbers-only lessons, newest last |
 | Playbooks | `playbooks/` | Load only the one a stage names |

@@ -61,11 +61,14 @@ jobs:
           only="${{ github.event.inputs.job }}"
           for f in yt/jobs/*.json; do
             name=$(basename "$f" .json)
+            case "$name" in *.research) continue;; esac
             if [ -n "$only" ]; then
               [ "$name" = "$only" ] || continue
               rm -f "yt/out/$name.mp4" "yt/out/$name.json"
             fi
             [ -f "yt/out/$name.mp4" ] && continue
+            echo "$name" >> /tmp/built.txt
+            rm -f "yt/out/$name.score.json"
             echo "=== checking $name ==="
             if ! timeout 480 python yt/build/make_short.py "$f" --check > /tmp/check.log 2>&1; then
               tail -20 /tmp/check.log
@@ -75,8 +78,6 @@ jobs:
               continue
             fi
             echo "=== building $name ==="
-            echo "$name" >> /tmp/built.txt
-            rm -f "yt/out/$name.score.json"
             if ! timeout 1500 python yt/build/make_short.py "$f" > /tmp/build1.log 2>&1; then
               tail -15 /tmp/build1.log
               echo "=== retry $name with the backup voice ==="
@@ -111,7 +112,7 @@ jobs:
           mkdir -p /tmp/save && cp -r yt/out/. /tmp/save/
           for i in 1 2 3 4; do
             git fetch -q --depth=1 origin main && git reset -q --hard origin/main
-            mkdir -p yt/out && cp -r /tmp/save/. yt/out/
+            mkdir -p yt/out && rsync -a --delete /tmp/save/ yt/out/
             git add yt/out
             git diff --cached --quiet && { echo "nothing new"; break; }
             git commit -q -m "Build Shorts" && git push origin HEAD:main && { echo "saved"; break; }
