@@ -1,0 +1,12 @@
+{
+ "id": "seo-2026-10-23-get2-d33b",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4599447958",
+   "tag": "4599447958"
+  }
+ ]
+}
