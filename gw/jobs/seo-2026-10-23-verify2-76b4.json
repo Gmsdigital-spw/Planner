@@ -1,0 +1,30 @@
+{
+ "id": "seo-2026-10-23-verify2-76b4",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4597998190",
+   "tag": "4597998190"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4599447958",
+   "tag": "4599447958"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4600177516",
+   "tag": "4600177516"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4601798994",
+   "tag": "4601798994"
+  }
+ ]
+}
