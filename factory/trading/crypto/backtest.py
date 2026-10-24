@@ -143,11 +143,16 @@ def first_test(p, out_path):
     Path(out_path).write_text(json.dumps(res, indent=1) + "\n")
 
     def line(name, r, rb):
+        print(f"::notice title={name}::trades {r['trades']} win {r['winRate']} avgR {r['avgR']} net {r['netPnl']} "
+              f"maxDD {r['maxDrawdownPct']} pf {r['profitFactor']} | random avgNet {rb.get('avgNetPnl')} "
+              f"medianNet {rb.get('medianNetPnl')} avgWin {rb.get('avgWinRate')} avgTrades {rb.get('avgTrades')}")
         print(f"{name:22s} trades {r['trades']:3d}  win {r['winRate']}  avgR {r['avgR']}  net ${r['netPnl']:+.2f}  "
               f"maxDD {r['maxDrawdownPct']}%   | random avg net ${rb.get('avgNetPnl')} win {rb.get('avgWinRate')}")
     line("spec tune", d_t, res["specDefaults"]["tuneRandom"])
     line("spec holdout", d_h, res["specDefaults"]["holdoutRandom"])
     print("picked on tune:", best)
+    print(f"::notice title=picked on tune::{json.dumps(best)}")
+    print(f"::notice title=bars::{json.dumps(counts)}")
     line("picked holdout", b_h, res["tuneGrid"]["pickedHoldoutRandom"])
     return res
 
@@ -173,4 +178,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"::error title=crypto backtest::{type(e).__name__}: {str(e)[:400]}")
+        raise

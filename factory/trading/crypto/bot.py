@@ -90,6 +90,8 @@ def main():
                                  "cadence": "every 5 minutes, 24/7"})
         print(json.dumps({"status": status, "equity": round(eq, 2), "bars": len(times),
                           "open": [x["sym"] for x in state["positions"]], "scores": scores}))
+        print(f"::notice title=crypto bot::{status} equity {eq:.2f} open {len(state['positions'])} bars {len(times)} "
+              f"missing {missing} scores {json.dumps({k: v['score'] for k, v in scores.items()})}")
         return 0
     except Exception as e:
         err = {"at": started.isoformat(), "error": f"{type(e).__name__}: {e}"[:500], "trace": traceback.format_exc()[-1500:]}
@@ -99,6 +101,7 @@ def main():
                                  "equity": state.get("equity"), "openPositions": len(state.get("positions", [])),
                                  "mode": core.MODE, "cadence": "every 5 minutes, 24/7"})
         print(err["error"], file=sys.stderr)
+        print("::error title=crypto bot::" + err["error"].replace("\n", " "))
         return 1
 
 
