@@ -1,3 +1,4 @@
+import html
 #!/usr/bin/env python3
 """Warden's listing photo inspector (built Oct 21, 2026 after Grayson found what the crew missed:
 two covers in a row on 18 listings, a duplicate photo, and bland beige covers).
@@ -35,8 +36,12 @@ RULES = {
 
 STOP = set("the a an and or of for with to in on your my 2026 2027 pdf digital download printable kit set planner tracker games game party".split())
 
+ABBREV = {"nye": "new year eve"}  # Oct 24: NYE title vs "New Year's Eve" alt was a false COVER_MISMATCH
+
 def words(s):
-    return {w for w in re.findall(r"[a-z]+", (s or "").lower()) if w not in STOP and len(w) > 2}
+    s = html.unescape(s or "").lower()
+    s = re.sub(r"[a-z]+", lambda m: ABBREV.get(m.group(0), m.group(0)), s)
+    return {w for w in re.findall(r"[a-z]+", s) if w not in STOP and len(w) > 2}
 
 def load_listings(p):
     d = json.load(open(p))
