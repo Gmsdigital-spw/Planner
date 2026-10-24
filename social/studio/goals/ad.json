@@ -1,0 +1,234 @@
+{
+ "dur": 20.18,
+ "vo": "social/studio/media/vo/goals-vo.mp3",
+ "music": "social/studio/media/vo/goals-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/goals",
+   "cover": "cover.jpg",
+   "price": "4.49",
+   "pages": 14,
+   "listTitle": "2027 Goal Setting Workbook, 12-Week Planner, Year in Review (PDF Download)",
+   "strip": [
+    "p-04.png",
+    "p-06.png",
+    "p-08.png",
+    "p-09.png"
+   ],
+   "bg": [
+    "#b0835a",
+    "#45301e"
+   ],
+   "accent": "#8a5a32",
+   "hl": "#ffe9b8",
+   "dot": "#f3e3cc"
+  },
+  "scenes": [
+   {
+    "page": "p-06.png",
+    "badge": "12 weeks",
+    "type": "hook",
+    "t0": 0,
+    "t1": 2.63
+   },
+   {
+    "pages": [
+     "p-03.png",
+     "p-04.png",
+     "p-05.png"
+    ],
+    "type": "fan",
+    "t0": 2.63,
+    "t1": 6.96,
+    "beats": [
+     2.73,
+     4.22,
+     5.71
+    ]
+   },
+   {
+    "page": "p-07.png",
+    "type": "pan",
+    "t0": 6.96,
+    "t1": 11.3,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-08.png",
+     "p-09.png",
+     "p-10.png",
+     "p-11.png"
+    ],
+    "type": "grid",
+    "t0": 11.3,
+    "t1": 12.96,
+    "beats": [
+     11.4,
+     11.68,
+     11.97,
+     12.25
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 12.96,
+    "t1": 16.63,
+    "beats": [
+     0.44,
+     1.31,
+     1.72,
+     2.52,
+     2.92
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 16.63,
+    "t1": 20.48
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   1.01,
+   "*3* big goals"
+  ],
+  [
+   1.46,
+   2.19,
+   "*12* weeks"
+  ],
+  [
+   2.63,
+   4.95,
+   "Look back at | *2026*"
+  ],
+  [
+   5.39,
+   6.76,
+   "Score *8* life areas | *1 to 10*"
+  ],
+  [
+   6.96,
+   10.87,
+   "*3* goals | *one* milestone | a week"
+  ],
+  [
+   11.3,
+   12.51,
+   "Check in | *every week*"
+  ],
+  [
+   12.96,
+   13.9,
+   "*14* pages"
+  ],
+  [
+   14.36,
+   15.4,
+   "Instant *download*"
+  ],
+  [
+   15.83,
+   16.43,
+   "Tap the *link*"
+  ],
+  [
+   16.63,
+   17.59,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   2.58,
+   "whoosh"
+  ],
+  [
+   2.73,
+   "pop"
+  ],
+  [
+   4.22,
+   "pop"
+  ],
+  [
+   5.71,
+   "pop"
+  ],
+  [
+   6.91,
+   "whoosh"
+  ],
+  [
+   11.25,
+   "whoosh"
+  ],
+  [
+   11.4,
+   "pop"
+  ],
+  [
+   11.68,
+   "pop"
+  ],
+  [
+   11.97,
+   "pop"
+  ],
+  [
+   12.25,
+   "pop"
+  ],
+  [
+   12.91,
+   "whoosh"
+  ],
+  [
+   13.4,
+   "whoosh"
+  ],
+  [
+   15.88,
+   "tap"
+  ],
+  [
+   16.13,
+   "pop"
+  ],
+  [
+   16.58,
+   "whoosh"
+  ],
+  [
+   16.98,
+   "impact"
+  ],
+  [
+   17.43,
+   "pop"
+  ]
+ ]
+}
