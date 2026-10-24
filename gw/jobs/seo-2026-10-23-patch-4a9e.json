@@ -1,0 +1,294 @@
+{
+ "id": "seo-2026-10-23-patch-4a9e",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4598535050",
+   "body": {
+    "title": "Debt Payoff Planner Printable 2027, Snowball and Avalanche Tracker, Credit Card and Loan Payment Log, PDF Download",
+    "tags": [
+     "debt payoff planner",
+     "debt payoff tracker",
+     "debt snowball",
+     "debt avalanche",
+     "credit card payoff",
+     "loan payoff tracker",
+     "debt free planner",
+     "2027 debt tracker",
+     "budget planner 2027",
+     "pay off debt",
+     "debt worksheet",
+     "debt payment log",
+     "finance planner"
+    ]
+   },
+   "tag": "4598535050"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4600177510",
+   "body": {
+    "title": "Christmas Cookie Exchange Party Printables, Cookie Swap Invitation, Sign Up Sheet, Labels, Voting Ballots, Recipe Cards",
+    "tags": [
+     "cookie exchange",
+     "cookie swap party",
+     "cookie exchange kit",
+     "christmas cookies",
+     "cookie swap invite",
+     "cookie sign up sheet",
+     "cookie labels",
+     "cookie ballot",
+     "cookie recipe cards",
+     "holiday party kit",
+     "christmas party kit",
+     "baking party",
+     "cookie party invite"
+    ]
+   },
+   "tag": "4600177510"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4598501430",
+   "body": {
+    "title": "Friendsgiving Games Printable Bundle, 7 Party Games for Adults, Potluck Sign Up Sheet, Trivia, Bingo, Most Likely To",
+    "tags": [
+     "friendsgiving games",
+     "friendsgiving party",
+     "friendsgiving bingo",
+     "friendsgiving trivia",
+     "potluck sign up",
+     "games for adults",
+     "most likely to",
+     "would you rather",
+     "thanksgiving games",
+     "fall party games",
+     "dinner party games",
+     "friendsgiving kit",
+     "potluck party"
+    ]
+   },
+   "tag": "4598501430"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4598721247",
+   "body": {
+    "title": "Christmas Bible Verse Wall Art Set of 6, Pink Christian Holiday Decor, KJV Scripture Prints, Coquette Bow Printable",
+    "tags": [
+     "christmas bible art",
+     "christian wall art",
+     "christmas scripture",
+     "bible verse prints",
+     "pink christmas decor",
+     "kjv wall art",
+     "scripture wall art",
+     "christian christmas",
+     "coquette wall art",
+     "luke 2 14 print",
+     "girls room decor",
+     "pink bow print",
+     "set of 6 prints"
+    ]
+   },
+   "tag": "4598721247"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4599444986",
+   "body": {
+    "title": "No Buy Year Planner 2027 Printable, Low Buy Year Tracker, No Spend Challenge Calendar, 30 Day Want List, PDF",
+    "tags": [
+     "no buy year",
+     "no buy 2027",
+     "low buy year",
+     "no buy challenge",
+     "no spend challenge",
+     "no spend tracker",
+     "low buy planner",
+     "impulse buy tracker",
+     "savings tracker",
+     "spending tracker",
+     "30 day wishlist",
+     "money saving planner",
+     "frugal living"
+    ]
+   },
+   "tag": "4599444986"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4597743627",
+   "body": {
+    "title": "Thanksgiving Games Printable for Family, Kids and Adults, Trivia, Would You Rather, Scavenger Hunt, 7 Game Bundle",
+    "tags": [
+     "thanksgiving games",
+     "thanksgiving trivia",
+     "family game night",
+     "kids table games",
+     "thanksgiving party",
+     "games for adults",
+     "would you rather",
+     "this or that game",
+     "word scramble",
+     "gratitude game",
+     "thanksgiving kids",
+     "turkey day games",
+     "friendsgiving games"
+    ]
+   },
+   "tag": "4597743627"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4597755725",
+   "body": {
+    "title": "Secret Santa Questionnaire Printable, Office Gift Exchange Kit, Name Draw Slips, White Elephant Rules, Gift Tags",
+    "tags": [
+     "secret santa form",
+     "secret santa survey",
+     "secret santa list",
+     "office secret santa",
+     "gift exchange game",
+     "white elephant rules",
+     "office gift exchange",
+     "coworker gift swap",
+     "name draw slips",
+     "gift exchange kit",
+     "work christmas party",
+     "yankee swap",
+     "holiday office party"
+    ]
+   },
+   "tag": "4597755725"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4597977363",
+   "body": {
+    "title": "Thanksgiving Planner Printable for First Time Hosts, Turkey Cooking Timeline, Thaw Guide, Menu and Grocery List",
+    "tags": [
+     "thanksgiving planner",
+     "thanksgiving menu",
+     "cooking timeline",
+     "turkey timeline",
+     "thanksgiving host",
+     "turkey thaw guide",
+     "hosting checklist",
+     "holiday meal planner",
+     "thanksgiving prep",
+     "whos bringing what",
+     "menu planner",
+     "friendsgiving plan",
+     "thanksgiving 2026"
+    ]
+   },
+   "tag": "4597977363"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4597998190",
+   "body": {
+    "title": "Advent Calendar Activity Cards Printable, 24 Days of Family Christmas Activities, Screen Free Kids Countdown",
+    "tags": [
+     "advent activities",
+     "advent calendar",
+     "advent cards",
+     "christmas countdown",
+     "family advent",
+     "kids advent",
+     "printable advent",
+     "december activities",
+     "screen free kids",
+     "family activities",
+     "xmas bucket list",
+     "christmas activity",
+     "advent calendar kids"
+    ]
+   },
+   "tag": "4597998190"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4599447958",
+   "body": {
+    "title": "Christmas Scavenger Hunt for Kids, 24 Rhyming Clue Cards, Christmas Morning Gift Hunt, Treasure Riddles",
+    "tags": [
+     "scavenger hunt kids",
+     "xmas scavenger hunt",
+     "christmas treasure",
+     "treasure hunt clues",
+     "gift hunt clues",
+     "christmas morning",
+     "christmas riddles",
+     "scavenger hunt clues",
+     "indoor scavenger",
+     "kids christmas game",
+     "rhyming clue cards",
+     "present hunt",
+     "holiday game kids"
+    ]
+   },
+   "tag": "4599447958"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4600177516",
+   "body": {
+    "title": "Gingerbread House Contest Kit Printable, Decorating Contest Judge Score Cards, Voting Ballots, Award Certificates",
+    "tags": [
+     "gingerbread contest",
+     "gingerbread house",
+     "decorating contest",
+     "judge score card",
+     "voting ballot",
+     "gingerbread party",
+     "gingerbread awards",
+     "christmas contest",
+     "contest certificate",
+     "holiday party game",
+     "office party game",
+     "family contest",
+     "christmas party game"
+    ]
+   },
+   "tag": "4600177516"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4601798994",
+   "body": {
+    "title": "Letter from Santa Editable Printable, 6 Personalized Santa Letters, Nice List Certificate, North Pole Mail, Gift Tags",
+    "tags": [
+     "letter from santa",
+     "santa letter",
+     "editable santa",
+     "personalized santa",
+     "santa nice list",
+     "nice list printable",
+     "santa certificate",
+     "north pole letter",
+     "north pole mail",
+     "santa letter kids",
+     "dear santa wish list",
+     "santa gift tags",
+     "first christmas"
+    ]
+   },
+   "tag": "4601798994"
+  }
+ ]
+}
