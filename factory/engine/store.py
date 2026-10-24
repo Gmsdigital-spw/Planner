@@ -23,7 +23,21 @@ from .contracts import (SCHEMA_VERSION, AgentContract, Approval, AuditEvent, Dis
                         ProductManifest, Run, Task, TaskStatus, now_iso, scrub)
 
 HERE = Path(__file__).resolve().parent
-DB_DIR = Path(os.environ.get("GM_ENGINE_DB_DIR", HERE / "db"))
+
+
+def resolve_db_dir() -> Path:
+    """Where the durable records live. GM_ENGINE_DB_DIR wins; otherwise the committed journal in
+    factory/engine/state (what the GitHub worker and the crews share), else the local factory/engine/db."""
+    env = os.environ.get("GM_ENGINE_DB_DIR")
+    if env:
+        return Path(env)
+    state = HERE / "state"
+    if (state / "journal.jsonl").exists():
+        return state
+    return HERE / "db"
+
+
+DB_DIR = resolve_db_dir()
 
 MIGRATIONS: list[tuple[int, str]] = [
     (1, """
@@ -83,6 +97,39 @@ MIGRATIONS: list[tuple[int, str]] = [
     CREATE INDEX IF NOT EXISTS metrics_ref ON metrics(ref, kind, at);
     CREATE INDEX IF NOT EXISTS metrics_plan ON metrics(plan_id, kind);
     """),
+    (5, """
+    -- Phase 9: agent learning (factory/learning). Memories are scoped chunks with provenance; evaluations are
+    -- one row per scored or logged run (stable ids, never silently overwritten); ideas and experiments are
+    -- kept apart; retrievals record what each task was shown (context cost + later usefulness); workflow
+    -- versions keep every prompt/checklist version for rollback; eval_cases hold saved real tasks and holdouts.
+    CREATE TABLE IF NOT EXISTS memories(
+      id TEXT PRIMARY KEY, scope TEXT NOT NULL, agent TEXT NOT NULL, kind TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'active',
+      body TEXT NOT NULL, evidence TEXT NOT NULL, source_path TEXT, source_sha TEXT, chunk_start INTEGER, chunk_end INTEGER,
+      confidence TEXT, verified INTEGER NOT NULL DEFAULT 0, tags TEXT, created TEXT NOT NULL, expires TEXT NOT NULL,
+      supersedes TEXT, superseded_by TEXT, version INTEGER NOT NULL DEFAULT 1, doc TEXT NOT NULL);
+    CREATE INDEX IF NOT EXISTS memories_scope ON memories(scope, agent, status, expires);
+    CREATE INDEX IF NOT EXISTS memories_source ON memories(source_path, source_sha);
+    CREATE TABLE IF NOT EXISTS evaluations(
+      id TEXT PRIMARY KEY, scope TEXT NOT NULL, agent TEXT NOT NULL, kind TEXT NOT NULL, task_id TEXT, attempt INTEGER,
+      version TEXT, rubric_id TEXT, mode TEXT NOT NULL, final INTEGER NOT NULL DEFAULT 1, score REAL, passed INTEGER NOT NULL DEFAULT 0,
+      artifact_ref TEXT, artifact_hash TEXT, created TEXT NOT NULL, doc TEXT NOT NULL);
+    CREATE INDEX IF NOT EXISTS evaluations_scope ON evaluations(scope, agent, mode, rubric_id, created);
+    CREATE TABLE IF NOT EXISTS ideas(
+      id TEXT PRIMARY KEY, scope TEXT NOT NULL, agent TEXT NOT NULL, status TEXT NOT NULL, created TEXT NOT NULL, updated TEXT NOT NULL, doc TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS experiments(
+      id TEXT PRIMARY KEY, idea_id TEXT, scope TEXT NOT NULL, agent TEXT NOT NULL, status TEXT NOT NULL, samples INTEGER NOT NULL DEFAULT 0,
+      decision TEXT, created TEXT NOT NULL, updated TEXT NOT NULL, doc TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS retrievals(
+      id TEXT PRIMARY KEY, scope TEXT NOT NULL, agent TEXT NOT NULL, task_sha TEXT NOT NULL, run_ref TEXT, memory_ids TEXT NOT NULL,
+      chars INTEGER NOT NULL, created TEXT NOT NULL);
+    CREATE INDEX IF NOT EXISTS retrievals_run ON retrievals(run_ref);
+    CREATE TABLE IF NOT EXISTS workflow_versions(
+      id TEXT PRIMARY KEY, scope TEXT NOT NULL, agent TEXT NOT NULL, name TEXT NOT NULL, version INTEGER NOT NULL, status TEXT NOT NULL,
+      created TEXT NOT NULL, doc TEXT NOT NULL);
+    CREATE INDEX IF NOT EXISTS workflow_versions_name ON workflow_versions(scope, agent, name, version);
+    CREATE TABLE IF NOT EXISTS eval_cases(
+      id TEXT PRIMARY KEY, scope TEXT NOT NULL, agent TEXT NOT NULL, split TEXT NOT NULL, rubric_id TEXT, created TEXT NOT NULL, doc TEXT NOT NULL);
+    """),
 ]
 
 
@@ -102,9 +149,27 @@ class Store:
         self.con.row_factory = sqlite3.Row
         self.con.execute("PRAGMA journal_mode=WAL")
         self.migrate()
-        if fresh and self.journal.exists():
+        # The index is derived: rebuild it when it is new, or when the journal changed behind its back (a git pull brought
+        # another crew's lines, a crash cut a write). The marker file holds the journal size the index was built from.
+        if self.journal.exists() and (fresh or self._marker_read() != self.journal.stat().st_size):
             self.rebuild()
         return self
+
+    @property
+    def _marker(self) -> Path:
+        return self.dir / "state.sqlite-indexed"  # never -journal / -wal / -shm (SQLite reserves those); matches .gitignore state.sqlite-*
+
+    def _marker_read(self) -> int | None:
+        try:
+            return int(self._marker.read_text().strip())
+        except (OSError, ValueError):
+            return None
+
+    def _marker_write(self) -> None:
+        try:
+            self._marker.write_text(str(self.journal.stat().st_size if self.journal.exists() else 0))
+        except OSError:
+            pass
 
     def close(self) -> None:
         if self.con:
@@ -140,12 +205,21 @@ class Store:
         line = json.dumps({"v": SCHEMA_VERSION, "at": now_iso(), "kind": kind, "data": data}, sort_keys=True, default=str)
         with self.journal.open("a", encoding="utf-8") as f:
             f.write(line + "\n")
+        self._marker_write()
+
+    DERIVED_TABLES = ("tasks", "runs", "approvals", "audit", "model_usage", "products", "distribution_plans", "integrations", "control", "agents", "projects",
+                      "llm_cache", "publications", "metrics", "memories", "evaluations", "ideas", "experiments", "retrievals", "workflow_versions", "eval_cases")
 
     def rebuild(self) -> int:
-        """Replay the journal into SQLite (idempotent: last write per id wins)."""
+        """Derive SQLite from the journal: the derived tables are cleared first, then every line is replayed (last write
+        per id wins). Idempotent: rebuilding twice gives the same index (model_usage rows used to double on a second replay)."""
         assert self.con
         n = 0
+        with self._lock:
+            for tbl in self.DERIVED_TABLES:
+                self.con.execute(f"DELETE FROM {tbl}")
         if not self.journal.exists():
+            self._marker_write()
             return 0
         with self.journal.open(encoding="utf-8") as f:
             for raw in f:
@@ -158,6 +232,7 @@ class Store:
                     continue  # a torn line from a crash never poisons the index
                 self._apply(ev.get("kind"), ev.get("data") or {}, journal=False)
                 n += 1
+        self._marker_write()
         return n
 
     # ---------------------------------------------------------------- writes
@@ -245,6 +320,53 @@ class Store:
         elif kind == "control":
             c.execute("INSERT INTO control(key,value,updated_at) VALUES(?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at",
                       (data["key"], json.dumps(data["value"]), data.get("at") or now_iso()))
+        # ---- Phase 9 learning rows (factory/learning). Each is {"op": "put"|"patch", ...}; a patch changes status-like
+        # fields of an existing row only, so a replayed journal reaches the same end state.
+        elif kind == "memory":
+            d = data
+            if d.get("op") == "patch":
+                sets = {k: d[k] for k in ("status", "verified", "superseded_by", "confidence", "expires") if k in d}
+                if sets:
+                    c.execute("UPDATE memories SET " + ",".join(f"{k}=?" for k in sets) + " WHERE id=?", (*sets.values(), d["id"]))
+                    row = c.execute("SELECT doc FROM memories WHERE id=?", (d["id"],)).fetchone()
+                    if row:
+                        doc = json.loads(row["doc"]); doc.update(sets)
+                        c.execute("UPDATE memories SET doc=? WHERE id=?", (json.dumps(doc, sort_keys=True), d["id"]))
+            else:
+                c.execute("""INSERT OR IGNORE INTO memories(id,scope,agent,kind,status,body,evidence,source_path,source_sha,chunk_start,chunk_end,confidence,verified,tags,
+                             created,expires,supersedes,superseded_by,version,doc) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                          (d["id"], d["scope"], d["agent"], d["kind"], d.get("status", "active"), d["body"], d["evidence"], d.get("source_path"), d.get("source_sha"),
+                           d.get("chunk_start"), d.get("chunk_end"), d.get("confidence"), int(bool(d.get("verified"))), json.dumps(d.get("tags") or {}, sort_keys=True),
+                           d["created"], d["expires"], d.get("supersedes"), d.get("superseded_by"), int(d.get("version", 1)), json.dumps(d, sort_keys=True)))
+        elif kind == "evaluation":
+            d = data
+            c.execute("""INSERT OR IGNORE INTO evaluations(id,scope,agent,kind,task_id,attempt,version,rubric_id,mode,final,score,passed,artifact_ref,artifact_hash,created,doc)
+                         VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                      (d["id"], d["scope"], d["agent"], d.get("kind", "score"), d.get("task_id"), d.get("attempt"), d.get("version"), d.get("rubric_id"), d["mode"],
+                       int(bool(d.get("final", True))), d.get("score"), int(bool(d.get("passed"))), d.get("artifact_ref"), d.get("artifact_hash"), d["created"], json.dumps(d, sort_keys=True)))
+        elif kind == "idea":
+            d = data
+            c.execute("""INSERT INTO ideas(id,scope,agent,status,created,updated,doc) VALUES(?,?,?,?,?,?,?)
+                         ON CONFLICT(id) DO UPDATE SET status=excluded.status,updated=excluded.updated,doc=excluded.doc""",
+                      (d["id"], d["scope"], d["agent"], d["status"], d["created"], d.get("updated") or d["created"], json.dumps(d, sort_keys=True)))
+        elif kind == "experiment":
+            d = data
+            c.execute("""INSERT INTO experiments(id,idea_id,scope,agent,status,samples,decision,created,updated,doc) VALUES(?,?,?,?,?,?,?,?,?,?)
+                         ON CONFLICT(id) DO UPDATE SET status=excluded.status,samples=excluded.samples,decision=excluded.decision,updated=excluded.updated,doc=excluded.doc""",
+                      (d["id"], d.get("idea_id"), d["scope"], d["agent"], d["status"], int(d.get("samples", 0)), d.get("decision"), d["created"], d.get("updated") or d["created"], json.dumps(d, sort_keys=True)))
+        elif kind == "retrieval":
+            d = data
+            c.execute("INSERT OR IGNORE INTO retrievals(id,scope,agent,task_sha,run_ref,memory_ids,chars,created) VALUES(?,?,?,?,?,?,?,?)",
+                      (d["id"], d["scope"], d["agent"], d["task_sha"], d.get("run_ref"), json.dumps(d.get("memory_ids") or []), int(d.get("chars", 0)), d["created"]))
+        elif kind == "workflow_version":
+            d = data
+            c.execute("""INSERT INTO workflow_versions(id,scope,agent,name,version,status,created,doc) VALUES(?,?,?,?,?,?,?,?)
+                         ON CONFLICT(id) DO UPDATE SET status=excluded.status,doc=excluded.doc""",
+                      (d["id"], d["scope"], d["agent"], d["name"], int(d["version"]), d["status"], d["created"], json.dumps(d, sort_keys=True)))
+        elif kind == "eval_case":
+            d = data
+            c.execute("INSERT OR IGNORE INTO eval_cases(id,scope,agent,split,rubric_id,created,doc) VALUES(?,?,?,?,?,?,?)",
+                      (d["id"], d["scope"], d["agent"], d["split"], d.get("rubric_id"), d["created"], json.dumps(d, sort_keys=True)))
 
     def put_task(self, tk: Task) -> None: self._apply("task", tk.to_dict())
     def put_run(self, r: Run) -> None: self._apply("run", r.to_dict())
@@ -324,6 +446,18 @@ class Store:
     def projects(self, status: t.Optional[str] = None) -> list[dict]:
         rows = self._rows("SELECT doc FROM projects WHERE status=? ORDER BY updated_at DESC", (status,)) if status else self._rows("SELECT doc FROM projects ORDER BY updated_at DESC")
         return [json.loads(r["doc"]) for r in rows]
+
+    # learning (Phase 9): the learning package writes through these so every row is journaled like the rest
+    def put_learning(self, kind: str, data: dict) -> None:
+        if kind not in ("memory", "evaluation", "idea", "experiment", "retrieval", "workflow_version", "eval_case"):
+            raise ValueError(f"unknown learning kind {kind!r}")
+        self._apply(kind, data)
+
+    def rows(self, sql: str, args: tuple = ()) -> list[dict]:
+        """Read-only query helper for the learning package (dict rows)."""
+        if not sql.lstrip().lower().startswith("select"):
+            raise ValueError("rows() is read-only")
+        return [dict(r) for r in self._rows(sql, args)]
 
     # ---------------------------------------------------------------- reads
     def _rows(self, sql: str, args: tuple = ()) -> list[sqlite3.Row]:

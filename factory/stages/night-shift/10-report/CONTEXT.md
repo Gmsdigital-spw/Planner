@@ -32,7 +32,11 @@
    a repeat. (c) Playbooks: when a product or pin scores 92+ AND a later stats snapshot shows
    real engagement, write playbooks/<slug>.md ("# Playbook: <title>", "_Proven by: <number>_",
    "## Steps", "## Beat it"); update an existing one only when a newer version beats its number.
-4. The Foreman's standup (room "core"). Write fleet/commander/standups/<day key> {day,
+4. The Foreman's standup (room "core"). First run `python3 factory/learning/learn.py panel --scope
+   shop` and read the per-agent lines (scored items, mean, pass and 95+ rates, weakest criteria,
+   repeated failures, memory freshness, tested lessons, experiments, the token proxy): the grades
+   below cite those numbers where they exist and say "unknown" where the panel says unknown.
+   Write fleet/commander/standups/<day key> {day,
    createdAt, text (under 1500 chars), agents:{<id>:{grade (0-100), verdict ("beat"|"meh"|
    "under"), line, fix}}, source:"Night Shift"} (read first; set). The text opens with "Bar:
    $1,000 per listing. $1,000,000 business. Verified this month: $<real number>." then calls
@@ -57,7 +61,8 @@
    opened> --gateway-jobs 0 --db-writes <count> --outcome done --note "<one line>"
    --needs-you "<line or empty>"`.
 8. Commit and push everything in the Night Shift's write paths in one commit
-   ("Night Shift <day key>: skills + lessons + runlog"). A 403 goes in the report's NEEDS YOU
+   ("Night Shift <day key>: skills + lessons + runlog"); `factory/engine/state/journal.jsonl` (the
+   learning store, written by learn.py, nb.py and runlog.py this run) rides in the same commit. A 403 goes in the report's NEEDS YOU
    line as "GitHub access needs a look" and in the run log; it does not fail the run.
 9. Finish with a two-line summary of the run (the final message; no SendUserMessage unless
    something is red and needs Grayson).

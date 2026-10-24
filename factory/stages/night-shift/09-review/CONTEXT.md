@@ -73,14 +73,23 @@ E. Next Move (room "core"). Pick the ONE thing that most moves the shop toward i
    event (crew "Atlas", "Next move: <title>").
 
 F. Dream (sleep on it, then wake up smarter). Skip if no run log line exists from the last 7
-   days. Read only: the last 7 days of factory/runlog.jsonl (`python3 factory/shared/runlog.py
-   --summary 7` plus failed/paused lines), tonight's run doc, events/<day key> failures, and
-   factory/qa/MISSES.md rows from the last 7 days. Find at most 3 repeated patterns (the same
-   failure, block, rejection or slow stage at least twice). For each: write ONE line under
-   "What I've learned" in the responsible agent's skills/<agent> file (dated, what happened
-   with the count, what to do instead), and if it is the same failure again, follow the
-   root-cause rule in shared/rules.md. Never invent a pattern; no repeat = write nothing. List
-   what you wrote in the run doc under "Dream".
+   days. Start with `python3 factory/learning/learn.py diagnose --scope shop --agent <atlas, then
+   each agent that failed tonight>`: it prints the ranked lost points per criterion, the repeated
+   failures (counted across evaluations and mistake memories), the successful examples and the
+   ideas already open. Then read the last 7 days of factory/runlog.jsonl (`python3
+   factory/shared/runlog.py --summary 7` plus failed/paused lines), tonight's run doc, events/<day
+   key> failures, and factory/qa/MISSES.md rows from the last 7 days. Find at most 3 repeated
+   patterns (the same failure, block, rejection or slow stage at least twice). For each: write ONE
+   line under "What I've learned" in the responsible agent's skills/<agent> file (dated, what
+   happened with the count, what to do instead), and if it is the same failure again, follow the
+   root-cause rule in shared/rules.md. Then, for the ONE biggest pattern, propose at most 3
+   distinct experiment ideas (each: hypothesis, one concrete change, baseline, metric, success,
+   stop, max budget, the source ids the diagnose output printed; prefer the cheapest test; a
+   distribution, timing or channel test when the losses point outside the product) with `python3
+   factory/learning/learn.py propose --scope shop --agent <agent> --idea '<json>'` (3 new ideas per
+   business per day; a duplicate change is merged). An idea is a proposal: nothing changes until an
+   experiment is started and decided (learn.py experiment). Never invent a pattern; no repeat =
+   write nothing. List what you wrote and queued in the run doc under "Dream".
 
 G. Notebook keeper (Grayson, Oct 23, 2026: "notes with everything we do so they get smarter
    and smarter"). Never skipped. Use `python3 factory/notebook/nb.py` (see notebook/README.md).
@@ -100,6 +109,16 @@ G. Notebook keeper (Grayson, Oct 23, 2026: "notes with everything we do so they 
        lane's "Grayson's rules" if it is not there yet. Keep each lane file under 120 lines.
    (e) Update business.md's Scoreboard row for this week. Report what you wrote in the run
        notes under "## Notebook" (3 lines max), committed with the Night Shift's push.
+   (f) Memory keeper: `python3 factory/learning/learn.py ingest` (indexes tonight's notebook,
+       results, run notes, scores and run log into the learning store; idempotent; a changed file
+       supersedes its old chunks). Then `python3 factory/learning/learn.py experiment list --scope
+       shop`: for every running experiment whose metric has new numbers tonight, `experiment
+       record --arm candidate|baseline --value <n> --n <samples> --source <doc id>`; one that met its
+       success or stop condition gets `experiment decide --decision keep|revert|inconclusive --by
+       atlas --note "<the numbers>"` (keep needs 3+ candidate samples and no open conflict). A kept
+       experiment's lesson is verified with `learn.py verify <memory id> --experiment <exp id>
+       --share`; the old workflow version stays on file for rollback. One line in "## Notebook"
+       says what was recorded, decided or promoted (or "nothing due").
 
 ## Outputs
 
@@ -111,4 +130,5 @@ G. Notebook keeper (Grayson, Oct 23, 2026: "notes with everything we do so they 
 | Ads note | ads/main.review | only this field |
 | Next move | nextmove/main | set once per run |
 | Notebook | factory/notebook/*.md, factory/notebook/results.jsonl, run notes "## Notebook" | step G |
+| Learning store | `factory/engine/state/journal.jsonl` (ideas, experiments, verified lessons, ingested sources) | steps F and G(f), through learn.py |
 | Money lines | `../output/<day key>-run.md` "## Money" | the numbers for the report |

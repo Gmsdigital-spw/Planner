@@ -72,6 +72,38 @@ def add(a):
     with open(LOG, "a", encoding="utf-8") as fh:
         fh.write(json.dumps(line, ensure_ascii=False) + "\n")
     print(json.dumps(line, ensure_ascii=False))
+    record_learning(line)
+
+
+TASK_SCOPE = {"night-shift": "shop", "bolt": "shop", "herald": "shop", "check-up": "shop", "pricing": "shop", "video-pin": "shop", "scout-intel": "shop",
+              "studio": "studio", "trading-scan": "trading", "trading-close": "trading", "trading-lab": "trading", "mechanic": "crew", "atlas-prime": "crew"}
+TASK_AGENT = {"night-shift": "night-shift", "bolt": "bolt", "herald": "herald", "check-up": "warden", "pricing": "ledger", "video-pin": "pixel", "scout-intel": "scout",
+              "studio": "vega", "trading-scan": "bull", "trading-close": "vault", "trading-lab": "tape", "mechanic": "mechanic", "atlas-prime": "foreman"}
+
+
+def record_learning(line):
+    """Learning hook (Phase 9): the same run line becomes one evaluation row (kind run, no invented score) in the
+    durable learning store, keyed by task + start time so a re-run of this command never duplicates it. A failed
+    or paused run, or a NEEDS YOU line, also leaves one mistake memory for the agent. Never breaks the run log."""
+    if os.environ.get("GM_LEARNING_OFF") == "1":
+        return
+    try:
+        sys.path.insert(0, ROOT)
+        from factory.learning.brain import AgentBrain
+        task = str(line.get("task") or "unknown")
+        scope, agent = TASK_SCOPE.get(task, "crew"), TASK_AGENT.get(task, task)
+        rid = f"runlog:{task}:{line.get('started')}"
+        with AgentBrain() as b:
+            b.log_run(rid, scope, agent, task=task, outcome=str(line.get("outcome") or "unknown"), mode="production", version=f"runlog:{line.get('model') or 'unknown'}",
+                      minutes=line.get("minutes"), est_tokens=line.get("estTokens"), loaded_bytes=line.get("loadedBytes"), note=str(line.get("note") or ""),
+                      needs_you=str(line.get("needsYou") or ""), started=line.get("started"), finished=line.get("finished"), stages=line.get("stages"), skipped=line.get("skipped"),
+                      extra={"day": line.get("day"), "run": line.get("run"), "gatewayJobs": line.get("gatewayJobs"), "dbWrites": line.get("dbWrites")})
+            if line.get("outcome") in ("failed", "paused") or line.get("needsYou"):
+                b.remember(scope, agent, "mistake", f"{task} run {line.get('outcome')}" + (f": {line.get('note')}" if line.get("note") else "") +
+                           (f" | needs you: {line.get('needsYou')}" if line.get("needsYou") else ""), f"run log {rid}", tags={"task": task, "outcome": line.get("outcome"), "day": line.get("day")})
+        print(json.dumps({"learning": rid}))
+    except Exception as e:  # noqa: BLE001
+        print(json.dumps({"learning": "unavailable", "why": f"{type(e).__name__}: {str(e)[:120]}"}))
 
 
 def _read():

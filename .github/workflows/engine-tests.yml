@@ -6,11 +6,15 @@ on:
   push:
     paths:
       - "factory/engine/**"
+      - "factory/learning/**"
+      - "factory/notebook/nb.py"
+      - "factory/shared/runlog.py"
       - "factory/gm_factory_v7.py"
       - ".github/workflows/engine-tests.yml"
   pull_request:
     paths:
       - "factory/engine/**"
+      - "factory/learning/**"
   workflow_dispatch:
 
 permissions:
@@ -29,6 +33,11 @@ jobs:
         run: python -m unittest discover -s factory/engine/tests -t . -v
       - name: V7 rules self-test
         run: python factory/gm_factory_v7.py --selftest
+      - name: Learning: legacy vs candidate on the saved real inspections (same frozen rubric; nothing may be raised)
+        run: |
+          python -m factory.learning ingest --only runnotes,scores > /dev/null
+          python -m factory.learning compare --split train
+          python -m factory.learning compare --split holdout
       - name: Contracts export is up to date
         run: |
           python -m factory.engine export-ts

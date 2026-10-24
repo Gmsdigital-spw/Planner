@@ -28,7 +28,8 @@
   recommend [by] [days]  repeat / improve / pause / test / measure, each labelled demonstrated or hypothesis
   report [path]          write the credential-free dashboard report (default factory/engine/public/report.json)
   orders                 apply the order files in factory/engine/orders/ (approve / retry / kill ... from the phone)
-  worker                 one worker pass: recover → orders → tick → refresh → integrations → report (what GitHub Actions runs)
+  worker                 one worker pass: recover → orders → tick → refresh → integrations → learning ingest → report (what GitHub Actions runs)
+  learn <args>           the agent-learning CLI (same as python3 factory/learning/learn.py): recall, score, run, diagnose, propose, ingest, panel ...
   export-ts              regenerate ts/contracts.d.ts and contracts.schema.json
   selftest               run the unit tests
 
@@ -49,6 +50,19 @@ from .router import Router, data_version
 from .store import Store
 
 HERE = Path(__file__).resolve().parent
+
+
+def _learning_step(store: Store) -> dict:
+    """Phase 9, inside the hourly worker: index the approved sources that changed since the last pass (idempotent by
+    content hash; a changed file supersedes its old chunks) so the panel and every crew's recall see today's notebook,
+    lessons, run notes and run log. No model call, no network."""
+    try:
+        from factory.learning.brain import AgentBrain
+        from factory.learning.ingest import ingest_all, summarize
+        out = summarize(ingest_all(AgentBrain(store), HERE.parents[1]))
+        return {"ingested": {k: v.get("new", 0) for k, v in out.items()}, "superseded": sum(v.get("superseded", 0) for v in out.values())}
+    except Exception as e:  # never fail the worker over the learning step
+        return {"error": f"{type(e).__name__}: {str(e)[:160]}"}
 
 
 def _engine(store: Store) -> TaskEngine:
@@ -189,9 +203,13 @@ def main(argv: list[str] | None = None) -> int:
             refreshed = [pub.refresh(r) for r in pub.publications() if r.status in ("queued", "scheduled")]
             pub.health()
             cleanup_done()
+            learned = _learning_step(store)
             p = write_report(build_report(store, eng, orders=recent_outcomes()), PUBLIC)
             print(json.dumps({"recovered": fixed, "orders": [(r["action"], r["id"], r["ok"]) for r in orders], "ran": [(r.task_id, r.status.value) for r in runs],
-                              "refreshed": [(r.id, r.status) for r in refreshed], "report": str(p), "kill": eng.killed()}, indent=1))
+                              "refreshed": [(r.id, r.status) for r in refreshed], "learning": learned, "report": str(p), "kill": eng.killed()}, indent=1))
+        elif cmd == "learn":
+            from factory.learning.learn import main as learn_main
+            return learn_main(args[1:])
         elif cmd == "data-version":
             store.set_control("data_version", args[1])
             print("data version", data_version(store), "— older cached answers are now ignored; run `cache purge` to drop them")

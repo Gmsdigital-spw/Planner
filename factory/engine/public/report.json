@@ -1,14 +1,14 @@
 {
  "schema": 1,
- "generated_at": "2026-10-23T23:37:17Z",
+ "generated_at": "2026-10-24T04:44:44Z",
  "worker": "python -m factory.engine worker",
  "health": {
-  "engine_schema": 4,
+  "engine_schema": 5,
   "kill": false,
   "paused_agents": [],
   "last_tick": "2026-10-23T23:37:17Z",
   "last_runner": "cli",
-  "last_tick_age_s": 0,
+  "last_tick_age_s": 18447,
   "counts": {
    "queued": 0,
    "running": 0,
@@ -26,11 +26,11 @@
    "id": "atlas",
    "name": "Atlas (inspection)",
    "role": "quality",
-   "version": 49,
+   "version": 50,
    "state": "idle",
    "counts": {},
    "last_activity": null,
-   "skill_sha": "9edc5a78"
+   "skill_sha": "b8cacc37"
   },
   {
    "id": "bolt",
@@ -141,7 +141,7 @@
   "recommendations": []
  },
  "usage": {
-  "today": "2026-10-23",
+  "today": "2026-10-24",
   "calls": 0,
   "cached_calls": 0,
   "cost_usd_known": 0.0,
@@ -200,5 +200,692 @@
    "subject": "herald",
    "detail": ""
   }
- ]
+ ],
+ "learning": {
+  "generated_at": "2026-10-24T04:44:44Z",
+  "window_days": 14,
+  "note": "counts from factory/engine/state/journal.jsonl (learning rows); production and offline rows are separate; rubric ids never mix; unknown stays unknown",
+  "production": [
+   {
+    "scope": "crew",
+    "agent": "mechanic",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 0,
+    "scored_samples": 0,
+    "mean_score": null,
+    "pass_rate": null,
+    "aim_rate_95": null,
+    "by_rubric": [],
+    "runs_logged": 12,
+    "run_pass_rate": 0.0,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [
+     {
+      "pattern": "reconnect tiktok in zernio",
+      "count": 6,
+      "last": "2026-10-24T04:40:28Z"
+     },
+     {
+      "pattern": "reauthorize facebook gm page in make",
+      "count": 2,
+      "last": "2026-10-24T04:40:28Z"
+     },
+     {
+      "pattern": "make connections facebook gm page reauthorize",
+      "count": 2,
+      "last": "2026-10-24T04:40:28Z"
+     }
+    ],
+    "memory": {
+     "active": 57,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 13,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": null,
+     "runs_with_proxy": 0,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "shop",
+    "agent": "atlas",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 6,
+    "scored_samples": 6,
+    "mean_score": 84.17,
+    "pass_rate": 16.7,
+    "aim_rate_95": 0.0,
+    "by_rubric": [
+     {
+      "rubric_id": "5d301320d92f0548",
+      "rubric": "Inspection rubric 2 (Atlas, Night Shift stage 07)",
+      "version": "night-shift-07:legacy",
+      "scored": 6,
+      "mean": 84.17,
+      "pass_rate": 16.7,
+      "aim_rate": 0.0,
+      "target": 92.0,
+      "aim": 95,
+      "last": "2026-10-24T04:40:28Z"
+     }
+    ],
+    "runs_logged": 0,
+    "run_pass_rate": null,
+    "errors_logged": 0,
+    "weakest_criteria": [
+     {
+      "criterion": "images",
+      "avg_lost_points": 4.0,
+      "n": 6,
+      "example": "legacy products.score Editable Christmas Open House Invitation, Type-In PDF with RSVP Card: FAIL 75 (file 22, copy 17, images 12, market 11, price 7, polish 6),"
+     },
+     {
+      "criterion": "market",
+      "avg_lost_points": 3.67,
+      "n": 6,
+      "example": "legacy products.score Editable Christmas Open House Invitation, Type-In PDF with RSVP Card: FAIL 75 (file 22, copy 17, images 12, market 11, price 7, polish 6),"
+     },
+     {
+      "criterion": "file",
+      "avg_lost_points": 2.33,
+      "n": 6,
+      "example": "legacy products.score Editable Christmas Open House Invitation, Type-In PDF with RSVP Card: FAIL 75 (file 22, copy 17, images 12, market 11, price 7, polish 6),"
+     }
+    ],
+    "repeated_failures": [
+     {
+      "pattern": "lost most on images",
+      "count": 2,
+      "last": "2026-10-24T04:40:28Z"
+     },
+     {
+      "pattern": "lost most on market",
+      "count": 2,
+      "last": "2026-10-24T04:40:28Z"
+     }
+    ],
+    "memory": {
+     "active": 280,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 62,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": null,
+     "runs_with_proxy": 0,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "shop",
+    "agent": "bolt",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 0,
+    "scored_samples": 0,
+    "mean_score": null,
+    "pass_rate": null,
+    "aim_rate_95": null,
+    "by_rubric": [],
+    "runs_logged": 6,
+    "run_pass_rate": 100.0,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [],
+    "memory": {
+     "active": 275,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 62,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": 14047,
+     "runs_with_proxy": 6,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "shop",
+    "agent": "herald",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 0,
+    "scored_samples": 0,
+    "mean_score": null,
+    "pass_rate": null,
+    "aim_rate_95": null,
+    "by_rubric": [],
+    "runs_logged": 4,
+    "run_pass_rate": 50.0,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [
+     {
+      "pattern": "reconnect tiktok in zernio",
+      "count": 2,
+      "last": "2026-10-24T04:40:28Z"
+     }
+    ],
+    "memory": {
+     "active": 279,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 62,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": 16624,
+     "runs_with_proxy": 4,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "shop",
+    "agent": "judge_ideas",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 3,
+    "scored_samples": 3,
+    "mean_score": 76.67,
+    "pass_rate": 100.0,
+    "aim_rate_95": 33.3,
+    "by_rubric": [
+     {
+      "rubric_id": "af1da682cd7e869f",
+      "rubric": "Idea brief score (Scout + Idea Judge, /30)",
+      "version": "legacy-scores.jsonl",
+      "scored": 3,
+      "mean": 76.67,
+      "pass_rate": 100.0,
+      "aim_rate": 33.3,
+      "target": 70,
+      "aim": 80,
+      "last": "2026-10-24T04:40:28Z"
+     }
+    ],
+    "runs_logged": 0,
+    "run_pass_rate": null,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [],
+    "memory": {
+     "active": 276,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 62,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": null,
+     "runs_with_proxy": 0,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "shop",
+    "agent": "ledger",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 0,
+    "scored_samples": 0,
+    "mean_score": null,
+    "pass_rate": null,
+    "aim_rate_95": null,
+    "by_rubric": [],
+    "runs_logged": 2,
+    "run_pass_rate": 100.0,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [],
+    "memory": {
+     "active": 275,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 62,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": null,
+     "runs_with_proxy": 0,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "shop",
+    "agent": "night-shift",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 0,
+    "scored_samples": 0,
+    "mean_score": null,
+    "pass_rate": null,
+    "aim_rate_95": null,
+    "by_rubric": [],
+    "runs_logged": 2,
+    "run_pass_rate": 50.0,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [],
+    "memory": {
+     "active": 268,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 61,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": 12561,
+     "runs_with_proxy": 2,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "shop",
+    "agent": "pixel",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 0,
+    "scored_samples": 0,
+    "mean_score": null,
+    "pass_rate": null,
+    "aim_rate_95": null,
+    "by_rubric": [],
+    "runs_logged": 2,
+    "run_pass_rate": 100.0,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [],
+    "memory": {
+     "active": 280,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 62,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": null,
+     "runs_with_proxy": 0,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "shop",
+    "agent": "scout",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 0,
+    "scored_samples": 0,
+    "mean_score": null,
+    "pass_rate": null,
+    "aim_rate_95": null,
+    "by_rubric": [],
+    "runs_logged": 3,
+    "run_pass_rate": 66.7,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [],
+    "memory": {
+     "active": 277,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 62,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": null,
+     "runs_with_proxy": 0,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "shop",
+    "agent": "warden",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 0,
+    "scored_samples": 0,
+    "mean_score": null,
+    "pass_rate": null,
+    "aim_rate_95": null,
+    "by_rubric": [],
+    "runs_logged": 2,
+    "run_pass_rate": 0.0,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [],
+    "memory": {
+     "active": 283,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 63,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": 3220,
+     "runs_with_proxy": 2,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "studio",
+    "agent": "vega",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 0,
+    "scored_samples": 0,
+    "mean_score": null,
+    "pass_rate": null,
+    "aim_rate_95": null,
+    "by_rubric": [],
+    "runs_logged": 1,
+    "run_pass_rate": 100.0,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [],
+    "memory": {
+     "active": 59,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 19,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": 17395,
+     "runs_with_proxy": 1,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "trading",
+    "agent": "bull",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 0,
+    "scored_samples": 0,
+    "mean_score": null,
+    "pass_rate": null,
+    "aim_rate_95": null,
+    "by_rubric": [],
+    "runs_logged": 14,
+    "run_pass_rate": 100.0,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [],
+    "memory": {
+     "active": 113,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 8,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": null,
+     "runs_with_proxy": 0,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "trading",
+    "agent": "tape",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 0,
+    "scored_samples": 0,
+    "mean_score": null,
+    "pass_rate": null,
+    "aim_rate_95": null,
+    "by_rubric": [],
+    "runs_logged": 2,
+    "run_pass_rate": 100.0,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [],
+    "memory": {
+     "active": 112,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 8,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": null,
+     "runs_with_proxy": 0,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   },
+   {
+    "scope": "trading",
+    "agent": "vault",
+    "mode": "production",
+    "window_days": 14,
+    "final_items": 0,
+    "scored_samples": 0,
+    "mean_score": null,
+    "pass_rate": null,
+    "aim_rate_95": null,
+    "by_rubric": [],
+    "runs_logged": 2,
+    "run_pass_rate": 50.0,
+    "errors_logged": 0,
+    "weakest_criteria": [],
+    "repeated_failures": [],
+    "memory": {
+     "active": 114,
+     "verified": 0,
+     "expired": 0,
+     "superseded": 0,
+     "sources": 8,
+     "newest": "2026-10-24T04:40:29Z",
+     "oldest_active": "2026-10-24T04:40:28Z",
+     "retrieval_cost_chars_avg": null
+    },
+    "tested_lessons": 0,
+    "experiments": {
+     "ideas_proposed": 0,
+     "running": 0,
+     "decided": 0,
+     "kept": 0
+    },
+    "token_cost": {
+     "est_tokens_proxy_avg": null,
+     "runs_with_proxy": 0,
+     "provider_tokens_known": null,
+     "provider_cost_usd_known": null,
+     "unknown_cost_calls": null,
+     "note": "proxy = loaded instruction bytes / 4 from the run log; the scheduled sessions do not expose real tokens"
+    }
+   }
+  ],
+  "offline": [],
+  "ideas_open": [],
+  "experiments": [],
+  "eval_cases": {
+   "train": 4,
+   "holdout": 2
+  },
+  "contradictions": {},
+  "worker": "no persistent worker: rows are written by the crews' own runs (nb.py show / runlog.py add / learn.py) and by the hourly GitHub engine worker's ingest step",
+  "unknowns": [
+   "real provider tokens and cost for scheduled sessions (only the loaded-bytes proxy exists)",
+   "buyer outcomes for most scored items (results.jsonl outcomes fill at 7 days; the score is not a result)",
+   "agent levels, revenue per agent, improvement percentages: not computed because no measured basis exists"
+  ]
+ }
 }

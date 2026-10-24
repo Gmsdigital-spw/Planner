@@ -15,8 +15,14 @@
 1. Set crew/gags working. Write TWO scripts to episode-rules.md (two drafts rule), each using
    the latest lesson and fixing the named weakness; if the brief names a drop-zone clip, use
    it as the hook or twist scene. Any active order in intel/trends.orders shapes the choice.
-2. Set crew/judge working. Score both (hook, story, twist, logic, 1 to 10). Choose per the
-   two-drafts rule; rewrite once if needed; if still short, build nothing: log why and stop
+2. Set crew/judge working. Score both (hook, story, twist, logic, 1 to 10), each with one line
+   of evidence, and record each draft with the tool: `python3 factory/learning/learn.py score
+   --scope studio --agent judge --rubric studio-judge-x10 --ratings '{"hook":{"points":9,
+   "evidence":"..."},"story":{...},"twist":{...},"logic":{...}}' --beat <the last posted episode's
+   Judge score from "## Numbers"> --job <day key>:<episode id>:<A|B> --item "<logline>"`. The tool
+   keeps the Studio's own bar (every score 7+, the average above the score to beat) as blockers;
+   it never mixes these numbers with the Etsy rubric. Choose per the two-drafts rule; rewrite once
+   if needed (score again with the same --job); if still short, build nothing: log why and stop
    this worker (the coordinator messages Grayson in one line).
 3. Save the winner to episodes/<id> {id, num, title, ytTitle, logline, hook, beats, shots, vo
    (the lines), pinned, tags, description, sound:{voice, speed, music, music_volume, anim:

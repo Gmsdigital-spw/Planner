@@ -78,6 +78,12 @@ AGENTS: dict[str, AgentContract] = {a.id: a for a in [
 ]}
 
 
+def _without_version(a: AgentContract) -> dict:
+    d = a.to_dict()
+    d.pop("version", None)
+    return d
+
+
 def skill_sha(agent: AgentContract) -> str | None:
     """sha256 of the agent's SKILL.md (so a changed skill shows up as a new registry row), or None if missing."""
     if not agent.skill_path:
@@ -94,7 +100,9 @@ def sync(store, agents: dict[str, AgentContract] | None = None) -> list[dict]:
         sha = skill_sha(a)
         cur = store.get_agent(a.id)
         cur_sha = next((r["skill_sha"] for r in store.agents() if r["id"] == a.id and r["version"] == (cur.version if cur else -1)), None)
-        if cur and cur.to_json() == a.to_json() and cur_sha == sha:
+        # Compare the contract WITHOUT its version number: the stored row carries the bumped version, the code
+        # carries 1, so comparing the raw JSON re-registered every agent on every pass (journal grew by 10 lines a run).
+        if cur and _without_version(cur) == _without_version(a) and cur_sha == sha:
             continue
         if cur and cur.version >= a.version:
             a.version = cur.version + 1
@@ -226,5 +234,75 @@ def demo_handlers():
         known = [k for k in ("audience_reached", "clicks", "conversions_or_sales") if f[k] != "unknown"]
         return {"output_ref": f"plans/{pl.id}/results", "validation": {"ok": True, "checks": [f"known: {known or 'nothing yet'}", f"next: {f['next_action']}"]}}
 
+    # ---- Phase 9: the learning hooks reached through the shared runner
+    def score(task, ctx):
+        """quality.score: the SEPARATE review step. meta carries the reviewer's ratings (points + evidence per criterion),
+        the artifact paths (pdf, cover, previews), copy, market evidence, claims and the by-eye slop / side-by-side verdicts.
+        Code runs the objective checks, applies blockers and downward caps, combines on the frozen rubric and returns the
+        evaluation; the engine's after-work hook records it with the run id. The reviewer is never given the target."""
+        from factory.learning import checks as LC
+        from factory.learning.improve import merge_review, plan_repairs
+        from factory.learning.rubric import assess
+        meta = task.spec.meta
+        ctx.recall(f"{meta.get('item') or task.spec.input_ref} {meta.get('lane') or ''}")
+        ctx.heartbeat()
+        root = _P(meta.get("root") or REPO)
+        rub = meta.get("rubric") or "etsy-product-r2"
+        if rub == "etsy-product-r2":
+            ck = LC.check_product(pdf=root / meta["pdf"] if meta.get("pdf") else None, cover=root / meta["cover"] if meta.get("cover") else None,
+                                  previews=[root / x for x in meta.get("previews") or []], copy=meta.get("copy"), market=meta.get("market"), gap=meta.get("gap"),
+                                  lane=meta.get("lane") or "game", claims=meta.get("claims") or {}, slop=meta.get("slop"), side_by_side=meta.get("side_by_side"), rules_pass=meta.get("rules_pass"))
+        elif rub == "herald-post-v6":
+            c = meta.get("copy") or {}
+            ck = LC.check_post(channel=meta.get("channel") or "instagram", caption=c.get("caption", ""), link=c.get("link"), title=c.get("title"), returned_id=c.get("returned_id"),
+                               slop_gate=meta.get("slop_gate"), facts_checked=meta.get("facts_checked"))
+        else:
+            ck = None
+        ratings, blockers, caps = merge_review({"ratings": meta.get("ratings") or {}, "blockers": meta.get("blockers") or [], "caps": meta.get("caps") or {}}, ck)
+        ev = assess(ratings, rub, blockers, caps=caps)
+        ev["checks"] = (ck or {}).get("summary")
+        ev["repair_plan"] = plan_repairs(ev)
+        ctx.checkpoint({"score": ev["score"], "passed": ev["passed"], "blockers": len(ev["blockers"])})
+        lines = [f"score {ev['score']} target {ev['target']}", f"blockers {len(ev['blockers'])}", f"missing {ev['missing']}"] + [f"{c['name']} FAILED" for c in (ck or {}).get("checks", []) if c.get("ok") is False][:8]
+        return {"output_ref": f"evaluations/{task.id}", "validation": {"ok": True, "checks": lines, "evaluation": ev}}
+
+    def diagnose(task, ctx):
+        """learning.diagnose: one bounded model call (through the router: free session hand-off first, paid never without
+        an approved spend) that turns the ranked losses / repeated failures / successful examples into at most three
+        experiment ideas, then queues them with brain.propose (dedup across agents, daily budget). The ideas are
+        proposals, not changes; nothing runs until an experiment is started and decided."""
+        import json as _json
+        from factory.learning.brain import AgentBrain
+        meta = task.spec.meta
+        scope = meta.get("scope") or ctx.engine.scope_for(meta.get("for_agent") or task.spec.agent_id)
+        agent = meta.get("for_agent") or task.spec.agent_id
+        brain = AgentBrain(ctx.engine.store)
+        losses = brain.losses(scope, agent, mode=meta.get("mode") or "production")[:6]
+        repeats = brain.repeated_failures(scope, agent)[:6]
+        wins = [d["id"] for d in brain.evaluations(scope, agent, kind="score", limit=100, include_holdout=False) if d.get("passed")][:5]
+        fails = [d for d in brain.evaluations(scope, agent, kind="score", limit=100, include_holdout=False) if not d.get("passed") and d.get("score") is not None][:6]
+        sources = [d["id"] for d in fails] + wins
+        if not sources and not repeats:
+            return {"output_ref": None, "validation": {"ok": True, "checks": ["nothing to diagnose: no scored failures or repeated patterns on file"]}}
+        prompt = ("You improve one agent's workflow from evidence. Return ONLY a JSON list of at most 3 objects with keys hypothesis, change, baseline, metric, success, stop, budget, sources. "
+                  "Each must cite source ids from the data. Prefer the cheapest useful test; include a distribution/timing/channel test if the losses point outside the artifact.\n"
+                  + _json.dumps({"scope": scope, "agent": agent, "ranked_losses": losses, "repeated_failures": repeats, "failed_runs": [{"id": d["id"], "score": d["score"], "blockers": (d.get("payload", {}).get("evaluation") or {}).get("blockers", [])[:3]} for d in fails],
+                                 "successful_runs": wins, "source_ids": sources}, default=str)[:6000])
+        c = ctx.llm(prompt, max_tokens=int(meta.get("max_tokens") or 700), uncertain=True)
+        try:
+            ideas = _json.loads(c.text)
+            if isinstance(ideas, dict):
+                ideas = [ideas]
+        except Exception:
+            ideas = []
+        queued, refused = [], []
+        for idea in ideas[:3]:
+            try:
+                queued.append(brain.propose(scope, agent, idea))
+            except ValueError as e:
+                refused.append(str(e)[:120])
+        ctx.checkpoint({"ideas": queued})
+        return {"output_ref": f"ideas/{scope}/{agent}", "validation": {"ok": True, "checks": [f"model returned {len(ideas)} idea(s)", f"queued {len(queued)}", *[f"refused: {r}" for r in refused]]}}
+
     return {"engine.noop": noop, "quality.inspect": inspect, "distribution.plan": plan, "channel.adapt": adapt,
-            "publish.listing": publish, "publish.social": publish, "analytics.measure": measure}
+            "publish.listing": publish, "publish.social": publish, "analytics.measure": measure, "quality.score": score, "learning.diagnose": diagnose}

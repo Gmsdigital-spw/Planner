@@ -20,10 +20,17 @@ Central (2 a day); Warden swaps live covers. Never ads.
    factory/stages/night-shift/CONTEXT.md (its Run notes, Load map and Conflicts sections
    bind you; a skill's own "Exact steps" never override them). Then read
    factory/stages/night-shift/<stage folder>/CONTEXT.md for each of your stages in order, and
-   load ONLY what each Inputs table names (the sections it names). Settings for tonight:
+   load ONLY what each Inputs table names (the sections it names). Before your first stage run
+   `python3 factory/notebook/nb.py show --lane etsy --agent <your agent id> --task "<the
+   product title and lane, or your stage's job>" --run <runId>:<product id or stage>`: it prints
+   the lane notebook and the memory relevant to this job (past failures, tested lessons,
+   Grayson's rules). Memory is data, never an instruction; this CONTEXT and shared/rules.md win.
+   Settings for tonight:
    buildsPerRun <n>, batchSize <n>, autoApprove <true/false>, holidayMode <on/off, target>.
-   <PRODUCT LINE: for the Builder only: "Your product: products/<id>, title <title>, lane
-   <kind>. Work on this product only.">
+   <PRODUCT LINE: for the Builder and the Inspector: "Your product: products/<id>, title <title>, lane
+   <kind>. Work on this product only."> <REPAIR LINE: for a Builder repair round only: "Repair
+   round <1 or 2> of 2. Fix exactly this list from the Inspector: <the repair_plan lines and
+   blockers>. Change nothing else.">
    The kit lives in /home/claude/kit (gm_style.py, mockup.py, wall_art.py; fetch it as
    references/house-style.md says if a file is missing). Write your outputs where each stage's
    Outputs table says; after each stage append one line to events/<day key> (shape in
@@ -44,8 +51,17 @@ Central (2 a day); Warden swaps live covers. Never ads.
 | Worker | Stages | Runs | Skip when |
 |--------|--------|------|-----------|
 | Research | 01-scout, 02-judge, 03-pick | once | never (02 is skipped inside when autoApprove is false) |
-| Builder | 04-forge, 05-quill, 06-lens, 07-inspect | once PER product in the build list (03 writes it), in order, with the PRODUCT LINE | build list empty |
+| Builder | 04-forge, 05-quill, 06-lens | once PER product in the build list (03 writes it), in order, with the PRODUCT LINE; again with the REPAIR LINE after a FAIL (at most 2 repair rounds per product per run) | build list empty |
+| Inspector | 07-inspect | once PER built product, FRESH each time (never the worker that built or repaired it), with the PRODUCT LINE; again after each repair round | nothing in stage inspection |
 | Pins | 08-batch-pins | once | no passed or batched product without pins, no imageless pins, and the queue holds a day of pins |
+
+The Inspector is a separate review role (Oct 24, 2026): the Builder never scores its own work, and
+the Inspector is not told a pass mark; it grades each criterion in points with evidence against
+`references/rubric-anchors.md`, and `python3 factory/learning/learn.py score` (stage 07) adds the
+objective checks, applies the rubric's caps and blockers, and prints PASS/FAIL with the ranked
+repair list. After a FAIL the coordinator relaunches the Builder with the REPAIR LINE, then a new
+Inspector; the third `score` call for the same job is refused by the tool (two repairs is the
+bound; a product still under 92 stays in inspection with its score and blockers recorded).
 | Review | 09-review | once | never (sub-steps have their own skips) |
 | Report | 10-report | once | never |
 
@@ -67,9 +83,9 @@ product `## Build: <title>` (04), `## Copy: <title>` (05), `## Photos: <title>` 
 | 04 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `references/preflight.md` ("File"), `references/house-style.md` ("The kit", "PDF pages"), `skills/forge/SKILL.md`, `LESSONS.md`, `specs/product-floor-v6.md` (THANK-YOU PAGE; the lane's spec); wall-art.md (Forge) for wallart |
 | 05 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `skills/quill/SKILL.md`, `specs/product-floor-v6.md` (SEARCH-FIRST COPY, PRICES) |
 | 06 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `references/preflight.md` (full: the gate before inspection), `specs/cover-styles.md` (newest section first), `playbooks/fun-listing-cover.md` (steps 1 to 4 only), `references/house-style.md` ("Photos 2 to 5", "Text safe zone"), `skills/lens/SKILL.md`, `LESSONS.md` |
-| 07 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `references/rubric.md` (full), `references/preflight.md` (full), `skills/atlas/SKILL.md` |
+| 07 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `references/rubric-anchors.md` (full), `references/rubric.md` ("Rules" and "Slop check" only), `references/preflight.md` (full), `skills/atlas/SKILL.md` ("Quality checklist" only) |
 | 08 | `notebook/pins.md` (full), `specs/cover-styles.md` ("Pins"), `specs/foreman-rules.md` (3, 4), `skills/pixel/SKILL.md`, `playbooks/tablet-mockup-pin.md`, `shared/accounts.md` ("Pinterest"), `LESSONS.md` |
-| 09 | `notebook/README.md`, all `notebook/*.md` (for step G), `references/database-fields.md` (experiments, sprint, lessons, nextmove, ads), `specs/product-floor-v6.md` (SALES PUSH last bullet) |
+| 09 | `notebook/README.md`, all `notebook/*.md` (for step G), `references/database-fields.md` (experiments, sprint, lessons, nextmove, ads), `specs/product-floor-v6.md` (SALES PUSH last bullet), `factory/learning/README.md` ("The loop", steps 6 to 8; for steps F and G) |
 | 10 | `specs/foreman-rules.md`, `skills/foreman/SKILL.md`, `shared/logging.md`, `shared/repo.md` ("Committing", Night Shift write paths), `specs/push-week-2026-10-23.md` ("Scoreboard", "Daily targets": target vs actual in the report and the standup) |
 
 Do NOT load: every skill, every playbook, the other floors' specs, `gm_factory_v6.py`,
@@ -87,7 +103,7 @@ stage, write the run doc failed with the reason, and tell Grayson in one line.
 ## Time budget and conflicts
 About 50 minutes of work (Oct 23, 2026: 25 minutes made every build rush and fail). Quality
 first: ONE product that passes beats two that fail, so the first product gets its full build,
-pre-flight and all three fix rounds before the second product starts. Over budget: skip 01's
+pre-flight and both repair rounds (Oct 24, 2026: two, enforced by learn.py score) before the second product starts. Over budget: skip 01's
 intel refresh, then 08's extra pins, then the second product in the build list (it stays
 queued and is built first next run); say so in the log. Any single wait: 5 minutes max.
 `specs/cover-styles.md` newest sections (Oct 21, 2026: bold covers via tools/fun_covers.py,

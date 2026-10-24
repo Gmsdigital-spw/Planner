@@ -45,6 +45,22 @@ What the add-on does NOT do, as built. Each line is a real gap, not a disclaimer
   itself is only as fresh as the last worker pass.
 - The Foreman's chat answers from the same report; if it has not loaded, the engine is "unknown" to him.
 
+## Learning (Phase 9)
+- **No persistent worker.** Memory and evaluation rows are written by the crews' own scheduled runs (through nb.py,
+  runlog.py and learn.py) and by the hourly GitHub engine worker's ingest step. Nothing runs continuously.
+- **Lexical retrieval only** (term overlap with boosts for tested, Grayson's rules, recent mistakes); no embeddings.
+  Budget 6 chunks / 6,000 characters per task; every recall is logged with its size.
+- **Tokens are a proxy.** The scheduled sessions expose no token counts; the panel shows loaded-bytes / 4 from the run
+  log and says so. Real tokens appear only for engine router calls that report them.
+- **The by-eye checks stay by eye.** The slop lines, the side-by-side test, page-fill judgement and market truth need a
+  reviewer; code checks file validity, limits, repeats, the centred-square proxy, colour, empty bands, evidence presence.
+- **Quality gains are not claimed.** `learn.py compare` shows the frozen rubric reproduces the saved real inspections
+  exactly (nothing raised); whether the separate Inspector and the repair list lift pass rates is measured by the
+  production rows that accumulate from the next runs, not by this change.
+- **Scheduled-task prompts not yet moved** (Mechanic, Pixel, Ledger, Warden, Medic, Trading, Atlas Prime) are connected
+  only through the shared helpers they already call (`runlog.py add` for all of them; `nb.py show` where their prompt
+  runs it); their prompts can add `--agent/--task` when Grayson edits them.
+
 ## Things deliberately NOT done (per the brief)
 - Gumroad and the Funnel workflow stay off; parked businesses stay parked; Ridgeline is not in V7.
 - No live trading; the trading floor is untouched by the engine (its `trade_live` capability is forbidden in every contract).

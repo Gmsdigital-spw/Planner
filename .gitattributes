@@ -1,0 +1,7 @@
+# Append-only logs: when two crews append at the same time, keep both sides' lines instead of a conflict.
+# Every line is one self-contained JSON object, so order between the two sides does not matter.
+factory/runlog.jsonl merge=union
+factory/scores.jsonl merge=union
+factory/notebook/results.jsonl merge=union
+factory/engine/state/journal.jsonl merge=union
+factory/engine/db/journal.jsonl merge=union

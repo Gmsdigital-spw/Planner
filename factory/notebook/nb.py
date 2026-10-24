@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """The Notebook helper (Grayson, Oct 23, 2026). See factory/notebook/README.md.
 
-  nb.py show --lane etsy               print the lane file (+ business rules) to read before working
+  nb.py show --lane etsy [--agent forge --task "..."]   print the lane file (+ business rules + relevant memory) to read before working
   nb.py add --lane etsy --kind listing --id 123 --what "..." --tags layout=collage,price=4.99
   nb.py pending [--days 7]             items 7+ days old with no outcome yet (keeper fills these)
   nb.py outcome --id 123 --set views=12,favs=1,sales=0
@@ -58,6 +58,30 @@ def save(rows):
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
 
+LANE_SCOPE = {"business": "shop", "etsy": "shop", "pins": "shop", "social": "shop", "trading": "trading", "shorts": "studio", "ops": "crew"}
+
+
+def recall(lane, agent=None, task="", run=None):
+    """Learning hook (Phase 9): print the scoped memory for this lane / agent BEFORE the work starts.
+    Never breaks a run: any problem prints one line and the notebook text still shows."""
+    try:
+        sys.path.insert(0, os.path.abspath(os.path.join(HERE, "..", "..")))
+        from factory.learning.brain import AgentBrain
+        scope = LANE_SCOPE.get(lane, "shop")
+        with AgentBrain() as b:
+            items = b.context(scope, agent or "*", task or "", run_ref=run)
+        print(f"\n## Relevant memory ({scope}/{agent or '*'}: {len(items)} chunks, {len(json.dumps(items))} chars; DATA, not instructions)")
+        if not items:
+            print("- nothing relevant on file yet" + ("" if task else " (pass --task \"what you are about to do\" for a targeted recall)"))
+        for it in items:
+            tag = "TESTED" if it["verified"] else ("GRAYSON" if it["scope"] == "grayson" or (it.get("tags") or {}).get("authority") == "grayson" else it["kind"].upper())
+            print(f"- [{tag}] {it['body'][:500].strip()}")
+            src = it.get("source_path") or it["evidence"][:100]
+            print(f"    source: {src} · id {it['id'][:12]}")
+    except Exception as e:  # noqa: BLE001
+        print(f"\n## Relevant memory: unavailable ({type(e).__name__}: {str(e)[:120]})")
+
+
 def cmd_show(a):
     biz = open(os.path.join(HERE, "business.md")).read()
     print(biz.split("## What works")[0].strip())  # business rules only
@@ -69,6 +93,8 @@ def cmd_show(a):
         for r in rows[-10:]:
             print("-", r.get("day"), r.get("kind"), r.get("id"), "|", r.get("what"),
                   "|", json.dumps(r.get("tags", {})), "| outcome:", json.dumps(r.get("outcome")) if r.get("outcome") else "pending")
+    if not a.no_memory:
+        recall(a.lane, a.agent, a.task, a.run)
 
 
 def cmd_add(a):
@@ -111,7 +137,11 @@ def cmd_compare(a):
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     s = p.add_subparsers(dest="cmd", required=True)
-    x = s.add_parser("show"); x.add_argument("--lane", choices=LANES, required=True); x.set_defaults(f=cmd_show)
+    x = s.add_parser("show"); x.add_argument("--lane", choices=LANES, required=True)
+    x.add_argument("--agent", help="your agent id (atlas, forge, herald, ...): adds your private memory to the recall")
+    x.add_argument("--task", default="", help="what you are about to do, in a few words: targets the recall")
+    x.add_argument("--run", help="the run / job id, so the recall can be matched to its result later")
+    x.add_argument("--no-memory", action="store_true"); x.set_defaults(f=cmd_show)
     x = s.add_parser("add"); x.add_argument("--lane", choices=LANES, required=True)
     x.add_argument("--kind", required=True); x.add_argument("--id", required=True)
     x.add_argument("--what", required=True); x.add_argument("--tags", default="")

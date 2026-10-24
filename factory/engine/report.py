@@ -163,6 +163,14 @@ def build_report(store: Store, eng: TaskEngine, *, days: int = 14, orders: list[
         errors.append({"run_id": r.id, "task_id": r.task_id, "agent": r.agent_id, "attempt": r.attempt, "at": r.finished_at or r.started_at, "error": scrub(r.error or "")[:300],
                        "error_class": r.error_class, "recovery": r.recovery})
     audit = [{"at": a["at"], "who": a["who"], "action": a["action"], "subject": a["subject"], "detail": scrub(a.get("detail") or "")[:200]} for a in store.audit_tail(40)]
+    # Phase 9: the agents' learning panel (scored samples, pass / 95+ rates, weakest criteria, repeats, memory freshness,
+    # tested lessons, experiments, token proxy); production and offline rows apart; unknown stays unknown.
+    try:
+        from factory.learning.brain import AgentBrain
+        from factory.learning.panel import learning_section
+        learning = learning_section(AgentBrain(store), days)
+    except Exception as e:  # the report never fails over the panel
+        learning = {"error": scrub(f"{type(e).__name__}: {e}")[:200], "note": "learning panel unavailable; see factory/learning/README.md"}
     rep = {
         "schema": 1, "generated_at": now, "worker": worker or "python -m factory.engine worker",
         "health": {"engine_schema": status.get("schema"), "kill": bool(status.get("kill")), "paused_agents": sorted(paused), "last_tick": last_tick, "last_runner": runner,
@@ -170,6 +178,7 @@ def build_report(store: Store, eng: TaskEngine, *, days: int = 14, orders: list[
                    "note": "the engine runs only when the worker runs (GitHub Actions on a schedule, or a crew run); generated_at is the truth"},
         "agents": agents, "workflows": workflows, "tasks": tasks, "recent_done": recent_done, "approvals": approvals, "products": products, "plans": plans,
         "metrics": metrics, "usage": usage_out, "integrations": integrations, "errors": errors, "orders": orders or [], "audit": audit,
+        "learning": learning,
     }
     # belt and braces: scrub the whole document once more
     return json.loads(scrub(json.dumps(rep, default=str)))

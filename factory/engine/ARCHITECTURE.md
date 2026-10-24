@@ -174,6 +174,22 @@ factory/engine/
   order waits there until a crew run copies it into `factory/engine/orders/`. The Foreman's DATA now carries the engine
   summary.
 
+## Added in Phase 9 (Oct 24, 2026): agent learning
+
+- `factory/learning/` (stdlib): scoped memory with provenance (`brain.py`), the FROZEN rubrics with evidence-linked
+  aggregation and the legacy-score adapter (`rubric.py`), objective artifact checks (`checks.py`), the bounded repair loop
+  (`improve.py`), ingestion adapters for the real sources (`ingest.py`), the panel numbers (`panel.py`) and the CLI
+  (`learn.py`). Migration v5 adds `memories`, `evaluations`, `ideas`, `experiments`, `retrievals`, `workflow_versions`,
+  `eval_cases`; new journal kinds of the same names. `store.resolve_db_dir()` prefers the committed `state/` journal.
+- Hooks on the shared execution paths: `nb.py show --agent --task` (recall before work), `runlog.py add` (record after
+  work), `RunContext.recall()` + `TaskEngine._learn()` (every finished engine attempt; errors without a score), the
+  `quality.score` and `learning.diagnose` handlers, a learning ingest step in `worker`, and a `learning` block in
+  `public/report.json` that the Engine room's "Agent learning" card renders.
+- Separate review role: the Night Shift's stage 07 is a fresh Inspector; the Builder no longer scores its own work;
+  two repair rounds per item per run, enforced by the tool. The rubric and its weights are unchanged.
+- `registry.sync()` no longer re-registers every agent on every pass (it compared JSON including the bumped version).
+- `.gitattributes` marks the append-only logs `merge=union` so two crews appending at once do not conflict.
+
 ## What is NOT implemented yet (honest list)
 
 - Phase 4 leftover: the task kinds the orchestrator submits still have no real handlers — `tick` runs only the

@@ -69,6 +69,7 @@ class RunContext:
     def __init__(self, engine: "TaskEngine", task: Task, run: Run, contract: AgentContract):
         self.engine, self.task, self.run, self.contract = engine, task, run, contract
         self.calls = 0
+        self.memory_items: int | None = None  # set by recall(); merged into the run's validation
 
     def heartbeat(self) -> None:
         self.run.heartbeat_at = now_iso()
@@ -108,6 +109,16 @@ class RunContext:
         self.heartbeat()
         return c
 
+    def recall(self, task_text: str = "", *, scope: str | None = None, limit: int = 6, max_chars: int = 6000) -> list[dict]:
+        """Learning hook (Phase 9): the scoped memory for this agent BEFORE it works. Data, not instructions; the
+        allow-lists and approvals above are untouched by anything a memory says. Recorded against this task id so the
+        result can be matched to what was shown."""
+        from factory.learning.brain import AgentBrain  # local import: the engine never needs it at import time
+        sc = scope or self.task.spec.meta.get("scope") or self.engine.scope_for(self.contract.id)
+        items = AgentBrain(self.engine.store).context(sc, self.contract.id, task_text or f"{self.task.spec.kind} {self.task.spec.input_ref}", limit=limit, max_chars=max_chars, run_ref=self.task.id)
+        self.memory_items = len(items)
+        return items
+
     def require(self, cap: Capability, title: str, why: str, cost: str | None = None, risk: str | None = None) -> None:
         """Ask for a gated capability. Approved → continue; otherwise park the task."""
         if not self.contract.has(cap):
@@ -128,7 +139,13 @@ class TaskEngine:
         self.clock = clock
         for a in self.agents.values():
             a.validate()
+        self.learning = True  # Phase 9: every finished run is also recorded in the learning store (set False in tests that want silence)
         self.recover()
+
+    AGENT_SCOPE = {"foreman": "crew", "mechanic": "crew", "ledger": "crew", "graph": "shop", "scout": "shop", "forge": "shop", "atlas": "shop", "hawk": "shop", "herald": "shop", "bolt": "shop"}
+
+    def scope_for(self, agent_id: str) -> str:
+        return self.AGENT_SCOPE.get(agent_id, "crew")
 
     # ---------------------------------------------------------------- registration
     def register(self, kind: str, handler: Handler) -> None:
@@ -262,6 +279,8 @@ class TaskEngine:
             validation = out.get("validation") or {"ok": True, "checks": []}
             if validation.get("ok") is False:
                 raise PermanentError("validation failed: " + "; ".join(str(c) for c in validation.get("checks", []) if c))
+            if ctx.memory_items is not None:
+                validation = dict(validation, memory_items=ctx.memory_items)
             run.validation = validation
             task.output_ref = out.get("output_ref")
             return self._finish(task, run, TaskStatus.SUCCEEDED, output_ref=out.get("output_ref"))
@@ -306,7 +325,43 @@ class TaskEngine:
         task.last_error = run.error
         if task.status != status:
             self._move(task, status, detail=run.error or (output_ref or ""))
+        self._learn(task, run, status)
         return run
+
+    def _learn(self, task: Task, run: Run, status: TaskStatus) -> None:
+        """Phase 9 after-work hook on the shared runner: every terminal or parked attempt leaves one row in the learning
+        store with the run id as its stable key (a replay never duplicates it). Tool errors, timeouts and budget stops
+        are recorded WITHOUT a score; a handler that returned a real evaluation (validation["evaluation"]) keeps it.
+        Nothing here can fail the task: a learning-store problem is audited and swallowed."""
+        if not getattr(self, "learning", False) or status == TaskStatus.QUEUED:
+            return
+        try:
+            from factory.learning.brain import AgentBrain
+            brain = AgentBrain(self.store)
+            scope = task.spec.meta.get("scope") or self.scope_for(task.spec.agent_id)
+            mode = task.spec.meta.get("mode") or ("offline" if self.runner in ("test", "mock") else "production")
+            version = f"{task.spec.kind}@{self.agents[task.spec.agent_id].version}"
+            usage = run.usage.to_dict() if run.usage else None
+            ev = (run.validation or {}).get("evaluation") if isinstance(run.validation, dict) else None
+            if status == TaskStatus.SUCCEEDED and isinstance(ev, dict) and ev.get("rubric_id"):
+                brain.log(run.id, scope, task.spec.agent_id, version, {"kind": task.spec.kind, "input_ref": task.spec.input_ref}, run.output_ref, ev, mode=mode, final=True,
+                          artifact_ref=run.output_ref or "", kind="score", task_id=task.id, attempt=run.attempt, usage=usage)
+                if not ev.get("passed"):
+                    brain.remember(scope, task.spec.agent_id, "mistake", scrub({"kind": task.spec.kind, "input_ref": task.spec.input_ref, "score": ev.get("score"), "gaps": (ev.get("gaps") or [])[:3], "blockers": (ev.get("blockers") or [])[:5]})[:12000],
+                                   f"evaluation {run.id}; suspected cause requires validation")
+            elif status == TaskStatus.SUCCEEDED:
+                brain.log_run(run.id, scope, task.spec.agent_id, task=task.spec.kind, outcome="done", mode=mode, version=version, started=run.started_at, finished=run.finished_at,
+                              extra={"task_id": task.id, "input_ref": task.spec.input_ref, "output_ref": run.output_ref, "checks": (run.validation or {}).get("checks", [])[:10], "usage": usage})
+            elif status == TaskStatus.NEEDS_APPROVAL:
+                brain.log_run(run.id, scope, task.spec.agent_id, task=task.spec.kind, outcome="paused", mode=mode, version=version, needs_you=run.error or "approval", started=run.started_at,
+                              finished=run.finished_at, extra={"task_id": task.id, "approval_id": task.approval_id})
+            else:  # FAILED: tool / permanent / timeout / budget: no score is invented
+                brain.log_error(run.id, scope, task.spec.agent_id, task={"kind": task.spec.kind, "input_ref": task.spec.input_ref}, error=run.error or "failed",
+                                error_class=run.error_class or "permanent", mode=mode, version=version, attempt=run.attempt, task_id=task.id)
+                brain.remember(scope, task.spec.agent_id, "mistake", f"{task.spec.kind} on {task.spec.input_ref} failed ({run.error_class}): {(run.error or '')[:300]}", f"engine run {run.id}",
+                               tags={"error_class": run.error_class, "kind": task.spec.kind})
+        except Exception as e:  # noqa: BLE001
+            self.store.audit(AuditEvent.make("engine", "learning_hook_failed", run.id, scrub(f"{type(e).__name__}: {e}")))
 
     # ---------------------------------------------------------------- loop + recovery
     def tick(self, max_tasks: int = 10) -> list[Run]:

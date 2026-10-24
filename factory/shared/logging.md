@@ -28,6 +28,11 @@ Atlas Prime see what ran, what it loaded and how long it took, without opening e
   --outcome done|failed|paused --note "<one line>" --needs-you "<one line or empty>"`
 It measures the loaded files' sizes itself, appends the line, and prints it. Keep the list of
 loaded files honest: name every instruction file you opened, nothing you did not.
+Since Oct 24, 2026 the same command also records the run in the learning store
+(`factory/engine/state/journal.jsonl`, id `runlog:<task>:<started>`, so a repeated call never
+duplicates it): outcome, minutes, the estTokens proxy, the note and the NEEDS YOU line; a failed
+or paused run, or a NEEDS YOU line, leaves one mistake memory for the task's agent. It prints a
+second line `{"learning": ...}`; `GM_LEARNING_OFF=1` silences it. Commit the journal with the run.
 
 `python3 factory/shared/runlog.py --status` prints the last run per task.
 `python3 factory/shared/runlog.py --summary 7` prints per-task averages for the last 7 days

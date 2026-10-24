@@ -83,7 +83,7 @@ class TestContracts(Base):
 
 class TestStore(Base):
     def test_migrations_and_rebuild_from_journal(self):
-        self.assertEqual(self.store.schema_version(), 4)
+        self.assertEqual(self.store.schema_version(), 5)
         t = self.eng.submit(self.spec())
         self.store.put_integration(IntegrationHealth(id="make", state=IntegrationState.UNVERIFIED, note="no call this session"))
         # simulate a lost sqlite: delete it and reopen → rebuilt from the journal

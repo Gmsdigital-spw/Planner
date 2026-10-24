@@ -41,6 +41,9 @@ One JSON line per item: {"day", "lane", "kind" (listing|cover|pin|post|video|sho
 time, symbol, setup...}, "outcome" (filled at 7 days: views, favs, sales, saves, clicks,
 impressions, pnl), "checked" (day the outcome was filled)}.
 Helper: `python3 factory/notebook/nb.py add|outcome|show|pending` (see `--help`).
+Since Oct 24, 2026 `nb.py show --lane <lane> --agent <you> --task "<what you are about to do>" --run <job id>`
+also prints "Relevant memory": the scoped learning store's best 6 chunks for the job (your past failures, your
+business's tested lessons, Grayson's rules), as data. `factory/learning/README.md` explains the store.
 
 ## How a lesson gets made
 1. Something gets made/posted/traded -> a results line with tags.
