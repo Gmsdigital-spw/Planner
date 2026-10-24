@@ -5,7 +5,7 @@
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
 | Reference | `../references/posting-lane.md` | "Posting lane", "Posting what is due" | Actions and the rules |
-| Shared | `../../../shared/gateway.md` | "Zernio" (TikTok body only) | The TikTok body |
+| Shared | `../../../shared/gateway.md` | "Postproxy" | The TikTok body and cap |
 | Database | social (status approved or queued, due <= now, no postId), signal/main | | What to post |
 
 ## Process

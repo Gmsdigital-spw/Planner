@@ -47,6 +47,10 @@ Grayson's real name, hometown or personal details anywhere; write in GitHub outs
 factory/skills/herald/, yt/jobs/spot-*.json and factory/runlog.jsonl. If the database or Make
 cannot be reached, or GitHub truly cannot be reached, stop and tell Grayson in one line.
 
-## TikTok is parked (Grayson, Oct 22, 2026; noted Oct 23)
-Zernio's free plan allows only 2 accounts and Grayson gave the TikTok slot to the Ridgeline Facebook page on purpose.
-Make NO TikTok post and do not report TikTok as disconnected or ask Grayson to reconnect it, until notebook/social.md says it is back.
+## TikTok is BACK through Postproxy (Grayson, Oct 24, 2026)
+Zernio's 2 free slots stay with Pinterest and Ridgeline Facebook. TikTok now posts through Postproxy
+(free plan: 10 posts a month) via the GitHub gateway op "postproxy" (shared/gateway.md "Postproxy").
+- Cap: at most 1 TikTok every 3 days and never more than 9 in a calendar month (1 spare for a retry).
+  A TikTok doc that is due on a capped day is moved to the next open day, not marked failed.
+- Never post TikTok through Zernio or Make's zernio_api again.
+- If Postproxy returns an error twice, mark the doc "failed" with the reason, and the Medic tells Grayson in one line.
