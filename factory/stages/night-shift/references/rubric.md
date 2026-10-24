@@ -53,6 +53,15 @@ Record score.slopCheck {pass, fails:[short strings]}. A fail caps images at 12 a
   cover or any layout fault: at most 7.
 - total /100, rubric 2, verdict (one sentence, leads with PASS or FAIL and the number).
 
+## V8 cover checks (Oct 24, 2026; studio/quality_gates.py COVER_RUBRIC, pass 92)
+real_product_pages_fill_frame 20 (real pages 60%+ of the frame), big_count_badge 10 (the count
+big and readable on the label card; never a sticker, pill or emoji: cover-styles.md Oct 24),
+realistic_mockup 20 (Grayson's Atlas scenes with the real pages placed on them; never drawn or
+fake), unique_vs_last_20_covers 20 (perceptual-hash distance 18 or more to every one of the
+last 20 covers, decided by the code, never by eye), readable_at_thumbnail_size 15 (title and
+count at 300 px), matches_season_and_buyer 15. Record the result in score.coverGate. A cover
+under 92 here caps images at 12 and goes back to Lens in a fix round.
+
 ## Where 85 to 91 usually lose points (check first)
 Images (hero pages too small in the square, same layout as last time), copy (generic lines
 instead of the specific page list, count, holiday and buyer), market (weak evidence vs the top

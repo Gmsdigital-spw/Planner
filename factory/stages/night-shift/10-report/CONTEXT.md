@@ -18,7 +18,10 @@
    note and Atlas's one-line sales note; then five short lines: IDEAS (15 judged, 3 briefed, N
    held, N dropped, each build's lane), MISSION (active mission title and tasks done/total, or
    "waiting for your approval: <title>"), TEST (experiment due or proposed, else "none"), NEXT
-   MOVE (nextmove title), NEEDS YOU (the single most important tap, if any); money only from
+   MOVE (nextmove title), NEEDS YOU (the single most important tap, if any), CHRISTMAS (V8: how
+   many Christmas listings are live of the 10 due by Nov 7, counted from the active list's titles
+   and tags, and whether tonight's Christmas build passed), FIXES (listing fixes ready and applied
+   this week, from listing_fixes docs); money only from
    stage 09 D and the verified sales log; whole text under 1200 characters; it ends with the
    standup's first line), summary (under 90 characters), plan (one sentence for the next run),
    createdAt, runId}. If it exists today, rewrite it to cover the whole day.

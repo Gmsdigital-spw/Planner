@@ -29,6 +29,15 @@
 5. Verify every limit with Python (counts, lengths, tag uniqueness, the exact AI line). Then
    stage "images". Set crew/quill idle. Write `## Copy: <title>` in the run notes: the
    title, price, tag count.
+6. LISTING FIXES (V8, Oct 24, 2026; specs/etsy-v8.md section 5; the Builder's last product
+   only, once per run): read the newest stats doc and take the 5 most-viewed live listings.
+   For each whose title does not start with the phrase buyers type (Etsy autocomplete via
+   WebSearch) or whose tags are not 13 real search phrases, and that has no listing_fixes doc
+   from the last 14 days, write listing_fixes/<listingId> {listingId, title_before,
+   title_after, tags_before, tags_after, why (one line with the views number), status
+   "ready", at}. Title and tags only; never price, photos, description or category. At most 5
+   docs with status "ready" exist at once. Bolt applies 2 a day (bolt/references/listing-fixes.md).
+   Write `## Listing fixes` in the run notes: which listings, and the before/after titles.
 
 ## Audit
 
@@ -45,3 +54,4 @@
 | Artifact | Location | Format |
 |----------|----------|--------|
 | Listing copy | products/<id>.copy | title, tags[13], description, price, category, materials |
+| Listing fixes | listing_fixes/<listingId> | title and tags before/after, status ready |

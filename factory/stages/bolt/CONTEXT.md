@@ -15,7 +15,7 @@ One session, five sub-stages in order; load each sub-stage's CONTEXT.md when you
 |-------|-------|-----------|
 | 00-gates | `shared/gateway.md` ("Protocol", "Etsy"), `shared/repo.md` ("Getting it", "Committing", Bolt row), `specs/push-week-2026-10-23.md` (the Bolt and Pixel + Bolt rows) | never |
 | 01-candidates | `references/product-rules.md` | never (it also fetches the active list) |
-| 02-publish | `references/publish-steps.md`, `shared/gateway.md` ("Etsy" incl. upload and fallback) | no candidate, dryRun, or a cap is reached |
+| 02-publish | `references/publish-steps.md`, `references/listing-fixes.md` (first run of the day), `shared/gateway.md` ("Etsy" incl. upload and fallback) | no candidate, dryRun, or a cap is reached (the listing-fixes step still runs) |
 | 03-pins | `shared/gateway.md` ("Zernio"), `shared/accounts.md` ("Pinterest"), `references/pin-rules.md` | dryRun (a dry run stops after 01) |
 | 04-log | `shared/logging.md` ("The line", "Helper") | never |
 

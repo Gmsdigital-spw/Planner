@@ -67,6 +67,15 @@ Worked examples of 5 families: tools/varied_covers/ (examples, never a new singl
 | Text zone | Photos 2 to 5: every word inside the safe zone; the cover is judged by the thumbnail test only |
 | Format | 5 JPEGs, 2000 px wide, each under 400 KB |
 
+## V8 cover check before handing over (Oct 24, 2026; specs/etsy-v8.md section 1)
+Photo 1 follows cover-styles.md's Oct 24 section: real pages on one of Grayson's own scenes
+(assets/atlas-pack, place.py) with one cream label card whose facts line carries the count big
+and readable; no badge stickers, pills, emoji or gradients. Before setting stage "inspection",
+run `python3 studio/quality_gates.py cover <cover.jpg> --recent listing-photos/atlas listing-photos/fun`
+(pip install imagehash if needed): a distance under 18 to any of the last 20 covers means it is
+a copy-paste in a stranger's eyes; change the scene, the crop, the label position and the
+label colour and run it again. Write the smallest distance in the run notes under Photos.
+
 ## Pre-flight gate (Oct 23, 2026)
 Before setting stage "inspection": run EVERY line of `../references/preflight.md` on the whole
 product (file, copy, images, market, price) and fix what fails. Write

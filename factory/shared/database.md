@@ -49,6 +49,9 @@ Canonical home for how every crew reads and writes the Factory's database and fi
   everyone idle at the end. If a run stops early, write the exact blocker into task first.
 - `lessons/<id>`: {text, evidence (the numbers), source, at, confidence, expiresAt, status}.
   Never write a lesson without a number behind it; never repeat one already on file.
+- `listing_fixes/<listingId>` (V8, Oct 24, 2026; Quill writes, Bolt applies): {listingId, title_before,
+  title_after, tags_before, tags_after, why (one line with the views number), status ready | applied |
+  failed | stale | reverted, at, appliedAt, by, result, error}. Title and tags only.
 
 ## Collections by floor (names only; the stage that owns a collection describes its fields)
 - Etsy floor (root): settings/main, requests/nightshift, crew, runs, briefs, ideas, products,

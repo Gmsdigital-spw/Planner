@@ -31,8 +31,15 @@ GRAYSON'S STANDARD (Oct 22, 2026): every promo video is a COMMERCIAL built with 
   back to the old look: skip today's video posts and tell Grayson right away in one line (what
   broke). Never let a run stop silently.
 - No paid tools, no vidIQ credits.
+- V8 (Oct 24, 2026; specs/etsy-v8.md section 6): the video follows COMMERCIAL_BLUEPRINT
+  (`python3 studio/quality_gates.py blueprint`): product in hand or on screen with a bold
+  4-word caption by 1.5 s, the real listing scrolling on the phone by 6 s, three real pages
+  up close in quick cuts, the voiceover benefit, then the price and "Link in bio". Animated
+  background (the studio's moving palette or an Atlas scene on a slow push; never a flat
+  card), a new style every day, captions never over the product or the phone.
 
-## Two-week check (Grayson's call, Oct 22, 2026)
-The commercial format is a bet until the numbers say so. From Nov 5, 2026, compare real views
+## Two-week check (Grayson's call, Oct 22, 2026; V8 sets the judgement day to Nov 7, 2026)
+The commercial format is a bet until the numbers say so. On Nov 7, 2026 (and from Nov 5 for the
+first read), compare real views
 (YouTube, TikTok) and Etsy visits for commercial posts (from Oct 22) against the older slideshow
 posts, and put one numbers-only lesson in the log and one line to Grayson: keep, tweak or change.
