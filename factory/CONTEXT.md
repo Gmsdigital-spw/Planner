@@ -9,7 +9,7 @@ they only use `shared/` files when their prompt says so.
 | Scheduled task | Go to | What it does |
 |----------------|-------|--------------|
 | GM Factory Night Shift (1:54 AM CT) | `stages/night-shift/CONTEXT.md` | Research, judge, build, copy, photos, inspect, pins, review, report |
-| Mechanic · self-fix + morning report (5x daily) | not yet moved (prompt) | Check every lane, fix once, one morning report |
+| Mechanic · self-fix + morning report (3x daily) | `stages/mechanic/CONTEXT.md` + prompt | Check every lane, fix once, work the Medic's tickets (`medic/queue/`), one morning report |
 | Bolt Etsy publisher (7:13 / 12:13 / 4:13 CT) | `stages/bolt/CONTEXT.md` | Publish passed products on Etsy, schedule pins |
 | Herald social run (11:16 / 6:16 CT) | `stages/herald/CONTEXT.md` | One post per channel per day |
 | Pixel · daily video pin | not yet moved (prompt) | One Pinterest video pin a day |
@@ -25,6 +25,7 @@ they only use `shared/` files when their prompt says so.
 | Resource | Location | Contains |
 |----------|----------|----------|
 | Rules that never bend | `shared/rules.md` | Honesty, privacy, approvals, caps, how to talk to Grayson |
+| The Medic (V8) | `../medic/` (repo root) | Plain-Python self-repair on GitHub Actions every 30 min: `lanes.json`, `public/medic_report.json` (the board), `queue/` (tickets for the Mechanic), `lessons/` |
 | Database | `shared/database.md` | Artifact URL, ArtifactData rules, assets, day key, timestamps |
 | Repo | `shared/repo.md` | Clone/pull/commit/push rules, write-path allowlist per agent |
 | Gateway | `shared/gateway.md` | Free GitHub gateway protocol and every op shape |
