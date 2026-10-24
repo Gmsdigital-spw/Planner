@@ -35,6 +35,7 @@ jobs:
           ETSY_KEYSTRING: ${{ secrets.ETSY_KEYSTRING }}
           ETSY_SHARED_SECRET: ${{ secrets.ETSY_SHARED_SECRET }}
           ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+          POSTPROXY_API_KEY: ${{ secrets.POSTPROXY_API_KEY }}
           STARSHIP_KEY: ${{ secrets.STARSHIP_KEY }}
           GUMROAD_TOKEN: ${{ secrets.GUMROAD_TOKEN }}
           ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
