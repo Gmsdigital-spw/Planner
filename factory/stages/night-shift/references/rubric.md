@@ -9,10 +9,12 @@
   by the thumbnail test only: title and count readable in the centred 300 px square; its
   banner may run edge to edge, that is the approved design. The text safe zone (x 260 to
   1740) applies to photos 2 to 5 (the kit's inside photos) only.
-- Cover follows specs/cover-styles.md (newest section, Oct 23, wins): a layout family not on
-  the last 5 published covers; real product 60%+ of the frame; passes the side-by-side test
-  against EVERY live cover (fails = images capped so the product cannot reach 92); no cream
-  desk; pins (if already made) in 2+ styles. Count badge, pills and 3D art are optional.
+- Cover follows specs/cover-styles.md (newest section, Oct 24, wins): real pages on one of
+  Grayson's Atlas scenes with one cream label card; real product 60%+ of the frame; passes the
+  side-by-side test against EVERY live cover and the V8 cover gate (score.coverGate.pass true:
+  unique by code and 92+ on the five checks); either fail = rulesPass false, whatever else the
+  product scores. No badge stickers, pills, emoji, 3D art or gradients; pins (if already
+  made) in 2+ styles.
 - Pages full and framed; no cramped or half-empty page.
 - No real name or hometown; no brand or character names; nothing copied from another shop; no
   internet images.
@@ -27,7 +29,7 @@ image and Read it. Fail if ANY of these is true:
     page, or more than 7 art pieces;
 (d) any garbled, misspelled, cut-off or nonsense text anywhere on a page or photo;
 (e) badges or claims like bestseller, top rated, reviews, #1, sale stickers, emoji (a count
-    badge is optional and fine);
+    big on the label card is fine; a round badge sticker is not, cover-styles.md Oct 24);
 (f) the copy uses AI-sounding phrases (elevate, unlock, seamless, game-changer, dive into,
     whether you're, look no further, in today's busy world), em-dash runs, or keyword soup;
 (g) the cover looks like a recolour of one of the last 3 covers (same layout + same theme +
@@ -60,7 +62,8 @@ realistic_mockup 20 (Grayson's Atlas scenes with the real pages placed on them; 
 fake), unique_vs_last_20_covers 20 (perceptual-hash distance 18 or more to every one of the
 last 20 covers, decided by the code, never by eye), readable_at_thumbnail_size 15 (title and
 count at 300 px), matches_season_and_buyer 15. Record the result in score.coverGate. A cover
-under 92 here caps images at 12 and goes back to Lens in a fix round.
+under 92 here, or not unique, caps images at 12, fails rulesPass ("Rules" above) and goes back
+to Lens in a fix round.
 
 ## Where 85 to 91 usually lose points (check first)
 Images (hero pages too small in the square, same layout as last time), copy (generic lines

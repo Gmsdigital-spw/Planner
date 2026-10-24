@@ -6,7 +6,7 @@
 |--------|--------------|---------------|-----|
 | Studio | `/home/claude/planner/social/studio/README.md` | Full file (read it every run) | The commercial format (Grayson's standard from Oct 22) |
 | Reference | `../references/media-rules.md` | Full file | What is allowed and what is not (incl. the V8 commercial blueprint) |
-| Tool | `studio/quality_gates.py` | `python3 studio/quality_gates.py blueprint` | The 15 to 25 s commercial blueprint, printed |
+| Tool | `studio/quality_gates.py` | `python3 studio/quality_gates.py blueprint` | The 15 to 22 s commercial blueprint, printed |
 | Reference | `../references/spot.md` | Full file, Sundays only (first full-day run) | The Sunday commercial |
 | Spec | `../../../specs/studio-floor-v6.md` | "Spot" section, Sundays only | Spot rules |
 | Shared | `../../../shared/database.md` | "Files (assets)" | Downloading the PDF |

@@ -32,7 +32,7 @@ Reference, loaded by section. The stage that owns a collection is named in brack
 - products/<id>: {title, briefId, kind (lane), stage, summary, copy:{title, tags:[13],
   description, price (number), category, materials}, file:{assetId, url, pages, sizeBytes,
   builtAt}, fullFile (wall art), extras (mug wrap, sticker), cover (asset id), previews:[asset
-  ids], coverLook:{tool, theme, art}, style:{palette, coverStyle (PDF cover: band/frame/split),
+  ids], coverLook:{tool "atlas", scene, crop, labelPos, labelColour; older products: tool "fun_covers", theme, art}, style:{palette, coverStyle (PDF cover: band/frame/split),
   pageFrame, theme (fun_covers THEMES key), kit}, score:
   {rulesPass, slopCheck:{pass, fails}, file (0-25), copy (0-20), images (0-20), market (0-15),
   price (0-10), polish (0-10), total, rubric (2 from Oct 19, 2026), verdict, scoredAt}, notes:

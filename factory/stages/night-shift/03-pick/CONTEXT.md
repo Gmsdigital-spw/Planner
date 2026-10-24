@@ -5,9 +5,9 @@
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
 | Reference | `../references/database-fields.md` | "products", "missions" | Field shapes |
-| Spec | `../../../specs/cover-styles.md` | Newest section (Oct 21, 4 PM) | The cover standard |
-| Tool | `tools/fun_covers.py` | docstring and the THEMES keys (grep "^    \"" in THEMES) | Pick style.theme |
-| Tool | `ls tools/img3d` and `tools/art.py` function names | | Pick coverLook.art |
+| Spec | `../../../specs/cover-styles.md` | Newest section (Oct 24, 2026: Grayson's Atlas covers) | The cover standard |
+| Tool | `assets/atlas-pack/README.md` ("Etsy" table) + `place.py` docstring | scene names: planner, clipboard, christmas, frame | Pick coverLook.scene |
+| Tool | `tools/fun_covers.py` THEMES keys (grep "^    \"" in THEMES) | names only | style.theme, a palette name for the pages and pins (the card itself is retired) |
 | Database | products (newest 3 published): coverLook, style | | Rotation |
 | Database | products (stage queued, building, copy, sentback), briefs (approved, no productId) | | What to build |
 | Database | missions (newest 20), sales, stats (newest 2), bills | | Missions from real numbers |
@@ -15,17 +15,20 @@
 ## Process
 1. Set crew/atlas working ("Picking builds"). Build list, in this order, up to
    settings.buildsPerRun (default 2): GRAYSON'S INVITATIONS FIRST (Oct 24, 2026): the briefs brief-2026-10-24-invite-birthday, -baby-shower and -bridal-shower are built before everything below until all 3 have a product (birthday and baby shower on the Oct 24 run, bridal shower next run). They pass the market proof gate on the shop-level proof in their evidence (Grayson approved them himself). (a) products in stage "inspection" scoring 80 to 91 with retries under 4 and market 12 or more (market 11 or less = scrap it, see 07; one exception: prod-xmas-murder-mystery-8 gets ONE final finish try on the Oct 25, 2026 night run (moved from Oct 24 for Grayson's invitations) with its staged v2 fixes, then is scrapped if still under 92),
-   V8 (Oct 24, 2026; specs/etsy-v8.md sections 3 and 4): until 10 Christmas listings are live,
-   at least one of tonight's builds is a Christmas product (bundles $8 to $14 first); after the
-   three Oct 24 invitation briefs, Scout files and the list includes a wedding invitation and a
-   bridal party invitation brief (opened competitor proof as always) so all five occasions
-   (birthday, wedding, bridal shower, bridal party, baby shower) are live by Nov 15.
    highest score first (a near-miss is the fastest way to a live listing: the Builder
    reworks it against its inspect note and preflight.md), then products in stage queued,
    building, copy or sentback that have no file or were sent back (finish them first); (b) briefs with status "approved"
    that have no productId; (c) only when settings.autoApprove is false: briefs "proposed" with
    total 20 or more, highest first, skipping anything Grayson rejected. Holiday Mode share
    applies to new builds (product-floor spec). If nothing to build, log it and go to stage 09.
+   V8 (Oct 24, 2026; specs/etsy-v8.md sections 3 and 4): until 10 Christmas listings are live,
+   at least one of tonight's builds is a Christmas product (bundles $8 to $14 first; a Christmas
+   near-miss finished from inspection counts; on a night the invitation briefs above fill
+   buildsPerRun, the Christmas build takes the first slot the next night and the Report's
+   CHRISTMAS line says so); after the
+   three Oct 24 invitation briefs, Scout files and the list includes a wedding invitation and a
+   bridal party invitation brief (opened competitor proof as always) so all five occasions
+   (birthday, wedding, bridal shower, bridal party, baby shower) are live by Nov 15.
    MARKET PROOF GATE (Oct 23, 2026): a brief is built only if it names 3 opened Etsy
    listings (links, review counts as shown, at least one 100+) and our gap, as
    `../references/preflight.md` "Market" says. A brief without them goes back to status
@@ -35,10 +38,13 @@
    productId.
 3. Choose now and save: product.style = {palette (gs palette for the pages), coverStyle (the
    PDF cover style: band / frame / split), pageFrame (rule / stripe / band / none), theme (a
-   tools/fun_covers.py THEMES key that fits the product), kit:"gm_kit_v4"} and
-   product.coverLook = {tool:"fun_covers", theme, art:[the 3D art names planned]}. Rotation:
-   theme and art must differ from the last 3 published products' coverLook, and no two
-   products built tonight share a palette, pageFrame or coverStyle.
+   tools/fun_covers.py THEMES key, now only a palette name for the pages and pins), kit:"gm_kit_v4"} and
+   product.coverLook = {tool:"atlas", scene (planner / clipboard / christmas / frame, by product
+   kind: cover-styles.md Oct 24), crop (Lens fills it when it builds), labelPos, labelColour}.
+   Rotation: the scene must differ from the last product built (etsy-v8.md section 1: never the
+   same scene on two products back to back) and labelPos and labelColour from the last 3
+   published products' coverLook, and no two products built tonight share a scene, palette,
+   pageFrame or coverStyle.
 4. Missions (room "mission"). (a) For each mission with status active or blocked: mark its
    tasks doing/done as this run completes them, record outputs; set a task blocked with a
    note when it cannot proceed; if Grayson must act set needsOwner true and ownerAsk to one
@@ -57,7 +63,7 @@
 | Check | Pass condition |
 |-------|---------------|
 | Cap | Build list <= buildsPerRun |
-| Variety | No product repeats the theme + art (coverLook) of the last 3 published |
+| Variety | No product uses the Atlas scene of the last product built, or the label position + colour (coverLook) of the last 3 published |
 | Missions | At most 1 new, status planned, with a numeric verify |
 
 ## Outputs

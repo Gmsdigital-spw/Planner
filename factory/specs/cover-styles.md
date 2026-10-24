@@ -5,10 +5,12 @@ Grayson: the covers "that look like AI slop", with a whole bunch of animated ill
 (gradient background, round count badge, pills, emoji/3D stickers), get taken out. On Oct 24, 20 live
 covers were replaced: 17 new covers in listing-photos/atlas/ and 3 slop covers deleted.
 - Photo 1 = REAL product pages placed on one of Grayson's own scenes in assets/atlas-pack (README.md there;
-  `place.place(scene, pages, scale=2000/crop_w)`): binder (planners, workbooks), clipboard (single-page
-  trackers and game packs), holiday table (Christmas only), oak frame (wall art), phone (apps, spreadsheets).
+  `place.place(scene, pages, scale=2000/crop_w)`): planner = the binder (planners, workbooks), clipboard
+  (single-page trackers and game packs), christmas = the holiday table (Christmas only), frame = the oak
+  frame (wall art). The pack's phone scene is the vertical Ridgeline image, not for covers: apps and
+  spreadsheets use the clipboard or binder until Grayson adds an Etsy phone scene.
 - ONE clean label card: cream rounded card, thin border in the product colour, title in Lora semi-bold
-  (readable at 200 px), one small caps subline of facts (count, format). Nothing else on the image.
+  (readable at 200 px), one small caps subline of facts (the count first and big enough to read at 300 px, then format). Nothing else on the image.
 - Never: gradient backgrounds, count badges, benefit pills, emoji, 3D stickers, confetti, clip art.
   tools/fun_covers.py is retired for covers.
 - Variety: change the crop (zoom and offset), label position (top/bottom) and colour on every cover; never

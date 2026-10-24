@@ -4,7 +4,8 @@ GRAYSON'S STANDARD (Oct 22, 2026): every promo video is a COMMERCIAL built with 
 (`/home/claude/planner/social/studio/README.md`, read it every run). The Oct 20 wood-desk kit
 (social/tools/promo_*.py) is RETIRED for videos: he dropped the cozy cream-desk coffee look on Oct 21.
 
-- Build from the REAL PRODUCT PAGES (PDF from file.assetId) and the product's styled cover.
+- Build from the REAL PRODUCT PAGES (PDF from file.assetId) and the product's live cover
+  (listing-photos/atlas/<listingId>.jpg, else its cover asset; the old styled look is retired).
 - Every video has: a voiceover from the free studio voice Action; captions that pop in 3 to 6 words
   at a time; real pages cut on the beat (hook / pan / fan / grid scenes); the listing on a phone
   with a scroll and an "Add to cart" tap; an end card with the cover, the LIVE price and
@@ -16,7 +17,7 @@ GRAYSON'S STANDARD (Oct 22, 2026): every promo video is a COMMERCIAL built with 
 - Facts only from the product copy, its PDF pages and the live Etsy read (price, title). Never a
   sale, review, scarcity or income claim that is not real.
 - Grayson's Atlas pack (Oct 23, 2026): the four Etsy scenes in assets/atlas-pack/etsy may be ONE
-  scene of a video, only with the real pages placed on them by assets/atlas-pack/place.py (README.md
+  scene of a video, or its slow-push animated background (V8 below), only with the real pages placed on them by assets/atlas-pack/place.py (README.md
   there). The ridgeline_local and story_shorts images are NOT for shop videos.
 - NEVER use the old flat title-card listing images, stock people, AI hands, Etsy's logo, emoji walls,
   or a caption over the phone screen.
@@ -32,14 +33,17 @@ GRAYSON'S STANDARD (Oct 22, 2026): every promo video is a COMMERCIAL built with 
   broke). Never let a run stop silently.
 - No paid tools, no vidIQ credits.
 - V8 (Oct 24, 2026; specs/etsy-v8.md section 6): the video follows COMMERCIAL_BLUEPRINT
-  (`python3 studio/quality_gates.py blueprint`): product in hand or on screen with a bold
+  (`python3 studio/quality_gates.py blueprint`): product in hand or on screen (on screen in practice: the pack has no hand scene and AI hands
+  are banned) with a bold
   4-word caption by 1.5 s, the real listing scrolling on the phone by 6 s, three real pages
-  up close in quick cuts, the voiceover benefit, then the price and "Link in bio". Animated
+  up close in quick cuts, the voiceover benefit, then the live price on the end card with "Tap
+  the link · grab it on Etsy" (that is the blueprint's "Link in bio" beat; a sale badge only while
+  a real Etsy sale runs). Animated
   background (the studio's moving palette or an Atlas scene on a slow push; never a flat
   card), a new style every day, captions never over the product or the phone.
 
 ## Two-week check (Grayson's call, Oct 22, 2026; V8 sets the judgement day to Nov 7, 2026)
 The commercial format is a bet until the numbers say so. On Nov 7, 2026 (and from Nov 5 for the
 first read), compare real views
-(YouTube, TikTok) and Etsy visits for commercial posts (from Oct 22) against the older slideshow
+(YouTube; TikTok is parked) and Etsy visits for commercial posts (from Oct 24, etsy-v8.md section 7) against the older slideshow
 posts, and put one numbers-only lesson in the log and one line to Grayson: keep, tweak or change.
