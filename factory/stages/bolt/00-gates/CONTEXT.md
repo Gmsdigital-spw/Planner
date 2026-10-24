@@ -7,7 +7,7 @@
 | Shared | `../../../shared/gateway.md` | "Protocol", "Etsy" | How to reach Etsy |
 | Shared | `../../../shared/repo.md` | "Getting it", "Committing", Bolt row of "Write paths" | Repo use |
 | Skill | `../../../skills/bolt/SKILL.md` | Full file | Checklist and lessons |
-| Database | settings/main, spend/<month key>, lessons (newest 10 with area etsy, pins or setup) | | Gates and lessons |
+| Database | settings/main, sales (ids only, for the sync), spend/<month key>, lessons (newest 10 with area etsy, pins or setup) | | Gates and lessons |
 
 ## Process
 1. Repo: cd /home/claude/planner && git pull --rebase. Note the start time, day key, month key.
@@ -32,11 +32,23 @@
    (listing_active_count)}}. Never invent a number; if a call fails, skip the snapshot and log
    it. Keep the active and draft lists on disk for stages 01 and 02 (if you skipped the
    snapshot, still fetch the active list with Images in one job).
+6. SALES SYNC (Grayson, Oct 24, 2026: every run, never skipped, even dry runs and paused-by-cap
+   days). Add {"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":
+   "receipts"} to the snapshot job (or, if the snapshot was skipped, to the active-list job).
+   Then: ArtifactData query collection "sales" (limit 300, out_dir <tmp>/sales), and run
+   `python3 factory/shared/etsy_sales.py gw/out/<job id>.json <tmp>/sales <tmp>/sales-writes.json`.
+   If it lists new sales, write the file's "writes" with ONE ArtifactData batch (new docs only,
+   ids etsy-<receipt_id>, so it never double-counts), add one events/<day key> line per sale
+   ("New Etsy sale: $<gross> · <title>") and keep the "new" list for stage 04, which messages
+   Grayson (a new sale leads the message). If the receipts call fails, write
+   needs-you "Etsy sales sync failed: <error>" in the run log and say it in stage 04's message
+   so it never fails silently. Never type a sale in by hand; real receipts only.
 
 ## Outputs
 
 | Artifact | Location | Format |
 |----------|----------|--------|
 | Snapshot | stats/<day key> | shape above |
+| New sales | sales/etsy-<receipt_id> + events line | etsy_sales.py output |
 | Active + draft lists | local files for the next stages | gateway JSON |
 | Gate results | local note: publishedToday, feesThisMonth, dryRun | |
