@@ -14,7 +14,7 @@
   "AVAX/USD": 9.02725
  },
  "lastExit": {},
- "updatedAt": "2026-10-23T23:13:14.957412-05:00",
+ "updatedAt": "2026-10-23T23:13:59.939569-05:00",
  "equity": 25.0,
  "lastScores": {
   "BTC/USD": {
@@ -48,6 +48,6 @@
    "thin": false
   }
  },
- "barsProcessed": 1,
+ "barsProcessed": 0,
  "missingSymbols": []
 }
