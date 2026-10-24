@@ -1,0 +1,18 @@
+{
+ "id": "seo-2026-10-23-research5-c60c",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=gingerbread%20house%20contest&sort_on=score&limit=10",
+   "tag": "s:gingerbread house contest"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=letter%20from%20santa%20editable&sort_on=score&limit=10",
+   "tag": "s:letter from santa editable"
+  }
+ ]
+}

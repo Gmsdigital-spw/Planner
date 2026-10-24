@@ -1,0 +1,24 @@
+{
+ "id": "seo-2026-10-23-research4-4207",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=secret%20santa%20questionnaire&sort_on=score&limit=10",
+   "tag": "s:secret santa questionnaire"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=thanksgiving%20planner&sort_on=score&limit=10",
+   "tag": "s:thanksgiving planner"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=advent%20calendar%20activities&sort_on=score&limit=10",
+   "tag": "s:advent calendar activities"
+  }
+ ]
+}

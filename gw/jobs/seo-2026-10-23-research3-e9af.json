@@ -1,0 +1,24 @@
+{
+ "id": "seo-2026-10-23-research3-e9af",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=christmas%20bible%20verse%20wall%20art&sort_on=score&limit=10",
+   "tag": "s:christmas bible verse wall art"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=no%20buy%20year&sort_on=score&limit=10",
+   "tag": "s:no buy year"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=thanksgiving%20games&sort_on=score&limit=10",
+   "tag": "s:thanksgiving games"
+  }
+ ]
+}
