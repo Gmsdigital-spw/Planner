@@ -15,6 +15,9 @@ GRAYSON'S STANDARD (Oct 22, 2026): every promo video is a COMMERCIAL built with 
   line so tomorrow's run can pick different ones.
 - Facts only from the product copy, its PDF pages and the live Etsy read (price, title). Never a
   sale, review, scarcity or income claim that is not real.
+- Grayson's Atlas pack (Oct 23, 2026): the four Etsy scenes in assets/atlas-pack/etsy may be ONE
+  scene of a video, only with the real pages placed on them by assets/atlas-pack/place.py (README.md
+  there). The ridgeline_local and story_shorts images are NOT for shop videos.
 - NEVER use the old flat title-card listing images, stock people, AI hands, Etsy's logo, emoji walls,
   or a caption over the phone screen.
 - Video 1080x1920, 15 to 22 s, 30 fps, H.264 + AAC 48 kHz. Two files: video.mp4 (IG/FB, about

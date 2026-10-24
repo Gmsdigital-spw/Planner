@@ -49,6 +49,11 @@ for the PDF pages and the inside photos below.
 - (5) a second shot of real pages in a different layout than photo 1, or gs.preview_how(pal, 3
   steps) if the product needs explaining. Wall art, mug wraps, stickers and invitations: see
   their lane sections (wall-art.md, product-floor-v6.md).
+- Grayson's Atlas mockups (Oct 23, 2026): one of photos 2 to 5 MAY be a real-pages scene from
+  /home/claude/planner/assets/atlas-pack (README.md there: which scene fits which product;
+  place.py puts the real pages on): binder for planners, clipboard for calendars and
+  checklists, holiday table for Christmas games, oak frame for wall art. Max one per listing,
+  never the same scene on two products in a row, never on the cover, never blank.
 - Original design only: no logos, characters, stock photos, claims about sales or reviews,
   confetti, dot patterns, neon, sticker-yellow badges on inside photos, clip art, emoji.
 

@@ -63,6 +63,9 @@ prompt, above every older rule; if it cannot be read, run without it and say so 
 The skill files are generic templates: their "read LESSONS.md and playbooks" and "under 92"
 lines do not apply here; this load map and the Studio bar (Judge 7+ of 10) do.
 
+Grayson's story-short backgrounds (Oct 23, 2026): assets/atlas-pack/story_shorts (forest sunrise,
+cabin in the rain; README there). Photo-real: never mixed into a cartoon episode.
+
 ## Run notes (`output/<day key>-run.md`)
 `# Studio <day key>` (00: settings line, next episode id, credits, clip), `## Premises` (00:
 one line per existing episode: id, logline), `## Numbers` (01: views per episode, the
