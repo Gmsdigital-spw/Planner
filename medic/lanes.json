@@ -135,8 +135,8 @@
       "workflow": "yt-build.yml",
       "daily_min": 1,
       "min_score": 85,
-      "paused": true,
-      "note": "Studio Floor daily Short is switched off on purpose until the V8 Shorts rules (factory/specs/studio-floor-v8.md) are merged; unpausing it is one tap for Grayson, then set paused false here",
+      "paused": false,
+      "note": "Studio Floor daily Short is on (V8, Oct 24, 2026): one Short a day, scorecard 85, Judge 7+",
       "platform_label": "YouTube",
       "playbook": [
         "retry",
