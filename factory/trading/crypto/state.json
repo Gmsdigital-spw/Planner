@@ -1,79 +1,70 @@
 {
  "mode": "virtual",
  "startBalance": 25.0,
- "cash": 12.5,
- "positions": [
+ "cash": 24.91355855706402,
+ "positions": [],
+ "history": [
   {
    "sym": "ETH/USD",
-   "qty": 0.005238530375598689,
-   "qty0": 0.005238530375598689,
+   "entryAt": "2026-10-24T07:20:00Z",
+   "exitAt": "2026-10-24T07:25:00Z",
    "entry": 2380.2,
-   "stop": 2376.1025795019614,
-   "stop0": 2376.1025795019614,
-   "R": 4.097420498038446,
-   "hs": 0.00021011051813253772,
+   "exit": 2375.603335,
+   "stop0": 2376.10258,
    "cost": 12.5,
-   "proceeds": 0.0,
-   "half": false,
-   "high": 2380.2,
-   "t": 1792826400,
-   "lastBarT": 1792826100,
+   "pnl": -0.0864,
+   "R": -4.03,
    "score": 87.0,
-   "parts": {
-    "aboveHourlyEma": 0,
-    "fastEmaRising": 12,
-    "breakout": 25,
-    "rvol": 30.0,
-    "rsiOk": 20
-   },
-   "fills": []
+   "reason": "stop",
+   "partial": false
   }
  ],
- "history": [],
  "floorLocked": false,
- "lastBarT": 1792826100,
+ "lastBarT": 1792827900,
  "lastClose": {
-  "BTC/USD": 80812.7535,
-  "ETH/USD": 2380.94,
-  "SOL/USD": 102.23,
-  "DOGE/USD": 0.078281,
-  "AVAX/USD": 9.0325
+  "BTC/USD": 80735.96,
+  "ETH/USD": 2376.015,
+  "SOL/USD": 101.95,
+  "DOGE/USD": 0.0779695,
+  "AVAX/USD": 8.9566
  },
- "lastExit": {},
- "updatedAt": "2026-10-24T02:21:01.887853-05:00",
- "equity": 24.97,
+ "lastExit": {
+  "ETH/USD": 1792826400
+ },
+ "updatedAt": "2026-10-24T02:52:39.182104-05:00",
+ "equity": 24.9136,
  "lastScores": {
   "BTC/USD": {
    "score": 32.0,
-   "rvol": 0.09,
-   "rsi": 60.6,
+   "rvol": 0.14,
+   "rsi": 52.1,
    "thin": false
   },
   "ETH/USD": {
-   "score": 87.0,
-   "rvol": 3.18,
-   "rsi": 60.2,
+   "score": 20.0,
+   "rvol": 0.0,
+   "rsi": 48.5,
    "thin": false
   },
   "SOL/USD": {
-   "score": 20.0,
-   "rvol": 0.0,
-   "rsi": 50.9,
+   "score": 50.0,
+   "rvol": 4.01,
+   "rsi": 40.9,
    "thin": false
   },
   "DOGE/USD": {
    "score": 20.0,
    "rvol": 0.0,
-   "rsi": 47.2,
+   "rsi": 35.0,
    "thin": false
   },
   "AVAX/USD": {
    "score": 20.0,
    "rvol": 0.0,
-   "rsi": 49.8,
+   "rsi": 28.4,
    "thin": false
   }
  },
- "barsProcessed": 8,
+ "barsProcessed": 6,
  "missingSymbols": []
 }
