@@ -16,8 +16,7 @@ Put real product pages on the blank paper, frames and phone with `place.py` (see
 | etsy/04_framed_art_mockup.png [frame] | Oak frame with mat over a walnut console | Wall art and prints |
 
 Rules for Etsy:
-- Inside photos (2 to 5) and pins only, never the cover: covers follow specs/cover-styles.md.
-  These scenes are the cozy wood-desk look Grayson retired for covers on Oct 21.
+- Oct 24, 2026: Grayson put these on the COVERS (photo 1) too: specs/cover-styles.md, Oct 24 section.
 - Always with REAL pages from the product's PDF on the paper. A blank mockup never ships.
 - At most ONE Atlas photo per listing, and never the same scene on two products built back to
   back. Same-template-everywhere is what killed the covers in October.

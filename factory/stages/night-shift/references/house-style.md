@@ -53,7 +53,7 @@ for the PDF pages and the inside photos below.
   /home/claude/planner/assets/atlas-pack (README.md there: which scene fits which product;
   place.py puts the real pages on): binder for planners, clipboard for calendars and
   checklists, holiday table for Christmas games, oak frame for wall art. Max one per listing,
-  never the same scene on two products in a row, never on the cover, never blank.
+  never the same scene on two products in a row, never blank. Covers: specs/cover-styles.md (Oct 24).
 - Original design only: no logos, characters, stock photos, claims about sales or reviews,
   confetti, dot patterns, neon, sticker-yellow badges on inside photos, clip art, emoji.
 

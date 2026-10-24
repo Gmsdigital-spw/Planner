@@ -1,5 +1,20 @@
 # Cover & Pin Styles (Grayson, Oct 21, 2026)
 
+## Oct 24, 2026: Grayson's Atlas covers (THIS SECTION WINS OVER EVERYTHING BELOW)
+Grayson: the covers "that look like AI slop", with a whole bunch of animated illustrations and shapes
+(gradient background, round count badge, pills, emoji/3D stickers), get taken out. On Oct 24, 20 live
+covers were replaced: 17 new covers in listing-photos/atlas/ and 3 slop covers deleted.
+- Photo 1 = REAL product pages placed on one of Grayson's own scenes in assets/atlas-pack (README.md there;
+  `place.place(scene, pages, scale=2000/crop_w)`): binder (planners, workbooks), clipboard (single-page
+  trackers and game packs), holiday table (Christmas only), oak frame (wall art), phone (apps, spreadsheets).
+- ONE clean label card: cream rounded card, thin border in the product colour, title in Lora semi-bold
+  (readable at 200 px), one small caps subline of facts (count, format). Nothing else on the image.
+- Never: gradient backgrounds, count badges, benefit pills, emoji, 3D stickers, confetti, clip art.
+  tools/fun_covers.py is retired for covers.
+- Variety: change the crop (zoom and offset), label position (top/bottom) and colour on every cover; never
+  the same scene on two products built back to back. Builder: the Oct 24 script in the run notes pattern
+  (listing-photos/atlas/README.md).
+
 ## GRAYSON LOVES THIS LOOK (Oct 21, 2026, 4 PM)
 Grayson: the new bold, fun covers (bright theme color, real pages big on a white card, big count badge, benefit pills, 3D themed art) are "exactly how they're supposed to look." Keep this look as the standard for every new listing, pin and banner, and make each new one a little better than the last: sharper readability at thumbnail size, more varied layouts, better-matched art. Never drift back to beige/cream desk covers.
 
