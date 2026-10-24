@@ -1,0 +1,108 @@
+{
+ "id": "mech-2026-10-24-pinstats-1c43",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6adb9886488b7522680dd53d",
+   "tag": "pin-prod-santa-mail-bundle-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8b0e6b263219c40196428",
+   "tag": "pin-cookie-exchange-1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f3838c105982dc04b00f",
+   "tag": "pin-prod-nye-games-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad7c26dd598aa9ba3fdf8c0",
+   "tag": "pin-debt-payoff-2027-2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f382e0f45f343e2a572b",
+   "tag": "pin-prod-no-buy-year-2027-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f382e0f45f343e2a5726",
+   "tag": "pin-prod-goal-workbook-2027-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f381e0f45f343e2a5721",
+   "tag": "pin-prod-friendsgiving-kit-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8b0e6cf9fb6b481139a08",
+   "tag": "pin-gingerbread-contest-1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f3808c105982dc04b00a",
+   "tag": "pin-prod-debt-payoff-2027-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad7c26d95cadcb73a9a2126",
+   "tag": "pin-pink-christmas-verse-art-1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f380e0f45f343e2a571c",
+   "tag": "pin-prod-cookie-exchange-kit-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f37fe0f45f343e2a5717",
+   "tag": "pin-prod-advent-activities-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f37fe0f45f343e2a5712",
+   "tag": "pin-prod-adhd-savings-tracker-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f37ee0f45f343e2a570d",
+   "tag": "pin-legacy-xmas-planner-listing-update-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad7c26cd598aa9ba3fdf8b6",
+   "tag": "pin-friendsgiving-1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f37e8c105982dc04aff4",
+   "tag": "pin-legacy-xmas-game-bundle-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad7c26c95cadcb73a9a2121",
+   "tag": "pin-debt-payoff-2027-1"
+  }
+ ]
+}
