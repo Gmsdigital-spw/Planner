@@ -9,6 +9,7 @@
 - 2026-10-21: The free GitHub gateway handles Etsy/Zernio/Alpaca calls without spending Make operations (Make was at 56% of its monthly budget on Oct 23).
 
 ## Testing (not proven yet)
+- Oct 23: paused Trading lab + Gmula Short, Scout 5x->2x/day, Mechanic 5x->3x/day to cut usage and breakage. Check Oct 30: fewer failures in the run log, usage lasting longer.
 - Scout Intel saving its run log through the Mechanic (Scout can't push to GitHub). Check Oct 30: no missing scout-intel days in the run log.
 
 ## What doesn't work (tried, failed, or Grayson rejected)

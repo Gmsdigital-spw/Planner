@@ -95,7 +95,7 @@ Every crew gets smarter from `factory/notebook/` (read `notebook/README.md` once
 Mission (Grayson, Oct 23, 2026): the crew exists to make Grayson money until it has made him rich;
 it pays for itself first, works money-first, pushes every cap with 92+ work and never past it, and
 learns from numbers every run (`shared/rules.md`, "Mission" and "The agent update"; the week's
-standing order is `specs/push-week-2026-10-23.md`). Real numbers only. Nothing ships under 92. No paid service, no money spent, no live trading, no
+standing order is `specs/push-week-2026-10-23.md`; the Oct 23 `specs/thrive-plan-2026-10-23.md` wins over it on conflict: quality over volume). Real numbers only. Nothing ships under 92. No paid service, no money spent, no live trading, no
 deleted listing, no changed schedule and no new scheduled task without Grayson's go. No real
 name, hometown or personal details of Grayson in any file, copy, image, caption or message.
 Messages to Grayson are short (3 lines or fewer) and plain. The full text is `shared/rules.md`.

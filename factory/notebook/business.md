@@ -9,6 +9,8 @@
 - 2026-10-23: Take notes on everything (listings, pins, posts, trades, the business) and get better every day from them.
 - 2026-10-23: Deadline Grayson set himself: keep going daily through Dec 31, 2026; if nothing happens, he stops. Nov-Dec is the shop's best window.
 
+- 2026-10-23: Apply the 8-move thrive plan (specs/thrive-plan-2026-10-23.md): covers, winners first, Etsy search, honest reviews, Christmas by Nov 7, TikTok, fewer jobs, honest weekly scoreboard.
+
 ## What works (proven by numbers)
 - 2026-10-23: A small Pinterest ad moves views on the listing it targets: Christmas Party Games Bundle +24 views in 2 days during the ~$35 ad (Oct 21-23); shop-wide views barely moved otherwise. Held: 1 time.
 

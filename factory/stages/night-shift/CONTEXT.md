@@ -60,7 +60,7 @@ product `## Build: <title>` (04), `## Copy: <title>` (05), `## Photos: <title>` 
 
 | Stage | Loads |
 |-------|-------|
-| 00 | `shared/repo.md` ("Getting it"), `specs/push-week-2026-10-23.md` ("Daily targets": the coordinator puts each worker's line into its brief) |
+| 00 | `specs/thrive-plan-2026-10-23.md` (full: wins over push-week on conflict; the coordinator puts the 8 moves and the focus list into every worker's brief), `shared/repo.md` ("Getting it"), `specs/push-week-2026-10-23.md` ("Daily targets": the coordinator puts each worker's line into its brief) |
 | 01 | `notebook/etsy.md` (full) + `notebook/business.md` (Grayson's rules), `specs/product-floor-v6.md` (Idea Engine, lanes, Holiday Mode, SALES PUSH), `skills/scout/SKILL.md`, `skills/judge_ideas/SKILL.md`, `LESSONS.md`; `references/wall-art.md` (Scout section) |
 | 02 | wall-art.md (Auto-approver section) for a wall art brief |
 | 03 | `references/database-fields.md` ("products", "missions"), `specs/cover-styles.md` (newest section) |

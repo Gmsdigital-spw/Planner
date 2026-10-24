@@ -41,8 +41,8 @@ C. Atlas sales review (room "bridge"). Read stats (newest 14). Fewer than 2 snap
    views7 >= 30 and sales up = "working"; 10 to 29 = "warming up"; under 10 = "quiet". Write
    sprint/main {review:{at, text (under 450 chars: the one most useful finding and what to do,
    with numbers), actions:[up to 3]}, flags:[{listingId, title, views7, favs7, verdict}],
-   updatedAt}. Then for at most ONE "looks, no sale" listing with no listing-update product in
-   the last 14 days: investigate it (title, tags, description, price, photos from stats and any
+   updatedAt}. Then for at most ONE listing with no listing-update product in the last 14 days, taken from
+   the focus list in specs/thrive-plan-2026-10-23.md first (even under 30 views7), else a "looks, no sale" listing: investigate it (title, tags, description, price, photos from stats and any
    product doc with its listingId, plus a WebSearch of the top competitors) and create
    products/<id> as a copy-only update, stage "ready": {title:"Listing update: <name>",
    legacy:{listingId, url}, copy:{title, tags (13), description, descriptionVerified, price,
