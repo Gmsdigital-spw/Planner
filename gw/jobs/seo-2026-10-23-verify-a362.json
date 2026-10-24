@@ -1,0 +1,78 @@
+{
+ "id": "seo-2026-10-23-verify-a362",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4598535050",
+   "tag": "4598535050"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4600177510",
+   "tag": "4600177510"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4598501430",
+   "tag": "4598501430"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4598721247",
+   "tag": "4598721247"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4599444986",
+   "tag": "4599444986"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4597743627",
+   "tag": "4597743627"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4597755725",
+   "tag": "4597755725"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4597977363",
+   "tag": "4597977363"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4597998190",
+   "tag": "4597998190"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4599447958",
+   "tag": "4599447958"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4600177516",
+   "tag": "4600177516"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4601798994",
+   "tag": "4601798994"
+  }
+ ]
+}
