@@ -1,0 +1,341 @@
+{
+  "version": "8.0",
+  "biz": "atlas",
+  "business": "GM Agency (Atlas Hub): Etsy shop, marketing, Gmula Shorts, paper trading",
+  "tz": "America/Chicago",
+  "repo": "Gmsdigital-spw/Planner",
+  "branch": "main",
+  "runlog": "factory/runlog.jsonl",
+  "crew_owner": "mechanic",
+  "notify_only_if_unfixable": true,
+  "max_dispatches_per_pass": 6,
+  "ticket_grace_hours": 9,
+  "human_after_hours": 2,
+  "under_goal_human_hours": 3,
+  "sources": {
+    "gateway": {
+      "jobs": "gw/jobs",
+      "out": "gw/out"
+    }
+  },
+  "lanes": {
+    "etsy_listing": {
+      "label": "Etsy listings",
+      "biz": "atlas",
+      "signal": "gw_count",
+      "op": "etsy",
+      "method": "POST",
+      "path_regex": "^/shops/\\d+/listings$",
+      "unit": "listings created",
+      "daily_min": 1,
+      "daily_max": 2,
+      "min_score": 92,
+      "goal_hour": 20,
+      "platform_label": "Etsy",
+      "playbook": [
+        "retry",
+        "rescore_rebuild",
+        "rehost_images",
+        "shrink_images",
+        "next_slot"
+      ]
+    },
+    "pinterest": {
+      "label": "Pinterest pins",
+      "biz": "atlas",
+      "signal": "gw_count",
+      "op": "zernio",
+      "method": "POST",
+      "platform": "pinterest",
+      "unit": "pins scheduled",
+      "daily_min": 6,
+      "goal_hour": 20,
+      "platform_label": "Pinterest",
+      "playbook": [
+        "retry",
+        "rehost_images",
+        "regenerate_asset",
+        "next_slot"
+      ]
+    },
+    "video_pin": {
+      "label": "Video pin",
+      "biz": "atlas",
+      "signal": "videopins",
+      "file": "factory/videopins/state.json",
+      "daily_min": 1,
+      "goal_hour": 21,
+      "platform_label": "Pinterest",
+      "playbook": [
+        "resend",
+        "shrink_video",
+        "next_slot"
+      ]
+    },
+    "instagram_shop": {
+      "label": "Instagram",
+      "biz": "atlas",
+      "signal": "gw_count",
+      "op": "zernio",
+      "method": "POST",
+      "platform": "instagram",
+      "unit": "posts scheduled",
+      "daily_min": 1,
+      "goal_hour": 20,
+      "platform_label": "Instagram",
+      "playbook": [
+        "retry",
+        "shrink_video",
+        "backup_poster",
+        "next_slot"
+      ]
+    },
+    "facebook_shop": {
+      "label": "Facebook",
+      "biz": "atlas",
+      "signal": "gw_count",
+      "op": "zernio",
+      "method": "POST",
+      "platform": "facebook",
+      "unit": "posts scheduled",
+      "daily_min": 1,
+      "goal_hour": 20,
+      "platform_label": "Facebook",
+      "playbook": [
+        "retry",
+        "shrink_video",
+        "backup_poster",
+        "next_slot"
+      ]
+    },
+    "youtube_shop": {
+      "label": "Shop YouTube",
+      "biz": "atlas",
+      "signal": "gw_count",
+      "op": "zernio",
+      "method": "POST",
+      "platform": "youtube",
+      "unit": "posts scheduled",
+      "daily_min": 1,
+      "goal_hour": 20,
+      "platform_label": "YouTube",
+      "playbook": [
+        "retry",
+        "shrink_video",
+        "next_slot"
+      ]
+    },
+    "gmula_shorts": {
+      "label": "Gmula Shorts",
+      "biz": "atlas",
+      "signal": "yt_build",
+      "jobs": "yt/jobs",
+      "out": "yt/out",
+      "stale_minutes": 90,
+      "workflow": "yt-build.yml",
+      "daily_min": 1,
+      "min_score": 85,
+      "paused": false,
+      "note": "Studio Floor daily Short is on (V8, Oct 24, 2026): one Short a day, scorecard 85, Judge 7+",
+      "platform_label": "YouTube",
+      "playbook": [
+        "retry",
+        "rescore_rebuild",
+        "shrink_video",
+        "next_slot"
+      ],
+      "score_file": "yt/out/<id>.score.json"
+    },
+    "trading_paper": {
+      "label": "Paper trading (stocks)",
+      "biz": "atlas",
+      "signal": "heartbeat_file",
+      "file": "factory/trading/auto/heartbeat.json",
+      "error_file": "factory/trading/auto/last-error.json",
+      "heartbeat_minutes": 15,
+      "window": {
+        "start": "08:40",
+        "end": "15:00",
+        "days": "weekdays"
+      },
+      "workflow": "trading-autopilot.yml",
+      "verify_seconds": 180,
+      "playbook": [
+        "restart_bot"
+      ]
+    },
+    "crypto_paper": {
+      "label": "Crypto paper bot",
+      "biz": "atlas",
+      "signal": "heartbeat_file",
+      "file": "factory/trading/crypto/heartbeat.json",
+      "error_file": "factory/trading/crypto/last-error.json",
+      "heartbeat_minutes": 30,
+      "workflow": "crypto-paper.yml",
+      "verify_seconds": 180,
+      "playbook": [
+        "restart_bot"
+      ]
+    },
+    "gateway": {
+      "label": "Free gateway",
+      "biz": "atlas",
+      "signal": "gw_jobs",
+      "jobs": "gw/jobs",
+      "out": "gw/out",
+      "stale_minutes": 25,
+      "workflow": "gw.yml",
+      "job_input": true,
+      "verify_seconds": 240,
+      "playbook": [
+        "retry"
+      ]
+    },
+    "engine": {
+      "label": "Engine room",
+      "biz": "atlas",
+      "signal": "engine_report",
+      "file": "factory/engine/public/report.json",
+      "heartbeat_minutes": 90,
+      "window": {
+        "start": "07:30",
+        "end": "19:30",
+        "days": "all"
+      },
+      "workflow": "engine.yml",
+      "verify_seconds": 180,
+      "playbook": [
+        "retry"
+      ]
+    },
+    "actions": {
+      "label": "GitHub Actions",
+      "biz": "atlas",
+      "signal": "actions_runs",
+      "hours": 24,
+      "workflows": [
+        "gw.yml",
+        "yt-build.yml",
+        "yt-shrink.yml",
+        "studio-tts.yml",
+        "engine.yml",
+        "trading-lab.yml"
+      ],
+      "playbook": [
+        "rerun_failed"
+      ],
+      "note": "the two bots (crypto-paper, trading-autopilot) run on their own cadence and are watched through their heartbeats, not re-run here"
+    },
+    "gumroad": {
+      "label": "Gumroad",
+      "signal": "manual",
+      "parked": true
+    },
+    "funnel_floor": {
+      "label": "Funnel Floor",
+      "signal": "manual",
+      "parked": true
+    },
+    "frontier_nav": {
+      "label": "Frontier Nav",
+      "signal": "manual",
+      "parked": true
+    },
+    "tiktok": {
+      "label": "TikTok",
+      "signal": "manual",
+      "parked": true,
+      "note": "Grayson's own; the crew never touches it"
+    }
+  },
+  "crews": {
+    "night-shift": {
+      "label": "Night Shift",
+      "every_hours": 24,
+      "grace_hours": 3,
+      "trigger": "GM Agency Night Shift"
+    },
+    "bolt": {
+      "label": "Bolt (Etsy publisher)",
+      "every_hours": 8,
+      "grace_hours": 3,
+      "trigger": "Bolt Etsy publisher"
+    },
+    "herald": {
+      "label": "Herald (social)",
+      "every_hours": 12,
+      "grace_hours": 3,
+      "trigger": "Herald social run"
+    },
+    "mechanic": {
+      "label": "Mechanic",
+      "every_hours": 8,
+      "grace_hours": 2,
+      "trigger": "Mechanic \u00b7 self-fix + morning report"
+    },
+    "pricing": {
+      "label": "Pricing (Ledger)",
+      "every_hours": 24,
+      "grace_hours": 3,
+      "trigger": "Pricing agent (Ledger)"
+    },
+    "check-up": {
+      "label": "Listing check-up (Warden)",
+      "every_hours": 24,
+      "grace_hours": 3,
+      "trigger": "Etsy Listing Check-up"
+    },
+    "video-pin": {
+      "label": "Pixel video pin",
+      "every_hours": 24,
+      "grace_hours": 3,
+      "trigger": "Pixel \u00b7 daily video pin"
+    },
+    "scout-intel": {
+      "label": "Scout Intel",
+      "every_hours": 12,
+      "grace_hours": 4,
+      "trigger": "Scout Intel \u00b7 all-day research"
+    },
+    "trading-scan": {
+      "label": "Trading scans",
+      "every_hours": 1,
+      "grace_hours": 1,
+      "window": {
+        "start": "09:40",
+        "end": "15:00",
+        "days": "weekdays"
+      },
+      "trigger": "Trading Floor scans"
+    },
+    "trading-close": {
+      "label": "Trading close",
+      "every_hours": 24,
+      "grace_hours": 3,
+      "window": {
+        "start": "15:30",
+        "end": "23:59",
+        "days": "weekdays"
+      },
+      "trigger": "Trading Floor close"
+    },
+    "studio": {
+      "label": "Studio Floor Short (Vega)",
+      "paused": true,
+      "note": "switched off on purpose; one tap to unpause after the V8 Shorts rules are merged"
+    },
+    "trading-lab": {
+      "label": "Trading lab",
+      "paused": true,
+      "note": "switched off on purpose"
+    }
+  },
+  "needs_human": {
+    "auth_expired": "Your {platform} login expired. Tap the reconnect link in Zernio or Make, then you're done.",
+    "platform_block": "{platform} paused posting. Open the {platform} app and clear the notice.",
+    "billing": "{platform} needs a payment method update. Nothing else is affected.",
+    "missing": "{lane} stopped checking in ({detail}). Open GitHub Actions and tap Run workflow.",
+    "crew_missing": "{lane} did not run ({detail}). Open the scheduled tasks list and tap Run.",
+    "under_goal": "{lane} is under its daily goal ({detail}). The crew's next run should catch up; if not, open the app."
+  }
+}

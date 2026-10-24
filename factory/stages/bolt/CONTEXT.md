@@ -15,8 +15,8 @@ One session, five sub-stages in order; load each sub-stage's CONTEXT.md when you
 |-------|-------|-----------|
 | 00-gates | `shared/gateway.md` ("Protocol", "Etsy"), `shared/repo.md` ("Getting it", "Committing", Bolt row), `specs/push-week-2026-10-23.md` (the Bolt and Pixel + Bolt rows) | never |
 | 01-candidates | `references/product-rules.md` | never (it also fetches the active list) |
-| 02-publish | `references/publish-steps.md`, `shared/gateway.md` ("Etsy" incl. upload and fallback) | no candidate, dryRun, or a cap is reached |
-| 03-pins | `shared/gateway.md` ("Zernio"), `shared/accounts.md` ("Pinterest"), `references/pin-rules.md` | dryRun (a dry run stops after 01) |
+| 02-publish | `references/publish-steps.md`, `references/listing-fixes.md` (first run of the day), `shared/gateway.md` ("Etsy" incl. upload and fallback) | no candidate, dryRun, or a cap is reached (the listing-fixes step still runs) |
+| 03-pins | `shared/gateway.md` ("Zernio"), `shared/accounts.md` ("Pinterest"), `references/pin-rules.md` | dryRun (a dry run stops after 02's listing-fixes listing) |
 | 04-log | `shared/logging.md` ("The line", "Helper") | never |
 
 Do NOT load: the Night Shift stages, any skill except `skills/bolt/SKILL.md` (read in 00),
@@ -45,8 +45,8 @@ ToolSearch first: `select:ArtifactData,Artifact,SendUserMessage,mcp__Make__scena
 Day key and month key: database.md "Time". Timestamps ISO 8601 UTC.
 
 ## Never
-Delete, deactivate or edit any live listing or its photos; change prices, titles, tags or
-descriptions of live listings; publish anything that fails a check; publish more than 2 a day
+Delete, deactivate or edit any live listing or its photos; change prices or descriptions of
+live listings (titles and tags only through 02's listing_fixes step, V8, at most 2 a day); publish anything that fails a check; publish more than 2 a day
 or past the monthly fee cap; raise any cap; turn on ads; spend money other than the $0.20
 listing fee; turn the Make Pinterest poster back on or post pins through Make; touch Gumroad;
 touch modules/youtube/, the third bay, sales, milestones, or any repo path other than

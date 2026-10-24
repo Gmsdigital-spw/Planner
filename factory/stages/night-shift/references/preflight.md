@@ -26,10 +26,10 @@ below on its own product and fixes what fails BEFORE setting stage "inspection".
 - [ ] Render EVERY page to PNG and look at a contact sheet (Read it) before going on.
 
 ## Images (lost 3 to 9)
-- [ ] Cover: layout family not on the last 5 covers; title (and count badge, if any) fully inside the square, nothing clipped, readable at 300 px
+- [ ] Cover: Atlas scene not the one on the last product built; title and count on the label card fully inside the square, nothing clipped, readable at 300 px
       (save gs.thumb_check and Read it). Real pages are the biggest thing, about 40%+ of the
       square.
-- [ ] Cover theme + art differ from the last 3 published (read their coverLook).
+- [ ] Cover scene differs from the last product built; crop, label position and label colour differ from the last 3 published (read their coverLook).
 - [ ] Photos 2 to 5: the real pages fill most of the frame width (no small page floating in
       empty space); each photo shows something different (inside pages, the key or extras,
       a "what's included" grid, the how-to). Text inside x 260 to 1740.

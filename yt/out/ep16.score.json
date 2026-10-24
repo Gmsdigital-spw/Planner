@@ -1,0 +1,69 @@
+{
+ "schema": "shorts-scorecard/1",
+ "version": "8.0",
+ "id": "ep16",
+ "score": 70,
+ "pass": false,
+ "passmark": 85,
+ "hard_gate": {
+  "twist_has_real_motion": true
+ },
+ "at": "2026-10-24T08:05:25Z",
+ "checks": {
+  "hook_motion_first_1_5s": {
+   "ok": false,
+   "pts": 15,
+   "evidence": "line 1 is a still (parallax only): put anim:true on line 1 or give it a real clip"
+  },
+  "hook_text_question_or_shock": {
+   "ok": true,
+   "pts": 10,
+   "evidence": "hook \"MOM UNPLUGGED IT AT 1 HP\" (6 words)"
+  },
+  "story_has_twist": {
+   "ok": true,
+   "pts": 15,
+   "evidence": "twist at line 7 (punch)"
+  },
+  "ending_loops_to_start": {
+   "ok": true,
+   "pts": 10,
+   "evidence": "loop true, last scene = first scene, last pause 0.05"
+  },
+  "new_beat_every_3s": {
+   "ok": false,
+   "pts": 10,
+   "evidence": "9 scenes, mean 3.7 s, longest 5.5 s; too long: lines 1 (5.5 s), 3 (4.3 s), 6 (4.2 s), 8 (4.3 s). Split long lines (9 words or fewer each) so every scene is a new beat"
+  },
+  "real_animation_not_zoom": {
+   "ok": true,
+   "pts": 15,
+   "evidence": "real motion on lines 5, 7"
+  },
+  "natural_voice": {
+   "ok": true,
+   "pts": 10,
+   "evidence": "voice engine edge, voice andrew, speed 1.03"
+  },
+  "captions_in_safe_zone": {
+   "ok": true,
+   "pts": 5,
+   "evidence": "hook at 11.98% from the top, captions end at 68.75% (make_short.py ASS styles)"
+  },
+  "length_20_to_45s": {
+   "ok": true,
+   "pts": 5,
+   "evidence": "33.0 s"
+  },
+  "title_vidiq_score_70plus": {
+   "ok": false,
+   "pts": 5,
+   "evidence": "title not scored by vidIQ: score it with vidiq_score_title (type short) when 5 or more credits are left; 70+ passes"
+  }
+ },
+ "fixes": [
+  "hook_motion_first_1_5s",
+  "new_beat_every_3s",
+  "title_vidiq_score_70plus"
+ ]
+}

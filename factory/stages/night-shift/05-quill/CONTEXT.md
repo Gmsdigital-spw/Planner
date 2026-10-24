@@ -9,6 +9,7 @@
 | Spec | `../../../specs/product-floor-v6.md` | SALES PUSH ("SEARCH-FIRST COPY", "PRICES"), the lane's spec (Quill lines) | Search-first titles, prices, lane categories |
 | Skill | `../../../skills/quill/SKILL.md` | Full file | Checklist and lessons |
 | Database | lessons (active), the brief's evidence | | What sells, what Grayson rejected |
+| Database | stats (newest 1), listing_fixes (all) | | Step 6: the 5 most-viewed live listings, the 14-day rule, the 5-ready cap |
 | Reference | `../references/wall-art.md` | "Quill" section | Only for a wallart product |
 
 ## Process
@@ -29,6 +30,15 @@
 5. Verify every limit with Python (counts, lengths, tag uniqueness, the exact AI line). Then
    stage "images". Set crew/quill idle. Write `## Copy: <title>` in the run notes: the
    title, price, tag count.
+6. LISTING FIXES (V8, Oct 24, 2026; specs/etsy-v8.md section 5; the Builder's last product
+   only, once per run): read the newest stats doc and take the 5 most-viewed live listings.
+   For each whose title does not start with the phrase buyers type (Etsy autocomplete via
+   WebSearch) or whose tags are not 13 real search phrases, and that has no listing_fixes doc
+   from the last 14 days (a doc with status applied is never overwritten before its 14-day judgement), write listing_fixes/<listingId> {listingId, title_before,
+   title_after, tags_before, tags_after, why (one line with the views number), status
+   "ready", at}. Title and tags only; never price, photos, description or category. At most 5
+   docs with status "ready" exist at once. Bolt applies 2 a day (its steps: bolt/references/listing-fixes.md, Bolt's file, not loaded here).
+   Write `## Listing fixes` in the run notes: which listings, and the before/after titles.
 
 ## Audit
 
@@ -45,3 +55,4 @@
 | Artifact | Location | Format |
 |----------|----------|--------|
 | Listing copy | products/<id>.copy | title, tags[13], description, price, category, materials |
+| Listing fixes | listing_fixes/<listingId> | title and tags before/after, status ready |

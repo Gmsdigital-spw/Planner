@@ -6,3 +6,6 @@ factory/engine/db/state.sqlite-*
 factory/engine/handoff/
 factory/engine/state/state.sqlite
 factory/engine/state/state.sqlite-*
+
+# dated zips made by scripts/backup.sh (never committed)
+backups/*.zip

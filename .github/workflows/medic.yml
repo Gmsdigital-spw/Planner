@@ -1,0 +1,59 @@
+name: Medic
+
+# V8 "The Turning Point" (Oct 24, 2026). The Medic looks at every lane twice an hour, fixes what it can
+# for free (re-start a stuck gateway job, a Short that never built, a bot that stopped checking in,
+# the engine; re-run a failed Action once), checks the fix is live, learns from it, and writes
+# medic/public/medic_report.json for the Today screen. What needs thinking becomes a ticket in
+# medic/queue/ for the Mechanic. Grayson is asked only when neither can fix it.
+# Plain Python, no Claude usage, no money. It commits only its own folder.
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Look and print only; change nothing (true/false)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency: { group: medic, cancel-in-progress: false }
+
+jobs:
+  heal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 300
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Self-test (never heal with a broken Medic)
+        run: python medic/medic.py --selftest
+      - name: One pass
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            python medic/medic.py --dry-run
+          else
+            python medic/medic.py
+          fi
+      - name: Save history, lessons, tickets and the report
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "medic-bot"
+          git config user.email "medic-bot@users.noreply.github.com"
+          git add medic/db medic/lessons medic/queue medic/public
+          git diff --cached --quiet && { echo "nothing new"; exit 0; }
+          git commit -qm "medic: $(TZ=America/Chicago date +%H:%M) CT"
+          for i in 1 2 3 4 5; do
+            git pull -q --rebase origin "${{ github.ref_name }}" && git push -q origin "HEAD:${{ github.ref_name }}" && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep $((i*5))
+          done
+          exit 1

@@ -1,0 +1,17 @@
+# Facts (dated, sourced, append-only; the long tail behind MEMORY.md)
+_Add with `python3 factory/memory/memory.py fact --text "..." --source "..."`. A fact is something checked, with where it was checked._
+
+- 2026-10-24: vidIQ balance 2 credits: renewable 0 of 150 (renews 2026-11-19), add-on 2 of 20. [vidiq_balance, Oct 24 07:40 CT]
+- 2026-10-24: Make scenario 6676353 `ytapi` GET /v3/search (videoDuration=short, order=viewCount, publishedAfter 7 days) returned 5 Shorts; GET /v3/videos?part=statistics,contentDetails returned views, likes, comments and ISO durations for all 5; 0 vidIQ credits. [Make executions d0e6d3839491482d8526052b81dc693f, 52cd09f2b470471aa1d9c358fcbff3e9]
+- 2026-10-24: YouTube's videoDuration=short means under 4 minutes (a 3:32 video came back), so research keeps only items of 60 s or less; the search also returns Hindi and Urdu cartoon channels, so keep English titles only. [the same executions]
+- 2026-10-24: The free Hugging Face animation lane produced real motion on ep16 lines 5 and 7 (Oct 22 build); the builder logs it as "line N: real motion from the free animation lane" in yt/out/<id>.json warnings. [yt/out/ep16.json]
+- 2026-10-24: Shorts scorecard on the existing builds: ep16 70 (still opening, 4 scenes over 4 s, no title score), ep14 50, ep13 40, ep12 40, ep11 40. [studio/quality_gates.py short, yt/out/*.score.json]
+- 2026-10-24: Among the 17 Atlas covers in listing-photos/atlas, 136 pairs: min phash distance 6, median 28, max 42; 7 pairs under 18. The newest cover against the other 16 passes (min 22). [studio/quality_gates.py cover]
+- 2026-10-24: The Atlas Hub page (artifact version 64) reads `pipeline/<id>.scorecard.score` for the Shorts list and `medic/public/medic_report.json` from main every 10 minutes. [factory/page/atlas-hub.html]
+- 2026-10-24: Crypto paper bot Actions failures at 03:50 and 04:11 UTC were `ValueError: Invalid header value b'***\n'` (an Alpaca secret with a trailing newline); later runs succeeded. [Actions logs, factory/trading/crypto/core.py]
+- 2026-10-24: A local checkout's heartbeat age is not the bot's age: origin/main had a fresh heartbeat while the checkout showed 66 to 120 min; the Medic runs on fresh clones. [medic dry runs]
+- 2026-10-24: `workflow_dispatch` on a workflow that exists only on a branch returns 404; the Medic validates with local passes until the branch merges. [GitHub API]
+- 2026-10-24: Studio scheduled task trig_01VNPpEQuRoSAGg9F9SAeWYo is disabled (last run Oct 23 01:12 UTC, succeeded); its prompt points at the stage files, so no prompt change is needed for V8. [get_trigger]
+- 2026-10-24: Scheduled tasks all run on claude-opus-5-5: Night Shift 1:54, Bolt 7:13/12:13/16:13, Herald 11:16/18:16, Mechanic 6:47/14:47/22:47, Pixel 12:52, Pricing 9:22, Scout Intel 7:51/15:51, reply desk every 2 h 7:37 to 23:37, Day Shift weekdays 7:07, Emergency Watch every 4 h; Studio and Trading lab disabled on purpose. [list_triggers]
+- 2026-10-24: The shop: 23 listings, 166 views in total, 0 favorites, 0 sales (stats Oct 22); 20 covers replaced on Oct 24 with the Atlas look; invitation briefs for birthday, baby shower and bridal shower filed Oct 24. [specs/push-week-2026-10-23.md, cover-styles.md Oct 24, 03-pick]
+- 2026-10-24: The Studio's first cartoon episodes drew 28, 30, 18 and 3 views at 74 min with 0 likes and 0 comments; ep10 (24 s, real footage, posted 12:49 PM CT) has 1,312. [run notes 10-22 "## Numbers"]

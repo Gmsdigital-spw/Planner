@@ -9,7 +9,7 @@ they only use `shared/` files when their prompt says so.
 | Scheduled task | Go to | What it does |
 |----------------|-------|--------------|
 | GM Factory Night Shift (1:54 AM CT) | `stages/night-shift/CONTEXT.md` | Research, judge, build, copy, photos, inspect, pins, review, report |
-| Mechanic · self-fix + morning report (5x daily) | not yet moved (prompt) | Check every lane, fix once, one morning report |
+| Mechanic · self-fix + morning report (3x daily) | `stages/mechanic/CONTEXT.md` + prompt | Check every lane, fix once, work the Medic's tickets (`medic/queue/`), one morning report |
 | Bolt Etsy publisher (7:13 / 12:13 / 4:13 CT) | `stages/bolt/CONTEXT.md` | Publish passed products on Etsy, schedule pins |
 | Herald social run (11:16 / 6:16 CT) | `stages/herald/CONTEXT.md` | One post per channel per day |
 | Pixel · daily video pin | not yet moved (prompt) | One Pinterest video pin a day |
@@ -25,6 +25,7 @@ they only use `shared/` files when their prompt says so.
 | Resource | Location | Contains |
 |----------|----------|----------|
 | Rules that never bend | `shared/rules.md` | Honesty, privacy, approvals, caps, how to talk to Grayson |
+| The Medic (V8) | `../medic/` (repo root) | Plain-Python self-repair on GitHub Actions every 30 min: `lanes.json`, `public/medic_report.json` (the board), `queue/` (tickets for the Mechanic), `lessons/` |
 | Database | `shared/database.md` | Artifact URL, ArtifactData rules, assets, day key, timestamps |
 | Repo | `shared/repo.md` | Clone/pull/commit/push rules, write-path allowlist per agent |
 | Gateway | `shared/gateway.md` | Free GitHub gateway protocol and every op shape |
@@ -32,6 +33,8 @@ they only use `shared/` files when their prompt says so.
 | Logging | `shared/logging.md` | The run-log line every run writes |
 | Floor specs | `specs/` | Grayson's standing orders per floor (load by section) |
 | The week's standing order (Oct 23-30, 2026) | `specs/push-week-2026-10-23.md` | Mission numbers, daily targets per crew, the scoreboard, Grayson's taps, cap proposals |
+| V8 "The Turning Point" (Oct 24, 2026) | `specs/etsy-v8.md`, `specs/studio-floor-v8.md`, `studio/quality_gates.py` | Grayson's V8 orders for the shop, the promo channels and the Gmula Shorts; the scorecards in code |
+| Crew memory | `memory/MEMORY.md` (read first), `memory/agents/<id>.md`, `memory/handoffs/` | What lasts: standing truths, gotchas, Grayson's decisions, each agent's durable memory (CLAUDE.md "Memory rule") |
 | Agent skills | `skills/<agent>/SKILL.md` | Load only the agents acting in the current stage |
 | Lessons | `LESSONS.md` | Numbers-only lessons, newest last |
 | Playbooks | `playbooks/` | Load only the one a stage names |

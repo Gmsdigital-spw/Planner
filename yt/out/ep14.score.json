@@ -1,0 +1,71 @@
+{
+ "schema": "shorts-scorecard/1",
+ "version": "8.0",
+ "id": "ep14",
+ "score": 50,
+ "pass": false,
+ "passmark": 85,
+ "hard_gate": {
+  "twist_has_real_motion": false
+ },
+ "at": "2026-10-24T08:05:25Z",
+ "checks": {
+  "hook_motion_first_1_5s": {
+   "ok": false,
+   "pts": 15,
+   "evidence": "line 1 is a still (parallax only): put anim:true on line 1 or give it a real clip"
+  },
+  "hook_text_question_or_shock": {
+   "ok": true,
+   "pts": 10,
+   "evidence": "hook \"HE LAUGHED AT MY GRANDPA. BIG MISTAKE.\" (7 words)"
+  },
+  "story_has_twist": {
+   "ok": true,
+   "pts": 15,
+   "evidence": "twist at line 4 (punch)"
+  },
+  "ending_loops_to_start": {
+   "ok": true,
+   "pts": 10,
+   "evidence": "loop true, last scene = first scene, last pause 0.05"
+  },
+  "new_beat_every_3s": {
+   "ok": false,
+   "pts": 10,
+   "evidence": "13 scenes, mean 4.3 s, longest 5.4 s; too long: lines 1 (5.0 s), 2 (4.7 s), 4 (4.9 s), 5 (5.4 s), 10 (5.4 s), 11 (4.5 s), 12 (5.1 s), 13 (5.0 s). Split long lines (9 words or fewer each) so every scene is a new beat"
+  },
+  "real_animation_not_zoom": {
+   "ok": false,
+   "pts": 15,
+   "evidence": "no line got real motion. Needs anim:true on the twist line and line 1 (max 3 animated shots) and a working HF_TOKEN"
+  },
+  "natural_voice": {
+   "ok": true,
+   "pts": 10,
+   "evidence": "voice engine edge, voice andrew, speed 1.05"
+  },
+  "captions_in_safe_zone": {
+   "ok": true,
+   "pts": 5,
+   "evidence": "hook at 11.98% from the top, captions end at 68.75% (make_short.py ASS styles)"
+  },
+  "length_20_to_45s": {
+   "ok": false,
+   "pts": 5,
+   "evidence": "56.2 s: needs 20 to 45 s (aim 25 to 40)"
+  },
+  "title_vidiq_score_70plus": {
+   "ok": false,
+   "pts": 5,
+   "evidence": "title not scored by vidIQ: score it with vidiq_score_title (type short) when 5 or more credits are left; 70+ passes"
+  }
+ },
+ "fixes": [
+  "hook_motion_first_1_5s",
+  "new_beat_every_3s",
+  "real_animation_not_zoom",
+  "length_20_to_45s",
+  "title_vidiq_score_70plus"
+ ]
+}

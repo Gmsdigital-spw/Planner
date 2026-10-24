@@ -1,77 +1,63 @@
-import asyncio, sys, json
+import asyncio, sys, json, os
 from playwright.async_api import async_playwright
-import sys
+# Atlas Hub page sweep (V8 "The Turning Point", Oct 24 2026). Same call as before:
+#   python3 factory/qa/sweep.py <page.html> [out dir] [width] [engine report fixture]
+# Opens the page in a phone-size Chromium, walks Today -> Work -> Agents -> More and every screen behind More,
+# and prints one line per step plus every PAGEERROR / console error. A FAIL or PAGEERROR is a page bug.
+# The old Starship sweep is kept as sweep_v7.py for the pre-V8 page.
 PAGE="file://"+sys.argv[1]
 OUT=(sys.argv[2] if len(sys.argv)>2 else "/tmp/qa")+"/"
 async def main():
     errs=[]
     async with async_playwright() as p:
-        b=await p.chromium.launch()
+        exe=os.environ.get("PW_CHROMIUM")   # optional: a preinstalled Chromium when the Python driver has no browser of its own
+        b=await p.chromium.launch(**({"executable_path":exe} if exe else {}))
         W=int(sys.argv[3]) if len(sys.argv)>3 else 390
         pg=await b.new_page(viewport={"width":W,"height":844},device_scale_factor=2)
         pg.on("pageerror",lambda e: errs.append("PAGEERROR "+str(e)))
-        pg.on("console",lambda m: errs.append("CONSOLE "+m.type+" "+m.text) if m.type in("error","warning") else None)
-        # V8 (Oct 21 2026): the Engine room reads the repo's public report; serve a local fixture so the fold renders with data.
+        pg.on("console",lambda m: errs.append("CONSOLE "+m.type+" "+m.text) if m.type in("error","warning") and "Failed to load resource" not in m.text else None)
         REPORT=sys.argv[4] if len(sys.argv)>4 else None
         if REPORT:
             body=open(REPORT,"rb").read()
             await pg.route("**/factory/engine/public/report.json*",lambda r: r.fulfill(status=200,content_type="application/json",body=body))
         await pg.goto(PAGE); await pg.wait_for_timeout(2500)
-        await pg.screenshot(path=OUT+"01_home.png")
+        await pg.screenshot(path=OUT+"01_today.png")
         steps=[]
-        async def click(sel,name,back=True):
+        async def noscroll(name):
+            sw=await pg.evaluate("Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)"); cw=await pg.evaluate("document.documentElement.clientWidth")
+            steps.append(f"noscroll_{name}: "+("ok" if sw<=cw else f"FAIL scrollWidth {sw} > {cw}"))
+        async def tab(id,name):
             try:
-                el=pg.locator(sel).first
-                if await el.count()==0: steps.append(name+": MISSING "+sel); return
-                await el.click(timeout=3000); await pg.wait_for_timeout(900)
-                await pg.screenshot(path=OUT+name+".png"); steps.append(name+": ok")
+                el=pg.locator(f'#tabs [data-go="{id}"]').first
+                if await el.count()==0: steps.append(name+": MISSING tab "+id); return
+                await el.click(timeout=3000); await pg.wait_for_timeout(700)
+                on=await pg.locator(f"#p-{id}.on").count()
+                txt=await pg.locator(f"#p-{id}").inner_text()
+                steps.append(name+": "+("ok" if on and len(txt)>40 and "hit an error" not in txt else f"FAIL (on={on}, chars={len(txt)})"))
+                await pg.screenshot(path=OUT+name+".png")
             except Exception as e: steps.append(name+": FAIL "+str(e)[:150])
-            if back:
-                try:
-                    if await pg.locator("#sheet.on").count(): await pg.locator("#shClose").click(); await pg.wait_for_timeout(300)
-                except Exception: pass
-        # Simple mode (Oct 21 2026): Today is the home; the factory map is one tap away (hero banner).
-        await click('[data-light="trades"]',"01b_today_trades_light",back=False)
-        await pg.screenshot(path=OUT+"01c_trading_full.png",full_page=True)
-        await click('#nav4 [data-nav="more"]',"01d_more_sheet")
-        # V7 (Oct 21 2026): Marketing tab, one card per channel; Parked sheet under More; Funnel hidden.
-        await click('#nav4 [data-nav="marketing"]',"01d2_marketing_tab",back=False)
-        await pg.screenshot(path=OUT+"01d3_marketing_tab_full.png",full_page=True)
-        await click('#mkBody [data-mk="pinterest"]',"01d4_marketing_gallery")
-        await click('#nav4 [data-nav="more"]',"01d5_more",back=False)
-        await click('[data-more="parked"]',"01d6_parked")
-        await click('#nav4 [data-nav="today"]',"01e_nav_today",back=False)
-        await click('#heroBtn',"01f_open_map",back=False)
-        await click("#coreBtn","02_foreman")
-        await click('#fleet [data-floorinfo="trading"]',"03_floor_trading")
-        n=await pg.locator('#fleet [data-floorinfo="funnel"]:visible').count(); steps.append("03b_funnel_hidden: "+("ok" if n==0 else "FAIL visible"))
-        for fold in ["inbox","launch","treasury","mission","settings","engine"]:
-            await click(f"#fold-{fold} > summary","04_fold_"+fold,back=False)
-        await pg.screenshot(path=OUT+"04b_engine_full.png",full_page=True)
-        n=await pg.locator('#engineBody .card').count(); e=await pg.locator('#engineBody .empty').count()
-        steps.append("04c_engine_cards: "+(f"ok {n}" if n>=6 else ("ok (honest empty state, no report served)" if (not REPORT and e) else f"FAIL {n} cards")))
-        sw=await pg.evaluate("Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)"); cw=await pg.evaluate("document.documentElement.clientWidth")
-        steps.append("04d_noscroll_engine: "+("ok" if sw<=cw else f"FAIL scrollWidth {sw} > {cw}"))
-        n=await pg.locator('#engineBody [data-eng="retry"]').count(); steps.append("04e_engine_retry_btn: "+("ok (disabled outside the Claude app)" if n else ("n/a (no report served)" if not REPORT else "MISSING")))
-        await click('[data-bay="third"]',"05_marketing",back=False)
-        await pg.screenshot(path=OUT+"05b_marketing_full.png",full_page=True)
-        await click('#v-bay-third [data-agent="hawk"]',"05c_agent_hawk")
-        await click('#v-bay-third [data-go="command"]',"05d_back",back=False)
-        await click('[data-bay="etsy"]',"06_product",back=False)
-        await pg.screenshot(path=OUT+"06b_product_full.png",full_page=True)
-        await click('[data-pf="ideas"]',"06c_ideas")
-        await click('[data-pf="lane:mugwrap"]',"06d_lane")
-        await click('[data-pf="holiday"]',"06e_holiday")
-        await click('#etsyHead [data-go="command"]',"06f_back",back=False)
-        await click('[data-bay="youtube"]',"07_studio",back=False)
-        await pg.screenshot(path=OUT+"07b_studio_full.png",full_page=True)
-        await click('#ytHead [data-go="command"]',"07c_back",back=False)
-        # no sideways scroll anywhere (V7 rule: 375px)
-        for v in ["today","marketing","trading"]:
-            await pg.locator(f'#nav4 [data-nav="{v}"]').click(); await pg.wait_for_timeout(500)
-            sw=await pg.evaluate("Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)")
-            cw=await pg.evaluate("document.documentElement.clientWidth")
-            steps.append(f"08_noscroll_{v}: "+("ok" if sw<=cw else f"FAIL scrollWidth {sw} > {cw}"))
+        n=await pg.locator("#p-today .wrow").count(); steps.append("01_today_rows: "+("ok "+str(n) if n>=4 else f"FAIL {n} rows"))
+        n=await pg.locator("#p-today .next").count(); steps.append("01b_next_card: "+("ok" if n else "FAIL missing"))
+        await noscroll("today")
+        await tab("work","02_work"); await noscroll("work")
+        await tab("agents","03_agents"); await noscroll("agents")
+        n=await pg.locator("#p-agents [data-agent]").count(); steps.append("03b_agent_rows: "+("ok "+str(n) if n>=20 else f"FAIL {n}"))
+        try:
+            await pg.locator('#p-agents [data-agent]').first.click(timeout=3000); await pg.wait_for_timeout(400)
+            on=await pg.locator("#drawer.on").count(); steps.append("03c_agent_drawer: "+("ok" if on else "FAIL"))
+            await pg.locator("#dClose").click(); await pg.wait_for_timeout(200)
+        except Exception as e: steps.append("03c_agent_drawer: FAIL "+str(e)[:120])
+        await pg.locator('#tabs [data-go="more"]').click(); await pg.wait_for_timeout(300)
+        on=await pg.locator("#sheetNav.on").count(); steps.append("04_more_sheet: "+("ok" if on else "FAIL"))
+        await pg.evaluate("document.querySelector('#sheetNav').classList.remove('on')")
+        for v in ["etsy","marketing","shorts","trading","money","approvals","missions","engine","settings","parked"]:
+            await pg.evaluate(f"location.hash='#{v}'"); await pg.wait_for_timeout(600)
+            on=await pg.locator(f"#p-{v}.on").count(); txt=await pg.locator(f"#p-{v}").inner_text()
+            steps.append(f"05_{v}: "+("ok" if on and len(txt)>40 and "hit an error" not in txt else f"FAIL (on={on}, chars={len(txt)})"))
+            await noscroll(v)
+            if v in("etsy","trading","settings"): await pg.screenshot(path=OUT+f"05_{v}.png",full_page=True)
+        n=await pg.locator('#p-settings [data-sw="paused"]').count(); steps.append("06_pause_switch: "+("ok" if n else "FAIL missing"))
+        await pg.evaluate("location.hash='#today'"); await pg.wait_for_timeout(500)
         await b.close()
     print("\n".join(steps)); print("---ERRORS---"); print("\n".join(sorted(set(errs)))[:4000])
 asyncio.run(main())

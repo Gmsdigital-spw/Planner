@@ -56,8 +56,10 @@ run-log line.
 - Spend money (any amount), buy credits, start or change ads, boost a post, add a paid service,
   sign up for anything or create an account.
 - Publish beyond a cap, raise any cap, change a daily or monthly limit.
-- Delete, deactivate or edit a live Etsy listing's title, tags, photos or description (only
-  Bolt publishes; only Ledger changes prices, within its rules; only Warden swaps a cover).
+- Delete, deactivate or edit a live Etsy listing's photos or description (only Bolt publishes;
+  only Ledger changes prices, within its rules; only Warden swaps a cover; title and tag fixes
+  go only through Bolt's listing_fixes step, Grayson's V8 go, specs/etsy-v8.md section 5: at
+  most 2 a day, title and tags only).
 - Place a live (real-money) trade, set ALPACA_LIVE, change the floor, bankroll or risk rules.
 - Create, change, re-enable or delete a scheduled task or its schedule (the Night Shift's own
   schedule sync and the Mechanic's one re-fire per day are the only exceptions).
@@ -114,7 +116,9 @@ When one of these is needed, write it as a proposal or a NEEDS YOU line and stop
   tomorrow, and ONE prediction with a number for the next run ("predict: 2 builds pass 92"). The
   next run grades that prediction first (hit or miss, and why) before writing its own line.
   (b) Every Sunday (the Foreman at the Night Shift's stage 10, Atlas Prime's fleet review, Vega
-  for the Studio): the best-proven lessons move into the owning skill's "Quality checklist" as one
+  for the Studio; V8, Oct 24, 2026: the weekly grade is Atlas's, the Hub commander, and every
+  agent's file opens with "My job is to make Grayson money. I'm judged on real results."): the
+  best-proven lessons move into the owning skill's "Quality checklist" as one
   line each with the evidence; a lesson a later number disproved is deleted; an agent whose
   predictions missed 3 runs in a row, or that graded "under" 3 standups running, gets its "Exact
   steps" rewritten from what actually worked (surgical edit, plan first, the stage CONTEXT still

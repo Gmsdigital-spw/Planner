@@ -4,9 +4,9 @@
 
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
-| Spec | `../../../specs/cover-styles.md` | "Pins", "The 6 styles" | Pin standard: 6 styles, 2:3, hook in the top third |
+| Spec | `../../../specs/cover-styles.md` | "Pins", "The 6 styles", the Oct 23 pins line, the Oct 24 section | Pin standard: 6 layouts in 2:3, hook in the top third; the fun_pins card on at most 1 in 6 new pins; no stickers, pills or emoji |
 | Spec | `../../../specs/foreman-rules.md` | "3. Quality gates", "4. Volume" | 3 pins in 2+ styles per product; queue never below a day |
-| Tool | `tools/fun_pins.py` docstring (themes: `tools/fun_covers.py` THEMES dict; art names: `tools/art.py`, `tools/img3d/`) | config keys, hook, decor | How to render a pin (the bold look; cover_styles.py is retired for pins) |
+| Tool | `tools/fun_pins.py` docstring (themes: `tools/fun_covers.py` THEMES dict; art names: `tools/art.py`, `tools/img3d/`) | config keys, hook, decor | How to render a fun_pins pin, the retired default (at most 1 in 6 new pins: cover-styles.md Oct 23; cover_styles.py is retired for pins) |
 | Files | `/home/claude/kit/pages/<product id>/` (rendered by stage 06) | real page images | If missing: download the product's PDF asset and gs.render_pages it there (kit in /home/claude/kit) |
 | Playbook | `../../../playbooks/tablet-mockup-pin.md` | Full file | Measured by outbound clicks |
 | Skill | `../../../skills/pixel/SKILL.md` | Full file | Checklist and lessons |
@@ -20,13 +20,14 @@
    number when needed. Set product.batchId and stage "batched". Never publish a batch.
 2. Set crew/pixel working ("Pins: <title>"). For each product in stage "batched" or "passed"
    with no pins (query pins where productId == id): make 3 pins, each a real 1000x1500 JPEG
-   from tools/fun_pins.py (one JSON config per pin, same keys as the product's fun_covers entry:
-   the product's theme, a hook of 4 to 7 words with one *accent* word, the real pages cropped
-   to a different hero page per pin, the count badge, 2 or 3 pills, 3 to 6 pieces of themed 3D
-   art placed on the 1000x1500 canvas), then uploaded as an asset. The 3 pins must differ: a
-   different hook angle each (result, who it is for, what is inside), a different hero page,
-   and at least one with a different layout (card_rot, badge corner, art placement) or a second
-   theme that fits the product. Record style {layout "fun", hook, hero, theme}. Never
+   with the real pages as the hero in a layout that differs from the pin before it (the 6
+   styles in 2:3; no badge stickers, pills or emoji: cover-styles.md Oct 23 and Oct 24). The
+   tools/fun_pins.py card is the retired default, on at most 1 in 6 new pins (one JSON config
+   per pin, same keys as the product's fun_covers entry: the product's theme, a hook of 4 to 7
+   words with one *accent* word, the real pages cropped to a different hero page per pin).
+   Upload each as an asset. The 3 pins must differ: a different hook angle each (result, who
+   it is for, what is inside), a different hero page, and a different layout each. Record
+   style {layout (style number, or "fun" for the card), hook, hero, theme}. Never
    cover_styles.py, never cream or linen. Use a different hero page per pin. When pinstats shows one style or
    title angle clearly ahead on saves and clicks to Etsy (at least 2 pins of evidence), use it
    for most pins and keep one pin per product trying something different.

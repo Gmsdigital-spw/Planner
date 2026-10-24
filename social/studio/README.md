@@ -8,7 +8,7 @@ Reference builds: `awards/` and `savings/` (posted Oct 22). Free tools only.
 ## Steps (about 15 minutes of work, 5 minutes of rendering)
 
 1. **Pages**: download the product PDF (file.assetId), `pdftoppm -r 150 -png <pdf> social/studio/media/<name>/p`.
-   Copy the product's styled cover (`listing-photos/styled/<productId>-cover.jpg`) to `media/<name>/cover.jpg`.
+   Copy the product's live cover (`listing-photos/atlas/<listingId>.jpg`, else the product's cover asset; the old `listing-photos/styled/` look is retired) to `media/<name>/cover.jpg`.
 2. **Live price and title**: read them from the newest `gw/out/price-*-read-*.json` (or an Etsy listing read).
    Never type a price from memory: a starter price may be live.
 3. **Script**: 45 to 60 words, 15 to 20 s spoken. Hook in the first 2 s (the buyer's result or a number),
@@ -35,7 +35,7 @@ Rotate, and never repeat yesterday's combination:
   Wed `en-US-ChristopherNeural`, Thu `en-US-AndrewMultilingualNeural`, Fri `en-US-BrianMultilingualNeural`,
   Sat `en-US-GuyNeural`, Sun `en-US-ChristopherNeural`.
 - **Opening**: hook (page flies in + badge) / grid (4 pages snap in) / fan (pages deal out). Different from yesterday.
-- **Middle order**: pan, fan and grid in a different order each day; 4 to 6 scenes in total.
+- **Middle order**: the phone scene sits on the phrase right after the hook (blueprint 1.5 to 6 s); pan, fan and grid follow it in a different order each day; 4 to 6 scenes in total.
 - **Palette**: from the product's own colours (bg = a bright and a deep shade of its main colour,
   accent = its strongest colour, hl = a warm gold or white that reads on it).
 - **Hook style**: alternate a number ("36 awards"), a question ("Want to save $1,000?") and a moment

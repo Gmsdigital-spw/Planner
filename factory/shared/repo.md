@@ -23,6 +23,9 @@ Etsy, Pinterest and GitHub Pages, and it carries this workspace. Nothing private
 - A pushed file is public at `https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/<path>`
   within about 60 seconds. Check with `curl -sI` for a 200 before handing the URL to any API.
 - GitHub Pages: `https://gmsdigital-spw.github.io/Planner/<path>` (capital P).
+- The Medic (`medic/`, V8) runs every 30 minutes on its own Action and commits only its own folder; a
+  push by it never starts another workflow (GitHub rule for the Action token), so it re-starts
+  workflows through the Actions API instead.
 - Pushing a job file under `gw/jobs/` starts the free gateway (see `gateway.md`); pushing
   `yt/jobs/` starts the Shorts builder; pushing `factory/trading/kick/` wakes the autopilot;
   pushing `factory/engine/orders/` starts the Engine worker.
@@ -35,7 +38,8 @@ mirrors those lists so they have one home to drift from.
 | Crew / task | May write |
 |-------------|-----------|
 | Night Shift | factory/notebook/, factory/skills/, factory/LESSONS.md, factory/playbooks/, factory/scores.jsonl, factory/runlog.jsonl, factory/stages/night-shift/output/, tools/fun_covers_config.json (add entries only), prints/<hex>/ (wall art) |
-| Mechanic | gw/jobs/mech-*.json, factory/trading/kick/<day>-<HHMM>.txt, factory/engine/orders/<doc id>.json |
+| Mechanic | gw/jobs/mech-*.json, factory/trading/kick/<day>-<HHMM>.txt, factory/engine/orders/<doc id>.json, medic/queue/*.json (ticket status only), factory/runlog.jsonl |
+| The Medic (GitHub Action, medic-bot) | medic/db/, medic/lessons/, medic/queue/, medic/public/ (nothing else, ever) |
 | Bolt | listing-photos/auto/, dl-temp/, gw/jobs/bolt-*.json, factory/runlog.jsonl |
 | Herald | social/, factory/skills/herald/, yt/jobs/spot-*.json, factory/runlog.jsonl |
 | Pixel (video pin) | gw/jobs/vpin-*.json, factory/videopins/ |

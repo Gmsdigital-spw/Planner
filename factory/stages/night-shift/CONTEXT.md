@@ -63,14 +63,14 @@ product `## Build: <title>` (04), `## Copy: <title>` (05), `## Photos: <title>` 
 | 00 | `specs/thrive-plan-2026-10-23.md` (full: wins over push-week on conflict; the coordinator puts the 8 moves and the focus list into every worker's brief), `shared/repo.md` ("Getting it"), `specs/push-week-2026-10-23.md` ("Daily targets": the coordinator puts each worker's line into its brief) |
 | 01 | `notebook/etsy.md` (full) + `notebook/business.md` (Grayson's rules), `specs/product-floor-v6.md` (Idea Engine, lanes, Holiday Mode, SALES PUSH), `skills/scout/SKILL.md`, `skills/judge_ideas/SKILL.md`, `LESSONS.md`; `references/wall-art.md` (Scout section) |
 | 02 | wall-art.md (Auto-approver section) for a wall art brief |
-| 03 | `references/database-fields.md` ("products", "missions"), `specs/cover-styles.md` (newest section) |
+| 03 | `references/database-fields.md` ("products", "missions"), `specs/cover-styles.md` (newest section), `specs/etsy-v8.md` (sections 3 and 4: Christmas by Nov 7, the five invitations) |
 | 04 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `references/preflight.md` ("File"), `references/house-style.md` ("The kit", "PDF pages"), `skills/forge/SKILL.md`, `LESSONS.md`, `specs/product-floor-v6.md` (THANK-YOU PAGE; the lane's spec); wall-art.md (Forge) for wallart |
-| 05 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `skills/quill/SKILL.md`, `specs/product-floor-v6.md` (SEARCH-FIRST COPY, PRICES) |
-| 06 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `references/preflight.md` (full: the gate before inspection), `specs/cover-styles.md` (newest section first), `playbooks/fun-listing-cover.md` (steps 1 to 4 only), `references/house-style.md` ("Photos 2 to 5", "Text safe zone"), `skills/lens/SKILL.md`, `LESSONS.md` |
-| 07 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `references/rubric.md` (full), `references/preflight.md` (full), `skills/atlas/SKILL.md` |
+| 05 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `skills/quill/SKILL.md`, `specs/product-floor-v6.md` (SEARCH-FIRST COPY, PRICES), `specs/etsy-v8.md` (section 5: listing fixes) |
+| 06 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `references/preflight.md` (full: the gate before inspection), `specs/cover-styles.md` (newest section first: Oct 24, the Atlas covers), `specs/etsy-v8.md` (section 1: the cover gate by code), `playbooks/fun-listing-cover.md` (steps 1 to 4 only), `references/house-style.md` ("Photos 2 to 5", "Text safe zone"), `skills/lens/SKILL.md`, `LESSONS.md` |
+| 07 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `references/rubric.md` (full), `references/preflight.md` (full), `specs/etsy-v8.md` (sections 1 and 2), `skills/atlas/SKILL.md` |
 | 08 | `notebook/pins.md` (full), `specs/cover-styles.md` ("Pins"), `specs/foreman-rules.md` (3, 4), `skills/pixel/SKILL.md`, `playbooks/tablet-mockup-pin.md`, `shared/accounts.md` ("Pinterest"), `LESSONS.md` |
 | 09 | `notebook/README.md`, all `notebook/*.md` (for step G), `references/database-fields.md` (experiments, sprint, lessons, nextmove, ads), `specs/product-floor-v6.md` (SALES PUSH last bullet) |
-| 10 | `specs/foreman-rules.md`, `skills/foreman/SKILL.md`, `shared/logging.md`, `shared/repo.md` ("Committing", Night Shift write paths), `specs/push-week-2026-10-23.md` ("Scoreboard", "Daily targets": target vs actual in the report and the standup) |
+| 10 | `specs/foreman-rules.md`, `skills/foreman/SKILL.md`, `shared/logging.md`, `shared/repo.md` ("Committing", Night Shift write paths), `specs/push-week-2026-10-23.md` ("Scoreboard", "Daily targets": target vs actual in the report and the standup), `specs/etsy-v8.md` (section 3: the Christmas count) |
 
 Do NOT load: every skill, every playbook, the other floors' specs, `gm_factory_v6.py`,
 `references/legacy-prompt-*.md`, `yt/`, `social/`. A skill's "Exact steps" line that says to
@@ -93,5 +93,7 @@ queued and is built first next run); say so in the log. Any single wait: 5 minut
 `specs/cover-styles.md` newest sections (Oct 21, 2026: bold covers via tools/fun_covers.py,
 bold pins via tools/fun_pins.py, wall art excepted) win over every older cover rule, including
 the 6-style rotation lines below them; foreman-rules.md line 20 now says the same thing, so
-there is no conflict left. cover_styles.py is not used for new covers or pins. SALES PUSH wins over older spec lines. `shared/rules.md` wins over anything softer.
+there is no conflict left. cover_styles.py is not used for new covers or pins. SALES PUSH wins over older spec lines. V8 (Oct 24, 2026): `specs/etsy-v8.md` and cover-styles.md's
+Oct 24 section (Grayson's Atlas covers) win over every older cover and build rule, including the
+Oct 21 fun_covers lines above. `shared/rules.md` wins over anything softer.
 The task prompt wins over all.
