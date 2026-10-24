@@ -10,7 +10,6 @@
 - 2026-10-23: A new listing every day; a day with none is a problem. But never ship under 92 and never ship slop.
 
 ## What works (proven by numbers)
-- 2026-10-23: Products built without an opened 100+ review Etsy rival fail inspection on market score — evidence: 4 builds in a row failed (85, 73, 75, 83), market 12, 12, 11, 9 of 15. Held: 1 time.
 - 2026-10-23: Web app and spreadsheet listings pull the most views: ADHD Budget Planner App 41 views (top of 24), Monthly Budget Tracker 21 (3rd). Held: 1 time (includes a paid Pinterest ad on the app).
 
 ## Testing (not proven yet)
@@ -21,3 +20,4 @@
 ## What doesn't work (tried, failed, or Grayson rejected)
 - 2026-10-21: cream-desk + coffee cup covers (Grayson: bland, all alike).
 - 2026-10-23: the fun_covers single template as the default (Grayson: copy-paste slop; 0 favorites on 188 views).
+- 2026-10-24: Building without an opened 100+ item-review Etsy rival fails inspection on market score: 5 builds in a row (85, 73, 75, 83, then Oct 24 Pink Cabana Birthday Invite 84 with market 11 of 15). Moved from "What works" (inspection scores are not buyer results). Held: 2 nights.
