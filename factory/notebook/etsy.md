@@ -1,6 +1,7 @@
 # Etsy notebook: products, covers, photos, titles, prices
 
 ## Grayson's rules
+- 2026-10-24 (morning): "get it as perfect as possible ... so it doesn't keep failing and I don't have to worry about shitty listings." No proof, no build: every product (his invitations included) needs an opened Etsy listing with 100+ ITEM reviews before it is built (stages/night-shift/03-pick). Invites set aside until that proof exists (20 opened rivals Oct 24: top had 25).
 - 2026-10-24: Take out every cover that looks like AI slop (animated illustrations, shapes, badges, emoji) and re-upload with the new images (his Atlas pictures) and real pages. Done for 20 live listings Oct 24; new covers follow specs/cover-styles.md Oct 24 section.
 - 2026-10-24: Start doing invitations: birthday, wedding, bridal shower, bridal party, baby shower. First 3 (birthday, baby shower, bridal shower) in the preppy pink stripe + bow + palm leaf style he sent; style only, never copy a real invite.
 - 2026-10-23: Grayson made 10 pictures for the crews (assets/atlas-pack, README there): use the 4 Etsy scenes with REAL pages on them for listing photos and pins (binder: planners, clipboard: calendars/checklists, holiday table: Christmas games, frame: wall art). One per listing, rotate, never a cover, never blank.
