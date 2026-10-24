@@ -1,0 +1,1 @@
+{"id":"audit-20261024-photos-8f01","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"}]}
