@@ -1,0 +1,330 @@
+{
+ "id": "covers-20261024-atlas-aa74",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4597749137/images/8719064170",
+   "tag": "del-4597749137"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597749137/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4597749137.jpg",
+   "field": "image",
+   "fileName": "4597749137-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Christmas Party Games printable bundle, 8 games on a holiday table"
+   },
+   "tag": "up-4597749137"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4597755725/images/8719063946",
+   "tag": "del-4597755725"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597755725/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4597755725.jpg",
+   "field": "image",
+   "fileName": "4597755725-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Secret Santa gift exchange kit printable, organizer page and sign-up sheet"
+   },
+   "tag": "up-4597755725"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4600177510/images/8766891269",
+   "tag": "del-4600177510"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177510/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4600177510.jpg",
+   "field": "image",
+   "fileName": "4600177510-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Christmas Cookie Swap party kit printable, fill-in invitations"
+   },
+   "tag": "up-4600177510"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4598379368/images/8766892591",
+   "tag": "del-4598379368"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598379368/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4598379368.jpg",
+   "field": "image",
+   "fileName": "4598379368-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "36 Christmas party awards printable, award certificates"
+   },
+   "tag": "up-4598379368"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4597998190/images/8731516104",
+   "tag": "del-4597998190"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597998190/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4597998190.jpg",
+   "field": "image",
+   "fileName": "4597998190-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "24 Days of Christmas family activity cards printable"
+   },
+   "tag": "up-4597998190"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4597743627/images/8719063832",
+   "tag": "del-4597743627"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597743627/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4597743627.jpg",
+   "field": "image",
+   "fileName": "4597743627-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Thanksgiving family games printable pack on a clipboard"
+   },
+   "tag": "up-4597743627"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4598501430/images/8719063288",
+   "tag": "del-4598501430"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598501430/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4598501430.jpg",
+   "field": "image",
+   "fileName": "4598501430-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Friendsgiving party kit printable, Friendsgiving bingo cards"
+   },
+   "tag": "up-4598501430"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4597755593/images/8719064066",
+   "tag": "del-4597755593"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4597755593/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4597755593.jpg",
+   "field": "image",
+   "fileName": "4597755593-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "New Year's Eve party games printable pack on a clipboard"
+   },
+   "tag": "up-4597755593"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4598535050/images/8719063114",
+   "tag": "del-4598535050"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4596311765/images/8766893607",
+   "tag": "del-4596311765"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4597096306/images/8766893425",
+   "tag": "del-4597096306"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4596144943/images/8766893251",
+   "tag": "del-4596144943"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598535050/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4598535050.jpg",
+   "field": "image",
+   "fileName": "4598535050-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "2027 debt payoff tracker printable, 100-square payoff chart"
+   },
+   "tag": "up-4598535050"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4598358161/images/8719063430",
+   "tag": "del-4598358161"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598358161/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4598358161.jpg",
+   "field": "image",
+   "fileName": "4598358161-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "2027 savings challenge printable, color-in tracker"
+   },
+   "tag": "up-4598358161"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4598358317/images/8719063528",
+   "tag": "del-4598358317"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598358317/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4598358317.jpg",
+   "field": "image",
+   "fileName": "4598358317-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "2027 goal setting workbook printable, weekly plan page"
+   },
+   "tag": "up-4598358317"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4599444986/images/8766891509",
+   "tag": "del-4599444986"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4599444986/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4599444986.jpg",
+   "field": "image",
+   "fileName": "4599444986-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "2027 no-buy year planner printable, temptation log"
+   },
+   "tag": "up-4599444986"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4596203264/images/8719064240",
+   "tag": "del-4596203264"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4596203264/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4596203264.jpg",
+   "field": "image",
+   "fileName": "4596203264-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "2026 Christmas planner printable, December calendar and dinner planner"
+   },
+   "tag": "up-4596203264"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4598721247/images/8766891725",
+   "tag": "del-4598721247"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598721247/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4598721247.jpg",
+   "field": "image",
+   "fileName": "4598721247-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Pink Christmas Bible verse print framed, Luke 2:14"
+   },
+   "tag": "up-4598721247"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4598659189/images/8766891871",
+   "tag": "del-4598659189"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4598659189/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4598659189.jpg",
+   "field": "image",
+   "fileName": "4598659189-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Pink Bible verse wall art framed, Psalm 46:10"
+   },
+   "tag": "up-4598659189"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4596406689/images/8766893549",
+   "tag": "del-4596406689"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4596406689/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4596406689.jpg",
+   "field": "image",
+   "fileName": "4596406689-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "ADHD budget planner app on a phone, safe to spend today screen"
+   },
+   "tag": "up-4596406689"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4596095937/images/8719064384",
+   "tag": "del-4596095937"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4596095937/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/atlas/4596095937.jpg",
+   "field": "image",
+   "fileName": "4596095937-cover.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Monthly budget spreadsheet on a phone, Google Sheets and Excel"
+   },
+   "tag": "up-4596095937"
+  }
+ ]
+}
