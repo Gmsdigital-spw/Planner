@@ -18,7 +18,7 @@ Same authority as the other specs. Where it conflicts with specs/push-week-2026-
    swap or buy reviews; never ask friends or family to review.
 5. CHRISTMAS BY EARLY NOVEMBER: every Christmas/holiday product live and polished by Nov 7, 2026.
    After Dec 10, shift new builds to New Year, 2027 planners and Valentine's.
-6. TIKTOK: Grayson reconnects it in Zernio (only he can). Herald posts there once it is back.
+6. TIKTOK: parked ON PURPOSE (Oct 22: Zernio's free plan allows 2 accounts; the slot went to the Ridgeline Facebook page). Herald skips TikTok; the Mechanic and Emergency Watch never flag it. Only Grayson brings it back.
 7. FEWER JOBS: paused Oct 23 to save Grayson's plan and cut breakage: Trading lab (nightly
    backtests) and Gmula Studio Short. Scout Intel runs 2x a day (7:51 AM, 3:51 PM), the Mechanic
    3x a day (6:47 AM, 2:47 PM, 10:47 PM). The trading autopilot, scans and close still run.

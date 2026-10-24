@@ -15,5 +15,5 @@
 ## What doesn't work (tried, failed, or Grayson rejected)
 - 2026-10-23: Fixing the covers by swapping in a new house style. Done 3 times (Oct 20, 21, 23); every time all listings ended up looking alike. Variety must be enforced by a side-by-side gate, not a style.
 - 2026-10-23: Self-graded scores as proof of quality: 24 look-alike covers all "passed".
-- 2026-10-22/23: TikTok posts through Zernio while the account is disconnected: every TikTok post fails until Grayson reconnects.
+- 2026-10-22/23: Herald kept making TikTok posts and the Mechanic kept flagging "reconnect TikTok" after Grayson parked the shop TikTok on purpose (Zernio free plan = 2 accounts, slot given to Ridgeline Facebook). Crews must check the notebook's Grayson's rules before calling something broken.
 - 2026-10-22: Scout Intel pushing to GitHub from its scheduled task (403 every run).

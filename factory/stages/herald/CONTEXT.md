@@ -46,3 +46,7 @@ without a returned id; use copyrighted music, characters or other shops' images;
 Grayson's real name, hometown or personal details anywhere; write in GitHub outside social/,
 factory/skills/herald/, yt/jobs/spot-*.json and factory/runlog.jsonl. If the database or Make
 cannot be reached, or GitHub truly cannot be reached, stop and tell Grayson in one line.
+
+## TikTok is parked (Grayson, Oct 22, 2026; noted Oct 23)
+Zernio's free plan allows only 2 accounts and Grayson gave the TikTok slot to the Ridgeline Facebook page on purpose.
+Make NO TikTok post and do not report TikTok as disconnected or ask Grayson to reconnect it, until notebook/social.md says it is back.
