@@ -1,6 +1,7 @@
 # Etsy notebook: products, covers, photos, titles, prices
 
 ## Grayson's rules
+- 2026-10-24: Start doing invitations: birthday, wedding, bridal shower, bridal party, baby shower. First 3 (birthday, baby shower, bridal shower) in the preppy pink stripe + bow + palm leaf style he sent; style only, never copy a real invite.
 - 2026-10-23: Grayson made 10 pictures for the crews (assets/atlas-pack, README there): use the 4 Etsy scenes with REAL pages on them for listing photos and pins (binder: planners, clipboard: calendars/checklists, holiday table: Christmas games, frame: wall art). One per listing, rotate, never a cover, never blank.
 - 2026-10-23: The 24 live covers all look like the SAME picture with the colour changed (title left, round badge, 3 pills, tilted page, emoji stickers). That reads as AI slop. Every cover must look different and pass the side-by-side test in specs/cover-styles.md (Oct 23 section).
 - 2026-10-21: Covers like top Etsy sellers: the whole product visible, big count ("36 games"), real pages. Beige/cream-desk covers are retired.
