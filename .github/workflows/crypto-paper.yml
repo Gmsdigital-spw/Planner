@@ -46,7 +46,7 @@ jobs:
         run: |
           git config user.name "crypto-paper"
           git config user.email "crypto-paper@users.noreply.github.com"
-          git add factory/trading/crypto/state.json factory/trading/crypto/heartbeat.json factory/trading/crypto/last-error.json factory/trading/crypto/lab 2>/dev/null || true
+          for f in state.json heartbeat.json last-error.json lab; do [ -e "factory/trading/crypto/$f" ] && git add "factory/trading/crypto/$f"; done
           git diff --cached --quiet && exit 0
           git commit -qm "crypto paper: $(TZ=America/Chicago date +%H:%M) CT"
           for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort || true; sleep $((i*5)); done
