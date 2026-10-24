@@ -55,16 +55,21 @@ def _warp(src, quad, size):
     return np.asarray(src.transform(size, Image.PERSPECTIVE, tuple(c), Image.BICUBIC)).astype(np.float32)
 
 
-def place(scene, pages, out, quality=90):
+def place(scene, pages, out=None, quality=90, scale=1.0):
+    """scale > 1 upscales the scene first so the pages stay sharp (e.g. 1.38 -> 2000 px wide).
+    With out=None the PIL image is returned instead of saved."""
     from scipy import ndimage
     fn, quads, keep_thumb = SCENES[scene]
     bg = Image.open(os.path.join(HERE, fn)).convert("RGB")
+    if scale != 1.0:
+        bg = bg.resize((round(bg.width * scale), round(bg.height * scale)), Image.LANCZOS)
+        quads = [[(x * scale, y * scale) for x, y in q] for q in quads]
     a = np.asarray(bg).astype(np.float32)
     lum = a.mean(axis=2, keepdims=True)
     for page, quad in zip(pages, quads):
         xs, ys = [p[0] for p in quad], [p[1] for p in quad]
         w, h = max(xs) - min(xs), max(ys) - min(ys)
-        src = _fill(Image.open(page) if isinstance(page, str) else page, w * 2, h * 2)
+        src = _fill(Image.open(page) if isinstance(page, str) else page, round(w * 2), round(h * 2))
         warped = _warp(src, quad, bg.size)
         poly = Image.new("L", bg.size, 0)
         ImageDraw.Draw(poly).polygon(quad, fill=255)
@@ -77,5 +82,8 @@ def place(scene, pages, out, quality=90):
             light = np.full_like(lum, 0.97)
         mf = ndimage.gaussian_filter(m.astype(np.float32), 0.7)[..., None]
         a = a * (1 - mf) + np.clip(warped * light, 0, 255) * mf
-    Image.fromarray(np.clip(a, 0, 255).astype(np.uint8)).save(out, "JPEG", quality=quality, optimize=True)
+    img = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
+    if out is None:
+        return img
+    img.save(out, "JPEG", quality=quality, optimize=True)
     return out
