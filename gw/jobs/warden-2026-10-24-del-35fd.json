@@ -1,0 +1,3 @@
+{"id":"warden-2026-10-24-del-35fd","stopOnError":false,"ops":[
+{"op":"etsy","method":"DELETE","path":"/shops/68605457/listings/4599444986/images/8732769682","tag":"del-4599444986"},
+{"op":"etsy","method":"DELETE","path":"/shops/68605457/listings/4598659189/images/8732769788","tag":"del-4598659189"}]}
