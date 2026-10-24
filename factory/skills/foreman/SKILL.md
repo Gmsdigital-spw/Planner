@@ -42,3 +42,4 @@ _Filled Oct 23, 2026 from the week brief (Oct 16 to 22): the Oct 21 and 22 stand
 
 ## What I've learned (append-only, newest last)
 - 2026-10-23: first scoreboard: verified this month $0 of $250, 8 days left, builds 0 passed / 1 failed (83) / 1 skipped for time; no earlier Foreman prediction on file to grade. Tomorrow: the run starts Santa Mail first and the budget cut goes to pins extras, never to a build. Predict: 1 build passes 92 next run.
+- 2026-10-24: predict 1 build passes 92: MISS (0 of 1, Pink Cabana Invite 84 on market 11; 2nd build skipped for time). Verified this month $0 of $250, 7 days left. Tomorrow: the report puts the scrap-or-keep call on the 84 invite in front of Grayson and the build list waits for an opened 100+ item-review rival. Predict: 0 passes next run unless the build has that rival.

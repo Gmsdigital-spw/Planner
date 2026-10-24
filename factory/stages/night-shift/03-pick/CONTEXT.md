@@ -14,7 +14,11 @@
 
 ## Process
 1. Set crew/atlas working ("Picking builds"). Build list, in this order, up to
-   settings.buildsPerRun (default 2): GRAYSON'S INVITATIONS FIRST (Oct 24, 2026): the briefs brief-2026-10-24-invite-birthday, -baby-shower and -bridal-shower are built before everything below until all 3 have a product (birthday and baby shower on the Oct 24 run, bridal shower next run). They pass the market proof gate on the shop-level proof in their evidence (Grayson approved them himself). (a) products in stage "inspection" scoring 80 to 91 with retries under 4 and market 12 or more (market 11 or less = scrap it, see 07; one exception: prod-xmas-murder-mystery-8 gets ONE final finish try on the Oct 25, 2026 night run (moved from Oct 24 for Grayson's invitations) with its staged v2 fixes, then is scrapped if still under 92),
+   settings.buildsPerRun (default 2). NO PROOF, NO BUILD (Grayson, Oct 24, 2026, replaces the
+   "invitations first" exception): EVERY product, his own orders included, passes the MARKET
+   PROOF GATE below on ITEM-level reviews (an opened listing page; a search card's or shop's total
+   never counts). The invitation briefs went back to "proposed" until a 100+ item-review invite
+   rival is found. (a) products in stage "inspection" scoring 80 to 91 with retries under 4 and market 12 or more (market 11 or less = scrap it, see 07; one exception: prod-xmas-murder-mystery-8 gets ONE final finish try on the Oct 25, 2026 night run (moved from Oct 24 for Grayson's invitations) with its staged v2 fixes, then is scrapped if still under 92),
    highest score first (a near-miss is the fastest way to a live listing: the Builder
    reworks it against its inspect note and preflight.md), then products in stage queued,
    building, copy or sentback that have no file or were sent back (finish them first); (b) briefs with status "approved"

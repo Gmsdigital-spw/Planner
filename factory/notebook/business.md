@@ -24,3 +24,4 @@
 | Week ending | Live listings | Views (total) | Favorites | Sales | Pins posted | Trading P/L (paper) |
 |---|---|---|---|---|---|---|
 | 2026-10-23 | 24 | 188 | 0 | 0 | ~5/day | $24.96 equity, -$0.04 total |
+| 2026-10-30 (so far, stats Oct 23) | 24 | 188 | 0 | 0 | unknown (pinstats) | unknown (trading ledger) |

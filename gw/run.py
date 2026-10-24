@@ -32,6 +32,7 @@ from cryptography.fernet import Fernet, InvalidToken
 ROOT = Path(__file__).resolve().parent
 JOBS, OUT, STATE = ROOT / "jobs", ROOT / "out", ROOT / "state" / "etsy.enc"
 ZERNIO = "https://zernio.com/api/v1"
+POSTPROXY = "https://api.postproxy.dev/api"
 ETSY = "https://api.etsy.com/v3/application"
 ETSY_TOKEN = "https://api.etsy.com/v3/public/oauth/token"
 REDIRECT = os.environ.get("ETSY_REDIRECT", "https://gmsdigital-spw.github.io/planner/gw/callback.html")
@@ -39,6 +40,7 @@ SCOPES = "listings_r listings_w listings_d shops_r shops_w transactions_r profil
 KEY, SECRET = os.environ.get("ETSY_KEYSTRING", ""), os.environ.get("ETSY_SHARED_SECRET", "")
 ZKEY, SKEY = os.environ.get("ZERNIO_API_KEY", ""), os.environ.get("STARSHIP_KEY", "")
 GKEY = os.environ.get("GUMROAD_TOKEN", "")
+PKEY = os.environ.get("POSTPROXY_API_KEY", "").strip()
 GUMROAD = "https://api.gumroad.com/v2"
 AKEY, ASEC = os.environ.get("ALPACA_KEY_ID", "").strip(), os.environ.get("ALPACA_SECRET_KEY", "").strip()
 ALPACA_LIVE = os.environ.get("ALPACA_LIVE", "") == "1"   # stays "0": paper only until Grayson flips it himself
@@ -124,7 +126,7 @@ def etsy_call(st, method, path, **kw):
 # ---------- ops ----------
 def op_selftest(o, st):
     return 200, {"configured": {"etsyKeystring": bool(KEY), "etsySharedSec": bool(SECRET),
-                             "zernio": bool(ZKEY), "starship": bool(SKEY), "gumroad": bool(GKEY)},
+                             "zernio": bool(ZKEY), "starship": bool(SKEY), "gumroad": bool(GKEY), "postproxy": bool(PKEY)},
                  "etsyAuthorized": bool(st.get("refresh_token")), "redirect": REDIRECT,
                  "starshipKeyFp": hashlib.sha256(SKEY.encode()).hexdigest()[:6] if SKEY else None,
                  "starshipKeyFpStripped": hashlib.sha256(SKEY.strip().encode()).hexdigest()[:6] if SKEY else None}
@@ -137,6 +139,16 @@ def op_zernio(o, st):
     if o.get("idem"):
         hdr["Idempotency-Key"] = str(o["idem"])[:255]
     r = requests.request(o.get("method", "GET").upper(), ZERNIO + o["path"], headers=hdr,
+                         json=o.get("body"), timeout=180)
+    return r.status_code, body_of(r)
+
+
+def op_postproxy(o, st):
+    """TikTok via Postproxy: {"op":"postproxy","method":"GET|POST","path":"/posts","body":{...}}"""
+    if not PKEY:
+        raise RuntimeError("POSTPROXY_API_KEY secret is missing")
+    hdr = {"Authorization": f"Bearer {PKEY}", "Content-Type": "application/json"}
+    r = requests.request(o.get("method", "GET").upper(), POSTPROXY + o["path"], headers=hdr,
                          json=o.get("body"), timeout=180)
     return r.status_code, body_of(r)
 
@@ -474,7 +486,7 @@ def op_alpaca(o, st):
     return r.status_code, body_of(r)
 
 
-OPS = {"fetch_images": op_fetch_images, "gumroad": op_gumroad, "gumroad_mirror": op_gumroad_mirror, "gumroad_file": op_gumroad_file, "selftest": op_selftest, "zernio": op_zernio, "etsy": op_etsy, "etsy_upload": op_etsy_upload,
+OPS = {"fetch_images": op_fetch_images, "gumroad": op_gumroad, "gumroad_mirror": op_gumroad_mirror, "gumroad_file": op_gumroad_file, "selftest": op_selftest, "zernio": op_zernio, "postproxy": op_postproxy, "etsy": op_etsy, "etsy_upload": op_etsy_upload,
        "etsy_auth_start": op_etsy_auth_start, "etsy_auth_finish": op_etsy_auth_finish, "alpaca": op_alpaca}
 
 

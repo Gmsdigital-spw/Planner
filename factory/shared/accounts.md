@@ -28,7 +28,8 @@ Still-pin slots per day (6): 13:30Z, 15:30Z, 17:30Z, 19:30Z, 21:30Z, 23:30Z. Vid
 Central.
 
 ## TikTok
-- Zernio account 6ad7a7ecea18e081fb3894d2 (@gmsdigitalcreatio). Post URL fallback
+- Postproxy profile L2UJk4 (@gmsdigitalcreatio), posted through the gateway op "postproxy" since
+  Oct 24, 2026 (the old Zernio account 6ad7a7ecea18e081fb3894d2 is retired for TikTok). Post URL fallback
   https://www.tiktok.com/@gmsdigitalcreatio.
 
 ## Make (team 3216895, organization 9329352, free plan: 1,000 operations a month, resets on the 18th)

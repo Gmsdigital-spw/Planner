@@ -13,17 +13,16 @@ id. Use ONLY these actions:
 - yt_short: data {action:"yt_short", videoUrl, title (ends " #shorts", under 100 chars),
   caption (= description), tags (comma list), privacy:"public"} -> tool_output.id = videoId.
   The video file MUST be under 4.5 MB (Make refuses bigger downloads).
-- TikTok: data {action:"zernio_api", method:"POST", url:"/posts", body:<JSON string>} with the
-  body in shared/gateway.md "Zernio" (TikTok). Success = tool_output.post.status "published"
-  (or "publishing"); postId = tool_output.post._id, postUrl = platforms[0].platformPostUrl if
-  present. NEVER use the tt_post action (draft only) and NEVER push TikTok jobs through the
-  GitHub gateway (that push gets blocked in scheduled runs).
+- TikTok (since Oct 24, 2026): GitHub gateway job {"op":"postproxy","method":"POST","path":"/posts",
+  "body":<shared/gateway.md "Postproxy" body>,"tag":"tt-<social doc id>"}. Success = HTTP 200/201
+  with data id; postId = that id. Status "scheduled"/"pending" is fine; the next run checks it.
+  NEVER use Zernio or Make's zernio_api for TikTok any more. Respect the cap in ../CONTEXT.md.
 - yt_shop_api: data {action:"yt_shop_api", url:"/v3/videos?part=statistics&id=<id1>,<id2>"}
   -> read-only stats for the SHOP channel.
 
 ## TikTok check (next run)
-data {action:"zernio_api", method:"GET", url:"/posts/<id>"}; if the TikTok platform status is
-"failed", mark the doc "failed" with the reason.
+Gateway {"op":"postproxy","method":"GET","path":"/posts/<postId>"}; platforms[0].status
+"published" gives permalink (postUrl); "failed" gives error: mark the doc "failed" with it.
 
 ## Posting what is due (stage 01)
 Only if signal/main.live is true and firstApprovedAt is set. For each social doc with status
@@ -38,8 +37,7 @@ one post per channel per day.
 ## Real numbers (stage 02)
 YouTube: for SHOP Shorts posted in the last 14 days, one yt_shop_api call -> metrics
 {availability:"available", views, likes, comments, retrievedAt, source:"YouTube API"}.
-TikTok: zernio_api GET /posts/<id> returns analytics when available; use only what comes
-back. Instagram and Facebook stats are not wired yet: metrics {availability:"unavailable",
+TikTok: Postproxy GET /posts/<postId> stats when present; use only what comes back. Instagram and Facebook stats are not wired yet: metrics {availability:"unavailable",
 reason:"stats lane not built yet"} (never 0). A one-line lesson at most once a week, only from real numbers. Herald's lesson shape (use
 this one, not the generic one in database.md): {at, crew:"Herald", text, evidence (the
 numbers), status:"active", area:"socials"}.

@@ -9,7 +9,7 @@
 
 ## Process
 1. YouTube: one yt_shop_api call for the SHOP Shorts posted in the last 14 days; write metrics
-   as posting-lane.md says. TikTok: zernio_api GET /posts/<id> per posted doc; use only what
+   as posting-lane.md says. TikTok: gateway postproxy GET /posts/<postId> per posted doc; use only what
    comes back; a TikTok platform status "failed" marks the doc failed with the reason.
    Instagram and Facebook: metrics {availability:"unavailable", reason:"stats lane not built
    yet"} (never 0).
