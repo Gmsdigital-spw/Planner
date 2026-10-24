@@ -46,5 +46,26 @@ below on its own product and fixes what fails BEFORE setting stage "inspection".
 - [ ] Price inside the lane range and justified in one line against the 3 opened listings.
 - [ ] One font family and palette across all pages; same margins on every page.
 
+## Faults that cost points on Oct 23, 2026 (check every one)
+- [ ] Spoilers: a game's host guide, photos or copy never name the answer or culprit (Murder Mystery lost file points).
+- [ ] Photos and copy only claim what the file really has (a photo said "US Letter + A4", the PDF was Letter only).
+- [ ] No photo repeats a page the cover already shows.
+- [ ] Fillable fields auto-size: type the longest real name/line into every field and render it; nothing clips at max length.
+- [ ] Cover hero crop never cuts a page's footer or edge text.
+- [ ] Search phrase checked for real: Etsy suggest is blocked, so WebFetch
+      https://suggestqueries.google.com/complete/search?client=firefox&q=<phrase> and lead the title with a returned phrase (this worked on Oct 23).
+
+## Proven by the passes (copy what scored 19/20)
+- Photo 2: the 6 most important pages in a 3x2 grid, each about 470 px wide, with a short headline. Never 8 small pages.
+- Photo 4: 3 real pages fanned big, not one small page in empty space. Photo 5: centered, no empty band over about 15%.
+- Gap visible everywhere: the one thing we beat rivals on is on the cover, photo 2, the title and the description's first line.
+
+## Fresh eyes (last step before stage "inspection")
+Start ONE fresh worker (Agent tool, general-purpose) that did not build the product. Give it only
+the contact sheet of every page, the 5 photos, the title and description. Its job: list every fault
+a picky buyer or a top seller would spot (spoilers, clipping, half-empty space, claims the file
+doesn't back, typos, anything that looks AI-made). It does not score. Fix every fault it lists,
+then hand to 07. Faults found here cost nothing; faults found by 07 cost points and a whole night.
+
 If a line cannot be fixed (a tool bug outside your write paths), fix what you can, say which
 line failed in the run notes, and still hand over: 07 decides.
