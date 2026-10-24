@@ -75,6 +75,8 @@ jobs:
               continue
             fi
             echo "=== building $name ==="
+            echo "$name" >> /tmp/built.txt
+            rm -f "yt/out/$name.score.json"
             if ! timeout 1500 python yt/build/make_short.py "$f" > /tmp/build1.log 2>&1; then
               tail -15 /tmp/build1.log
               echo "=== retry $name with the backup voice ==="
@@ -89,6 +91,17 @@ jobs:
                 echo "{\"id\":\"$name\",\"error\":\"build failed twice: $why\"}" > "yt/out/$name.json"
               fi
             fi
+          done
+
+      - name: Score the Shorts (V8 gate; never fails the build, writes yt/out/<id>.score.json)
+        run: |
+          shopt -s nullglob
+          touch /tmp/built.txt
+          for f in yt/out/ep*.mp4; do
+            name=$(basename "$f" .mp4)
+            [ -f "yt/jobs/$name.json" ] || continue
+            if ! grep -qx "$name" /tmp/built.txt && [ -f "yt/out/$name.score.json" ]; then continue; fi
+            python studio/quality_gates.py short "$name" --write || true
           done
 
       - name: Save the finished videos

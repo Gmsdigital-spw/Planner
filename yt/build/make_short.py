@@ -620,9 +620,13 @@ def main():
         run([*base, "-pass", "2", "-passlogfile", plog, "-c:a", "aac", "-b:a", "80k", "-ar", "44100",
              "-movflags", "+faststart", final])
         size = os.path.getsize(final)
+        anim_lines = sorted({int(m.group(1)) for m in (re.match(r"line (\d+): real motion", str(w)) for w in warnings) if m})
         meta = {"id": jid, "duration": round(ffprobe_dur(final), 2), "bytes": size, "mb": round(size / 1048576, 2),
                 "width": OUT_W, "height": OUT_H, "words": words, "lines": windows, "credits": credits,
-                "warnings": warnings, "fakeTts": fake, "tts": tts_used}
+                "warnings": warnings, "fakeTts": fake, "tts": tts_used,
+                # V8 scorecard inputs (studio/quality_gates.py): voice speed, the lines with real motion, where the text sits
+                "speed": float(spec.get("speed", 1.03)), "animLines": anim_lines,
+                "captions": {"cap_bottom_pct": round(100 * (1 - 600 / H), 2), "hook_top_pct": round(100 * 230 / H, 2), "source": "make_short.py ASS styles"}}
         json.dump(meta, open(os.path.join(out_dir, f"{jid}.json"), "w"), indent=1)
         print(json.dumps({k: v for k, v in meta.items() if k not in ("words", "lines")}, indent=1))
         if size > MAX_MB * 1048576 * 1.02:

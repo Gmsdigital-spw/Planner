@@ -505,13 +505,21 @@ class Medic:
 
     def sig_yt_build(self, lane, spec):
         jobs, outs = self.root / spec["jobs"], self.root / spec["out"]
-        missing, built_today = [], 0
+        missing, built_today, failed_gate = [], 0, []
+        min_score = spec.get("min_score", 85)
         for jp in sorted(jobs.glob("*.json")) if jobs.exists() else []:
+            if jp.name.endswith(".research.json"):
+                continue
             mp4 = outs / (jp.stem + ".mp4")
             if mp4.exists():
                 ct = commit_time(self.root, str(mp4.relative_to(self.root)))
                 if ct and self.clock.day_key(ct) == self.day():
-                    built_today += 1
+                    # V8: a Short built today counts only when its scorecard (yt/out/<id>.score.json) passed
+                    sc = read_json(outs / (jp.stem + ".score.json")) or {}
+                    if sc.get("pass") is False or (isinstance(sc.get("score"), (int, float)) and sc["score"] < min_score):
+                        failed_gate.append((jp.stem, sc.get("score"), [str(x) for x in (sc.get("fixes") or [])][:3]))
+                    else:
+                        built_today += 1
                 continue
             ct = commit_time(self.root, str(jp.relative_to(self.root)))
             a = age_min(ct) if ct else None
@@ -519,11 +527,14 @@ class Medic:
                 missing.append((jp.stem, round(a)))
         probs = [{"error": "build_missing", "key": f"build-{jid}", "item": {"ref": jid}, "detail": f"{jid} has no mp4 after {a} min"}
                  for jid, a in missing[:5]]
+        probs += [{"error": "score_fail", "key": f"score-{jid}", "item": {"ref": jid, "score": sc, "fixes": fx},
+                   "detail": f"{jid} scored {sc}/100, under {min_score}: redo " + (", ".join(fx) or "see yt/out/" + jid + ".score.json")}
+                  for jid, sc, fx in failed_gate[:5]]
         if spec.get("paused"):
             r = self.row(lane, spec, "paused", built_today, spec.get("daily_min"),
                          spec.get("note", "paused on purpose") + (f"; {len(missing)} unbuilt job(s)" if missing else ""), probs)
             return r
-        detail = f"{built_today} Short(s) built today; {len(missing)} job(s) without a video"
+        detail = f"{built_today} Short(s) built and passed today; {len(missing)} job(s) without a video" + (f"; {len(failed_gate)} under {min_score}" if failed_gate else "")
         return self.goal_status(lane, spec, built_today, detail, probs, verified=True)
 
     def sig_engine_report(self, lane, spec):
@@ -687,8 +698,9 @@ class Medic:
                     continue
                 self.note_try(lane, step, p["key"])
                 tried.append(step)
-                self.dispatches += 1
                 ok, verified = self.local_fix(lane, spec, step, p)
+                if ok:
+                    self.dispatches += 1                   # count real dispatches only; a step with nothing to do costs none
                 self.db.execute("UPDATE incidents SET steps_tried=?, fix_step=?, fixed_at=? WHERE id=?",
                                 (json.dumps(tried), step, iso() if ok else None, inc["id"]))
                 if ok and verified:

@@ -136,14 +136,15 @@
       "daily_min": 1,
       "min_score": 85,
       "paused": true,
-      "note": "Studio Floor daily Short is switched off on purpose until the V8 Shorts rules are merged; unpausing it is one tap for Grayson",
+      "note": "Studio Floor daily Short is switched off on purpose until the V8 Shorts rules (factory/specs/studio-floor-v8.md) are merged; unpausing it is one tap for Grayson, then set paused false here",
       "platform_label": "YouTube",
       "playbook": [
         "retry",
         "rescore_rebuild",
         "shrink_video",
         "next_slot"
-      ]
+      ],
+      "score_file": "yt/out/<id>.score.json"
     },
     "trading_paper": {
       "label": "Paper trading (stocks)",
@@ -270,7 +271,7 @@
       "label": "Mechanic",
       "every_hours": 8,
       "grace_hours": 2,
-      "trigger": "Mechanic · self-fix + morning report"
+      "trigger": "Mechanic \u00b7 self-fix + morning report"
     },
     "pricing": {
       "label": "Pricing (Ledger)",
@@ -288,13 +289,13 @@
       "label": "Pixel video pin",
       "every_hours": 24,
       "grace_hours": 3,
-      "trigger": "Pixel · daily video pin"
+      "trigger": "Pixel \u00b7 daily video pin"
     },
     "scout-intel": {
       "label": "Scout Intel",
       "every_hours": 12,
       "grace_hours": 4,
-      "trigger": "Scout Intel · all-day research"
+      "trigger": "Scout Intel \u00b7 all-day research"
     },
     "trading-scan": {
       "label": "Trading scans",
