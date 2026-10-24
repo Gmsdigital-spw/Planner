@@ -1,0 +1,1 @@
+{"id":"bolt-2026-10-24-publish-42fc","stopOnError":false,"ops":[{"op":"etsy","method":"PATCH","path":"/shops/68605457/listings/4602402578","body":{"state":"active"},"tag":"publish"}]}
