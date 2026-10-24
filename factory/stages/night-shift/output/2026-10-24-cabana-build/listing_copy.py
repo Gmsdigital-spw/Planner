@@ -1,9 +1,9 @@
 import json
-title = "Pink Bow Birthday Invitation Editable, Cabana Stripe Palm Leaf Invite, Sweet 16, 21st, 30th Girl Birthday Party, 5x7 Printable PDF"
-tags = ["pink bow invitation", "bow birthday invite", "editable invitation", "sweet 16 invitation", "girl birthday invite",
-        "cabana birthday", "preppy birthday", "pink stripe invite", "palm leaf invitation", "21st birthday invite",
-        "30th birthday invite", "coquette birthday", "printable invitation"]
-desc = """Editable pink bow birthday invitation for a sweet 16, 21st, 30th or any girl's birthday party: soft pink cabana stripes, a cream scalloped card, a pink bow on top and green palm leaves in the corners. Type your details, print at home, and the invites are ready the same day.
+title = "Pink Bow Birthday Invitation Template, Editable PDF No App or Account, Coquette Bow Party Invite, Cabana Stripe, Sweet 16 21st 30th, 5x7"
+tags = ["pink bow invitation", "bow birthday invite", "coquette bow invite", "coquette invitation", "bow party invitation",
+        "editable invitation", "sweet 16 invitation", "girl birthday invite", "21st birthday invite", "30th birthday invite",
+        "preppy birthday", "pink stripe invite", "printable invitation"]
+desc = """Pink bow birthday invitation template you type into right inside the PDF: no design app, no account, no login, just the free Adobe Acrobat Reader. Made for a sweet 16, 21st, 30th or any girl's birthday party, with soft pink cabana stripes, a cream scalloped card, a pink coquette bow on top and green palm leaves in the corners. Type your details, print at home, and the invites are ready the same day.
 
 WHAT YOU GET (one PDF, 7 pages)
 - 5x7 invitation in pink cabana stripe (2 per page)
@@ -25,9 +25,9 @@ GOOD TO KNOW
 - Personal use only. Questions or a typo you can't fix? Message me and I'll help.
 
 This design was created with AI assistance under the creative direction of the seller."""
-copy = dict(title=title, tags=tags, description=desc, price=5.99, category="Paper & Party Supplies > Paper > Invitations & Announcements > Invitations",
-            materials="Digital download, PDF", coverHeadline="Editable Bow Invite", categoryVerified=False, autocompleteChecked=False,
-            phraseSource="WebSearch 'etsy pink bow birthday invitation editable' (no autocomplete returned) + brief niche 'pink bow birthday invitation editable'")
+copy = dict(title=title, tags=tags, description=desc, price=5.99, category="Paper & Party Supplies > Paper > Invitations & Announcements > Invitation Templates",
+            materials="Digital download, PDF", coverHeadline="Editable Bow Invite", categoryVerified=True, autocompleteChecked=True,
+            phraseSource="Google suggest 2026-10-24 fix round: 'pink bow birthday invitation' -> pink bow birthday invitation template, pink bow party invitation; 'coquette bow birthday invitation' -> coquette bow birthday invitations, coquette bow party invitation; 'bow birthday invitation' -> bow birthday invitation template, bow party invitation. Category from opened rival 1841913676 breadcrumb.")
 assert len(title) <= 140, len(title)
 assert len(tags) == 13 and len(set(tags)) == 13 and all(len(t) <= 20 for t in tags), [t for t in tags if len(t) > 20]
 assert len(desc) >= 300 and desc.endswith("This design was created with AI assistance under the creative direction of the seller.")

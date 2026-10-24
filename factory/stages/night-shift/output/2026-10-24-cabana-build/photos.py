@@ -40,7 +40,7 @@ def label(img, title, sub, color, pos):
     d.text((W / 2, y0 + pad - 10), title, font=ft, fill=color, anchor="ma")
     d.text((W / 2, y0 + pad + 132), sub, font=fs, fill=(90, 82, 74), anchor="ma")
     return (x0, y0, x0 + bw, y0 + bh)
-box = label(img, "Editable Bow Invite", "BIRTHDAY  ·  5x7  ·  2 COLOURWAYS", "#2F5B45", "top")
+box = label(img, "Editable Bow Invite", "TYPE IN THE PDF  ·  NO ACCOUNT NEEDED", "#2F5B45", "top")
 print("label box", [round(v) for v in box])
 gs.save_jpeg(img, OUT + "/1-cover.jpg")
 gs.thumb_check(img, OUT + "/thumb400.png")
@@ -48,7 +48,7 @@ sq = img.crop((200, 0, 1800, 1600)).resize((300, 300), Image.LANCZOS); sq.save(O
 # ---- photo 2: both colourways, invite + details (4 cards in a row)
 cards = [card(2, 0), card(3, 0), card(4, 0), card(5, 0)]
 im = gs.paper(pal["paper"]); d = ImageDraw.Draw(im)
-gs._header(d, pal, "Two colourways, two cards", "INVITATION + DETAILS CARD  ·  PINK AND SAGE")
+gs._header(d, pal, "Two colourways, two cards", "PINK AND SAGE  ·  TYPE IN THE PDF, NO ACCOUNT NEEDED")
 pw_ = 780
 for i, pg in enumerate(pages[2:6]):
     gs.place(im, pg, pw_, ((gs.IW - 2 * pw_ - 60) // 2 + (i % 2) * (pw_ + 60), 330 + (i // 2) * 630))
