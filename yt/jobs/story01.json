@@ -6,7 +6,7 @@
   "speed": 1.0,
   "art": "stickfigure",
   "music": "tense",
-  "music_volume": 0.07,
+  "music_volume": 0.05,
   "cast": {
     "croc": "a big green cartoon crocodile with a long bumpy snout, small yellow eyes and white pointy teeth",
     "mom": "a stick-figure mother with a round white head, dot eyes, thin black limbs and a long brown cloak",
@@ -67,5 +67,6 @@
       "headline": "ONE SENTENCE SAVED HIM",
       "image": "{mom} running across the sandy riverbank carrying {boy} in her arms, both smiling, while {croc} sits frozen in the river behind them, puzzled, warm golden sunset light"
     }
-  ]
+  ],
+  "title_card": "The Crocodile Paradox"
 }

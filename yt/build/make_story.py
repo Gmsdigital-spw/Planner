@@ -5,9 +5,10 @@ YouTube Starship — illustrated story Short builder ("format": "story").
 make_short.py hands any job with "format": "story" to this file, so the Action, the dry run
 (--check) and the output paths stay the same.
 
-The look (1080x1920): black background, one 16:9 illustration centered, a small gold label and a
-big white headline above it, the narrator's full sentence below it. Each image slowly zooms and
-scenes crossfade. Free tools only: Cloudflare FLUX images, edge-tts (andrew or ava), ffmpeg.
+The look (1080x1920): black background, one 16:9 illustration centered, and right above it a big
+bold caps caption of the narrator's words, each word fading in as it is spoken (timed from the
+voice itself). Scene 1 carries the episode title hand-lettered on the picture. Each image slowly
+zooms and scenes crossfade. Free tools only: Cloudflare FLUX images, edge-tts (andrew or ava), ffmpeg.
 
 Spec:
 {
@@ -17,11 +18,12 @@ Spec:
   "speed": 1.0,
   "art": "stickfigure",                    # "stickfigure" or "storybook" (one per episode)
   "cast": {"croc": "a big green cartoon crocodile with ..."},   # exact same text in every prompt
-  "music": "tense", "music_volume": 0.08,  # optional; "none" for no music
+  "title_card": "The Crocodile Paradox",   # hand-lettered on the first picture (optional)
+  "music": "tense", "music_volume": 0.05,  # optional; "none" for no music
   "lines": [                               # 6-10 scenes: setup, problem, twist, payoff
     {"text": "Why did ...?",               # one sentence, 15 words or fewer; line 1 is the hook question
-     "label": "BOARDED UP",                # gold, 2-3 words
-     "headline": "THE STORE NOBODY VISITS",# white, 3-6 words
+     "label": "BOARDED UP",                # optional notes for the writer (2-3 words), not drawn
+     "headline": "THE STORE NOBODY VISITS",# optional notes (3-6 words), not drawn
      "image": "{croc} holding ... in the river"}   # must name a cast member with {key}
   ]
 }
@@ -38,16 +40,15 @@ SR = 24000
 XF = 0.4                           # crossfade between scenes, seconds
 ZOOM = 0.07                        # gentle zoom over one scene
 MAX_MB = 4.45                      # keeps the file under Make's 5 MB upload limit
-GOLD = (245, 197, 66)
 VOICES = {"andrew": "en-US-AndrewMultilingualNeural", "ava": "en-US-AvaMultilingualNeural"}
 ART = {
-    "stickfigure": ("simple hand-drawn stick-figure illustration, characters with round white heads, "
+    "stickfigure": ("simple hand-drawn stick-figure illustration, every person is a simple stick figure with a round white head, "
                     "small dot eyes and thin black ink line bodies, on a soft hand-painted watercolor "
                     "background with muted earthy colors, clean minimal ink lines, wide 16:9 landscape scene, "
-                    "main action in the center of the frame, no text, no letters, no words, no watermark"),
+                    "main action in the center of the frame, every character's whole body and head fully in frame, no text, no letters, no words, no watermark"),
     "storybook": ("warm storybook cartoon illustration, soft gouache and watercolor textures, gentle warm "
                   "colors, rounded friendly characters, children's picture book style, wide 16:9 landscape "
-                  "scene, main action in the center of the frame, no text, no letters, no words, no watermark"),
+                  "scene, main action in the center of the frame, every character's whole body and head fully in frame, no text, no letters, no words, no watermark"),
 }
 
 def run(cmd, **kw):
@@ -91,10 +92,6 @@ def check_story(spec):
         if re.search(r"[.!?][\"'”’]?\s+[\"'“‘]?[A-Z]", body[:-1]):
             raise SystemExit(f"story: scene {i} has more than one sentence")
         lab = str(ln.get("label", "")).strip(); hl = str(ln.get("headline", "")).strip()
-        if not 2 <= len(lab.split()) <= 3:
-            raise SystemExit(f"story: scene {i} label must be 2-3 words")
-        if not 3 <= len(hl.split()) <= 6:
-            raise SystemExit(f"story: scene {i} headline must be 3-6 words")
         ln["label"] = lab.upper(); ln["headline"] = hl.upper()
         img = ln.get("image")
         prompt = img.get("prompt") if isinstance(img, dict) else img
@@ -118,26 +115,58 @@ def expand(prompt, spec):
     return f"{prompt}. {ART[spec['art']]}"
 
 # ---------------------------------------------------------------- voice
-def tts(lines, voice, speed, work, fake):
-    paths = []
+def even_times(text, dur):
+    """Fallback word timings: spread the words over the line by length."""
+    ws = text.split(); wt = [len(re.sub(r"[^A-Za-z0-9]", "", w)) + 2 for w in ws]
+    tot = sum(wt); t = 0.0; out = []
+    for w, k in zip(ws, wt):
+        out.append(round(t, 3)); t += dur * k / tot
+    return out
+
+def match_times(text, marks, cut):
+    """Script words get the start times edge-tts reported (WordBoundary), shifted by the trim."""
+    ws = [w for w in text.split()]
+    spoken = [i for i, w in enumerate(ws) if re.search(r"[A-Za-z0-9]", w)]
+    if len(marks) != len(spoken):
+        return None
+    out = [0.0] * len(ws)
+    for i, (_, st) in zip(spoken, marks):
+        out[i] = round(max(0.0, st - cut), 3)
+    for i in range(len(ws)):  # a token with no letters (a dash) rides with the next word
+        if i not in spoken:
+            out[i] = out[i + 1] if i + 1 < len(ws) else out[i - 1]
+    return out
+
+def tts(lines, voice, speed, work, fake, warn):
+    paths, times = [], []
     if fake:
         for i, ln in enumerate(lines):
             p = os.path.join(work, f"v{i:02d}.wav")
             secs = 0.36 * len(words(ln["text"])) + 0.3
             run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", f"sine=f=220:r={SR}", "-t", f"{secs:.2f}",
                  "-af", "volume=0.05", "-ac", "1", p])
-            paths.append(p)
-        return paths
+            paths.append(p); times.append(even_times(ln["text"], secs))
+        return paths, times
     import asyncio, edge_tts
     rate = f"{int(round((speed - 1) * 100)):+d}%"
     async def one(text, out):
-        await asyncio.wait_for(edge_tts.Communicate(text, VOICES[voice], rate=rate).save(out), timeout=45)
+        marks = []
+        async def go():
+            com = edge_tts.Communicate(text, VOICES[voice], rate=rate, boundary="WordBoundary")
+            with open(out, "wb") as f:
+                async for ch in com.stream():
+                    if ch["type"] == "audio":
+                        f.write(ch["data"])
+                    elif ch["type"] == "WordBoundary":
+                        marks.append((ch["text"], ch["offset"] / 1e7))
+        await asyncio.wait_for(go(), timeout=45)
+        return marks
     for i, ln in enumerate(lines):
         mp3 = os.path.join(work, f"v{i:02d}.mp3"); p = mp3[:-4] + ".wav"
-        err = None
+        err = None; marks = []
         for attempt in range(4):
             try:
-                asyncio.run(one(ln["text"], mp3))
+                marks = asyncio.run(one(ln["text"], mp3))
                 if os.path.getsize(mp3) > 2000:
                     break
                 err = "empty audio"
@@ -147,12 +176,17 @@ def tts(lines, voice, speed, work, fake):
         else:
             raise SystemExit(f"voice failed on scene {i+1} after 4 tries: {err[:150]}")
         # trim the silence edge-tts leaves at both ends so scenes stay tight
-        run(["ffmpeg", "-v", "error", "-y", "-i", mp3, "-af",
-             "silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
-             "silenceremove=start_periods=1:start_threshold=-45dB,areverse",
+        cut = max(0.0, marks[0][1] - 0.04) if marks else 0.0
+        head = "" if marks else "silenceremove=start_periods=1:start_threshold=-45dB,"
+        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{cut:.3f}", "-i", mp3, "-af",
+             head + "areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse",
              "-ar", str(SR), "-ac", "1", p])
-        paths.append(p)
-    return paths
+        tm = match_times(ln["text"], marks, cut)
+        if tm is None:
+            warn.append(f"scene {i+1}: word timings from length (voice gave {len(marks)} marks)")
+            tm = even_times(ln["text"], wav_frames(p)[1])
+        paths.append(p); times.append(tm)
+    return paths, times
 
 def wav_frames(p):
     with wave.open(p) as w:
@@ -190,23 +224,74 @@ def build_audio(paths, scenes, lead, work):
     with wave.open(raw, "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm)
     vo = os.path.join(work, "vo.wav")
-    fx = ("highpass=f=75,equalizer=f=280:t=q:w=1.1:g=-2.5,equalizer=f=3200:t=q:w=1.3:g=3,"
-          "acompressor=threshold=-20dB:ratio=3:attack=5:release=90:makeup=2,loudnorm=I=-15:TP=-1.5:LRA=9")
+    fx = ("highpass=f=80,equalizer=f=250:t=q:w=1.2:g=-2,equalizer=f=2500:t=q:w=1.2:g=2,"
+          "deesser=i=0.35,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2,"
+          "loudnorm=I=-14:TP=-1.5:LRA=7")
     run(["ffmpeg", "-v", "error", "-y", "-i", raw, "-af", fx, "-ar", str(SR), vo])
     return vo
 
 # ---------------------------------------------------------------- images
-def get_image(spec, ln, i, work, fake, warn):
+KLEIN = "@cf/black-forest-labs/flux-2-klein-4b"
+REF_NOTE = ("Keep the exact same characters, character designs, colors and art style as the reference "
+            "image, in a new scene. ")
+
+def gen_klein(prompt, seed, dest, ref, msgs):
+    """Free FLUX.2 klein on Cloudflare Workers AI: native 16:9 and a reference picture for
+    consistent characters. Returns True on success."""
+    import base64, urllib.request, uuid
+    acct = os.environ.get("CF_ACCOUNT_ID", "").strip(); tok = os.environ.get("CF_API_TOKEN", "").strip()
+    if not (acct and tok):
+        msgs.append("no Cloudflare keys"); return False
+    fields = {"prompt": (REF_NOTE if ref else "") + prompt[:1900], "width": "1280", "height": "720",
+              "seed": str(seed), "steps": "4"}
+    bnd = uuid.uuid4().hex; body = b""
+    for k, v in fields.items():
+        body += f"--{bnd}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode()
+    if ref:
+        body += (f"--{bnd}\r\nContent-Disposition: form-data; name=\"input_image_0\"; filename=\"ref.jpg\"\r\n"
+                 "Content-Type: image/jpeg\r\n\r\n").encode() + open(ref, "rb").read() + b"\r\n"
+    body += f"--{bnd}--\r\n".encode()
+    url = f"https://api.cloudflare.com/client/v4/accounts/{acct}/ai/run/{KLEIN}"
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, data=body, method="POST", headers={
+                "Authorization": f"Bearer {tok}", "Content-Type": f"multipart/form-data; boundary={bnd}"})
+            with urllib.request.urlopen(req, timeout=120) as r:
+                raw = r.read(); ctype = r.headers.get("Content-Type", "")
+            if "json" in ctype:
+                d = json.loads(raw); img = (d.get("result") or {}).get("image")
+                raw = base64.b64decode(img) if img else b""
+                if not raw:
+                    msgs.append(f"klein try {attempt+1}: no image ({str(d.get('errors'))[:120]})")
+            if len(raw) > 20000:
+                open(dest, "wb").write(raw); return True
+        except Exception as e:
+            m = ""
+            try:
+                m = e.read().decode()[:160]
+            except Exception:
+                pass
+            msgs.append(f"klein try {attempt+1} failed: {e!r} {m}"[:220])
+            if "daily free allocation" in m or "neurons" in m or "No route" in m or "not found" in m.lower():
+                return False
+        time.sleep(3 + attempt * 6)
+    return False
+
+def get_image(spec, ln, i, work, fake, warn, ref=None):
     from PIL import Image
     p = os.path.join(work, f"img{i:02d}.jpg")
     if fake:
         run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "testsrc2=size=1024x1024", "-frames:v", "1", p])
     else:
-        sys.path.insert(0, ROOT)
-        from make_short import gen_image
-        msgs = []
-        if not gen_image(expand(ln["prompt"], spec), 1000 + i, p, msgs):
-            raise SystemExit(f"image failed on scene {i+1}: {'; '.join(msgs[-2:])[:200]}")
+        prompt = expand(ln["prompt"], spec); msgs = []
+        ok = spec.get("image_model", "klein") == "klein" and gen_klein(prompt, 1000 + i, p, ref, msgs)
+        if not ok:
+            sys.path.insert(0, ROOT)
+            from make_short import gen_image
+            if msgs:
+                warn.append(f"scene {i+1}: klein failed, used FLUX schnell ({msgs[-1][:120]})")
+            if not gen_image(prompt, 1000 + i, p, msgs):
+                raise SystemExit(f"image failed on scene {i+1}: {'; '.join(msgs[-2:])[:200]}")
     im = Image.open(p).convert("RGB")
     # FLUX schnell returns a square: keep the middle 16:9 band
     w, h = im.size
@@ -244,28 +329,89 @@ def fit(draw, text, fname, size, minsize, maxw, maxlines):
             return f, ls, size
         size -= 4
 
-def scene_layer(ln):
-    """Black frame with the label, headline and caption for one scene (image box left empty)."""
-    from PIL import Image, ImageDraw
-    im = Image.new("RGB", (W, H), (0, 0, 0)); d = ImageDraw.Draw(im)
-    margin = 70; maxw = W - 2 * margin
-    hf, hls, hs = fit(d, ln["headline"], "Poppins-Black.ttf", 92, 60, maxw, 2)
-    lf = font("Poppins-ExtraBold.ttf", 50)
-    gap = int(hs * 1.12)
-    y = IMG_Y - 44 - gap * len(hls)  # headline sits right above the picture
-    ly = y - 70
-    d.text((W / 2, ly), ln["label"], font=lf, fill=GOLD, anchor="mt")
-    for k, l in enumerate(hls):
-        d.text((W / 2, y + k * gap), l, font=hf, fill=(255, 255, 255), anchor="mt")
-    cf, cls, cs = fit(d, ln["text"], "Poppins-ExtraBold.ttf", 66, 46, maxw, 3)
-    cy = IMG_Y + IMG_H + 56
-    for k, l in enumerate(cls):
-        d.text((W / 2, cy + k * int(cs * 1.22)), l, font=cf, fill=(255, 255, 255), anchor="mt")
+def title_card(im, title):
+    """Hand-letter the episode title across the top of the first picture, in dark ink."""
+    from PIL import ImageDraw
+    d = ImageDraw.Draw(im); w, h = im.size
+    f, ls, size = fit(d, title, "PatrickHand-Regular.ttf", int(h * 0.13), int(h * 0.07), w * 0.86, 1)
+    d.text((w / 2, h * 0.05), ls[0], font=f, fill=(28, 26, 24), anchor="mt")
     return im
 
+CAP_SIZE = 72
+CAP_TOP_GAP = 34   # space between the caption and the picture
+
+def caption_chunks(lines, times, starts, lead):
+    """Group each line into short caption chunks (fit 2 lines, break at punctuation) with word times."""
+    from PIL import Image, ImageDraw
+    d = ImageDraw.Draw(Image.new("RGB", (8, 8)))
+    f = font("Poppins-Black.ttf", CAP_SIZE); maxw = W - 2 * 80
+    space = d.textlength(" ", font=f); lh = int(CAP_SIZE * 1.12)
+    chunks = []
+    for li, ln in enumerate(lines):
+        ws = ln["text"].upper().split(); tms = [starts[li] + lead + t for t in times[li]]
+        # one short line at a time: split at punctuation, then into even pieces of 2-5 words
+        fits = lambda g: len(g) <= 5 and d.textlength(" ".join(g), font=f) <= maxw
+        phrases, cur = [], []
+        for w in ws:
+            cur.append(w)
+            if re.search(r"[,.!?;:]['\"”’]?$", w):
+                phrases.append(cur); cur = []
+        if cur:
+            phrases.append(cur)
+        merged = []
+        for ph in phrases:  # a one-word phrase leans on its neighbor ("IT HISSED,")
+            if merged and (len(ph) == 1 or len(merged[-1]) == 1) and fits(merged[-1] + ph):
+                merged[-1] = merged[-1] + ph
+            else:
+                merged.append(ph)
+        groups = []
+        for ph in merged:
+            n = 1
+            while True:
+                size = math.ceil(len(ph) / n)
+                parts = [ph[j:j + size] for j in range(0, len(ph), size)]
+                if all(fits(x) for x in parts) or n >= len(ph):
+                    break
+                n += 1
+            groups += parts
+        k = 0
+        for g in groups:
+            rows = wrap(d, " ".join(g), f, maxw)
+            y0 = IMG_Y - CAP_TOP_GAP - lh * len(rows)
+            placed = []; gi = 0
+            for r, row in enumerate(rows):
+                x = (W - d.textlength(row, font=f)) / 2
+                for w in row.split():
+                    placed.append((w, x, y0 + r * lh, tms[k + gi])); gi += 1
+                    x += d.textlength(w, font=f) + space
+            chunks.append({"words": placed, "start": tms[k]}); k += len(g)
+    for i, c in enumerate(chunks):
+        c["end"] = chunks[i + 1]["start"] if i + 1 < len(chunks) else 1e9
+    return chunks, f
+
+def draw_caption(frame, chunks, f, t, cache):
+    from PIL import Image, ImageDraw
+    c = next((c for c in chunks if c["start"] - 0.02 <= t < c["end"]), None)
+    if not c:
+        return frame
+    for w, x, y, ws in c["words"]:
+        a = (t - ws) / 0.16
+        if a <= 0:
+            continue
+        spr = cache.get(w)
+        if spr is None:
+            bb = f.getbbox(w)
+            spr = Image.new("L", (bb[2] + 8, int(CAP_SIZE * 1.4)), 0)
+            ImageDraw.Draw(spr).text((0, 0), w, font=f, fill=255)
+            cache[w] = spr
+        mask = spr if a >= 1 else spr.point(lambda v, a=a: int(v * a))
+        frame.paste((255, 255, 255), (int(x), int(y)), mask)
+    return frame
+
 # ---------------------------------------------------------------- frames
-def render_video(images, layers, scenes, out, work):
+def render_video(images, scenes, chunks, cfont, out, work):
     from PIL import Image
+    black = Image.new("RGB", (W, H), (0, 0, 0)); cache = {}
     starts = [sum(scenes[:k]) for k in range(len(scenes))]
     total = sum(scenes); n = int(round(total * FPS))
     srcs = [im.resize((int(IMG_W * 1.25), int(IMG_H * 1.25)), Image.LANCZOS) for im in images]
@@ -282,7 +428,7 @@ def render_video(images, layers, scenes, out, work):
         dy = (sh - chh) / 2
         a = cw / IMG_W
         pic = src.transform((IMG_W, IMG_H), Image.AFFINE, (a, 0, dx, 0, a, dy), resample=Image.BICUBIC)
-        f = layers[k].copy(); f.paste(pic, (0, IMG_Y))
+        f = black.copy(); f.paste(pic, (0, IMG_Y))
         return f
 
     proc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
@@ -302,6 +448,7 @@ def render_video(images, layers, scenes, out, work):
         elif k > 0 and t < starts[k] + XF / 2:
             a = (t - (starts[k] - XF / 2)) / XF
             f = Image.blend(frame(k - 1, t), f, a)
+        draw_caption(f, chunks, cfont, t, cache)
         proc.stdin.write(f.tobytes())
     proc.stdin.close()
     if proc.wait() != 0:
@@ -319,14 +466,20 @@ def build(spec_path, check=False):
     work = tempfile.mkdtemp(prefix=f"story-{jid}-")
     try:
         speed = min(1.15, max(0.9, float(spec.get("speed", 1.0))))
-        vpaths = tts(lines, spec.get("voice", "andrew"), speed, work, check)
+        vpaths, wtimes = tts(lines, spec.get("voice", "andrew"), speed, work, check, warn)
         durs = [wav_frames(p)[1] for p in vpaths]
         scenes, lead = plan_timing(durs, warn)
         vo = build_audio(vpaths, scenes, lead, work)
-        images = [get_image(spec, ln, i, work, check, warn) for i, ln in enumerate(lines)]
-        layers = [scene_layer(ln) for ln in lines]
+        # scene 1 sets the characters; every later scene gets it as a reference picture
+        images = [get_image(spec, lines[0], 0, work, check, warn)]
+        ref = os.path.join(work, "img00.jpg")
+        images += [get_image(spec, ln, i, work, check, warn, ref) for i, ln in enumerate(lines) if i > 0]
+        if spec.get("title_card"):
+            images[0] = title_card(images[0], str(spec["title_card"]))
+        starts = [sum(scenes[:k]) for k in range(len(scenes))]
+        chunks, cfont = caption_chunks(lines, wtimes, starts, lead)
         silent = os.path.join(work, "silent.mp4")
-        total = render_video(images, layers, scenes, silent, work)
+        total = render_video(images, scenes, chunks, cfont, silent, work)
         # music: quiet generated bed (free), ducked under the voice
         mpath = None; mood = str(spec.get("music", "tense")).lower()
         if mood != "none" and not check:
@@ -339,14 +492,14 @@ def build(spec_path, check=False):
                 warn.append(f"music failed, built without it: {ex!r}"[:160]); mpath = None
         inputs = ["-i", silent, "-i", vo]
         if mpath:
-            mv = float(spec.get("music_volume", 0.08))
+            mv = float(spec.get("music_volume", 0.05))
             inputs += ["-i", mpath]
             af = (f"[2:a]volume={mv},aformat=sample_rates={SR}:channel_layouts=mono[m];"
                   f"[m][1:a]sidechaincompress=threshold=0.03:ratio=6:attack=15:release=350[md];"
                   f"[1:a][md]amix=inputs=2:duration=first:normalize=0,afade=t=out:st={total-0.8:.2f}:d=0.8[a]")
         else:
             af = f"[1:a]afade=t=out:st={total-0.6:.2f}:d=0.6[a]"
-        kbps = int(max(400, min(4000, MAX_MB * 8192 / total - 96 - 30)))
+        kbps = int(max(400, min(4000, MAX_MB * 8192 / total - 128 - 30)))
         final = os.path.join(out_dir, f"{jid}.mp4")
         base = ["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", f"[0:v]fade=t=out:st={total-0.5:.2f}:d=0.5[v];{af}",
                 "-map", "[v]", "-map", "[a]", "-t", f"{total:.3f}", "-r", str(FPS),
@@ -354,7 +507,7 @@ def build(spec_path, check=False):
                 "-b:v", f"{kbps}k", "-maxrate", f"{int(kbps*1.5)}k", "-bufsize", f"{kbps*3}k", "-pix_fmt", "yuv420p"]
         plog = os.path.join(work, "pass")
         run([*base, "-pass", "1", "-passlogfile", plog, "-an", "-f", "mp4", "/dev/null"])
-        run([*base, "-pass", "2", "-passlogfile", plog, "-c:a", "aac", "-b:a", "96k", "-ar", "44100",
+        run([*base, "-pass", "2", "-passlogfile", plog, "-c:a", "aac", "-b:a", "128k", "-ar", "44100",
              "-movflags", "+faststart", final])
         size = os.path.getsize(final)
         if size > MAX_MB * 1048576 * 1.03:
