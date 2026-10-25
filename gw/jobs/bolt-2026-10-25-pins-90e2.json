@@ -1,0 +1,146 @@
+{
+ "id": "bolt-2026-10-25-pins-90e2",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-legacy-xmas-game-bundle-n1",
+   "body": {
+    "content": "A printable Christmas party games bundle with 8 games for family, friends and office parties: Christmas trivia, holiday word scramble, Would You Rather holiday edition, This or That, Find the Guest bingo, Who Am I cards, carol title fill-in and a scavenger hunt, with answer keys and a party scorecard. 13-page PDF, instant download, print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-legacy-xmas-game-bundle-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-01T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Would You Rather Christmas Edition: Printable Christmas Party Games Bundle, 8 Games",
+       "link": "https://www.etsy.com/listing/4597749137"
+      }
+     }
+    ]
+   },
+   "tag": "pin-legacy-xmas-game-bundle-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-legacy-xmas-game-bundle-n2",
+   "body": {
+    "content": "A printable Christmas party games bundle with 8 games for family, friends and office parties: Christmas trivia, holiday word scramble, Would You Rather holiday edition, This or That, Find the Guest bingo, Who Am I cards, carol title fill-in and a scavenger hunt, with answer keys and a party scorecard. 13-page PDF, instant download, print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-legacy-xmas-game-bundle-n2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-02T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Find the Guest Bingo for Christmas Parties: Printable Icebreaker Game, 8 Game Bundle",
+       "link": "https://www.etsy.com/listing/4597749137"
+      }
+     }
+    ]
+   },
+   "tag": "pin-legacy-xmas-game-bundle-n2"
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-murder-mystery-8-s1",
+   "body": {
+    "content": "A printable Christmas murder mystery party game written for exactly 8 players: The Stolen Star of Hollyridge Lodge. Inside the 16-page PDF: host guide and party timeline, invitations, 8 character sheets with secrets, alibis and 3 rounds of clues, clue cards, detective notes, a sealed solution page, name tags and 2 awards. For a Christmas Eve dinner with friends, family or coworkers. Instant download, print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-murder-mystery-8-s1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-02T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Murder Mystery Party Game for 8 Players: Who Stole the Star? Printable Kit",
+       "link": "https://www.etsy.com/listing/4602816114"
+      }
+     }
+    ]
+   },
+   "tag": "pin-prod-xmas-murder-mystery-8-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-murder-mystery-8-s2",
+   "body": {
+    "content": "A printable Christmas murder mystery party game written for exactly 8 players: The Stolen Star of Hollyridge Lodge. Inside the 16-page PDF: host guide and party timeline, invitations, 8 character sheets with secrets, alibis and 3 rounds of clues, clue cards, detective notes, a sealed solution page, name tags and 2 awards. For a Christmas Eve dinner with friends, family or coworkers. Instant download, print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-murder-mystery-8-s2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-03T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Eve Whodunit Dinner Party Game: Printable Murder Mystery for 8 Adults",
+       "link": "https://www.etsy.com/listing/4602816114"
+      }
+     }
+    ]
+   },
+   "tag": "pin-prod-xmas-murder-mystery-8-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-murder-mystery-8-s3",
+   "body": {
+    "content": "A printable Christmas murder mystery party game written for exactly 8 players: The Stolen Star of Hollyridge Lodge. Inside the 16-page PDF: host guide and party timeline, invitations, 8 character sheets with secrets, alibis and 3 rounds of clues, clue cards, detective notes, a sealed solution page, name tags and 2 awards. For a Christmas Eve dinner with friends, family or coworkers. Instant download, print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-murder-mystery-8-s3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-04T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Printable Christmas Mystery Party Kit: Name Tags, Awards, Detective Notes for 8",
+       "link": "https://www.etsy.com/listing/4602816114"
+      }
+     }
+    ]
+   },
+   "tag": "pin-prod-xmas-murder-mystery-8-s3"
+  }
+ ]
+}
