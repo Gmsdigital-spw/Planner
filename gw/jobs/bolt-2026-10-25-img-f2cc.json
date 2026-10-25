@@ -1,0 +1,66 @@
+{
+ "id": "bolt-2026-10-25-img-f2cc",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4602816114/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-murder-mystery-8/1.jpg",
+   "field": "image",
+   "fileName": "christmas-murder-mystery-party-game-1.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Christmas Murder Mystery Party Game for 8 Players, Printable Whodunit Dinner Party Kit, Family Friendly Holiday Game, Host Can Play"
+   },
+   "tag": "img1"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4602816114/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-murder-mystery-8/2.jpg",
+   "field": "image",
+   "fileName": "christmas-murder-mystery-party-game-2.jpg",
+   "fields": {
+    "rank": "2",
+    "alt_text": "Preview 1 of the printable Christmas murder mystery party game kit for 8 players"
+   },
+   "tag": "img2"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4602816114/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-murder-mystery-8/3.jpg",
+   "field": "image",
+   "fileName": "christmas-murder-mystery-party-game-3.jpg",
+   "fields": {
+    "rank": "3",
+    "alt_text": "Preview 2 of the printable Christmas murder mystery party game kit for 8 players"
+   },
+   "tag": "img3"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4602816114/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-murder-mystery-8/4.jpg",
+   "field": "image",
+   "fileName": "christmas-murder-mystery-party-game-4.jpg",
+   "fields": {
+    "rank": "4",
+    "alt_text": "Preview 3 of the printable Christmas murder mystery party game kit for 8 players"
+   },
+   "tag": "img4"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4602816114/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-murder-mystery-8/5.jpg",
+   "field": "image",
+   "fileName": "christmas-murder-mystery-party-game-5.jpg",
+   "fields": {
+    "rank": "5",
+    "alt_text": "Preview 4 of the printable Christmas murder mystery party game kit for 8 players"
+   },
+   "tag": "img5"
+  }
+ ]
+}
