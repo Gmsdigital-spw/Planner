@@ -1,0 +1,4 @@
+{"id":"bolt-2026-10-25-verify-37fc","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/listings/4602816114?includes=Images","tag":"listing"},
+{"op":"etsy","method":"GET","path":"/listings/4602816114/images","tag":"images"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/4602816114/files","tag":"files"}]}
