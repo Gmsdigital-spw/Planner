@@ -12,7 +12,9 @@
 1. Products through out_dir; a script prints one line per candidate (etsy.state active, a
    listing url, a file.assetId). Order by the docs.md rule; skip anything featured in the last
    7 days; while Holiday Mode is ON, 2 or 3 of the 4 channels feature a holiday product (pick
-   a second product if the first is not seasonal).
+   a second product if the first is not seasonal). While the Party Lane Push in
+   `specs/thrive-plan-2026-10-23.md` runs (to Dec 15), 3 or 4 of the 4 channels feature a
+   party-lane focus kit instead; the 7-day skip does not apply to the 2 kits that sold.
 2. Compute today's plan day and theme (docs.md). Record product(s), listing url(s), plan day,
    theme for stages 04 and 05.
 

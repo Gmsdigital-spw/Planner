@@ -9,6 +9,7 @@
 - 2026-10-21: Covers like top Etsy sellers: the whole product visible, big count ("36 games"), real pages. Beige/cream-desk covers are retired.
 - 2026-10-19: Realistic looks (real pages, hands holding prints, prints on walls); no drawn or fake-looking mockups.
 - 2026-10-23: A new listing every day; a day with none is a problem. But never ship under 92 and never ship slop.
+- 2026-10-25: "Whatever you think will get more sales, we need more." Both first sales (Oct 24) were Christmas party kits, so the Party Lane Push runs to Dec 15 (specs/thrive-plan-2026-10-23.md): party kits get most pins, posts and new builds.
 
 ## What works (proven by numbers)
 - 2026-10-23: Web app and spreadsheet listings pull the most views: ADHD Budget Planner App 41 views (top of 24), Monthly Budget Tracker 21 (3rd). Held: 1 time (includes a paid Pinterest ad on the app).

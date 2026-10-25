@@ -38,7 +38,8 @@
    "Wed Oct 28"), createdAt, source}.
 4. Queue depth: if fewer than 6 pins are queued or ready for the next day, make pins for the
    best-viewed active listings (from the newest stats doc) before anything else, up to 7 this
-   run. Give any pin with image null and status not "posted" or "retired" an image the same
+   run. While the Party Lane Push (`specs/thrive-plan-2026-10-23.md`) runs, at least 4 of every 6
+   pins for a day go to party-lane focus kits, and non-holiday listings get at most 1 a day. Give any pin with image null and status not "posted" or "retired" an image the same
    way (up to 7 per run).
 5. Pins with status "retired" are Grayson's removed old-style pins: never re-image, queue,
    copy or recreate them. Never a solid colour-block pin.

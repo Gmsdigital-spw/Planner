@@ -27,10 +27,29 @@ Same authority as the other specs. Where it conflicts with specs/push-week-2026-
    Atlas Prime's Sunday message leads with views, favorites and sales for the week. Big check-in Dec 31.
 
 ## Focus listings (winners first; Christmas weighted until Dec 15)
+Updated Oct 25, 2026 from live Etsy numbers. The first 2 SALES came from this lane.
 | Listing | Why |
 |---|---|
-| Christmas Party Games Bundle (4597749137) | 36 views, most recent momentum (+24 in 2 days) |
-| ADHD Budget Planner App (4596406689) | top views (41) |
-| Letter from Santa Editable Bundle (4601798994) | newest, highest price ($8.99), strong season |
-| 36 Funny Christmas Party Awards Kit (4598379368) | office-party season |
-| Monthly Budget Tracker Spreadsheet (4596095937) | 21 views, steady |
+| Christmas Party Games Bundle (4597749137) | SOLD (Oct 24); 68 views, top of shop |
+| Gingerbread House Contest Kit (4600177516) | SOLD (Oct 24); 6 views |
+| Christmas Murder Mystery for 8 (4602816114) | new party kit, $7.99, 0 views yet |
+| Christmas Escape Room for Kids (4602402578) | new party kit, $11.99, 0 views yet |
+| 36 Funny Christmas Party Awards Kit (4598379368) | office-party season, 7 views |
+| Letter from Santa Editable Bundle (4601798994) | strong season, 0 views yet |
+| ADHD Budget Planner App (4596406689) | 41 views; keep 1 pin a week only |
+
+## Party Lane Push (Grayson's go, Oct 25 2026; runs to Dec 15)
+Grayson: "Whatever you think will get more sales." Real proof: both sales are Christmas party kits.
+1. PINS: at least 4 of every 6 daily pins go to the Christmas party lane (the focus kits above).
+   Lead with the 2 sold kits; give each 0-view party kit at least 1 pin within 3 days.
+   Budget, 2027 and planner listings: at most 1 pin a day combined until Dec 26, then flip back.
+2. HERALD: while this push runs, 3 or 4 of the 4 daily channels feature a party-lane kit.
+   Hook angle: "host the party everyone talks about" (games, mystery, contest), real pages shown.
+3. NIGHT SHIFT BUILDS: new products come from the party/hosting lane first (bundles, Christmas
+   Eve, office party, family game night, Galentine's later). Pass score still 92, no exceptions.
+4. BUNDLE: build one "Christmas Party Mega Bundle" (Party Games + Awards + Gingerbread + Escape
+   Room) as a single listing priced under the sum of the parts. Ledger sets price within its rules.
+5. CROSS-SELL: each party listing's description ends with one line naming 2 related party kits
+   (shop search phrase only, no links). Quill does it at the listing's next update slot.
+6. MEASURE: each Sunday log views, favorites and sales for the party lane vs everything else in
+   notebook/etsy.md. If party lane is not ahead in 2 weeks, tell Grayson in 3 lines.
