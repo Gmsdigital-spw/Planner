@@ -232,8 +232,9 @@ def build_audio(paths, scenes, lead, work):
 
 # ---------------------------------------------------------------- images
 KLEIN = "@cf/black-forest-labs/flux-2-klein-4b"
-REF_NOTE = ("Keep the exact same characters, character designs, colors and art style as the reference "
-            "image, in a new scene. ")
+REF_NOTE = ("The reference image is only a character sheet: draw these exact characters with the same "
+            "designs, colors and art style, but in a completely new scene, setting, pose and camera angle "
+            "exactly as described here. ")
 
 def gen_klein(prompt, seed, dest, ref, msgs):
     """Free FLUX.2 klein on Cloudflare Workers AI: native 16:9 and a reference picture for
@@ -332,9 +333,17 @@ def fit(draw, text, fname, size, minsize, maxw, maxlines):
 def title_card(im, title):
     """Hand-letter the episode title across the top of the first picture, in dark ink."""
     from PIL import ImageDraw
-    d = ImageDraw.Draw(im); w, h = im.size
-    f, ls, size = fit(d, title, "PatrickHand-Regular.ttf", int(h * 0.13), int(h * 0.07), w * 0.86, 1)
-    d.text((w / 2, h * 0.05), ls[0], font=f, fill=(28, 26, 24), anchor="mt")
+    from PIL import Image, ImageFilter
+    w, h = im.size; d = ImageDraw.Draw(im)
+    f, ls, size = fit(d, title, "PatrickHand-Regular.ttf", int(h * 0.13), int(h * 0.07), w * 0.8, 1)
+    tw = d.textlength(ls[0], font=f); y = h * 0.05
+    # soft paper glow so the ink reads on any sky
+    glow = Image.new("L", im.size, 0)
+    ImageDraw.Draw(glow).rounded_rectangle((w / 2 - tw / 2 - size * 0.5, y - size * 0.15, w / 2 + tw / 2 + size * 0.5,
+                                            y + size * 1.15), radius=int(size * 0.5), fill=215)
+    glow = glow.filter(ImageFilter.GaussianBlur(size * 0.35))
+    im.paste((246, 238, 222), (0, 0), glow)
+    ImageDraw.Draw(im).text((w / 2, y), ls[0], font=f, fill=(28, 26, 24), anchor="mt")
     return im
 
 CAP_SIZE = 72
@@ -470,10 +479,13 @@ def build(spec_path, check=False):
         durs = [wav_frames(p)[1] for p in vpaths]
         scenes, lead = plan_timing(durs, warn)
         vo = build_audio(vpaths, scenes, lead, work)
-        # scene 1 sets the characters; every later scene gets it as a reference picture
-        images = [get_image(spec, lines[0], 0, work, check, warn)]
-        ref = os.path.join(work, "img00.jpg")
-        images += [get_image(spec, ln, i, work, check, warn, ref) for i, ln in enumerate(lines) if i > 0]
+        # a character sheet (not shown) fixes how the cast looks; every scene uses it as a reference
+        ref = None
+        if not check:
+            sheet = {"prompt": "character sheet: " + ", ".join("{" + k + "}" for k in spec["cast"]) +
+                     ", standing side by side facing the viewer, full bodies, plain white background"}
+            get_image(spec, sheet, 99, work, check, warn); ref = os.path.join(work, "img99.jpg")
+        images = [get_image(spec, ln, i, work, check, warn, ref) for i, ln in enumerate(lines)]
         if spec.get("title_card"):
             images[0] = title_card(images[0], str(spec["title_card"]))
         starts = [sum(scenes[:k]) for k in range(len(scenes))]
