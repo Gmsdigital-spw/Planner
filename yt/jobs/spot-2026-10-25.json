@@ -1,0 +1,56 @@
+{
+ "id": "spot-2026-10-25",
+ "hook": "OUR GINGERBREAD WAR",
+ "end_text": "",
+ "loop": false,
+ "engine": "edge",
+ "voice": "ava",
+ "speed": 1.03,
+ "caption_words": 3,
+ "music": "uplifting",
+ "music_volume": 0.14,
+ "style": "3D animated movie still, Pixar and Illumination style CGI render, cute stylized cartoon characters, soft cinematic lighting, vibrant saturated colors, glossy detailed textures, shallow depth of field, character centered in frame, no text, no letters, no watermark",
+ "cast": {
+  "ray": "Uncle Ray, a chubby cartoon man with a bushy red beard and round glasses, wearing an ugly green Christmas sweater with a snowflake pattern",
+  "june": "Aunt June, a tall thin cartoon woman with a tight grey bun and pointy cat-eye glasses, wearing a red cardigan",
+  "gran": "Grandma Bea, a tiny round cartoon grandma with fluffy white curly hair and big round cheeks, wearing a lilac apron dotted with candy canes"
+ },
+ "lines": [
+  {
+   "text": "Every Christmas, my family builds gingerbread houses... and every Christmas, it ends in a fight.",
+   "image": {
+    "prompt": "{ray} and {june} glaring at each other across a kitchen table covered in two lopsided gingerbread houses, candy and icing bags, cozy Christmas kitchen with string lights",
+    "seed": 2501,
+    "motion": "push"
+   },
+   "pause": 0.3
+  },
+  {
+   "text": "Uncle Ray swears his castle wins. Aunt June says he glued the roof on.",
+   "image": {
+    "prompt": "{june} pointing an accusing finger at a tall gingerbread castle while {ray} hugs it protectively, shocked faces, Christmas kitchen",
+    "seed": 2502,
+    "motion": "punch"
+   },
+   "pause": 0.3
+  },
+  {
+   "text": "Grandma picked a winner once. Nobody spoke to her until New Year's.",
+   "image": {
+    "prompt": "{gran} sitting alone at the end of a long Christmas dinner table, everyone else turned away with arms crossed, her small sad face, warm living room",
+    "seed": 2503,
+    "motion": "orbit"
+   },
+   "pause": 0.35
+  },
+  {
+   "text": "So this year... Grandma printed score cards.",
+   "image": {
+    "prompt": "{gran} holding up a clipboard with a confident proud smile, wearing reading glasses, gingerbread houses lined up on the table behind her, Christmas lights",
+    "seed": 2504,
+    "motion": "push"
+   },
+   "pause": 0.05
+  }
+ ]
+}
