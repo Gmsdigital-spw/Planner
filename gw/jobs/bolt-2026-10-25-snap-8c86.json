@@ -1,0 +1,5 @@
+{"id":"bolt-2026-10-25-snap-8c86","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457","tag":"shop"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=draft&limit=100","tag":"draft"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"}]}
