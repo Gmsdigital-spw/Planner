@@ -25,3 +25,4 @@ What sells by grade, subject and season; competitor bestsellers, prices, tags; t
 - Single-classroom license line and the AI line on every listing.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-25 night: Etsy and TpT pages unreachable (DNS); got 1 rival with 123 item reviews (TpT seasonal 3rd grade escape room) from a search preview only. Change: first move after the shop connects is the Etsy API keyword search + reviews per listing. predict: 3 rivals with 100+ item reviews found in the first API search.

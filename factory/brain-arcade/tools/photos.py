@@ -74,18 +74,48 @@ ATLAS = os.path.normpath(os.path.join(HERE, "../../../assets/atlas-pack"))
 LAYOUTS = ["clipboard", "fanned", "christmas"]
 
 
-def scene_cover(spec, pg, lock_pages, out, layout):
+def plan(spec, pg):
+    """Which REAL pages each photo uses, per game type (add a branch for each new type)."""
+    if spec["type"] == "escape_room":
+        nl = len(spec["locks"]); npb = sum(len(L["problems"]) for L in spec["locks"])
+        locks = pg[3:3 + nl]; rec = 3 + nl  # then vault door, answer key, certificate
+        L4 = spec["locks"][min(3, nl - 1)]
+        return {"title": spec.get("cover_title", "Thanksgiving Math Escape Room"),
+                "hero": locks[min(3, nl - 1)], "pair": [pg[0], locks[0]], "fan": [locks[0], pg[0], locks[min(3, nl - 1)]],
+                "subs": [spec["grade"].upper(), f"{nl} LOCKS", f"{npb} PROBLEMS", "ANSWER KEY"],
+                "line": f"{spec['grade'].upper()}  ·  {nl} LOCKS  ·  {npb} PROBLEMS  ·  ANSWER KEY",
+                "close": (locks[min(3, nl - 1)], 0.62, "Real grade-level problems", L4["skill"] + "  ·  " + L4["standard"]),
+                "key": ([pg[rec + 2], pg[rec]], "Answer key included", f"Every answer double-checked  ·  code words for all {nl} locks"),
+                "guide": pg[1], "inside_sub": "No prep: print and play in one class period",
+                "items": ["Teacher guide + standards", "Story page", f"{nl} lock pages, {npb} problems", "Student recording sheet",
+                          "Final vault page", "Answer key", "Escape Expert certificate", "Low-ink version of every page"]}
+    if spec["type"] == "bingo":
+        nc, nf = spec["cards"], len(spec["facts"])
+        calls = [i for i, p in enumerate(pg) if i >= 2][: (nf + 9) // 10]
+        keyi = calls[-1] + 1; first = keyi + 1
+        return {"title": spec.get("cover_title", spec["subtitle"]),
+                "hero": pg[first], "pair": [pg[first], pg[calls[0]]], "fan": [pg[calls[0]], pg[0], pg[first + 1]],
+                "subs": [spec["grade"].upper(), f"{nc} CARDS", f"{nf} CALLING CARDS", "ANSWER KEY"],
+                "line": f"{spec['grade'].upper()}  ·  {nc} DIFFERENT CARDS  ·  ANSWER KEY",
+                "close": (pg[first], 0.5, f"{nc} different cards", spec["skill"] + "  ·  " + spec["standard"].split(";")[0]),
+                "key": ([pg[keyi], pg[calls[0]]], "Calling cards + answer key", "Tick each fact as you call it  ·  check a winner in seconds"),
+                "guide": pg[1], "inside_sub": "Print, play, and use it all year",
+                "items": [f"{nc} different bingo cards", f"{nf} calling cards", "Calling checklist + answer key",
+                          "Teacher guide, 4 ways to play", "Easier and harder options", "Low-ink version of every page"]}
+    raise ValueError("photos.plan has no layout for type " + spec["type"])
+
+
+def scene_cover(spec, pl, out, layout):
     import sys
     sys.path.insert(0, ATLAS)
     import place
     P = {k: hexrgb(v) for k, v in spec["palette"].items()}
-    nlocks = len(spec["locks"]); nprob = sum(len(L["problems"]) for L in spec["locks"])
-    title = spec.get("cover_title", "Thanksgiving Math Escape Room")
+    title = pl["title"]
     if layout == "clipboard":
-        img = place.place("clipboard", [lock_pages[min(3, len(lock_pages) - 1)]], None, scale=2000 / 1448)
+        img = place.place("clipboard", [pl["hero"]], None, scale=2000 / 1448)
         box = (1290, 400, 1745, 990)  # right of the clipboard, inside the 300 px thumbnail square
-    else:  # christmas table: cover page + a lock page
-        img = place.place("christmas", [pg[0], lock_pages[0]], None, scale=2000 / 1448)
+    else:  # christmas table: two real pages
+        img = place.place("christmas", pl["pair"], None, scale=2000 / 1448)
         box = (560, 60, 1440, 330)
     img = img.convert("RGBA").resize((2000, 1500), Image.LANCZOS)
     sh = Image.new("RGBA", img.size, (0, 0, 0, 0))
@@ -111,7 +141,7 @@ def scene_cover(spec, pg, lock_pages, out, layout):
         for l in lines:
             d.text(((x0 + x1) / 2, y), l, font=f, fill=P["ink"], anchor="mt"); y += size * 1.08
         d.line((x0 + 80, y + 18, x1 - 80, y + 18), fill=P["accent"], width=5)
-        subs = [spec["grade"].upper(), f"{nlocks} LOCKS", f"{nprob} PROBLEMS", "ANSWER KEY"]
+        subs = pl["subs"]
         fsz = 46
         fs = font(BODY, fsz)
         while max(d.textlength(s, font=fs) for s in subs) > (x1 - x0) - 60:
@@ -119,7 +149,7 @@ def scene_cover(spec, pg, lock_pages, out, layout):
         for i, s in enumerate(subs):
             d.text(((x0 + x1) / 2, y + 56 + i * (fsz + 14)), s, font=fs, fill=P["deep"], anchor="mt")
     else:
-        card(d, box, title, f"{spec['grade'].upper()}  ·  {nlocks} LOCKS  ·  ANSWER KEY", P["deep"], size=84)
+        card(d, box, title, pl["line"], P["deep"], size=84)
     save(img, out)
 
 
@@ -128,23 +158,19 @@ def build(spec, pdf, out, layout="fanned"):
     P = {k: hexrgb(v) for k, v in spec["palette"].items()}
     pg = pages(pdf)
     n = len(pg)
-    nlocks = len(spec["locks"]); nprob = sum(len(L["problems"]) for L in spec["locks"])
-    lock_pages = pg[3:3 + nlocks]
-    rec = 3 + nlocks  # recording sheet; then vault door, answer key, certificate
+    pl = plan(spec, pg)
     files = []
 
     if layout in ("clipboard", "christmas"):
-        f = os.path.join(out, "01-cover.jpg"); scene_cover(spec, pg, lock_pages, f, layout); files.append(f)
+        f = os.path.join(out, "01-cover.jpg"); scene_cover(spec, pl, f, layout); files.append(f)
     # 01 cover (layout "fanned"): three real pages fanned on the bold theme colour, label card top.
     # With a scene cover, this fanned shot becomes photo 02 instead of the all-pages grid.
     c = Image.new("RGBA", (2000, 1500), P["primary"] + (255,))
+    shadowed(c, pl["fan"][0], 640, (170, 470), angle=6)
+    shadowed(c, pl["fan"][2], 640, (1190, 470), angle=-6)
+    shadowed(c, pl["fan"][1], 700, (650, 420))
     d = ImageDraw.Draw(c)
-    shadowed(c, lock_pages[0], 640, (170, 470), angle=6)
-    shadowed(c, lock_pages[3], 640, (1190, 470), angle=-6)
-    shadowed(c, pg[0], 700, (650, 420))
-    d = ImageDraw.Draw(c)
-    card(d, (240, 60, 1760, 380), spec.get("cover_title", "Thanksgiving Math Escape Room"),
-         f"{spec['grade'].upper()}  ·  {nlocks} LOCKS  ·  {nprob} PROBLEMS  ·  ANSWER KEY", P["deep"])
+    card(d, (240, 60, 1760, 380), pl["title"], pl["line"], P["deep"])
     if layout == "fanned":
         f = os.path.join(out, "01-cover.jpg"); save(c, f); files.append(f)
     else:
@@ -158,40 +184,40 @@ def build(spec, pdf, out, layout="fanned"):
         dd.text((1000, 160), sub, font=font(BODY, 40), fill=P["accent"], anchor="mm")
         return im
 
-    # 02 every page (03 when the cover is a scene and 02 is the fanned shot)
-    im = base(f"{n} printable pages", "Every page you get, ready to print")
-    cols = 5; w = 300; gap = 34
-    x0 = (2000 - (cols * w + (cols - 1) * gap)) // 2
-    for i, p in enumerate(pg[:14]):
-        r, cc = divmod(i, cols)
-        shadowed(im, p, w, (x0 + cc * (w + gap), 262 + r * 440))
+    # 02 every page (only when the cover is the fanned shot)
     if layout == "fanned":
+        im = base(f"{n} printable pages", "Every page you get, ready to print")
+        cols = 5; w = 300; gap = 34
+        x0 = (2000 - (cols * w + (cols - 1) * gap)) // 2
+        for i, p in enumerate(pg[:15]):
+            r, cc = divmod(i, cols)
+            shadowed(im, p, w, (x0 + cc * (w + gap), 262 + r * 440))
         f = os.path.join(out, "02-all-pages.jpg"); save(im, f); files.append(f)
 
-    # 03 close-up of a lock page (big enough to read)
-    im = base("Real grade-level problems", spec["locks"][3]["skill"] + "  ·  " + spec["locks"][3]["standard"])
-    big = lock_pages[3]
-    crop = big.crop((0, 0, big.width, int(big.height * 0.62)))
-    shadowed(im, crop, 1480, (260, 262))
+    # 03 close-up of a real page (big enough to read)
+    page, frac, title, sub = pl["close"]
+    im = base(title, sub)
+    crop = page.crop((0, 0, page.width, int(page.height * frac)))
+    cw = 1480 if frac > 0.55 else 1300
+    shadowed(im, crop, cw, ((2000 - cw) // 2, 262))
     f = os.path.join(out, "03-closeup.jpg"); save(im, f); files.append(f)
 
-    # 04 answer key + recording sheet
-    im = base("Answer key included", "Every answer double-checked  ·  code words for all 5 locks")
-    shadowed(im, pg[rec + 2], 620, (330, 290), angle=3)
-    shadowed(im, pg[rec], 620, (1050, 290), angle=-3)
+    # 04 answer key + a working page
+    (ka, kb), title, sub = pl["key"]
+    im = base(title, sub)
+    shadowed(im, ka, 620, (330, 290), angle=3)
+    shadowed(im, kb, 620, (1050, 290), angle=-3)
     f = os.path.join(out, "04-answer-key.jpg"); save(im, f); files.append(f)
 
     # 05 what's included, with the teacher guide page
-    im = base("What's inside", "No prep: print and play in one class period")
-    shadowed(im, pg[1], 640, (300, 290))
+    im = base("What's inside", pl["inside_sub"])
+    shadowed(im, pl["guide"], 640, (300, 290))
     dd = ImageDraw.Draw(im)
-    items = ["Teacher guide + standards", "Story page", f"{nlocks} lock pages, {nprob} problems",
-             "Student recording sheet", "Final vault page", "Answer key", "Escape Expert certificate"]
     y = 330
-    for t in items:
+    for tx in pl["items"]:
         dd.ellipse((1030, y + 10, 1062, y + 42), fill=P["primary"])
-        dd.text((1085, y + 26), t, font=font(BODY, 48), fill=P["ink"], anchor="lm")
-        y += 150
+        dd.text((1085, y + 26), tx, font=font(BODY, 48), fill=P["ink"], anchor="lm")
+        y += 140
     f = os.path.join(out, "05-included.jpg"); save(im, f); files.append(f)
     return files
 

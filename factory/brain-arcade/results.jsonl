@@ -1,0 +1,3 @@
+{"day": "2026-10-25", "lane": "brain-arcade", "kind": "build", "id": "thanksgiving-multiplication-bingo-g3-4", "what": "Built Turkey Times Bingo: 30 cards, 30 calls, 22 pages + low-ink; answer key PASS (930 checks); score 83 FAIL (market 9)", "tags": {"type": "bingo", "grade": "3-4", "cover": "fanned", "price": "3.99"}}
+{"day": "2026-10-25", "lane": "brain-arcade", "kind": "qa", "id": "thanksgiving-escape-room-g3", "what": "Fix round: low-ink PDF, bigger fact text; re-scored 88 FAIL (market 11)", "tags": {"type": "escape_room", "cover": "clipboard", "lowink": "yes"}}
+{"day": "2026-10-25", "lane": "brain-arcade", "kind": "fix", "id": "answer_check", "what": "pdftotext drops spaces in tight columns; compare without spaces", "tags": {"tool": "answer_check"}}

@@ -25,3 +25,4 @@ Titles, 13 tags, descriptions: teacher search words first, license line, AI note
 - Single-classroom license line and the AI line on every listing.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-25 night: bingo copy PASS first try (129-char title, 13 tags, license + AI line). Change: name the low-ink version in the first 3 lines, teachers search for it. predict: copy PASS first try again.

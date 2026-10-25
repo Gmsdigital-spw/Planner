@@ -29,8 +29,9 @@ Etsy. Max 2 new listings a day (count today's rows in listings.jsonl). Never a p
       price, who_made, when_made, taxonomy_id, tags, materials, type "download", is_supply false,
       should_auto_renew true. Save listing_id.
    b. 5 photos, ranks 1-5, with alt text (uploadurl).
-   c. The PDF (upload, base64, fieldKey "file", nameKey "name", name = listing.json file_name).
-   d. GET the listing's images and files: exactly 5 images and 1 file, else STOP (leave it as a draft,
+   c. Each PDF in listing.json "files" (upload, base64, fieldKey "file", nameKey "name", name = its "name",
+      rank 1, 2...; the colour version first, the low-ink version second).
+   d. GET the listing's images and files: exactly 5 images and len(files) files, else STOP (leave it as a draft,
       tell Grayson in one line).
    e. PATCH /v3/application/shops/<id>/listings/<listing_id> {"state":"active"}.
 6. Append listings.jsonl {day, product_id, listing_id, title, state:"active", price, url}; queue.json

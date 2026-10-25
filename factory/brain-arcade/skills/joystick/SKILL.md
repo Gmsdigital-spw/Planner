@@ -25,3 +25,4 @@ Runs the lane, picks the day's build, grades every agent, writes the daily lesso
 - Single-classroom license line and the AI line on every listing.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-25 night: 2 builds, 0 passed (88, 83); market proof is the blocker, not the work. Change: when Etsy can't be reached, keep building the queue so products are ready the day proof arrives. predict: tomorrow 1 more build reaches answer-key PASS, 0 pass 92 until the shop is connected.

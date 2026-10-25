@@ -25,3 +25,4 @@ updated: 2026-10-25
 - Single-classroom license line and the AI line on every listing.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-25 night: escape room 88, bingo 83, both answer keys PASS (21 and 930 checks), slop check pass; caught a checker bug (spaces in pdftotext) and fixed the reader, not the bar. Change: score market from API evidence only. predict: escape room reaches 92+ once 3 rivals' review counts are on file.

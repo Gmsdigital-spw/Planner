@@ -25,3 +25,4 @@ Starter prices from competitor research; raises and lowers within the lane's rul
 - Single-classroom license line and the AI line on every listing.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-25 night: bingo at $3.99 (snippet band $2.50-$6). Change: replace snippet prices with API prices once connected. predict: median rival bingo price lands between $3 and $5.

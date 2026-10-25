@@ -15,7 +15,11 @@ knowledge/seasons.md "Live by").
 
 ## Process
 0. Joystick: grade each agent's last prediction; status doc "working" (ops/room.md).
-1. Compass (max 20 minutes, WebSearch/WebFetch): for tonight's product type + grade + season, open 2+ Etsy
+1. Compass (max 20 minutes). Etsy and TpT pages can't be opened from the run (DNS, Oct 25), so market proof
+   comes from the Etsy API through the lane's Make scenario once connected (GET /v3/application/listings/active?
+   keywords=<phrase>&sort_on=score&limit=25, then /listings/<id>/reviews?limit=1 for "count"; budget gate first),
+   or the free gateway after the merge; WebSearch previews are supporting evidence only. For tonight's product
+   type + grade + season, find 2+ Etsy
    item pages with 100+ ITEM reviews; fill knowledge/competitors.md, prices.md, tags.md, complaints.md
    with dated, sourced lines. No proof found = do not build that idea; take the next queue item.
 2. Joystick picks: (a) a product stuck in "inspection" from last night, (b) the next "queued" queue item

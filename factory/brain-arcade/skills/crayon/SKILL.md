@@ -26,3 +26,4 @@ Cover and 4 previews from REAL game pages (tools/photos.py); varied layouts, nev
 
 ## What I've learned (append-only, newest last)
 - 2026-10-25: Flat graphic covers read as "made by a computer". Putting the real lock page on Grayson's clipboard photo scene (assets/atlas-pack/place.py) reads as a real photo and still passes the 300 px test (title readable in the square). Change for tomorrow: every new product's cover uses a layout not on the last 3 covers (pipeline picks it). predict: the next 2 covers pass the side-by-side test on the first try.
+- 2026-10-25 night: photos.py now plans photos per game type; bingo got the fanned cover so it differs from the escape room's clipboard scene. Images scored 16-17: the inside photos share one header template. Change: vary photos 03-05 layouts next. predict: images 18+ on the next build.

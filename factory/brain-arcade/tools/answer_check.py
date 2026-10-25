@@ -108,7 +108,59 @@ def correct_choices(p):
     return out
 
 
+def pdf_text(pdf):
+    return subprocess.run(["pdftotext", "-layout", pdf, "-"], capture_output=True, text=True, check=True).stdout
+
+
+def check_bingo(spec, build, pdf=None):
+    """Bingo: every call's answer is right (own math), answers are all different, every card number is
+    a real answer, 24 different numbers + free centre per card, no two cards alike, key page complete."""
+    fails = []
+    calls = build["calls"]
+    if [[c["a"], c["b"]] for c in calls] != [list(f) for f in spec["facts"]]:
+        fails.append("calling cards do not match the spec's facts")
+    answers = []
+    for c in calls:
+        right = int(ev(f"{c['a']}*{c['b']}"))
+        if c["product"] != right:
+            fails.append(f"{c['a']} x {c['b']} printed as {c['product']}, the answer is {right}")
+        answers.append(right)
+    if len(set(answers)) != len(answers):
+        fails.append("two calls have the same answer (a square could match two calls)")
+    pool = set(answers)
+    if len(build["cards"]) != spec["cards"]:
+        fails.append(f"{len(build['cards'])} cards built, spec says {spec['cards']}")
+    seen = set()
+    for i, cells in enumerate(build["cards"], 1):
+        nums = [x for x in cells if x != "FREE"]
+        if len(cells) != 25 or cells[12] != "FREE":
+            fails.append(f"card {i}: needs 25 squares with FREE in the centre")
+        if len(nums) != 24 or len(set(nums)) != 24:
+            fails.append(f"card {i}: needs 24 different numbers")
+        bad = [x for x in nums if x not in pool]
+        if bad:
+            fails.append(f"card {i}: numbers {bad} are not answers to any call")
+        k = frozenset(nums)
+        if k in seen:
+            fails.append(f"card {i}: same numbers as another card")
+        seen.add(k)
+    if pdf:
+        txt = pdf_text(pdf)
+        # spaces removed: pdftotext drops them unevenly in tight columns ("3×2=6" vs "3 × 7 = 21")
+        key = "".join(txt[txt.find("ANSWER KEY"):].split()) if "ANSWER KEY" in txt else ""
+        if not key:
+            fails.append("PDF has no ANSWER KEY page")
+        for c in calls:
+            if f"{c['a']}×{c['b']}={c['product']}" not in key:
+                fails.append(f"answer key page is missing {c['a']} × {c['b']} = {c['product']}")
+        if txt.count(spec["free_label"]) < spec["cards"]:
+            fails.append("not every card made it into the PDF")
+    return fails
+
+
 def check(spec, build, pdf=None):
+    if spec.get("type") == "bingo":
+        return check_bingo(spec, build, pdf)
     fails = []
     locks_b = build["locks"]
     if len(locks_b) != len(spec["locks"]):
@@ -179,6 +231,15 @@ def selftest():
     assert check(spec2, good), "two correct choices must fail"
     spec3 = json.loads(json.dumps(spec)); spec3["locks"][0]["problems"][0].update(expr="43//6", exact="43/6", choices=["7", "8"])
     assert check(spec3, good), "uneven division must fail"
+    bs = {"type": "bingo", "facts": [[i, 2] for i in range(2, 27)], "cards": 2, "free_label": "FREE"}
+    calls = [{"a": i, "b": 2, "product": i * 2} for i in range(2, 27)]
+    c1 = [i * 2 for i in range(2, 14)] + ["FREE"] + [i * 2 for i in range(14, 26)]
+    c2 = [i * 2 for i in range(3, 15)] + ["FREE"] + [i * 2 for i in range(15, 27)]
+    gb = {"calls": calls, "cards": [c1, c2]}
+    assert check(bs, gb) == [], check(bs, gb)
+    assert check(bs, dict(gb, cards=[c1, c1])), "duplicate cards must fail"
+    wrong = [dict(c) for c in calls]; wrong[0]["product"] = 5
+    assert check(bs, dict(gb, calls=wrong)), "a wrong product must fail"
     print("selftest PASS")
 
 
@@ -187,7 +248,7 @@ if __name__ == "__main__":
         selftest(); sys.exit(0)
     spec = json.load(open(sys.argv[1])); build = json.load(open(sys.argv[2]))
     f = check(spec, build, sys.argv[3] if len(sys.argv) > 3 else None)
-    n = sum(len(L["problems"]) for L in spec["locks"])
+    n = len(spec["facts"]) * (spec["cards"] + 1) if spec.get("type") == "bingo" else sum(len(L["problems"]) for L in spec["locks"])
     if f:
         print(f"ANSWER KEY FAIL ({len(f)} problem(s)):"); [print(" -", x) for x in f]; sys.exit(1)
     print(f"ANSWER KEY PASS: {n} problems solved independently, every key and code word correct")

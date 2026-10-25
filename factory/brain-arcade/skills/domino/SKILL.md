@@ -25,3 +25,4 @@ Builds the printable PDF games from a spec with tools/games.py. Grade-aligned sk
 - Single-classroom license line and the AI line on every listing.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-25 night: added the bingo builder (30 cards, 30 calls) and a low-ink version for every game; 2 layout faults caught by contact sheet (cover card overflow, overlapping cards) and fixed in-run. Change: render the contact sheet BEFORE the pipeline photos, not after. predict: next build has 0 layout faults on its first contact sheet.
