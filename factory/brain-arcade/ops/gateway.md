@@ -25,6 +25,8 @@
 4. After the calls: append {"day","task","ops":<estimate>,"what"} to ops-ledger.jsonl.
 
 ## Public reads (views, favorites): the free GitHub gateway, GET only
+- ONLY once factory/brain-arcade is merged into main (the gateway Action runs on main). Until then,
+  read views/favorites through the Make scenario GET once a day (budget gate first).
 - Job gw/jobs/ba-<day key>-<step>-<4 hex>.json, ops ONLY {"op":"etsy","method":"GET","path":
   "/shops/<BA shop id>/listings/active?limit=100"} or "/listings/<BA listing id>". Never POST/PUT/PATCH/
   DELETE, never any other shop. Protocol: ../../shared/gateway.md "Protocol". This costs no Make ops.

@@ -75,5 +75,11 @@
  "repo_branch": {
   "until_merged": "claude/brain-arcade-etsy-lane-d15but",
   "rule": "If factory/brain-arcade/ is not on main yet, work on and push to this branch; raw URLs use this branch name instead of main."
+ },
+ "scheduled_tasks": {
+  "night_build": "trig_01DESiJ7MHbBrfq8ZGouzC8e (3:22 AM CT)",
+  "publisher": "trig_01StfvuruWBJwA7TFrhQY13E (9:17 AM, 3:17 PM CT)",
+  "learn": "trig_011CdDuZAnF1mbrCNCSr4Khy (8:41 PM CT)",
+  "home_session": "session_01MZ7qLQ4HJdf5AWv3aJjfJ6 (holds the Make connector and repo access; all three fire here)"
  }
 }
