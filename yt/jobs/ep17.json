@@ -1,0 +1,103 @@
+{
+  "id": "ep17",
+  "title": "I Grinded a Battle Pass for 61 Hours... Then Everyone Got It FREE #shorts",
+  "hook": "61 HOURS. THEN IT WENT FREE.",
+  "end_text": "",
+  "loop": true,
+  "engine": "edge",
+  "voice": "andrew",
+  "speed": 1.03,
+  "caption_words": 3,
+  "music": "tense",
+  "music_volume": 0.14,
+  "style": "3D animated movie still, Pixar and Illumination style CGI render, cute stylized cartoon characters, soft cinematic lighting, vibrant saturated colors, glossy detailed textures, shallow depth of field, character centered in frame, no text, no letters, no watermark",
+  "cast": {
+    "rio": "Rio, a 14-year-old cartoon boy whose whole head is a smooth round shiny orange (dimpled orange peel skin, big expressive cartoon eyes and a mouth on the orange, a short green leafy stem on top, no hair, no human face), human body wearing a baggy green hoodie and gray sweatpants"
+  },
+  "lines": [
+    {
+      "text": "I grinded a battle pass sixty-one hours... for a skin everyone got free.",
+      "image": {
+        "prompt": "close-up of {rio} (short green leafy stem on top, baggy green hoodie and gray sweatpants) slumped in a gaming chair in his dark room at night, staring blankly at a glowing monitor, a game controller hanging from one hand, tired dead-eyed face, blue screen light",
+        "motion": "push"
+      },
+      "label": "",
+      "pause": 0.0
+    },
+    {
+      "text": "The gold dragon. Level one hundred. Last day.",
+      "image": {
+        "prompt": "a huge shiny gold cartoon dragon with spread wings glowing on a computer monitor in a dark room at night, {rio} (short green leafy stem on top, baggy green hoodie and gray sweatpants) leaning toward it from a gaming chair, eyes sparkling, blue screen light",
+        "motion": "panr"
+      },
+      "label": "LAST DAY",
+      "pause": 0.0
+    },
+    {
+      "text": "Lag all week. Kicked at ninety-nine... twice.",
+      "image": {
+        "prompt": "{rio} (short green leafy stem on top, baggy green hoodie and gray sweatpants) in a gaming chair in his dark room at night throwing both arms up in rage, mouth wide open yelling, a frozen spinning loading circle on the monitor, red glow",
+        "motion": "push"
+      },
+      "label": "",
+      "pause": 0.0
+    },
+    {
+      "text": "So I sent forty angry lag reports.",
+      "image": {
+        "prompt": "{rio} (short green leafy stem on top, baggy green hoodie and gray sweatpants) hunched over a laptop at a desk at night typing furiously, angry frown, a stack of empty juice boxes beside him, blue screen light",
+        "motion": "push"
+      },
+      "label": "",
+      "pause": 0.0
+    },
+    {
+      "text": "Eleven fifty-nine PM... level one hundred.",
+      "image": {
+        "prompt": "extreme close-up of {rio} (short green leafy stem on top, baggy green hoodie and gray sweatpants) in his dark room at night, one happy tear running down his cheek, trembling smile, warm gold light glowing on his face from the screen",
+        "motion": "orbit",
+        "anim": true
+      },
+      "label": "11:59 PM",
+      "pause": 0.4
+    },
+    {
+      "text": "Next morning... every kid at school had it.",
+      "image": {
+        "prompt": "{rio} (short green leafy stem on top, baggy green hoodie and gray sweatpants) frozen in a bright school hallway in the morning, jaw dropped, eyes huge, other fruit kids at lockers in the background holding phones that glow gold, blurred",
+        "motion": "push"
+      },
+      "label": "NEXT MORNING",
+      "pause": 0.0
+    },
+    {
+      "text": "Free. From the game. 'Sorry for the lag.'",
+      "image": {
+        "prompt": "a cheerful school cafeteria in the morning full of fruit kids holding up phones that glow gold and cheering, {rio} (short green leafy stem on top, baggy green hoodie and gray sweatpants) small in the middle of the crowd looking stunned, warm sunlight",
+        "motion": "panl"
+      },
+      "label": "",
+      "pause": 0.0
+    },
+    {
+      "text": "Who sent the most lag reports? ...Me.",
+      "image": {
+        "prompt": "close-up of {rio} (short green leafy stem on top, baggy green hoodie and gray sweatpants) slowly raising one hand in a bright school hallway, guilty sheepish grin, eyes wide, other fruit kids blurred in the background",
+        "motion": "punch",
+        "anim": true
+      },
+      "label": "",
+      "pause": 0.5
+    },
+    {
+      "text": "My class says thanks... I just smile, because...",
+      "image": {
+        "prompt": "close-up of {rio} (short green leafy stem on top, baggy green hoodie and gray sweatpants) slumped in a gaming chair in his dark room at night, staring blankly at a glowing monitor, a game controller hanging from one hand, tired dead-eyed face, blue screen light",
+        "motion": "push"
+      },
+      "label": "",
+      "pause": 0.05
+    }
+  ],
+  "rev": 1
+}
