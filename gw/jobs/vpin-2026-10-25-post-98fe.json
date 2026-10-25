@@ -1,0 +1,33 @@
+{
+ "id": "vpin-2026-10-25-post-98fe",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "vpin-2026-10-25",
+   "body": {
+    "content": "Gingerbread house contest kit printable: judge score cards, People's Choice ballots and 12 award certificates for kids, teens and adults. 15 pages. Instant download.",
+    "mediaItems": [
+     {
+      "type": "video",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-25/4600177516/video.mp4"
+     }
+    ],
+    "scheduledFor": "2026-10-26T01:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595727",
+       "title": "Gingerbread House Contest Kit Printable | Judge Score Cards & Awards",
+       "link": "https://www.etsy.com/listing/4600177516/gingerbread-house-decorating-contest"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
