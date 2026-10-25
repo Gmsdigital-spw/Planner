@@ -1,0 +1,5 @@
+{"id":"bolt-2026-10-25-snap-79a1","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"zernio","method":"GET","path":"/posts/6ad8f385e0f45f343e2a5746","tag":"pinchk-pin-prod-thanksgiving-host-planner-s1"},
+{"op":"zernio","method":"GET","path":"/posts/6ad8f3838c105982dc04b014","tag":"pinchk-pin-prod-pink-christmas-verse-art-s1"}]}
