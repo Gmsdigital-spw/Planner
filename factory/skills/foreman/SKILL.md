@@ -18,21 +18,17 @@ updated: 2026-10-23
 - End every standup with one dated "What I've learned" line of the Foreman's own: the scoreboard number, the one change for tomorrow, and "predict: <number>" for the next standup; grade it first next time.
 
 ## Running judgment of each agent (rewrite weekly at all-hands)
-_Filled Oct 23, 2026 from the week brief (Oct 16 to 22): the Oct 21 and 22 standups' real numbers as the brief quotes them. The 0-100 grades themselves are not in the brief; read them from fleet/commander/standups/2026-10-21 and 2026-10-22 before the next rewrite. Unknown stays unknown. "Reads under" = a cap missed by foreman-rules.md 7, not a grade copied from a standup._
-- Foreman: verified this month $0 of $250, recovery 0%; standups written Oct 21 and 22; the scoreboard line starts Oct 23 (week brief "Cost").
-- Atlas, Forge, Quill, Lens (the build line): last 3 builds FAILED 73 and 85 (Oct 21), 75 (Oct 22), all on the fun_covers title clip, fixed Oct 22; 0 passed Oct 21 night and Oct 22; Oct 21 morning 2 passed at 92 and were published (week brief "Night Shift"; LESSONS.md 10-22). Reads under until 2 pass 92 in one night.
-- Scout and the Idea Judge: Oct 22 15 judged, 1 briefed of the 3 asked, 8 held, 6 dropped, 2 Christmas ideas needed a trademark or lyrics; Oct 21 30 judged, 6 briefed, 13 held, 11 dropped (week brief "Ideas"). Reads under on briefs (1 of 3).
-- Pixel: 0 pins made Oct 22; 52 of 69 queued pins imageless; Fri Oct 23 holds 2 pins; video pin 4598358161 posted Oct 22 after Oct 21's was refused for a bare listing link (week brief "Pins"; run notes 10-22 "## Pins"). Reads under.
-- Bolt: Oct 21 2 published, the cap; Oct 22 3 runs, 0 published (no batched candidate), pins queued 18 then 0 and 0, confirmed 1 and 1; all 6 batches live by Oct 22 (week brief "Bolt"; Bolt run log 10-22). Blocked by the build line and the imageless pins.
-- Herald: Oct 22 posted 0 (4 held for Grayson's video rebuild), made 0; shop YouTube 28 and 27 views; TikTok disconnected in Zernio; the Oct 20 promo was taken down for flat title-card images (week brief "Herald"; LESSONS.md 10-20). Reads under (a day held: marketing-wing-v6.md 8a).
-- Warden: Oct 22 found 2 (DUP_PHOTO, FEW_PHOTOS), fixed 0, left 2; views 166 (+25); 4 MISSES on Oct 21, all found by Grayson first (week brief "Warden"; qa/MISSES.md). Reads under on fixes.
-- Ledger: Oct 22 0 changes, 0 sales, 2 starters live ($2.99, $1.99) since Oct 21, 6 days of stats (week brief "Pricing"). Inside its rules.
-- Medic (Day Watch): no run-log line in 7 days; number unknown until its run-log line and pinstats/<day> exist (week brief "Run log").
-- Mechanic: 7 runs logged since Oct 21, avg 3.5 min; Oct 22 listings, pins, trades, page green, posts red (TikTok disconnected); nothing re-fired (week brief "Mechanic", "Run log").
-- Studio (Vega, Gags, Judge, Cutter): ep16 Judge 8.25 vs 7.75, 33.03 s, scheduled Fri Oct 23 7 PM CT; channel views unknown here (vidIQ) (week brief "Studio").
-- Trading (Bull, Bear, Vault, Tape): paper only; Oct 21 1 trade -$0.03; Oct 22 4 trades 2W/2L +$0.02, equity $24.98, 0 breaches; lab holdout 28 trades, 14.3% wins, -$0.54; not ready for live (week brief "Trading").
-- Beacon (ads): locked, cap $0, Etsy Ads open Oct 30; no spend this month (week brief "Ads").
+_Rewritten Sunday Oct 25, 2026 from standups 10-21 to 10-24, the 10-25 run notes and the sales collection. Numbers only; unknown stays unknown._
+- Floors by verified money this month: Etsy $2.24 (1 sales doc, receipt 4209403073); Studio $0 logged in sales; Trading $0 (paper only). A 2nd Etsy sale ($3.37, receipt 4210031031) is in a Bolt event only: unverified.
+- Foreman: verified $2.24 of $250 (recovery -0.9% net); predictions 10-23 miss, 10-24 miss.
+- Atlas, Forge, Quill, Lens (build line): under 10-21 to 10-24 (builds 85, 73, 75, 83, 84 failed); Oct 25 1 passed at 92 (91 first, market 13), 1 of 2 target, slot 2 empty for no proven brief; self-inspected.
+- Scout: under 10-22 to 10-24; briefs 1, 2, 2, then 0 of 3 on Oct 25 (13 held).
+- Idea Judge: under 10-22 to 10-24; approved 0 on Oct 24 and Oct 25 (7 kept proposed).
+- Pixel: under 10-22, 10-23; meh 10-24; re-imaged 7 on Oct 24 and 7 on Oct 25 (imageless 22 left); 5 new pins Oct 25.
+- Bolt: Pink Bow invite live Oct 25 (4602703062); 53 queued pins with images per its Oct 25 event.
+- Herald, Warden, Ledger, Medic, Mechanic, Studio, Trading, Beacon: not graded by this run; numbers in their own run logs (unknown here).
 
 ## What I've learned (append-only, newest last)
 - 2026-10-23: first scoreboard: verified this month $0 of $250, 8 days left, builds 0 passed / 1 failed (83) / 1 skipped for time; no earlier Foreman prediction on file to grade. Tomorrow: the run starts Santa Mail first and the budget cut goes to pins extras, never to a build. Predict: 1 build passes 92 next run.
 - 2026-10-24: predict 1 build passes 92: MISS (0 of 1, Pink Cabana Invite 84 on market 11; 2nd build skipped for time). Verified this month $0 of $250, 7 days left. Tomorrow: the report puts the scrap-or-keep call on the 84 invite in front of Grayson and the build list waits for an opened 100+ item-review rival. Predict: 0 passes next run unless the build has that rival.
+- 2026-10-25: predict 0 passes unless the build has a 100+ rival: MISS (1 passed at 92 with no 100+ rival, via the open-niche rule: 14 opened, market 13). Verified $2.24 of $250, 6 days left. Tomorrow: briefs use the open-niche rule so the build list has 2 slots, and the score goes to an independent judge. Predict: 2 briefs and 1 build passes 92 next run.
