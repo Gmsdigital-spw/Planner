@@ -1,0 +1,62 @@
+{
+ "id": "chat-2026-10-25-pins-7a3c",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-invite-birthday-pink-cabana-s1",
+   "tag": "pin-prod-invite-birthday-pink-cabana-s1",
+   "body": {
+    "content": "Pink bow birthday invitation set you type straight into the PDF in free Adobe Reader, no Canva or account. Invitation, details card, thank-you card and 8x10 welcome sign, each in pink and sage cabana stripes. For a sweet 16, 21st, 30th or any girl's birthday. Print at home. Instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-invite-birthday-pink-cabana-s1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-26T00:45:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Pink Bow Birthday Party Set: Editable Invitation, Thank You Card, Welcome Sign",
+       "link": "https://www.etsy.com/listing/4602703062"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-invite-birthday-pink-cabana-s2",
+   "tag": "pin-prod-invite-birthday-pink-cabana-s2",
+   "body": {
+    "content": "Coquette pink bow birthday invitation template: click a line, type your details and print, all in the free Adobe Acrobat Reader. No Canva, no Corjl, no account. Matching details card, thank-you card and welcome sign in pink and sage. Instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-invite-birthday-pink-cabana-s2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-27T00:45:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Editable Pink Bow Birthday Invitation, No Canva Needed: Type It Into the PDF",
+       "link": "https://www.etsy.com/listing/4602703062"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
