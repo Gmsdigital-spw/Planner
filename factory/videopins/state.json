@@ -34,10 +34,20 @@
       "listingId": "4600177510",
       "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-24/4600177510/video.mp4",
       "zernioPostId": "6adcf0f9ab061954a94e9964",
+      "status": "posted",
+      "postUrl": "https://www.pinterest.com/pin/1096274734330603565/",
+      "error": null,
+      "link": "https://www.etsy.com/listing/4600177510/christmas-cookie-exchange-kit-printable"
+    },
+    {
+      "day": "2026-10-25",
+      "listingId": "4600177516",
+      "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-25/4600177516/video.mp4",
+      "zernioPostId": "6ade428e9fa88513b89c40da",
       "status": "scheduled",
       "postUrl": null,
       "error": null,
-      "link": "https://www.etsy.com/listing/4600177510/christmas-cookie-exchange-kit-printable"
+      "link": "https://www.etsy.com/listing/4600177516/gingerbread-house-decorating-contest"
     }
   ]
 }
