@@ -25,3 +25,4 @@ Cover and 4 previews from REAL game pages (tools/photos.py); varied layouts, nev
 - Single-classroom license line and the AI line on every listing.
 
 ## What I've learned (append-only, newest last)
+- 2026-10-25: Flat graphic covers read as "made by a computer". Putting the real lock page on Grayson's clipboard photo scene (assets/atlas-pack/place.py) reads as a real photo and still passes the 300 px test (title readable in the square). Change for tomorrow: every new product's cover uses a layout not on the last 3 covers (pipeline picks it). predict: the next 2 covers pass the side-by-side test on the first try.

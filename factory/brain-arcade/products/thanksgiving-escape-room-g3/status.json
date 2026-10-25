@@ -1,0 +1,19 @@
+{
+ "slug": "thanksgiving-escape-room-g3",
+ "at": "2026-10-25T03:30:25Z",
+ "fails": [],
+ "answerKey": "PASS",
+ "coverLayout": "clipboard",
+ "photos": [
+  "photos/01-cover.jpg",
+  "photos/02-fanned.jpg",
+  "photos/03-closeup.jpg",
+  "photos/04-answer-key.jpg",
+  "photos/05-included.jpg"
+ ],
+ "qaSheet": "/tmp/ba/thanksgiving-escape-room-g3/qa-sheet.png",
+ "comparedWith": 0,
+ "copy": "PASS",
+ "dupe": "OK",
+ "mechanical": "PASS"
+}

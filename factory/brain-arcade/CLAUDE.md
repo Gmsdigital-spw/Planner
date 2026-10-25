@@ -55,7 +55,21 @@ PDFs are never committed (the repo is public): they are rebuilt from spec.json a
 3. Read notebook.md, LESSONS.md and your stage CONTEXT.md; load only what its Inputs name.
 4. Bug rule (../CLAUDE.md "Bug rule") applies to this lane's own tools: fix in the same run, never by
    switching a check off.
-5. End: `python3 tools/ba_log.py run ...` + room status doc (ops/room.md). Never end silently.
+5. End: `python3 tools/ba_log.py run ...`, then `python3 tools/status_sync.py --task <task> --outcome <o>
+   --note "..." [--crew "Name|role|state|task"] [--needs "text|link"]` and write its two files with
+   ArtifactData file_path (read each doc first, pass if_version): /tmp/ba/room-status.json -> the room's
+   status/main, /tmp/ba/hub-shop.json -> the Atlas Hub's shops/brainarcade (the "Shop 2" tab Grayson
+   sees; it is the ONLY doc this lane writes in the hub). Never end silently.
+
+## Work smart (Oct 25, 2026: fewer steps, fewer tokens, same 92 bar)
+- One command per product: `python3 tools/pipeline.py <slug>` builds the PDF, checks the answer key,
+  makes the photos (cover layout picked so it never repeats the last 3), checks the copy and the
+  duplicate guard, and writes products/<slug>/status.json + /tmp/ba/<slug>/qa-sheet.png. Read the sheet
+  ONCE for the slop check and the scores. Don't run the tools one by one unless one fails.
+- Research only what is stale: skip Compass for a type/grade/season whose knowledge/*.md lines are
+  under 7 days old; spend that time on the next build instead.
+- Never load the main crew's files, specs or skills. This folder has everything this lane needs.
+- Keep tool output small: print summaries, save big answers to files.
 
 ## Notify Grayson AT ONCE (SendUserMessage + PushNotification, max 3 short lines)
 Anything in this lane that stops, fails to post, gets BLOCKED by the shop guard, runs out of Make

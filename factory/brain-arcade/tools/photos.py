@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Brain Arcade listing photos from the REAL PDF pages (never drawn mockups).
 
-Usage: python3 photos.py <spec.json> <product.pdf> <out_dir>
+Usage: python3 photos.py <spec.json> <product.pdf> <out_dir> [clipboard|fanned|christmas]
 Writes 01-cover.jpg (2000x1500) and 02..05 (2000x1600), JPEG under 400 KB.
 Cover rule (copied from the main crew, Oct 24): real pages are the biggest thing in the frame,
 ONE clean label card, a solid bold colour; no gradients, badges, pills, emoji or stickers.
@@ -66,7 +66,64 @@ def hexrgb(h):
     h = h.lstrip("#"); return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
 
 
-def build(spec, pdf, out):
+ATLAS = os.path.normpath(os.path.join(HERE, "../../../assets/atlas-pack"))
+# Cover layouts. Each is a different look; ba-night picks one not used on the lane's last 3 covers
+# (listing.json "coverLayout"). Scene layouts put the REAL page into Grayson's photo scenes
+# (assets/atlas-pack/place.py, the main crew's picture tool) so the cover reads as a real photo,
+# not a drawn mockup. "christmas" is Nov-Dec only.
+LAYOUTS = ["clipboard", "fanned", "christmas"]
+
+
+def scene_cover(spec, pg, lock_pages, out, layout):
+    import sys
+    sys.path.insert(0, ATLAS)
+    import place
+    P = {k: hexrgb(v) for k, v in spec["palette"].items()}
+    nlocks = len(spec["locks"]); nprob = sum(len(L["problems"]) for L in spec["locks"])
+    title = spec.get("cover_title", "Thanksgiving Math Escape Room")
+    if layout == "clipboard":
+        img = place.place("clipboard", [lock_pages[min(3, len(lock_pages) - 1)]], None, scale=2000 / 1448)
+        box = (1290, 400, 1745, 990)  # right of the clipboard, inside the 300 px thumbnail square
+    else:  # christmas table: cover page + a lock page
+        img = place.place("christmas", [pg[0], lock_pages[0]], None, scale=2000 / 1448)
+        box = (560, 60, 1440, 330)
+    img = img.convert("RGBA").resize((2000, 1500), Image.LANCZOS)
+    sh = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    ImageDraw.Draw(sh).rounded_rectangle((box[0] + 10, box[1] + 18, box[2] + 10, box[3] + 18), 36, fill=(0, 0, 0, 70))
+    img.alpha_composite(sh.filter(ImageFilter.GaussianBlur(18)))
+    d = ImageDraw.Draw(img)
+    d.rounded_rectangle(box, 34, fill=(255, 250, 242), outline=P["primary"], width=7)
+    x0, y0, x1, y1 = box
+    words = title.split()
+    if layout == "clipboard":  # tall card: title stacked
+        lines, cur = [], ""
+        for w in words:
+            if len((cur + " " + w).strip()) <= 12:
+                cur = (cur + " " + w).strip()
+            else:
+                lines.append(cur); cur = w
+        lines.append(cur)
+        size = 92
+        f = font(HEAD, size)
+        while max(d.textlength(l, font=f) for l in lines) > (x1 - x0) - 70:
+            size -= 4; f = font(HEAD, size)
+        y = y0 + 70
+        for l in lines:
+            d.text(((x0 + x1) / 2, y), l, font=f, fill=P["ink"], anchor="mt"); y += size * 1.08
+        d.line((x0 + 80, y + 18, x1 - 80, y + 18), fill=P["accent"], width=5)
+        subs = [spec["grade"].upper(), f"{nlocks} LOCKS", f"{nprob} PROBLEMS", "ANSWER KEY"]
+        fsz = 46
+        fs = font(BODY, fsz)
+        while max(d.textlength(s, font=fs) for s in subs) > (x1 - x0) - 60:
+            fsz -= 2; fs = font(BODY, fsz)
+        for i, s in enumerate(subs):
+            d.text(((x0 + x1) / 2, y + 56 + i * (fsz + 14)), s, font=fs, fill=P["deep"], anchor="mt")
+    else:
+        card(d, box, title, f"{spec['grade'].upper()}  ·  {nlocks} LOCKS  ·  ANSWER KEY", P["deep"], size=84)
+    save(img, out)
+
+
+def build(spec, pdf, out, layout="fanned"):
     os.makedirs(out, exist_ok=True)
     P = {k: hexrgb(v) for k, v in spec["palette"].items()}
     pg = pages(pdf)
@@ -76,7 +133,10 @@ def build(spec, pdf, out):
     rec = 3 + nlocks  # recording sheet; then vault door, answer key, certificate
     files = []
 
-    # 01 cover: three real pages fanned, label card top
+    if layout in ("clipboard", "christmas"):
+        f = os.path.join(out, "01-cover.jpg"); scene_cover(spec, pg, lock_pages, f, layout); files.append(f)
+    # 01 cover (layout "fanned"): three real pages fanned on the bold theme colour, label card top.
+    # With a scene cover, this fanned shot becomes photo 02 instead of the all-pages grid.
     c = Image.new("RGBA", (2000, 1500), P["primary"] + (255,))
     d = ImageDraw.Draw(c)
     shadowed(c, lock_pages[0], 640, (170, 470), angle=6)
@@ -85,7 +145,10 @@ def build(spec, pdf, out):
     d = ImageDraw.Draw(c)
     card(d, (240, 60, 1760, 380), spec.get("cover_title", "Thanksgiving Math Escape Room"),
          f"{spec['grade'].upper()}  ·  {nlocks} LOCKS  ·  {nprob} PROBLEMS  ·  ANSWER KEY", P["deep"])
-    f = os.path.join(out, "01-cover.jpg"); save(c, f); files.append(f)
+    if layout == "fanned":
+        f = os.path.join(out, "01-cover.jpg"); save(c, f); files.append(f)
+    else:
+        f = os.path.join(out, "02-fanned.jpg"); save(c.resize((2000, 1500)), f); files.append(f)
 
     def base(title, sub):
         im = Image.new("RGBA", (2000, 1600), P["bg"] + (255,))
@@ -95,14 +158,15 @@ def build(spec, pdf, out):
         dd.text((1000, 160), sub, font=font(BODY, 40), fill=P["accent"], anchor="mm")
         return im
 
-    # 02 every page
+    # 02 every page (03 when the cover is a scene and 02 is the fanned shot)
     im = base(f"{n} printable pages", "Every page you get, ready to print")
     cols = 5; w = 300; gap = 34
     x0 = (2000 - (cols * w + (cols - 1) * gap)) // 2
     for i, p in enumerate(pg[:14]):
         r, cc = divmod(i, cols)
         shadowed(im, p, w, (x0 + cc * (w + gap), 262 + r * 440))
-    f = os.path.join(out, "02-all-pages.jpg"); save(im, f); files.append(f)
+    if layout == "fanned":
+        f = os.path.join(out, "02-all-pages.jpg"); save(im, f); files.append(f)
 
     # 03 close-up of a lock page (big enough to read)
     im = base("Real grade-level problems", spec["locks"][3]["skill"] + "  ·  " + spec["locks"][3]["standard"])
@@ -134,5 +198,7 @@ def build(spec, pdf, out):
 
 if __name__ == "__main__":
     spec = json.load(open(sys.argv[1]))
-    for f in build(spec, sys.argv[2], sys.argv[3]):
+    layout = sys.argv[4] if len(sys.argv) > 4 else "fanned"
+    assert layout in LAYOUTS, f"layout must be one of {LAYOUTS}"
+    for f in build(spec, sys.argv[2], sys.argv[3], layout):
         print(f, Image.open(f).size, os.path.getsize(f) // 1024, "KB")

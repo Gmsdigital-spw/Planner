@@ -31,17 +31,19 @@
  ],
  "photos": [
   "photos/01-cover.jpg",
-  "photos/02-all-pages.jpg",
+  "photos/02-fanned.jpg",
   "photos/03-closeup.jpg",
   "photos/04-answer-key.jpg",
   "photos/05-included.jpg"
  ],
  "alt": [
-  "Thanksgiving math escape room for 3rd grade, cover and lock pages",
-  "All 13 printable pages of the Thanksgiving math escape room",
+  "Thanksgiving math escape room lock page on a clipboard, grade 3",
+  "Cover page and lock pages of the Thanksgiving math escape room",
   "Lock 4 elapsed time problems close up",
   "Answer key and student recording sheet",
   "Teacher guide and list of what is included"
  ],
- "file_name": "Thanksgiving-Math-Escape-Room-Grade-3.pdf"
+ "file_name": "Thanksgiving-Math-Escape-Room-Grade-3.pdf",
+ "coverLayout": "clipboard",
+ "coverBuiltAt": "2026-10-25T03:30:25Z"
 }

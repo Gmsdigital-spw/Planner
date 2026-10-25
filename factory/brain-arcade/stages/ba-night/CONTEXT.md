@@ -20,10 +20,18 @@ knowledge/seasons.md "Live by").
    with dated, sourced lines. No proof found = do not build that idea; take the next queue item.
 2. Joystick picks: (a) a product stuck in "inspection" from last night, (b) the next "queued" queue item
    in season, (c) a new idea from Compass with proof. Bundle only after all its parts are live.
-3. Domino builds: spec.json (structured math), `python3 tools/games.py products/<slug>/spec.json /tmp/ba/<slug>`.
+3. Domino writes spec.json (structured math) and Chalk writes listing.json, then ONE command:
+   `python3 tools/pipeline.py <slug>` (build + answer key + photos + copy + duplicate guard + QA sheet).
+   Use the separate tools below only to fix whatever the pipeline reports.
+   Domino builds alone: `python3 tools/games.py products/<slug>/spec.json /tmp/ba/<slug>`.
    Missing builder for the type = add build_<type>() + checker rules in the same run (bug rule), test
    on this product AND re-run the escape room so nothing else broke.
-4. Crayon: `python3 tools/photos.py <spec> <pdf> products/<slug>/photos`; side-by-side + 300 px test.
+4. Crayon: photos come from the REAL PDF pages. Covers rotate between layouts (tools/photos.py LAYOUTS):
+   "clipboard" (the page on Grayson's clipboard photo scene, assets/atlas-pack, with one label card),
+   "fanned" (real pages fanned on the bold theme colour), "christmas" (the holiday-table scene, Nov 1 -
+   Dec 25 only). Never the same layout as the lane's last 3 covers; the pipeline picks it. Never drawn
+   hands, rooms, 3D stickers, emoji, badges or AI-generated pictures. Side-by-side + 300 px test on
+   qa-sheet.png.
 5. Chalk: products/<slug>/listing.json (limits checked by code). If Grayson's starter doc is linked in
    queue.json doc_link, use HIS title/tags/description/price for the starter items.
 6. Penny: price with evidence (knowledge/prices.md).
