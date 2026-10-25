@@ -38,7 +38,7 @@ top = int(882 * k)  # console top surface
 stand(img, card(7, 0), int(338 * k), top, int(372 * k), 3)
 stand(img, card(3, 0), int(832 * k), top + int(6 * k), int(430 * k), -2)
 img = img.convert("RGB")
-cx0, cy0 = int(150 * k), int(8 * k); cw = int(1150 * k)
+cx0, cy0 = int(205 * k), int(72 * k); cw = int(1040 * k)
 img = img.crop((cx0, cy0, cx0 + cw, cy0 + int(cw * 0.8))).resize((2000, 1600), Image.LANCZOS)
 FD = "/usr/share/fonts/truetype/google-fonts/"
 def font(n, s, w=None):

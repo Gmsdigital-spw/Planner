@@ -63,25 +63,63 @@ im = gs.paper(pal["paper"]); d = ImageDraw.Draw(im)
 gs._header(d, pal, "Type your own party details", "SAMPLE TYPED IN FREE ADOBE ACROBAT READER  ·  82 TYPE-IN LINES")
 cwid = 920; gs.place(im, crop, cwid, ((gs.IW - cwid) // 2, 320))
 gs.save_jpeg(im, OUT + "/3-closeup.jpg")
-# ---- photo 4: what's included
-im = gs.paper(pal["paper"]); d = ImageDraw.Draw(im)
-gs._header(d, pal, "What you get: a full party set", "INVITES  \u00b7  DETAILS  \u00b7  THANK-YOU CARDS  \u00b7  8x10 WELCOME SIGN")
+# ---- photo 4: flat lay, the set as it goes out (cards + envelope on blush paper, soft shadows)
+from PIL import ImageFilter as _IF, ImageFont as _F
 sg = pages[8]; Ws, Hs = sg.size; sw_, sh_ = int(Ws * 8 / 8.5), int(Hs * 10 / 11)
 sgn = sg.crop(((Ws - sw_) // 2, (Hs - sh_) // 2, (Ws + sw_) // 2, (Hs + sh_) // 2))
-gs.place(im, sgn, 600, (300, 540), angle=0)
-for c_, x_, y_ in ((card(2, 0), 960, 340), (card(6, 0), 1340, 340), (card(4, 0), 960, 960), (card(3, 0), 1340, 960)):
-    gs.place(im, c_, 400, (x_, y_))
-gs.save_jpeg(im, OUT + "/4-included.jpg")
-# ---- photo 5: how it works
-im = gs.preview_how(pal, [("Open", "the PDF in free Adobe Acrobat Reader on a computer"), ("Type", "your names, date, place and RSVP over the green lines"), ("Print", "on cardstock at Actual size and cut on the marks")])
-from PIL import ImageFont as _F
-_d = ImageDraw.Draw(im); _d.rectangle((200, 975, 1800, 1060), fill=im.getpixel((100, 1000)))
-_d.text((1000, 1000), "Digital PDF  \u00b7  Prints on US Letter or A4  \u00b7  Nothing ships", font=_F.truetype("/usr/share/fonts/truetype/google-fonts/Poppins-Medium.ttf", 44), fill=gs.rgb(pal["primary"]), anchor="ma")
 sg2 = pages[9]; sgn2 = sg2.crop(((Ws - sw_) // 2, (Hs - sh_) // 2, (Ws + sw_) // 2, (Hs + sh_) // 2))
-strip = [sgn2, card(3, 0), card(5, 0), card(7, 0)]
-xs = 421
-for c_ in strip:
-    w_ = 252 if c_ is not sgn2 else 282
-    gs.place(im, c_, w_, (xs, 1085)); xs += w_ + 40
+W4, H4 = 2000, 1600
+base = Image.new("RGB", (W4, H4), (243, 226, 224))
+import random as _r; _r.seed(7)
+noise = Image.effect_noise((W4, H4), 6).convert("L")  # fine paper grain
+base = Image.composite(base, Image.new("RGB", (W4, H4), (236, 217, 215)), noise.point(lambda v: 255 if v > 120 else 200))
+im4 = base.convert("RGBA")
+def lay(img, piece, w, xy, ang):
+    p = piece.convert("RGBA").resize((w, int(piece.height * w / piece.width)), Image.LANCZOS).rotate(ang, expand=True, resample=Image.BICUBIC)
+    sh = Image.new("RGBA", (p.width + 60, p.height + 60), (0, 0, 0, 0))
+    m = p.split()[3].point(lambda v: 70 if v else 0); blk = Image.new("RGBA", p.size, (70, 40, 40, 255)); blk.putalpha(m)
+    sh.paste(blk, (34, 38), blk); sh = sh.filter(_IF.GaussianBlur(16))
+    img.alpha_composite(sh, (xy[0] - 30, xy[1] - 30)); img.alpha_composite(p, xy)
+# plain kraft-cream A7 envelope with its flap open (flat shapes, no texture tricks)
+env = Image.new("RGBA", (560, 400), (0, 0, 0, 0)); de = ImageDraw.Draw(env)
+de.rectangle((0, 0, 560, 400), fill=(250, 246, 238, 255)); de.polygon([(0, 0), (280, 190), (560, 0)], fill=(241, 234, 222, 255))
+de.line([(0, 400), (280, 215), (560, 400)], fill=(226, 216, 202, 255), width=3)
+lay(im4, env, 560, (1330, 1050), -8)
+lay(im4, sgn, 640, (180, 300), 4)
+lay(im4, card(4, 0), 430, (820, 250), -5)
+lay(im4, card(6, 0), 430, (1300, 330), 6)
+lay(im4, card(2, 0), 470, (870, 760), 2)
+im4 = im4.convert("RGB"); d4 = ImageDraw.Draw(im4, "RGBA")
+ft = _F.truetype("/usr/share/fonts/truetype/google-fonts/Lora-Variable.ttf", 76); fs = _F.truetype("/usr/share/fonts/truetype/google-fonts/Poppins-Medium.ttf", 34)
+_tw = max(d4.textlength("The whole party, matched", font=ft), d4.textlength("INVITE  \u00b7  DETAILS  \u00b7  THANK YOU  \u00b7  8x10 SIGN", font=fs)) + 100
+d4.rounded_rectangle((1000 - _tw / 2, 64, 1000 + _tw / 2, 240), 24, fill=(251, 247, 240, 240), outline=(178, 78, 100), width=3)
+d4.text((1000, 84), "The whole party, matched", font=ft, fill=(178, 78, 100), anchor="ma")
+d4.text((1000, 180), "INVITE  \u00b7  DETAILS  \u00b7  THANK YOU  \u00b7  8x10 SIGN", font=fs, fill=(90, 82, 74), anchor="ma")
+gs.save_jpeg(im4, OUT + "/4-included.jpg")
+# ---- photo 5: how typing works, shown on the real card (field highlight like Acrobat Reader)
+hz5 = Image.open([OUT + "/" + f for f in os.listdir(OUT) if f.startswith("hz")][0]).convert("RGB")
+W5, H5 = hz5.size; cw5, ch5 = int(W5 * 5 / 11), int(H5 * 7 / 8.5); gx5 = int(W5 * 0.25 / 11); x5 = (W5 - 2 * cw5 - gx5) // 2; y5 = (H5 - ch5) // 2
+crd = hz5.crop((x5, y5, x5 + cw5, y5 + ch5))
+im = gs.paper(pal["paper"]); d = ImageDraw.Draw(im)
+gs._header(d, pal, "Click a line, type, print", "FREE ADOBE ACROBAT READER ON A COMPUTER  \u00b7  NO ACCOUNT")
+cw_ = 760; ch_ = int(crd.height * cw_ / crd.width); cx_ = 260; cy_ = 300
+crd2 = crd.resize((cw_, ch_), Image.LANCZOS); im.paste(crd2, (cx_, cy_))
+s_ = cw_ / cw5
+# the name field on this card: same box the PDF uses (inset 64 pt of a 360 pt card, from the top ~ 0.40 of the card)
+fx0, fx1 = cx_ + int(cw_ * 64 / 360), cx_ + int(cw_ * 296 / 360)
+fy0, fy1 = cy_ + int(ch_ * 0.422), cy_ + int(ch_ * 0.488)
+ov = Image.new("RGBA", im.size, (0, 0, 0, 0)); do = ImageDraw.Draw(ov)
+do.rectangle((fx0, fy0, fx1, fy1), fill=(204, 214, 255, 70), outline=(70, 100, 220, 255), width=4)
+im = Image.alpha_composite(im.convert("RGBA"), ov).convert("RGB"); d = ImageDraw.Draw(im)
+fl = _F.truetype("/usr/share/fonts/truetype/google-fonts/Lora-Variable.ttf", 50); fp = _F.truetype("/usr/share/fonts/truetype/google-fonts/Poppins-Regular.ttf", 28)
+steps = [("1", "Open the PDF", "free Adobe Acrobat Reader, computer"), ("2", "Click a green line", "the blue box is the line you edit"),
+         ("3", "Type your details", "86 type-in lines on 8 pages"), ("4", "Print and cut", "cardstock, Actual size, light marks")]
+yy = 340
+for n_, h_, t_ in steps:
+    d.ellipse((1070, yy, 1150, yy + 80), fill=gs.rgb(pal["light"]) if "light" in pal else (247, 233, 230)); d.text((1110, yy + 40), n_, font=fl, fill=gs.rgb(pal["primary"]), anchor="mm")
+    d.text((1175, yy - 2), h_, font=fl, fill=gs.rgb(pal["dark"]) if "dark" in pal else (90, 50, 50))
+    for k_, ln in enumerate(gs.wrap(t_, None, 0, 0) if False else [t_]):
+        d.text((1177, yy + 66), ln, font=fp, fill=(105, 96, 90))
+    yy += 250
 gs.save_jpeg(im, OUT + "/5-how.jpg")
 print("ok")

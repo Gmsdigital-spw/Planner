@@ -120,7 +120,7 @@ def thanks(x0, y0, way, k):
     scallop_panel(px, py, pw, ph)
     cx = x0 + CW / 2; top = py + ph
     bow(cx, top + 12, 1.45, W["bow"], W["bowd"])
-    spaced(cx, top - 62, "FROM THE BIRTHDAY GIRL", 7.6, GREEN2, d.FM, 2.0)
+    field(f"ty{way}{k}_from", cx, top - 66, pw - 50, 14, "FROM THE BIRTHDAY GIRL", 8, "Times-Roman", "Top line (e.g. FROM THE BIRTHDAY BOY, FROM ALL OF US)", maxlen=24)
     c.setFillColor(GREEN); c.setFont("gm-serifI", 50); c.drawCentredString(cx, top - 122, "Thank")
     c.drawCentredString(cx, top - 170, "You")
     c.setStrokeColor(W["bowd"]); c.setLineWidth(0.7); c.line(cx - 40, top - 194, cx - 8, top - 194); c.line(cx + 8, top - 194, cx + 40, top - 194)
@@ -173,7 +173,7 @@ def invite(x0, y0, way, k):
     spaced(cx, top - 60, "PLEASE JOIN US", 8.2, GREEN2, d.FM, 2.2)
     c.setFillColor(GREEN); c.setFont("gm-serifI", 40); c.drawCentredString(cx, top - 102, "Let's")
     c.drawCentredString(cx, top - 140, "Celebrate")
-    field(f"{way}{k}_name", cx, top - 184, pw - 40, 30, "Ava's Sweet Sixteen", 18, "Times-Italic", "Name and age (about 22 letters)", maxlen=22)
+    field(f"{way}{k}_name", cx, top - 184, pw - 40, 30, "Ava's Sweet Sixteen", 16, "Times-Italic", "Name and age (about 26 letters)", maxlen=26)
     c.setStrokeColor(W["bowd"]); c.setLineWidth(0.7); c.line(cx - 40, top - 196, cx - 8, top - 196); c.line(cx + 8, top - 196, cx + 40, top - 196)
     c.setFillColor(W["bowd"]); c.circle(cx, top - 196, 2.2, stroke=0, fill=1)
     rows = [("date", "SATURDAY, MAY 16, 2026", "Day and date"), ("time", "2:00 TO 5:00 PM", "Time"),
@@ -270,7 +270,7 @@ d.bullets(["Download the PDF to a computer and open it in Adobe Acrobat Reader (
            "Save the file (File, Save As) before printing. Keep the original as a clean copy for next time.",
            "The headline, stripes, bow and leaves are part of the design. Fonts and colors cannot be changed."], numbered=True)
 d.heading("Print and cut")
-d.bullets(["Print at 100% or Actual size on US Letter paper, landscape. A4 also works at Actual size.",
+d.bullets(["Print at 100% or Actual size on US Letter paper: pages 3 to 8 landscape, pages 9 and 10 (the signs) portrait. A4 also works at Actual size.",
            "Use white cardstock (80 to 110 lb) for a sturdy card, or ask a local print shop to print it for you.",
            "Cut on the light grey corner marks with a paper trimmer for straight edges. Each card is 5 x 7 inches.",
            "Standard A7 envelopes (5.25 x 7.25 in) fit both the invitation and the details card."], numbered=True)
@@ -282,7 +282,7 @@ d.heading("Wording ideas for the name line")
 d.bullets(["Ava's Sweet Sixteen", "Mia Turns Seven", "Chloe's 21st Birthday", "Emma Turns Thirty",
            "Grace is Turning 40", "Lily's First Birthday"], cols=3)
 d.heading("Good to know")
-d.text("Name lines hold up to 22 letters on the invitation, 12 on the sign and 16 in the thank-you signature. You can also retype the three small headings on the details card. Digital file only: nothing ships. Do one test print on plain paper first, check every date and RSVP line twice, and keep lines short to fit the card. Personal use.")
+d.text("Name lines hold up to 26 letters on the invitation, 12 on the sign and 16 in the signature. Do a test print first. Digital file only: nothing ships. Personal use.")
 d.end()
 
 card_page(invite, "pink", "Invitation · pink cabana")
