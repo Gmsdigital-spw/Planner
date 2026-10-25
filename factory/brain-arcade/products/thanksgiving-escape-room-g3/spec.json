@@ -1,0 +1,54 @@
+{
+  "id": "ba-thanksgiving-escape-room-g3",
+  "type": "escape_room",
+  "title": "The Great Pie Vault",
+  "subtitle": "A Thanksgiving Math Escape Room",
+  "grade": "Grade 3",
+  "season": "thanksgiving",
+  "palette": {"bg": "#FFF6EC", "primary": "#E8590C", "deep": "#7A2E0E", "accent": "#F2B705", "berry": "#B0234A", "green": "#2F7D4A", "ink": "#2B1A10"},
+  "story": [
+    "Oh no! The Harvest Feast starts at 5:30, and every pie is locked inside the Great Pie Vault.",
+    "The vault has five locks. Each lock opens with a secret code word.",
+    "Solve every problem, find the letter next to your answer, and write it in the lock's boxes.",
+    "Open all five locks, and the first letter of each code word spells the word that opens the vault."
+  ],
+  "final_word": "FEAST",
+  "locks": [
+    {"name": "Lock 1: The Pantry Door", "skill": "Multiply and divide within 100", "standard": "3.OA.C.7", "code": "FALL",
+     "problems": [
+       {"text": "7 × 8 =", "kind": "arith", "expr": "7*8", "choices": ["54", "56", "63", "48"]},
+       {"text": "42 ÷ 6 =", "kind": "arith", "expr": "42//6", "exact": "42/6", "choices": ["6", "8", "7", "9"]},
+       {"text": "9 × 4 =", "kind": "arith", "expr": "9*4", "choices": ["36", "32", "27", "45"]},
+       {"text": "64 ÷ 8 =", "kind": "arith", "expr": "64//8", "exact": "64/8", "choices": ["7", "9", "6", "8"]}
+     ]},
+    {"name": "Lock 2: The Cranberry Crate", "skill": "Two-step word problems", "standard": "3.OA.D.8", "code": "EATS",
+     "problems": [
+       {"text": "Grandma bakes 4 trays of rolls with 6 rolls on each tray. The family eats 9 rolls. How many rolls are left?", "kind": "arith", "expr": "4*6-9", "choices": ["15", "19", "11", "24"]},
+       {"text": "There are 36 napkins in equal stacks of 4. The table uses 3 stacks. How many stacks are left?", "kind": "arith", "expr": "36//4-3", "exact": "36/4-3", "choices": ["9", "5", "7", "6"]},
+       {"text": "A farmer fills 5 baskets with 8 apples each. Then he picks 12 more apples. How many apples does he have now?", "kind": "arith", "expr": "5*8+12", "choices": ["52", "40", "25", "60"]},
+       {"text": "Mia has 50 cents. She buys 3 corn muffins for 9 cents each. How many cents does she have left?", "kind": "arith", "expr": "50-3*9", "unit": "cents", "choices": ["27", "41", "23", "32"]}
+     ]},
+    {"name": "Lock 3: The Recipe Box", "skill": "Rounding, adding and subtracting within 1,000", "standard": "3.NBT.A.1, 3.NBT.A.2", "code": "ACORN",
+     "problems": [
+       {"text": "Round 347 to the nearest ten.", "kind": "round", "value": 347, "place": 10, "choices": ["350", "340", "300", "400"]},
+       {"text": "Round 682 to the nearest hundred.", "kind": "round", "value": 682, "place": 100, "choices": ["600", "700", "680", "690"]},
+       {"text": "458 + 267 =", "kind": "arith", "expr": "458+267", "choices": ["615", "735", "625", "725"]},
+       {"text": "900 − 376 =", "kind": "arith", "expr": "900-376", "choices": ["634", "524", "476", "536"]},
+       {"text": "The town parade had 615 people on Thursday and 289 people on Friday. How many more people came on Thursday?", "kind": "arith", "expr": "615-289", "choices": ["336", "904", "326", "374"]}
+     ]},
+    {"name": "Lock 4: The Oven Timer", "skill": "Time to the minute and elapsed time", "standard": "3.MD.A.1", "code": "SAGE",
+     "problems": [
+       {"text": "The turkey goes in the oven at 10:15 AM and cooks for 3 hours. What time is it ready?", "kind": "time_add", "start": "10:15", "minutes": 180, "choices": ["1:15 PM", "1:45 PM", "12:15 PM", "3:15 PM"]},
+       {"text": "The pies bake from 2:20 to 3:05. How many minutes do they bake?", "kind": "time_diff", "start": "2:20", "end": "3:05", "unit": "minutes", "choices": ["35 minutes", "45 minutes", "55 minutes", "85 minutes"]},
+       {"text": "The family football game starts at 4:40 and lasts 35 minutes. What time does it end?", "kind": "time_add", "start": "4:40", "minutes": 35, "choices": ["5:05", "5:25", "5:20", "5:15"]},
+       {"text": "Setting the table takes 25 minutes. It is done at 5:30. What time did it start?", "kind": "time_sub", "end": "5:30", "minutes": 25, "choices": ["5:15", "5:00", "5:05", "5:55"]}
+     ]},
+    {"name": "Lock 5: The Pie Table", "skill": "Understand fractions", "standard": "3.NF.A.1, 3.NF.A.3", "code": "TART",
+     "problems": [
+       {"text": "A pie is cut into 8 equal slices. 3 slices are eaten. What fraction of the pie is left?", "kind": "frac", "expr": "1-3/8", "choices": ["5/8", "3/8", "3/5", "5/3"]},
+       {"text": "Which fraction is equal to 1/2?", "kind": "frac_equal", "target": "1/2", "choices": ["2/3", "2/4", "1/4", "3/8"]},
+       {"text": "Which fraction is greater: 2/6 or 2/3?", "kind": "frac_max", "options": ["2/6", "2/3"], "choices": ["2/6", "They are equal", "2/3", "Not enough facts"]},
+       {"text": "Which fraction is equal to 1 whole?", "kind": "frac_equal", "target": "1", "choices": ["4/4", "1/4", "3/4", "4/8"]}
+     ]}
+  ]
+}

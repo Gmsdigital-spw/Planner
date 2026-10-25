@@ -1,0 +1,3 @@
+# PDFs are the product: never commit them to the public repo. They are rebuilt from spec.json.
+*.pdf
+products/*/out/

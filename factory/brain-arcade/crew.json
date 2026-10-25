@@ -1,0 +1,14 @@
+{
+  "lane": "brain-arcade",
+  "theme": "arcade: deep navy room, neon crew colours, so they never look like the Etsy crew",
+  "crew": [
+    {"id": "joystick", "name": "Joystick", "role": "Lane boss", "color": "#7C3AED", "emoji": "🕹️", "job": "Runs the lane, picks the day's build, grades every agent, writes the daily lesson and the morning-report section."},
+    {"id": "compass", "name": "Compass", "role": "Research", "color": "#06B6D4", "emoji": "🧭", "job": "What sells by grade, subject and season; competitor bestsellers, prices, tags; teacher complaints in reviews."},
+    {"id": "domino", "name": "Domino", "role": "Build", "color": "#F97316", "emoji": "🎲", "job": "Builds the printable PDF games from a spec with tools/games.py. Grade-aligned skills only."},
+    {"id": "chalk", "name": "Chalk", "role": "Write", "color": "#22C55E", "emoji": "✏️", "job": "Titles, 13 tags, descriptions: teacher search words first, license line, AI note."},
+    {"id": "crayon", "name": "Crayon", "role": "Images", "color": "#EC4899", "emoji": "🖍️", "job": "Cover and 4 previews from REAL game pages (tools/photos.py); varied layouts, never a template recolour."},
+    {"id": "penny", "name": "Penny", "role": "Pricing", "color": "#EAB308", "emoji": "🪙", "job": "Starter prices from competitor research; raises and lowers within the lane's rules."},
+    {"id": "pinball", "name": "Pinball", "role": "Marketing", "color": "#EF4444", "emoji": "📌", "job": "Teacher-style pins and classroom-mockup pins for the lane's own boards (after Grayson's OK). Free promotion only."},
+    {"id": "ruler", "name": "Ruler", "role": "QA", "color": "#3B82F6", "emoji": "📏", "job": "92 pass score, anti-AI-slop approver, answer-key checker (a wrong answer is an automatic fail), shop guard before every publish."}
+  ]
+}

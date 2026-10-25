@@ -1,0 +1,12 @@
+{
+  "note": "Build order. Grayson's starter doc wins: when he pastes its link, Chalk replaces these titles/tags/prices with his and keeps the order he gives. The doc link was not in his Oct 25 message ([PASTE DOC LINK]).",
+  "doc_link": null,
+  "items": [
+    {"order": 1, "slug": "thanksgiving-escape-room-g3", "kind": "escape_room", "grade": "3", "season": "thanksgiving", "status": "built", "score": null, "note": "PDF + answer key PASS + 5 photos + copy ready Oct 25. Ruler scores it on the first night run; publishes when the shop is connected."},
+    {"order": 2, "slug": "thanksgiving-multiplication-bingo-g3-4", "kind": "bingo", "grade": "3-4", "season": "thanksgiving", "status": "queued", "idea": "30 different multiplication-fact bingo cards (facts 2-10), caller cards with the product on the back, answer check sheet."},
+    {"order": 3, "slug": "turkey-trot-fractions-board-game-g4", "kind": "board_game", "grade": "4", "season": "thanksgiving", "status": "queued", "idea": "Path board game: equivalent fractions and comparing fractions (4.NF.A.1, 4.NF.A.2), 32 question cards, answer key."},
+    {"order": 4, "slug": "thanksgiving-place-value-task-cards-g2", "kind": "task_cards", "grade": "2", "season": "thanksgiving", "status": "queued", "idea": "32 task cards: place value to 1,000 and add/subtract within 100 (2.NBT.A.1, 2.NBT.B.5), recording sheet, answer key."},
+    {"order": 5, "slug": "thanksgiving-math-games-bundle-g2-4", "kind": "bundle", "grade": "2-4", "season": "thanksgiving", "status": "queued", "idea": "Bundle of items 1-4 at about 25% off their total. Built LAST, only after 1-4 are live."}
+  ],
+  "next_season": {"season": "winter-christmas", "live_by": "2026-11-05", "first_ideas": ["Winter math escape room grade 4 (multi-digit multiplication)", "Christmas division card game grade 4-5", "Gingerbread fractions task cards grade 5"]}
+}

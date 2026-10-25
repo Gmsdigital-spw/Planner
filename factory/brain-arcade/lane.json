@@ -1,0 +1,79 @@
+{
+ "lane": "brain-arcade",
+ "name": "Brain Arcade",
+ "shop": {
+  "name": "BrainArcadeGames",
+  "shop_id": null,
+  "shop_id_note": "Filled ONLY by tools/shop_guard.py verify-connection after the Make connection is authorized and the shop name matches. Until then every publish is blocked.",
+  "verified_at": null
+ },
+ "never_shops": {
+  "ids": [
+   68605457
+  ],
+  "names": [
+   "GMsDigitalCreations",
+   "GM's Digital Creations"
+  ],
+  "why": "GM's Digital Creations is the main crew's shop. This crew may never post there, and never posts the same item in both shops."
+ },
+ "make": {
+  "team_id": 3216895,
+  "organization_id": 9329352,
+  "credential_request_id": "880adf39-9e0f-4b78-af54-78be9f236720",
+  "credential_request_link": "https://us2.make.com/3216895/credentials-requests/inbox?requestId=880adf39-9e0f-4b78-af54-78be9f236720",
+  "connection_id": null,
+  "scenario_id": null,
+  "scenario_name": "Brain Arcade gateway (BrainArcadeGames Etsy only)",
+  "never_use": {
+   "scenario_ids": [
+    6676353,
+    6676393
+   ],
+   "connection_ids": [
+    11776426,
+    11777132
+   ]
+  },
+  "ops_budget": {
+   "lane_max_per_cycle": 150,
+   "keep_free_for_main_crew": 200,
+   "rule": "Before any Make call: read organizations_get(9329352).unusedOperations. If unused - planned ops < keep_free_for_main_crew, or this lane has used lane_max_per_cycle since lastReset (ops-ledger.jsonl), STOP and tell Grayson. The main crew's socials run on the same 1,000-op free plan."
+  }
+ },
+ "caps": {
+  "new_listings_per_day": 2,
+  "pass_score": 92,
+  "listing_fee_usd": 0.2,
+  "monthly_fee_cap_usd": 5.0,
+  "pins_per_day": 3
+ },
+ "pinterest": {
+  "status": "waiting for Grayson's OK",
+  "boards": [],
+  "note": "Boards for teachers and homeschool parents are created only after Grayson says yes. No new social accounts until he approves."
+ },
+ "season_order": [
+  "thanksgiving",
+  "winter-christmas",
+  "new-year",
+  "valentines",
+  "100th-day",
+  "st-patricks",
+  "spring",
+  "end-of-year"
+ ],
+ "season_deadlines": {
+  "thanksgiving": "ASAP (holiday Nov 26, 2026)",
+  "winter-christmas": "live by Nov 5, 2026"
+ },
+ "paused": false,
+ "room": {
+  "url": "https://claude.ai/artifact/RuApFd8YnEgouX4ogv6D2i",
+  "note": "The lane's own room page + database (ops/room.md)."
+ },
+ "repo_branch": {
+  "until_merged": "claude/brain-arcade-etsy-lane-d15but",
+  "rule": "If factory/brain-arcade/ is not on main yet, work on and push to this branch; raw URLs use this branch name instead of main."
+ }
+}
