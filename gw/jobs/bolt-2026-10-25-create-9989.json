@@ -1,0 +1,43 @@
+{
+ "id": "bolt-2026-10-25-create-9989",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "POST",
+   "path": "/shops/68605457/listings",
+   "body": {
+    "quantity": 999,
+    "title": "Christmas Murder Mystery Party Game for 8 Players, Printable Whodunit Dinner Party Kit, Family Friendly Holiday Game, Host Can Play",
+    "description": "A printable Christmas murder mystery party game written for exactly 8 players: a cozy whodunit for a Christmas dinner with friends, family or coworkers, no expansion pack to sort through. Print it, hand out the character sheets, and you are hosting a 2-hour mystery tonight.\n\nTHE STORY: The Stolen Star of Hollyridge Lodge. Christmas Eve, a snowed-in mountain lodge. At 7:08 every light goes out. At 7:20 they come back on and the lodge's famous gold Star is gone from the top of the tree. Eight guests, eight secrets, one thief. Family friendly: no violence, nothing is hurt but a mantel clock.\n\nONE FAIR ANSWER: the clues point to exactly one guest, and they prove it two separate ways (alibis and a shoe print). Every innocent guest has an alibi a clue card can confirm, so no one is left guessing and the reveal makes sense to the whole table. We checked the clue logic with code before release.\n\nWHAT'S INCLUDED (16 pages, US Letter, prints on A4):\n- Page 1: Cover with contents\n- Page 2: Host guide (how it works, what to print, setup checklist, host tips)\n- Page 3: Party timeline and host script (opening to read aloud, 3 rounds)\n- Page 4: Invitations, 2 per sheet, fill in by hand\n- Pages 5 to 12: 8 character sheets, one page each: who you are, costume idea, secret, alibi, what to say in Rounds 1, 2 and 3, and questions to ask\n- Page 13: 9 clue cards, 3 per round, cut apart\n- Page 14: Detective Notes accusation sheet, one per player\n- Page 15: The solution, with a read-aloud reveal and who is cleared by which clue\n- Page 16: 8 name tags and 2 awards (Master Detective, Best in Character)\nPlus a thank-you page.\n\nHOW TO HOST:\n1. Send invitations 2 to 3 weeks ahead and give each guest a character.\n2. A week before, send each guest only their own sheet.\n3. On the night, read the opening, then read 3 clue cards each round. Dinner fits between Rounds 1 and 2.\n4. Everyone fills in Detective Notes, then you read the sealed solution.\nThe host can play too. Fewer than 8 guests? The host guide says which pairs to drop.\n\nTHE CHARACTERS: Ivy (lodge owner), Jasper (ski instructor), Clem (head cook), Rupert (antique dealer), Noelle (lodge singer), Dash (handyman), Marigold (travel writer), Felix (owner's nephew). All original characters, any guest can play any role.\n\nGOOD TO KNOW:\n- Digital PDF download. Nothing ships. Download from your Etsy Purchases page after checkout, then print at home or at a print shop.\n- Print in color or black and white.\n- For personal use. Not editable; invitations have lines to fill in by hand.\n- Best for adults and teens, about 2 hours.\n\nThis design was created with AI assistance under the creative direction of the seller.",
+    "price": 7.99,
+    "who_made": "i_did",
+    "when_made": "2020_2026",
+    "taxonomy_id": 1350,
+    "type": "download",
+    "tags": [
+     "murder mystery game",
+     "xmas murder mystery",
+     "murder mystery party",
+     "christmas party game",
+     "whodunit game",
+     "dinner party game",
+     "murder mystery kit",
+     "family xmas game",
+     "mystery dinner party",
+     "holiday party game",
+     "adult party game",
+     "office party game",
+     "printable party game"
+    ],
+    "materials": [
+     "Digital download",
+     "PDF"
+    ],
+    "is_supply": false,
+    "should_auto_renew": true
+   },
+   "tag": "create"
+  }
+ ]
+}
