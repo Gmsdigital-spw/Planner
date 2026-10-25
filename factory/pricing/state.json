@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-24",
+ "updatedAt": "2026-10-25",
  "note": "Pricing agent state. basePrice = the normal price before any change (from backups/listings-backup-2026-10-21.json).",
  "listings": {
   "4600177510": {
@@ -165,7 +165,7 @@
   "4596406689": {
    "title": "ADHD Budget Planner App | Daily Spending, Bills, Tasks (Digital Download)",
    "basePrice": 12.99,
-   "price": 12.99,
+   "price": 8.99,
    "starter": false,
    "lastChange": null,
    "history": []
@@ -206,6 +206,30 @@
    "title": "Letter from Santa Editable Printable, 6 Personalized Santa Letters, Nice List Ce",
    "basePrice": 8.99,
    "price": 8.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4602816114": {
+   "title": "Christmas Murder Mystery Party Game for 8 Players, Printable Whodunit Dinner Par",
+   "basePrice": 7.99,
+   "price": 7.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4602703062": {
+   "title": "Pink Bow Birthday Invitation Template Set, Coquette Bow Birthday Invite, Editabl",
+   "basePrice": 7.99,
+   "price": 7.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4602402578": {
+   "title": "Christmas Escape Room for Kids Printable, Family Game with 2 Levels Ages 6-9 and",
+   "basePrice": 11.99,
+   "price": 11.99,
    "starter": false,
    "lastChange": null,
    "history": []
