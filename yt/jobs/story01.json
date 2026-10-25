@@ -1,0 +1,77 @@
+{
+  "id": "story01",
+  "format": "story",
+  "title": "The Crocodile Paradox, Explained Simply #shorts",
+  "voice": "andrew",
+  "speed": 1.0,
+  "art": "stickfigure",
+  "music": "tense",
+  "music_volume": 0.07,
+  "cast": {
+    "croc": "a big green cartoon crocodile with a long bumpy snout, small yellow eyes and white pointy teeth",
+    "mom": "a stick-figure mother with a round white head, dot eyes, thin black limbs and a long brown cloak",
+    "boy": "a small stick-figure boy with a round white head, dot eyes, thin black limbs and a tan tunic"
+  },
+  "lines": [
+    {
+      "text": "Why couldn't a hungry crocodile keep one simple promise?",
+      "label": "THE PARADOX",
+      "headline": "THE CROCODILE'S PROMISE",
+      "image": "{croc} standing waist-deep in a calm river holding {boy}, while {mom} stands on the sandy riverbank looking at them, a stone castle on a far hill"
+    },
+    {
+      "text": "Long ago, a crocodile grabbed a little boy playing by the river.",
+      "label": "LONG AGO",
+      "headline": "A BOY BY THE RIVER",
+      "image": "{croc} lunging out of the river and snatching {boy} off the sandy riverbank, splashing water, {boy} looking scared"
+    },
+    {
+      "text": "The boy's mother begged the crocodile to give her son back.",
+      "label": "A MOTHER BEGS",
+      "headline": "PLEASE GIVE HIM BACK",
+      "image": "{mom} kneeling on the sandy riverbank with both arms reaching out, pleading toward {croc}, who holds {boy} in the shallow river"
+    },
+    {
+      "text": "The crocodile grinned and said, \"Guess what I will do, and he goes home.\"",
+      "label": "THE DEAL",
+      "headline": "GUESS RIGHT, HE GOES HOME",
+      "image": "close-up of {croc} grinning slyly in the river and pointing one claw at {mom} on the riverbank, holding {boy} in its other arm"
+    },
+    {
+      "text": "\"But guess wrong,\" it said, \"and I eat him for lunch.\"",
+      "label": "THE CATCH",
+      "headline": "GUESS WRONG, HE'S LUNCH",
+      "image": "{croc} in the river opening its huge jaws wide next to {boy}, who looks terrified, licking its lips hungrily"
+    },
+    {
+      "text": "The mother thought hard, then said, \"You will not give him back.\"",
+      "label": "HER GUESS",
+      "headline": "YOU WON'T GIVE HIM BACK",
+      "image": "{mom} standing tall on the riverbank, one finger raised, looking calm and clever, speaking to {croc} who holds {boy} in the river"
+    },
+    {
+      "text": "If it gives him back, her guess was wrong, so it must eat him.",
+      "label": "CHOICE ONE",
+      "headline": "IF IT GIVES HIM BACK",
+      "image": "{croc} at the edge of the river setting {boy} down on the sand in front of {mom}, but {croc} pausing with a worried frown"
+    },
+    {
+      "text": "But if it eats him, her guess was right, so it must give him back.",
+      "label": "CHOICE TWO",
+      "headline": "IF IT EATS HIM",
+      "image": "{croc} in the river lifting {boy} toward its wide open jaws, then freezing with a worried frown, {mom} watching from the riverbank"
+    },
+    {
+      "text": "Either way, the crocodile breaks its own promise, so it's stuck.",
+      "label": "THE TWIST",
+      "headline": "NO WAY TO KEEP ITS WORD",
+      "image": "{croc} sitting in the river scratching its head with one claw, eyes spinning in dizzy confusion, holding {boy} loosely, {mom} watching from the riverbank"
+    },
+    {
+      "text": "So the confused crocodile let the boy go, and he ran home safe.",
+      "label": "THE ANSWER",
+      "headline": "THE PROMISE THAT BROKE ITSELF",
+      "image": "{boy} running happily across the sandy riverbank into the open arms of {mom}, while {croc} sits in the river behind them looking puzzled, warm sunset light"
+    }
+  ]
+}
