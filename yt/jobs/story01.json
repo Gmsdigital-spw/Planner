@@ -1,7 +1,7 @@
 {
   "id": "story01",
   "format": "story",
-  "title": "The Crocodile Paradox, Explained Simply #shorts",
+  "title": "One Sentence Saved Him From a Crocodile #shorts",
   "voice": "andrew",
   "speed": 1.0,
   "art": "stickfigure",
@@ -14,64 +14,58 @@
   },
   "lines": [
     {
-      "text": "Why couldn't a hungry crocodile keep one simple promise?",
-      "label": "THE PARADOX",
-      "headline": "THE CROCODILE'S PROMISE",
-      "image": "{croc} standing waist-deep in a calm river holding {boy}, while {mom} stands on the sandy riverbank looking at them, a stone castle on a far hill"
+      "text": "What one sentence could save a boy from a hungry crocodile?",
+      "label": "ONE SENTENCE",
+      "headline": "THE CROCODILE PARADOX",
+      "image": "{croc} standing waist-deep in a river, its huge jaws wide open right above {boy}, who it holds in one claw, while {mom} stands frozen in shock on the sandy riverbank, dramatic stormy sky"
     },
     {
-      "text": "Long ago, a crocodile grabbed a little boy playing by the river.",
-      "label": "LONG AGO",
-      "headline": "A BOY BY THE RIVER",
-      "image": "{croc} lunging out of the river and snatching {boy} off the sandy riverbank, splashing water, {boy} looking scared"
+      "text": "A crocodile snatched a little boy, then offered his mother a deal.",
+      "label": "THE RIVER",
+      "headline": "SNATCHED FROM THE SHORE",
+      "image": "{croc} in the shallow river holding {boy} in one claw and pointing at {mom} with the other, {mom} on the sandy riverbank with both hands on her head in panic"
     },
     {
-      "text": "The boy's mother begged the crocodile to give her son back.",
-      "label": "A MOTHER BEGS",
-      "headline": "PLEASE GIVE HIM BACK",
-      "image": "{mom} kneeling on the sandy riverbank with both arms reaching out, pleading toward {croc}, who holds {boy} in the shallow river"
-    },
-    {
-      "text": "The crocodile grinned and said, \"Guess what I will do, and he goes home.\"",
+      "text": "\"Guess what I'll do next, and your son goes free.\"",
       "label": "THE DEAL",
-      "headline": "GUESS RIGHT, HE GOES HOME",
-      "image": "close-up of {croc} grinning slyly in the river and pointing one claw at {mom} on the riverbank, holding {boy} in its other arm"
+      "headline": "GUESS RIGHT, HE GOES FREE",
+      "image": "close-up of {croc} grinning slyly with one claw raised like making a promise, {boy} held in its other arm, a calm river behind"
     },
     {
-      "text": "\"But guess wrong,\" it said, \"and I eat him for lunch.\"",
+      "text": "\"But guess wrong,\" it hissed, \"and I eat him.\"",
       "label": "THE CATCH",
-      "headline": "GUESS WRONG, HE'S LUNCH",
-      "image": "{croc} in the river opening its huge jaws wide next to {boy}, who looks terrified, licking its lips hungrily"
+      "headline": "GUESS WRONG, HE'S DINNER",
+      "image": "{croc} licking its lips and holding {boy} right next to its open jaws full of pointy teeth, {boy} looking terrified"
     },
     {
-      "text": "The mother thought hard, then said, \"You will not give him back.\"",
-      "label": "HER GUESS",
-      "headline": "YOU WON'T GIVE HIM BACK",
-      "image": "{mom} standing tall on the riverbank, one finger raised, looking calm and clever, speaking to {croc} who holds {boy} in the river"
+      "text": "She looked it in the eye and said, \"You will eat my son.\"",
+      "label": "HER ANSWER",
+      "headline": "YOU WILL EAT MY SON",
+      "image": "{mom} standing tall and calm on the riverbank, pointing one finger straight at {croc}, who holds {boy} in the river and looks surprised"
     },
     {
-      "text": "If it gives him back, her guess was wrong, so it must eat him.",
-      "label": "CHOICE ONE",
-      "headline": "IF IT GIVES HIM BACK",
-      "image": "{croc} at the edge of the river setting {boy} down on the sand in front of {mom}, but {croc} pausing with a worried frown"
-    },
-    {
-      "text": "But if it eats him, her guess was right, so it must give him back.",
-      "label": "CHOICE TWO",
+      "text": "If it eats him, her guess was right, so it broke its promise.",
+      "label": "OPTION ONE",
       "headline": "IF IT EATS HIM",
-      "image": "{croc} in the river lifting {boy} toward its wide open jaws, then freezing with a worried frown, {mom} watching from the riverbank"
+      "image": "{croc} lifting {boy} toward its open jaws, then freezing with a worried frown, {mom} watching from the riverbank"
     },
     {
-      "text": "Either way, the crocodile breaks its own promise, so it's stuck.",
-      "label": "THE TWIST",
-      "headline": "NO WAY TO KEEP ITS WORD",
-      "image": "{croc} sitting in the river scratching its head with one claw, eyes spinning in dizzy confusion, holding {boy} loosely, {mom} watching from the riverbank"
+      "text": "If it lets him go, her guess was wrong, so it should eat him.",
+      "label": "OPTION TWO",
+      "headline": "IF IT LETS HIM GO",
+      "image": "{croc} setting {boy} down on the sand near {mom}, then pausing with a confused frown, one claw still reaching for {boy}"
     },
     {
-      "text": "So the confused crocodile let the boy go, and he ran home safe.",
-      "label": "THE ANSWER",
-      "headline": "THE PROMISE THAT BROKE ITSELF",
-      "image": "{boy} running happily across the sandy riverbank into the open arms of {mom}, while {croc} sits in the river behind them looking puzzled, warm sunset light"
+      "text": "Either way it breaks its own deal, so the crocodile froze, totally stuck.",
+      "label": "THE TRAP",
+      "headline": "NO MOVE LEFT",
+      "image": "{croc} sitting frozen in the river scratching its head with one claw, eyes spinning in dizzy confusion, holding {boy} loosely, {mom} watching closely from the riverbank"
+    },
+    {
+      "text": "While it froze, she grabbed her son and ran, saved by one clever sentence.",
+      "label": "SHE WINS",
+      "headline": "ONE SENTENCE SAVED HIM",
+      "image": "{mom} running across the sandy riverbank carrying {boy} in her arms, both smiling, while {croc} sits frozen in the river behind them, puzzled, warm golden sunset light"
     }
   ]
 }
