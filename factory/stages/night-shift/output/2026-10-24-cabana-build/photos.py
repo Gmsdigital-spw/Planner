@@ -49,7 +49,7 @@ sq = img.crop((200, 0, 1800, 1600)).resize((300, 300), Image.LANCZOS); sq.save(O
 cards = [card(2, 0), card(3, 0), card(4, 0), card(5, 0)]
 im = gs.paper(pal["paper"]); d = ImageDraw.Draw(im)
 gs._header(d, pal, "Two colourways, two cards", "PINK AND SAGE  ·  TYPE IN THE PDF, NO ACCOUNT NEEDED")
-pw_ = 780
+pw_ = 700
 for i, pg in enumerate(pages[2:6]):
     gs.place(im, pg, pw_, ((gs.IW - 2 * pw_ - 60) // 2 + (i % 2) * (pw_ + 60), 330 + (i // 2) * 630))
 gs.save_jpeg(im, OUT + "/2-colourways.jpg")
@@ -60,16 +60,28 @@ hz = Image.open([OUT + "/" + f for f in os.listdir(OUT) if f.startswith("hz")][0
 W, H = hz.size; cw2, ch2 = int(W * 5 / 11), int(H * 7 / 8.5); gx = int(W * 0.25 / 11); x0 = (W - 2 * cw2 - gx) // 2; y0 = (H - ch2) // 2
 crop = hz.crop((x0 + int(cw2 * 0.12), y0 + int(ch2 * 0.418), x0 + int(cw2 * 0.88), y0 + int(ch2 * 0.86)))
 im = gs.paper(pal["paper"]); d = ImageDraw.Draw(im)
-gs._header(d, pal, "Type over every green line", "48 TYPE-IN LINES  ·  FREE ADOBE ACROBAT READER")
-cwid = 1120; gs.place(im, crop, cwid, ((gs.IW - cwid) // 2, 380))
+gs._header(d, pal, "Type over every green line", "70 TYPE-IN LINES  ·  FREE ADOBE ACROBAT READER")
+cwid = 1460; gs.place(im, crop, cwid, ((gs.IW - cwid) // 2, 330))
 gs.save_jpeg(im, OUT + "/3-closeup.jpg")
 # ---- photo 4: what's included
 im = gs.paper(pal["paper"]); d = ImageDraw.Draw(im)
-gs._header(d, pal, "What you get: 7 pages", "2 INVITES  \u00b7  2 DETAILS CARDS  \u00b7  HOW-TO  \u00b7  48 TYPE-IN LINES")
-for c_, x_, ang in ((card(5, 0), 200, 7), (card(3, 0), 1120, -7), (card(2, 0), 660, 0)):
-    gs.place(im, c_, 680, (x_, 330), angle=ang)
+gs._header(d, pal, "What you get: a full party set", "INVITES  \u00b7  DETAILS  \u00b7  THANK-YOU CARDS  \u00b7  8x10 WELCOME SIGN")
+sg = pages[8]; Ws, Hs = sg.size; sw_, sh_ = int(Ws * 8 / 8.5), int(Hs * 10 / 11)
+sgn = sg.crop(((Ws - sw_) // 2, (Hs - sh_) // 2, (Ws + sw_) // 2, (Hs + sh_) // 2))
+gs.place(im, sgn, 600, (300, 540), angle=0)
+for c_, x_, y_ in ((card(2, 0), 960, 340), (card(6, 0), 1340, 340), (card(4, 0), 960, 960), (card(3, 0), 1340, 960)):
+    gs.place(im, c_, 400, (x_, y_))
 gs.save_jpeg(im, OUT + "/4-included.jpg")
 # ---- photo 5: how it works
 im = gs.preview_how(pal, [("Open", "the PDF in free Adobe Acrobat Reader on a computer"), ("Type", "your names, date, place and RSVP over the green lines"), ("Print", "on cardstock at Actual size and cut on the marks")])
+from PIL import ImageFont as _F
+_d = ImageDraw.Draw(im); _d.rectangle((200, 975, 1800, 1060), fill=im.getpixel((100, 1000)))
+_d.text((1000, 1000), "Digital PDF  \u00b7  Prints on US Letter or A4  \u00b7  Nothing ships", font=_F.truetype("/usr/share/fonts/truetype/google-fonts/Poppins-Medium.ttf", 44), fill=gs.rgb(pal["primary"]), anchor="ma")
+sg2 = pages[9]; sgn2 = sg2.crop(((Ws - sw_) // 2, (Hs - sh_) // 2, (Ws + sw_) // 2, (Hs + sh_) // 2))
+strip = [sgn2, card(3, 0), card(5, 0), card(7, 0)]
+xs = 421
+for c_ in strip:
+    w_ = 252 if c_ is not sgn2 else 282
+    gs.place(im, c_, w_, (xs, 1085)); xs += w_ + 40
 gs.save_jpeg(im, OUT + "/5-how.jpg")
 print("ok")

@@ -6,7 +6,7 @@ from reportlab.lib.colors import HexColor, Color, white
 from reportlab.lib.pagesizes import letter, landscape
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else "/tmp/cabana_raw.pdf"
-NAME = "Pink Cabana Birthday Invitation"
+NAME = "Pink Bow Birthday Invitation Set"
 pal = gs.palette("blush")
 d = gs.Book(OUT, NAME, pal, cover_style="frame", page_frame="none")
 c = d.c
@@ -101,6 +101,67 @@ def card_bg(x0, y0, way):
     frond(x0 + CW - 26, y0 - 14, 110, 115, GREEN2, LEAF, n=9, seed=4)
     c.restoreState()
 
+def big_bg(x0, y0, w, h, way):
+    W = WAYS[way]; k = w / CW
+    c.saveState(); p = c.beginPath(); p.rect(x0, y0, w, h); c.clipPath(p, stroke=0, fill=0)
+    c.setFillColor(W["base"]); c.rect(x0, y0, w, h, stroke=0, fill=1)
+    sw = 22.5 * k; c.setFillColor(W["stripe"]); i = 0
+    while i * sw < w: c.rect(x0 + i * sw, y0, sw, h, stroke=0, fill=1); i += 2
+    frond(x0 - 8 * k, y0 + h + 6 * k, -40, 150 * k, LEAF, GREEN2, seed=1)
+    frond(x0 + 30 * k, y0 + h + 14 * k, -70, 120 * k, GREEN2, LEAF, n=9, seed=2)
+    frond(x0 + w + 8 * k, y0 - 6 * k, 140, 150 * k, LEAF, GREEN2, seed=3)
+    frond(x0 + w - 26 * k, y0 - 14 * k, 110, 115 * k, GREEN2, LEAF, n=9, seed=4)
+    c.restoreState()
+
+def thanks(x0, y0, way, k):
+    W = WAYS[way]; card_bg(x0, y0, way)
+    px, py, pw, ph = x0 + 44, y0 + 44, CW - 88, CH - 104
+    scallop_panel(px, py, pw, ph)
+    cx = x0 + CW / 2; top = py + ph
+    bow(cx, top + 12, 1.45, W["bow"], W["bowd"])
+    spaced(cx, top - 62, "FROM THE BIRTHDAY GIRL", 7.6, GREEN2, d.FM, 2.0)
+    c.setFillColor(GREEN); c.setFont("gm-serifI", 50); c.drawCentredString(cx, top - 122, "Thank")
+    c.drawCentredString(cx, top - 170, "You")
+    c.setStrokeColor(W["bowd"]); c.setLineWidth(0.7); c.line(cx - 40, top - 194, cx - 8, top - 194); c.line(cx + 8, top - 194, cx + 40, top - 194)
+    c.setFillColor(W["bowd"]); c.circle(cx, top - 194, 2.2, stroke=0, fill=1)
+    lines = [("l1", "FOR CELEBRATING WITH ME", "Message line 1"), ("l2", "AND FOR THE SWEETEST GIFT.", "Message line 2"),
+             ("l3", "IT MEANT THE WORLD TO ME!", "Message line 3")]
+    yy = top - 236
+    for key, val, tip in lines:
+        field(f"ty{way}{k}_{key}", cx, yy, pw - 36, 18, val, 10.5, "Times-Roman", tip); yy -= 26
+    field(f"ty{way}{k}_sign", cx, yy - 30, pw - 40, 34, "Love, Ava", 24, "Times-Italic", "Signature")
+    spaced(cx, py + 26, "XOXO", 7.4, GREEN2, d.FM, 3.0)
+
+def sign_page(way="pink"):
+    PW, PH = letter
+    SW, SH = 8 * 72, 10 * 72
+    x0, y0 = (PW - SW) / 2, (PH - SH) / 2
+    d.page += 1
+    big_bg(x0, y0, SW, SH, way)
+    k = SW / CW
+    px, py, pw, ph = x0 + 62, y0 + 64, SW - 124, SH - 150
+    c.saveState(); c.translate(px, py); c.scale(1, 1)
+    c.restoreState()
+    scallop_panel(px, py, pw, ph, r=9)
+    cx = x0 + SW / 2; top = py + ph
+    bow(cx, top + 16, 2.1, WAYS[way]["bow"], WAYS[way]["bowd"])
+    spaced(cx, top - 110, "WELCOME TO", 14, GREEN2, d.FM, 3.6)
+    field(f"sign{way}_name", cx, top - 210, pw - 60, 66, "Ava's", 58, "Times-Italic", "Name on the sign")
+    c.setFillColor(GREEN); c.setFont("gm-serifI", 50); c.drawCentredString(cx, top - 268, "Birthday")
+    c.drawCentredString(cx, top - 322, "Party")
+    c.setStrokeColor(WAYS[way]["bowd"]); c.setLineWidth(1); c.line(cx - 70, top - 360, cx - 12, top - 360); c.line(cx + 12, top - 360, cx + 70, top - 360)
+    c.setFillColor(WAYS[way]["bowd"]); c.circle(cx, top - 360, 3, stroke=0, fill=1)
+    field(f"sign{way}_line1", cx, top - 420, pw - 70, 32, "SWEET SIXTEEN", 22, "Times-Roman", "Sign line 1 (age or theme)")
+    field(f"sign{way}_line2", cx, top - 462, pw - 70, 26, "MAY 16, 2026", 15, "Times-Roman", "Sign line 2 (date)")
+    spaced(cx, py + 40, "LET'S CELEBRATE", 10, GREEN2, d.FM, 3.0)
+    c.setStrokeColor(HexColor("#C9C2BD")); c.setLineWidth(0.4)
+    for x in (x0, x0 + SW):
+        c.line(x, y0 + SH + 4, x, y0 + SH + 14); c.line(x, y0 - 4, x, y0 - 14)
+    c.setFillColor(d.MUT); c.setFont(d.F, 7.5)
+    c.drawString(x0, 14, f"WELCOME SIGN · {WAYS[way]['label'].upper()}  ·  8 x 10 IN  ·  PRINT AT ACTUAL SIZE, TRIM ON THE MARKS (OR FRAME IT AS IS)")
+    c.setFillColor(d.P); c.setFont(d.FM, 8); c.drawRightString(x0 + SW, 14, f"{d.page:02d}")
+    c.showPage()
+
 def invite(x0, y0, way, k):
     W = WAYS[way]; card_bg(x0, y0, way)
     px, py, pw, ph = x0 + 44, y0 + 44, CW - 88, CH - 104
@@ -165,12 +226,42 @@ pdfmetrics.registerFont(TTFont("gm-serifI", "/usr/share/fonts/truetype/google-fo
 pdfmetrics.registerFont(TTFont("DejaVu", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"))
 
 # ---------------------------------------------------------------- pages
-d.cover(["Pink Cabana", "Birthday Invitation"], "Editable 5x7 invite and details card in two colourways", pages=6, kicker="EDITABLE PDF INVITATION")
+def cover_page():
+    PW, PH = letter; d.page += 1
+    c.setFillColor(HexColor(pal["paper"])); c.rect(0, 0, PW, PH, fill=1, stroke=0)
+    for inset, w in ((36, 1.6), (46, 0.6)):
+        c.setStrokeColor(GREEN); c.setLineWidth(w); c.rect(inset, inset, PW - 2 * inset, PH - 2 * inset, fill=0, stroke=1)
+    spaced(PW / 2, PH - 120, "EDITABLE PDF  ·  NO APP NEEDED", 10, GREEN2, d.FM, 2.6)
+    c.setFillColor(GREEN); c.setFont(d.S, 44)
+    c.drawCentredString(PW / 2, PH - 185, "Pink Bow Birthday"); c.drawCentredString(PW / 2, PH - 235, "Invitation Set")
+    c.setFillColor(d.INK); c.setFont(d.SS, 15)
+    c.drawCentredString(PW / 2, PH - 272, "Invitation, details card, thank-you card and welcome sign")
+    c.drawCentredString(PW / 2, PH - 292, "in pink and in sage cabana stripes")
+    # mini cards (static artwork only, no fields)
+    minis = [("pink", "Let's", "Celebrate"), ("sage", "The", "Details"), ("pink", "Thank", "You"), ("sage", "Welcome", "to Ava's")]
+    sc = 0.335; mw, mh = CW * sc, CH * sc; gap = 14
+    x = (PW - 4 * mw - 3 * gap) / 2; y = 205
+    for way, l1, l2 in minis:
+        c.saveState(); c.translate(x, y); c.scale(sc, sc)
+        card_bg(0, 0, way); scallop_panel(44, 44, CW - 88, CH - 104)
+        bow(CW / 2, CH - 48, 1.4, WAYS[way]["bow"], WAYS[way]["bowd"])
+        c.setFillColor(GREEN); c.setFont("gm-serifI", 52)
+        c.drawCentredString(CW / 2, CH - 190, l1); c.drawCentredString(CW / 2, CH - 250, l2)
+        c.restoreState()
+        c.setStrokeColor(HexColor("#E2D6CF")); c.setLineWidth(0.6); c.rect(x, y, mw, mh, fill=0, stroke=1)
+        x += mw + gap
+    c.setFillColor(HexColor("#F7E9E6")); c.rect(46.6, 46.6, PW - 93.2, 120, fill=1, stroke=0)
+    spaced(PW / 2, 118, "11 PAGES  ·  70 TYPE-IN LINES", 11, GREEN, d.FM, 2.4)
+    spaced(PW / 2, 86, "PRINT AT HOME  ·  INSTANT DOWNLOAD", 9, d.MUT, d.FM, 2.0)
+    c.setFont(d.F, 8.5); c.setFillColor(d.MUT); c.drawCentredString(PW / 2, 24, "GM's Digital Creations")
+    c.showPage()
+
+cover_page()
 
 d.start("How to edit and print", "Everything you need to fill in your details and print at home or at a print shop.")
 d.heading("Edit your invitation")
 d.bullets(["Download the PDF to a computer and open it in Adobe Acrobat Reader (free). A browser preview may not save your typing.",
-           "Click any green line of text on pages 3 to 6 and type over the sample words. Every changing line is its own box.",
+           "Click any green line of text on pages 3 to 10 and type over the sample words. Every changing line is its own box.",
            "Each card on a page is separate, so you can make two different versions on one sheet if you want to.",
            "Save the file (File, Save As) before printing. Keep the original as a clean copy for next time.",
            "The headline, stripes, bow and leaves are part of the design. Fonts and colours cannot be changed."], numbered=True)
@@ -181,22 +272,23 @@ d.bullets(["Print at 100% or Actual size on US Letter paper, landscape. A4 also 
            "Standard A7 envelopes (5.25 x 7.25 in) fit both the invitation and the details card."], numbered=True)
 d.heading("What's inside")
 d.bullets(["Page 3: invitation, pink cabana stripe (2 per page)", "Page 4: invitation, sage cabana stripe (2 per page)",
-           "Page 5: details card, pink cabana stripe (2 per page)", "Page 6: details card, sage cabana stripe (2 per page)"], cols=1, check=True)
+           "Page 5: details card, pink cabana stripe (2 per page)", "Page 6: details card, sage cabana stripe (2 per page)",
+           "Pages 7 and 8: thank-you cards, pink and sage (2 per page)", "Pages 9 and 10: 8 x 10 welcome sign, pink and sage"], cols=1, check=True)
 d.heading("Wording ideas for the name line")
 d.bullets(["Ava's Sweet Sixteen", "Mia Turns Seven", "Chloe's 21st Birthday", "Thirty and Thriving, Emma",
            "Grace is Turning 40", "Lily's First Birthday"], cols=3)
-d.heading("Before you print")
-d.bullets(["Every line typed and spelled right (check the date and the RSVP number twice)",
-           "One test print on plain paper to check the size and the cut marks",
-           "Printer set to Actual size, best quality, landscape"], check=True)
 d.heading("Good to know")
-d.text("Digital file only: no printed cards ship. For personal use. Keep lines short to fit the card.")
+d.text("Digital file only: nothing ships. Do one test print on plain paper first, check every date and RSVP line twice, and keep lines short to fit the card. Personal use.")
 d.end()
 
 card_page(invite, "pink", "Invitation · pink cabana")
 card_page(invite, "sage", "Invitation · sage cabana")
 card_page(details, "pink", "Details card · pink cabana")
 card_page(details, "sage", "Details card · sage cabana")
+card_page(thanks, "pink", "Thank-you card · pink cabana")
+card_page(thanks, "sage", "Thank-you card · sage cabana")
+sign_page("pink")
+sign_page("sage")
 
 # thank-you page (spec text verbatim)
 d.page += 1

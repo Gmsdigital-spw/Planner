@@ -48,6 +48,11 @@ Record score.slopCheck {pass, fails:[short strings]}. A fail caps images at 12 a
   filling the frame, style rotation, real pages. A cover whose title or count is not readable
   at 300 px: at most 14. Overlap, clipped text, cramped spacing or a cheap cover: at most 14.
 - market /15: evidence of a real gap vs the top 3 competitors (links in the brief).
+  OPEN NICHE (Grayson, Oct 24, 2026: "since it's slow competitors... get that up fast"): when 10+
+  opened rivals show no 100+ item-review listing, the niche is open, not dead. Demand proof is then
+  2+ opened rivals with 100+ favorites each AND a written gap rivals don't fill (a feature such as
+  no-account editing, or a bundle they don't sell). With that proof market may score up to 14
+  (15 still needs 100+ item-review proof); without it the old cap stands.
 - price /10: within the lane's range and justified.
 - polish /10: no cramped page, no half-empty page, consistent fonts and colours. Cheap-looking
   cover or any layout fault: at most 7.

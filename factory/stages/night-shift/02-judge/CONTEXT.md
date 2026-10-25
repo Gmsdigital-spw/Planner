@@ -34,9 +34,12 @@ other than "Atlas auto-approver").
    gap: "<the one specific thing we do that they don't>", checkedAt}. Approve ONLY with at least
    2 opened item pages showing 100+ item reviews AND a written gap. Fewer: leave it "proposed"
    with note "needs market proof: <what is missing>"; never approve on hope. Build only what
-   buyers have already proven they buy.
+   buyers have already proven they buy. OPEN NICHE (Grayson, Oct 24, 2026): if 10+ opened
+   item pages show NO 100+ item-review rival, the brief may still pass with 2+ opened rivals at
+   100+ favorites each AND a written gap (feature or bundle they lack); record
+   marketProof.openNiche = true. Such briefs pre-score market at 13 (14 with a bundle gap).
 2c. PRE-SCORE. Estimate the final inspection score from rubric.md for the brief as it would be
-   built: market from 2b (2 proven 100+ rivals + clear gap = 13; 3 or more = 14-15; fewer = 11
+   built: market from 2b (2 proven 100+ rivals + clear gap = 13; open niche per 2b = 13-14; 3 or more = 14-15; fewer = 11
    or less), price vs those rivals, and file/copy/images/polish at the crew's recent level
    (factory/scores.jsonl, last 10 products). Write brief.preScore {market, price, total, why}.
    Approve only when preScore.total is 93 or more; aim for 95+. Under 93: leave "proposed"

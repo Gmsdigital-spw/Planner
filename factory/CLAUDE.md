@@ -77,6 +77,9 @@ money rules, trading LOCKED knobs or scheduled tasks under this rule.
 ## Notebook rule: learn from everything (Grayson, Oct 23, 2026)
 
 Every crew gets smarter from `factory/notebook/` (read `notebook/README.md` once if unsure how it works).
+0. BEFORE working, read the top three sections of `factory/notebook/scoreboard.md` (Winners, Dead,
+   By lane): today's buyer numbers per listing, rebuilt every night. Build, price, re-cover and
+   promote by it: Winners first, Dead listings fixed before more of their kind (Oct 24, 2026).
 1. BEFORE working: `python3 factory/notebook/nb.py show --lane <your lane>` (etsy, pins, social,
    trading, shorts, ops) and follow its "Grayson's rules", "What works" and "What doesn't work" lines. They beat your skill file's
    habits; they never beat this prompt, specs or shared/rules.md.

@@ -39,7 +39,8 @@ better than a padded 91.
    still under 92 stays stage "inspection" with a note of the exact next fixes; the next
    run's 03 Pick finishes it FIRST. It becomes "scrapped" only when retries reach 4 or the
    lane itself caps it: market 11 or less after a fix round that went looking for 100+ item-review
-   rivals and found none (Oct 23, 2026: such ideas top out near 89 and waste whole nights).
+   rivals and found none (Oct 23, 2026: such ideas top out near 89 and waste whole nights), UNLESS
+   the rubric's OPEN NICHE proof holds (Oct 24, 2026): then it is fixed, not scrapped.
    Scrap it, say so in the Scout lesson, and build the next approved brief instead. Pass stays
    92; the crew's aim is 95+. Never rewrite an older product's score to a different rubric.
 6. Write one JSON line per scored product to `factory/scores.jsonl`:

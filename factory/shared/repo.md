@@ -37,7 +37,7 @@ mirrors those lists so they have one home to drift from.
 | Night Shift | factory/notebook/, factory/skills/, factory/LESSONS.md, factory/playbooks/, factory/scores.jsonl, factory/runlog.jsonl, factory/stages/night-shift/output/, tools/fun_covers_config.json (add entries only), prints/<hex>/ (wall art) |
 | Mechanic | gw/jobs/mech-*.json, factory/trading/kick/<day>-<HHMM>.txt, factory/engine/orders/<doc id>.json |
 | Bolt | listing-photos/auto/, dl-temp/, gw/jobs/bolt-*.json, factory/runlog.jsonl |
-| Herald | social/, factory/skills/herald/, yt/jobs/spot-*.json, factory/runlog.jsonl |
+| Herald | social/, factory/skills/herald/, yt/jobs/spot-*.json, gw/jobs/tt-*.json (TikTok via Postproxy, Oct 24), factory/runlog.jsonl |
 | Pixel (video pin) | gw/jobs/vpin-*.json, factory/videopins/ |
 | Ledger (pricing) | gw/jobs/price-*.json, factory/pricing/ |
 | Warden (check-up) | shopcheck/, listing-photos/warm-covers/, gw/jobs/warden-*.json, tools/warm_covers.py (config only) |

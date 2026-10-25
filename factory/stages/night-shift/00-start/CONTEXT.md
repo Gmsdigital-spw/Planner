@@ -31,6 +31,18 @@
    /home/claude/kit/gm_style.py, mockup.py, wall_art.py. If a read fails, note it in the run
    doc; the Builder falls back as house-style.md says.
 7. Remember for the run log: every instruction file you load from here on.
+8. SCOREBOARD (Grayson, Oct 24, 2026: "I want them to full on learn everything"). ArtifactData
+   list stats (limit 60) and list sales (limit 500), both with out_dir /tmp/sb; then
+   `python3 factory/notebook/scoreboard.py /tmp/sb > factory/notebook/scoreboard.md`. Commit it
+   ("scoreboard <day key>") and push before the workers start, so tonight's workers AND every
+   daytime crew read today's buyer numbers. Never edit the file by hand.
+9. SCOUT LESSONS SYNC (Scout Intel cannot push to GitHub, so its learning lives only in the
+   database). For each lessons doc with source "Scout Intel", status "active" and no synced
+   field: append one dated line to "What I've learned" in factory/skills/pixel/SKILL.md
+   ("- <day>: <text> (evidence: <evidence>)"); when its confidence is "high", also append it to
+   factory/LESSONS.md. Then update the doc {synced:true} (read first, pass if_version). Also
+   add today's 1-3 most useful Scout intel findings (intel docs, newest 12) to the "Testing"
+   section of factory/notebook/etsy.md with `nb.py add`, tagged source=scout-intel.
 
 ## Outputs
 
