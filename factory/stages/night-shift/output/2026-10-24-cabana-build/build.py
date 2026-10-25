@@ -85,10 +85,10 @@ def spaced(cx, y, text, size, col, font, track=1.6):
     for ch in text:
         c.drawString(x, y, ch); x += gs.stringWidth(ch, font, size) + track
 
-def field(name, cx, y, w, h, value, size, fontName="Times-Roman", tip=None):
+def field(name, cx, y, w, h, value, size, fontName="Times-Roman", tip=None, maxlen=60):
     c.acroForm.textfield(name=name, tooltip=tip or name, x=cx - w / 2, y=y, width=w, height=h,
                          value=value, fontName=fontName, fontSize=size, borderWidth=0, borderStyle="underlined",
-                         fillColor=None, borderColor=None, textColor=GREEN, fieldFlags="", forceBorder=False, maxlen=60)
+                         fillColor=None, borderColor=None, textColor=GREEN, fieldFlags="", forceBorder=False, maxlen=maxlen)
 
 def card_bg(x0, y0, way):
     W = WAYS[way]
@@ -130,7 +130,7 @@ def thanks(x0, y0, way, k):
     yy = top - 236
     for key, val, tip in lines:
         field(f"ty{way}{k}_{key}", cx, yy, pw - 36, 18, val, 10.5, "Times-Roman", tip); yy -= 26
-    field(f"ty{way}{k}_sign", cx, yy - 30, pw - 40, 34, "Love, Ava", 24, "Times-Italic", "Signature")
+    field(f"ty{way}{k}_sign", cx, yy - 30, pw - 40, 34, "Love, Ava", 24, "Times-Italic", "Signature (about 16 letters)", maxlen=16)
     spaced(cx, py + 26, "XOXO", 7.4, GREEN2, d.FM, 3.0)
 
 def sign_page(way="pink"):
@@ -147,7 +147,7 @@ def sign_page(way="pink"):
     cx = x0 + SW / 2; top = py + ph
     bow(cx, top + 16, 2.1, WAYS[way]["bow"], WAYS[way]["bowd"])
     spaced(cx, top - 110, "WELCOME TO", 14, GREEN2, d.FM, 3.6)
-    field(f"sign{way}_name", cx, top - 210, pw - 60, 66, "Ava's", 50, "Times-Italic", "Name on the sign (about 12 letters)")
+    field(f"sign{way}_name", cx, top - 210, pw - 60, 66, "Ava's", 50, "Times-Italic", "Name on the sign (about 12 letters)", maxlen=12)
     c.setFillColor(GREEN); c.setFont("gm-serifI", 50); c.drawCentredString(cx, top - 268, "Birthday")
     c.drawCentredString(cx, top - 322, "Party")
     c.setStrokeColor(WAYS[way]["bowd"]); c.setLineWidth(1); c.line(cx - 70, top - 360, cx - 12, top - 360); c.line(cx + 12, top - 360, cx + 70, top - 360)
@@ -173,7 +173,7 @@ def invite(x0, y0, way, k):
     spaced(cx, top - 60, "PLEASE JOIN US", 8.2, GREEN2, d.FM, 2.2)
     c.setFillColor(GREEN); c.setFont("gm-serifI", 40); c.drawCentredString(cx, top - 102, "Let's")
     c.drawCentredString(cx, top - 140, "Celebrate")
-    field(f"{way}{k}_name", cx, top - 184, pw - 40, 30, "Ava's Sweet Sixteen", 18, "Times-Italic", "Name and age (about 22 letters)")
+    field(f"{way}{k}_name", cx, top - 184, pw - 40, 30, "Ava's Sweet Sixteen", 18, "Times-Italic", "Name and age (about 22 letters)", maxlen=22)
     c.setStrokeColor(W["bowd"]); c.setLineWidth(0.7); c.line(cx - 40, top - 196, cx - 8, top - 196); c.line(cx + 8, top - 196, cx + 40, top - 196)
     c.setFillColor(W["bowd"]); c.circle(cx, top - 196, 2.2, stroke=0, fill=1)
     rows = [("date", "SATURDAY, MAY 16, 2026", "Day and date"), ("time", "2:00 TO 5:00 PM", "Time"),
@@ -197,7 +197,7 @@ def details(x0, y0, way, k):
               ("park", "PARKING", "FREE PARKING BY THE MAIN GATE", "DROP-OFF AT THE FRONT DOOR")]
     yy = top - 124
     for key, head, v1, v2 in blocks:
-        spaced(cx, yy, head, 7.6, GREEN2, d.FM, 2.0)
+        field(f"{way}{k}_{key}h", cx, yy - 4, pw - 60, 15, head, 8.4, "Times-Roman", "Heading (e.g. FOOD, SWIM, WHAT TO BRING)", maxlen=20)
         field(f"{way}{k}_{key}1", cx, yy - 26, pw - 36, 17, v1, 9.6, "Times-Roman", head.title() + " line 1")
         field(f"{way}{k}_{key}2", cx, yy - 45, pw - 36, 17, v2, 9.6, "Times-Roman", head.title() + " line 2")
         yy -= 98
@@ -232,7 +232,7 @@ def cover_page():
     c.setFillColor(HexColor(pal["paper"])); c.rect(0, 0, PW, PH, fill=1, stroke=0)
     for inset, w in ((36, 1.6), (46, 0.6)):
         c.setStrokeColor(GREEN); c.setLineWidth(w); c.rect(inset, inset, PW - 2 * inset, PH - 2 * inset, fill=0, stroke=1)
-    spaced(PW / 2, PH - 120, "EDITABLE PDF  ·  NO APP NEEDED", 10, GREEN2, d.FM, 2.6)
+    spaced(PW / 2, PH - 120, "EDITABLE PDF  ·  NO ACCOUNT NEEDED", 10, GREEN2, d.FM, 2.6)
     c.setFillColor(GREEN); c.setFont(d.S, 44)
     c.drawCentredString(PW / 2, PH - 185, "Pink Bow Birthday"); c.drawCentredString(PW / 2, PH - 235, "Invitation Set")
     c.setFillColor(d.INK); c.setFont(d.SS, 15)
@@ -240,8 +240,8 @@ def cover_page():
     c.drawCentredString(PW / 2, PH - 292, "in pink and in sage cabana stripes")
     # mini cards (static artwork only, no fields)
     minis = [("pink", "Let's", "Celebrate"), ("sage", "The", "Details"), ("pink", "Thank", "You"), ("sage", "Welcome", "to Ava's")]
-    sc = 0.335; mw, mh = CW * sc, CH * sc; gap = 14
-    x = (PW - 4 * mw - 3 * gap) / 2; y = 205
+    sc = 0.31; mw, mh = CW * sc, CH * sc; gap = 14
+    x = (PW - 4 * mw - 3 * gap) / 2; y = 268
     for way, l1, l2 in minis:
         c.saveState(); c.translate(x, y); c.scale(sc, sc)
         card_bg(0, 0, way); scallop_panel(44, 44, CW - 88, CH - 104)
@@ -251,6 +251,9 @@ def cover_page():
         c.restoreState()
         c.setStrokeColor(HexColor("#E2D6CF")); c.setLineWidth(0.6); c.rect(x, y, mw, mh, fill=0, stroke=1)
         x += mw + gap
+    c.setFillColor(d.INK); c.setFont(d.SS, 13)
+    c.drawCentredString(PW / 2, 230, "Type straight into this PDF in the free Adobe Acrobat Reader.")
+    c.drawCentredString(PW / 2, 211, "No design app, no account, no login.")
     c.setFillColor(HexColor("#F7E9E6")); c.rect(46.6, 46.6, PW - 93.2, 120, fill=1, stroke=0)
     spaced(PW / 2, 118, "8 PRINTABLE PAGES  ·  4 DESIGNS IN 2 COLORS", 11, GREEN, d.FM, 2.4)
     spaced(PW / 2, 86, "PRINT AT HOME  ·  INSTANT DOWNLOAD", 9, d.MUT, d.FM, 2.0)
@@ -279,7 +282,7 @@ d.heading("Wording ideas for the name line")
 d.bullets(["Ava's Sweet Sixteen", "Mia Turns Seven", "Chloe's 21st Birthday", "Emma Turns Thirty",
            "Grace is Turning 40", "Lily's First Birthday"], cols=3)
 d.heading("Good to know")
-d.text("Keep the sign name to about 12 letters and the invitation name line to about 22. Digital file only: nothing ships. Do one test print on plain paper first, check every date and RSVP line twice, and keep lines short to fit the card. Personal use.")
+d.text("Name lines hold up to 22 letters on the invitation, 12 on the sign and 16 in the thank-you signature. You can also retype the three small headings on the details card. Digital file only: nothing ships. Do one test print on plain paper first, check every date and RSVP line twice, and keep lines short to fit the card. Personal use.")
 d.end()
 
 card_page(invite, "pink", "Invitation · pink cabana")

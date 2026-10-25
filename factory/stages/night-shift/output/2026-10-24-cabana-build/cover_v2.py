@@ -12,11 +12,14 @@ def card(n, k):
     p = pg(n); W, H = p.size; cw, ch = int(W * 5 / 11), int(H * 7 / 8.5)
     gap = int(W * 0.25 / 11); x = (W - 2 * cw - gap) // 2 + k * (cw + gap); y = (H - ch) // 2
     return p.crop((x, y, x + cw, y + ch))
-s = pg(9); W, H = s.size; sw, sh = int(W * 8 / 8.5), int(H * 10 / 11)
+s = pg(10); W, H = s.size; sw, sh = int(W * 8 / 8.5), int(H * 10 / 11)
 sign = s.crop(((W - sw) // 2, (H - sh) // 2, (W + sw) // 2, (H + sh) // 2))
 # matted print: sign centred on the mat area of the slot
 SC = 2000 / 1448 * 1.25
-scene = place.place("frame", [sign], scale=SC)  # 2500 wide
+mw = int(sign.width * 0.075)
+matted = Image.new("RGB", (sign.width + 2 * mw, int((sign.width + 2 * mw) * 596 / 490)), (246, 241, 232))
+matted.paste(sign, (mw, (matted.height - sign.height) // 2))
+scene = place.place("frame", [matted], scale=SC)  # 2500 wide
 def stand(img, c, x, y_bottom, h, ang=0):
     w = int(c.width * h / c.height); c = c.resize((w, h), Image.LANCZOS).convert("RGBA")
     if ang: c = c.rotate(ang, expand=True, resample=Image.BICUBIC)
@@ -33,7 +36,7 @@ img = scene.convert("RGBA")
 k = SC
 top = int(882 * k)  # console top surface
 stand(img, card(7, 0), int(338 * k), top, int(372 * k), 3)
-stand(img, card(4, 0), int(832 * k), top + int(6 * k), int(430 * k), -2)
+stand(img, card(3, 0), int(832 * k), top + int(6 * k), int(430 * k), -2)
 img = img.convert("RGB")
 cx0, cy0 = int(150 * k), int(8 * k); cw = int(1150 * k)
 img = img.crop((cx0, cy0, cx0 + cw, cy0 + int(cw * 0.8))).resize((2000, 1600), Image.LANCZOS)
@@ -45,7 +48,7 @@ def font(n, s, w=None):
         except Exception: pass
     return f
 d = ImageDraw.Draw(img, "RGBA")
-title, sub, color = "Pink Bow Invitation Set", "4 CARDS  ·  2 COLORS  ·  EDITABLE", "#B24E64"
+title, sub, color = "Pink Bow Invitation Set", "4 DESIGNS  ·  2 COLORS  ·  EDITABLE", "#B24E64"
 ft = font("Lora-Variable.ttf", 100, 650); fs = font("Poppins-Medium.ttf", 46)
 pad = 34; bw = max(d.textlength(title, font=ft), d.textlength(sub, font=fs) + 40) + pad * 2; bh = 100 + 56 + pad * 2 + 6
 x0 = (2000 - bw) / 2; y0 = 22

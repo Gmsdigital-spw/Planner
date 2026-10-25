@@ -58,10 +58,10 @@ import subprocess
 subprocess.run(["pdftoppm", "-r", "220", "-png", "-f", "3", "-l", "3", OUT + "/filled.pdf" if os.path.exists(OUT + "/filled.pdf") else PDF, OUT + "/hz"], check=True)
 hz = Image.open([OUT + "/" + f for f in os.listdir(OUT) if f.startswith("hz")][0]).convert("RGB")
 W, H = hz.size; cw2, ch2 = int(W * 5 / 11), int(H * 7 / 8.5); gx = int(W * 0.25 / 11); x0 = (W - 2 * cw2 - gx) // 2; y0 = (H - ch2) // 2
-crop = hz.crop((x0 + int(cw2 * 0.12), y0 + int(ch2 * 0.418), x0 + int(cw2 * 0.88), y0 + int(ch2 * 0.86)))
+crop = hz.crop((x0, y0 + int(ch2 * 0.04), x0 + cw2, y0 + int(ch2 * 0.93)))
 im = gs.paper(pal["paper"]); d = ImageDraw.Draw(im)
-gs._header(d, pal, "Type your own party details", "SAMPLE TYPED IN FREE ADOBE ACROBAT READER  ·  70 TYPE-IN LINES")
-cwid = 1460; gs.place(im, crop, cwid, ((gs.IW - cwid) // 2, 330))
+gs._header(d, pal, "Type your own party details", "SAMPLE TYPED IN FREE ADOBE ACROBAT READER  ·  82 TYPE-IN LINES")
+cwid = 920; gs.place(im, crop, cwid, ((gs.IW - cwid) // 2, 320))
 gs.save_jpeg(im, OUT + "/3-closeup.jpg")
 # ---- photo 4: what's included
 im = gs.paper(pal["paper"]); d = ImageDraw.Draw(im)

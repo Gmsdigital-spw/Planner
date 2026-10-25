@@ -104,8 +104,9 @@ def main(src, out):
             a.DA = pikepdf.String(f"/{fname} {0 if auto else size:g} Tf {color}")
             a.Q = 1
             # cap length: what fits at 70% of the design size
-            per = text_width("N", widths, size) or 5
-            a.MaxLen = max(10, min(int(a.get("/MaxLen", 60)), int((w - 4) / per * 1.1)))
+            sample = "MONDAY, MAGNOLIA HOUSE BALLROOM" if val.isupper() else "Chloe's Birthday party"
+            per = (text_width(sample, widths, size) / len(sample)) or 5  # average letter at the design size
+            a.MaxLen = max(8, min(int(a.get("/MaxLen", 60)), int((w - 6) / per)))
             s = size
             while s > 5 and text_width(val, widths, s) > w - 4:
                 s -= 0.25
