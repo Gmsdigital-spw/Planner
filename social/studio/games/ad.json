@@ -1,0 +1,235 @@
+{
+ "dur": 19.15,
+ "vo": "social/studio/media/vo/games-vo.mp3",
+ "music": "social/studio/media/vo/games-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/games",
+   "cover": "cover.jpg",
+   "price": "2.99",
+   "pages": 13,
+   "listTitle": "Christmas Party Games Bundle, 8 Holiday Trivia, Bingo, Would You Rather (Digital Download)",
+   "strip": [
+    "p-03.png",
+    "p-06.png",
+    "p-08.png",
+    "p-09.png"
+   ],
+   "bg": [
+    "#c8282e",
+    "#560e12"
+   ],
+   "accent": "#a3191e",
+   "hl": "#ffd34d",
+   "dot": "#ffe3e3"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-03.png",
+     "p-06.png",
+     "p-08.png",
+     "p-09.png"
+    ],
+    "type": "grid",
+    "t0": 0,
+    "t1": 2.93,
+    "beats": [
+     0.1,
+     0.72,
+     1.34,
+     1.96
+    ]
+   },
+   {
+    "page": "p-03.png",
+    "type": "pan",
+    "t0": 2.93,
+    "t1": 4.85,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-06.png",
+     "p-07.png",
+     "p-10.png"
+    ],
+    "type": "fan",
+    "t0": 4.85,
+    "t1": 6.34,
+    "beats": [
+     4.95,
+     5.31,
+     5.66
+    ]
+   },
+   {
+    "page": "p-08.png",
+    "type": "pan",
+    "t0": 6.34,
+    "t1": 12.24,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "type": "phone",
+    "t0": 12.24,
+    "t1": 15.96,
+    "beats": [
+     0.43,
+     1.3,
+     1.69,
+     2.49,
+     2.89
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 15.96,
+    "t1": 19.45
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.51,
+   "*8* Christmas | party games | ready to *print*"
+  ],
+  [
+   2.93,
+   4.42,
+   "*Trivia* | with the *answer key*"
+  ],
+  [
+   4.85,
+   5.92,
+   "*Would You Rather* | cards"
+  ],
+  [
+   6.34,
+   8.82,
+   "*Find the Guest* Bingo | everyone *mingles*"
+  ],
+  [
+   9.24,
+   11.82,
+   "*4 to 30* people | kids to *grandparents*"
+  ],
+  [
+   12.24,
+   13.31,
+   "*13* pages"
+  ],
+  [
+   13.73,
+   14.66,
+   "Instant *download*"
+  ],
+  [
+   15.08,
+   15.78,
+   "Tap the *link*"
+  ],
+  [
+   15.96,
+   17.0,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.72,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.34,
+   "pop"
+  ],
+  [
+   1.96,
+   "pop"
+  ],
+  [
+   2.88,
+   "whoosh"
+  ],
+  [
+   4.8,
+   "whoosh"
+  ],
+  [
+   4.95,
+   "pop"
+  ],
+  [
+   5.31,
+   "pop"
+  ],
+  [
+   5.66,
+   "pop"
+  ],
+  [
+   6.29,
+   "whoosh"
+  ],
+  [
+   12.19,
+   "whoosh"
+  ],
+  [
+   12.67,
+   "whoosh"
+  ],
+  [
+   15.13,
+   "tap"
+  ],
+  [
+   15.38,
+   "pop"
+  ],
+  [
+   15.91,
+   "whoosh"
+  ],
+  [
+   16.31,
+   "impact"
+  ],
+  [
+   16.76,
+   "pop"
+  ]
+ ]
+}

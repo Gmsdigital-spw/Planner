@@ -1,0 +1,82 @@
+{
+ "vo": "social/studio/media/vo/games-vo.mp3",
+ "music": "social/studio/media/vo/games-music.wav",
+ "product": {
+  "dir": "/social/studio/media/games",
+  "cover": "cover.jpg",
+  "price": "2.99",
+  "pages": 13,
+  "listTitle": "Christmas Party Games Bundle, 8 Holiday Trivia, Bingo, Would You Rather (Digital Download)",
+  "strip": [
+   "p-03.png",
+   "p-06.png",
+   "p-08.png",
+   "p-09.png"
+  ],
+  "bg": [
+   "#c8282e",
+   "#560e12"
+  ],
+  "accent": "#a3191e",
+  "hl": "#ffd34d",
+  "dot": "#ffe3e3"
+ },
+ "phrases": [
+  {
+   "say": "Eight Christmas party games, ready to print.",
+   "cap": "*8* Christmas | party games | ready to *print*",
+   "scene": "grid",
+   "pages": [
+    "p-03.png",
+    "p-06.png",
+    "p-08.png",
+    "p-09.png"
+   ]
+  },
+  {
+   "say": "Trivia, with the answer key.",
+   "cap": "*Trivia* | with the *answer key*",
+   "scene": "pan",
+   "page": "p-03.png"
+  },
+  {
+   "say": "Would You Rather cards.",
+   "cap": "*Would You Rather* | cards",
+   "scene": "fan",
+   "pages": [
+    "p-06.png",
+    "p-07.png",
+    "p-10.png"
+   ]
+  },
+  {
+   "say": "Find the Guest Bingo, so everyone mingles.",
+   "cap": "*Find the Guest* Bingo | everyone *mingles*",
+   "scene": "pan",
+   "page": "p-08.png"
+  },
+  {
+   "say": "For four to thirty people, kids to grandparents.",
+   "cap": "*4 to 30* people | kids to *grandparents*"
+  },
+  {
+   "say": "Thirteen pages.",
+   "cap": "*13* pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Instant download.",
+   "cap": "Instant *download*"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

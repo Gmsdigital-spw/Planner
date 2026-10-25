@@ -1,0 +1,84 @@
+{
+ "vo": "social/studio/media/vo/ginger-vo.mp3",
+ "music": "social/studio/media/vo/ginger-music.wav",
+ "product": {
+  "dir": "/social/studio/media/ginger",
+  "cover": "cover.jpg",
+  "price": "4.49",
+  "pages": 15,
+  "listTitle": "Gingerbread House Contest Kit Printable, Decorating Contest Judge Score Cards, Voting Ballots, Award Certificates",
+  "strip": [
+   "p-07.png",
+   "p-10.png",
+   "p-11.png",
+   "p-12.png"
+  ],
+  "bg": [
+   "#b8572e",
+   "#4a1f10"
+  ],
+  "accent": "#9a3f1c",
+  "hl": "#ffd34d",
+  "dot": "#ffe6d6"
+ },
+ "phrases": [
+  {
+   "say": "Your gingerbread contest, finally fair.",
+   "cap": "Your *gingerbread* contest | finally *fair*",
+   "scene": "fan",
+   "pages": [
+    "p-07.png",
+    "p-10.png",
+    "p-12.png"
+   ]
+  },
+  {
+   "say": "Judges score every house on five things, from one to five.",
+   "cap": "Judges score | *5 things* | from *1 to 5*",
+   "scene": "pan",
+   "page": "p-07.png"
+  },
+  {
+   "say": "Guests vote People's Choice.",
+   "cap": "Guests vote | *People's Choice*",
+   "scene": "pan",
+   "page": "p-10.png"
+  },
+  {
+   "say": "Kids, teens and adults each get a winner.",
+   "cap": "*Kids* *teens* *adults* | each get a *winner*",
+   "scene": "grid",
+   "pages": [
+    "p-12.png",
+    "p-13.png",
+    "p-14.png",
+    "p-15.png"
+   ]
+  },
+  {
+   "say": "Twelve awards, from Grand Champion to Pretzel Architect.",
+   "cap": "*12 awards* | *Grand Champion* | to *Pretzel Architect*",
+   "scene": "pan",
+   "page": "p-11.png"
+  },
+  {
+   "say": "Fifteen pages.",
+   "cap": "*15* pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Instant download.",
+   "cap": "Instant *download*"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}
