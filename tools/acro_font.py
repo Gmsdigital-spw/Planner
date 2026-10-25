@@ -7,13 +7,11 @@ headings (-2 file, -1 polish, -1 images). This tool embeds static Lora instances
 fonts in the AcroForm, points every field at them and draws a fresh, centred appearance, so the
 sample text AND whatever the buyer types use Lora in Adobe Acrobat Reader.
 
-Long entries: detail lines get auto size (DA size 0) so Acrobat shrinks a long address instead
-of clipping it, and MaxLen is capped to what fits at 70% of the design size.
+Long entries: sizes stay fixed (a card must not mix sizes), and MaxLen is capped to what fits at the
+design size, so a buyer can't type past the edge of the card.
 
 Usage: python3 tools/acro_font.py in.pdf out.pdf
   Times-Italic fields -> Lora Italic (semi-bold 500); Times-Roman fields -> Lora Regular.
-  Fields whose design size is 18 pt or more keep their size (names, headlines); smaller ones
-  (detail lines) become auto size.
 """
 import io, sys, re
 import pikepdf
@@ -102,12 +100,12 @@ def main(src, out):
             color = color.group(1) if color else "0 0 0 rg"
             rect = [float(v) for v in a.Rect]; w, h = rect[2] - rect[0], rect[3] - rect[1]
             val = str(a.get("/V", ""))
-            auto = size < 18
+            auto = False  # fixed sizes: every line on a card stays the same size after typing (inspection Oct 24)
             a.DA = pikepdf.String(f"/{fname} {0 if auto else size:g} Tf {color}")
             a.Q = 1
             # cap length: what fits at 70% of the design size
-            per = text_width("N", widths, size * 0.7) or 5
-            a.MaxLen = max(12, min(int(a.get("/MaxLen", 60)), int((w - 4) / per * 1.15)))
+            per = text_width("N", widths, size) or 5
+            a.MaxLen = max(10, min(int(a.get("/MaxLen", 60)), int((w - 4) / per * 1.1)))
             s = size
             while s > 5 and text_width(val, widths, s) > w - 4:
                 s -= 0.25
@@ -120,6 +118,28 @@ def main(src, out):
             a.AP = Dictionary(N=pdf.make_indirect(ap))
             n += 1
     af.NeedAppearances = False
+    af.DA = pikepdf.String(f"/{ROLES['roman'][2]} 10 Tf 0 g")
+    for k in [k for k in fdict.keys() if k not in ("/" + ROLES["roman"][2], "/" + ROLES["italic"][2])]:
+        del fdict[k]  # old Times entries: nothing uses them now
+    for page in pdf.pages:  # reportlab opens every page with an empty "BT /F1 12 Tf 14.4 TL ET": remove it
+        cs = page.Contents
+        for x in (cs if isinstance(cs, pikepdf.Array) else [cs]):
+            raw = x.read_bytes()
+            if b"BT /F1 12 Tf 14.4 TL ET" in raw:
+                x.write(raw.replace(b"BT /F1 12 Tf 14.4 TL ET", b""))
+    used = b""  # drop fonts NO page uses (reportlab's stray Helvetica /F1); resource dicts are shared
+    for page in pdf.pages:
+        cs = page.Contents
+        used += b"".join(x.read_bytes() for x in (cs if isinstance(cs, pikepdf.Array) else [cs]))
+    seen = set()
+    for page in pdf.pages:
+        fr = page.get("/Resources", {}).get("/Font")
+        if fr is None or fr.objgen in seen and fr.objgen != (0, 0):
+            continue
+        seen.add(fr.objgen)
+        for k in list(fr.keys()):
+            if (k + " ").encode() not in used:
+                del fr[k]
     pdf.save(out)
     print("refonted", n, "fields ->", out)
 

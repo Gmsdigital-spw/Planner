@@ -48,7 +48,7 @@ sq = img.crop((200, 0, 1800, 1600)).resize((300, 300), Image.LANCZOS); sq.save(O
 # ---- photo 2: both colourways, invite + details (4 cards in a row)
 cards = [card(2, 0), card(3, 0), card(4, 0), card(5, 0)]
 im = gs.paper(pal["paper"]); d = ImageDraw.Draw(im)
-gs._header(d, pal, "Two colourways, two cards", "PINK AND SAGE  ·  TYPE IN THE PDF, NO ACCOUNT NEEDED")
+gs._header(d, pal, "Two colors, every card", "PINK AND SAGE  ·  TYPE IN THE PDF, NO ACCOUNT NEEDED")
 pw_ = 700
 for i, pg in enumerate(pages[2:6]):
     gs.place(im, pg, pw_, ((gs.IW - 2 * pw_ - 60) // 2 + (i % 2) * (pw_ + 60), 330 + (i // 2) * 630))
@@ -60,7 +60,7 @@ hz = Image.open([OUT + "/" + f for f in os.listdir(OUT) if f.startswith("hz")][0
 W, H = hz.size; cw2, ch2 = int(W * 5 / 11), int(H * 7 / 8.5); gx = int(W * 0.25 / 11); x0 = (W - 2 * cw2 - gx) // 2; y0 = (H - ch2) // 2
 crop = hz.crop((x0 + int(cw2 * 0.12), y0 + int(ch2 * 0.418), x0 + int(cw2 * 0.88), y0 + int(ch2 * 0.86)))
 im = gs.paper(pal["paper"]); d = ImageDraw.Draw(im)
-gs._header(d, pal, "Type over every green line", "70 TYPE-IN LINES  ·  FREE ADOBE ACROBAT READER")
+gs._header(d, pal, "Type your own party details", "SAMPLE TYPED IN FREE ADOBE ACROBAT READER  ·  70 TYPE-IN LINES")
 cwid = 1460; gs.place(im, crop, cwid, ((gs.IW - cwid) // 2, 330))
 gs.save_jpeg(im, OUT + "/3-closeup.jpg")
 # ---- photo 4: what's included

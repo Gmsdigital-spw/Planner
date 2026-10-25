@@ -26,7 +26,7 @@ def stand(img, c, x, y_bottom, h, ang=0):
     sh.paste(blk, (52, 44), blk); sh = sh.filter(ImageFilter.GaussianBlur(18))
     y = y_bottom - c.height
     cs = Image.new('RGBA', (c.width + 60, 60), (0, 0, 0, 0)); cd = ImageDraw.Draw(cs)
-    cd.ellipse((10, 18, c.width + 50, 46), fill=(30, 18, 10, 150)); cs = cs.filter(ImageFilter.GaussianBlur(9))
+    cd.ellipse((14, 20, c.width + 46, 44), fill=(25, 14, 6, 200)); cs = cs.filter(ImageFilter.GaussianBlur(7))
     img.alpha_composite(cs, (x - 30, y_bottom - 34))
     img.alpha_composite(sh, (x - 40, y - 40)); img.alpha_composite(c, (x, y))
 img = scene.convert("RGBA")
@@ -35,7 +35,7 @@ top = int(882 * k)  # console top surface
 stand(img, card(7, 0), int(338 * k), top, int(372 * k), 3)
 stand(img, card(4, 0), int(832 * k), top + int(6 * k), int(430 * k), -2)
 img = img.convert("RGB")
-cx0, cy0 = int(250 * k), int(150 * k); cw = int(1000 * k)
+cx0, cy0 = int(150 * k), int(8 * k); cw = int(1150 * k)
 img = img.crop((cx0, cy0, cx0 + cw, cy0 + int(cw * 0.8))).resize((2000, 1600), Image.LANCZOS)
 FD = "/usr/share/fonts/truetype/google-fonts/"
 def font(n, s, w=None):
@@ -45,10 +45,10 @@ def font(n, s, w=None):
         except Exception: pass
     return f
 d = ImageDraw.Draw(img, "RGBA")
-title, sub, color = "Pink Bow Invitation Set", "11 PAGES  ·  2 COLOURS  ·  EDITABLE PDF", "#B24E64"
-ft = font("Lora-Variable.ttf", 100, 650); fs = font("Poppins-Medium.ttf", 34)
-pad = 34; bw = max(d.textlength(title, font=ft), d.textlength(sub, font=fs) + 40) + pad * 2; bh = 100 + 42 + pad * 2 + 6
-x0 = (2000 - bw) / 2; y0 = 34
+title, sub, color = "Pink Bow Invitation Set", "4 CARDS  ·  2 COLORS  ·  EDITABLE", "#B24E64"
+ft = font("Lora-Variable.ttf", 100, 650); fs = font("Poppins-Medium.ttf", 46)
+pad = 34; bw = max(d.textlength(title, font=ft), d.textlength(sub, font=fs) + 40) + pad * 2; bh = 100 + 56 + pad * 2 + 6
+x0 = (2000 - bw) / 2; y0 = 22
 d.rounded_rectangle((x0 + 6, y0 + 10, x0 + bw + 6, y0 + bh + 10), 26, fill=(0, 0, 0, 40))
 d.rounded_rectangle((x0, y0, x0 + bw, y0 + bh), 26, fill=(251, 247, 240, 245))
 d.rounded_rectangle((x0 + 14, y0 + 14, x0 + bw - 14, y0 + bh - 14), 18, outline=color, width=3)
