@@ -1,0 +1,1 @@
+{"id":"bolt-2026-10-25-verify-df6c","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/listings/4602703062?includes=Images","tag":"listing"},{"op":"etsy","method":"GET","path":"/shops/68605457/listings/4602703062/files","tag":"files"}]}
