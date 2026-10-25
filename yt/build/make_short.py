@@ -436,6 +436,10 @@ def main():
         raise SystemExit("usage: make_short.py yt/jobs/<id>.json [--fake-tts]")
     spec_path = sys.argv[1]; fake = "--fake-tts" in sys.argv or "--check" in sys.argv
     spec = json.load(open(spec_path))
+    if spec.get("format") == "story":  # illustrated story Shorts live in make_story.py
+        sys.path.insert(0, ROOT)
+        import make_story
+        return make_story.build(spec_path, fake)
     pre_warn = []
     spec = clean_spec(spec, pre_warn)
     if "--check" in sys.argv:

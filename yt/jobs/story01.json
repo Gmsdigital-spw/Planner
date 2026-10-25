@@ -1,0 +1,73 @@
+{
+  "id": "story01",
+  "rev": 2,
+  "format": "story",
+  "title": "One Sentence Saved Him From a Crocodile #shorts",
+  "voice": "andrew",
+  "speed": 1.0,
+  "art": "stickfigure",
+  "music": "tense",
+  "music_volume": 0.05,
+  "cast": {
+    "croc": "a big green cartoon crocodile with a long bumpy snout, small yellow eyes and white pointy teeth",
+    "mom": "a stick-figure mother with a round white head, dot eyes, thin black limbs and a long brown cloak",
+    "boy": "a small stick-figure boy with a round white head, dot eyes, thin black limbs and a tan tunic"
+  },
+  "lines": [
+    {
+      "text": "What one sentence could save a boy from a hungry crocodile?",
+      "label": "ONE SENTENCE",
+      "headline": "THE CROCODILE PARADOX",
+      "image": "{croc} standing waist-deep in a river, its huge jaws wide open right above {boy}, who it holds in one claw, while {mom} stands frozen in shock on the sandy riverbank, dramatic stormy sky"
+    },
+    {
+      "text": "A crocodile snatched a little boy, then offered his mother a deal.",
+      "label": "THE RIVER",
+      "headline": "SNATCHED FROM THE SHORE",
+      "image": "{croc} in the shallow river holding {boy} in one claw and pointing at {mom} with the other, {mom} on the sandy riverbank with both hands on her head in panic"
+    },
+    {
+      "text": "\"Guess what I'll do next, and your son goes free.\"",
+      "label": "THE DEAL",
+      "headline": "GUESS RIGHT, HE GOES FREE",
+      "image": "close-up of {croc} grinning slyly with one claw raised like making a promise, {boy} held in its other arm, a calm river behind"
+    },
+    {
+      "text": "\"But guess wrong,\" it hissed, \"and I eat him.\"",
+      "label": "THE CATCH",
+      "headline": "GUESS WRONG, HE'S DINNER",
+      "image": "{croc} licking its lips and holding {boy} right next to its open jaws full of pointy teeth, {boy} looking terrified"
+    },
+    {
+      "text": "She looked it in the eye and said, \"You will eat my son.\"",
+      "label": "HER ANSWER",
+      "headline": "YOU WILL EAT MY SON",
+      "image": "{mom} standing tall and calm on the riverbank, pointing one finger straight at {croc}, who holds {boy} in the river and looks surprised"
+    },
+    {
+      "text": "If it eats him, her guess was right, so it broke its promise.",
+      "label": "OPTION ONE",
+      "headline": "IF IT EATS HIM",
+      "image": "{croc} lifting {boy} toward its open jaws, then freezing with a worried frown, {mom} watching from the riverbank"
+    },
+    {
+      "text": "If it lets him go, her guess was wrong, so it should eat him.",
+      "label": "OPTION TWO",
+      "headline": "IF IT LETS HIM GO",
+      "image": "{croc} setting {boy} down on the sand near {mom}, then pausing with a confused frown, one claw still reaching for {boy}"
+    },
+    {
+      "text": "Either way it breaks its own deal, so the crocodile froze, totally stuck.",
+      "label": "THE TRAP",
+      "headline": "NO MOVE LEFT",
+      "image": "{croc} sitting frozen in the river scratching its head with one claw, eyes spinning in dizzy confusion, holding {boy} loosely, {mom} watching closely from the riverbank"
+    },
+    {
+      "text": "While it froze, she grabbed her son and ran, saved by one clever sentence.",
+      "label": "SHE WINS",
+      "headline": "ONE SENTENCE SAVED HIM",
+      "image": "{mom} running across the sandy riverbank carrying {boy} in her arms, both smiling, while {croc} sits frozen in the river behind them, puzzled, warm golden sunset light"
+    }
+  ],
+  "title_card": "The Crocodile Paradox"
+}
