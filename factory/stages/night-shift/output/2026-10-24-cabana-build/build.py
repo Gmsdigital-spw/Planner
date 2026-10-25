@@ -266,7 +266,7 @@ d.start("How to edit and print", "Everything you need to fill in your details an
 d.heading("Edit your invitation")
 d.bullets(["Download the PDF to a computer and open it in Adobe Acrobat Reader (free). A browser preview may not save your typing.",
            "Click any green line of text on pages 3 to 10 and type over the sample words. Every changing line is its own box.",
-           "Each card on a page is separate, so you can make two different versions on one sheet if you want to.",
+           "Each card on a page is separate, so you can make two different versions on one sheet. Detail lines type in CAPITALS automatically, like the sample.",
            "Save the file (File, Save As) before printing. Keep the original as a clean copy for next time.",
            "The headline, stripes, bow and leaves are part of the design. Fonts and colors cannot be changed."], numbered=True)
 d.heading("Print and cut")

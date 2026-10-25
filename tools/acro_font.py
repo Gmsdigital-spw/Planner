@@ -103,6 +103,9 @@ def main(src, out):
             auto = False  # fixed sizes: every line on a card stays the same size after typing (inspection Oct 24)
             a.DA = pikepdf.String(f"/{fname} {0 if auto else size:g} Tf {color}")
             a.Q = 1
+            if val and val == val.upper() and any(ch.isalpha() for ch in val):
+                # keep the all-caps look whatever the buyer types (Acrobat keystroke action)
+                a.AA = Dictionary(K=Dictionary(S=Name.JavaScript, JS=pikepdf.String("if(!event.willCommit)event.change=event.change.toUpperCase();")))
             # cap length: what fits at 70% of the design size
             sample = "MONDAY, MAGNOLIA HOUSE BALLROOM" if val.isupper() else "Chloe's Birthday party"
             per = (text_width(sample, widths, size) / len(sample)) or 5  # average letter at the design size
