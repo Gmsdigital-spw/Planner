@@ -10,6 +10,8 @@
 | Files | `/home/claude/kit/pages/<product id>/` (rendered by stage 06) | real page images | If missing: download the product's PDF asset and gs.render_pages it there (kit in /home/claude/kit) |
 | Playbook | `../../../playbooks/tablet-mockup-pin.md` | Full file | Measured by outbound clicks |
 | Skill | `../../../skills/pixel/SKILL.md` | Full file | Checklist and lessons |
+| Notebook | `../../../notebook/buyer-voice.md` | "What our buyers liked", the product lane's rival words | Hooks in buyers' own words |
+| Notebook | `../../../notebook/predictions.md` | "Calibration" | How far off Pixel's past guesses were |
 | Shared | `../../../shared/accounts.md` | "Pinterest" | Board names |
 | Database | pinstats (newest), lessons (active), pins (status ready/queued count) | | What is winning; queue depth |
 | Reference | `../references/wall-art.md` | "Pixel" section | Only for a wallart product |
@@ -43,6 +45,11 @@
    way (up to 7 per run).
 5. Pins with status "retired" are Grayson's removed old-style pins: never re-image, queue,
    copy or recreate them. Never a solid colour-block pin.
+5b. HOOK AND GUESS (Oct 26, 2026). At least 1 of each product's pins uses a buyer-voice phrase
+   for its lane as the hook when one exists (tag hook="buyer-voice" on the pin doc so the keeper
+   can compare it). Every new pin gets prediction {impressions7, saves7, why} on its doc: start
+   from the newest pinstats median for its style, apply Pixel's Calibration line in
+   predictions.md. Whole numbers; with no pin stats yet, guess low and say "no data" in why.
 6. Set crew/pixel idle. Write `## Pins` in the run notes: pins made per product, styles used,
    queue depth.
 

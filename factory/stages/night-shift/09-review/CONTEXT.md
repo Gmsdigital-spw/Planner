@@ -89,6 +89,9 @@ G. Notebook keeper (Grayson, Oct 23, 2026: "notes with everything we do so they 
        product.coverStyle or the cover's look, theme, price, lane), pins posted (pins docs: style,
        coverLook, board, productId), Herald's posts (social docs: channel, hook, format), the
        trading day (modules/trading/ledger/<day>: trades, setup, pnl), price changes (pricing/main).
+       Predictions (Oct 26, 2026): copy a product's prediction into its listing line as tags
+       pred_views7, pred_favs7, pred_sales7; a pin's as pred_impressions7, pred_saves7 (plus
+       hook); a Herald social doc's prediction.views7 as pred_views7. No prediction = no pred tag.
    (b) OUTCOMES: `nb.py pending --days 7`; fill up to 40 from stats/ (views, favs for the listing
        now minus at publish), pinstats/ (impressions, saves, clicks), social doc stats, the ledger.
        Missing stays missing; never 0 for unknown.
@@ -100,6 +103,23 @@ G. Notebook keeper (Grayson, Oct 23, 2026: "notes with everything we do so they 
        lane's "Grayson's rules" if it is not there yet. Keep each lane file under 120 lines.
    (e) Update business.md's Scoreboard row for this week. Report what you wrote in the run
        notes under "## Notebook" (3 lines max), committed with the Night Shift's push.
+   (f) BUYER VOICE (Oct 26, 2026). `git pull --rebase` was done at 00; run
+       `python3 factory/notebook/buyer_voice.py` (it reads the reviews Bolt fetched into gw/out and
+       rebuilds "Our reviews"). For each NEW review: add or raise the count on a theme line under
+       "What our buyers liked" (what they praised, in a few words, with the listing id); a 4★ or
+       lower review's complaint goes in notebook/etsy.md "What doesn't work" the same day. A new
+       review on a Winner goes on its card in winners.md.
+   (g) WINNERS (Oct 26, 2026). For every listing in the sales collection without a card in
+       notebook/winners.md: write a card (shape in that file: sold, price at sale, lane, season,
+       views, favorites, cover at sale from the product doc or results.jsonl, traffic "unknown"
+       unless a real source says otherwise, review, "Copy this"). Refresh the views line of
+       existing cards from the newest stats. With 3+ cards, rewrite the "Pattern" line: what the
+       winners share, with counts. Facts only; unknown stays unknown.
+   (h) GRADE (Oct 26, 2026). Run `python3 factory/notebook/grade.py` (rewrites predictions.md).
+       For each agent whose Calibration line says its guesses run 2x or more off, add ONE dated
+       line to that agent's "What I've learned" (skills/atlas, skills/pixel or skills/herald):
+       the hit rate, the worst miss, and the adjustment it will make. Once per agent per week
+       (skip if a grade line from the last 7 days is already there). Nothing graded = write nothing.
 
 ## Outputs
 

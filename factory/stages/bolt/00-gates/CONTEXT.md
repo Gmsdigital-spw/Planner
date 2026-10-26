@@ -34,7 +34,10 @@
    snapshot, still fetch the active list with Images in one job).
 6. SALES SYNC (Grayson, Oct 24, 2026: every run, never skipped, even dry runs and paused-by-cap
    days). Add {"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":
-   "receipts"} to the snapshot job (or, if the snapshot was skipped, to the active-list job).
+   "receipts"} AND {"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":
+   "reviews"} to the snapshot job (or, if the snapshot was skipped, to the active-list job).
+   The reviews answer is only read later by the Night Shift (notebook/buyer_voice.py, Oct 26,
+   2026); if it fails, note it in the run log and carry on: it never blocks a sale sync or a publish.
    Then: ArtifactData query collection "sales" (limit 300, out_dir <tmp>/sales), and run
    `python3 factory/shared/etsy_sales.py gw/out/<job id>.json <tmp>/sales <tmp>/sales-writes.json`.
    If it lists new sales, write the file's "writes" with ONE ArtifactData batch (new docs only,

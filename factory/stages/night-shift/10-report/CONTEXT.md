@@ -48,6 +48,18 @@
    SKILL.md under "## Quality checklist"; delete any LESSONS line a later number disproved;
    rewrite "## Running judgment of each agent" in skills/foreman/SKILL.md (one line per agent,
    numbers only).
+5b. WEEKLY SCORECARD (Sundays, after 5; Grayson, Oct 26, 2026). Write
+   `factory/notebook/scorecard.md` (keep the newest 8 weeks, newest first) with one block:
+   "## Week ending <day key>": shop numbers this week vs last (views, favorites, sales, reviews
+   from stats/ and sales), what the crew LEARNED (every notebook line, LESSONS line and
+   "What I've learned" line added in the last 7 days: `git log --since="7 days ago" -p --
+   factory/notebook factory/LESSONS.md factory/skills` filtered to added lines, summarised in
+   at most 6 bullets), what CHANGED because of it (one bullet each), prediction hit rate per
+   agent (predictions.md) and the most improved and the weakest agent (from this week's
+   standups' grades). Then send Grayson the scorecard with SendUserMessage AND PushNotification
+   (status "proactive"), at most 3 plain lines (shared/rules.md): line 1 the week's buyer
+   numbers and change, line 2 the most useful thing learned and the change it makes next week,
+   line 3 best and weakest agent. Real numbers only; with nothing learned, say so.
 6. Schedule sync. If settings.schedule.time differs from settings.schedule.applied: ToolSearch
    `select:mcp__claude-code-remote__update_trigger`, call it with the Night Shift task id
    (accounts.md) and cron "CRON_TZ=America/Chicago M H * * *", then set schedule.applied =
@@ -60,7 +72,7 @@
    ("Night Shift <day key>: skills + lessons + runlog"). A 403 goes in the report's NEEDS YOU
    line as "GitHub access needs a look" and in the run log; it does not fail the run.
 9. Finish with a two-line summary of the run (the final message; no SendUserMessage unless
-   something is red and needs Grayson).
+   something is red and needs Grayson, or it is Sunday's weekly scorecard, step 5b).
 
 ## Audit
 
@@ -79,3 +91,4 @@
 | Standup | fleet/commander/standups/<day key> | shape above |
 | Memory | skills/*/SKILL.md, LESSONS.md, playbooks/ | appended lines |
 | Run log | `factory/runlog.jsonl` | one line |
+| Weekly scorecard (Sundays) | `factory/notebook/scorecard.md` + one 3-line message | step 5b |

@@ -16,6 +16,11 @@ The Night Shift (daily) and Atlas Prime (Sundays) WRITE it from real results.
 | `shorts.md` | Gmula YouTube Shorts | Studio Floor |
 | `ops.md` | the crew itself: what breaks, what fixes stick | Mechanic, Night Shift review, every crew when a bug hits |
 | `results.jsonl` | one line per thing we made, posted or traded, plus its numbers later | the notebook keepers |
+| `buyer-voice.md` (Oct 26) | real buyer words: our reviews (auto) and rivals' review words + complaints | Night Shift 01, 05, 08; Herald 05 |
+| `reviews.jsonl` (Oct 26) | every real review of ours, kept by `buyer_voice.py` from Bolt's gateway reads | buyer_voice.py only |
+| `winners.md` (Oct 26) | one card per listing that sold: why it sold, what to copy | Night Shift 01, 03, 06, 08; Herald 03 |
+| `predictions.md` (Oct 26) | every agent's guess vs the real number, hit rate and calibration (rebuilt by `grade.py`) | Night Shift 07, 08; Herald 05 |
+| `scorecard.md` (Oct 26) | the Sunday weekly scorecard: what was learned, what changed, who improved | Grayson, every crew (newest block) |
 
 ## Every lane file has the same 4 sections
 1. **Grayson's rules**: what he told us, word for word where possible, dated. Highest authority
@@ -41,6 +46,12 @@ One JSON line per item: {"day", "lane", "kind" (listing|cover|pin|post|video|sho
 time, symbol, setup...}, "outcome" (filled at 7 days: views, favs, sales, saves, clicks,
 impressions, pnl), "checked" (day the outcome was filled)}.
 Helper: `python3 factory/notebook/nb.py add|outcome|show|pending` (see `--help`).
+
+## Predict, then grade (Oct 26, 2026)
+Before a listing, pin or post goes out its agent writes a 7-day guess (pred_* tags; see grade.py).
+The keeper fills the real 7-day numbers, `grade.py` scores every guess and writes a Calibration
+line per agent ("guesses run 3x too high"). Agents adjust their next guess by it, and a 2x miss
+becomes a "What I've learned" line. Guessing and checking is how they stop guessing.
 
 ## How a lesson gets made
 1. Something gets made/posted/traded -> a results line with tags.

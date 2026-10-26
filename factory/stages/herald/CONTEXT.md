@@ -17,11 +17,17 @@ does stages 03 to 06. Stage 07 always runs. One session; load each stage when yo
 | 00-gates | `notebook/social.md` (full; run `python3 factory/notebook/nb.py show --lane social`), `references/channels.md`, `specs/marketing-wing-v6.md` (full), `specs/foreman-rules.md` (1, 2, 3, 6), `skills/herald/SKILL.md`, `specs/push-week-2026-10-23.md` (the Herald row) | never |
 | 01-post-due | `references/posting-lane.md` | signal/main.live false or firstApprovedAt null |
 | 02-numbers | `references/posting-lane.md` ("Real numbers", "TikTok check") | never |
-| 03-pick | `specs/marketing-wing-v6.md` ("Rules every marketing run follows", rules 1 and 2), `references/docs.md` | social docs exist for today |
+| 03-pick | `specs/marketing-wing-v6.md` ("Rules every marketing run follows", rules 1 and 2), `references/docs.md`, `notebook/winners.md` ("Cards": promote Winners first) | social docs exist for today |
 | 04-media | `social/tools/README.md` (the kit), `references/media-rules.md`, `shared/repo.md` ("Committing"); Sundays: `specs/studio-floor-v6.md` ("Spot" section) and `references/spot.md` | as 03 |
-| 05-write | `references/docs.md`, products/<id> (the full copy) | as 03 |
+| 05-write | `references/docs.md`, products/<id> (the full copy), `notebook/buyer-voice.md` (full), `notebook/predictions.md` ("Calibration") | as 03 |
 | 06-qc | `references/qc.md` | as 03 |
 | 07-log | `shared/logging.md` ("The line", "Helper"), `shared/repo.md` (Herald row) | never |
+
+Buyer voice and guesses (Oct 26, 2026): at 05-write, at least one caption a day leads with a
+buyer-voice phrase for the product's lane when one exists (set the social doc's hook to
+"buyer-voice" so the keeper can compare), and every social doc gets prediction {views7, why}:
+start from that channel's recent views in 02-numbers, then apply Herald's Calibration line in
+notebook/predictions.md. Whole numbers, honest and low beats hopeful.
 
 Do NOT load: the Night Shift or Bolt stages, Pixel's pin rules, the trading spec, any other
 skill (flame, tick, santa, hawk, spot: their rules that matter here are already in

@@ -11,6 +11,8 @@ better than a padded 91.
 | Reference | `../references/rubric.md` | Full file | Rules check, slop check, the six scores |
 | Spec | `../../../specs/cover-styles.md` | "Scoring", newest section | What a cover must do |
 | Skill | `../../../skills/atlas/SKILL.md` | Full file | Checklist and lessons |
+| Notebook | `../../../notebook/predictions.md` | "Calibration" | How far off Atlas's past guesses were; adjust before guessing |
+| Notebook | `../../../notebook/scoreboard.md` | "By lane" | Real views per listing per lane, the base for a guess |
 | Reference | `../references/preflight.md` | Full file | What each fix round checks and fixes |
 | Database | products (stage inspection), products (newest 3 published): cover ids | | What to score; the covers to compare |
 | Reference | `../references/wall-art.md` | "Inspect" section | Only for a wallart product |
@@ -43,6 +45,12 @@ better than a padded 91.
    the rubric's OPEN NICHE proof holds (Oct 24, 2026): then it is fixed, not scrapped.
    Scrap it, say so in the Scout lesson, and build the next approved brief instead. Pass stays
    92; the crew's aim is 95+. Never rewrite an older product's score to a different rubric.
+5b. PREDICT (Oct 26, 2026: the crew learns by guessing, then checking). For every product that
+   PASSED, set products/<id>.prediction = {views7, favs7, sales7, why, at}: what it will do in its
+   first 7 days live. Start from the lane's views per listing in scoreboard "By lane", then apply
+   Atlas's Calibration line in predictions.md (divide or multiply as it says), then adjust for
+   season and for how close it is to a Winner in winners.md. Whole numbers; why is one sentence
+   with the numbers used. An honest low guess beats a hopeful one. The keeper grades it later.
 6. Write one JSON line per scored product to `factory/scores.jsonl`:
    {"d":"<day key>","agent":"atlas","kind":"product","item":"<title>","score":<total>,"metric":null}.
 7. Set crew/atlas idle. Write `## Inspect: <title>` in the run notes: PASS/FAIL, the six

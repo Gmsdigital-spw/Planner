@@ -8,6 +8,8 @@
 | Skill | `../../../skills/scout/SKILL.md` | Full file | Scout's checklist and lessons |
 | Skill | `../../../skills/judge_ideas/SKILL.md` | Full file | The Idea Judge works in this stage |
 | Lessons | `../../../LESSONS.md` | Full file | Numbers-only lessons |
+| Notebook | `../../../notebook/winners.md` | Full file | Why our sales happened: ideas that copy a winner score shopFit higher |
+| Notebook | `../../../notebook/buyer-voice.md` | Full file | The words buyers use; complaints about rivals are ready-made gaps |
 | Database | briefs (newest 60), products (newest 60) | title, niche, lane, status, rejectReason | Never repeat a niche; learn from rejections |
 | Database | sprint/main, lessons (status active), ideas (newest 3) | flags, text | Score shopFit from real results |
 | Database | intel docs whose source is "Scout Intel" (newest 12, i.e. the last day of all-day research) | findings, ideas | Start from today's fresh research: competitors, trends, our numbers. Use its ideas first when they pass the Idea Judge; never copy competitors |
@@ -47,6 +49,13 @@
    Prefer ideas where the gap is big (bundles, more items, editable without Canva, bigger
    print) over crowded free-everywhere lanes (word search, plain coloring pages), which cap
    market at about 9 and fail at 92. See `../references/preflight.md` "Market".
+5c. BUYER VOICE (Oct 26, 2026). From the rival item pages you opened for 5b, copy into
+   `../../../notebook/buyer-voice.md` up to 3 short phrases buyers wrote in reviews (what they
+   loved, in their words) under the lane's "Rival buyer words" line, and any complaint (hard to
+   edit, needs Canva, too few pages, blurry) under "Complaints buyers make about rivals".
+   Format: lane: "phrase" · <rival listing id> · <day key>. Words only, never a reviewer's name.
+   A phrase already listed gets its count raised, not a second line. Skip if no review text was
+   visible. A complaint that matches the brief's gap goes in the brief's `gap` too.
 6. Write ideas/<day key> {day, createdAt, holidayMode, target, items:[{title, lane, buyer,
    holiday, why, verdict, reason, briefId}], note, source}.
 7. Intel refresh (room "intel"), only if intel/etsy or intel/pinterest has lastChecked older

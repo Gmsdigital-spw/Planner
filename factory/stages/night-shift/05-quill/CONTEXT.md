@@ -8,6 +8,7 @@
 | Previous stage | products in stage "copy" (this run's builds) | title, summary, file, brief | What to write for |
 | Spec | `../../../specs/product-floor-v6.md` | SALES PUSH ("SEARCH-FIRST COPY", "PRICES"), the lane's spec (Quill lines) | Search-first titles, prices, lane categories |
 | Skill | `../../../skills/quill/SKILL.md` | Full file | Checklist and lessons |
+| Notebook | `../../../notebook/buyer-voice.md` | Full file | Real buyer words for the first two description lines and the hook |
 | Database | lessons (active), the brief's evidence | | What sells, what Grayson rejected |
 | Reference | `../references/wall-art.md` | "Quill" section | Only for a wallart product |
 
@@ -20,6 +21,10 @@
    lines, lists what is included, says it is a digital PDF download (nothing ships) and how to
    download, and ends with this exact line:
    This design was created with AI assistance under the creative direction of the seller.
+   BUYER VOICE (Oct 26, 2026): when buyer-voice.md has a phrase for this lane or product type
+   (ours first, then rivals'), echo it in the description's first two lines and, if it is also a
+   search phrase, in a tag; answer the lane's top rival complaint in one line ("Edit in any PDF
+   reader, no Canva needed"). Echo, never quote a review as if a buyer wrote it about us.
 3. Price as a number backed by the brief's research: single kits and planners $3.99 to $7.99,
    bundles $8 to $14, wall art sets $6.99 to $11.99, the lane spec's ranges for mug wraps,
    stickers and invitations. Bundle titles lead with the count and the main search phrase.
