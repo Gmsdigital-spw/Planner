@@ -50,14 +50,14 @@
   }
  ],
  "done": null,
- "runs": 166,
+ "runs": 172,
  "lastSignal": {
   "IWM": "2026-10-26T15:15:00Z",
   "XLE": "2026-10-26T15:15:00Z"
  },
- "lastRun": "11:32",
- "equity": 24.92,
- "dayPnl": -0.02,
+ "lastRun": "11:38",
+ "equity": 24.91,
+ "dayPnl": -0.03,
  "watch": [
   "SPY",
   "QQQ",
@@ -90,5 +90,5 @@
   "WELL",
   "XOM"
  ],
- "lastNote": "equity $24.92, day -0.02, 2 open, 2 entries"
+ "lastNote": "equity $24.91, day -0.03, 2 open, 2 entries"
 }
