@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25",
+ "updatedAt": "2026-10-26",
  "note": "Pricing agent state. basePrice = the normal price before any change (from backups/listings-backup-2026-10-21.json).",
  "listings": {
   "4600177510": {
