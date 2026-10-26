@@ -234,7 +234,7 @@ def build_audio(paths, scenes, lead, work):
 KLEIN = "@cf/black-forest-labs/flux-2-klein-4b"
 REF_NOTE = ("The reference image is only a character sheet: draw these exact characters with the same "
             "designs, colors and art style, but in a completely new scene, setting, pose and camera angle "
-            "exactly as described here. ")
+            "exactly as described here. Draw only the characters and objects this description names. ")
 
 def gen_klein(prompt, seed, dest, ref, msgs):
     """Free FLUX.2 klein on Cloudflare Workers AI: native 16:9 and a reference picture for
@@ -479,13 +479,20 @@ def build(spec_path, check=False):
         durs = [wav_frames(p)[1] for p in vpaths]
         scenes, lead = plan_timing(durs, warn)
         vo = build_audio(vpaths, scenes, lead, work)
-        # a character sheet (not shown) fixes how the cast looks; every scene uses it as a reference
-        ref = None
-        if not check:
-            sheet = {"prompt": "character sheet: " + ", ".join("{" + k + "}" for k in spec["cast"]) +
-                     ", standing side by side facing the viewer, full bodies, plain white background"}
-            get_image(spec, sheet, 99, work, check, warn); ref = os.path.join(work, "img99.jpg")
-        images = [get_image(spec, ln, i, work, check, warn, ref) for i, ln in enumerate(lines)]
+        # a character sheet (not shown) fixes how the cast looks; each scene's sheet holds ONLY the
+        # cast that scene names (one sheet of everyone made every scene copy the whole cast in)
+        sheets = {}
+        def ref_for(ln):
+            if check:
+                return None
+            keys = tuple(k for k in spec["cast"] if "{" + k + "}" in ln["prompt"])
+            if keys not in sheets:
+                n = 99 - len(sheets)
+                sheet = {"prompt": "character sheet: " + ", ".join("{" + k + "}" for k in keys) +
+                         ", standing side by side facing the viewer, full bodies, plain white background"}
+                get_image(spec, sheet, n, work, check, warn); sheets[keys] = os.path.join(work, f"img{n:02d}.jpg")
+            return sheets[keys]
+        images = [get_image(spec, ln, i, work, check, warn, ref_for(ln)) for i, ln in enumerate(lines)]
         if spec.get("title_card"):
             images[0] = title_card(images[0], str(spec["title_card"]))
         starts = [sum(scenes[:k]) for k in range(len(scenes))]
