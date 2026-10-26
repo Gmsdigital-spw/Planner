@@ -10,7 +10,7 @@
    "stop0": 277.38,
    "stop": 277.38,
    "target": 281.27,
-   "high": 278.678,
+   "high": 278.77,
    "stopId": "e6585af9-31b7-4baf-8b0c-b4d1343552f7",
    "since": "2026-10-26T15:15:00Z",
    "qty": "0.035704289"
@@ -20,7 +20,7 @@
    "stop0": 69.1,
    "stop": 69.1,
    "target": 69.99,
-   "high": 69.398,
+   "high": 69.495,
    "stopId": "5a6fb3ab-9712-46ba-96f6-6e2f3790ac9f",
    "since": "2026-10-26T15:15:00Z",
    "qty": "0.085881437"
@@ -50,14 +50,14 @@
   }
  ],
  "done": null,
- "runs": 94,
+ "runs": 100,
  "lastSignal": {
   "IWM": "2026-10-26T15:15:00Z",
   "XLE": "2026-10-26T15:15:00Z"
  },
- "lastRun": "10:20",
- "equity": 24.94,
- "dayPnl": 0.0,
+ "lastRun": "10:26",
+ "equity": 24.95,
+ "dayPnl": 0.01,
  "watch": [
   "SPY",
   "QQQ",
@@ -90,5 +90,5 @@
   "WELL",
   "XOM"
  ],
- "lastNote": "equity $24.94, day +0.00, 2 open, 2 entries"
+ "lastNote": "equity $24.95, day +0.01, 2 open, 2 entries"
 }
