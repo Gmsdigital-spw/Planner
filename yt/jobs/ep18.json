@@ -1,0 +1,82 @@
+{
+  "id": "ep18",
+  "rev": 1,
+  "format": "story",
+  "title": "Why the First Jet Planes Broke Apart in the Sky #shorts",
+  "title_card": "Why Plane Windows Are Round",
+  "voice": "andrew",
+  "speed": 1.0,
+  "art": "storybook",
+  "music": "tense",
+  "music_volume": 0.05,
+  "cast": {
+    "jet": "a sleek plain silver 1950s jet airliner with four engines tucked inside its wings and small square-cornered windows, bare unpainted metal with no logos, no markings and no lettering",
+    "engineer": "a tall engineer in a white lab coat and round glasses with short gray hair",
+    "panel": "a curved silver riveted aluminum plane skin panel with one sharp square-cornered window hole",
+    "passenger": "a young woman in a cozy mustard-yellow sweater with a dark brown ponytail"
+  },
+  "lines": [
+    {
+      "text": "Why did the world's first jet passenger planes keep breaking apart in the sky?",
+      "label": "THE MYSTERY",
+      "headline": "JETS BREAKING APART",
+      "image": "{jet} flying high above white clouds, a thin dark crack running across its silver body, tense dramatic sky"
+    },
+    {
+      "text": "In 1952, this sleek new jet began carrying passengers high above the clouds.",
+      "label": "THE NEW JET",
+      "headline": "FIRST JET PASSENGERS, 1952",
+      "image": "{jet} gliding high above fluffy white clouds in a bright blue sky, sunlight gleaming on its silver body, hopeful proud mood"
+    },
+    {
+      "text": "Then in 1954, two of them broke apart over the sea while still climbing.",
+      "label": "THE CRASHES",
+      "headline": "TWO JETS LOST, 1954",
+      "image": "{jet} breaking apart in mid-air high over a deep blue sea, silver pieces tumbling toward the water, dramatic stormy light"
+    },
+    {
+      "text": "All those jets were kept on the ground, and nobody knew why.",
+      "label": "GROUNDED",
+      "headline": "NOBODY KNEW WHY",
+      "image": "a row of three of {jet} parked still on an empty gray runway under a cloudy sky, no people around, quiet worried mood"
+    },
+    {
+      "text": "So engineers sank a whole plane body into a giant tank of water.",
+      "label": "THE TANK",
+      "headline": "A PLANE IN A TANK",
+      "image": "{engineer} standing beside a giant indoor water tank inside a huge hangar, a long wingless silver plane body lying submerged in the clear blue water of the tank, curious mood"
+    },
+    {
+      "text": "Again and again, they pumped water in and out, like flight after flight.",
+      "label": "THE PUMPING",
+      "headline": "FLIGHT AFTER FLIGHT",
+      "image": "{engineer} turning a big red valve wheel on thick pipes that run into a giant indoor water tank holding a long silver plane body, water swirling, busy determined mood"
+    },
+    {
+      "text": "Finally, the metal split open right at one sharp, square corner.",
+      "label": "THE CRACK",
+      "headline": "IT SPLIT AT A CORNER",
+      "image": "close-up of {panel}, a jagged dark crack splitting the silver metal open from one sharp square corner of the hole, dramatic shocking mood"
+    },
+    {
+      "text": "Each flight's air pressure stretched that corner a tiny bit, until the metal tore.",
+      "label": "THE STRETCH",
+      "headline": "PRESSURE STRETCHED IT",
+      "image": "close-up of {panel} bulging slightly outward, soft glowing arrows of air pushing on it, a small tear opening at one sharp square corner of the hole, serious mood"
+    },
+    {
+      "text": "Their test solved it: round corners spread the stretch out, keeping the metal strong.",
+      "label": "THE FIX",
+      "headline": "ROUND CORNERS WIN",
+      "image": "{engineer} smiling proudly in a workshop, holding up a silver window frame with smooth round corners, a cracked square-cornered frame lying on the workbench beside him, warm triumphant light"
+    },
+    {
+      "text": "That's why the window by your airplane seat has round corners, not square ones.",
+      "label": "YOUR WINDOW",
+      "headline": "LOOK AT YOUR WINDOW",
+      "image": "{passenger} sitting in a modern airplane window seat, smiling and touching the smooth rounded corner of an oval plane window, white clouds and blue sky outside, cozy warm light"
+    }
+  ],
+  "description": "Why did the world's first jet passenger planes keep breaking apart in the sky?\n\nVisuals and voice made with AI.\n\n#shorts #aviation #engineering #history #science #realreasonwhy",
+  "tags": ["why plane windows are round", "airplane windows", "real reason why", "first jet airliner", "aviation history", "engineering", "metal fatigue", "story time", "science facts", "shorts"]
+}
