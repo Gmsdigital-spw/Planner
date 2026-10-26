@@ -1,0 +1,73 @@
+{
+ "id": "ep18",
+ "format": "story",
+ "duration": 52.88,
+ "bytes": 4457756,
+ "mb": 4.25,
+ "width": 1080,
+ "height": 1920,
+ "scenes": [
+  5.08,
+  6.46,
+  5.63,
+  3.86,
+  5.44,
+  4.99,
+  5.54,
+  5.65,
+  5.4,
+  4.82
+ ],
+ "lines": [
+  [
+   0.25,
+   4.63
+  ],
+  [
+   5.33,
+   11.08
+  ],
+  [
+   11.78,
+   16.72
+  ],
+  [
+   17.42,
+   20.58
+  ],
+  [
+   21.28,
+   26.02
+  ],
+  [
+   26.72,
+   31.01
+  ],
+  [
+   31.71,
+   36.55
+  ],
+  [
+   37.25,
+   42.2
+  ],
+  [
+   42.9,
+   47.6
+  ],
+  [
+   48.3,
+   52.43
+  ]
+ ],
+ "credits": [],
+ "warnings": [
+  "scene 2: word timings from length (voice gave 12 marks)",
+  "scene 3: word timings from length (voice gave 13 marks)",
+  "scene 2 runs 6.5s"
+ ],
+ "fakeTts": false,
+ "tts": "edge",
+ "voice": "andrew",
+ "art": "storybook"
+}
