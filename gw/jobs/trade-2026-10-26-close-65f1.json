@@ -1,0 +1,1 @@
+{"id":"trade-2026-10-26-close-65f1","ops":[{"op":"alpaca","path":"/bankroll","tag":"bankroll"},{"op":"alpaca","path":"/positions","tag":"positions"},{"op":"alpaca","path":"/orders?status=open","tag":"open"},{"op":"alpaca","path":"/orders?status=closed&after=2026-10-26T13:30:00Z&limit=50","tag":"closed"}]}
