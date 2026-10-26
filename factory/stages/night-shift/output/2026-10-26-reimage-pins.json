@@ -1,0 +1,395 @@
+[
+ {
+  "slug": "gb-2",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-gingerbread-contest-kit-2.jpg",
+  "kicker": "Christmas party contest",
+  "hook": "Run a *Gingerbread* Contest Tonight",
+  "badge": [
+   "15",
+   "PAGES"
+  ],
+  "pills": [
+   "Team build plans",
+   "Judge score cards",
+   "Award certificates"
+  ],
+  "theme": "ginger",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-gingerbread-contest-kit/p-06.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.72
+   ]
+  },
+  "decor": [
+   [
+    "img:1f36a",
+    {},
+    -30,
+    1170,
+    210,
+    -8
+   ],
+   [
+    "img:1f3e0",
+    {},
+    820,
+    1180,
+    180,
+    6
+   ],
+   [
+    "img:1f384",
+    {},
+    20,
+    520,
+    130,
+    -6
+   ],
+   [
+    "holly",
+    {},
+    860,
+    540,
+    120,
+    12
+   ]
+  ],
+  "hook_size": 100,
+  "card_rot": -3
+ },
+ {
+  "slug": "gb-3",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-gingerbread-contest-kit-3.jpg",
+  "kicker": "Kids, teens and adults",
+  "hook": "Crown the Best *Gingerbread* House",
+  "badge": [
+   "12",
+   "AWARDS"
+  ],
+  "pills": [
+   "3 age divisions",
+   "People's Choice"
+  ],
+  "theme": "xmas_red",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-gingerbread-contest-kit/p-11.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.7
+   ]
+  },
+  "decor": [
+   [
+    "img:1f3c6",
+    {},
+    -20,
+    1160,
+    200,
+    -6
+   ],
+   [
+    "img:1f451",
+    {},
+    830,
+    500,
+    140,
+    10
+   ],
+   [
+    "img:1f36a",
+    {},
+    820,
+    1190,
+    170,
+    8
+   ]
+  ],
+  "hook_size": 104,
+  "card_rot": 3,
+  "badge_x": 60,
+  "badge_y": 1030,
+  "confetti": 40
+ },
+ {
+  "slug": "adv-3",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-advent-activities-3.jpg",
+  "kicker": "24 days of December",
+  "hook": "A Christmas *Countdown* Kids Remember",
+  "badge": [
+   "24",
+   "CARDS"
+  ],
+  "pills": [
+   "Countdown tracker",
+   "Memories page"
+  ],
+  "theme": "xmas_green",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-advent-activities/p-11.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.7
+   ]
+  },
+  "decor": [
+   [
+    "img:1f384",
+    {},
+    -30,
+    1170,
+    210,
+    -6
+   ],
+   [
+    "img:1f381",
+    {},
+    830,
+    1190,
+    170,
+    8
+   ],
+   [
+    "img:2744",
+    {},
+    40,
+    500,
+    110,
+    0
+   ]
+  ],
+  "hook_size": 100,
+  "card_rot": -2
+ },
+ {
+  "slug": "adv-2",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-advent-activities-2.jpg",
+  "kicker": "Screen-free family fun",
+  "hook": "One Small Christmas *Moment* a Day",
+  "badge": [
+   "24",
+   "ACTIVITIES"
+  ],
+  "pills": [
+   "7 need nothing",
+   "Supply list",
+   "Blank cards"
+  ],
+  "theme": "pink_xmas",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-advent-activities/p-03.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.62
+   ]
+  },
+  "decor": [
+   [
+    "img:1f36a",
+    {},
+    -20,
+    1180,
+    180,
+    -10
+   ],
+   [
+    "img:1f385",
+    {},
+    820,
+    1160,
+    200,
+    6
+   ],
+   [
+    "holly",
+    {},
+    870,
+    520,
+    120,
+    -12
+   ]
+  ],
+  "hook_size": 100,
+  "card_rot": 3,
+  "badge_x": 60,
+  "badge_y": 1040,
+  "confetti": 30
+ },
+ {
+  "slug": "debt-3",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-debt-payoff-2027-3.jpg",
+  "kicker": "16 printable pages",
+  "hook": "Pay Off Your Debt in *2027*",
+  "badge": [
+   "4",
+   "TRACKERS"
+  ],
+  "pills": [
+   "Snowball or avalanche",
+   "Payment logs"
+  ],
+  "theme": "money",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-debt-payoff-2027/p-14.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.7
+   ]
+  },
+  "decor": [
+   [
+    "img:1f4b5",
+    {},
+    -20,
+    1170,
+    190,
+    -8
+   ],
+   [
+    "img:1f4c8",
+    {},
+    830,
+    1180,
+    170,
+    6
+   ],
+   [
+    "img:1f4dd",
+    {},
+    30,
+    520,
+    120,
+    -6
+   ]
+  ],
+  "hook_size": 108,
+  "card_rot": -3,
+  "badge_x": 720,
+  "badge_y": 1020
+ },
+ {
+  "slug": "fg-2",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-friendsgiving-kit-2.jpg",
+  "kicker": "Print tonight, play tomorrow",
+  "hook": "7 Friendsgiving Games for *Adults*",
+  "badge": [
+   "7",
+   "GAMES"
+  ],
+  "pills": [
+   "Trivia + bingo",
+   "Answer key",
+   "Scorecard"
+  ],
+  "theme": "fall",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-friendsgiving-kit/p-05.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.7
+   ]
+  },
+  "decor": [
+   [
+    "img:1f983",
+    {},
+    -30,
+    1160,
+    210,
+    -6
+   ],
+   [
+    "img:1f967",
+    {},
+    830,
+    1190,
+    170,
+    8
+   ],
+   [
+    "img:1f342",
+    {},
+    40,
+    510,
+    120,
+    -10
+   ]
+  ],
+  "hook_size": 100,
+  "card_rot": 2,
+  "confetti": 30
+ },
+ {
+  "slug": "fg-3",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-friendsgiving-kit-3.jpg",
+  "kicker": "Potluck to leftovers",
+  "hook": "Host Friendsgiving the *Easy* Way",
+  "badge": [
+   "15",
+   "PAGES"
+  ],
+  "pills": [
+   "Host timeline",
+   "Potluck sign-up"
+  ],
+  "theme": "harvest",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-friendsgiving-kit/p-04.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.7
+   ]
+  },
+  "decor": [
+   [
+    "img:1f341",
+    {},
+    -20,
+    1180,
+    180,
+    -8
+   ],
+   [
+    "img:1f33d",
+    {},
+    840,
+    1170,
+    170,
+    10
+   ],
+   [
+    "img:1f983",
+    {},
+    850,
+    500,
+    130,
+    6
+   ]
+  ],
+  "hook_size": 104,
+  "card_rot": -2,
+  "badge_x": 60,
+  "badge_y": 1030
+ }
+]

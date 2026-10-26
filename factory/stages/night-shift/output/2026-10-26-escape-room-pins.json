@@ -1,0 +1,176 @@
+[
+ {
+  "slug": "esc-1",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-xmas-escape-room-1.jpg",
+  "kicker": "No phone, no app",
+  "hook": "Can Your Kids Open the *Bell Vault*?",
+  "badge": [
+   "16",
+   "PAGES"
+  ],
+  "pills": [
+   "2 age levels",
+   "Hint cards",
+   "Answer key"
+  ],
+  "theme": "midnight",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-xmas-escape-room/p-03.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.7
+   ]
+  },
+  "decor": [
+   [
+    "img:1f514",
+    {},
+    -20,
+    1170,
+    200,
+    -8
+   ],
+   [
+    "img:1f381",
+    {},
+    830,
+    1190,
+    170,
+    6
+   ],
+   [
+    "img:2744",
+    {},
+    50,
+    500,
+    110,
+    0
+   ],
+   [
+    "img:1f31f",
+    {},
+    860,
+    520,
+    110,
+    10
+   ]
+  ],
+  "hook_size": 100,
+  "card_rot": -3,
+  "confetti": 40
+ },
+ {
+  "slug": "esc-2",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-xmas-escape-room-2.jpg",
+  "kicker": "Ages 6-9 and 10+",
+  "hook": "Two *Levels*, One Christmas Escape",
+  "badge": [
+   "8",
+   "PUZZLES"
+  ],
+  "pills": [
+   "Mazes + codes",
+   "Siblings play together"
+  ],
+  "theme": "xmas_red",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-xmas-escape-room/p-09.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.72
+   ]
+  },
+  "decor": [
+   [
+    "img:1f384",
+    {},
+    -30,
+    1160,
+    210,
+    -6
+   ],
+   [
+    "img:1f514",
+    {},
+    840,
+    1180,
+    160,
+    10
+   ],
+   [
+    "holly",
+    {},
+    40,
+    520,
+    120,
+    -10
+   ]
+  ],
+  "hook_size": 100,
+  "card_rot": 3,
+  "badge_x": 60,
+  "badge_y": 1030
+ },
+ {
+  "slug": "esc-3",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-xmas-escape-room-3.jpg",
+  "kicker": "Christmas Eve family game",
+  "hook": "Print an Escape Room *Tonight*",
+  "badge": [
+   "4",
+   "CLUES"
+  ],
+  "pills": [
+   "Envelope lock tags",
+   "Winner certificates"
+  ],
+  "theme": "xmas_green",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-xmas-escape-room/p-08.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.7
+   ]
+  },
+  "decor": [
+   [
+    "img:1f385",
+    {},
+    -40,
+    1030,
+    170,
+    -8
+   ],
+   [
+    "img:1f3c6",
+    {},
+    830,
+    1190,
+    170,
+    6
+   ],
+   [
+    "img:2744",
+    {},
+    870,
+    500,
+    110,
+    0
+   ]
+  ],
+  "hook_size": 104,
+  "card_rot": -2,
+  "badge_x": 720,
+  "badge_y": 1020,
+  "confetti": 30
+ }
+]
