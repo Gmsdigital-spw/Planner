@@ -1,0 +1,1 @@
+{"id":"trade-2026-10-26-verify-3f76","ops":[{"op":"alpaca","path":"/bankroll"},{"op":"alpaca","path":"/positions"},{"op":"alpaca","path":"/orders?status=closed&limit=10"},{"op":"alpaca","path":"/orders?status=open"}]}
