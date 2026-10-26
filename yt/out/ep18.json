@@ -2,8 +2,8 @@
  "id": "ep18",
  "format": "story",
  "duration": 52.88,
- "bytes": 4450099,
- "mb": 4.24,
+ "bytes": 4255585,
+ "mb": 4.06,
  "width": 1080,
  "height": 1920,
  "scenes": [
@@ -69,5 +69,6 @@
  "fakeTts": false,
  "tts": "edge",
  "voice": "andrew",
- "art": "storybook"
+ "art": "storybook",
+ "localPatch": "cutter QC patch (no Action rebuild): scene 5 stray tail lettering blurred out (delogo); scene 7 cropped 860x484 to drop two stray cartoon animals at the edges; scene 8 cropped 836x470 to drop cartoon feet on the panel"
 }
