@@ -17,3 +17,4 @@
 
 ## Tomorrow (written by ba-night/ba-learn; the next run applies it first)
 - 2026-10-25 night: if the shop is connected, Compass runs the Etsy API market search FIRST for "math escape room 3rd grade" and "multiplication bingo" and records rivals' item review counts; Ruler re-scores both games with that evidence. If not connected, Domino builds item 3 (Turkey Trot Fractions Board Game) instead of waiting.
+- 2026-10-25 learn (8:41 PM): no numbers yet (0 live listings, shop link not tapped after 2 Publisher runs). No lesson can be proven without buyer numbers, so none written. Plan for tonight's Night Build stands: shop connected -> Etsy API market search first and re-score both games; not connected -> build item 3 (Turkey Trot Fractions Board Game) with photos 03-05 in varied layouts (Crayon's open fix).

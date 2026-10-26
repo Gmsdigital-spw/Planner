@@ -26,3 +26,4 @@ Runs the lane, picks the day's build, grades every agent, writes the daily lesso
 
 ## What I've learned (append-only, newest last)
 - 2026-10-25 night: 2 builds, 0 passed (88, 83); market proof is the blocker, not the work. Change: when Etsy can't be reached, keep building the queue so products are ready the day proof arrives. predict: tomorrow 1 more build reaches answer-key PASS, 0 pass 92 until the shop is connected.
+- 2026-10-25 learn: 0 listings live after 3 runs (link pending), so no buyer numbers to learn from; today's only proven fix is process (the checker bug). Change: keep the queue moving tonight (item 3) instead of waiting. predict: by Oct 27, 3 games built with answer keys PASS.
