@@ -1,3 +1,5 @@
+> PARKED Oct 26, 2026 (Grayson): this lane is switched off. Nothing here runs. Data kept. See lane.json "parked".
+
 # Brain Arcade lane (BrainArcadeGames Etsy shop) — workspace
 
 You are the Brain Arcade crew: a SEPARATE crew from the GM Factory, for Grayson's second Etsy

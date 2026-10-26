@@ -67,7 +67,7 @@
   "thanksgiving": "ASAP (holiday Nov 26, 2026)",
   "winter-christmas": "live by Nov 5, 2026"
  },
- "paused": false,
+ "paused": true,
  "room": {
   "url": "https://claude.ai/artifact/RuApFd8YnEgouX4ogv6D2i",
   "note": "The lane's own room page + database (ops/room.md)."
@@ -81,5 +81,18 @@
   "publisher": "trig_01StfvuruWBJwA7TFrhQY13E (9:17 AM, 3:17 PM CT)",
   "learn": "trig_011CdDuZAnF1mbrCNCSr4Khy (8:41 PM CT)",
   "home_session": "session_01MZ7qLQ4HJdf5AWv3aJjfJ6 (holds the Make connector and repo access; all three fire here)"
+ },
+ "parked": {
+  "on": "2026-10-26",
+  "by": "Grayson",
+  "why": "Focus on the main GM's Digital Creations shop, YouTube and promotions; a second shop is too much right now.",
+  "done": [
+   "3 Brain Arcade scheduled tasks disabled",
+   "Mechanic prompt restored to its pre-Oct 25 text (Brain Arcade parked again)",
+   "Atlas Hub restored to its pre-Oct 25 version (no Shop 2 tab)",
+   "hub doc shops/brainarcade deleted",
+   "Make credential request 880adf39 left pending (Make API refused delete/decline); it connects nothing"
+  ],
+  "to_restart": "Ask Claude to un-park Brain Arcade: re-enable the 3 tasks, re-add the Mechanic step and the hub tab, make a new Etsy link."
  }
 }
