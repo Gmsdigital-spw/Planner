@@ -10,10 +10,10 @@
   "XLE": {
    "entry": 69.398,
    "stop0": 69.1,
-   "stop": 69.1,
+   "stop": 69.4,
    "target": 69.99,
-   "high": 69.69,
-   "stopId": "5a6fb3ab-9712-46ba-96f6-6e2f3790ac9f",
+   "high": 69.705,
+   "stopId": "c68dd455-34b1-4d20-9d2e-03ee7b311fde",
    "since": "2026-10-26T15:15:00Z",
    "qty": "0.085881437"
   }
@@ -47,15 +47,23 @@
    "target": 69.99,
    "status": 200,
    "fill": 69.398
+  },
+  {
+   "t": "12:45",
+   "do": "raise stop",
+   "sym": "XLE",
+   "stop": 69.4,
+   "qty": "0.085881437",
+   "gainR": 1.03
   }
  ],
  "done": null,
- "runs": 238,
+ "runs": 239,
  "lastSignal": {
   "IWM": "2026-10-26T15:15:00Z",
   "XLE": "2026-10-26T15:15:00Z"
  },
- "lastRun": "12:44",
+ "lastRun": "12:45",
  "equity": 24.91,
  "dayPnl": -0.03,
  "watch": [
