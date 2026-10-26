@@ -1,6 +1,6 @@
 {
   "id": "ep18",
-  "rev": 1,
+  "rev": 2,
   "format": "story",
   "title": "Why the First Jet Planes Broke Apart in the Sky #shorts",
   "title_card": "Why Plane Windows Are Round",
@@ -74,9 +74,20 @@
       "text": "That's why the window by your airplane seat has round corners, not square ones.",
       "label": "YOUR WINDOW",
       "headline": "LOOK AT YOUR WINDOW",
-      "image": "{passenger} sitting in a modern airplane window seat, smiling and touching the smooth rounded corner of an oval plane window, white clouds and blue sky outside, cozy warm light"
+      "image": "{passenger} sitting in a modern airplane window seat, smiling and touching the smooth rounded corner of an oval plane window, white clouds and blue sky outside, plain cabin wall with no signs, cozy warm light"
     }
   ],
   "description": "Why did the world's first jet passenger planes keep breaking apart in the sky?\n\nVisuals and voice made with AI.\n\n#shorts #aviation #engineering #history #science #realreasonwhy",
-  "tags": ["why plane windows are round", "airplane windows", "real reason why", "first jet airliner", "aviation history", "engineering", "metal fatigue", "story time", "science facts", "shorts"]
+  "tags": [
+    "why plane windows are round",
+    "airplane windows",
+    "real reason why",
+    "first jet airliner",
+    "aviation history",
+    "engineering",
+    "metal fatigue",
+    "story time",
+    "science facts",
+    "shorts"
+  ]
 }
