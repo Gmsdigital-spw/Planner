@@ -1,0 +1,90 @@
+{
+ "id": "bolt-2026-10-26-pins-643e",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-escape-room-s1",
+   "tag": "pin-prod-xmas-escape-room-s1",
+   "body": {
+    "content": "A printable Christmas escape room for kids and families: open the Bell Vault by solving 4 clues. Every clue comes in two levels, ages 6-9 and ages 10+, so siblings play together. Inside the 17-page PDF: game master guide, mission letter, 8 puzzle pages (codes, mazes, sudoku, symbol sums), the final lock, envelope lock tags, hint cards, answer key and escape certificates. No phone or app needed. Instant download, print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-s1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-03T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Escape Room for Kids: Printable Family Game, No Phone Needed",
+       "link": "https://www.etsy.com/listing/4602402578"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-escape-room-s2",
+   "tag": "pin-prod-xmas-escape-room-s2",
+   "body": {
+    "content": "A printable Christmas escape room for kids and families: open the Bell Vault by solving 4 clues. Every clue comes in two levels, ages 6-9 and ages 10+, so siblings play together. Inside the 17-page PDF: game master guide, mission letter, 8 puzzle pages (codes, mazes, sudoku, symbol sums), the final lock, envelope lock tags, hint cards, answer key and escape certificates. No phone or app needed. Instant download, print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-s2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-04T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Printable Christmas Escape Room with Two Levels, Ages 6-9 and 10+, for Siblings",
+       "link": "https://www.etsy.com/listing/4602402578"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-escape-room-s3",
+   "tag": "pin-prod-xmas-escape-room-s3",
+   "body": {
+    "content": "A printable Christmas escape room for kids and families: open the Bell Vault by solving 4 clues. Every clue comes in two levels, ages 6-9 and ages 10+, so siblings play together. Inside the 17-page PDF: game master guide, mission letter, 8 puzzle pages (codes, mazes, sudoku, symbol sums), the final lock, envelope lock tags, hint cards, answer key and escape certificates. No phone or app needed. Instant download, print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-s3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-05T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Christmas Eve Escape Room Game for Families: Print at Home Tonight, Clues and Certificates",
+       "link": "https://www.etsy.com/listing/4602402578"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
