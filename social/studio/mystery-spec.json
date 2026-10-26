@@ -1,0 +1,21 @@
+{
+ "vo": "social/studio/media/vo/mystery-vo.mp3",
+ "music": "social/studio/media/vo/mystery-music.wav",
+ "product": {"dir": "/social/studio/media/mystery", "cover": "cover.jpg", "price": "7.99", "pages": 16,
+  "listTitle": "Christmas Murder Mystery Party Game for 8 Players, Printable Whodunit Dinner Party Kit, Family Friendly Holiday Game, Host Can Play",
+  "strip": ["p-05.png", "p-13.png", "p-14.png", "p-16.png"],
+  "bg": ["#a3324a", "#3a0c16"], "accent": "#7a1f2b", "hl": "#ffd34d", "dot": "#ffe0e6"},
+ "phrases": [
+  {"say": "Host a Christmas murder mystery for eight.", "cap": "Host a *murder mystery* | for *8*", "scene": "hook", "page": "p-13.png", "badge": "8 GUESTS"},
+  {"say": "The lights go out.", "cap": "The lights go *out*", "scene": "pan", "page": "p-03.png"},
+  {"say": "The gold Star is gone.", "cap": "The gold *Star* | is *gone*"},
+  {"say": "Every guest gets a character, a secret and an alibi.", "cap": "Every guest gets | a *secret* | and an *alibi*", "scene": "fan", "pages": ["p-05.png", "p-06.png", "p-07.png"]},
+  {"say": "Nine clue cards.", "cap": "*9* clue cards", "scene": "pan", "page": "p-13.png"},
+  {"say": "Three rounds.", "cap": "*3* rounds"},
+  {"say": "One fair answer, proven two ways.", "cap": "*One* fair answer | proven *two ways*", "scene": "grid", "pages": ["p-04.png", "p-14.png", "p-16.png", "p-02.png"]},
+  {"say": "Sixteen pages.", "cap": "*16* pages", "scene": "phone"},
+  {"say": "Instant download.", "cap": "Instant *download*"},
+  {"say": "Tap the link,", "cap": "Tap the *link*", "tap": true},
+  {"say": "and grab it on Etsy.", "cap": "grab it on *Etsy!*", "scene": "end"}
+ ]
+}

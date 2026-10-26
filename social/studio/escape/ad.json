@@ -1,0 +1,257 @@
+{
+ "dur": 19.72,
+ "vo": "social/studio/media/vo/escape-vo.mp3",
+ "music": "social/studio/media/vo/escape-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/escape",
+   "cover": "cover.jpg",
+   "price": "11.99",
+   "pages": 16,
+   "listTitle": "Christmas Escape Room for Kids Printable, Family Game with 2 Levels Ages 6-9 and 10+, No Phone Needed, Holiday Party Activity",
+   "strip": [
+    "p-03.png",
+    "p-08.png",
+    "p-09.png",
+    "p-17.png"
+   ],
+   "bg": [
+    "#2f7a4f",
+    "#0d2e1c"
+   ],
+   "accent": "#8a2230",
+   "hl": "#ffd34d",
+   "dot": "#d9ffe6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-04.png",
+     "p-08.png",
+     "p-09.png",
+     "p-10.png"
+    ],
+    "type": "grid",
+    "t0": 0,
+    "t1": 2.6,
+    "beats": [
+     0.1,
+     0.63,
+     1.17,
+     1.7
+    ]
+   },
+   {
+    "page": "p-12.png",
+    "type": "pan",
+    "t0": 2.6,
+    "t1": 6.26,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-04.png",
+     "p-05.png",
+     "p-11.png"
+    ],
+    "type": "fan",
+    "t0": 6.26,
+    "t1": 8.84,
+    "beats": [
+     6.36,
+     7.15,
+     7.94
+    ]
+   },
+   {
+    "page": "p-09.png",
+    "type": "pan",
+    "t0": 8.84,
+    "t1": 11.52,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "page": "p-10.png",
+    "type": "pan",
+    "t0": 11.52,
+    "t1": 13.26,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "type": "phone",
+    "t0": 13.26,
+    "t1": 16.79,
+    "beats": [
+     0.41,
+     1.22,
+     1.5,
+     2.3,
+     2.7
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 16.79,
+    "t1": 20.02
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.21,
+   "A Christmas *escape room* | for the whole *family*"
+  ],
+  [
+   2.6,
+   5.85,
+   "Solve *4 clues* | open the *Bell Vault*"
+  ],
+  [
+   6.26,
+   7.26,
+   "*Two* levels"
+  ],
+  [
+   7.55,
+   8.37,
+   "Ages *6-9* | and *10+*"
+  ],
+  [
+   8.84,
+   11.07,
+   "*No* phone | *No* app | *No* internet"
+  ],
+  [
+   11.52,
+   12.85,
+   "*45 minutes* | on the clock"
+  ],
+  [
+   13.26,
+   14.28,
+   "*16* pages"
+  ],
+  [
+   14.7,
+   15.47,
+   "Instant *download*"
+  ],
+  [
+   15.91,
+   16.52,
+   "Tap the *link*"
+  ],
+  [
+   16.79,
+   17.69,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.63,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.17,
+   "pop"
+  ],
+  [
+   1.7,
+   "pop"
+  ],
+  [
+   2.55,
+   "whoosh"
+  ],
+  [
+   6.21,
+   "whoosh"
+  ],
+  [
+   6.36,
+   "pop"
+  ],
+  [
+   7.15,
+   "pop"
+  ],
+  [
+   7.94,
+   "pop"
+  ],
+  [
+   8.79,
+   "whoosh"
+  ],
+  [
+   11.47,
+   "whoosh"
+  ],
+  [
+   13.21,
+   "whoosh"
+  ],
+  [
+   13.66,
+   "whoosh"
+  ],
+  [
+   15.96,
+   "tap"
+  ],
+  [
+   16.21,
+   "pop"
+  ],
+  [
+   16.74,
+   "whoosh"
+  ],
+  [
+   17.14,
+   "impact"
+  ],
+  [
+   17.59,
+   "pop"
+  ]
+ ]
+}

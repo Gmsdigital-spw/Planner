@@ -1,0 +1,20 @@
+{
+ "vo": "social/studio/media/vo/escape-vo.mp3",
+ "music": "social/studio/media/vo/escape-music.wav",
+ "product": {"dir": "/social/studio/media/escape", "cover": "cover.jpg", "price": "11.99", "pages": 16,
+  "listTitle": "Christmas Escape Room for Kids Printable, Family Game with 2 Levels Ages 6-9 and 10+, No Phone Needed, Holiday Party Activity",
+  "strip": ["p-03.png", "p-08.png", "p-09.png", "p-17.png"],
+  "bg": ["#2f7a4f", "#0d2e1c"], "accent": "#8a2230", "hl": "#ffd34d", "dot": "#d9ffe6"},
+ "phrases": [
+  {"say": "A Christmas escape room for the whole family.", "cap": "A Christmas *escape room* | for the whole *family*", "scene": "grid", "pages": ["p-04.png", "p-08.png", "p-09.png", "p-10.png"]},
+  {"say": "Solve four clues to open the Bell Vault.", "cap": "Solve *4 clues* | open the *Bell Vault*", "scene": "pan", "page": "p-12.png"},
+  {"say": "Two levels.", "cap": "*Two* levels", "scene": "fan", "pages": ["p-04.png", "p-05.png", "p-11.png"]},
+  {"say": "Ages six to nine, and ten and up.", "cap": "Ages *6-9* | and *10+*"},
+  {"say": "No phone. No app. No internet.", "cap": "*No* phone | *No* app | *No* internet", "scene": "pan", "page": "p-09.png"},
+  {"say": "Forty-five minutes on the clock.", "cap": "*45 minutes* | on the clock", "scene": "pan", "page": "p-10.png"},
+  {"say": "Sixteen pages.", "cap": "*16* pages", "scene": "phone"},
+  {"say": "Instant download.", "cap": "Instant *download*"},
+  {"say": "Tap the link,", "cap": "Tap the *link*", "tap": true},
+  {"say": "and grab it on Etsy.", "cap": "grab it on *Etsy!*", "scene": "end"}
+ ]
+}
