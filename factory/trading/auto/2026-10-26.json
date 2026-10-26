@@ -63,13 +63,13 @@
   }
  ],
  "done": "closed for the day",
- "runs": 359,
+ "runs": 360,
  "lastSignal": {
   "IWM": "2026-10-26T15:15:00Z",
   "XLE": "2026-10-26T15:15:00Z",
   "SPY": "2026-10-26T17:50:00Z"
  },
- "lastRun": "15:04",
+ "lastRun": "15:37",
  "equity": 24.9,
  "dayPnl": -0.04,
  "watch": [
