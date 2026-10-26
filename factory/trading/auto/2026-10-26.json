@@ -78,13 +78,13 @@
   }
  ],
  "done": null,
- "runs": 267,
+ "runs": 273,
  "lastSignal": {
   "IWM": "2026-10-26T15:15:00Z",
   "XLE": "2026-10-26T15:15:00Z",
   "SPY": "2026-10-26T17:50:00Z"
  },
- "lastRun": "13:13",
+ "lastRun": "13:19",
  "equity": 24.91,
  "dayPnl": -0.03,
  "watch": [
