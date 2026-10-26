@@ -20,7 +20,7 @@
    "stop0": 69.1,
    "stop": 69.1,
    "target": 69.99,
-   "high": 69.57,
+   "high": 69.6,
    "stopId": "5a6fb3ab-9712-46ba-96f6-6e2f3790ac9f",
    "since": "2026-10-26T15:15:00Z",
    "qty": "0.085881437"
@@ -50,12 +50,12 @@
   }
  ],
  "done": null,
- "runs": 196,
+ "runs": 202,
  "lastSignal": {
   "IWM": "2026-10-26T15:15:00Z",
   "XLE": "2026-10-26T15:15:00Z"
  },
- "lastRun": "12:02",
+ "lastRun": "12:08",
  "equity": 24.92,
  "dayPnl": -0.02,
  "watch": [
