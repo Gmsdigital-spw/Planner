@@ -10,14 +10,14 @@ updated: 2026-10-23
 ## Job
 Get every passed product in front of Pinterest buyers: 3 pins per product in 2+ styles, 6 still pins a day plus 1 video pin, each with an image and a link to its live listing, so the listings people already look at get clicks to Etsy. Judged every run on pins out with image and link (pins collection, "## Pins"), then on outbound clicks to Etsy (pinstats/<day>).
 
-Follow /factory/specs/cover-styles.md (newest section wins: tools/fun_pins.py): pick one of the 6 styles to fit the product, never the same style as the last listing.
+Follow the PIN STANDARD in stages/night-shift/08-batch-pins step 2 (Oct 27, 2026; wins over every older line here): 3 different layout families per product from tools/varied_covers/, real pages 55%+, no emoji or fake badges, fun_pins.py at most 1 in 6, and the pin slop gate before a pin is ready.
 
 ## Exact steps (keep current; rewrite when a better way is proven)
 0. Run `python3 factory/notebook/nb.py show --lane pins` and follow its "Grayson's rules" and "Proven" lines.
 1. Grade yesterday's prediction from your last learned line (hit or miss, and why) before doing anything else.
 2. Read this file and /factory/LESSONS.md before working.
 3. Use only the playbook the stage's Inputs table names (08: playbooks/tablet-mockup-pin.md); never browse /factory/playbooks/ (night-shift CONTEXT.md load map).
-4. Do the work in the stage's order: when the next day holds fewer than 6 pins, re-image imageless pins and make pins for the best-viewed active listings first (up to 7 each per run; 08 step 4), then 3 pins per passed or batched product with tools/fun_pins.py, each with an image asset and, once Bolt publishes, the listing link. Score it. Under 92 = redo, do not ship.
+4. Do the work in the stage's order: when the next day holds fewer than 6 pins, re-image imageless pins and make pins for the best-viewed active listings first (up to 7 each per run; 08 step 4), then 3 pins per passed or batched product in 3 different layout families (PIN STANDARD), each with an image asset and, once Bolt publishes, the listing link. Score it. Under 92 = redo, do not ship.
 5. Log the result (score + the real number you're judged on: pins out with image and link, and the queue depth for the next day).
 6. End with one dated "What I've learned" line: the number, the one change for tomorrow, and "predict: <number>" for the next run. "Same as yesterday" = fail.
 
@@ -26,7 +26,7 @@ Follow /factory/specs/cover-styles.md (newest section wins: tools/fun_pins.py): 
 - Looks like a top seller's work, not a template. Warm, real, clear.
 - One thing measurably better than last run.
 - Every pin counted as out has an image (asset id or auto.imageUrl answering 200) and a link containing listing/<digits> for an ACTIVE listing; a pin with image null is not out (52 of 69 queued pins had image null on Oct 22: run notes "## Pins", standup 10-22; stages/bolt/references/pin-rules.md "Which pins").
-- Before any new pin, imageless pins are re-imaged with tools/fun_pins.py, up to 7 per run, and "## Pins" says how many of the 52 are left (push-week-2026-10-23.md Pixel row; 08-batch-pins step 4; run notes 10-22 "re-imaging skipped").
+- Before any new pin, imageless pins are re-imaged in a varied layout family (not fun_pins), up to 7 per run, and "## Pins" says how many of the 52 are left (push-week-2026-10-23.md Pixel row; 08-batch-pins step 4; run notes 10-22 "re-imaging skipped").
 - New pins lead with the 5 most-viewed listings and "## Pins" names the listing of each pin: ADHD Budget Planner App 41, Christmas Party Games Bundle 23, Monthly Budget Tracker Spreadsheet 20, Undated ADHD Planner 14, 2026 Christmas Planner 12 on Oct 22 (stats/2026-10-22 in the week brief; push-week Pixel row).
 - The next day holds 6 pins with a day set before the run ends, or "## Pins" says why not (Fri Oct 23 held 2 after the Oct 22 run: run notes "## Pins"; foreman-rules.md 4).
 - A video pin never carries a bare listing link; factory/videopins/state.json records the link used and Pinterest's answer (Oct 21 pin 4597749137 refused for a bare listing link, Oct 22 pin 4598358161 scheduled 8:30 PM CT: video-pin run log 10-22; push-week Pixel row).

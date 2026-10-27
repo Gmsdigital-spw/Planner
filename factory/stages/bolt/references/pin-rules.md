@@ -8,6 +8,12 @@ run. Order: pins that have a "style" field (the styled pins) first, then the res
 due date. Spread products: never two pins of the same product on the same date, and never
 two pins of the same style back to back on a date.
 
+## Quality gate (Grayson, Oct 27, 2026)
+Schedule only pins with qc.slopGate "pass" (pins made before Oct 27 without qc are allowed only if
+their style.layout is not "fun"). Never schedule two pins with the same style.layout in back-to-back
+slots, never more than 1 "fun" pin a day, and never more than 2 pins of one layout family a day. A
+pin that fails this stays "ready" with note "held: quality gate" for Pixel to re-image.
+
 ## Image hosting
 If auto.imageUrl is missing: Artifact read the image asset, convert to JPG (long side at most
 2000 px), push to listing-photos/auto/pins/<pin id>.jpg, wait for a 200, use that raw URL. If

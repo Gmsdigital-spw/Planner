@@ -16,9 +16,9 @@ The Factory has to pay for its own Claude plan or it gets shut off. A week in, n
 - Never invent a number. "Unknown" beats a guess.
 
 ## 3. Quality gates (all must pass, or it does not ship)
-- Product score 92+ and the slop check: "Would a top Etsy seller post this?" If not, it fails.
-- Covers render with `tools/fun_covers.py` and pins with `tools/fun_pins.py` (its portrait twin), both following `cover-styles.md` (newest section wins): bold theme color, real pages on a white card, count badge, benefit pills, themed 3D art; no two listings in a row alike (vary theme and layout), product filling the frame, title readable at thumbnail size, never beige/cream desk covers, no coffee cup by default. Dark backgrounds only as a theme color with white text (navy + gold for New Year's is fine); the Warden's DARK_COVER check is the limit. Wall art covers follow `wall-art.md` (real-frame photos) instead. (Updated Oct 21, 2026: this line used to say cover_styles.py and "no dark navy".)
-- Every new product ships with a styled cover and **3 pins in at least 2 different styles**, each with its own hook.
+- Product score 85+ with rulesPass and a clean slop check reaches drafts; 92+ is the aim (Oct 27, 2026). The slop check: "Would a top Etsy seller post this?" If not, it fails.
+- Covers follow `cover-styles.md` Oct 23 (variety gate; fun_covers card at most 1 in 6) and pins follow `stages/night-shift/08-batch-pins` step 2 PIN STANDARD (Oct 27; fun_pins card at most 1 in 6). Product fills the frame, title readable at thumbnail size, no two listings or pin slots in a row alike. Wall art covers follow `wall-art.md`. (Updated Oct 27, 2026: this line used to force fun_covers/fun_pins on everything.)
+- Every new product ships with a styled cover and **3 pins in 3 different layout families**, each with its own hook.
 
 ## 4. Volume where it counts
 - Pinterest: 6 pins a day, spread across products and styles (Bolt schedules them).

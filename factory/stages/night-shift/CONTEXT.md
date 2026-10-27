@@ -90,8 +90,8 @@ first: ONE product that passes beats two that fail, so the first product gets it
 pre-flight and all three fix rounds before the second product starts. Over budget: skip 01's
 intel refresh, then 08's extra pins, then the second product in the build list (it stays
 queued and is built first next run); say so in the log. Any single wait: 5 minutes max.
-`specs/cover-styles.md` newest sections (Oct 21, 2026: bold covers via tools/fun_covers.py,
-bold pins via tools/fun_pins.py, wall art excepted) win over every older cover rule, including
-the 6-style rotation lines below them; foreman-rules.md line 20 now says the same thing, so
-there is no conflict left. cover_styles.py is not used for new covers or pins. SALES PUSH wins over older spec lines. `shared/rules.md` wins over anything softer.
+`specs/cover-styles.md` NEWEST DATED SECTION wins (Oct 23, 2026 for covers: variety gate, the
+fun_covers card retired as the default; Oct 27, 2026 for pins: 08 step 2 PIN STANDARD, fun_pins
+at most 1 in 6). Fixed Oct 27: this line used to say the Oct 21 fun_covers/fun_pins look wins,
+which is why every pin kept coming out as the same retired card. cover_styles.py is not used for new covers or pins. SALES PUSH wins over older spec lines. `shared/rules.md` wins over anything softer.
 The task prompt wins over all.
