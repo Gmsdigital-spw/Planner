@@ -1,0 +1,4 @@
+{"id":"bolt-2026-10-27-verify-75bf","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/listings/4604185747?includes=Images","tag":"listing"},
+{"op":"etsy","method":"GET","path":"/listings/4604185747/images","tag":"images"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/4604185747/files","tag":"files"}]}
