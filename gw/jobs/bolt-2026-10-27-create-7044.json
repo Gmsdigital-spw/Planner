@@ -1,0 +1,43 @@
+{
+ "id": "bolt-2026-10-27-create-7044",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "POST",
+   "path": "/shops/68605457/listings",
+   "body": {
+    "quantity": 999,
+    "title": "Christmas Party Bundle Printable: 6 Games, 12 Awards, White Elephant Dice Game, Gingerbread Contest, Family or Office Party",
+    "description": "The whole Christmas party night in one printable PDF: 6 party games, 12 award certificates, a white elephant dice game and a gingerbread house contest, for families, friend groups and office parties.\nFun for a group from the first guest to the last gift. Print it once and every part of the night is planned, in the order you will use it.\n\nWHAT YOU GET (16 printable pages, plus a thank-you page)\n1 page: Host timeline and how to use, with both answer keys\nGame 1: Christmas Word Scramble (14 words, answer key)\nGame 2: Christmas This or That (20 pairs)\nGame 3: Christmas Would You Rather (12 questions)\nGame 4: Christmas Trivia Quiz (12 multiple-choice questions, answer key)\nGame 5: Find the Guest Who (25-square mingle game with a free space)\nGame 6: Christmas Charades Cards (24 cut-out cards)\n4 pages: Christmas Party Awards (12 awards, 3 per page: Best Ugly Sweater, Life of the Party, Gift Wrap Master and more)\n3 pages: Gingerbread House Contest (rules and entry list, 4 judge score cards, 6 cut-out ribbons)\n2 pages: White Elephant Dice Game (roll chart and rules) and the Left-Right Gift Story to read aloud\n\nHOW THE NIGHT RUNS\nStart with Find the Guest Who as people arrive, play the games in teams, build gingerbread houses at the snack break, swap gifts with the dice game and the left-right story, then finish with charades and the awards ceremony.\n\nTHE DETAILS\nDigital PDF download. Nothing will be shipped.\nUS Letter size; prints on A4 with \"fit to page\".\nPrint at home or at a print shop. Cardstock is best for the awards and ribbons.\nNot editable: write names and answers by hand. No apps or accounts needed.\nYou need pens, one six-sided die, and gingerbread kits with frosting and candy.\n\nHOW TO DOWNLOAD\nAfter you buy, go to Etsy > You > Purchases and download the PDF. You can also use the link in your receipt email.\n\nFor personal use. Please do not resell or share the file.\n\nPlanning more of the night? The shop also has the Christmas Murder Mystery Party Game for 8 Players and the Christmas Escape Room for Kids.\n\nThis design was created with AI assistance under the creative direction of the seller.",
+    "price": 5.99,
+    "who_made": "i_did",
+    "when_made": "2020_2026",
+    "taxonomy_id": 1350,
+    "type": "download",
+    "tags": [
+     "christmas party",
+     "christmas games",
+     "xmas party games",
+     "white elephant game",
+     "gingerbread contest",
+     "christmas awards",
+     "office party games",
+     "family party games",
+     "holiday party games",
+     "christmas trivia",
+     "christmas bundle",
+     "party game bundle",
+     "christmas printable"
+    ],
+    "materials": [
+     "Digital download",
+     "PDF"
+    ],
+    "is_supply": false,
+    "should_auto_renew": true
+   },
+   "tag": "create"
+  }
+ ]
+}
