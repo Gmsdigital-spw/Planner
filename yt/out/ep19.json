@@ -2,8 +2,8 @@
  "id": "ep19",
  "format": "story",
  "duration": 53.93,
- "bytes": 4438941,
- "mb": 4.23,
+ "bytes": 4369045,
+ "mb": 4.17,
  "width": 1080,
  "height": 1920,
  "scenes": [
@@ -63,10 +63,12 @@
  "credits": [],
  "warnings": [
   "scene 1: word timings from length (voice gave 12 marks)",
-  "scene 2 runs 6.2s"
+  "scene 2 runs 6.2s",
+  "local patch after rev 2 (QC): scene 4 picture band taken from rev 1 (rev 2 drew grandpa twice), scene 7 crop punch-in to one Mrs. Hale + one Leo (rev 2 drew both twice)"
  ],
  "fakeTts": false,
  "tts": "edge",
  "voice": "andrew",
- "art": "storybook"
+ "art": "storybook",
+ "patched": true
 }
