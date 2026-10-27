@@ -89,6 +89,7 @@ def check_story(spec):
         if "..." in t or "…" in t or t.endswith(("-", ",")):
             raise SystemExit(f"story: scene {i} trails off; use one complete sentence")
         body = re.sub(r"[\"'”’]+$", "", t)
+        body = re.sub(r"\b(Mrs|Mr|Ms|Dr|St|Jr|Sr)\.", r"\1", body)   # titles are not sentence ends
         if re.search(r"[.!?][\"'”’]?\s+[\"'“‘]?[A-Z]", body[:-1]):
             raise SystemExit(f"story: scene {i} has more than one sentence")
         lab = str(ln.get("label", "")).strip(); hl = str(ln.get("headline", "")).strip()
