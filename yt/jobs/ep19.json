@@ -1,6 +1,6 @@
 {
   "id": "ep19",
-  "rev": 1,
+  "rev": 2,
   "format": "story",
   "title": "A Whole Town's Internet Died Every Night at 7 PM #shorts",
   "title_card": "The 7 PM Mystery",
@@ -13,7 +13,7 @@
     "leo": "a twelve-year-old boy with messy red hair, freckles and a green hoodie",
     "grandpa": "a short grandpa with a white mustache, round glasses and a brown cardigan",
     "hale": "a tiny elderly woman with a silver bun, a lavender cardigan and pearl earrings",
-    "worker": "a repair worker in a plain orange safety vest and a plain yellow hard hat"
+    "worker": "a tall grown-up repair man with a bushy black beard, a plain orange safety vest and a plain yellow hard hat"
   },
   "lines": [
     {
@@ -32,7 +32,7 @@
       "text": "Repair crews checked every wire in daylight and found nothing wrong.",
       "label": "NOTHING FOUND",
       "headline": "CREWS FOUND NOTHING",
-      "image": "{worker} on a ladder against a wooden telephone pole on a sunny small-town street in bright daylight, holding a tangle of wires and shrugging with a puzzled face, blue sky"
+      "image": "{worker}, a tall adult man, standing on a ladder against a wooden telephone pole on a sunny small-town street in bright daylight, holding a tangle of wires and shrugging with a puzzled face, blue sky, only one person in the scene"
     },
     {
       "text": "Leo's grandpa said an old radio crackles near hidden electric noise.",
@@ -44,19 +44,19 @@
       "text": "So at seven, twelve-year-old Leo walked the streets with the radio, listening.",
       "label": "THE SEARCH",
       "headline": "LISTENING AT SEVEN",
-      "image": "{leo} walking alone down a quiet small-town street at dusk, holding a small old silver portable radio with a long antenna up to his ear, warm street lamps and houses with glowing windows, determined mood"
+      "image": "{leo} walking alone down a quiet small-town street at dusk, holding one small old silver portable radio with a long antenna up to his ear with one hand, his other hand empty at his side, warm street lamps and houses with glowing windows, determined mood, only one person in the scene"
     },
     {
       "text": "The static got loudest right outside old Mrs. Hale's house.",
       "label": "THE CLUE",
       "headline": "STATIC GETS LOUD",
-      "image": "{leo} standing on the sidewalk outside a small old cottage with a lit window at night, holding up a small old silver portable radio with a long antenna as jagged zigzag static lines burst out of it, eyes wide in surprise"
+      "image": "{leo} standing alone on the sidewalk outside a small old cottage with a lit window at night, holding up one small old silver portable radio with a long antenna as jagged zigzag static lines burst out of it, eyes wide in surprise, only one boy in the scene, no other people"
     },
     {
       "text": "Through her window, Leo watched her switch on a giant, ancient TV.",
       "label": "THE TWIST",
       "headline": "THE ANCIENT TV",
-      "image": "seen from outside the cottage at night: {leo} on the lawn peeking through a big lit window, and inside the room {hale} pressing the knob of a giant old wooden-box television with a small rounded glass screen that flickers on, the television is an inanimate object with no face"
+      "image": "inside a cozy old living room at night: {hale} bending forward to turn the knob of a giant old wooden-box television with a small rounded glass screen that flickers on, the television stands on the floor inside the room against the wall, in the background a dark window where {leo}'s face peeks in from outside through the glass, the television is an inanimate object with no face"
     },
     {
       "text": "That old TV leaked invisible radio noise that jammed the whole town's internet.",
@@ -74,9 +74,19 @@
       "text": "Now the games never freeze, and Mrs. Hale joins Leo's game night every Friday.",
       "label": "GAME NIGHT",
       "headline": "MRS. HALE PLAYS TOO",
-      "image": "{hale} and {leo} laughing side by side on a cozy couch, both holding game controllers and playing a colorful racing game on a new flat-screen TV, cozy warm lamp light, happy triumphant mood"
+      "image": "on the left side of a cozy couch {hale} and on the right side of the couch {leo}, laughing side by side, both holding game controllers and playing a colorful racing game with no text or numbers on a new flat-screen TV, the old woman keeps her silver bun and lavender cardigan, the boy keeps his messy red hair and green hoodie, cozy warm lamp light, happy triumphant mood"
     }
   ],
   "description": "Why did a whole town's internet die every night at exactly 7 PM?\n\nVisuals and voice made with AI.\n\n#shorts #mystery #storytime #gaming #gamenight",
-  "tags": ["small town mystery", "internet mystery", "story time", "gaming", "game night", "mystery solved", "kid detective", "animated story", "shorts"]
+  "tags": [
+    "small town mystery",
+    "internet mystery",
+    "story time",
+    "gaming",
+    "game night",
+    "mystery solved",
+    "kid detective",
+    "animated story",
+    "shorts"
+  ]
 }
