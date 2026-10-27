@@ -1,0 +1,20 @@
+{
+ "vo": "social/studio/media/vo/games2-vo.mp3",
+ "music": "social/studio/media/vo/games2-music.wav",
+ "product": {"dir": "/social/studio/media/games", "cover": "cover.jpg", "price": "2.99", "pages": 13,
+  "listTitle": "Christmas Party Games Bundle, 8 Holiday Trivia, Bingo, Would You Rather (Digital Download)",
+  "strip": ["p-09.png", "p-10.png", "p-12.png", "p-13.png"],
+  "bg": ["#c8282e", "#560e12"], "accent": "#a3191e", "hl": "#ffd34d", "dot": "#ffe3e3"},
+ "phrases": [
+  {"say": "Christmas fun for the whole family.", "cap": "Christmas *fun* | for the whole *family*", "scene": "fan", "pages": ["p-09.png", "p-06.png", "p-10.png"]},
+  {"say": "Eight party games in one download.", "cap": "*8* party games | in one *download*", "scene": "grid", "pages": ["p-03.png", "p-04.png", "p-07.png", "p-12.png"]},
+  {"say": "Who Am I, with name cards.", "cap": "*Who Am I?* | with name cards", "scene": "pan", "page": "p-09.png"},
+  {"say": "A carol title fill-in.", "cap": "A *carol title* | fill-in"},
+  {"say": "And a scorecard to crown your champion.", "cap": "A *scorecard* | to crown your *champion*", "scene": "pan", "page": "p-13.png"},
+  {"say": "For four to thirty players.", "cap": "*4 to 30* players"},
+  {"say": "Thirteen pages.", "cap": "*13* pages", "scene": "phone"},
+  {"say": "Instant download.", "cap": "Instant *download*"},
+  {"say": "Tap the link,", "cap": "Tap the *link*", "tap": true},
+  {"say": "and grab it on Etsy.", "cap": "grab it on *Etsy!*", "scene": "end"}
+ ]
+}

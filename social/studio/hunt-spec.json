@@ -1,0 +1,19 @@
+{
+ "vo": "social/studio/media/vo/hunt-vo.mp3",
+ "music": "social/studio/media/vo/hunt-music.wav",
+ "product": {"dir": "/social/studio/media/hunt", "cover": "cover.jpg", "price": "3.99", "pages": 13,
+  "listTitle": "Christmas Scavenger Hunt for Kids, 24 Rhyming Clue Cards, Christmas Morning Gift Hunt, Treasure Hunt Printable",
+  "strip": ["p-04.png", "p-08.png", "p-12.png", "p-13.png"],
+  "bg": ["#b03a48", "#4a1218"], "accent": "#9e2a36", "hl": "#ffd34d", "dot": "#ffe3e6"},
+ "phrases": [
+  {"say": "Turn Christmas morning into a treasure hunt.", "cap": "Christmas morning | is a *treasure hunt*", "scene": "fan", "pages": ["p-04.png", "p-08.png", "p-13.png"]},
+  {"say": "Clue cards lead the kids to their gift.", "cap": "*Clue cards* | lead to the *gift*", "scene": "pan", "page": "p-05.png"},
+  {"say": "Easy rhymes for little elves.", "cap": "Easy *rhymes* | for little elves"},
+  {"say": "Riddles for the big kids.", "cap": "*Riddles* | for the big kids", "scene": "pan", "page": "p-09.png"},
+  {"say": "Twenty-four hiding spots, with an answer key.", "cap": "*24* hiding spots | with an *answer key*", "scene": "grid", "pages": ["p-03.png", "p-02.png", "p-12.png", "p-13.png"]},
+  {"say": "Thirteen pages.", "cap": "*13* pages", "scene": "phone"},
+  {"say": "Instant download.", "cap": "Instant *download*"},
+  {"say": "Tap the link,", "cap": "Tap the *link*", "tap": true},
+  {"say": "and grab it on Etsy.", "cap": "grab it on *Etsy!*", "scene": "end"}
+ ]
+}
