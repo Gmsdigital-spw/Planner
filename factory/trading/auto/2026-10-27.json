@@ -50,12 +50,12 @@
   }
  ],
  "done": null,
- "runs": 315,
+ "runs": 321,
  "lastSignal": {
   "SPY": "2026-10-27T15:15:00Z",
   "QQQ": "2026-10-27T15:15:00Z"
  },
- "lastRun": "13:56",
+ "lastRun": "14:02",
  "equity": 24.89,
  "dayPnl": 0.01,
  "watch": [
@@ -92,5 +92,5 @@
   "UNH",
   "UPS"
  ],
- "lastNote": "equity $24.89, day +0.01, 2 open, 2 entries"
+ "lastNote": "equity $24.89, day +0.01, 2 open, 2 entries; no new entries now (8:35-2:00 CT window)"
 }
