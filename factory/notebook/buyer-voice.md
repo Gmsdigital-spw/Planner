@@ -19,12 +19,12 @@ Read by: Night Shift 01 (ideas), 05 (copy), 08 (pins); Herald 05 (captions). Kee
 - 2026-10-26: fun for the family / family use (1 review, Christmas Party Games Bundle 4597749137). Hint only until a second review says it.
 
 ## Rival buyer words by lane (Scout, from opened rival item pages; lane: "phrase" · rival listing id · date)
-- party games: none yet
+- party games: "A wonderful printable for family fun!" · 1813351868 · 2026-10-27; "Helpful resource for my party" · 1123794386 · 2026-10-27; "Fun game for a group." · 1345886317 · 2026-10-27
 - christmas: none yet
 - money: none yet
-- planners: none yet
+- planners: "Wonderful package and easy to use" · 1839412257 · 2026-10-27; "Nice job i feel like I am all set for 2027!" · 1839412257 · 2026-10-27; "Really good deal for all of the pages plus you got to edit them" · 1704021264 · 2026-10-27
 - invitations: none yet
 - wall art: none yet
 
 ## Complaints buyers make about rivals (our gap to fill; lane: "complaint" · rival listing id · date)
-- none yet
+- planners: "a bit confusing for me at first" (600-page journal bundle) · 1839412257 · 2026-10-27

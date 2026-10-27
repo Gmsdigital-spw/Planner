@@ -1,0 +1,390 @@
+[
+ {
+  "slug": "tgg-2",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-thanksgiving-games-2.jpg",
+  "kicker": "After-dinner games",
+  "hook": "Wonderful Printable for *Family* Fun",
+  "badge": [
+   "7",
+   "GAMES"
+  ],
+  "pills": [
+   "3 to 30 players",
+   "Answer key included"
+  ],
+  "theme": "harvest",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-thanksgiving-games/p-09.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.7
+   ]
+  },
+  "decor": [
+   [
+    "turkey",
+    {},
+    -30,
+    1170,
+    210,
+    -8
+   ],
+   [
+    "pie",
+    {},
+    820,
+    1180,
+    180,
+    6
+   ],
+   [
+    "img:1f342",
+    {},
+    20,
+    520,
+    120,
+    -10
+   ],
+   [
+    "maple_leaf",
+    {},
+    870,
+    540,
+    110,
+    14
+   ]
+  ],
+  "hook_size": 100,
+  "card_rot": -3
+ },
+ {
+  "slug": "tgg-3",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-thanksgiving-games-3.jpg",
+  "kicker": "Kids vs grown-ups",
+  "hook": "Keep Them at the *Table* Longer",
+  "badge": [
+   "11",
+   "PAGES"
+  ],
+  "pills": [
+   "Scavenger hunt",
+   "Party scorecard",
+   "Print at home"
+  ],
+  "theme": "fall",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-thanksgiving-games/p-10.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.72
+   ]
+  },
+  "decor": [
+   [
+    "img:1f3c6",
+    {},
+    830,
+    1170,
+    190,
+    8
+   ],
+   [
+    "pumpkin",
+    {},
+    -40,
+    1010,
+    170,
+    -6
+   ],
+   [
+    "acorn",
+    {},
+    880,
+    520,
+    100,
+    10
+   ]
+  ],
+  "hook_size": 104,
+  "card_rot": 3,
+  "badge_x": 60,
+  "badge_y": 560
+ },
+ {
+  "slug": "tgh-2",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-thanksgiving-host-planner-2.jpg",
+  "kicker": "First time hosting?",
+  "hook": "Dinner at 4, *Turkey* Timed Backward",
+  "badge": [
+   "13",
+   "PAGES"
+  ],
+  "pills": [
+   "Reverse cooking timeline",
+   "Thaw guide"
+  ],
+  "theme": "fall",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-thanksgiving-host-planner/p-07.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.7
+   ]
+  },
+  "decor": [
+   [
+    "clock",
+    {},
+    840,
+    1170,
+    180,
+    8
+   ],
+   [
+    "turkey",
+    {},
+    -30,
+    1170,
+    210,
+    -6
+   ],
+   [
+    "img:1f342",
+    {},
+    20,
+    520,
+    110,
+    -12
+   ]
+  ],
+  "hook_size": 96,
+  "card_rot": -2
+ },
+ {
+  "slug": "nby-2",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-no-buy-year-2027-2.jpg",
+  "kicker": "Wait before you buy",
+  "hook": "The 30-Day *Want* List Trick",
+  "badge": [
+   "13",
+   "PAGES"
+  ],
+  "pills": [
+   "Temptation log",
+   "12-month calendar"
+  ],
+  "theme": "sage",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-no-buy-year-2027/p-04.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.7
+   ]
+  },
+  "decor": [
+   [
+    "piggy",
+    {},
+    -20,
+    1170,
+    200,
+    -6
+   ],
+   [
+    "coin",
+    {},
+    850,
+    1190,
+    150,
+    10
+   ],
+   [
+    "img:1f4dd",
+    {},
+    870,
+    520,
+    120,
+    8
+   ]
+  ],
+  "hook_size": 104,
+  "card_rot": 3,
+  "badge_x": 60,
+  "badge_y": 560
+ },
+ {
+  "slug": "nby-3",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-no-buy-year-2027-3.jpg",
+  "kicker": "2027 money reset",
+  "hook": "Count Every *No-Spend* Day in 2027",
+  "badge": [
+   "12",
+   "MONTHS"
+  ],
+  "pills": [
+   "Year tally page",
+   "Monthly check-in",
+   "Print at home"
+  ],
+  "theme": "teal",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-no-buy-year-2027/p-12.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.72
+   ]
+  },
+  "decor": [
+   [
+    "calendar",
+    {},
+    830,
+    1170,
+    190,
+    8
+   ],
+   [
+    "img:1f4b0",
+    {},
+    -40,
+    1010,
+    160,
+    -8
+   ],
+   [
+    "checkmark",
+    {},
+    20,
+    520,
+    110,
+    -6
+   ]
+  ],
+  "hook_size": 96,
+  "card_rot": -3
+ },
+ {
+  "slug": "gw-3",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-goal-workbook-2027-3.jpg",
+  "kicker": "12-week goal plan",
+  "hook": "Feel All Set for *2027*",
+  "badge": [
+   "14",
+   "PAGES"
+  ],
+  "pills": [
+   "3 big goals",
+   "Weekly check-in"
+  ],
+  "theme": "violet",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-goal-workbook-2027/p-13.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.7
+   ]
+  },
+  "decor": [
+   [
+    "target",
+    {},
+    -20,
+    1170,
+    200,
+    -6
+   ],
+   [
+    "img:1f680",
+    {},
+    850,
+    1180,
+    170,
+    10
+   ],
+   [
+    "sparkle",
+    {},
+    880,
+    520,
+    100,
+    0
+   ]
+  ],
+  "hook_size": 110,
+  "card_rot": 2,
+  "badge_x": 60,
+  "badge_y": 560
+ },
+ {
+  "slug": "tgh-3",
+  "root": "/home/claude/planner",
+  "out": "pins/styled/prod-thanksgiving-host-planner-3.jpg",
+  "kicker": "Grocery list by aisle",
+  "hook": "Never Forget the *Onion* Again",
+  "badge": [
+   "13",
+   "PAGES"
+  ],
+  "pills": [
+   "Store-section list",
+   "Who brings what",
+   "Leftovers plan"
+  ],
+  "theme": "harvest",
+  "pages": {
+   "src": "/home/claude/kit/pages/prod-thanksgiving-host-planner/p-09.png",
+   "crop": [
+    0,
+    0,
+    1,
+    0.72
+   ]
+  },
+  "decor": [
+   [
+    "pie",
+    {},
+    840,
+    1170,
+    180,
+    8
+   ],
+   [
+    "img:1f6cd",
+    {},
+    -20,
+    1180,
+    180,
+    -8
+   ],
+   [
+    "maple_leaf",
+    {},
+    20,
+    520,
+    110,
+    -14
+   ]
+  ],
+  "hook_size": 104,
+  "card_rot": -3
+ }
+]
