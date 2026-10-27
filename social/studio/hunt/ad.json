@@ -1,0 +1,235 @@
+{
+ "dur": 19.32,
+ "vo": "social/studio/media/vo/hunt-vo.mp3",
+ "music": "social/studio/media/vo/hunt-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/hunt",
+   "cover": "cover.jpg",
+   "price": "3.99",
+   "pages": 13,
+   "listTitle": "Christmas Scavenger Hunt for Kids, 24 Rhyming Clue Cards, Christmas Morning Gift Hunt, Treasure Hunt Printable",
+   "strip": [
+    "p-04.png",
+    "p-08.png",
+    "p-12.png",
+    "p-13.png"
+   ],
+   "bg": [
+    "#b03a48",
+    "#4a1218"
+   ],
+   "accent": "#9e2a36",
+   "hl": "#ffd34d",
+   "dot": "#ffe3e6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-04.png",
+     "p-08.png",
+     "p-13.png"
+    ],
+    "type": "fan",
+    "t0": 0,
+    "t1": 2.97,
+    "beats": [
+     0.1,
+     1.05,
+     2.0
+    ]
+   },
+   {
+    "page": "p-05.png",
+    "type": "pan",
+    "t0": 2.97,
+    "t1": 7.6,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "page": "p-09.png",
+    "type": "pan",
+    "t0": 7.6,
+    "t1": 9.35,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-03.png",
+     "p-02.png",
+     "p-12.png",
+     "p-13.png"
+    ],
+    "type": "grid",
+    "t0": 9.35,
+    "t1": 12.18,
+    "beats": [
+     9.45,
+     10.04,
+     10.64,
+     11.23
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 12.18,
+    "t1": 16.2,
+    "beats": [
+     0.44,
+     1.32,
+     1.74,
+     2.54,
+     2.94
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 16.2,
+    "t1": 19.62
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.53,
+   "Christmas morning | is a *treasure hunt*"
+  ],
+  [
+   2.97,
+   5.1,
+   "*Clue cards* | lead to the *gift*"
+  ],
+  [
+   5.56,
+   7.18,
+   "Easy *rhymes* | for little elves"
+  ],
+  [
+   7.6,
+   8.93,
+   "*Riddles* | for the big kids"
+  ],
+  [
+   9.35,
+   11.74,
+   "*24* hiding spots | with an *answer key*"
+  ],
+  [
+   12.18,
+   13.18,
+   "*13* pages"
+  ],
+  [
+   13.68,
+   14.57,
+   "Instant *download*"
+  ],
+  [
+   15.07,
+   15.78,
+   "Tap the *link*"
+  ],
+  [
+   16.2,
+   17.28,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.05,
+   "pop"
+  ],
+  [
+   2.0,
+   "pop"
+  ],
+  [
+   2.92,
+   "whoosh"
+  ],
+  [
+   7.55,
+   "whoosh"
+  ],
+  [
+   9.3,
+   "whoosh"
+  ],
+  [
+   9.45,
+   "pop"
+  ],
+  [
+   10.04,
+   "pop"
+  ],
+  [
+   10.64,
+   "pop"
+  ],
+  [
+   11.23,
+   "pop"
+  ],
+  [
+   12.13,
+   "whoosh"
+  ],
+  [
+   12.62,
+   "whoosh"
+  ],
+  [
+   15.12,
+   "tap"
+  ],
+  [
+   15.37,
+   "pop"
+  ],
+  [
+   16.15,
+   "whoosh"
+  ],
+  [
+   16.55,
+   "impact"
+  ],
+  [
+   17.0,
+   "pop"
+  ]
+ ]
+}
