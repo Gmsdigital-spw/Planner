@@ -42,8 +42,9 @@ other than "Atlas auto-approver").
    built: market from 2b (2 proven 100+ rivals + clear gap = 13; open niche per 2b = 13-14; 3 or more = 14-15; fewer = 11
    or less), price vs those rivals, and file/copy/images/polish at the crew's recent level
    (factory/scores.jsonl, last 10 products). Write brief.preScore {market, price, total, why}.
-   Approve only when preScore.total is 93 or more; aim for 95+. Under 93: leave "proposed"
-   with the weakest category named.
+   Approve only when preScore.total is 88 or more (Oct 27, 2026: lowered from 93 with the 85 draft
+   bar; the 93 gate approved 1 brief a night and left build slots empty); aim for 95+. Under 88:
+   leave "proposed" with the weakest category named. Fill both build slots whenever 2 briefs clear 88.
 3. APPROVE (status "approved", decidedBy "Atlas auto-approver", decidedAt now, approveReason one
    plain sentence naming the buyer, the problem and the evidence) only when no reject rule
    applies AND total is 21 or more AND demand, timing and buildable are each 4 or more AND

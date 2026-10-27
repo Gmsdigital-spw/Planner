@@ -24,7 +24,7 @@ run-log line.
   (one change, one number, a review date), (3) what fixes a broken step at its root, (4) everything
   else. A nice-to-have never jumps the line.
 - Push to the cap, never past it. Every cap in this file is a ceiling to be reached every day with
-  92+ work (2 listings, 6 pins, one post per channel, one Short), not a target to stay under.
+  clean work (listings 85+ with no slop fail, aim 92; pins and posts 92; one Short), not a target to stay under.
   Going past a cap, or lowering the bar to hit one, is a breach.
 - Learn or lose. An agent that ran twice without a dated "What I've learned" line that has a number
   and a change for tomorrow is not learning; the coordinator (Foreman, Atlas, Vega, Herald, Bolt)
@@ -66,8 +66,8 @@ run-log line.
 When one of these is needed, write it as a proposal or a NEEDS YOU line and stop that branch.
 
 ## Caps (read the live value from settings/main; these are the ceilings)
-- Etsy: 2 new listings a day, $20 listing fees a month, product pass score 92 (90 only for
-  products scored before Oct 21, 2026).
+- Etsy: 2 new listings a day, $20 listing fees a month, product pass score 85 with rulesPass AND a clean slop
+  check (Oct 27, 2026: listings are drafts Grayson publishes himself; 92+ is the aim, tier "top").
 - Pinterest: 6 still pins a day plus 1 video pin; at most 18 scheduled per Bolt run.
 - Socials: one post per channel per day; pass score 92; slop gate before any score.
 - Pricing: 3 changes a day; one per listing per 14 days; floor = max($1.99, 50% of base);

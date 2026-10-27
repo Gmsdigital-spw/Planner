@@ -20,5 +20,5 @@ This folder is the factory's memory. No agent starts from zero again.
 - `gm_factory_v6.py` — the Python brain (registry, Foreman grading, Idea Engine, holiday calendar,
   marketing plan-from-stats, DM keyword map, trading risk manager). Runs with no dependencies.
 
-Rules that never change: real numbers only; nothing ships under 92; no paid service without Grayson's go;
+Rules that never change: real numbers only; nothing reaches drafts under 85 or with a slop fail (aim 92); no paid service without Grayson's go;
 no real name, hometown or personal details of Grayson in any file.

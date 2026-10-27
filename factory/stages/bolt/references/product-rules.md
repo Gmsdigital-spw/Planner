@@ -11,7 +11,8 @@
 
 ## Never
 - Never touch a product in stage "publishing" claimed in the last 2 hours by anyone else.
-- Never publish a product under the pass score (92; 90 only when scored before Oct 21, 2026).
+- Never prepare a product that is not stage "passed" with score.total 85+, rulesPass and slopCheck.pass
+  (Oct 27, 2026 draft bar). In the morning drafts message, mark a tier "check" draft with "(check: <checkNote>)".
 - Never create a second Etsy draft for a product that has an etsy.listingId.
 - Never reuse an orphan draft whose listing_id is not on the product.
 - Never write to stores/ (Gumroad is parked), modules/youtube/, sales, milestones.

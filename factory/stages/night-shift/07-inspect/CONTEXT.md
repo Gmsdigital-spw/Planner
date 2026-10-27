@@ -1,8 +1,11 @@
 # 07 Inspect: Atlas scores every product (room "inspect")
 
-Pass = total 92 or more AND rulesPass (Grayson raised the bar from 90 to 92 on Oct 20, 2026).
-Reach 92 by making the product better, never by nudging scores. An honest 87 that fails is
-better than a padded 91.
+DRAFT BAR (Grayson, Oct 27, 2026; wins over every older 92 line in this workspace): since Oct 26
+every new listing is a DRAFT that Grayson looks at and publishes himself, so he is the final gate.
+Pass = total 85 or more AND rulesPass AND slopCheck.pass. 92+ is still the aim and every fix round
+pushes toward it, but an honest 85-91 that is clean (no slop fail, no rule fail) goes to drafts
+instead of dying at inspection. "I wanted high scores, I just didn't want bad products going up."
+Under 85, a slop fail or a rule fail is never a pass. Never nudge a score to reach 85.
 
 ## Inputs
 
@@ -31,14 +34,16 @@ better than a padded 91.
    rubric 2, a one-sentence verdict, scoredAt. A cover whose title or count is not readable at
    300 px scores images at most 14; a page with overlap, clipped text, cramped spacing or a
    cheap-looking cover cannot score above 14 for images or 7 for polish.
-5. Pass (92+ and rulesPass): stage "passed". Fail: add a note with what to fix, retries + 1,
+5. Pass (85+, rulesPass, slopCheck.pass): stage "passed", with score.tier = "top" (92+) or
+   "check" (85-91, plus score.checkNote = the one thing Grayson should look at before publishing).
+   Run the fix rounds below on an 85-91 product FIRST when time allows; pass it at whatever it ends on. Fail: add a note with what to fix, retries + 1,
    then FIX ROUNDS (Oct 23, 2026: five builds in a row died at 73 to 85 after one round):
    up to THREE fix rounds this run. Each round: list the points lost per category, pick the
    2 categories furthest below full marks, run the matching lines of
    `../references/preflight.md`, make the product better there (rebuild the photo, rewrite the
    copy, open 3 real Etsy listings for market evidence, refill the half-empty page), then
    re-score honestly. Stop early only when it passes or a round raised nothing. A product
-   still under 92 stays stage "inspection" with a note of the exact next fixes; the next
+   still under 85 stays stage "inspection" with a note of the exact next fixes; the next
    run's 03 Pick finishes it FIRST. It becomes "scrapped" only when retries reach 4 or the
    lane itself caps it: market 11 or less after a fix round that went looking for 100+ item-review
    rivals and found none (Oct 23, 2026: such ideas top out near 89 and waste whole nights), UNLESS
