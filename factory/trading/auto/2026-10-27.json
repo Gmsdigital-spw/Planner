@@ -2,15 +2,60 @@
  "day": "2026-10-27",
  "mode": "paper",
  "equityOpen": 24.88,
- "entries": 0,
+ "entries": 2,
  "lostToday": [],
- "positions": {},
+ "positions": {
+  "SPY": {
+   "entry": 769.688,
+   "stop0": 766.6,
+   "stop": 766.6,
+   "target": 775.86,
+   "high": 769.688,
+   "stopId": "84fa32eb-57f2-45a3-b9c9-fe8cdeed7036",
+   "since": "2026-10-27T15:15:00Z",
+   "qty": "0.012888339"
+  },
+  "QQQ": {
+   "entry": 719.816,
+   "stop0": 716.24,
+   "stop": 716.24,
+   "target": 726.97,
+   "high": 719.816,
+   "stopId": "67ad589b-f2b6-40e8-89bb-76c021ea6bac",
+   "since": "2026-10-27T15:15:00Z",
+   "qty": "0.008266001"
+  }
+ },
  "trades": [],
- "actions": [],
+ "actions": [
+  {
+   "t": "10:20",
+   "do": "buy",
+   "sym": "SPY",
+   "notional": 9.93,
+   "stop": 766.6,
+   "target": 775.86,
+   "status": 200,
+   "fill": 769.688
+  },
+  {
+   "t": "10:20",
+   "do": "buy",
+   "sym": "QQQ",
+   "notional": 5.96,
+   "stop": 716.24,
+   "target": 726.97,
+   "status": 200,
+   "fill": 719.816
+  }
+ ],
  "done": null,
- "runs": 97,
- "lastSignal": {},
- "lastRun": "10:18",
+ "runs": 99,
+ "lastSignal": {
+  "SPY": "2026-10-27T15:15:00Z",
+  "QQQ": "2026-10-27T15:15:00Z"
+ },
+ "lastRun": "10:20",
  "equity": 24.88,
  "dayPnl": 0.0,
  "watch": [
@@ -47,5 +92,5 @@
   "UNH",
   "UPS"
  ],
- "lastNote": "equity $24.88, day +0.00, 0 open, 0 entries; scanned 15 names, no A+ setup"
+ "lastNote": "equity $24.88, day +0.00, 2 open, 2 entries"
 }
