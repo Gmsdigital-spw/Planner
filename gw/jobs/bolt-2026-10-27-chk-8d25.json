@@ -1,0 +1,7 @@
+{"id":"bolt-2026-10-27-chk-8d25","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/listings/4604185747?includes=Images","tag":"draft-4604185747"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"},
+{"op":"zernio","method":"GET","path":"/posts/6ad92d13197e529ee835ef43","tag":"pinchk-pin-prod-adhd-savings-tracker-s2"}
+]}
