@@ -1,0 +1,33 @@
+{
+ "id": "vpin-2026-10-27-post-6dcc",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "vpin-2026-10-27",
+   "body": {
+    "content": "Christmas scavenger hunt for kids: 24 rhyming clue cards in two levels, easy rhymes for little elves (about ages 4 to 7) and riddles for big kids (about 8 to 12), plus a setup sheet and answer key. Instant download.",
+    "mediaItems": [
+     {
+      "type": "video",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-27/4599447958/video.mp4"
+     }
+    ],
+    "scheduledFor": "2026-10-28T01:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "Christmas Scavenger Hunt for Kids: 24 Rhyming Clue Cards",
+       "link": "https://www.etsy.com/listing/4599447958/christmas-scavenger-hunt-clues-printable"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
