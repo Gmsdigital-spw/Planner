@@ -1,0 +1,78 @@
+{
+ "id": "bolt-2026-10-27-upload-f468",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4604185747/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-party-mega-bundle/1.jpg",
+   "field": "image",
+   "fileName": "christmas-party-bundle-printable-1.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Christmas Party Bundle Printable: 6 Games, 12 Awards, White Elephant Dice Game, Gingerbread Contest, Family or Office Party"
+   },
+   "tag": "img1"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4604185747/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-party-mega-bundle/2.jpg",
+   "field": "image",
+   "fileName": "christmas-party-bundle-printable-2.jpg",
+   "fields": {
+    "rank": "2",
+    "alt_text": "Find the Guest Who mingle game page from the Christmas party bundle"
+   },
+   "tag": "img2"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4604185747/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-party-mega-bundle/3.jpg",
+   "field": "image",
+   "fileName": "christmas-party-bundle-printable-3.jpg",
+   "fields": {
+    "rank": "3",
+    "alt_text": "Christmas party award certificates page from the printable bundle"
+   },
+   "tag": "img3"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4604185747/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-party-mega-bundle/4.jpg",
+   "field": "image",
+   "fileName": "christmas-party-bundle-printable-4.jpg",
+   "fields": {
+    "rank": "4",
+    "alt_text": "White Elephant dice game page from the printable Christmas party bundle"
+   },
+   "tag": "img4"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4604185747/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-party-mega-bundle/5.jpg",
+   "field": "image",
+   "fileName": "christmas-party-bundle-printable-5.jpg",
+   "fields": {
+    "rank": "5",
+    "alt_text": "Gingerbread contest ribbons and score page from the Christmas party bundle"
+   },
+   "tag": "img5"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4604185747/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/d07c99f863eb0618/christmas-party-bundle-printable.pdf",
+   "field": "file",
+   "fileName": "christmas-party-bundle-printable.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "christmas-party-bundle-printable.pdf"
+   },
+   "tag": "pdf"
+  }
+ ]
+}
