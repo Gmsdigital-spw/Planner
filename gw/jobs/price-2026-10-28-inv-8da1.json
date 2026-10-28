@@ -1,0 +1,1 @@
+{"id":"price-2026-10-28-inv-8da1","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/listings/4601798994/inventory","tag":"inv"}]}
