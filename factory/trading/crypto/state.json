@@ -1,8 +1,34 @@
 {
  "mode": "virtual",
  "startBalance": 25.0,
- "cash": 24.500136676146624,
- "positions": [],
+ "cash": 12.250068338073312,
+ "positions": [
+  {
+   "sym": "SOL/USD",
+   "qty": 0.1185203023009518,
+   "qty0": 0.1185203023009518,
+   "entry": 103.1,
+   "stop": 102.80923532361251,
+   "stop0": 102.80923532361251,
+   "R": 0.29076467638748227,
+   "hs": 0.0005046192065833359,
+   "cost": 12.250068338073312,
+   "proceeds": 0.0,
+   "half": false,
+   "high": 103.1,
+   "t": 1793183100,
+   "lastBarT": 1793182800,
+   "score": 83.9,
+   "parts": {
+    "aboveHourlyEma": 13,
+    "fastEmaRising": 12,
+    "breakout": 25,
+    "rvol": 13.9,
+    "rsiOk": 20
+   },
+   "fills": []
+  }
+ ],
  "history": [
   {
    "sym": "ETH/USD",
@@ -104,13 +130,13 @@
   }
  ],
  "floorLocked": false,
- "lastBarT": 1793180700,
+ "lastBarT": 1793182800,
  "lastClose": {
-  "BTC/USD": 81419.05,
-  "ETH/USD": 2369.47,
-  "SOL/USD": 102.7895,
-  "DOGE/USD": 0.08053015,
-  "AVAX/USD": 9.03325
+  "BTC/USD": 81442.42,
+  "ETH/USD": 2367.8715,
+  "SOL/USD": 103.0275,
+  "DOGE/USD": 0.080395,
+  "AVAX/USD": 9.018835
  },
  "lastExit": {
   "ETH/USD": 1793154000,
@@ -118,40 +144,40 @@
   "SOL/USD": 1793106000,
   "DOGE/USD": 1793124000
  },
- "updatedAt": "2026-10-28T04:52:20.767549-05:00",
- "equity": 24.5001,
+ "updatedAt": "2026-10-28T05:29:53.749536-05:00",
+ "equity": 24.4548,
  "lastScores": {
   "BTC/USD": {
    "score": 45.0,
-   "rvol": 0.39,
-   "rsi": 62.6,
+   "rvol": 0.29,
+   "rsi": 60.2,
    "thin": false
   },
   "ETH/USD": {
    "score": 45.0,
    "rvol": 0.0,
-   "rsi": 59.1,
+   "rsi": 53.6,
    "thin": false
   },
   "SOL/USD": {
-   "score": 45.0,
-   "rvol": 0.07,
-   "rsi": 61.1,
+   "score": 83.9,
+   "rvol": 1.23,
+   "rsi": 64.0,
    "thin": false
   },
   "DOGE/USD": {
-   "score": 70.0,
+   "score": 45.0,
    "rvol": 0.0,
-   "rsi": 70.2,
+   "rsi": 59.4,
    "thin": false
   },
   "AVAX/USD": {
    "score": 45.0,
    "rvol": 0.0,
-   "rsi": 59.0,
+   "rsi": 51.5,
    "thin": false
   }
  },
- "barsProcessed": 9,
+ "barsProcessed": 7,
  "missingSymbols": []
 }
