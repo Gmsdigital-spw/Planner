@@ -1,0 +1,1 @@
+{"id":"trade-2026-10-28-live-eabf","ops":[{"op":"alpaca","path":"/bankroll"},{"op":"alpaca","path":"/positions"},{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY,XLF&timeframe=5Min&limit=78&feed=iex"},{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SPY,QQQ,IWM,DIA,XLK,XLF,XLE,XLV,XLY,SMH,INTC,BAC,AMZN,XOM,PFE&feed=iex"}]}
