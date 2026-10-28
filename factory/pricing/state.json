@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-27",
+ "updatedAt": "2026-10-28",
  "note": "Pricing agent state. basePrice = the normal price before any change (from backups/listings-backup-2026-10-21.json).",
  "listings": {
   "4600177510": {
@@ -230,6 +230,22 @@
    "title": "Christmas Escape Room for Kids Printable, Family Game with 2 Levels Ages 6-9 and",
    "basePrice": 11.99,
    "price": 11.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4604847087": {
+   "title": "Christmas Charades Printable Game: 120 Cards in 3 Levels for Kids, Family and Ad",
+   "basePrice": 3.99,
+   "price": 3.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4604185747": {
+   "title": "Christmas Party Bundle Printable: 6 Games, 12 Awards, White Elephant Dice Game, ",
+   "basePrice": 5.99,
+   "price": 5.99,
    "starter": false,
    "lastChange": null,
    "history": []
