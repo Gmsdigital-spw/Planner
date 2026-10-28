@@ -15,7 +15,8 @@ Central (2 a day); Warden swaps live covers. Never ads.
    the foreground, one at a time) with this brief, filled in, and nothing else:
 
    "You are the Night Shift's <WORKER> for <day key>, runId <runId>. The repo is at
-   /home/claude/planner (already pulled; do not pull again, do not push). FIRST read
+   /home/claude/planner (already pulled; do not pull again; do not push, EXCEPT the Research
+   worker may commit and push gw/jobs/scout-*.json read-only Etsy GET jobs for market proof). FIRST read
    factory/CLAUDE.md, factory/shared/database.md, factory/shared/rules.md and
    factory/stages/night-shift/CONTEXT.md (its Run notes, Load map and Conflicts sections
    bind you; a skill's own "Exact steps" never override them). Then read
@@ -36,6 +37,10 @@ Central (2 a day); Warden swaps live covers. Never ads.
    counts, and decide the next worker. A failed worker is retried once with the failure in
    its brief; a second failure marks the run failed at that stage (later workers still run
    where they can: Review and Report always run).
+3b. INDEPENDENT JUDGE (Oct 28, 2026). You, the coordinator, launch the Judge yourself as its own fresh
+   worker; workers cannot launch agents, so never leave inspection to the Builder. The Judge gets
+   the PRODUCT LINE and reads only 07-inspect's Inputs. The 85 floor and the 92 aim are unchanged:
+   an honest judge must not be softer than the builder was.
 4. If the Agent tool is not available in this session: run the stages yourself in order,
    loading each stage's CONTEXT.md only when you reach it, and say so in the run log.
 
@@ -44,7 +49,8 @@ Central (2 a day); Warden swaps live covers. Never ads.
 | Worker | Stages | Runs | Skip when |
 |--------|--------|------|-----------|
 | Research | 01-scout, 02-judge, 03-pick | once | never (02 is skipped inside when autoApprove is false) |
-| Builder | 04-forge, 05-quill, 06-lens, 07-inspect | once PER product in the build list (03 writes it), in order, with the PRODUCT LINE | build list empty |
+| Builder | 04-forge, 05-quill, 06-lens | once PER product in the build list (03 writes it), in order, with the PRODUCT LINE | build list empty |
+| Judge | 07-inspect (and its fix rounds: send fixes back to a fresh Builder brief, then re-judge) | once PER built product, right after its Builder, a DIFFERENT fresh agent than the Builder (Grayson, Oct 28, 2026: the builder grading its own work 4 runs in a row was not an honest score) | product not built |
 | Pins | 08-batch-pins | once | no passed or batched product without pins, no imageless pins, and the queue holds a day of pins |
 | Review | 09-review | once | never (sub-steps have their own skips) |
 | Report | 10-report | once | never |
@@ -85,7 +91,7 @@ stage, write the run doc failed with the reason, and tell Grayson in one line.
   mission, decide an experiment. The pipeline reads whatever state he left; his call wins.
 
 ## Time budget and conflicts
-About 50 minutes of work (Oct 23, 2026: 25 minutes made every build rush and fail). Quality
+About 75 minutes of work (Grayson, Oct 28, 2026: raised from 50 so the second product gets its full build instead of being skipped every night; Oct 23: 25 minutes made every build rush and fail). Quality
 first: ONE product that passes beats two that fail, so the first product gets its full build,
 pre-flight and all three fix rounds before the second product starts. Over budget: skip 01's
 intel refresh, then 08's extra pins, then the second product in the build list (it stays

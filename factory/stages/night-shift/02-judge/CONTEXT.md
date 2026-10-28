@@ -33,7 +33,16 @@ other than "Atlas auto-approver").
    niche and record them in brief.marketProof = {listings:[{url, itemReviews, price, whatItHas}],
    gap: "<the one specific thing we do that they don't>", checkedAt}. Approve ONLY with at least
    2 opened item pages showing 100+ item reviews AND a written gap. Fewer: leave it "proposed"
-   with note "needs market proof: <what is missing>"; never approve on hope. Build only what
+   with note "needs market proof: <what is missing>"; never approve on hope.
+   PROOF VIA ETSY DATA (Grayson, Oct 28, 2026): opening Etsy item pages is blocked in night runs
+   (permission prompts nobody answers), so proof also counts when it comes from Etsy's own API
+   through the free gateway: GET /listings/<id>/reviews?limit=1 (the "count" field = item reviews)
+   and GET /listings/<id> (num_favorers, price, title). Record source "etsy-api" on each
+   marketProof listing. The bar does not move: still 2 listings at 100+ item reviews (or the
+   open-niche rule) AND a written gap.
+   In the same gateway job, check each approved brief's lead search phrase: GET /listings/active?
+   keywords=<phrase>&sort_on=score&limit=25; record brief.phraseCheck = {phrase, hits (top-25 titles
+   carrying it), source:"etsy-search", checkedAt}. The Builder's Quill uses it (it cannot run the gateway). Build only what
    buyers have already proven they buy. OPEN NICHE (Grayson, Oct 24, 2026): if 10+ opened
    item pages show NO 100+ item-review rival, the brief may still pass with 2+ opened rivals at
    100+ favorites each AND a written gap (feature or bundle they lack); record

@@ -6,7 +6,7 @@ Load only the service section your stage names.
 
 ## Protocol (every service)
 1. Write `gw/jobs/<job id>.json` = {"id":"<job id>","stopOnError":false,"ops":[...]}.
-   Job id = `<prefix>-<day key>-<step>-<4 random hex>`; unique every time. Prefixes: bolt,
+   Job id = `<prefix>-<day key>-<step>-<4 random hex>`; unique every time. Prefixes: scout, bolt,
    mech, medic, warden, price, vpin, trade, lab, art, covers, audit.
 2. Commit, `git pull --rebase`, push (see `repo.md`). The Action "Starship free gateway" runs the
    job and pushes `gw/out/<job id>.json` in about 30 to 90 seconds (uploads: up to 3 minutes).

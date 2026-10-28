@@ -52,8 +52,12 @@ below on its own product and fixes what fails BEFORE setting stage "inspection".
 - [ ] No photo repeats a page the cover already shows.
 - [ ] Fillable fields auto-size: type the longest real name/line into every field and render it; nothing clips at max length.
 - [ ] Cover hero crop never cuts a page's footer or edge text.
-- [ ] Search phrase checked for real: Etsy suggest is blocked, so WebFetch
-      https://suggestqueries.google.com/complete/search?client=firefox&q=<phrase> and lead the title with a returned phrase (this worked on Oct 23).
+- [ ] Search phrase checked for real (Oct 28, 2026): suggest/autocomplete is blocked in night runs, so
+      the check is Etsy's own search through the free gateway: GET /listings/active?keywords=<phrase>
+      &sort_on=score&limit=25 and the phrase must appear in the titles of 3+ of the top 25 results,
+      or an Etsy market page (etsy.com/market/<phrase>) opened this run. Name it in "## Copy". This
+      counts as checked; a blocked autocomplete is never a fail by itself, and no copy point is
+      taken for it. An unverified phrase still loses the point.
 
 ## Proven by the passes (copy what scored 19/20)
 - Photo 2: the 6 most important pages in a 3x2 grid, each about 470 px wide, with a short headline. Never 8 small pages.

@@ -34,7 +34,7 @@ mirrors those lists so they have one home to drift from.
 
 | Crew / task | May write |
 |-------------|-----------|
-| Night Shift | factory/notebook/, pins/styled/ (its own pin images, Oct 25), factory/skills/, factory/LESSONS.md, factory/playbooks/, factory/scores.jsonl, factory/runlog.jsonl, factory/stages/night-shift/output/, tools/fun_covers_config.json (add entries only), prints/<hex>/ (wall art) |
+| Night Shift | gw/jobs/scout-*.json (read-only Etsy GETs for market proof, Oct 28), factory/notebook/, pins/styled/ (its own pin images, Oct 25), factory/skills/, factory/LESSONS.md, factory/playbooks/, factory/scores.jsonl, factory/runlog.jsonl, factory/stages/night-shift/output/, tools/fun_covers_config.json (add entries only), prints/<hex>/ (wall art) |
 | Mechanic | gw/jobs/mech-*.json, factory/trading/kick/<day>-<HHMM>.txt, factory/engine/orders/<doc id>.json |
 | Bolt | listing-photos/auto/, dl-temp/, gw/jobs/bolt-*.json, factory/runlog.jsonl |
 | Herald | social/, factory/skills/herald/, yt/jobs/spot-*.json, gw/jobs/tt-*.json (TikTok via Postproxy, Oct 24), factory/runlog.jsonl |
