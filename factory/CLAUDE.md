@@ -48,6 +48,7 @@ factory/
 | Repo, commits, write paths | `shared/repo.md` |
 | Free GitHub gateway ops | `shared/gateway.md` |
 | Ids and accounts | `shared/accounts.md` |
+| Outside tools (free tiers only) | `shared/stack.md` |
 | Run log | `shared/logging.md` |
 
 ## Triggers

@@ -30,6 +30,7 @@ they only use `shared/` files when their prompt says so.
 | Gateway | `shared/gateway.md` | Free GitHub gateway protocol and every op shape |
 | Accounts | `shared/accounts.md` | Shop id, Pinterest boards, TikTok, Make, YouTube, trading numbers |
 | Logging | `shared/logging.md` | The run-log line every run writes |
+| Free tech stack | `shared/stack.md` | Approved free-tier tools, limits, which social uses what, secret names |
 | Floor specs | `specs/` | Grayson's standing orders per floor (load by section) |
 | The week's standing order (Oct 23-30, 2026) | `specs/push-week-2026-10-23.md` | Mission numbers, daily targets per crew, the scoreboard, Grayson's taps, cap proposals |
 | Agent skills | `skills/<agent>/SKILL.md` | Load only the agents acting in the current stage |
