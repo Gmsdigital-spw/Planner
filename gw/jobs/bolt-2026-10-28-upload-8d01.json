@@ -1,0 +1,72 @@
+{
+ "id": "bolt-2026-10-28-upload-8d01",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4604847087/images",
+   "tag": "imgs"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4604847087/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-charades-120/1.jpg",
+   "field": "image",
+   "fileName": "christmas-charades-printable-1.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Christmas Charades Printable Game: 120 Cards in 3 Levels for Kids, Family and Adults, Draw It Mode, Holiday Party Game"
+   },
+   "tag": "img1"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4604847087/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-charades-120/2.jpg",
+   "field": "image",
+   "fileName": "christmas-charades-printable-2.jpg",
+   "fields": {
+    "rank": "2",
+    "alt_text": "Printed Christmas charades card pages from the 120-card set"
+   },
+   "tag": "img2"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4604847087/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-charades-120/3.jpg",
+   "field": "image",
+   "fileName": "christmas-charades-printable-3.jpg",
+   "fields": {
+    "rank": "3",
+    "alt_text": "Preview of the three colour-coded levels: Kids, Family and Adults"
+   },
+   "tag": "img3"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4604847087/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-charades-120/4.jpg",
+   "field": "image",
+   "fileName": "christmas-charades-printable-4.jpg",
+   "fields": {
+    "rank": "4",
+    "alt_text": "Draw It mode rules and timer page from the printable"
+   },
+   "tag": "img4"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4604847087/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-charades-120/5.jpg",
+   "field": "image",
+   "fileName": "christmas-charades-printable-5.jpg",
+   "fields": {
+    "rank": "5",
+    "alt_text": "Team score sheet and blank cards from the charades PDF"
+   },
+   "tag": "img5"
+  }
+ ]
+}
