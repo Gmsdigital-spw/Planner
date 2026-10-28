@@ -1,14 +1,12 @@
 {
- "at": "2026-10-28T06:54:41.485245-05:00",
- "lastRun": "06:54",
+ "at": "2026-10-28T07:28:25.562181-05:00",
+ "lastRun": "07:28",
  "day": "2026-10-28",
  "status": "ok",
- "equity": 24.37,
- "openPositions": 1,
- "trades": 8,
- "entriesThisRun": [
-  "SOL/USD"
- ],
+ "equity": 24.3,
+ "openPositions": 0,
+ "trades": 9,
+ "entriesThisRun": [],
  "mode": "virtual",
  "cadence": "every 5 minutes, 24/7"
 }
