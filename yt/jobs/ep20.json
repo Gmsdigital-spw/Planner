@@ -1,7 +1,7 @@
 {
   "id": "ep20",
   "format": "story",
-  "rev": 1,
+  "rev": 2,
   "title": "One Question Beat the Game Level Nobody Could Beat #shorts",
   "title_card": "The Two Guards Riddle",
   "voice": "andrew",
@@ -31,7 +31,7 @@
       "text": "One door led to the treasure; the other dropped you back to level one.",
       "label": "THE STAKES",
       "headline": "TREASURE OR START OVER",
-      "image": "two tall arched wooden doors side by side in a stone castle wall, both wide open: through the left door a glowing golden treasure chest full of gold coins, through the right door a dark bottomless pit with nothing inside, {jay} standing small in the middle between the two doors looking from one to the other"
+      "image": "two tall arched wooden doors side by side in a stone castle wall, both wide open: through the left door a glowing golden treasure chest full of gold coins, through the right door a dark bottomless pit, {jay} standing alone in the middle between the two doors looking from one to the other, he is the only person in the picture, exactly two doors"
     },
     {
       "text": "One guard always told the truth, and the other always lied.",
@@ -43,7 +43,7 @@
       "text": "Players got one question, and nobody knew which guard was which.",
       "label": "THE PROBLEM",
       "headline": "WHICH ONE LIES?",
-      "image": "{jay} scratching his head, puzzled, looking back and forth between {red} on the left and {blue} on the right, who stand perfectly still and silent in front of two tall closed arched wooden doors in a torch-lit castle hall"
+      "image": "{jay} standing in the center scratching his head, puzzled, {red} standing on the far left and {blue} standing on the far right, both guards perfectly still and silent, behind them exactly two tall closed arched wooden doors side by side and no other doors, torch-lit stone castle hall, exactly three figures: one boy and two guards"
     },
     {
       "text": "Jay pointed at a guard and asked, \"Which door would the other guard pick?\"",
@@ -67,13 +67,13 @@
       "text": "Both answers point to the trap, so Jay walked through the other door.",
       "label": "THE TWIST",
       "headline": "TAKE THE OTHER DOOR",
-      "image": "{red} and {blue} both pointing their spears at the closed right-hand door of two tall arched wooden doors, while {jay} smiles and walks the other way through the open left-hand door, warm golden light pouring out of it, torch-lit stone castle hall"
+      "image": "{jay} smiling and walking through the open left-hand door into warm golden light, while {red} and {blue} stand beside the closed right-hand door and both point their spears straight at that closed right-hand door, away from the boy, exactly two doors, torch-lit stone castle hall"
     },
     {
       "text": "The treasure chest burst open, and Jay was the first kid to beat the level.",
       "label": "HE WINS",
       "headline": "FIRST KID TO WIN",
-      "image": "{jay} cheering with both arms raised beside a big open wooden treasure chest overflowing with shining gold coins and jewels, sparkles and colorful confetti in the air, golden treasure room, triumphant and joyful"
+      "image": "{jay} alone, cheering with both arms raised beside a big open wooden treasure chest overflowing with shining gold coins and jewels, sparkles and colorful confetti in the air, golden treasure room, he is the only person in the picture, triumphant and joyful"
     }
   ]
 }
