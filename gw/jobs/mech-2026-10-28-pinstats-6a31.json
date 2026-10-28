@@ -1,0 +1,156 @@
+{
+ "id": "mech-2026-10-28-pinstats-6a31",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d14197e529ee835ef4d",
+   "tag": "pin-prod-debt-payoff-2027-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d13197e529ee835ef48",
+   "tag": "pin-prod-advent-activities-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d13197e529ee835ef43",
+   "tag": "pin-prod-adhd-savings-tracker-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d13197e529ee835ef3e",
+   "tag": "pin-legacy-xmas-planner-listing-update-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6addf4f9f328ebc0ca8f18a5",
+   "tag": "pin-prod-invite-birthday-pink-cabana-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d12197e529ee835ef39",
+   "tag": "pin-legacy-xmas-planner-listing-update-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d125f6bae0156fd7070",
+   "tag": "pin-legacy-xmas-game-bundle-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f385e0f45f343e2a575c",
+   "tag": "pin-prod-xmas-scavenger-hunt-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f3848c105982dc04b019",
+   "tag": "pin-prod-thanksgiving-games-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6addf4f8f328ebc0ca8f189f",
+   "tag": "pin-prod-invite-birthday-pink-cabana-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8b0e6b263219c4019642d",
+   "tag": "pin-gingerbread-contest-2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d11bd032490b2527d2a",
+   "tag": "pin-legacy-xmas-game-bundle-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad7c26f8cea1c68a2b2f10b",
+   "tag": "pin-no-buy-year-2027-1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f385e0f45f343e2a574b",
+   "tag": "pin-prod-xmas-party-awards-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f385e0f45f343e2a5746",
+   "tag": "pin-prod-thanksgiving-host-planner-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f3838c105982dc04b014",
+   "tag": "pin-prod-pink-christmas-verse-art-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad7c26f3026ecbeee728733",
+   "tag": "pin-xmas-scavenger-hunt-1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad7c26e3026ecbeee72872e",
+   "tag": "pin-friendsgiving-2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad7c26efa6cea9b538dfbac",
+   "tag": "pin-pink-christmas-verse-art-2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f384e0f45f343e2a573d",
+   "tag": "pin-prod-secret-santa-kit-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f383e0f45f343e2a5738",
+   "tag": "pin-prod-pink-coquette-verse-art-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f381c2a079c5bb730de5",
+   "tag": "pin-prod-gingerbread-contest-kit-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6adb9886488b7522680dd53d",
+   "tag": "pin-prod-santa-mail-bundle-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8b0e6b263219c40196428",
+   "tag": "pin-cookie-exchange-1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f3838c105982dc04b00f",
+   "tag": "pin-prod-nye-games-s1"
+  }
+ ]
+}
