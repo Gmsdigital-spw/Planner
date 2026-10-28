@@ -1,0 +1,1 @@
+{"id": "audit-2026-10-28-img-ef02", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/batch?includes=Images&listing_ids=4604847087,4604185747,4602816114,4602703062,4600177516,4602402578,4597749137,4601798994", "tag": "b"}]}
