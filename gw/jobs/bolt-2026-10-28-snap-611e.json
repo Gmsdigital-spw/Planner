@@ -1,0 +1,8 @@
+{"id":"bolt-2026-10-28-snap-611e","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457","tag":"shop"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=draft&limit=100","tag":"drafts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"},
+{"op":"zernio","method":"GET","path":"/posts/6ad92d15197e529ee835ef65","tag":"pinchk-pin-prod-debt-payoff-2027-s3"}
+]}
