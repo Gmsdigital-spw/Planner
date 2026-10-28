@@ -19,8 +19,8 @@ Read by: Night Shift 01 (ideas), 05 (copy), 08 (pins); Herald 05 (captions). Kee
 - 2026-10-26: fun for the family / family use (1 review, Christmas Party Games Bundle 4597749137). Hint only until a second review says it.
 
 ## Rival buyer words by lane (Scout, from opened rival item pages; lane: "phrase" · rival listing id · date)
-- party games: "A wonderful printable for family fun!" · 1813351868 · 2026-10-27; "Helpful resource for my party" · 1123794386 · 2026-10-27; "Fun game for a group." · 1345886317 · 2026-10-27
-- christmas: none yet
+- party games: "A wonderful printable for family fun!" · 1813351868 · 2026-10-27; "Helpful resource for my party" · 1123794386 · 2026-10-27; "Fun game for a group." · 1345886317 · 2026-10-27; "Had a blast playing this with my family" · 1122548336 · 2026-10-28; "guests loved it" · 1576993586 · 2026-10-28; "fun at the holiday party" · 1576993586 · 2026-10-28
+- christmas: "Easy to edit" (x4) · 701942880, 872020142, 1327740851, 669057885 · 2026-10-28; "Perfect gift" (x3) · 701942880, 872020142, 1327740851 · 2026-10-28
 - money: none yet
 - planners: "Wonderful package and easy to use" · 1839412257 · 2026-10-27; "Nice job i feel like I am all set for 2027!" · 1839412257 · 2026-10-27; "Really good deal for all of the pages plus you got to edit them" · 1704021264 · 2026-10-27
 - invitations: none yet
@@ -28,3 +28,5 @@ Read by: Night Shift 01 (ideas), 05 (copy), 08 (pins); Herald 05 (captions). Kee
 
 ## Complaints buyers make about rivals (our gap to fill; lane: "complaint" · rival listing id · date)
 - planners: "a bit confusing for me at first" (600-page journal bundle) · 1839412257 · 2026-10-27
+- party games: "a bit confusing" (Thanksgiving escape room) · 1027902540 · 2026-10-28; "the clues didn't connect well" (escape room kit) · 541854405 · 2026-10-28
+- christmas: the editable font looked less appealing than the listing photos (coupon book) · 570840297 · 2026-10-28
