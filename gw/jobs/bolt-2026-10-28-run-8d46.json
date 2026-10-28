@@ -1,0 +1,9 @@
+{"id":"bolt-2026-10-28-run-8d46","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=draft&limit=100","tag":"drafts"},
+{"op":"etsy","method":"GET","path":"/listings/4604847087?includes=Images","tag":"chk-4604847087"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"},
+{"op":"zernio","method":"GET","path":"/posts/6ad92d14197e529ee835ef52","tag":"pin-prod-adhd-savings-tracker-s3"},
+{"op":"zernio","method":"GET","path":"/posts/6ad92d14197e529ee835ef57","tag":"pin-prod-advent-activities-s2"}
+]}
