@@ -50,14 +50,14 @@
   }
  ],
  "done": null,
- "runs": 323,
+ "runs": 329,
  "lastSignal": {
   "SPY": "2026-10-28T15:15:00Z",
   "XLF": "2026-10-28T15:15:00Z"
  },
- "lastRun": "14:08",
- "equity": 24.89,
- "dayPnl": -0.01,
+ "lastRun": "14:14",
+ "equity": 24.88,
+ "dayPnl": -0.02,
  "watch": [
   "SPY",
   "QQQ",
@@ -91,5 +91,5 @@
   "V",
   "WMT"
  ],
- "lastNote": "equity $24.89, day -0.01, 2 open, 2 entries; no new entries now (8:35-2:00 CT window)"
+ "lastNote": "equity $24.88, day -0.02, 2 open, 2 entries; no new entries now (8:35-2:00 CT window)"
 }
