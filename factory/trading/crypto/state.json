@@ -1,8 +1,34 @@
 {
  "mode": "virtual",
  "startBalance": 25.0,
- "cash": 24.30481886317877,
- "positions": [],
+ "cash": 12.152409431589385,
+ "positions": [
+  {
+   "sym": "SOL/USD",
+   "qty": 0.11883176559171073,
+   "qty0": 0.11883176559171073,
+   "entry": 102.01,
+   "stop": 101.43285584552453,
+   "stop0": 101.43285584552453,
+   "R": 0.5771441544754765,
+   "hs": 0.0004805759064740389,
+   "cost": 12.152409431589385,
+   "proceeds": 0.0,
+   "half": false,
+   "high": 102.01,
+   "t": 1793214300,
+   "lastBarT": 1793214000,
+   "score": 75.0,
+   "parts": {
+    "aboveHourlyEma": 13,
+    "fastEmaRising": 12,
+    "breakout": 0,
+    "rvol": 30.0,
+    "rsiOk": 20
+   },
+   "fills": []
+  }
+ ],
  "history": [
   {
    "sym": "ETH/USD",
@@ -132,13 +158,13 @@
   }
  ],
  "floorLocked": false,
- "lastBarT": 1793211000,
+ "lastBarT": 1793214000,
  "lastClose": {
-  "BTC/USD": 80742.19,
-  "ETH/USD": 2343.8485,
-  "SOL/USD": 101.452,
-  "DOGE/USD": 0.0791115,
-  "AVAX/USD": 8.85133
+  "BTC/USD": 81152.463,
+  "ETH/USD": 2358.05,
+  "SOL/USD": 102.246,
+  "DOGE/USD": 0.0796603,
+  "AVAX/USD": 8.936345
  },
  "lastExit": {
   "ETH/USD": 1793154000,
@@ -146,40 +172,40 @@
   "SOL/USD": 1793188800,
   "DOGE/USD": 1793124000
  },
- "updatedAt": "2026-10-28T13:15:35.886373-05:00",
- "equity": 24.3048,
+ "updatedAt": "2026-10-28T14:07:42.644598-05:00",
+ "equity": 24.2966,
  "lastScores": {
   "BTC/USD": {
    "score": 45.0,
-   "rvol": 0.21,
-   "rsi": 59.0,
+   "rvol": 0.0,
+   "rsi": 67.2,
    "thin": false
   },
   "ETH/USD": {
    "score": 45.0,
-   "rvol": 0.1,
-   "rsi": 60.5,
+   "rvol": 0.0,
+   "rsi": 68.5,
    "thin": false
   },
   "SOL/USD": {
-   "score": 45.0,
-   "rvol": 0.24,
-   "rsi": 57.0,
+   "score": 75.0,
+   "rvol": 118.76,
+   "rsi": 67.1,
    "thin": false
   },
   "DOGE/USD": {
    "score": 45.0,
    "rvol": 0.0,
-   "rsi": 51.8,
+   "rsi": 64.0,
    "thin": false
   },
   "AVAX/USD": {
-   "score": 32.0,
+   "score": 45.0,
    "rvol": 0.0,
-   "rsi": 50.8,
+   "rsi": 62.6,
    "thin": false
   }
  },
- "barsProcessed": 9,
+ "barsProcessed": 10,
  "missingSymbols": []
 }
