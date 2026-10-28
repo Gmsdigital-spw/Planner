@@ -1,0 +1,1 @@
+{"id":"trade-2026-10-28-live-f075","ops":[{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY,XLF&timeframe=5Min&limit=78&feed=iex&start=2026-10-28T13:30:00Z"},{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SPY,QQQ,IWM,DIA,XLK,XLF,XLE,XLV,XLY,SMH,INTC,BAC,AMZN,XOM,PFE&feed=iex"}]}
