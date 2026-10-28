@@ -204,11 +204,18 @@
   },
   "4601798994": {
    "title": "Letter from Santa Editable Printable, 6 Personalized Santa Letters, Nice List Ce",
-   "basePrice": 8.99,
-   "price": 8.99,
+   "basePrice": 4.99,
+   "price": 4.99,
    "starter": false,
-   "lastChange": null,
-   "history": []
+   "lastChange": "2026-10-28",
+   "history": [
+    {
+     "d": "2026-10-28",
+     "from": 8.99,
+     "to": 4.99,
+     "why": "Grayson's call in chat Oct 28: page-one Letter from Santa listings sell at $1.49 to $5.50; 0 views at $8.99. New normal price."
+    }
+   ]
   },
   "4602816114": {
    "title": "Christmas Murder Mystery Party Game for 8 Players, Printable Whodunit Dinner Par",
