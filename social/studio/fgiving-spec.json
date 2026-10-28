@@ -1,0 +1,84 @@
+{
+ "vo": "social/studio/media/vo/fgiving-vo.mp3",
+ "music": "social/studio/media/vo/fgiving-music.wav",
+ "product": {
+  "dir": "/social/studio/media/fgiving",
+  "cover": "cover.jpg",
+  "price": "4.49",
+  "pages": 15,
+  "listTitle": "Friendsgiving Games Printable Bundle, 7 Party Games for Adults, Potluck Sign Up Sheet, Trivia, Bingo, Most Likely To",
+  "strip": [
+   "p-03.png",
+   "p-07.png",
+   "p-09.png",
+   "p-12.png"
+  ],
+  "bg": [
+   "#c4643a",
+   "#5a2410"
+  ],
+  "accent": "#b5532b",
+  "hl": "#ffd34d",
+  "dot": "#ffe6d9"
+ },
+ "phrases": [
+  {
+   "say": "Hosting Friendsgiving this year?",
+   "cap": "Hosting *Friendsgiving* | this year?",
+   "scene": "grid",
+   "pages": [
+    "p-05.png",
+    "p-07.png",
+    "p-09.png",
+    "p-11.png"
+   ]
+  },
+  {
+   "say": "Seven games for a table full of friends.",
+   "cap": "*7* games | for a table full of *friends*",
+   "scene": "fan",
+   "pages": [
+    "p-06.png",
+    "p-07.png",
+    "p-08.png"
+   ]
+  },
+  {
+   "say": "A potluck sign-up, so nobody brings the same dish.",
+   "cap": "A *potluck* sign-up | nobody brings | the *same dish*",
+   "scene": "pan",
+   "page": "p-03.png"
+  },
+  {
+   "say": "Trivia, bingo, and Most Likely To.",
+   "cap": "*Trivia* | *bingo* | *Most Likely To*",
+   "scene": "pan",
+   "page": "p-09.png"
+  },
+  {
+   "say": "Thankful toast cards for the table.",
+   "cap": "*Thankful* toast cards | for the table",
+   "scene": "pan",
+   "page": "p-12.png"
+  },
+  {
+   "say": "Fifteen pages.",
+   "cap": "*15* pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Instant download.",
+   "cap": "Instant *download*"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

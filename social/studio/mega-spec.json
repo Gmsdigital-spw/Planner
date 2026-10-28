@@ -1,0 +1,91 @@
+{
+ "vo": "social/studio/media/vo/mega-vo.mp3",
+ "music": "social/studio/media/vo/mega-music.wav",
+ "product": {
+  "dir": "/social/studio/media/mega",
+  "cover": "cover.jpg",
+  "price": "5.99",
+  "pages": 16,
+  "listTitle": "Christmas Party Bundle Printable: 6 Games, 12 Awards, White Elephant Dice Game, Gingerbread Contest, Family or Office Party",
+  "strip": [
+   "p-07.png",
+   "p-09.png",
+   "p-15.png",
+   "p-16.png"
+  ],
+  "bg": [
+   "#2f7a56",
+   "#0f3323"
+  ],
+  "accent": "#1f5a3e",
+  "hl": "#ffd34d",
+  "dot": "#dff5e8"
+ },
+ "phrases": [
+  {
+   "say": "Six games, twelve awards, one Christmas party.",
+   "cap": "*6* games | *12* awards | *one* party",
+   "scene": "hook",
+   "page": "p-07.png",
+   "badge": "6 GAMES"
+  },
+  {
+   "say": "Start with a mingle game as guests arrive.",
+   "cap": "A *mingle game* | as guests *arrive*",
+   "scene": "pan",
+   "page": "p-07.png"
+  },
+  {
+   "say": "Trivia and charades in teams.",
+   "cap": "*Trivia* and *charades* | in teams",
+   "scene": "grid",
+   "pages": [
+    "p-06.png",
+    "p-08.png",
+    "p-04.png",
+    "p-05.png"
+   ]
+  },
+  {
+   "say": "Build gingerbread houses, and judge them.",
+   "cap": "Build *gingerbread* houses | and *judge* them",
+   "scene": "fan",
+   "pages": [
+    "p-13.png",
+    "p-14.png",
+    "p-15.png"
+   ]
+  },
+  {
+   "say": "Swap gifts with a dice game.",
+   "cap": "Swap gifts | with a *dice game*",
+   "scene": "pan",
+   "page": "p-16.png"
+  },
+  {
+   "say": "Then hand out the awards.",
+   "cap": "Then hand out | the *awards*",
+   "scene": "pan",
+   "page": "p-09.png"
+  },
+  {
+   "say": "Sixteen pages.",
+   "cap": "*16* pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Instant download.",
+   "cap": "Instant *download*"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}
