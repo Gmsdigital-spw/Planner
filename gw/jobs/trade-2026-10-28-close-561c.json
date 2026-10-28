@@ -1,0 +1,1 @@
+{"id":"trade-2026-10-28-close-561c","ops":[{"op":"alpaca","path":"/bankroll"},{"op":"alpaca","path":"/positions"},{"op":"alpaca","path":"/orders?status=open"},{"op":"alpaca","path":"/orders?status=closed&after=2026-10-28T19:40:00Z&limit=20"}]}
