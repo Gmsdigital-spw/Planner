@@ -76,3 +76,19 @@ Third time this has happened (Oct 20 cream desk, Oct 21 cream desk again, Oct 23
 
 ## Oct 27, 2026 — Grayson: pins are slop (overrides the pin lines above)
 - 38 of 43 queued pins were the fun_pins card. New pins follow factory/stages/night-shift/08-batch-pins step 2 "PIN STANDARD": 3 different layout families per product, real pages 55%+, no emoji or fake badges, fun_pins at most 1 in 6, and a pin slop gate (contact sheet vs the 6 newest queued pins) before a pin is "ready". Bolt schedules only pins that passed it.
+
+## Oct 28, 2026: readable at thumbnail size (Grayson: "make sure everything is looking buyable")
+Side-by-side check of our covers against page one for 10 of our search phrases (gw/out/files/audit-1028):
+our covers are clean and show real pages, but the title and the count are too small to read in a
+search grid, while the strongest rivals lead with a big title and a big number ("50 Christmas Party
+Games", "42 unique charades cards", "60 clue cards"). From now on, for every new or rebuilt cover:
+- The product name reads at 300 px: title text at least 9% of the cover height.
+- The count is part of the headline in big type when it is a selling point ("120 Charades Cards",
+  "8 Players", "16 Pages"), never a round badge or sticker (the fun_covers badge stays retired).
+- Kids products (escape room, scavenger hunt) need warmth and color from the real pages; a
+  grey maze page alone reads as homework.
+- Premium-priced games (murder mystery) need a cover that looks the price: one dramatic hero
+  page or scene and the story name large, not a pale page.
+- Same side-by-side test: put the new cover next to page one's top 6 for its phrase; if a shopper
+  would tap a rival first, rebuild.
+
