@@ -1,0 +1,72 @@
+{
+ "id": "audit-2026-10-28-market-c65f",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/active?limit=100",
+   "tag": "ours"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=christmas%20party%20games%20printable&sort_on=score&limit=8",
+   "tag": "s:christmas party games printable"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=christmas%20charades%20printable&sort_on=score&limit=8",
+   "tag": "s:christmas charades printable"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=christmas%20murder%20mystery%20party%20game&sort_on=score&limit=8",
+   "tag": "s:christmas murder mystery party game"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=christmas%20escape%20room%20for%20kids%20printable&sort_on=score&limit=8",
+   "tag": "s:christmas escape room for kids printable"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=thanksgiving%20games%20printable&sort_on=score&limit=8",
+   "tag": "s:thanksgiving games printable"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=friendsgiving%20games%20printable&sort_on=score&limit=8",
+   "tag": "s:friendsgiving games printable"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=letter%20from%20santa%20printable&sort_on=score&limit=8",
+   "tag": "s:letter from santa printable"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=gingerbread%20house%20decorating%20contest&sort_on=score&limit=8",
+   "tag": "s:gingerbread house decorating contest"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=christmas%20scavenger%20hunt%20printable&sort_on=score&limit=8",
+   "tag": "s:christmas scavenger hunt printable"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/active?keywords=budget%20planner%20printable&sort_on=score&limit=8",
+   "tag": "s:budget planner printable"
+  }
+ ]
+}
