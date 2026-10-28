@@ -1,0 +1,301 @@
+{
+ "id": "bolt-2026-10-28-pins-5d6b",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "fetch_images",
+   "dir": "bolt-2026-10-28-pins-5d6b",
+   "items": [
+    {
+     "name": "pin-prod-xmas-charades-120-m1.jpg",
+     "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-charades-120-m1.jpg"
+    },
+    {
+     "name": "pin-prod-xmas-murder-mystery-8-m1.jpg",
+     "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-murder-mystery-8-m1.jpg"
+    },
+    {
+     "name": "pin-prod-xmas-charades-120-s1.jpg",
+     "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-charades-120-s1.jpg"
+    },
+    {
+     "name": "pin-prod-thanksgiving-games-m1.jpg",
+     "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-thanksgiving-games-m1.jpg"
+    },
+    {
+     "name": "pin-prod-xmas-charades-120-s3.jpg",
+     "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-charades-120-s3.jpg"
+    },
+    {
+     "name": "pin-prod-xmas-charades-120-s2.jpg",
+     "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-charades-120-s2.jpg"
+    },
+    {
+     "name": "pin-prod-friendsgiving-kit-m1.jpg",
+     "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-friendsgiving-kit-m1.jpg"
+    },
+    {
+     "name": "pin-prod-thanksgiving-games-m2.jpg",
+     "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-thanksgiving-games-m2.jpg"
+    },
+    {
+     "name": "pin-prod-xmas-escape-room-m1.jpg",
+     "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-m1.jpg"
+    }
+   ],
+   "tag": "imgcheck"
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-charades-120-m1",
+   "tag": "pin-prod-xmas-charades-120-m1",
+   "body": {
+    "content": "120 Christmas charades cards in 3 levels: kids, family and adults. Act it out or switch to Draw It mode, then keep score on the team score sheet. 14 printable pages. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-charades-120-m1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-28T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Charades Printable: 120 Cards in 3 Levels, Kids to Adults, Party Game",
+       "link": "https://www.etsy.com/listing/4604847087"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-murder-mystery-8-m1",
+   "tag": "pin-prod-xmas-murder-mystery-8-m1",
+   "body": {
+    "content": "Host a cozy Christmas whodunit for 8 players: host guide, timeline, 8 character sheets, clue cards in 3 rounds and a sealed solution page. 16 printable pages. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-murder-mystery-8-m1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-28T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Murder Mystery Party Game Printable for 8 Players, Family Friendly Whodunit",
+       "link": "https://www.etsy.com/listing/4602816114"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-charades-120-s1",
+   "tag": "pin-prod-xmas-charades-120-s1",
+   "body": {
+    "content": "120 original Christmas charades cards in 3 colour-coded levels: 40 for kids, 40 for the whole family and 40 for adults and office parties. Act it out or switch to Draw It mode with the same cards, then keep score on the team score sheet. 14 printable pages plus how-to rules and blank cards to write your own. Print at home on letter paper, cut and play tonight. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-charades-120-s1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-29T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Charades Printable: 120 Cards for a Family Holiday Party Game Night",
+       "link": "https://www.etsy.com/listing/4604847087"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-thanksgiving-games-m1",
+   "tag": "pin-prod-thanksgiving-games-m1",
+   "body": {
+    "content": "7 printable Thanksgiving games for family dinners, Friendsgiving and classrooms in one 11-page pack. Print at home on US Letter or A4 and play the same day. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-thanksgiving-games-m1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-10-29T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "Thanksgiving Games Printable: 7 Family Games for After Dinner, Friendsgiving and Classrooms",
+       "link": "https://www.etsy.com/listing/4597743627"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-charades-120-s3",
+   "tag": "pin-prod-xmas-charades-120-s3",
+   "body": {
+    "content": "120 original Christmas charades cards in 3 colour-coded levels: 40 for kids, 40 for the whole family and 40 for adults and office parties. Act it out or switch to Draw It mode with the same cards, then keep score on the team score sheet. 14 printable pages plus how-to rules and blank cards to write your own. Print at home on letter paper, cut and play tonight. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-charades-120-s3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-02T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Printable Christmas Charades Game: Act It or Draw It, With Team Score Sheet",
+       "link": "https://www.etsy.com/listing/4604847087"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-charades-120-s2",
+   "tag": "pin-prod-xmas-charades-120-s2",
+   "body": {
+    "content": "120 original Christmas charades cards in 3 colour-coded levels: 40 for kids, 40 for the whole family and 40 for adults and office parties. Act it out or switch to Draw It mode with the same cards, then keep score on the team score sheet. 14 printable pages plus how-to rules and blank cards to write your own. Print at home on letter paper, cut and play tonight. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-charades-120-s2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-03T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Charades for Kids and Adults: 120 Printable Cards in 3 Levels",
+       "link": "https://www.etsy.com/listing/4604847087"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-friendsgiving-kit-m1",
+   "tag": "pin-prod-friendsgiving-kit-m1",
+   "body": {
+    "content": "Plan your Friendsgiving in one printable kit: potluck sign-up, host timeline and 7 party games for a table full of friends. Print at home and you're ready. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-friendsgiving-kit-m1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-03T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "Friendsgiving Party Kit Printable: Potluck Sign-Up, Host Timeline and 7 Games",
+       "link": "https://www.etsy.com/listing/4598501430"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-thanksgiving-games-m2",
+   "tag": "pin-prod-thanksgiving-games-m2",
+   "body": {
+    "content": "20 Thanksgiving trivia questions plus 6 more printable family games in one 11-page pack, ready for the dinner table or the classroom. Print at home, no prep. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-thanksgiving-games-m2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-04T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "Thanksgiving Trivia Printable: 20 Questions for Your Thanksgiving Table, Family Game Pack",
+       "link": "https://www.etsy.com/listing/4597743627"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-escape-room-m1",
+   "tag": "pin-prod-xmas-escape-room-m1",
+   "body": {
+    "content": "A printable Christmas escape room with one story and two levels, ages 6-9 and 10+. No phone, QR code or internet needed: print, hide the clues and play. 16 pages. Instant download PDF.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-m1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-06T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Christmas Escape Room for Kids Printable, 2 Levels Ages 6-9 and 10+, No Phone Needed",
+       "link": "https://www.etsy.com/listing/4602402578"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
