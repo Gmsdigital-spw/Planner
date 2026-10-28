@@ -1,0 +1,1 @@
+{"id": "audit-2026-10-28-m-9181", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=gingerbread%20house%20decorating%20contest&sort_on=score&limit=6", "tag": "s7:gingerbread house decorating contest"}]}

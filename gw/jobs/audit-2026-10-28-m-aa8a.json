@@ -1,0 +1,1 @@
+{"id": "audit-2026-10-28-m-aa8a", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=friendsgiving%20games%20printable&sort_on=score&limit=6", "tag": "s5:friendsgiving games printable"}]}

@@ -1,0 +1,1 @@
+{"id": "audit-2026-10-28-m-9422", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas%20party%20games%20printable&sort_on=score&limit=6", "tag": "s0:christmas party games printable"}]}

@@ -1,0 +1,1 @@
+{"id": "audit-2026-10-28-m-4dbd", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas%20scavenger%20hunt%20printable&sort_on=score&limit=6", "tag": "s8:christmas scavenger hunt printable"}]}

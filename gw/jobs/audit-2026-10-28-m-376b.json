@@ -1,0 +1,1 @@
+{"id": "audit-2026-10-28-m-376b", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas%20murder%20mystery%20party%20game&sort_on=score&limit=6", "tag": "s2:christmas murder mystery party game"}]}

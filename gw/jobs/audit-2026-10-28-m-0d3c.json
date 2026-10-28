@@ -1,0 +1,1 @@
+{"id": "audit-2026-10-28-m-0d3c", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=thanksgiving%20games%20printable&sort_on=score&limit=6", "tag": "s4:thanksgiving games printable"}]}

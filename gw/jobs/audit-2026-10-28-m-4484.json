@@ -1,0 +1,1 @@
+{"id": "audit-2026-10-28-m-4484", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/shops/68605457/listings/active?limit=15&offset=0", "tag": "ours1"}]}
