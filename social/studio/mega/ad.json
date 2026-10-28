@@ -1,0 +1,268 @@
+{
+ "dur": 21.81,
+ "vo": "social/studio/media/vo/mega-vo.mp3",
+ "music": "social/studio/media/vo/mega-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/mega",
+   "cover": "cover.jpg",
+   "price": "5.99",
+   "pages": 16,
+   "listTitle": "Christmas Party Bundle Printable: 6 Games, 12 Awards, White Elephant Dice Game, Gingerbread Contest, Family or Office Party",
+   "strip": [
+    "p-07.png",
+    "p-09.png",
+    "p-15.png",
+    "p-16.png"
+   ],
+   "bg": [
+    "#2f7a56",
+    "#0f3323"
+   ],
+   "accent": "#1f5a3e",
+   "hl": "#ffd34d",
+   "dot": "#dff5e8"
+  },
+  "scenes": [
+   {
+    "page": "p-07.png",
+    "badge": "6 GAMES",
+    "type": "hook",
+    "t0": 0,
+    "t1": 3.45
+   },
+   {
+    "page": "p-07.png",
+    "type": "pan",
+    "t0": 3.45,
+    "t1": 6.03,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-06.png",
+     "p-08.png",
+     "p-04.png",
+     "p-05.png"
+    ],
+    "type": "grid",
+    "t0": 6.03,
+    "t1": 8.25,
+    "beats": [
+     6.13,
+     6.56,
+     6.99,
+     7.43
+    ]
+   },
+   {
+    "pages": [
+     "p-13.png",
+     "p-14.png",
+     "p-15.png"
+    ],
+    "type": "fan",
+    "t0": 8.25,
+    "t1": 10.94,
+    "beats": [
+     8.35,
+     9.19,
+     10.02
+    ]
+   },
+   {
+    "page": "p-16.png",
+    "type": "pan",
+    "t0": 10.94,
+    "t1": 12.95,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "page": "p-09.png",
+    "type": "pan",
+    "t0": 12.95,
+    "t1": 14.72,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "type": "phone",
+    "t0": 14.72,
+    "t1": 18.56,
+    "beats": [
+     0.45,
+     1.35,
+     1.82,
+     2.62,
+     3.02
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 18.56,
+    "t1": 22.11
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   3.02,
+   "*6* games | *12* awards | *one* party"
+  ],
+  [
+   3.45,
+   5.6,
+   "A *mingle game* | as guests *arrive*"
+  ],
+  [
+   6.03,
+   7.79,
+   "*Trivia* and *charades* | in teams"
+  ],
+  [
+   8.25,
+   10.5,
+   "Build *gingerbread* houses | and *judge* them"
+  ],
+  [
+   10.94,
+   12.5,
+   "Swap gifts | with a *dice game*"
+  ],
+  [
+   12.95,
+   14.28,
+   "Then hand out | the *awards*"
+  ],
+  [
+   14.72,
+   15.9,
+   "*16* pages"
+  ],
+  [
+   16.33,
+   17.26,
+   "Instant *download*"
+  ],
+  [
+   17.69,
+   18.38,
+   "Tap the *link*"
+  ],
+  [
+   18.56,
+   20.11,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   3.4,
+   "whoosh"
+  ],
+  [
+   5.98,
+   "whoosh"
+  ],
+  [
+   6.13,
+   "pop"
+  ],
+  [
+   6.56,
+   "pop"
+  ],
+  [
+   6.99,
+   "pop"
+  ],
+  [
+   7.43,
+   "pop"
+  ],
+  [
+   8.2,
+   "whoosh"
+  ],
+  [
+   8.35,
+   "pop"
+  ],
+  [
+   9.19,
+   "pop"
+  ],
+  [
+   10.02,
+   "pop"
+  ],
+  [
+   10.89,
+   "whoosh"
+  ],
+  [
+   12.9,
+   "whoosh"
+  ],
+  [
+   14.67,
+   "whoosh"
+  ],
+  [
+   15.17,
+   "whoosh"
+  ],
+  [
+   17.74,
+   "tap"
+  ],
+  [
+   17.99,
+   "pop"
+  ],
+  [
+   18.51,
+   "whoosh"
+  ],
+  [
+   18.91,
+   "impact"
+  ],
+  [
+   19.36,
+   "pop"
+  ]
+ ]
+}
