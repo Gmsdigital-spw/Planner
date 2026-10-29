@@ -1,0 +1,78 @@
+{
+ "id": "bolt-2026-10-29-upload-2cc2",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4605581711/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-thanksgiving-escape-room/1.jpg",
+   "field": "image",
+   "fileName": "thanksgiving-escape-room-1.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Thanksgiving Escape Room for Kids and Families, Printable Game with Two Levels (Ages 6-9 and 10+), No Phone Needed, Fall Party Activity"
+   },
+   "tag": "img1"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4605581711/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-thanksgiving-escape-room/2.jpg",
+   "field": "image",
+   "fileName": "thanksgiving-escape-room-2.jpg",
+   "fields": {
+    "rank": "2",
+    "alt_text": "Preview page from the printable Thanksgiving escape room game"
+   },
+   "tag": "img2"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4605581711/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-thanksgiving-escape-room/3.jpg",
+   "field": "image",
+   "fileName": "thanksgiving-escape-room-3.jpg",
+   "fields": {
+    "rank": "3",
+    "alt_text": "Puzzle pages included in the Thanksgiving escape room printable"
+   },
+   "tag": "img3"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4605581711/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-thanksgiving-escape-room/4.jpg",
+   "field": "image",
+   "fileName": "thanksgiving-escape-room-4.jpg",
+   "fields": {
+    "rank": "4",
+    "alt_text": "Inside pages of the two-level Thanksgiving escape room for kids"
+   },
+   "tag": "img4"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4605581711/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-thanksgiving-escape-room/5.jpg",
+   "field": "image",
+   "fileName": "thanksgiving-escape-room-5.jpg",
+   "fields": {
+    "rank": "5",
+    "alt_text": "What you get: the printable Thanksgiving escape room pages and host answer map"
+   },
+   "tag": "img5"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4605581711/files",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/8768a514a4c0e091/thanksgiving-escape-room-for-kids-and-families-printable-game.pdf",
+   "field": "file",
+   "fileName": "thanksgiving-escape-room-for-kids-and-families-printable-game.pdf",
+   "fields": {
+    "rank": "1",
+    "name": "thanksgiving-escape-room-for-kids-and-families-printable-game.pdf"
+   },
+   "tag": "pdf"
+  }
+ ]
+}
