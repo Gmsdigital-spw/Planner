@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-28",
+ "updatedAt": "2026-10-29",
  "note": "Pricing agent state. basePrice = the normal price before any change (from backups/listings-backup-2026-10-21.json).",
  "listings": {
   "4600177510": {
@@ -167,8 +167,15 @@
    "basePrice": 12.99,
    "price": 8.99,
    "starter": false,
-   "lastChange": null,
-   "history": []
+   "lastChange": "2026-10-24",
+   "history": [
+    {
+     "d": "2026-10-24",
+     "from": 12.99,
+     "to": 8.99,
+     "why": "Changed outside the pricing agent: stats snapshots show $12.99 on Oct 23 and $8.99 on Oct 24. Recorded so the 14-day rule counts from Oct 24."
+    }
+   ]
   },
   "4596311765": {
    "title": "Undated ADHD Planner, Hyperlinked Digital & Printable, Brain Dump Toolkit (PDF)",
