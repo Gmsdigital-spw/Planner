@@ -1,0 +1,252 @@
+{
+ "dur": 18.5,
+ "vo": "social/studio/media/vo/charades-vo.mp3",
+ "music": "social/studio/media/vo/charades-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/charades",
+   "cover": "cover.jpg",
+   "price": "3.99",
+   "pages": 16,
+   "listTitle": "Christmas Charades Printable Game: 120 Cards in 3 Levels for Kids, Family and Adults, Draw It Mode, Holiday Party Game",
+   "strip": [
+    "p-03.png",
+    "p-07.png",
+    "p-10.png",
+    "p-13.png"
+   ],
+   "bg": [
+    "#b0283a",
+    "#4a0d16"
+   ],
+   "accent": "#8a1c2b",
+   "hl": "#ffd34d",
+   "dot": "#ffe3e6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-03.png",
+     "p-07.png",
+     "p-11.png"
+    ],
+    "type": "fan",
+    "t0": 0,
+    "t1": 3.13,
+    "beats": [
+     0.1,
+     1.11,
+     2.12
+    ]
+   },
+   {
+    "pages": [
+     "p-03.png",
+     "p-07.png",
+     "p-10.png",
+     "p-12.png"
+    ],
+    "type": "grid",
+    "t0": 3.13,
+    "t1": 6.09,
+    "beats": [
+     3.23,
+     3.86,
+     4.49,
+     5.12
+    ]
+   },
+   {
+    "page": "p-03.png",
+    "type": "pan",
+    "t0": 6.09,
+    "t1": 8.28,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "page": "p-10.png",
+    "type": "pan",
+    "t0": 8.28,
+    "t1": 10.47,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "page": "p-13.png",
+    "type": "pan",
+    "t0": 10.47,
+    "t1": 11.88,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "type": "phone",
+    "t0": 11.88,
+    "t1": 15.45,
+    "beats": [
+     0.42,
+     1.26,
+     1.59,
+     2.39,
+     2.79
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 15.45,
+    "t1": 18.8
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.73,
+   "*Christmas Eve* | charades | for *every age*"
+  ],
+  [
+   3.13,
+   5.65,
+   "*120* cards | in *3* levels"
+  ],
+  [
+   6.09,
+   7.85,
+   "Kids act out | building a *snowman*"
+  ],
+  [
+   8.28,
+   10.08,
+   "Grown-ups get | the *Secret Santa* | reveal"
+  ],
+  [
+   10.47,
+   11.49,
+   "Or flip to | *Draw It* mode"
+  ],
+  [
+   11.88,
+   12.93,
+   "*16* pages"
+  ],
+  [
+   13.33,
+   14.17,
+   "Instant *download*"
+  ],
+  [
+   14.62,
+   15.25,
+   "Tap the *link*"
+  ],
+  [
+   15.45,
+   16.42,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.11,
+   "pop"
+  ],
+  [
+   2.12,
+   "pop"
+  ],
+  [
+   3.08,
+   "whoosh"
+  ],
+  [
+   3.23,
+   "pop"
+  ],
+  [
+   3.86,
+   "pop"
+  ],
+  [
+   4.49,
+   "pop"
+  ],
+  [
+   5.12,
+   "pop"
+  ],
+  [
+   6.04,
+   "whoosh"
+  ],
+  [
+   8.23,
+   "whoosh"
+  ],
+  [
+   10.42,
+   "whoosh"
+  ],
+  [
+   11.83,
+   "whoosh"
+  ],
+  [
+   12.3,
+   "whoosh"
+  ],
+  [
+   14.67,
+   "tap"
+  ],
+  [
+   14.92,
+   "pop"
+  ],
+  [
+   15.4,
+   "whoosh"
+  ],
+  [
+   15.8,
+   "impact"
+  ],
+  [
+   16.25,
+   "pop"
+  ]
+ ]
+}

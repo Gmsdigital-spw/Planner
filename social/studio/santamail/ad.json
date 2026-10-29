@@ -1,0 +1,254 @@
+{
+ "dur": 18.98,
+ "vo": "social/studio/media/vo/santamail-vo.mp3",
+ "music": "social/studio/media/vo/santamail-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/santamail",
+   "cover": "cover.jpg",
+   "price": "4.99",
+   "pages": 14,
+   "listTitle": "Letter from Santa Editable Printable, 6 Personalized Santa Letters, Nice List Certificate, North Pole Mail, Gift Tags",
+   "strip": [
+    "p-03.png",
+    "p-09.png",
+    "p-11.png",
+    "p-13.png"
+   ],
+   "bg": [
+    "#2f6b4f",
+    "#0f2e21"
+   ],
+   "accent": "#1f4d38",
+   "hl": "#ffd34d",
+   "dot": "#e2f3ea"
+  },
+  "scenes": [
+   {
+    "page": "p-03.png",
+    "badge": "6 LETTERS",
+    "type": "hook",
+    "t0": 0,
+    "t1": 3.03
+   },
+   {
+    "pages": [
+     "p-04.png",
+     "p-06.png",
+     "p-07.png"
+    ],
+    "type": "fan",
+    "t0": 3.03,
+    "t1": 5.4,
+    "beats": [
+     3.13,
+     3.84,
+     4.55
+    ]
+   },
+   {
+    "page": "p-03.png",
+    "type": "pan",
+    "t0": 5.4,
+    "t1": 8.28,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-10.png",
+     "p-09.png"
+    ],
+    "type": "fan",
+    "t0": 8.28,
+    "t1": 10.16,
+    "beats": [
+     8.38,
+     9.4
+    ]
+   },
+   {
+    "pages": [
+     "p-13.png",
+     "p-11.png",
+     "p-12.png",
+     "p-10.png"
+    ],
+    "type": "grid",
+    "t0": 10.16,
+    "t1": 12.46,
+    "beats": [
+     10.26,
+     10.71,
+     11.17,
+     11.62
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 12.46,
+    "t1": 16.02,
+    "beats": [
+     0.41,
+     1.22,
+     1.52,
+     2.32,
+     2.72
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 16.02,
+    "t1": 19.28
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.64,
+   "A letter from *Santa* | by *Christmas Eve*"
+  ],
+  [
+   3.03,
+   4.97,
+   "*6* letters | for *6* kinds of year"
+  ],
+  [
+   5.4,
+   7.87,
+   "Type their *name* | and *3* good things | they did"
+  ],
+  [
+   8.28,
+   9.7,
+   "Add the | *Nice List* certificate"
+  ],
+  [
+   10.16,
+   12.04,
+   "And *12* gift tags | from *Santa*"
+  ],
+  [
+   12.46,
+   13.43,
+   "*13* pages"
+  ],
+  [
+   13.84,
+   14.68,
+   "Instant *download*"
+  ],
+  [
+   15.13,
+   15.79,
+   "Tap the *link*"
+  ],
+  [
+   16.02,
+   16.93,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   2.98,
+   "whoosh"
+  ],
+  [
+   3.13,
+   "pop"
+  ],
+  [
+   3.84,
+   "pop"
+  ],
+  [
+   4.55,
+   "pop"
+  ],
+  [
+   5.35,
+   "whoosh"
+  ],
+  [
+   8.23,
+   "whoosh"
+  ],
+  [
+   8.38,
+   "pop"
+  ],
+  [
+   9.4,
+   "pop"
+  ],
+  [
+   10.11,
+   "whoosh"
+  ],
+  [
+   10.26,
+   "pop"
+  ],
+  [
+   10.71,
+   "pop"
+  ],
+  [
+   11.17,
+   "pop"
+  ],
+  [
+   11.62,
+   "pop"
+  ],
+  [
+   12.41,
+   "whoosh"
+  ],
+  [
+   12.87,
+   "whoosh"
+  ],
+  [
+   15.18,
+   "tap"
+  ],
+  [
+   15.43,
+   "pop"
+  ],
+  [
+   15.97,
+   "whoosh"
+  ],
+  [
+   16.37,
+   "impact"
+  ],
+  [
+   16.82,
+   "pop"
+  ]
+ ]
+}

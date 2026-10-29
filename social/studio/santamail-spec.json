@@ -48,8 +48,11 @@
   {
    "say": "Add the Nice List certificate.",
    "cap": "Add the | *Nice List* certificate",
-   "scene": "pan",
-   "page": "p-09.png"
+   "scene": "fan",
+   "pages": [
+    "p-10.png",
+    "p-09.png"
+   ]
   },
   {
    "say": "And twelve gift tags from Santa.",

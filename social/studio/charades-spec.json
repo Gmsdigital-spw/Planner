@@ -51,7 +51,7 @@
   },
   {
    "say": "The grown-ups get the Secret Santa reveal.",
-   "cap": "Grown-ups get | the *Secret Santa* reveal",
+   "cap": "Grown-ups get | the *Secret Santa* | reveal",
    "scene": "pan",
    "page": "p-10.png"
   },
