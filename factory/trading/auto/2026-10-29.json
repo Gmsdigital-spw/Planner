@@ -10,7 +10,7 @@
    "stop0": 116.04,
    "stop": 116.04,
    "target": 117.56,
-   "high": 116.548,
+   "high": 116.66,
    "stopId": "f5ca9555-c29c-4c52-ad59-3c2f283d0eb5",
    "since": "2026-10-29T15:15:00Z",
    "qty": "0.085115145"
@@ -20,7 +20,7 @@
    "stop0": 120.35,
    "stop": 120.35,
    "target": 121.87,
-   "high": 120.856,
+   "high": 120.96,
    "stopId": "5618383b-5225-4d35-92c7-9c32c610060e",
    "since": "2026-10-29T15:15:00Z",
    "qty": "0.049232144"
@@ -50,14 +50,14 @@
   }
  ],
  "done": null,
- "runs": 92,
+ "runs": 98,
  "lastSignal": {
   "XLY": "2026-10-29T15:15:00Z",
   "WMT": "2026-10-29T15:15:00Z"
  },
- "lastRun": "10:20",
- "equity": 24.88,
- "dayPnl": 0.0,
+ "lastRun": "10:26",
+ "equity": 24.89,
+ "dayPnl": 0.01,
  "watch": [
   "SPY",
   "QQQ",
@@ -92,5 +92,5 @@
   "TSLA",
   "XOM"
  ],
- "lastNote": "equity $24.88, day +0.00, 2 open, 2 entries"
+ "lastNote": "equity $24.89, day +0.01, 2 open, 2 entries"
 }
