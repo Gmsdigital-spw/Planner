@@ -1,0 +1,5 @@
+{"id":"warden-2026-10-29-pull-25f0","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=active&limit=100&includes=Images","tag":"listings"},
+{"op":"etsy","method":"GET","path":"/shops/68605457","tag":"shop"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=25","tag":"receipts"}
+]}
