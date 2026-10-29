@@ -1,0 +1,8 @@
+{"id":"trade-2026-10-29-read-b344","ops":[
+{"op":"alpaca","path":"/bankroll"},
+{"op":"alpaca","path":"/clock"},
+{"op":"alpaca","path":"/positions"},
+{"op":"alpaca","path":"/orders?status=open"},
+{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SPY,QQQ,IWM,DIA,XLK,XLF,XLE,XLV,XLY,XLI,SMH,MSFT,GOOGL,META,AAPL,AMZN,NVDA,INTC,BAC,JPM,XOM,PFE,WMT,KO,AMD,TSLA,CAT,MRK,UNH&feed=iex"},
+{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY&timeframe=5Min&limit=78&feed=iex"}
+]}
