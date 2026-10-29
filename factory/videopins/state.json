@@ -74,10 +74,20 @@
       "listingId": "4598501430",
       "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-28/4598501430/video.mp4",
       "zernioPostId": "6ae238095c41454a76f9ade9",
+      "status": "failed",
+      "postUrl": null,
+      "error": "Pinterest: \"This site doesn't allow you to save Pins\" (link/domain refused) after 3 attempts, even with full slug link.",
+      "link": "https://www.etsy.com/listing/4598501430/friendsgiving-games-printable"
+    },
+    {
+      "day": "2026-10-29",
+      "listingId": "4604847087",
+      "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-29/4604847087/video.mp4",
+      "zernioPostId": "6ae388f021aa720796fcf6ef",
       "status": "scheduled",
       "postUrl": null,
       "error": null,
-      "link": "https://www.etsy.com/listing/4598501430/friendsgiving-games-printable"
+      "link": "https://www.etsy.com/listing/4604847087/christmas-charades-printable-game-120"
     }
   ]
 }
