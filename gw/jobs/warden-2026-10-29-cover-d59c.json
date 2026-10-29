@@ -1,0 +1,42 @@
+{
+ "id": "warden-2026-10-29-cover-d59c",
+ "stopOnError": true,
+ "ops": [
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4602816114/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/fun/v2/4602816114.jpg",
+   "field": "image",
+   "fileName": "4602816114-cover-v2.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Christmas Murder Mystery Party Game for 8 Players, Printable Whodunit Dinner Party Kit, Family Friendly Holiday Game, Host Can Play"
+   },
+   "tag": "up-4602816114"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4602816114/images/8786767131",
+   "tag": "del-4602816114"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4602402578/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/fun/v2/4602402578.jpg",
+   "field": "image",
+   "fileName": "4602402578-cover-v2.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Christmas Escape Room for Kids Printable, Family Game with 2 Levels Ages 6-9 and 10+, No Phone Needed, Holiday Party Activity"
+   },
+   "tag": "up-4602402578"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4602402578/images/8783244429",
+   "tag": "del-4602402578"
+  }
+ ]
+}
