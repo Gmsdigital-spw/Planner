@@ -1,0 +1,1 @@
+{"id":"trade-2026-10-29-live-e39f","ops":[{"op":"alpaca","path":"/bankroll"},{"op":"alpaca","path":"/positions"},{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY,WMT&timeframe=5Min&limit=78&feed=iex"},{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SPY,QQQ,IWM,DIA,XLF,XLV,XLE,XLY,XLI,XLK,BAC,WMT,KO,PFE,NVDA&feed=iex"}]}
