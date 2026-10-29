@@ -1,0 +1,84 @@
+{
+ "vo": "social/studio/media/vo/charades-vo.mp3",
+ "music": "social/studio/media/vo/charades-music.wav",
+ "product": {
+  "dir": "/social/studio/media/charades",
+  "cover": "cover.jpg",
+  "price": "3.99",
+  "pages": 16,
+  "listTitle": "Christmas Charades Printable Game: 120 Cards in 3 Levels for Kids, Family and Adults, Draw It Mode, Holiday Party Game",
+  "strip": [
+   "p-03.png",
+   "p-07.png",
+   "p-10.png",
+   "p-13.png"
+  ],
+  "bg": [
+   "#b0283a",
+   "#4a0d16"
+  ],
+  "accent": "#8a1c2b",
+  "hl": "#ffd34d",
+  "dot": "#ffe3e6"
+ },
+ "phrases": [
+  {
+   "say": "Christmas Eve charades, for every age.",
+   "cap": "*Christmas Eve* | charades | for *every age*",
+   "scene": "fan",
+   "pages": [
+    "p-03.png",
+    "p-07.png",
+    "p-11.png"
+   ]
+  },
+  {
+   "say": "A hundred and twenty cards, in three levels.",
+   "cap": "*120* cards | in *3* levels",
+   "scene": "grid",
+   "pages": [
+    "p-03.png",
+    "p-07.png",
+    "p-10.png",
+    "p-12.png"
+   ]
+  },
+  {
+   "say": "The kids act out building a snowman.",
+   "cap": "Kids act out | building a *snowman*",
+   "scene": "pan",
+   "page": "p-03.png"
+  },
+  {
+   "say": "The grown-ups get the Secret Santa reveal.",
+   "cap": "Grown-ups get | the *Secret Santa* reveal",
+   "scene": "pan",
+   "page": "p-10.png"
+  },
+  {
+   "say": "Or flip to Draw It mode.",
+   "cap": "Or flip to | *Draw It* mode",
+   "scene": "pan",
+   "page": "p-13.png"
+  },
+  {
+   "say": "Sixteen pages.",
+   "cap": "*16* pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Instant download.",
+   "cap": "Instant *download*"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

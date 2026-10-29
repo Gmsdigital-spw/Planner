@@ -1,0 +1,85 @@
+{
+ "vo": "social/studio/media/vo/santamail-vo.mp3",
+ "music": "social/studio/media/vo/santamail-music.wav",
+ "product": {
+  "dir": "/social/studio/media/santamail",
+  "cover": "cover.jpg",
+  "price": "4.99",
+  "pages": 14,
+  "listTitle": "Letter from Santa Editable Printable, 6 Personalized Santa Letters, Nice List Certificate, North Pole Mail, Gift Tags",
+  "strip": [
+   "p-03.png",
+   "p-09.png",
+   "p-11.png",
+   "p-13.png"
+  ],
+  "bg": [
+   "#2f6b4f",
+   "#0f2e21"
+  ],
+  "accent": "#1f4d38",
+  "hl": "#ffd34d",
+  "dot": "#e2f3ea"
+ },
+ "phrases": [
+  {
+   "say": "A real letter from Santa, by Christmas Eve.",
+   "cap": "A letter from *Santa* | by *Christmas Eve*",
+   "scene": "hook",
+   "page": "p-03.png",
+   "badge": "6 LETTERS"
+  },
+  {
+   "say": "Six letters, for six kinds of year.",
+   "cap": "*6* letters | for *6* kinds of year",
+   "scene": "fan",
+   "pages": [
+    "p-04.png",
+    "p-06.png",
+    "p-07.png"
+   ]
+  },
+  {
+   "say": "Type their name, and three good things they did.",
+   "cap": "Type their *name* | and *3* good things | they did",
+   "scene": "pan",
+   "page": "p-03.png"
+  },
+  {
+   "say": "Add the Nice List certificate.",
+   "cap": "Add the | *Nice List* certificate",
+   "scene": "pan",
+   "page": "p-09.png"
+  },
+  {
+   "say": "And twelve gift tags from Santa.",
+   "cap": "And *12* gift tags | from *Santa*",
+   "scene": "grid",
+   "pages": [
+    "p-13.png",
+    "p-11.png",
+    "p-12.png",
+    "p-10.png"
+   ]
+  },
+  {
+   "say": "Thirteen pages.",
+   "cap": "*13* pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Instant download.",
+   "cap": "Instant *download*"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}
