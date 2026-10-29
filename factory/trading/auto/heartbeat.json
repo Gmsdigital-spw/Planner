@@ -1,13 +1,13 @@
 {
- "at": "2026-10-29T14:45:09.265689-05:00",
- "lastRun": "14:45",
+ "at": "2026-10-29T15:26:32.047757-05:00",
+ "lastRun": "15:26",
  "day": "2026-10-29",
- "status": "done",
- "note": "flat for the day, P/L 0.01",
+ "status": "closed",
+ "note": "outside market hours",
  "loop": true,
- "cycles": 26,
- "runnerStarted": "2026-10-29T14:20:06.565216-05:00",
- "runnerUntil": "2026-10-29T19:50:06.565216-05:00",
+ "cycles": 1,
+ "runnerStarted": "2026-10-29T15:26:32.047251-05:00",
+ "runnerUntil": "2026-10-29T20:56:32.047251-05:00",
  "cadence": "every minute during market hours",
  "mode": "paper"
 }
