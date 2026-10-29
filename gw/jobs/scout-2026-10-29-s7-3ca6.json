@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-29-s7-3ca6", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+games+for+teens&sort_on=score&limit=25", "tag": "teen"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+family+games+printable&sort_on=score&limit=25", "tag": "famgame"}]}

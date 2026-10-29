@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-29-s5-cdd7", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+activity+pages+for+kids&sort_on=score&limit=25", "tag": "kidact"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+planner+stickers&sort_on=score&limit=25", "tag": "sticker"}]}

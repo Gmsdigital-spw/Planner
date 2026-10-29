@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-29-s3-5f53", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=2027+calendar+printable&sort_on=score&limit=25", "tag": "cal"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+party+planner+printable&sort_on=score&limit=25", "tag": "plan"}]}

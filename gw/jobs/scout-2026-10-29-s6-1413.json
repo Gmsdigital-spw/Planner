@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-29-s6-1413", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+mug+wrap+png&sort_on=score&limit=25", "tag": "mug"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+bible+verse+wall+art&sort_on=score&limit=25", "tag": "wall"}]}

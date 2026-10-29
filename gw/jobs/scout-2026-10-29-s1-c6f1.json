@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-29-s1-c6f1", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+mystery+game+for+kids&sort_on=score&limit=25", "tag": "mystkid"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=ugly+sweater+contest&sort_on=score&limit=25", "tag": "ugly"}]}

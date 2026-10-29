@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-29-s4-81be", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+dinner+menu+editable&sort_on=score&limit=25", "tag": "menu"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+card+list+tracker&sort_on=score&limit=25", "tag": "card"}]}

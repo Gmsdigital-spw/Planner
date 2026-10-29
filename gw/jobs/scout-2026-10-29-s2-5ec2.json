@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-29-s2-5ec2", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=classroom+christmas+party+games&sort_on=score&limit=25", "tag": "class"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=office+christmas+party+games&sort_on=score&limit=25", "tag": "office"}]}

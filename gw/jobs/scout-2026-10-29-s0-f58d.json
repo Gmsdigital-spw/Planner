@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-29-s0-f58d", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+coupon+book&sort_on=score&limit=25", "tag": "coupon"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+escape+room+for+adults&sort_on=score&limit=25", "tag": "escteen"}]}
