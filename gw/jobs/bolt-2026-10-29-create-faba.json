@@ -1,0 +1,43 @@
+{
+ "id": "bolt-2026-10-29-create-faba",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "POST",
+   "path": "/shops/68605457/listings",
+   "body": {
+    "quantity": 999,
+    "title": "Thanksgiving Escape Room for Kids and Families, Printable Game with Two Levels (Ages 6-9 and 10+), No Phone Needed, Fall Party Activity",
+    "description": "A printable Thanksgiving escape room for kids and families, with two levels in one story: Level 1 for ages 6-9 and Level 2 for ages 10+. Family fun for the hour before dinner, with no phone, app, QR code or internet needed.\n\nTHE STORY\nGrandma Hazel baked four pies and locked them in the old Pie Safe so the dog could not reach them, then mixed up the 4-digit code. Players solve 4 clues, each clue gives one digit, and the 4 digits open the Pie Safe before the 45-minute timer runs out.\n\nCLUES THAT CONNECT\nOne clue leads to the next in a single chain, and the game master checks every digit on the answer key, so nobody gets lost halfway.\n\nTWO LEVELS, SAME DIGIT\nEvery clue comes in two versions that lead to the same digit, so a 7-year-old and a 12-year-old can play side by side and check each other.\n- Clue 1: number code (Level 1) / shift cipher (Level 2)\n- Clue 2: count the pantry shelf (Level 1) / picture math (Level 2)\n- Clue 3: tangled pumpkin vines (Level 1) / acorn maze (Level 2)\n- Clue 4: 4x4 number sudoku (Level 1) / kids' table logic grid (Level 2)\n\nWHAT'S INCLUDED (16 pages plus a thank-you page, one PDF)\n- Cover\n- Game master guide: 10-minute set-up, how to run it, supplies\n- Mission letter to read aloud, team sheet and code tracker\n- 8 clue sheets (4 clues x 2 levels)\n- Pie Safe lock sheet (the final code)\n- 6 envelope lock tags to cut out\n- 8 hint cards, each with 2 fold-over hints\n- Answer key with full solutions (game master only)\n- Escape Expert certificates (2 per page)\n\nGOOD TO KNOW\n- Players: 1 to 12, in teams of 2 to 4. Play time about 45 minutes.\n- Ink-light pages: white paper, thin lines, and every puzzle works in black and white.\n- Supplies: pencils, scissors, tape, 5 envelopes per team (or folded paper) and a timer.\n- US Letter size; prints on A4 with \"Fit to page\".\n- Good for Thanksgiving Day, fall break, family gatherings and classrooms.\n\nHOW IT WORKS\nThis is a digital PDF download. Nothing is shipped. After purchase, download the file from your Etsy account (Purchases) or from the email Etsy sends you, then print at home or at a print shop. For personal and classroom use.\n\nThis design was created with AI assistance under the creative direction of the seller.",
+    "price": 6.99,
+    "who_made": "i_did",
+    "when_made": "2020_2026",
+    "taxonomy_id": 1350,
+    "type": "download",
+    "tags": [
+     "thanksgiving escape",
+     "escape room for kids",
+     "kids escape room",
+     "family escape room",
+     "escape room game",
+     "escape room kit",
+     "turkey escape room",
+     "thanksgiving games",
+     "thanksgiving puzzles",
+     "kids thanksgiving",
+     "fall party games",
+     "family game night",
+     "screen free activity"
+    ],
+    "materials": [
+     "Digital download",
+     "PDF"
+    ],
+    "is_supply": false,
+    "should_auto_renew": true
+   },
+   "tag": "create"
+  }
+ ]
+}
