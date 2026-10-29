@@ -20,7 +20,7 @@ Spec:
   "cast": {"croc": "a big green cartoon crocodile with ..."},   # exact same text in every prompt
   "title_card": "The Crocodile Paradox",   # hand-lettered on the first picture (optional)
   "music": "tense", "music_volume": 0.05,  # optional; "none" for no music
-  "lines": [                               # 6-10 scenes: setup, problem, twist, payoff
+  "lines": [                               # 8-12 scenes: setup, problem, twist, payoff
     {"text": "Why did ...?",               # one sentence, 15 words or fewer; line 1 is the hook question
      "label": "BOARDED UP",                # optional notes for the writer (2-3 words), not drawn
      "headline": "THE STORE NOBODY VISITS",# optional notes (3-6 words), not drawn
@@ -70,8 +70,8 @@ def check_story(spec):
     if not re.fullmatch(r"[A-Za-z0-9_-]{1,40}", str(spec.get("id", ""))):
         raise SystemExit("story: spec id missing or invalid")
     lines = spec.get("lines") or []
-    if not 6 <= len(lines) <= 10:
-        raise SystemExit(f"story: need 6-10 scenes, got {len(lines)}")
+    if not 8 <= len(lines) <= 12:
+        raise SystemExit(f"story: need 8-12 scenes, got {len(lines)}")
     if spec.get("voice", "andrew") not in VOICES:
         raise SystemExit("story: voice must be andrew or ava")
     if spec.get("art") not in ART:
@@ -143,7 +143,7 @@ def tts(lines, voice, speed, work, fake, warn):
     if fake:
         for i, ln in enumerate(lines):
             p = os.path.join(work, f"v{i:02d}.wav")
-            secs = 0.36 * len(words(ln["text"])) + 0.3
+            secs = 0.33 * len(words(ln["text"])) + 0.1   # andrew 1.0 measured ~0.30-0.37 s a word (ep19/ep20)
             run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", f"sine=f=220:r={SR}", "-t", f"{secs:.2f}",
                  "-af", "volume=0.05", "-ac", "1", p])
             paths.append(p); times.append(even_times(ln["text"], secs))
@@ -194,23 +194,25 @@ def wav_frames(p):
         return w.readframes(w.getnframes()), w.getnframes() / w.getframerate()
 
 def plan_timing(durs, warn):
-    """Scene length = voice + breathing room, 3-6 s each, 40-60 s total."""
+    """Scene length = voice + breathing room, 3-7 s each, 61-75 s total (Grayson, Oct 28, 2026:
+    TikTok Creator Rewards pay only over 1 minute). Length comes from story, not padding: the
+    pauses may stretch at most 0.4 s a scene."""
     lead, tail = 0.25, 0.45
     scenes = [max(3.0, lead + d + tail) for d in durs]
     for i, s in enumerate(scenes):
+        if s > 7.0:
+            raise SystemExit(f"story: scene {i+1} needs {s:.1f}s of voice (max 7); shorten the line")
         if s > 6.5:
-            raise SystemExit(f"story: scene {i+1} needs {s:.1f}s of voice (max 6); shorten the line")
-        if s > 6.0:
             warn.append(f"scene {i+1} runs {s:.1f}s")
     total = sum(scenes)
-    if total < 40:  # stretch the pauses evenly, never past 6 s a scene
-        room = [6.0 - s for s in scenes]
-        need = 40 - total
+    if total < 61.2:  # stretch the pauses a little (max 0.4 s a scene, never past 7 s), never pad
+        room = [max(0.0, min(0.4, 7.0 - s)) for s in scenes]
+        need = 61.2 - total
         if sum(room) >= need:
             scenes = [s + r * need / sum(room) for s, r in zip(scenes, room)]
         total = sum(scenes)
-    if not 39.5 <= total <= 60.5:
-        raise SystemExit(f"story: runs {total:.1f}s; it must be 40-60s (add or trim scenes)")
+    if not 61.0 <= total <= 75.0:
+        raise SystemExit(f"story: runs {total:.1f}s; it must be 61-75s (add story or trim scenes, never pad)")
     return scenes, lead
 
 def build_audio(paths, scenes, lead, work):
@@ -519,7 +521,7 @@ def build(spec_path, check=False):
                   f"[1:a][md]amix=inputs=2:duration=first:normalize=0,afade=t=out:st={total-0.8:.2f}:d=0.8[a]")
         else:
             af = f"[1:a]afade=t=out:st={total-0.6:.2f}:d=0.6[a]"
-        kbps = int(max(400, min(4000, MAX_MB * 8192 / total - 128 - 30)))
+        kbps = int(max(280, min(4000, MAX_MB * 8192 / total - 128 - 30)))
         final = os.path.join(out_dir, f"{jid}.mp4")
         base = ["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", f"[0:v]fade=t=out:st={total-0.5:.2f}:d=0.5[v];{af}",
                 "-map", "[v]", "-map", "[a]", "-t", f"{total:.3f}", "-r", str(FPS),

@@ -25,8 +25,12 @@ to it). Example job: `yt/jobs/story01.json`.
 - Told in order: setup, then problem, then twist, then payoff. NO loop.
 - Line 1 is a clear hook question with real stakes, e.g. "What one sentence could save a boy
   from a hungry crocodile?" or "Why did this whole town stop talking about one store?"
-- 6-10 scenes. Each scene = one idea in ONE sentence of 15 words or fewer, plain words a
-  10-year-old understands. 3-6 seconds each, 40-60 seconds total (the builder enforces it).
+- 8-12 scenes. Each scene = one idea in ONE sentence of 15 words or fewer, plain words a
+  10-year-old understands. 3-7 seconds each, 61-75 s total (Grayson, Oct 28, 2026: TikTok's
+  Creator Rewards only pay over 1 minute; the builder enforces it). Reach 61 s with more story
+  (an extra complication or a bigger twist), never padding, slow narration, dead air or a held
+  last frame. Aim for 11-12 scenes and 145-170 words; the dry run (--check) should show 64 s
+  or more, since the real voice can run a few seconds shorter than the dry run.
 - The ending answers the hook. No cliffhanger, no "part 2", no cut-off sentence, no question.
 - Prefer a hero moment in the payoff (someone outsmarts the problem) over "and it was
   confusing". No filler lines that repeat the stakes: a cold reader swipes there.
@@ -69,7 +73,7 @@ Fix "Confusing"/"Boring" notes when cheap, but the gate is the plot match.
   script that breaks the rules above and prints why on its last line.
 
 ## QC (replaces qc.md's checks)
-Duration 40-60 s, size under 4.9 MB, 1080x1920. Extract one frame per scene (the "scenes"
+Duration 61.0-75.0 s (ffprobe on the final mp4; outside it = failed build, back to Writer/Cutter once), size under 4.9 MB, 1080x1920. Extract one frame per scene (the "scenes"
 list in yt/out/<id>.json gives the lengths) and LOOK: each picture shows what its line says,
 characters look the same throughout, no garbled faces, extra limbs or random text, the
 caption is readable. A scene that misses: reword that prompt and use the one rebuild.
