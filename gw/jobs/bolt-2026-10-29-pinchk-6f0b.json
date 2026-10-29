@@ -1,0 +1,3 @@
+{"id":"bolt-2026-10-29-pinchk-6f0b","stopOnError":false,"ops":[
+{"op":"zernio","method":"GET","path":"/posts/6ad92d15197e529ee835ef6f","tag":"pin-prod-friendsgiving-kit-s2"},
+{"op":"zernio","method":"GET","path":"/posts/6ad92d15197e529ee835ef6a","tag":"pin-prod-cookie-exchange-kit-s2"}]}
