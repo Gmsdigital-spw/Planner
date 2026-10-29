@@ -1,0 +1,11 @@
+C1 L1 warm-up [16, 9, 5] = PIE; [6, 9, 22, 5] = FIVE -> 5
+C1 L2 'XLI JMVWX HMKMX MW JMZI' signed 'LEDIP' back 4 = 'THE FIRST DIGIT IS FIVE' -> 5
+C2 L1 pumpkins 6 + apples 4 - acorns 8 = 2
+C2 L2 pumpkin 3, apple 5, acorn 4 unique; 3 + 4 - 5 = 2
+C3 L1 pumpkin vine -> pie 8
+C3 L2 maze 11x13 perfect (edges 142), path 61 cells, acorns on path 8, off path 9 -> 8
+C4 L1 4x4 sudoku unique (7 givens), leaf square = 3
+C4 L2 logic grid unique: chair 1 Theo corn, chair 2 Ada rolls, chair 3 Milo pie, chair 4 Rosa cranberry sauce; pie at chair 3
+Pie Safe code 5283
+boxes checked: 48 on 17 pages; violations: 0
+clearance OK: every footer page >= 0.25 in

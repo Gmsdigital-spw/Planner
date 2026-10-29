@@ -25,4 +25,4 @@
 | Week ending | Live listings | Views (total) | Favorites | Sales | Pins posted | Trading P/L (paper) |
 |---|---|---|---|---|---|---|
 | 2026-10-23 | 24 | 188 | 0 | 0 | ~5/day | $24.96 equity, -$0.04 total |
-| 2026-10-30 (so far, stats 2026-10-27, read Oct 28) | 28 | 232 (Games Bundle 68; +1 view shop-wide since stats 10-26) | 1 listing fav (Goal Workbook), 1 shop favorer, 1 review | 2 verified, $5.61 gross (Games Bundle $2.24, Gingerbread Kit $3.37); net after Etsy fees $1.03 and listing fees $4.40: $0.18 | unknown (pinstats) | unknown (trading ledger) |
+| 2026-10-30 (so far, stats 2026-10-28, read Oct 29) | 29 | 237 (Games Bundle 69, 57 views7) | 2 listing favs (Goal Workbook), 1 shop favorer, 1 review | 2 verified, $5.61 gross; Etsy fees $1.03, listing fees $4.60: net -$0.02 | unknown (pinstats) | unknown (trading ledger) |
