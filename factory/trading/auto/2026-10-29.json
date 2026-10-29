@@ -21,10 +21,10 @@
   "KO": {
    "entry": 92.448,
    "stop0": 92.17,
-   "stop": 92.62,
+   "stop": 92.67,
    "target": 93.0,
-   "high": 92.895,
-   "stopId": "602a5497-7090-487d-a086-9409d43ad736",
+   "high": 92.95,
+   "stopId": "99d6b4a2-4de0-4556-96e3-ad1b1c325b86",
    "since": "2026-10-29T17:55:00Z",
    "qty": "0.081343025"
   }
@@ -125,19 +125,27 @@
    "stop": 92.62,
    "qty": "0.081343025",
    "gainR": 1.61
+  },
+  {
+   "t": "14:32",
+   "do": "raise stop",
+   "sym": "KO",
+   "stop": 92.67,
+   "qty": "0.081343025",
+   "gainR": 1.81
   }
  ],
  "done": null,
- "runs": 341,
+ "runs": 343,
  "lastSignal": {
   "XLY": "2026-10-29T15:15:00Z",
   "WMT": "2026-10-29T15:15:00Z",
   "XLI": "2026-10-29T16:40:00Z",
   "KO": "2026-10-29T17:55:00Z"
  },
- "lastRun": "14:30",
- "equity": 24.88,
- "dayPnl": 0.0,
+ "lastRun": "14:32",
+ "equity": 24.89,
+ "dayPnl": 0.01,
  "watch": [
   "SPY",
   "QQQ",
@@ -172,5 +180,5 @@
   "TSLA",
   "XOM"
  ],
- "lastNote": "equity $24.88, day +0.00, 2 open, 4 entries; no new entries now (8:35-2:00 CT window)"
+ "lastNote": "equity $24.89, day +0.01, 2 open, 4 entries; no new entries now (8:35-2:00 CT window)"
 }
