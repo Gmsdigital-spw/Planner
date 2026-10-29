@@ -1,0 +1,1 @@
+{"id": "warden-2026-10-29-full-c0bd", "at": "2026-10-29T15:58:24Z", "ok": true, "results": [{"i": 0, "op": "fetch_images", "tag": "full", "status": 200, "ok": true, "data": {"dir": "out/files/warden-1029-full", "saved": ["scav-r02.jpg", "scav-r03.jpg", "scav-r04.jpg", "scav-r05.jpg", "scav-r06.jpg", "scav-r07.jpg", "scav-r08.jpg"]}, "ms": 2896}]}
