@@ -1,0 +1,66 @@
+{
+ "id": "bolt-2026-10-30-photos-f22f",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4606483866/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-office-party-games/1.jpg",
+   "field": "image",
+   "fileName": "office-christmas-party-games-1.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Office Christmas Party Games Printable: 24 No-Prep Team Games, Bingo, Trivia and Icebreakers for Work, Coworkers and Staff Parties"
+   },
+   "tag": "img1"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4606483866/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-office-party-games/2.jpg",
+   "field": "image",
+   "fileName": "office-christmas-party-games-2.jpg",
+   "fields": {
+    "rank": "2",
+    "alt_text": "Office party games printable page preview showing the games inside the PDF"
+   },
+   "tag": "img2"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4606483866/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-office-party-games/3.jpg",
+   "field": "image",
+   "fileName": "office-christmas-party-games-3.jpg",
+   "fields": {
+    "rank": "3",
+    "alt_text": "45-minute office party run sheet printable with a print checklist, US Letter"
+   },
+   "tag": "img3"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4606483866/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-office-party-games/4.jpg",
+   "field": "image",
+   "fileName": "office-christmas-party-games-4.jpg",
+   "fields": {
+    "rank": "4",
+    "alt_text": "Office Christmas party games printable page preview: team games and score sheet"
+   },
+   "tag": "img4"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4606483866/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-office-party-games/5.jpg",
+   "field": "image",
+   "fileName": "office-christmas-party-games-5.jpg",
+   "fields": {
+    "rank": "5",
+    "alt_text": "Office Christmas party games printable page preview: bingo, trivia and answer keys"
+   },
+   "tag": "img5"
+  }
+ ]
+}
