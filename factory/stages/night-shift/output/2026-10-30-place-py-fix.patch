@@ -1,0 +1,14 @@
+diff --git a/assets/atlas-pack/place.py b/assets/atlas-pack/place.py
+index d1644ab..83d4bf9 100644
+--- a/assets/atlas-pack/place.py
++++ b/assets/atlas-pack/place.py
+@@ -76,6 +76,9 @@ def place(scene, pages, out=None, quality=90, scale=1.0):
+         m = np.asarray(poly) > 0
+         region = lum[m]
+         light = np.clip(lum / max(np.percentile(region, 97), 1), 0, 1.05)
++        # Oct 30 fix (bug rule): the raw scene luminance printed the slot's own detail (stripe band,
++        # edges) through the page, so pages looked see-through. Keep only soft, large-scale shading.
++        light = np.clip(ndimage.gaussian_filter(light, (40 * scale, 40 * scale, 0)), 0.9, 1.05)
+         if keep_thumb:
+             blank = (a.min(2) > 185) & ((a.max(2) - a.min(2)) < 40)
+             m = ndimage.binary_closing(blank, iterations=3) & m
