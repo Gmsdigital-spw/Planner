@@ -1,0 +1,3 @@
+{"id":"bolt-2026-10-30-pdf-86a2","stopOnError":false,"ops":[
+{"op":"etsy_upload","path":"/shops/68605457/listings/4606483866/files","fileUrl":"https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/ed132b13f8b62724/office-party-games.pdf","field":"file","fileName":"office-party-games.pdf","fields":{"rank":"1","name":"office-party-games.pdf"},"tag":"pdf"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/4606483866/files","tag":"files"}]}
