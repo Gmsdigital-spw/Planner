@@ -1,0 +1,4 @@
+{"id":"warden-2026-10-30-verify-66de","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/listings/4600177516/images","tag":"img-4600177516"},
+{"op":"etsy","method":"GET","path":"/listings/4601798994/images","tag":"img-4601798994"}
+]}
