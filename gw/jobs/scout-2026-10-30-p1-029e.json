@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-30-p1-029e", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/4382556824/reviews?limit=3", "tag": "rev-trivia-4382556824"}, {"op": "etsy", "method": "GET", "path": "/listings/4382556824", "tag": "lst-trivia-4382556824"}]}

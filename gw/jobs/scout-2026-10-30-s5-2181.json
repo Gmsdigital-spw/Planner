@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-30-s5-2181", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+most+likely+to+game+printable&sort_on=score&limit=20", "tag": "mltgame"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+party+games+printable+bundle&sort_on=score&limit=20", "tag": "bundle"}]}
