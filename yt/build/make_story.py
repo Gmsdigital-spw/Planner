@@ -491,8 +491,13 @@ def build(spec_path, check=False):
             keys = tuple(k for k in spec["cast"] if "{" + k + "}" in ln["prompt"])
             if keys not in sheets:
                 n = 99 - len(sheets)
+                # one-character sheets said "side by side ... full bodies" and drew two copies,
+                # which then put a duplicate into scenes (ep22 scenes 3, 4, 12)
+                pose = (", standing alone facing the viewer, exactly one full body, one single person"
+                        if len(keys) == 1 else
+                        f", exactly {len(keys)} people standing side by side facing the viewer, full bodies")
                 sheet = {"prompt": "character sheet: " + ", ".join("{" + k + "}" for k in keys) +
-                         ", standing side by side facing the viewer, full bodies, plain white background"}
+                         pose + ", plain white background"}
                 get_image(spec, sheet, n, work, check, warn); sheets[keys] = os.path.join(work, f"img{n:02d}.jpg")
             return sheets[keys]
         images = [get_image(spec, ln, i, work, check, warn, ref_for(ln)) for i, ln in enumerate(lines)]
