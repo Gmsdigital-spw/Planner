@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-30-s2-e013", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=hot+cocoa+bar+sign+printable&sort_on=score&limit=20", "tag": "cocoa"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=2027+vision+board+printable&sort_on=score&limit=20", "tag": "vision"}]}

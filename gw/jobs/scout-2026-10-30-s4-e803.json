@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-30-s4-e803", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+would+you+rather&sort_on=score&limit=20", "tag": "wyr"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+trivia+game+printable&sort_on=score&limit=20", "tag": "trivia"}]}

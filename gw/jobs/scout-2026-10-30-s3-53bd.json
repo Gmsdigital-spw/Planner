@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-30-s3-53bd", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+eve+box+printable&sort_on=score&limit=20", "tag": "evebox"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+family+game+night+printable&sort_on=score&limit=20", "tag": "famnight"}]}
