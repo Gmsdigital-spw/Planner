@@ -84,10 +84,20 @@
       "listingId": "4604847087",
       "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-29/4604847087/video.mp4",
       "zernioPostId": "6ae388f021aa720796fcf6ef",
+      "status": "posted",
+      "postUrl": "https://www.pinterest.com/pin/1096274734331048445/",
+      "error": null,
+      "link": "https://www.etsy.com/listing/4604847087/christmas-charades-printable-game-120"
+    },
+    {
+      "day": "2026-10-30",
+      "listingId": "4605581711",
+      "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-30/4605581711/video.mp4",
+      "zernioPostId": "6ae4da503912d048d2b5c242",
       "status": "scheduled",
       "postUrl": null,
       "error": null,
-      "link": "https://www.etsy.com/listing/4604847087/christmas-charades-printable-game-120"
+      "link": "https://www.etsy.com/listing/4605581711"
     }
   ]
 }
