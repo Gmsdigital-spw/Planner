@@ -1,0 +1,6 @@
+{"id":"warden-2026-10-30-vphotos-1789","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=active&limit=100&includes=Images","tag":"listings"},
+{"op":"fetch_images","dir":"warden-1030","items":[
+{"name":"4600177516-r01-8769375276.jpg","url":"https://i.etsystatic.com/68605457/r/il/3319d0/8769375276/il_570xN.8769375276_31eg.jpg"},
+{"name":"4601798994-r01-8817192469.jpg","url":"https://i.etsystatic.com/68605457/r/il/919b4d/8817192469/il_570xN.8817192469_gu1m.jpg"}]}
+]}
