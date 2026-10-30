@@ -1,0 +1,274 @@
+{
+ "dur": 21.21,
+ "vo": "social/studio/media/vo/ginger2-vo.mp3",
+ "music": "social/studio/media/vo/ginger2-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/ginger",
+   "cover": "cover.jpg",
+   "price": "4.49",
+   "pages": 15,
+   "listTitle": "Gingerbread House Contest Kit Printable, Decorating Contest Judge Score Cards, Voting Ballots, Award Certificates",
+   "strip": [
+    "p-07.png",
+    "p-10.png",
+    "p-11.png",
+    "p-12.png"
+   ],
+   "bg": [
+    "#c0603a",
+    "#4a1f10"
+   ],
+   "accent": "#9a3f1c",
+   "hl": "#ffd34d",
+   "dot": "#ffe6d6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-02.png",
+     "p-07.png",
+     "p-10.png",
+     "p-12.png"
+    ],
+    "type": "grid",
+    "t0": 0,
+    "t1": 3.25,
+    "beats": [
+     0.1,
+     0.81,
+     1.51,
+     2.22
+    ]
+   },
+   {
+    "page": "p-07.png",
+    "type": "pan",
+    "t0": 3.25,
+    "t1": 5.55,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-11.png",
+     "p-10.png"
+    ],
+    "type": "fan",
+    "t0": 5.55,
+    "t1": 8.25,
+    "beats": [
+     5.65,
+     7.33
+    ]
+   },
+   {
+    "pages": [
+     "p-05.png",
+     "p-06.png",
+     "p-09.png"
+    ],
+    "type": "fan",
+    "t0": 8.25,
+    "t1": 12.58,
+    "beats": [
+     8.35,
+     9.84,
+     11.33
+    ]
+   },
+   {
+    "pages": [
+     "p-12.png",
+     "p-13.png",
+     "p-14.png"
+    ],
+    "type": "fan",
+    "t0": 12.58,
+    "t1": 14.1,
+    "beats": [
+     12.68,
+     13.05,
+     13.42
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 14.1,
+    "t1": 18.1,
+    "beats": [
+     0.44,
+     1.31,
+     1.72,
+     2.52,
+     2.92
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 18.1,
+    "t1": 21.51
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.69,
+   "What's *inside* | the *gingerbread* kit"
+  ],
+  [
+   3.25,
+   5.13,
+   "*Judge* score cards | *2* to a page"
+  ],
+  [
+   5.55,
+   7.83,
+   "*People's Choice* | ballots | *8* per page"
+  ],
+  [
+   8.25,
+   12.17,
+   "A *tally sheet* | for up to *3* judges"
+  ],
+  [
+   12.58,
+   13.67,
+   "*Certificates* | for *kids* *teens* | and *adults*"
+  ],
+  [
+   14.1,
+   15.07,
+   "*15* pages"
+  ],
+  [
+   15.57,
+   16.47,
+   "Instant *download*"
+  ],
+  [
+   16.97,
+   17.68,
+   "Tap the *link*"
+  ],
+  [
+   18.1,
+   19.18,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.81,
+   "pop"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.51,
+   "pop"
+  ],
+  [
+   2.22,
+   "pop"
+  ],
+  [
+   3.2,
+   "whoosh"
+  ],
+  [
+   5.5,
+   "whoosh"
+  ],
+  [
+   5.65,
+   "pop"
+  ],
+  [
+   7.33,
+   "pop"
+  ],
+  [
+   8.2,
+   "whoosh"
+  ],
+  [
+   8.35,
+   "pop"
+  ],
+  [
+   9.84,
+   "pop"
+  ],
+  [
+   11.33,
+   "pop"
+  ],
+  [
+   12.53,
+   "whoosh"
+  ],
+  [
+   12.68,
+   "pop"
+  ],
+  [
+   13.05,
+   "pop"
+  ],
+  [
+   13.42,
+   "pop"
+  ],
+  [
+   14.05,
+   "whoosh"
+  ],
+  [
+   14.54,
+   "whoosh"
+  ],
+  [
+   17.02,
+   "tap"
+  ],
+  [
+   17.27,
+   "pop"
+  ],
+  [
+   18.05,
+   "whoosh"
+  ],
+  [
+   18.45,
+   "impact"
+  ],
+  [
+   18.9,
+   "pop"
+  ]
+ ]
+}

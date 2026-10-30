@@ -42,17 +42,20 @@
   {
    "say": "People's Choice ballots, eight per page.",
    "cap": "*People's Choice* | ballots | *8* per page",
-   "scene": "pan",
-   "page": "p-10.png"
+   "scene": "fan",
+   "pages": [
+    "p-11.png",
+    "p-10.png"
+   ]
   },
   {
    "say": "A tally sheet for up to three judges.",
    "cap": "A *tally sheet* | for up to *3* judges",
    "scene": "fan",
    "pages": [
-    "p-09.png",
+    "p-05.png",
     "p-06.png",
-    "p-05.png"
+    "p-09.png"
    ]
   },
   {

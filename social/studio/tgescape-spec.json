@@ -32,8 +32,12 @@
   {
    "say": "Grandma locked four pies away, and mixed up the code.",
    "cap": "Grandma locked | *4 pies* away | and mixed up the *code*",
-   "scene": "pan",
-   "page": "p-03.png"
+   "scene": "fan",
+   "pages": [
+    "p-02.png",
+    "p-13.png",
+    "p-03.png"
+   ]
   },
   {
    "say": "Four clues. Each one gives a digit.",
