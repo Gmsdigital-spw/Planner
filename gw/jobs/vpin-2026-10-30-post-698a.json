@@ -1,0 +1,33 @@
+{
+ "id": "vpin-2026-10-30-post-698a",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "vpin-2026-10-30",
+   "body": {
+    "content": "Thanksgiving escape room for kids: solve 4 clues to open Grandma Hazel's Pie Safe before the 45-minute timer runs out. Printable family game with 2 levels (ages 6-9 and 10+), no phone or QR code needed. Instant download.",
+    "mediaItems": [
+     {
+      "type": "video",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-10-30/4605581711/video.mp4"
+     }
+    ],
+    "scheduledFor": "2026-10-31T01:30:00.000Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "Thanksgiving Escape Room for Kids, Printable Family Game",
+       "link": "https://www.etsy.com/listing/4605581711"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

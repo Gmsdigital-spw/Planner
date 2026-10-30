@@ -1,0 +1,11 @@
+{
+ "id": "vpin-2026-10-30-confirm-db29",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ae388f021aa720796fcf6ef"
+  }
+ ]
+}
