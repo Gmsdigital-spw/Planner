@@ -1,0 +1,90 @@
+{
+ "id": "bolt-2026-10-30-pins-05fe",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-thanksgiving-escape-room-s1",
+   "tag": "pin-prod-thanksgiving-escape-room-s1",
+   "body": {
+    "content": "A printable Thanksgiving escape room for kids and families: one story, two levels (ages 6-9 and 10+), 4 clues that lead to a 4-digit code for Grandma's Pie Safe. Includes a game master guide, mission letter, clue sheets, lock tags, hint cards, answer key and Escape Expert certificates. Print at home, no phone or internet needed. About 45 minutes for 1 to 12 players.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-thanksgiving-escape-room-s1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-04T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "Thanksgiving Escape Room for Kids: Family Fun After Dinner, Printable Game",
+       "link": "https://www.etsy.com/listing/4605581711"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-thanksgiving-escape-room-s2",
+   "tag": "pin-prod-thanksgiving-escape-room-s2",
+   "body": {
+    "content": "A printable Thanksgiving escape room for kids and families: one story, two levels (ages 6-9 and 10+), 4 clues that lead to a 4-digit code for Grandma's Pie Safe. Includes a game master guide, mission letter, clue sheets, lock tags, hint cards, answer key and Escape Expert certificates. Print at home, no phone or internet needed. About 45 minutes for 1 to 12 players.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-thanksgiving-escape-room-s2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-05T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "Printable Thanksgiving Escape Room for Kids: Solve 4 Clues, Open the Pie Safe",
+       "link": "https://www.etsy.com/listing/4605581711"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-thanksgiving-escape-room-s3",
+   "tag": "pin-prod-thanksgiving-escape-room-s3",
+   "body": {
+    "content": "A printable Thanksgiving escape room for kids and families: one story, two levels (ages 6-9 and 10+), 4 clues that lead to a 4-digit code for Grandma's Pie Safe. Includes a game master guide, mission letter, clue sheets, lock tags, hint cards, answer key and Escape Expert certificates. Print at home, no phone or internet needed. About 45 minutes for 1 to 12 players.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-thanksgiving-escape-room-s3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-06T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "Thanksgiving Escape Room Printable: 4 Clues, 2 Levels, No Phone Needed",
+       "link": "https://www.etsy.com/listing/4605581711"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
