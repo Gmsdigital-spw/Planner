@@ -1,7 +1,7 @@
 {
   "id": "ep22",
   "format": "story",
-  "rev": 1,
+  "rev": 2,
   "title": "My Mom Said She'd Take My Console on a Surprise Day #shorts",
   "title_card": "The Surprise Day Paradox",
   "voice": "andrew",
@@ -43,13 +43,13 @@
       "text": "\"Some school day next week, I'll take your console, and it'll be a total surprise.\"",
       "label": "THE SURPRISE",
       "headline": "A SURPRISE SCHOOL DAY",
-      "image": "close-up of {mom} with a playful sly grin, holding up exactly one small white game console box (an inanimate object with one plain gray controller, no face, no arms, no feet, no logos) in one hand, a plain wall calendar with five blank squares (no writing, no numbers) behind her, cozy kitchen, she is the only person in the picture"
+      "image": "close-up of one single {mom} alone in a cozy kitchen, a playful sly grin, holding up exactly one small white game console box (an inanimate object with one plain gray controller, no face, no arms, no feet, no logos) in one hand, a plain wall calendar with five blank squares (no writing, no numbers) on the wall beside her, she is alone: exactly one person in the whole picture, one single mother, no second woman, no twin, no child"
     },
     {
       "text": "\"But if you see it coming that morning, you keep it all month,\" she said.",
       "label": "THE CATCH",
       "headline": "SEE IT COMING, KEEP IT",
-      "image": "{mom} winking and pointing one finger forward, hugging exactly one small white game console box (an inanimate object with one plain gray controller, no face, no arms, no feet, no logos) against her chest with her other arm, cozy kitchen, warm light, she is the only person in the picture"
+      "image": "one single {mom} alone in a cozy kitchen, winking and pointing one finger toward the viewer, her other arm hugging exactly one small white game console box (an inanimate object with one plain gray controller, no face, no arms, no feet, no logos) against her chest, warm light, she is alone: exactly one person in the whole picture, one single mother, no second woman, no twin, no child"
     },
     {
       "text": "That night I worked it out like a boss level, starting with Friday.",
@@ -97,7 +97,7 @@
       "text": "Mom beat my perfect proof, and now I do homework every night, just in case.",
       "label": "MOM WINS",
       "headline": "HOMEWORK EVERY NIGHT",
-      "image": "{kid} smiling at a wooden desk doing homework with a pencil at night, exactly one small white game console box (an inanimate object with one plain gray controller, no face, no arms, no feet, no logos) sitting safe on a high shelf behind him, warm lamp light, he is the only person in the picture"
+      "image": "one single {kid} alone, sitting on one chair at a small wooden desk at night, smiling and writing homework with a pencil, exactly one small white game console box (an inanimate object with one plain gray controller, no face, no arms, no feet, no logos) sitting safe on a high shelf behind him, warm lamp light, he is alone: exactly one person in the whole picture, one single boy, no second child, no friend, no reflection"
     }
   ]
 }
