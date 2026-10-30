@@ -3,19 +3,10 @@
  "mode": "paper",
  "equityOpen": 24.87,
  "entries": 3,
- "lostToday": [],
- "positions": {
-  "KO": {
-   "entry": 94.568,
-   "stop0": 94.23,
-   "stop": 94.23,
-   "target": 95.24,
-   "high": 94.635,
-   "stopId": "3dcd09d0-b35b-4c3a-9630-ddc36a8a79c2",
-   "since": "2026-10-30T15:35:00Z",
-   "qty": "0.062917688"
-  }
- },
+ "lostToday": [
+  "KO"
+ ],
+ "positions": {},
  "trades": [
   {
    "sym": "WMT",
@@ -29,6 +20,13 @@
    "entry": 30.548,
    "exit": 30.55,
    "r": 0.02,
+   "why": "stop filled"
+  },
+  {
+   "sym": "KO",
+   "entry": 94.568,
+   "exit": 94.23,
+   "r": -1.0,
    "why": "stop filled"
   }
  ],
@@ -105,13 +103,13 @@
   }
  ],
  "done": null,
- "runs": 316,
+ "runs": 322,
  "lastSignal": {
   "WMT": "2026-10-30T15:15:00Z",
   "KO": "2026-10-30T15:35:00Z",
   "PFE": "2026-10-30T17:35:00Z"
  },
- "lastRun": "14:05",
+ "lastRun": "14:11",
  "equity": 24.88,
  "dayPnl": 0.01,
  "watch": [
@@ -148,5 +146,5 @@
   "XLY",
   "XOM"
  ],
- "lastNote": "equity $24.88, day +0.01, 1 open, 3 entries; no new entries now (8:35-2:00 CT window)"
+ "lastNote": "equity $24.88, day +0.01, 0 open, 3 entries; no new entries now (8:35-2:00 CT window)"
 }
