@@ -14,16 +14,6 @@
    "stopId": "3dcd09d0-b35b-4c3a-9630-ddc36a8a79c2",
    "since": "2026-10-30T15:35:00Z",
    "qty": "0.062917688"
-  },
-  "PFE": {
-   "entry": 30.548,
-   "stop0": 30.46,
-   "stop": 30.55,
-   "target": 30.72,
-   "high": 30.64,
-   "stopId": "80391e32-fafb-4ebc-949f-270fb0c58ac7",
-   "since": "2026-10-30T17:35:00Z",
-   "qty": "0.247152023"
   }
  },
  "trades": [
@@ -32,6 +22,13 @@
    "entry": 123.386,
    "exit": 123.73,
    "r": 0.63,
+   "why": "stop filled"
+  },
+  {
+   "sym": "PFE",
+   "entry": 30.548,
+   "exit": 30.55,
+   "r": 0.02,
    "why": "stop filled"
   }
  ],
@@ -108,15 +105,15 @@
   }
  ],
  "done": null,
- "runs": 256,
+ "runs": 262,
  "lastSignal": {
   "WMT": "2026-10-30T15:15:00Z",
   "KO": "2026-10-30T15:35:00Z",
   "PFE": "2026-10-30T17:35:00Z"
  },
- "lastRun": "13:05",
- "equity": 24.92,
- "dayPnl": 0.05,
+ "lastRun": "13:11",
+ "equity": 24.9,
+ "dayPnl": 0.03,
  "watch": [
   "SPY",
   "QQQ",
@@ -151,5 +148,5 @@
   "XLY",
   "XOM"
  ],
- "lastNote": "equity $24.92, day +0.05, 2 open, 3 entries"
+ "lastNote": "equity $24.90, day +0.03, 1 open, 3 entries"
 }
