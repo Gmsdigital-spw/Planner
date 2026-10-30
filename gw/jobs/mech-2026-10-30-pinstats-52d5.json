@@ -1,0 +1,156 @@
+{
+ "id": "mech-2026-10-30-pinstats-52d5",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae230176616fdaa49ffbb82",
+   "tag": "pin-prod-thanksgiving-games-m1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae23016712b38228fd83691",
+   "tag": "pin-prod-xmas-charades-120-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d16bd032490b2527d43",
+   "tag": "pin-prod-goal-workbook-2027-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d16197e529ee835ef7a",
+   "tag": "pin-prod-gingerbread-contest-kit-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d15197e529ee835ef6f",
+   "tag": "pin-prod-friendsgiving-kit-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d15197e529ee835ef6a",
+   "tag": "pin-prod-cookie-exchange-kit-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae230166616fdaa49ffbb71",
+   "tag": "pin-prod-xmas-murder-mystery-8-m1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae230156616fdaa49ffbb64",
+   "tag": "pin-prod-xmas-charades-120-m1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d15197e529ee835ef65",
+   "tag": "pin-prod-debt-payoff-2027-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d14197e529ee835ef5c",
+   "tag": "pin-prod-cookie-exchange-kit-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d14197e529ee835ef57",
+   "tag": "pin-prod-advent-activities-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d14197e529ee835ef52",
+   "tag": "pin-prod-adhd-savings-tracker-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d14197e529ee835ef4d",
+   "tag": "pin-prod-debt-payoff-2027-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d13197e529ee835ef48",
+   "tag": "pin-prod-advent-activities-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d13197e529ee835ef43",
+   "tag": "pin-prod-adhd-savings-tracker-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d13197e529ee835ef3e",
+   "tag": "pin-legacy-xmas-planner-listing-update-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6addf4f9f328ebc0ca8f18a5",
+   "tag": "pin-prod-invite-birthday-pink-cabana-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d12197e529ee835ef39",
+   "tag": "pin-legacy-xmas-planner-listing-update-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d125f6bae0156fd7070",
+   "tag": "pin-legacy-xmas-game-bundle-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f385e0f45f343e2a575c",
+   "tag": "pin-prod-xmas-scavenger-hunt-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8f3848c105982dc04b019",
+   "tag": "pin-prod-thanksgiving-games-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6addf4f8f328ebc0ca8f189f",
+   "tag": "pin-prod-invite-birthday-pink-cabana-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad8b0e6b263219c4019642d",
+   "tag": "pin-gingerbread-contest-2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad92d11bd032490b2527d2a",
+   "tag": "pin-legacy-xmas-game-bundle-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ad7c26f8cea1c68a2b2f10b",
+   "tag": "pin-no-buy-year-2027-1"
+  }
+ ]
+}
