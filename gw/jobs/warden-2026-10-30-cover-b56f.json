@@ -1,0 +1,42 @@
+{
+ "id": "warden-2026-10-30-cover-b56f",
+ "stopOnError": true,
+ "ops": [
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4600177516/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/fun/v2/4600177516.jpg",
+   "field": "image",
+   "fileName": "4600177516-cover-v2.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Gingerbread House Decorating Contest Kit printable, judge score card on a clipboard with judging guide and results tally sheet, 15 pages"
+   },
+   "tag": "up-4600177516"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4600177516/images/8779345561",
+   "tag": "del-4600177516"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4601798994/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/fun/v2/4601798994.jpg",
+   "field": "image",
+   "fileName": "4601798994-cover-v2.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Letters from Santa editable printable, typed letter with Nice List certificate, North Pole envelope label and gift tags"
+   },
+   "tag": "up-4601798994"
+  },
+  {
+   "op": "etsy",
+   "method": "DELETE",
+   "path": "/shops/68605457/listings/4601798994/images/8779345215",
+   "tag": "del-4601798994"
+  }
+ ]
+}
