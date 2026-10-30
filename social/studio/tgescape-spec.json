@@ -1,0 +1,88 @@
+{
+ "vo": "social/studio/media/vo/tgescape-vo.mp3",
+ "music": "social/studio/media/vo/tgescape-music.wav",
+ "product": {
+  "dir": "/social/studio/media/tgescape",
+  "cover": "cover.jpg",
+  "price": "6.99",
+  "pages": 17,
+  "listTitle": "Thanksgiving Escape Room for Kids and Families, Printable Game, 2 Levels Ages 6-9 and 10+, No Phone or QR Code, Kids Table Activity",
+  "strip": [
+   "p-03.png",
+   "p-06.png",
+   "p-09.png",
+   "p-16.png"
+  ],
+  "bg": [
+   "#c8662e",
+   "#5a240f"
+  ],
+  "accent": "#a3461d",
+  "hl": "#ffd34d",
+  "dot": "#ffe6d6"
+ },
+ "phrases": [
+  {
+   "say": "Can your kids open the Pie Safe before dinner?",
+   "cap": "Can your kids open | the *Pie Safe* | before *dinner?*",
+   "scene": "hook",
+   "page": "p-03.png",
+   "badge": "2 LEVELS"
+  },
+  {
+   "say": "Grandma Hazel locked four pies away, and mixed up the code.",
+   "cap": "Grandma locked | *4 pies* away | and mixed up the *code*",
+   "scene": "pan",
+   "page": "p-03.png"
+  },
+  {
+   "say": "Four clues. Each one gives a digit.",
+   "cap": "*4* clues | each one gives | a *digit*",
+   "scene": "grid",
+   "pages": [
+    "p-04.png",
+    "p-06.png",
+    "p-08.png",
+    "p-10.png"
+   ]
+  },
+  {
+   "say": "Level one for ages six to nine. Level two for ten and up.",
+   "cap": "*Level 1* | ages *6 to 9* | *Level 2* | ages *10+*",
+   "scene": "fan",
+   "pages": [
+    "p-04.png",
+    "p-05.png"
+   ]
+  },
+  {
+   "say": "Hint cards, an answer key, and certificates.",
+   "cap": "*Hint cards* | *answer key* | and *certificates*",
+   "scene": "fan",
+   "pages": [
+    "p-14.png",
+    "p-15.png",
+    "p-16.png"
+   ]
+  },
+  {
+   "say": "About forty-five minutes of play.",
+   "cap": "About *45 minutes* | of play",
+   "scene": "phone"
+  },
+  {
+   "say": "No phone needed.",
+   "cap": "No *phone* needed"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

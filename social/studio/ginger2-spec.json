@@ -1,0 +1,88 @@
+{
+ "vo": "social/studio/media/vo/ginger2-vo.mp3",
+ "music": "social/studio/media/vo/ginger2-music.wav",
+ "product": {
+  "dir": "/social/studio/media/ginger",
+  "cover": "cover.jpg",
+  "price": "4.49",
+  "pages": 15,
+  "listTitle": "Gingerbread House Contest Kit Printable, Decorating Contest Judge Score Cards, Voting Ballots, Award Certificates",
+  "strip": [
+   "p-07.png",
+   "p-10.png",
+   "p-11.png",
+   "p-12.png"
+  ],
+  "bg": [
+   "#c0603a",
+   "#4a1f10"
+  ],
+  "accent": "#9a3f1c",
+  "hl": "#ffd34d",
+  "dot": "#ffe6d6"
+ },
+ "phrases": [
+  {
+   "say": "Here's what's inside the gingerbread contest kit.",
+   "cap": "What's *inside* | the *gingerbread* kit",
+   "scene": "grid",
+   "pages": [
+    "p-02.png",
+    "p-07.png",
+    "p-10.png",
+    "p-12.png"
+   ]
+  },
+  {
+   "say": "Judge score cards, two to a page.",
+   "cap": "*Judge* score cards | *2* to a page",
+   "scene": "pan",
+   "page": "p-07.png"
+  },
+  {
+   "say": "People's Choice ballots, eight per page.",
+   "cap": "*People's Choice* | ballots | *8* per page",
+   "scene": "pan",
+   "page": "p-10.png"
+  },
+  {
+   "say": "A tally sheet for up to three judges.",
+   "cap": "A *tally sheet* | for up to *3* judges",
+   "scene": "fan",
+   "pages": [
+    "p-09.png",
+    "p-06.png",
+    "p-05.png"
+   ]
+  },
+  {
+   "say": "And certificates for kids, teens and adults.",
+   "cap": "*Certificates* | for *kids* *teens* | and *adults*",
+   "scene": "fan",
+   "pages": [
+    "p-12.png",
+    "p-13.png",
+    "p-14.png"
+   ]
+  },
+  {
+   "say": "Fifteen pages.",
+   "cap": "*15* pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Instant download.",
+   "cap": "Instant *download*"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}
