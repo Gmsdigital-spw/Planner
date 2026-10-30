@@ -1,0 +1,55 @@
+{
+ "source": "products where etsy.state active OR stage in (published, live), newest 5 by publishedAt/confirmedActiveAt/seenActiveAt, read 2026-10-30 (fix round 2)",
+ "covers": [
+  {
+   "id": "prod-xmas-charades-120",
+   "publishedAt": "2026-10-28T17:24:00Z",
+   "stage": "live",
+   "etsyState": "active",
+   "coverStyle": "card-grid",
+   "styleCoverStyle": "split",
+   "scene": "card grid: 12 real cut cards (4 x 3) on cranberry linen, own render",
+   "tool": "output/2026-10-28-charades-build/cover.py"
+  },
+  {
+   "id": "prod-xmas-party-mega-bundle",
+   "publishedAt": "2026-10-27T17:24:07Z",
+   "stage": "live",
+   "etsyState": "active",
+   "coverStyle": "atlas-scene christmas, 4-page fan",
+   "styleCoverStyle": "band",
+   "scene": "christmas",
+   "tool": "atlas-scene"
+  },
+  {
+   "id": "prod-xmas-murder-mystery-8",
+   "publishedAt": "2026-10-25T12:21:21Z",
+   "stage": "published",
+   "etsyState": "active",
+   "coverStyle": "atlas-clipboard",
+   "styleCoverStyle": "frame",
+   "scene": "clipboard",
+   "tool": "atlas place.py (cover-styles Oct 24)"
+  },
+  {
+   "id": "prod-invite-birthday-pink-cabana",
+   "publishedAt": "2026-10-25T05:13:20Z",
+   "stage": "published",
+   "etsyState": "active",
+   "coverStyle": null,
+   "styleCoverStyle": "frame",
+   "scene": "clipboard",
+   "tool": "atlas-scene"
+  },
+  {
+   "id": "prod-xmas-escape-room",
+   "publishedAt": "2026-10-24T17:20:10Z",
+   "stage": "published",
+   "etsyState": "active",
+   "coverStyle": "atlas-christmas-table",
+   "styleCoverStyle": "split",
+   "scene": "christmas",
+   "tool": "atlas-scene"
+  }
+ ]
+}

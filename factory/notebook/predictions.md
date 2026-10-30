@@ -3,7 +3,7 @@
 Every agent guesses its numbers before something goes out (pred_* tags, see grade.py).
 Before your next guess, read your Calibration line and adjust. Hit = within 2x.
 
-_Updated 2026-10-29_
+_Updated 2026-10-30_
 
 ## Calibration (read this before guessing)
 - nothing graded yet: guesses fill in 7 days after things go out
@@ -13,4 +13,4 @@ _Updated 2026-10-29_
 |---|---|---|---|---|---|
 
 ## Waiting to be graded
-- none
+- atlas: 3 guess(es)
