@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-29",
+ "updatedAt": "2026-10-30",
  "note": "Pricing agent state. basePrice = the normal price before any change (from backups/listings-backup-2026-10-21.json).",
  "listings": {
   "4600177510": {
@@ -260,6 +260,14 @@
    "title": "Christmas Party Bundle Printable: 6 Games, 12 Awards, White Elephant Dice Game, ",
    "basePrice": 5.99,
    "price": 5.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4605581711": {
+   "title": "Thanksgiving Escape Room for Kids and Families, Printable Game, 2 Levels Ages 6-9",
+   "basePrice": 6.99,
+   "price": 6.99,
    "starter": false,
    "lastChange": null,
    "history": []
