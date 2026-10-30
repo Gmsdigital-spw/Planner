@@ -1,5 +1,5 @@
 {
- "vo": "social/studio/media/vo/tgescape-vo.mp3",
+ "vo": "social/studio/media/vo/tgescape2-vo.mp3",
  "music": "social/studio/media/vo/tgescape-music.wav",
  "product": {
   "dir": "/social/studio/media/tgescape",
@@ -30,7 +30,7 @@
    "badge": "2 LEVELS"
   },
   {
-   "say": "Grandma Hazel locked four pies away, and mixed up the code.",
+   "say": "Grandma locked four pies away, and mixed up the code.",
    "cap": "Grandma locked | *4 pies* away | and mixed up the *code*",
    "scene": "pan",
    "page": "p-03.png"
@@ -47,8 +47,8 @@
    ]
   },
   {
-   "say": "Level one for ages six to nine. Level two for ten and up.",
-   "cap": "*Level 1* | ages *6 to 9* | *Level 2* | ages *10+*",
+   "say": "Two levels, for ages six and up.",
+   "cap": "*2 levels* | for ages *6* and up",
    "scene": "fan",
    "pages": [
     "p-04.png",
@@ -66,13 +66,9 @@
    ]
   },
   {
-   "say": "About forty-five minutes of play.",
-   "cap": "About *45 minutes* | of play",
+   "say": "Forty-five minutes. No phone needed.",
+   "cap": "*45 minutes* | no *phone* needed",
    "scene": "phone"
-  },
-  {
-   "say": "No phone needed.",
-   "cap": "No *phone* needed"
   },
   {
    "say": "Tap the link,",
