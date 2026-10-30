@@ -1,0 +1,103 @@
+{
+  "id": "ep22",
+  "format": "story",
+  "rev": 1,
+  "title": "My Mom Said She'd Take My Console on a Surprise Day #shorts",
+  "title_card": "The Surprise Day Paradox",
+  "voice": "andrew",
+  "speed": 1.0,
+  "art": "stickfigure",
+  "music": "tense",
+  "music_volume": 0.05,
+  "cast": {
+    "kid": "a stick-figure boy with a round white head, dot eyes, thin black limbs, a red baseball cap and an orange t-shirt",
+    "mom": "a stick-figure mother with a round white head, dot eyes, thin black limbs, a curly brown hair bun and a long teal dress"
+  },
+  "description": "How did my mom take my console on a day I had proved was impossible?\n\nVisuals and voice made with AI.\n\n#shorts #paradox #gaming #mom #logicpuzzle #storytime",
+  "tags": [
+    "surprise day paradox",
+    "unexpected hanging paradox",
+    "paradox",
+    "logic puzzle",
+    "mom vs gamer",
+    "gaming",
+    "video games",
+    "story time",
+    "riddle",
+    "shorts"
+  ],
+  "lines": [
+    {
+      "text": "How did my mom take my console on a day I had proved was impossible?",
+      "label": "THE HOOK",
+      "headline": "THE SURPRISE DAY PARADOX",
+      "image": "{kid} standing in a cozy living room in the morning, staring in shock at an empty low TV stand under one single TV, the spot where his console used to be is bare, morning light through the window, he is the only person in the picture"
+    },
+    {
+      "text": "I kept gaming past midnight on school nights, so Mom offered me a deal.",
+      "label": "THE DEAL",
+      "headline": "MOM OFFERS A DEAL",
+      "image": "{mom} standing in a dark bedroom doorway at night with one arm on her hip, raising one finger like she is offering a deal, one single glowing TV and exactly one small white game console box (an inanimate object with one plain gray controller, no face, no arms, no feet, no logos) on the floor in front of her, she is the only person in the picture"
+    },
+    {
+      "text": "\"Some school day next week, I'll take your console, and it'll be a total surprise.\"",
+      "label": "THE SURPRISE",
+      "headline": "A SURPRISE SCHOOL DAY",
+      "image": "close-up of {mom} with a playful sly grin, holding up exactly one small white game console box (an inanimate object with one plain gray controller, no face, no arms, no feet, no logos) in one hand, a plain wall calendar with five blank squares (no writing, no numbers) behind her, cozy kitchen, she is the only person in the picture"
+    },
+    {
+      "text": "\"But if you see it coming that morning, you keep it all month,\" she said.",
+      "label": "THE CATCH",
+      "headline": "SEE IT COMING, KEEP IT",
+      "image": "{mom} winking and pointing one finger forward, hugging exactly one small white game console box (an inanimate object with one plain gray controller, no face, no arms, no feet, no logos) against her chest with her other arm, cozy kitchen, warm light, she is the only person in the picture"
+    },
+    {
+      "text": "That night I worked it out like a boss level, starting with Friday.",
+      "label": "THE PLAN",
+      "headline": "START WITH FRIDAY",
+      "image": "{kid} sitting on his bed at night with an open notebook, pencil tapping his chin, thinking hard, five blank paper squares pinned in a row on the wall (plain paper, no writing, no letters, no numbers), the last square on the right circled in red, lamp light, he is the only person in the picture"
+    },
+    {
+      "text": "If I still had my console Thursday night, I'd know Friday was the day.",
+      "label": "THURSDAY NIGHT",
+      "headline": "FRIDAY IS NO SURPRISE",
+      "image": "{kid} lying in bed at night with exactly one small white game console box (an inanimate object with one plain gray controller, no face, no arms, no feet, no logos) on the nightstand beside him, eyes wide with an idea, pointing at the last of five blank paper squares pinned in a row on the wall (plain paper, no writing, no letters, no numbers), moonlit window, he is the only person in the picture"
+    },
+    {
+      "text": "No surprise means no deal, so Friday was out, and Thursday became the last day.",
+      "label": "FRIDAY OUT",
+      "headline": "FRIDAY IS OUT",
+      "image": "{kid} grinning and tearing the last paper square on the right off a row of five blank paper squares pinned in a row on the wall (plain paper, no writing, no letters, no numbers), lamp light, bedroom at night, he is the only person in the picture"
+    },
+    {
+      "text": "But a last day is no surprise either, so Thursday fell, then Wednesday, Tuesday, Monday.",
+      "label": "ALL FALL",
+      "headline": "EVERY DAY FALLS",
+      "image": "{kid} triumphantly tearing the remaining blank paper squares off his bedroom wall one by one, torn paper scraps flying through the air, only bare wall left, bedroom at night, he is the only person in the picture"
+    },
+    {
+      "text": "So a surprise day was impossible, and I skipped homework and gamed every night.",
+      "label": "NO HOMEWORK",
+      "headline": "GAMING EVERY NIGHT",
+      "image": "{kid} sitting on the floor late at night happily playing a video game on one single glowing TV with exactly one small white game console box (an inanimate object with one plain gray controller, no face, no arms, no feet, no logos) on the floor beside him, an untouched pile of closed school books next to him, he is the only person in the picture"
+    },
+    {
+      "text": "Wednesday morning I ran downstairs, and my console was gone from under the TV.",
+      "label": "WEDNESDAY",
+      "headline": "THE CONSOLE IS GONE",
+      "image": "{kid} frozen on the bottom step of a staircase in the morning, mouth open, staring at an empty low TV stand under one single TV, no console anywhere, morning light, he is the only person in the picture"
+    },
+    {
+      "text": "I never saw it coming, because my perfect proof made me sure it couldn't happen.",
+      "label": "THE WHY",
+      "headline": "HIS PROOF FOOLED HIM",
+      "image": "close-up of {kid} stunned with his mouth wide open, holding a crumpled notebook covered in wavy pencil scribble lines (no letters, no words), morning light, he is the only person in the picture"
+    },
+    {
+      "text": "Mom beat my perfect proof, and now I do homework every night, just in case.",
+      "label": "MOM WINS",
+      "headline": "HOMEWORK EVERY NIGHT",
+      "image": "{kid} smiling at a wooden desk doing homework with a pencil at night, exactly one small white game console box (an inanimate object with one plain gray controller, no face, no arms, no feet, no logos) sitting safe on a high shelf behind him, warm lamp light, he is the only person in the picture"
+    }
+  ]
+}
