@@ -1,0 +1,1 @@
+{"id":"bolt-2026-10-30-verify-ee6e","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/listings/4606483866?includes=Images","tag":"listing"},{"op":"etsy","method":"GET","path":"/shops/68605457/listings/4606483866/files","tag":"files"}]}
