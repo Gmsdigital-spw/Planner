@@ -1,0 +1,6 @@
+{"id":"bolt-2026-10-31-snap-7c19","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=draft&limit=100","tag":"drafts"},
+{"op":"etsy","method":"GET","path":"/listings/4606924165","tag":"chk-4606924165"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"}]}
