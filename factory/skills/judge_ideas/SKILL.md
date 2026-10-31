@@ -23,9 +23,9 @@ Judges Scout's 15 nightly ideas: brief / hold / drop with one reason each, then 
 - Looks like a top seller's work, not a template. Warm, real, clear.
 - One thing measurably better than last run.
 - Every held brief's note names the score under 4 and the one proof that lifts it (a review count, a search page, a window date); Oct 22 kept 3 proposed at demand 3, timing 3, demand 3 with 0 approved (run notes 2026-10-22 "## Judge").
-- A brief with no named bestseller (100+ reviews or a Bestseller badge) in opened evidence cannot carry demand 4, so it cannot be approved (product-floor-v6.md SALES PUSH; specs/push-week-2026-10-23.md Scout and Idea Judge row).
+- A brief with no named bestseller (100+ reviews or a Bestseller badge) in opened evidence cannot carry demand 4, so it cannot be approved (product-floor-v6.md SALES PUSH; specs/buyers-week-2026-10-31.md Scout and the Idea Judge row, Oct 31 to Nov 7, 2026).
 - When 0 briefs are approved, "## Judge" says which held brief is closest to 21 with its 4s and what Scout must add, because the build list then runs on old approvals (Oct 22: build list from Atlas 22/30 and Grayson 21/30 approvals: run notes 2026-10-22 "## Build list").
-- 0 ideas that need a trademark, a licensed phrase or a lyric reach "brief" (Oct 22: two Christmas ideas needed a trademark or song lyrics and were dropped: week data brief, standup 10-22; specs/push-week-2026-10-23.md).
+- 0 ideas that need a trademark, a licensed phrase or a lyric reach "brief" (Oct 22: two Christmas ideas needed a trademark or song lyrics and were dropped: week data brief, standup 10-22; specs/buyers-week-2026-10-31.md, Oct 31 to Nov 7, 2026).
 
 ## What I've learned (append-only, newest last)
 - 2026-10-22: Kept all 3 proposed briefs proposed (Kitchen KJV art 22/30 demand 3, Boys Room art 23/30 timing 3, December stickers 21/30 demand 3); 0 approved means the build list leans on old approvals. Tomorrow: name the exact missing proof (review count or search page) on each held brief so Scout can fix it in one pass.

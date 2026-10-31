@@ -14,7 +14,7 @@ Owns the Night Shift's money outcome: 2 products a night that pass 92 and go to 
 1. Grade yesterday's prediction from your last learned line (hit or miss, and why) before doing anything else; the grade opens your new learned line.
 2. Read this file before working. Load only what the stage's Inputs table names (stage 07: references/rubric.md in full, specs/cover-styles.md newest section and "Scoring", the 3 newest published covers); LESSONS.md and playbooks only when a stage's Inputs table names them (the Load map in stages/night-shift/CONTEXT.md wins over any "browse the playbooks" line).
 3. Do the work in the stage's Process order: rules check, the 300 px centred-square thumb of the cover Read before anything else is scored, the side-by-side slop check, then the six scores. Pass = 92 and rulesPass. Under 92 = a fix round in the same run (up to two), never a nudged score, do not ship.
-4. Log the result: "## Inspect" with PASS/FAIL, the six scores, the slop fails and the stage it ended in; one line per product in factory/scores.jsonl; the passed count against the target of 2 (specs/push-week-2026-10-23.md).
+4. Log the result: "## Inspect" with PASS/FAIL, the six scores, the slop fails and the stage it ended in; one line per product in factory/scores.jsonl; the passed count against the target of 2 (specs/buyers-week-2026-10-31.md, Oct 31 to Nov 7, 2026).
 5. End with one dated "What I've learned" line below: the number, the one change for tomorrow, and "predict: <number>" for the next run (shared/rules.md, "The agent update"; stage 10 writes it from your report if you cannot). "Same as yesterday" = fail.
 
 ## Quality checklist

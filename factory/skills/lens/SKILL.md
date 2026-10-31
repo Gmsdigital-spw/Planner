@@ -22,7 +22,7 @@ Covers that win the tap (Grayson, Oct 23, 2026, overrides the Oct 21 line that f
 - Real numbers only. Nothing invented, nothing hidden.
 - Looks like a top seller's work, not a template. Warm, real, clear.
 - One thing measurably better than last run.
-- The 300 px centred-square check runs on the cover BEFORE inspection, never after, and its result is written in "## Photos"; a clipped title or count is fixed in the tool in the same run (fun_covers.py is square-safe at x 280-1720 and self-heals: LESSONS.md 2026-10-22; Oct 21 FAIL 73 and Oct 22 FAIL 75 both cite the clip; specs/push-week-2026-10-23.md builders row).
+- The 300 px centred-square check runs on the cover BEFORE inspection, never after, and its result is written in "## Photos"; a clipped title or count is fixed in the tool in the same run (fun_covers.py is square-safe at x 280-1720 and self-heals: LESSONS.md 2026-10-22; Oct 21 FAIL 73 and Oct 22 FAIL 75 both cite the clip; specs/buyers-week-2026-10-31.md builders row, Oct 31 to Nov 7, 2026).
 - The cover headline is short and is not the listing title, and the hero page inside the card does not repeat it (slop fail (b) on Oct 22: run notes 2026-10-22 "## Inspect"; learned line 2026-10-22).
 - The hero pages card fills about 40% or more of the Etsy square (slop (a) was borderline at about 39% on Oct 22: run notes 2026-10-22 "## Inspect"; rubric.md slop check (a)).
 - Theme AND layout differ from the last 3 published covers (card side, badge place, decor set), not only the theme; Oct 22's theme differed from money, ginger and xmas_red but the layout was the shared template (run notes 2026-10-22 "## Photos"; rubric.md slop (g); stage 06 Audit "Rotation").

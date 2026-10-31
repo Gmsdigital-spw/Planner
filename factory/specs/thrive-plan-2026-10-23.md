@@ -1,7 +1,7 @@
 # Thrive plan (Grayson, Oct 23, 2026): standing order through Dec 31, 2026
 
 Grayson's words: "tell me some list of things that we need to get done to really get it thriving" -> "apply all of this now".
-Same authority as the other specs. Where it conflicts with specs/push-week-2026-10-23.md, THIS file wins
+Same authority as the other specs. Where it conflicts with the week's standing order (specs/buyers-week-2026-10-31.md, Oct 31 to Nov 7; before it specs/push-week-2026-10-23.md), THIS file wins
 (quality over volume). Results, not activity: every report leads with views, favorites and sales.
 
 ## The 8 moves

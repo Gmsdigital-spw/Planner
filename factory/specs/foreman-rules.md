@@ -39,4 +39,4 @@ For every active listing, from the stats/<day> docs: views, favorites, sales ove
 ## 7. The agent update (Grayson, Oct 23, 2026)
 - Every agent is pushed to its best work every run: the cap reached with 92+ work, one measured test alive, one lesson with a number, one prediction graded. `shared/rules.md` ("Mission", "The agent update") is the canonical text; this file only says how the Foreman grades it.
 - Grade "under" = any cap missed without a stated blocker, a product under 85, a missing or numberless learned line, or a prediction not graded. Three "under" grades in a row for one agent = the Foreman rewrites that agent's "Exact steps" from what worked (Sunday, surgical, with the evidence), and says so in the standup.
-- The week's standing order (`specs/push-week-2026-10-23.md`) sets the daily targets the standup grades against; its scoreboard is the standup's first line.
+- The week's standing order (`specs/buyers-week-2026-10-31.md`, Oct 31 to Nov 7, 2026) sets the daily targets the standup grades against; its scoreboard is the standup's first line.

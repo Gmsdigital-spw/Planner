@@ -22,7 +22,7 @@ Builds the PDF that gets sold: a full printable (6 to 16 content pages plus the 
 - Real numbers only. Nothing invented, nothing hidden.
 - Looks like a top seller's work, not a template. Warm, real, clear.
 - One thing measurably better than last run.
-- The page rule is checked against the brief before the first page is drawn (6 to 16 content pages plus the thank-you page, or the lane's spec count) and written in "## Build"; outside it, the build is flagged, not started (Oct 21's 85 failed on the page rule: week data brief, Night Shift line; specs/push-week-2026-10-23.md builders row).
+- The page rule is checked against the brief before the first page is drawn (6 to 16 content pages plus the thank-you page, or the lane's spec count) and written in "## Build"; outside it, the build is flagged, not started (Oct 21's 85 failed on the page rule: week data brief, Night Shift line; specs/buyers-week-2026-10-31.md builders row, Oct 31 to Nov 7, 2026).
 - The 50 dpi contact sheet is Read before upload and every fix is listed in "## Build" (Oct 22: a blank page and a box over the footer caught and fixed: run notes 2026-10-22 "## Build").
 - No c.showPage() after d.end() (gs.Book.end() already calls showPage); type-in fields use real fonts via tools/acro_font.py, never Times, with fixed field sizes and a MaxLen that fits real wording (promoted from LESSONS 2026-10-25, Sunday Oct 25: the Pink Bow invite went 78 to a 93 PASS with a fresh judge each round; the Oct 22 Times rule is retired).
 - At least one build this week is a Christmas BIG bundle priced $8 to $14 with the count on the cover, modeled on a named bestseller, and "## Build" names it (specs/push-week-2026-10-23.md builders row; product-floor-v6.md SALES PUSH, BUNDLES).

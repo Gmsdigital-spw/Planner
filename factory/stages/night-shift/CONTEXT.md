@@ -66,7 +66,7 @@ product `## Build: <title>` (04), `## Copy: <title>` (05), `## Photos: <title>` 
 
 | Stage | Loads |
 |-------|-------|
-| 00 | `specs/thrive-plan-2026-10-23.md` (full: wins over push-week on conflict; the coordinator puts the 8 moves and the focus list into every worker's brief), `shared/repo.md` ("Getting it"), `specs/push-week-2026-10-23.md` ("Daily targets": the coordinator puts each worker's line into its brief) |
+| 00 | `specs/thrive-plan-2026-10-23.md` (full: wins over the week's standing order on conflict; the coordinator puts the 8 moves and the focus list into every worker's brief), `shared/repo.md` ("Getting it"), `specs/buyers-week-2026-10-31.md` (Oct 31 to Nov 7, 2026; "Daily targets": the coordinator puts each worker's line into its brief) |
 | 01 | `notebook/etsy.md` (full) + `notebook/business.md` (Grayson's rules), `notebook/winners.md` (full), `notebook/buyer-voice.md` (full), `specs/product-floor-v6.md` (Idea Engine, lanes, Holiday Mode, SALES PUSH), `skills/scout/SKILL.md`, `skills/judge_ideas/SKILL.md`, `LESSONS.md`; `references/wall-art.md` (Scout section) |
 | 02 | wall-art.md (Auto-approver section) for a wall art brief |
 | 03 | `notebook/winners.md` ("Pattern", "Copy this" lines), `references/database-fields.md` ("products", "missions"), `specs/cover-styles.md` (newest section) |
@@ -76,7 +76,7 @@ product `## Build: <title>` (04), `## Copy: <title>` (05), `## Photos: <title>` 
 | 07 | `notebook/etsy.md` ("Grayson's rules", "Proven"), `notebook/predictions.md` ("Calibration"), `notebook/scoreboard.md` ("By lane"), `references/rubric.md` (full), `references/preflight.md` (full), `skills/atlas/SKILL.md` |
 | 08 | `notebook/pins.md` (full), `notebook/buyer-voice.md` ("What our buyers liked", rival words for the product's lane), `notebook/predictions.md` ("Calibration"), `specs/cover-styles.md` ("Pins"), `specs/foreman-rules.md` (3, 4), `skills/pixel/SKILL.md`, `playbooks/tablet-mockup-pin.md`, `shared/accounts.md` ("Pinterest"), `LESSONS.md` |
 | 09 | `notebook/README.md`, all `notebook/*.md` (for step G; G(f) to G(h) run notebook/buyer_voice.py and notebook/grade.py), `references/database-fields.md` (experiments, sprint, lessons, nextmove, ads), `specs/product-floor-v6.md` (SALES PUSH last bullet) |
-| 10 | `notebook/predictions.md` and `notebook/winners.md` (Sundays, step 5b), `specs/foreman-rules.md`, `skills/foreman/SKILL.md`, `shared/logging.md`, `shared/repo.md` ("Committing", Night Shift write paths), `specs/push-week-2026-10-23.md` ("Scoreboard", "Daily targets": target vs actual in the report and the standup) |
+| 10 | `notebook/predictions.md` and `notebook/winners.md` (Sundays, step 5b), `specs/foreman-rules.md`, `skills/foreman/SKILL.md`, `shared/logging.md`, `shared/repo.md` ("Committing", Night Shift write paths), `specs/buyers-week-2026-10-31.md` (Oct 31 to Nov 7, 2026; "Scoreboard", "Daily targets": target vs actual in the report and the standup) |
 
 Do NOT load: every skill, every playbook, the other floors' specs, `gm_factory_v6.py`,
 `references/legacy-prompt-*.md`, `yt/`, `social/`. A skill's "Exact steps" line that says to
