@@ -1,0 +1,239 @@
+{
+ "dur": 16.89,
+ "vo": "social/studio/media/vo/office31-vo2.mp3",
+ "music": "social/studio/media/vo/office31-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/office",
+   "cover": "cover.jpg",
+   "price": "4.99",
+   "pages": 17,
+   "listTitle": "Office Christmas Party Games Printable: 24 No-Prep Team Games, Bingo, Trivia and Icebreakers for Work, Coworkers and Staff Parties",
+   "strip": [
+    "p-03.png",
+    "p-10.png",
+    "p-12.png",
+    "p-14.png"
+   ],
+   "bg": [
+    "#c9973a",
+    "#4f350b"
+   ],
+   "accent": "#8f6417",
+   "hl": "#fff3c4",
+   "dot": "#fff1d6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-03.png",
+     "p-10.png",
+     "p-02.png"
+    ],
+    "type": "fan",
+    "t0": 0,
+    "t1": 2.48,
+    "beats": [
+     0.1,
+     0.85,
+     1.6
+    ]
+   },
+   {
+    "pages": [
+     "p-10.png",
+     "p-11.png",
+     "p-12.png",
+     "p-14.png"
+    ],
+    "type": "grid",
+    "t0": 2.48,
+    "t1": 4.99,
+    "beats": [
+     2.58,
+     3.09,
+     3.6,
+     4.11
+    ]
+   },
+   {
+    "page": "p-10.png",
+    "type": "pan",
+    "t0": 4.99,
+    "t1": 7.45,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-15.png",
+     "p-03.png",
+     "p-02.png"
+    ],
+    "type": "fan",
+    "t0": 7.45,
+    "t1": 10.05,
+    "beats": [
+     7.55,
+     8.35,
+     9.15
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 10.05,
+    "t1": 13.93,
+    "beats": [
+     0.47,
+     1.37,
+     1.93,
+     2.73,
+     3.13
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 13.93,
+    "t1": 17.19
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.06,
+   "Got handed the | *office party?*"
+  ],
+  [
+   2.48,
+   4.57,
+   "*24* no-prep games | for *coworkers*"
+  ],
+  [
+   4.99,
+   7.03,
+   "*Bingo* | *trivia* | and *icebreakers*"
+  ],
+  [
+   7.45,
+   9.63,
+   "A *45-minute* | run sheet | plans it for *you*"
+  ],
+  [
+   10.05,
+   12.71,
+   "*6 to 60* people | just *print* and *play*"
+  ],
+  [
+   13.13,
+   13.73,
+   "Tap the *link*"
+  ],
+  [
+   13.93,
+   14.89,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.85,
+   "pop"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.6,
+   "pop"
+  ],
+  [
+   2.43,
+   "whoosh"
+  ],
+  [
+   2.58,
+   "pop"
+  ],
+  [
+   3.09,
+   "pop"
+  ],
+  [
+   3.6,
+   "pop"
+  ],
+  [
+   4.11,
+   "pop"
+  ],
+  [
+   4.94,
+   "whoosh"
+  ],
+  [
+   7.4,
+   "whoosh"
+  ],
+  [
+   7.55,
+   "pop"
+  ],
+  [
+   8.35,
+   "pop"
+  ],
+  [
+   9.15,
+   "pop"
+  ],
+  [
+   10.0,
+   "whoosh"
+  ],
+  [
+   10.52,
+   "whoosh"
+  ],
+  [
+   13.18,
+   "tap"
+  ],
+  [
+   13.43,
+   "pop"
+  ],
+  [
+   13.88,
+   "whoosh"
+  ],
+  [
+   14.28,
+   "impact"
+  ],
+  [
+   14.73,
+   "pop"
+  ]
+ ]
+}

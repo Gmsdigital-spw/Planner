@@ -1,5 +1,5 @@
 {
- "vo": "social/studio/media/vo/ssanta31-vo.mp3",
+ "vo": "social/studio/media/vo/ssanta31-vo2.mp3",
  "music": "social/studio/media/vo/ssanta31-music.wav",
  "product": {
   "dir": "/social/studio/media/ssanta2",
@@ -34,7 +34,7 @@
   },
   {
    "say": "A sign-up sheet, and a fourteen-question form.",
-   "cap": "A *sign-up* sheet | and a *14-question* form",
+   "cap": "A *sign-up* sheet | *14-question* form",
    "scene": "pan",
    "page": "p-04.png"
   },
