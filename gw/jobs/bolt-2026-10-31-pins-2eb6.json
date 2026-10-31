@@ -1,0 +1,102 @@
+{
+ "id": "bolt-2026-10-31-pins-2eb6",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ff9e06f4c7145613b774",
+   "tag": "chk-pin-prod-pink-coquette-verse-art-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ff9f06f4c7145613b796",
+   "tag": "chk-pin-prod-thanksgiving-games-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-coupon-book-s2",
+   "tag": "pin-prod-xmas-coupon-book-s2",
+   "body": {
+    "content": "Every coupon is already written, so you only type the names. 30 written Christmas coupons (10 for a partner, 10 for kids, 10 for family) plus 5 blank coupons, 3 front and back covers with type-in To and From, and a fold-up gift envelope. Type the names in free Adobe Acrobat Reader, print on US Letter, cut and staple. 13 pages, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-coupon-book-s2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-05T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "30 Christmas Coupons, Just Type the Names: Editable Coupon Book for Partner, Kids and Family",
+       "link": "https://www.etsy.com/listing/4606924165"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-coupon-book-s1",
+   "tag": "pin-prod-xmas-coupon-book-s1",
+   "body": {
+    "content": "A last-minute stocking stuffer that still feels personal. 30 written Christmas coupons (10 for a partner, 10 for kids, 10 for family) plus 5 blank coupons, 3 front and back covers with type-in To and From, and a fold-up gift envelope. Type the names in free Adobe Acrobat Reader, print on US Letter, cut and staple. 13 pages, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-coupon-book-s1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-06T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "Christmas Coupon Book Printable: The Perfect Stocking Stuffer You Type and Print",
+       "link": "https://www.etsy.com/listing/4606924165"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-coupon-book-s3",
+   "tag": "pin-prod-xmas-coupon-book-s3",
+   "body": {
+    "content": "One printable covers the whole family: a book for your partner, one for the kids and one for everyone. 30 written Christmas coupons (10 for a partner, 10 for kids, 10 for family) plus 5 blank coupons, 3 front and back covers with type-in To and From, and a fold-up gift envelope. Type the names in free Adobe Acrobat Reader, print on US Letter, cut and staple. 13 pages, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-coupon-book-s3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-07T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "Christmas Coupon Book Gift for Partner, Kids and Family, With Printable Gift Envelope",
+       "link": "https://www.etsy.com/listing/4606924165"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
