@@ -1,0 +1,104 @@
+{
+  "id": "ep23",
+  "format": "story",
+  "rev": 1,
+  "title": "My Dad Blamed My Games for Our Power Bill #shorts",
+  "title_card": "The Power Bill Mystery",
+  "voice": "andrew",
+  "speed": 1.0,
+  "art": "stickfigure",
+  "music": "tense",
+  "music_volume": 0.05,
+  "cast": {
+    "kid": "a stick-figure boy with a round white head, dot eyes, thin black limbs, messy black hair and a green hoodie",
+    "dad": "a stick-figure father with a round white head, dot eyes, thin black limbs, short gray hair, glasses and a blue button-up shirt",
+    "neighbor": "a stick-figure man with a round white head, dot eyes, thin black limbs, a bald head with a thin mustache and a yellow sweater vest"
+  },
+  "description": "Dad blamed my games for our huge power bill, so who was really using it?\n\nVisuals and voice made with AI.\n\n#shorts #mystery #gaming #dad #storytime #detective",
+  "tags": [
+    "power bill mystery",
+    "mystery story",
+    "dad vs gamer",
+    "gaming",
+    "video games",
+    "story time",
+    "electric car",
+    "neighbor",
+    "detective kid",
+    "shorts"
+  ],
+  "lines": [
+    {
+      "text": "Dad blamed my games for our huge power bill, so who was really using it?",
+      "label": "THE HOOK",
+      "headline": "WHO USED OUR POWER?",
+      "image": "one single {kid} standing alone in a dim living room at night, holding up one paper bill with a huge red number scribbled on it (no readable text), a worried face, he is alone: exactly one person in the whole picture, one single boy, no second child, no adult, no reflection"
+    },
+    {
+      "text": "Our power bill suddenly jumped forty dollars, so Dad locked my console in his closet.",
+      "label": "CONSOLE LOCKED",
+      "headline": "BILL JUMPS FORTY DOLLARS",
+      "image": "one single {dad} alone at an open hallway closet, pushing exactly one small white game console box (an inanimate object, no face, no arms, no feet, no logos) onto a high shelf, stern face, he is alone: exactly one person in the whole picture, one single father, no second man, no child, no reflection"
+    },
+    {
+      "text": "That month, our neighbor Mr. Pratt bought a shiny new car, and Dad loved it.",
+      "label": "THE NEIGHBOR",
+      "headline": "MR. PRATT'S NEW CAR",
+      "image": "one single {neighbor} alone in his driveway, proudly polishing exactly one shiny new blue car (an inanimate object, no face, no eyes, nobody inside it, no logos) with a cloth, sunny suburban street, a wooden fence at the side, he is alone: exactly one person in the whole picture, one single man, no second man, no child, nobody inside the car"
+    },
+    {
+      "text": "\"Pratt saves every penny,\" Dad said, \"that's smart money, not like your games.\"",
+      "label": "DAD'S PRAISE",
+      "headline": "PRATT SAVES EVERY PENNY",
+      "image": "one single {dad} alone indoors at a living room window, smiling and pointing outside toward exactly one shiny new blue car (an inanimate object, no face, no eyes, nobody inside it, no logos) parked in the next driveway, other hand on his hip, empty driveway with no people, he is alone: exactly one person in the whole picture, one single father, no second man, no child, no reflection"
+    },
+    {
+      "text": "I didn't touch a game for a whole month, but the next bill was bigger.",
+      "label": "NO GAMES",
+      "headline": "A MONTH WITHOUT GAMES",
+      "image": "one single {kid} alone sitting on a couch with arms crossed, one dark TV above an empty TV stand, one paper bill on the coffee table, frustrated face, he is alone: exactly one person in the whole picture, one single boy, no second child, no adult, no reflection"
+    },
+    {
+      "text": "\"One more big bill,\" Dad warned, \"and your console stays locked up until next summer.\"",
+      "label": "THE THREAT",
+      "headline": "LOCKED UNTIL SUMMER",
+      "image": "close-up of one single {dad} alone in a kitchen, frowning, waving one paper bill (no readable text) and wagging one finger, he is alone: exactly one person in the whole picture, one single father, no second man, no child, no reflection"
+    },
+    {
+      "text": "At midnight, with everything off, I checked the power meter, and it was still climbing.",
+      "label": "MIDNIGHT CLUE",
+      "headline": "THE METER KEEPS CLIMBING",
+      "image": "one single {kid} alone outside the house at midnight in pajamas, holding a flashlight up to exactly one round gray power meter (an inanimate object, its little dials blurred, no numbers) on the brick wall, every window dark, he is alone: exactly one person in the whole picture, one single boy, no second child, no adult, no reflection"
+    },
+    {
+      "text": "I flipped the switches in our fuse box one at a time, watching the meter.",
+      "label": "THE FUSE BOX",
+      "headline": "ONE SWITCH AT A TIME",
+      "image": "one single {kid} alone in a dark garage at night, shining a flashlight into exactly one open gray fuse box (an inanimate object, rows of small switches, no text) and flipping one small switch, concentrating, he is alone: exactly one person in the whole picture, one single boy, no second child, no adult, no reflection"
+    },
+    {
+      "text": "When I flipped the switch for the back porch plug, the numbers nearly stopped.",
+      "label": "THE PORCH PLUG",
+      "headline": "THE NUMBERS NEARLY STOP",
+      "image": "one single {kid} alone in a dark garage, gasping and pointing at one switch in exactly one open gray fuse box (an inanimate object, no text), flashlight in his other hand, eyes wide, he is alone: exactly one person in the whole picture, one single boy, no second child, no adult, no reflection"
+    },
+    {
+      "text": "Behind the bushes, a long orange cord ran from that plug right under the fence.",
+      "label": "THE CORD",
+      "headline": "A CORD UNDER THE FENCE",
+      "image": "one single {kid} alone crouching behind backyard bushes at night with a flashlight, following exactly one long orange extension cord (an inanimate object) that runs from a porch outlet under a wooden fence, he is alone: exactly one person in the whole picture, one single boy, no second child, no adult, no reflection"
+    },
+    {
+      "text": "It was charging Mr. Pratt's new electric car, so his \"savings\" were coming from us.",
+      "label": "THE TWIST",
+      "headline": "HIS SAVINGS WERE OURS",
+      "image": "one single {kid} alone peeking over a wooden fence at night, shocked, looking at exactly one shiny new blue car (an inanimate object, no face, no eyes, nobody inside it, no logos) parked in the next driveway with the orange extension cord plugged into its side, no one else anywhere, he is alone: exactly one person in the whole picture, one single boy, no second child, no adult, no reflection"
+    },
+    {
+      "text": "Dad said sorry, Mr. Pratt paid back every single dollar, and my console came home.",
+      "label": "CONSOLE HOME",
+      "headline": "DAD SAYS SORRY",
+      "image": "one single {kid} alone on the living room couch, grinning and playing a video game on one single glowing TV, exactly one small white game console box (an inanimate object, no face, no arms, no feet, no logos) back on the TV stand, warm light, he is alone: exactly one person in the whole picture, one single boy, no second child, no adult, no reflection"
+    }
+  ]
+}
