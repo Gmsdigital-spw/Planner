@@ -14,7 +14,7 @@ Owns the Night Shift's money outcome: 2 products a night that pass 92 and go to 
 1. Grade yesterday's prediction from your last learned line (hit or miss, and why) before doing anything else; the grade opens your new learned line.
 2. Read this file before working. Load only what the stage's Inputs table names (stage 07: references/rubric.md in full, specs/cover-styles.md newest section and "Scoring", the 3 newest published covers); LESSONS.md and playbooks only when a stage's Inputs table names them (the Load map in stages/night-shift/CONTEXT.md wins over any "browse the playbooks" line).
 3. Do the work in the stage's Process order: rules check, the 300 px centred-square thumb of the cover Read before anything else is scored, the side-by-side slop check, then the six scores. Pass = 92 and rulesPass. Under 92 = a fix round in the same run (up to two), never a nudged score, do not ship.
-4. Log the result: "## Inspect" with PASS/FAIL, the six scores, the slop fails and the stage it ended in; one line per product in factory/scores.jsonl; the passed count against the target of 2 (specs/push-week-2026-10-23.md).
+4. Log the result: "## Inspect" with PASS/FAIL, the six scores, the slop fails and the stage it ended in; one line per product in factory/scores.jsonl; the passed count against the target of 2 (specs/buyers-week-2026-10-31.md, Oct 31 to Nov 7, 2026).
 5. End with one dated "What I've learned" line below: the number, the one change for tomorrow, and "predict: <number>" for the next run (shared/rules.md, "The agent update"; stage 10 writes it from your report if you cannot). "Same as yesterday" = fail.
 
 ## Quality checklist
@@ -24,7 +24,7 @@ Owns the Night Shift's money outcome: 2 products a night that pass 92 and go to 
 - Before any score, save the 300 px centred-square thumb of the cover and Read it; a clipped title or count sends the build to the fix round first, not to a score (the last 3 builds failed 73, 85, 75 and two of them on one clipped-title fault: LESSONS.md 2026-10-22; run notes 2026-10-22 "## Inspect").
 - A fault that failed two builds in a row is a tool bug: it goes to a plan-first tool fix the same run (CLAUDE.md bug rule) and "## Inspect" names it as the cause, instead of a third build being inspected against it (Oct 21 FAIL 73 and Oct 22 FAIL 75 both cite the fun_covers title clip: LESSONS.md 2026-10-22).
 - Every FAIL gets its fix round (stage 07 step 5) before the run moves on; Oct 22's 75 got "no fix round (builder time budget)", the second build was skipped at 07:18 UTC and the night ended with 0 passed (run notes 2026-10-22 "## Inspect").
-- "## Inspect" exists for every build with PASS/FAIL, the six scores and the slop fails, and the report says passed vs the target of 2 (specs/push-week-2026-10-23.md, Night Shift builders row: 0 of the last 3 passed).
+- "## Inspect" exists for every build with PASS/FAIL, the six scores and the slop fails, and the report says passed vs the target of 2 (specs/buyers-week-2026-10-31.md Night Shift builders row, Oct 31 to Nov 7, 2026: 4 of the last 6 passed, 0 at 92).
 - No build without opened market proof: 2+ opened item pages with 100+ item reviews, or an open niche (10+ opened rivals, 2+ with 100+ favorites, a written gap) (promoted from LESSONS 2026-10-23/24, Sunday Oct 25: 5 builds without it scored market 12, 12, 11, 9, 11 and failed; the Oct 25 Murder Mystery with 14 opened rivals scored market 13 and passed 92).
 
 ## What I've learned (append-only, newest last)

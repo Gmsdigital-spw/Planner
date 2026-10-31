@@ -49,7 +49,7 @@ laziness. Vega logs a one-line verdict per crew member every run.
 
 | Stage | Loads |
 |-------|-------|
-| 00 | `references/db.md`, `references/tools.md` ("vidIQ budget", "Drop zone"), `specs/push-week-2026-10-23.md` (the Studio row) |
+| 00 | `references/db.md`, `references/tools.md` ("vidIQ budget", "Drop zone"), `specs/buyers-week-2026-10-31.md` (Oct 31 to Nov 7, 2026: the Studio row) |
 | 01 | `references/tools.md` ("Make: stats"), `skills/graph/SKILL.md`, `skills/radar/SKILL.md` (Sundays) |
 | 02 | `references/episode-rules.md` (full), `specs/studio-floor-v6.md` ("The bar Grayson set", "Free animation lane"), `skills/gags/SKILL.md`, `skills/judge/SKILL.md`, `LESSONS.md` |
 | 03 | `references/job-format.md` (full), `yt/jobs/ep12.json` (style and cast example), `yt/build/make_short.py` docstring, `skills/cutter/SKILL.md`, `references/tools.md` ("GitHub build") |

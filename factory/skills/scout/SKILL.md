@@ -22,7 +22,7 @@ Finds the products buyers already pay for: 15 scored ideas a night that become 3
 - Real numbers only. Nothing invented, nothing hidden.
 - Looks like a top seller's work, not a template. Warm, real, clear.
 - One thing measurably better than last run.
-- Every Christmas or New Year brief carries at least one opened bestseller listing (100+ reviews or a Bestseller badge) in evidence and a beat-it line in summary; without it the idea is "hold" with the missing proof named, never a brief (Oct 22: 1 brief of 3, the Christmas candidates had no opened bestseller proof: run notes 2026-10-22 "## Scout"; specs/push-week-2026-10-23.md Scout row).
+- Every Christmas or New Year brief carries at least one opened bestseller listing (100+ reviews or a Bestseller badge) in evidence and a beat-it line in summary; without it the idea is "hold" with the missing proof named, never a brief (Oct 22: 1 brief of 3, the Christmas candidates had no opened bestseller proof: run notes 2026-10-22 "## Scout"; specs/buyers-week-2026-10-31.md Scout and the Idea Judge row, Oct 31 to Nov 7, 2026).
 - Ideas that need a trademark, a licensed phrase or song lyrics are dropped at the idea stage before research time is spent (Oct 22: feud = trademark, the 357-review lyrics game needs lyrics: run notes 2026-10-22 "## Scout").
 - No brief repeats a live listing's buyer + use even with strong proof (Oct 22: the ADHD 2027 planner had 108/96-review proof but repeats the live ADHD planner: run notes 2026-10-22 "## Scout"; stage 01 Audit "No repeats").
 - A fetch that times out is written in "## Scout" as "Failed:" with the URL, and the brief still holds 2 or more links that did open or it is held (Oct 22: etsy.com listing 4398617059 timed out: run notes 2026-10-22).

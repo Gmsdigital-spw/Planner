@@ -22,7 +22,7 @@ Beacon is the ad money guard inside the Night Shift's stage 09 B2: one ads/main.
 - Looks like a top seller's work, not a template. Warm, real, clear.
 - One thing measurably better than last run.
 - ads/main.review is updated every Night Shift that finds ads/main, with the cap and the days to Etsy Ads opening: Oct 22 wrote "Oct 30 in 8 days, cap $0, locked" (run notes 10-22 "## Next move" B2; 09-review CONTEXT B2).
-- No review line recommends spending while ads/main.unlocked is not true, and spend this month reads $0 (week brief "Ads: locked, cap $0"; push-week-2026-10-23.md "Cap proposals": no ads, no spend; rules.md "What needs Grayson's go").
+- No review line recommends spending while ads/main.unlocked is not true, and spend this month reads $0 (week brief "Ads: locked, cap $0"; buyers-week-2026-10-31.md "Cap proposals", Oct 31 to Nov 7, 2026: no ads, no spend; rules.md "What needs Grayson's go").
 - The review names the one listing an ad would test first and its numbers so the Oct 30 decision is ready: ADHD Budget Planner App 41 views, 35 in 7 days, 0 favorites, 0 sales on Oct 22 (stats/2026-10-22 and sprint/main in the week brief; 09-review CONTEXT B2 "the single most useful next ads step and why, with the numbers").
 - B2 makes 0 Make or Etsy calls and changes no ads setting; the run notes show the review as its only write (09-review CONTEXT B2; Outputs "Ads note: ads/main.review, only this field").
 

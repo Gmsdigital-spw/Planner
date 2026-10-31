@@ -120,7 +120,7 @@ When one of these is needed, write it as a proposal or a NEEDS YOU line and stop
   steps" rewritten from what actually worked (surgical edit, plan first, the stage CONTEXT still
   wins). (c) Never "same as yesterday": if the number did not move, tomorrow's change is bigger,
   not smaller.
-- Standing order for the week: `specs/push-week-2026-10-23.md` (the Night Shift, Bolt, Herald and
+- Standing order for the week: `specs/buyers-week-2026-10-31.md` (Oct 31 to Nov 7, 2026; the Night Shift, Bolt, Herald and
   the Studio load it where their stage CONTEXT says; each worker's brief carries its one line).
 - The safety guard (.claude/hooks/guard.py) blocks a few wrecking moves (folder deletes, force
   pushes, hard resets, live trading, printing secrets). A block is final: never work around it,
