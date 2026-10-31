@@ -216,13 +216,13 @@
   }
  ],
  "floorLocked": false,
- "lastBarT": 1793480700,
+ "lastBarT": 1793482500,
  "lastClose": {
-  "BTC/USD": 77309.1885,
-  "ETH/USD": 2249.072,
-  "SOL/USD": 95.4285,
-  "DOGE/USD": 0.07564265,
-  "AVAX/USD": 8.55044
+  "BTC/USD": 77385.859,
+  "ETH/USD": 2250.4345,
+  "SOL/USD": 95.634,
+  "DOGE/USD": 0.0757768,
+  "AVAX/USD": 8.565595
  },
  "lastExit": {
   "ETH/USD": 1793285100,
@@ -230,40 +230,40 @@
   "SOL/USD": 1793233200,
   "DOGE/USD": 1793285100
  },
- "updatedAt": "2026-10-31T16:12:32.194747-05:00",
+ "updatedAt": "2026-10-31T16:43:32.269103-05:00",
  "equity": 23.7929,
  "lastScores": {
   "BTC/USD": {
    "score": 20.0,
    "rvol": 0.0,
-   "rsi": 27.9,
+   "rsi": 44.5,
    "thin": false
   },
   "ETH/USD": {
    "score": 20.0,
    "rvol": 0.0,
-   "rsi": 39.4,
+   "rsi": 47.3,
    "thin": false
   },
   "SOL/USD": {
-   "score": 20.0,
+   "score": 57.0,
    "rvol": 0.0,
-   "rsi": 34.3,
+   "rsi": 51.4,
    "thin": false
   },
   "DOGE/USD": {
-   "score": 20.0,
+   "score": 32.0,
    "rvol": 0.0,
-   "rsi": 44.0,
+   "rsi": 54.4,
    "thin": false
   },
   "AVAX/USD": {
    "score": 33.0,
    "rvol": 0.0,
-   "rsi": 39.3,
+   "rsi": 51.7,
    "thin": false
   }
  },
- "barsProcessed": 7,
+ "barsProcessed": 6,
  "missingSymbols": []
 }
