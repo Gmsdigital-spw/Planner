@@ -107,7 +107,9 @@ def main(src, out):
                 # keep the all-caps look whatever the buyer types (Acrobat keystroke action)
                 a.AA = Dictionary(K=Dictionary(S=Name.JavaScript, JS=pikepdf.String("if(!event.willCommit)event.change=event.change.toUpperCase();")))
             # cap length: what fits at 70% of the design size
-            sample = "MONDAY, MAGNOLIA HOUSE BALLROOM" if val.isupper() else "Chloe's Birthday party"
+            # bug rule fix (Oct 31, 2026): buyers type ALL CAPS into any field, so MaxLen is always
+            # sized from the capitals sample; the mixed-case sample let caps at MaxLen clip (Coupon Book FAIL 82)
+            sample = "MONDAY, MAGNOLIA HOUSE BALLROOM"
             per = (text_width(sample, widths, size) / len(sample)) or 5  # average letter at the design size
             a.MaxLen = max(8, min(int(a.get("/MaxLen", 60)), int((w - 6) / per)))
             s = size
