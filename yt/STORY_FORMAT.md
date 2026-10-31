@@ -29,8 +29,8 @@ to it). Example job: `yt/jobs/story01.json`.
   10-year-old understands. 3-7 seconds each, 61-75 s total (Grayson, Oct 28, 2026: TikTok's
   Creator Rewards only pay over 1 minute; the builder enforces it). Reach 61 s with more story
   (an extra complication or a bigger twist), never padding, slow narration, dead air or a held
-  last frame. Aim for 11-12 scenes and 145-170 words; the dry run (--check) should show 64 s
-  or more, since the real voice can run a few seconds shorter than the dry run.
+  last frame. Aim for 11-12 scenes and 165-185 words; the dry run (--check) should show 68 s
+  or more, since the real voice runs about 6 s shorter than the dry run (ep22, ep23).
 - The ending answers the hook. No cliffhanger, no "part 2", no cut-off sentence, no question.
 - Prefer a hero moment in the payoff (someone outsmarts the problem) over "and it was
   confusing". No filler lines that repeat the stakes: a cold reader swipes there.
