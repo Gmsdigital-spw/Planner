@@ -1,0 +1,5 @@
+{"id":"scout-2026-10-31-s1-130f","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/listings/active?keywords=christmas+trivia&sort_on=score&limit=25&offset=25","tag":"triv25"},
+{"op":"etsy","method":"GET","path":"/listings/active?keywords=christmas+trivia&sort_on=score&limit=25&offset=50","tag":"triv50"},
+{"op":"etsy","method":"GET","path":"/listings/1794230872/reviews?limit=1","tag":"rv1794230872"},
+{"op":"etsy","method":"GET","path":"/listings/4382556824/reviews?limit=1","tag":"rv4382556824"}]}

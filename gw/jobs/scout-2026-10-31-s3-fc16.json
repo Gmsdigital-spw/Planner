@@ -1,0 +1,1 @@
+{"id": "scout-2026-10-31-s3-fc16", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+pictionary&sort_on=score&limit=25&offset=25", "tag": "pict25"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+left+right+game&sort_on=score&limit=25&offset=25", "tag": "lr25"}]}

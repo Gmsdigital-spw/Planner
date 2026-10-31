@@ -1,0 +1,3 @@
+{"id":"scout-2026-10-31-s2-e2a2","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/listings/active?keywords=christmas+eve+games&sort_on=score&limit=25&offset=25","tag":"eve25"},
+{"op":"etsy","method":"GET","path":"/listings/active?keywords=ugly+sweater+party+invitation&sort_on=score&limit=25&offset=25","tag":"ugly25"}]}
