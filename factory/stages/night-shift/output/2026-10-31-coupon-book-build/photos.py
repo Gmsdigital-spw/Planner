@@ -217,12 +217,29 @@ assert nv == 2 and 12 not in idx and 12 not in COVER_PAGES
 W5, H5 = 2000, 1600
 im5 = gs.paper(PAL["tint"], (W5, H5)).convert("RGBA")
 d5 = ImageDraw.Draw(im5)
-gs._header(d5, PAL, "Fold-Up Gift Envelope", "Names typed in  ·  2.1 in deep, 0.25 in gussets, holds 3 books")
-# Fix round Oct 31 (Judge fix 4): crop to the front panel with its gussets and names (no big empty back panel)
-_FT = (TOP - 6) - 70 - 151.2 - 18; _ex = gs.PW / 2 - 475 / 2
-crop = s12.crop((round((_ex - 26) * K), round((PH - _FT - 24) * K), round((_ex + 475 + 26) * K), round((PH - _FT + 151.2 + 8) * K)))
-_l5, _ = put(im5, crop, 1760, (1000, 900), 0, shadow=60)
-_bb5 = _l5.getbbox(); assert _bb5[1] > 260 and _bb5[3] <= H5 and _bb5[2] - _bb5[0] >= 0.8 * W5, _bb5
+gs._header(d5, PAL, "Fold-Up Gift Envelope", "Names typed in  ·  3.0 in deep  ·  fits the 2.72 in covers")
+# Truth fix Oct 31: panels are 6.6 x 3.0 in now (build.py). Flap + front panel (names typed) joined, then a real front
+# cover from page 3 at the SAME scale under it, so the buyer sees the 6.39 x 2.72 in book is smaller than the panel.
+_EW, _EH, _FL, _SF, _G = 475, 216, 60, 18, 18
+_top = TOP - 6; _FT = _top - _FL - _EH - _G; _ex = gs.PW / 2 - _EW / 2
+_x0, _x1 = round((_ex - _SF - 3) * K), round((_ex + _EW + _SF + 3) * K)
+_flap = s12.crop((_x0, round((PH - _top - 3) * K), _x1, round((PH - _top + _FL) * K)))
+_front = s12.crop((_x0, round((PH - _FT - _G) * K), _x1, round((PH - _FT + _EH + 4) * K)))
+_env = Image.new("RGB", (_flap.width, _flap.height + _front.height), (255, 255, 255))
+_env.paste(_flap, (0, 0)); _env.paste(_front, (0, _flap.height))
+EWPX = 1300; _sc = EWPX / _env.width
+_eh = round(_env.height * _sc); _cov = P(3).crop(slot(3, 0)); _cw = round(_cov.width * _sc); _ch = round(_cov.height * _cw / _cov.width)
+_y0 = 272; _gap = 26
+_l5, _m5 = put(im5, _env, EWPX, (1000, _y0 + _eh / 2), 0, shadow=60)
+_lc, _mc = put(im5, _cov, _cw, (1000, _y0 + _eh + _gap + _ch / 2), 0, shadow=60)
+_bb5, _bbc = _m5.getbbox(), _mc.getbbox()
+assert _bb5[1] > 260 and _bbc[3] <= H5 - 20 and _bb5[0] >= 260 and _bb5[2] <= 1740 and _bbc[0] >= 260 and _bbc[2] <= 1740, (_bb5, _bbc)
+_rows = np.asarray(_m5).any(1) | np.asarray(_mc).any(1); _rows[:260] = True
+_run = _best = 0
+for v in _rows:
+    _run = 0 if v else _run + 1; _best = max(_best, _run)
+assert _best <= 0.10 * H5, ("empty band", _best)
+print("photo 5 env", _bb5, "cover", _bbc, "largest empty band px", _best)
 gs._check_safe()
 gs.save_jpeg(im5.convert("RGB"), OUT + "/5-envelope.jpg")
 for f in sorted(glob.glob(OUT + "/*.jpg")):

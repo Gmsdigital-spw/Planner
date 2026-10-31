@@ -14,7 +14,7 @@ PW, PH, M = gs.PW, gs.PH, gs.MARGIN
 d = gs.Book(RAW, "Christmas Coupon Book", PAL, cover_style="frame", page_frame="rule")
 c = d.c
 PAD = 18                       # 0.25 in inside every box
-CW = 460                       # coupon width (6.4 in), centred: wide enough for 20+ ALL CAPS letters in FOR and FROM
+CW = 460                       # coupon width (6.4 in), centred: MaxLen 20 on FOR and FROM in FOR and FROM
 CX = (PW - CW) / 2
 TOP = PH - M - 52              # below the page title band
 BOT = M + 20                   # 0.25 in+ above the kit footer rule (M - 1), checked by check.py
@@ -125,7 +125,7 @@ def coupon(n, title, body, setname, yb, h):
     for ln in lines: c.drawString(tx, yy, ln); yy -= 12.5
     fy = yb + PAD + 2
     c.setFillColor(d.MUT); c.setFont(d.FM, 8)
-    fw1 = (tw - 22 - 12 - 30) / 2                       # two equal lines, 20+ capitals each at 10 pt
+    fw1 = (tw - 22 - 12 - 30) / 2                       # two equal lines, 20 characters each at 10 pt
     c.drawString(tx, fy + 2, "FOR"); field(f"{setname} {n:02d} for", tx + 22, fy, fw1, size=10)
     fx = tx + 22 + fw1 + 12
     c.drawString(fx, fy + 2, "FROM"); field(f"{setname} {n:02d} from", fx + 30, fy, tx + tw - fx - 30, size=10)
@@ -179,7 +179,7 @@ steps = [
     ("Write your own", "Page 11 has 5 blank coupons, the same size as the book: type a title, two lines of detail, and the names. The fonts are fixed and cannot be changed."),
     ("Save and print", "Save, then print only the pages you need on US Letter paper at 100% (actual size). Cardstock or matte photo paper feels best."),
     ("Cut and stack", "Cut on the corner marks. Put a front cover on top and its back cover at the bottom of each set."),
-    ("Bind it", "Staple the left edge twice, punch a hole and tie a ribbon, or clip it with a binder clip. Slip it into the gift envelope on page 12."),
+    ("Bind it", "Staple the left edge twice, punch a hole and tie a ribbon, or clip it with a binder clip. Slip it into the gift envelope on page 12 (3 paper books or 2 cardstock books fit)."),
 ]
 top = d.y + 2; gap = 8
 h = (top - BOT - gap * (len(steps) - 1)) / len(steps)
@@ -294,10 +294,13 @@ d.end()
 
 # ------------------------------------------------------------------ 12 gift envelope
 page_title("Gift Envelope", "Cut on the outer line, fold on the dashes, glue the side flaps")
-# Fix round Oct 31 (Judge fix 1): panels 6.6 x 2.1 in with a 0.25 in bottom gusset and 0.25 in side gussets, so 3 stapled
-# books (1.6 in coupons, ~0.36 in thick together) fit; 475 + 2 x 18 = 511 pt = the width inside the 0.7 in margins.
-EW, EH, FL, SF, G = 475, 151.2, 70, 18, 18
-assert EW + 2 * SF <= PW - 2 * M + 0.5 and abs(EH / 72 - 2.1) < 0.01 and G / 72 == 0.25 and SF / 72 == 0.25
+# Truth fix Oct 31: the covers are 6.39 x 2.72 in, so 2.1 in panels could not hold a book. Panels are now 6.6 x 3.0 in
+# (0.21 in wider, 0.28 in deeper than a cover) with 0.25 in gussets; 475 + 2 x 18 = 511 pt = the width inside the margins.
+# 0.25 in gusset vs book thickness: 12 sheets a book (10 coupons + 2 covers) = 0.048 in on 0.004 in paper, 0.108 in on
+# 0.009 in cardstock, so 3 paper books (0.144 in) or 2 cardstock books (0.216 in) fit.
+EW, EH, FL, SF, G = 475, 216, 60, 18, 18
+COV_W, COV_H = 6.39, 2.72
+assert EW + 2 * SF <= PW - 2 * M + 0.5 and EH / 72 >= COV_H + 0.23 and EW / 72 >= COV_W + 0.2 and G / 72 == 0.25 and SF / 72 == 0.25
 ex = PW / 2 - EW / 2
 top_e = TOP - 6
 c.setStrokeColor(d.P); c.setLineWidth(1.1); c.setFillColor(white)
@@ -317,7 +320,7 @@ c.line(ex, top_e - FL, ex + EW, top_e - FL); c.line(ex, top_e - FL - EH, ex + EW
 c.line(ex, FT, ex, FT - EH); c.line(ex + EW, FT, ex + EW, FT - EH); c.setDash()
 c.setFillColor(d.MUT); c.setFont(d.FM, 7.5)
 c.drawCentredString(PW / 2, top_e - FL / 2 - 3, "TOP FLAP  ·  FOLD DOWN AND TUCK IN")
-c.drawCentredString(PW / 2, top_e - FL - EH / 2 - 3, "BACK  ·  2.1 IN DEEP  ·  THE PRINTED SIDE FACES OUT")
+c.drawCentredString(PW / 2, top_e - FL - EH / 2 - 3, "BACK  ·  3.0 IN DEEP  ·  THE PRINTED SIDE FACES OUT")
 c.setFont(d.FM, 6.5); c.drawCentredString(PW / 2, FT + G / 2 - 2.5, "BOTTOM GUSSET 0.25 IN  ·  FOLD BOTH DASHES INWARD")
 c.setFont(d.FM, 6.5)
 c.saveState(); c.translate(ex - SF / 2, FT - EH / 2); c.rotate(90); c.drawCentredString(0, -2.5, "SIDE GUSSET  ·  GLUE"); c.restoreState()
@@ -327,25 +330,21 @@ reg("envelope front", ex, fyb, EW, EH, r=0)
 c.setFillColor(d.D); c.setFont(d.S, 22); c.drawCentredString(PW / 2, fyb + EH - PAD - 22, "Merry Christmas")
 star(PW / 2 - 108, fyb + EH - PAD - 14, 6, d.A); star(PW / 2 + 108, fyb + EH - PAD - 14, 6, d.A)
 c.setFillColor(d.MUT); c.setFont(d.FM, 8)
-c.drawString(ex + 70, fyb + PAD + 48, "TO"); field("Envelope to", ex + 100, fyb + PAD + 46, EW - 170)
-c.drawString(ex + 70, fyb + PAD + 12, "FROM"); field("Envelope from", ex + 100, fyb + PAD + 10, EW - 170)
-# fold steps under the envelope
-sy = fyb - 30
-bx, bwid = M, PW - 2 * M; bh2 = sy - BOT
-c.setFillColor(white); c.setStrokeColor(d.P); c.setLineWidth(1); c.roundRect(bx, BOT, bwid, bh2, 8, fill=1, stroke=1)
-reg("fold steps", bx, BOT, bwid, bh2)
-fold = ["Print this page on paper or light cardstock and cut on the solid outline.",
-        "Fold the bottom gusset in on both dashed lines, so the front panel meets the back.",
+c.drawString(ex + 70, fyb + PAD + 84, "TO"); field("Envelope to", ex + 100, fyb + PAD + 82, EW - 170)
+c.drawString(ex + 70, fyb + PAD + 36, "FROM"); field("Envelope from", ex + 100, fyb + PAD + 34, EW - 170)
+# fold steps under the envelope (plain numbered lines: the 3.0 in panels leave no room for a padded box)
+fold = ["Print on paper or light cardstock, cut on the solid outline, fold the bottom gusset in on both dashes.",
         "Fold the two 0.25 in side gussets in and glue them to the back panel.",
         "Type or write the names, slip the coupon books inside and tuck in the top flap.",
-        "Holds 3 stapled books of 6.4 x 1.6 in coupons: 2.1 in deep with 0.25 in gussets."]
-c.setFillColor(d.D); c.setFont(d.SB, 13); c.drawString(bx + PAD, BOT + bh2 - PAD - 12, "Folding the envelope")
-rowh = (bh2 - 2 * PAD - 26) / len(fold)
-yy = BOT + bh2 - PAD - 26 - rowh / 2 - 4
-for i, s in enumerate(fold):
-    c.setFillColor(d.T); c.circle(bx + PAD + 10, yy + 3.5, 10, fill=1, stroke=0)
-    c.setFillColor(d.D); c.setFont(d.FB, 9.5); c.drawCentredString(bx + PAD + 10, yy, str(i + 1))
-    c.setFillColor(d.INK); c.setFont(d.F, 10.2); c.drawString(bx + PAD + 30, yy, s); yy -= rowh
+        "Panels 6.6 x 3.0 in for the 6.39 x 2.72 in covers: holds 3 stapled books on printer paper, 2 on cardstock."]
+FOLD_Y0 = fyb - 26
+assert FOLD_Y0 - 16 * (len(fold) - 1) > BOT + 4, FOLD_Y0
+yy = FOLD_Y0
+for i, s_ in enumerate(fold):
+    c.setFillColor(d.T); c.circle(M + 9, yy + 3.3, 8, fill=1, stroke=0)
+    c.setFillColor(d.D); c.setFont(d.FB, 8.5); c.drawCentredString(M + 9, yy, str(i + 1))
+    assert stringWidth(s_, d.F, 9.6) <= PW - 2 * M - 24, s_
+    c.setFillColor(d.INK); c.setFont(d.F, 9.6); c.drawString(M + 24, yy, s_); yy -= 16
 d.end()
 
 # ------------------------------------------------------------------ 13 thank-you (spec text verbatim)

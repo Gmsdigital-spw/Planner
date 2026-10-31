@@ -1,7 +1,7 @@
 """Checks the finished Coupon Book PDF (fix list of the Oct 30 FAIL 82). python3 check.py
 1 rendered pixel box sweep on every registered box of all 13 pages: no ink within 0.25 in inside any box
   border (and, for boxes with an outer clearance, none within that distance outside it), boxes above the footer gap.
-2 ALL CAPS fill test: every one of the 101 fields gets a real ALL CAPS line at its MaxLen; it must fit the
+2 ALL CAPS fill test: every one of the 96 fields gets a real ALL CAPS line at its MaxLen; it must fit the
   field at the field's own font size (Lora widths, the same widths Acrobat uses), then the filled pages are rendered.
 3 30 unique coupon titles, 13 pages, US Letter."""
 import json, os, glob, subprocess, tempfile, sys
