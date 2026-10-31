@@ -1,0 +1,77 @@
+{
+ "vo": "social/studio/media/vo/ssanta31-vo.mp3",
+ "music": "social/studio/media/vo/ssanta31-music.wav",
+ "product": {
+  "dir": "/social/studio/media/ssanta2",
+  "cover": "cover.jpg",
+  "price": "3.49",
+  "pages": 11,
+  "listTitle": "Secret Santa Questionnaire Printable, Office Gift Exchange Kit, Sign Up Sheet, Name Draw Slips, White Elephant Rules, Gift Tags",
+  "strip": [
+   "p-04.png",
+   "p-05.png",
+   "p-06.png",
+   "p-08.png"
+  ],
+  "bg": [
+   "#2e7d55",
+   "#0d2e1f"
+  ],
+  "accent": "#2a6b4a",
+  "hl": "#ffd34d",
+  "dot": "#d8f5e4"
+ },
+ "phrases": [
+  {
+   "say": "Eleven pages that run your whole Secret Santa.",
+   "cap": "*11 pages* | run your whole | *Secret Santa*",
+   "scene": "fan",
+   "pages": [
+    "p-03.png",
+    "p-06.png",
+    "p-04.png"
+   ]
+  },
+  {
+   "say": "A sign-up sheet, and a fourteen-question form.",
+   "cap": "A *sign-up* sheet | and a *14-question* form",
+   "scene": "pan",
+   "page": "p-04.png"
+  },
+  {
+   "say": "Twenty-four name slips, and gift ideas by budget.",
+   "cap": "*24* name slips | gift ideas | by *budget*",
+   "scene": "grid",
+   "pages": [
+    "p-06.png",
+    "p-05.png",
+    "p-10.png",
+    "p-11.png"
+   ]
+  },
+  {
+   "say": "White elephant and dice swap rules, too.",
+   "cap": "*White elephant* | and *dice swap* rules",
+   "scene": "fan",
+   "pages": [
+    "p-07.png",
+    "p-08.png"
+   ]
+  },
+  {
+   "say": "For work, family, or friends.",
+   "cap": "For *work* | *family* | or *friends*",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

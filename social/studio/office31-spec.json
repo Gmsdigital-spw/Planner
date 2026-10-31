@@ -1,0 +1,78 @@
+{
+ "vo": "social/studio/media/vo/office31-vo.mp3",
+ "music": "social/studio/media/vo/office31-music.wav",
+ "product": {
+  "dir": "/social/studio/media/office",
+  "cover": "cover.jpg",
+  "price": "4.99",
+  "pages": 17,
+  "listTitle": "Office Christmas Party Games Printable: 24 No-Prep Team Games, Bingo, Trivia and Icebreakers for Work, Coworkers and Staff Parties",
+  "strip": [
+   "p-03.png",
+   "p-10.png",
+   "p-12.png",
+   "p-14.png"
+  ],
+  "bg": [
+   "#c9973a",
+   "#4f350b"
+  ],
+  "accent": "#8f6417",
+  "hl": "#fff3c4",
+  "dot": "#fff1d6"
+ },
+ "phrases": [
+  {
+   "say": "Got handed the office Christmas party?",
+   "cap": "Got handed the | *office party?*",
+   "scene": "fan",
+   "pages": [
+    "p-03.png",
+    "p-10.png",
+    "p-02.png"
+   ]
+  },
+  {
+   "say": "Twenty-four no-prep games for coworkers.",
+   "cap": "*24* no-prep games | for *coworkers*",
+   "scene": "grid",
+   "pages": [
+    "p-10.png",
+    "p-11.png",
+    "p-12.png",
+    "p-14.png"
+   ]
+  },
+  {
+   "say": "Bingo, trivia, and icebreakers.",
+   "cap": "*Bingo* | *trivia* | and *icebreakers*",
+   "scene": "pan",
+   "page": "p-10.png"
+  },
+  {
+   "say": "A forty-five minute run sheet plans it for you.",
+   "cap": "A *45-minute* | run sheet | plans it for *you*",
+   "scene": "fan",
+   "pages": [
+    "p-15.png",
+    "p-03.png",
+    "p-02.png"
+   ]
+  },
+  {
+   "say": "Six to sixty people. Just print and play.",
+   "cap": "*6 to 60* people | just *print* and *play*",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}
