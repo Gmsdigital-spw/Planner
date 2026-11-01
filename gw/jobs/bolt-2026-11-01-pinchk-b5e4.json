@@ -1,0 +1,5 @@
+{"id":"bolt-2026-11-01-pinchk-b5e4","stopOnError":false,"ops":[
+{"op":"zernio","method":"GET","path":"/posts/6ad9ffa373343ea0594ed8cb","tag":"pin-prod-pink-christmas-verse-art-s3"},
+{"op":"zernio","method":"GET","path":"/posts/6ad9ffa506f4c7145613b7db","tag":"pin-prod-xmas-party-awards-s3"},
+{"op":"zernio","method":"GET","path":"/posts/6ad9ff9f06f4c7145613b78d","tag":"pin-prod-secret-santa-kit-s2"}
+]}
