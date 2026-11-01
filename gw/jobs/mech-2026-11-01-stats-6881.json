@@ -1,0 +1,155 @@
+{
+ "id": "mech-2026-11-01-stats-6881",
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ffa406f4c7145613b7c9",
+   "tag": "pin-prod-secret-santa-kit-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ffa273343ea0594ed8c6",
+   "tag": "pin-prod-nye-games-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ffa273343ea0594ed8bf",
+   "tag": "pin-prod-no-buy-year-2027-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ffa006f4c7145613b7a1",
+   "tag": "pin-prod-thanksgiving-host-planner-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ff9f06f4c7145613b796",
+   "tag": "pin-prod-thanksgiving-games-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ff9e06f4c7145613b774",
+   "tag": "pin-prod-pink-coquette-verse-art-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ff9e06f4c7145613b76d",
+   "tag": "pin-prod-pink-christmas-verse-art-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ff9d73343ea0594ed8a7",
+   "tag": "pin-prod-nye-games-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ff9c73343ea0594ed89e",
+   "tag": "pin-prod-no-buy-year-2027-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad92d17197e529ee835ef89",
+   "tag": "pin-prod-goal-workbook-2027-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad92d17197e529ee835ef84",
+   "tag": "pin-prod-gingerbread-contest-kit-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad92d17197e529ee835ef7f",
+   "tag": "pin-prod-friendsgiving-kit-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ae230176616fdaa49ffbb82",
+   "tag": "pin-prod-thanksgiving-games-m1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ae23016712b38228fd83691",
+   "tag": "pin-prod-xmas-charades-120-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad92d16bd032490b2527d43",
+   "tag": "pin-prod-goal-workbook-2027-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad92d16197e529ee835ef7a",
+   "tag": "pin-prod-gingerbread-contest-kit-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad92d15197e529ee835ef6f",
+   "tag": "pin-prod-friendsgiving-kit-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad92d15197e529ee835ef6a",
+   "tag": "pin-prod-cookie-exchange-kit-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ae230166616fdaa49ffbb71",
+   "tag": "pin-prod-xmas-murder-mystery-8-m1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ae230156616fdaa49ffbb64",
+   "tag": "pin-prod-xmas-charades-120-m1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad92d15197e529ee835ef65",
+   "tag": "pin-prod-debt-payoff-2027-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad92d14197e529ee835ef5c",
+   "tag": "pin-prod-cookie-exchange-kit-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad92d14197e529ee835ef57",
+   "tag": "pin-prod-advent-activities-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad92d14197e529ee835ef52",
+   "tag": "pin-prod-adhd-savings-tracker-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad92d14197e529ee835ef4d",
+   "tag": "pin-prod-debt-payoff-2027-s2"
+  }
+ ]
+}
