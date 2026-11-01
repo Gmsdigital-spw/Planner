@@ -45,7 +45,7 @@
   },
   {
    "say": "Find the Guest Bingo gets everyone mingling.",
-   "cap": "*Find the Guest* bingo | gets everyone *mingling*",
+   "cap": "*Find the Guest* bingo | gets everyone | *mingling*",
    "scene": "pan",
    "page": "p-08.png"
   },
