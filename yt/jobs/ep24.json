@@ -1,0 +1,68 @@
+{
+ "id": "ep24",
+ "format": "story",
+ "rev": 1,
+ "title": "My Mom Said My Games Would Wreck My Eyes #shorts",
+ "title_card": "The TV Eye Myth",
+ "voice": "andrew",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "uplifting",
+ "music_volume": 0.05,
+ "cast": {
+  "kid": "a stick-figure boy with a round white head, dot eyes, thin black limbs, short brown hair and an orange hoodie",
+  "mom": "a stick-figure mother with a round white head, dot eyes, thin black limbs, a curly black ponytail and a purple sweater",
+  "grandma": "a stick-figure grandmother with a round white head, dot eyes, thin black limbs, a gray bun, round glasses and a green cardigan",
+  "doctor": "a stick-figure eye doctor with a round white head, dot eyes, thin black limbs, short red hair and a white coat"
+ },
+ "lines": [
+  {
+   "text": "Mom said sitting close to my games would wreck my eyes, so was she right?",
+   "image": "{kid} sitting on a beanbag right in front of a glowing TV, nose almost touching it, holding a game controller"
+  },
+  {
+   "text": "Every night Mom dragged my beanbag back, and every night I scooted it closer again.",
+   "image": "{mom} alone dragging an empty beanbag back across a living room carpet"
+  },
+  {
+   "text": "\"Sit that close one more time,\" she warned, \"and the console goes in the garage.\"",
+   "image": "{mom} alone in a living room, frowning, pointing toward the garage door"
+  },
+  {
+   "text": "So I asked Grandma where that rule came from, hoping to prove Mom totally wrong.",
+   "image": "{kid} alone sitting at a kitchen table with a notebook, determined"
+  },
+  {
+   "text": "Grandma said back in 1967, some brand new color TVs really did leak invisible X-rays.",
+   "image": "{grandma} alone in an armchair holding an old photo, an old boxy 1960s TV beside her"
+  },
+  {
+   "text": "Experts told every family to sit back, and that warning got passed down to Mom.",
+   "image": "{grandma} alone holding a faded old newspaper with no readable text, an old boxy TV far across the room"
+  },
+  {
+   "text": "Those leaky TVs were fixed long ago, so I was sure I'd won the argument.",
+   "image": "{kid} alone walking proudly down a hallway with a notebook, grinning"
+  },
+  {
+   "text": "I showed Mom, and she frowned, \"Then why do you keep sitting so close, anyway?\"",
+   "image": "{mom} alone in a living room, arms crossed, one eyebrow raised, curious"
+  },
+  {
+   "text": "I sat way back on the couch to show her, and the screen went blurry.",
+   "image": "{kid} alone sitting on a couch far from the TV, squinting hard, the TV screen a blur"
+  },
+  {
+   "text": "The doctor said sitting close never hurt my eyes; I sat close because I'm nearsighted.",
+   "image": "{doctor} alone in an eye clinic holding a pair of small glasses, smiling"
+  },
+  {
+   "text": "Now I wear glasses, game from the couch, and beat levels I used to lose.",
+   "image": "{kid} alone on the couch wearing new glasses, playing a video game happily, far from the TV"
+  },
+  {
+   "text": "Mom was wrong about the TV, right about me, and we both say we won.",
+   "image": "{mom} alone in a living room, smug smile, hands on hips, warm evening light"
+  }
+ ]
+}
