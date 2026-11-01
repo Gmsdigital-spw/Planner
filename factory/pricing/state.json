@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-31",
+ "updatedAt": "2026-11-01",
  "note": "Pricing agent state. basePrice = the normal price before any change (from backups/listings-backup-2026-10-21.json).",
  "listings": {
   "4600177510": {
@@ -276,6 +276,14 @@
    "title": "Office Christmas Party Games Printable: 24 No-Prep Team Games, Bingo, Trivia and",
    "basePrice": 4.99,
    "price": 4.99,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4606924165": {
+   "title": "Christmas Coupon Book Printable, Editable PDF: 30 Coupons for Partner, Kids and ",
+   "basePrice": 4.49,
+   "price": 4.49,
    "starter": false,
    "lastChange": null,
    "history": []
