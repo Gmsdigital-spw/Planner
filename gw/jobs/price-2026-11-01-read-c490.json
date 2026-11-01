@@ -1,0 +1,4 @@
+{"id":"price-2026-11-01-read-c490","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/transactions?limit=100","tag":"tx"},
+{"op":"etsy","method":"GET","path":"/shops/68605457","tag":"shop"}]}
