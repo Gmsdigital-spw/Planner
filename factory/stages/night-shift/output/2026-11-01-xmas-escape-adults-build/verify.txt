@@ -1,0 +1,15 @@
+P1 acrostic SHIFTBYNINE -> 9
+P2 'CQN LJAM KXG TNHFXAM RB YRWN' back 9 = 'THE CARD BOX KEYWORD IS PINE' -> PINE
+P3 'HBBT IPR GAWPO PB ESL AVB' key PINE = 'STOP THE CLOCK AT ROW SIX' -> 6
+P4 6x6 sudoku unique (12 givens); row numbers {1: 654, 2: 456, 3: 452, 4: 635, 5: 145, 6: 231}; row 6 = 231
+P5 logic unique: {'Margo': 204, 'Felix': 536, 'Iris': 231, 'Dexter': 421} {'Margo': 'candle', 'Felix': 'mittens', 'Iris': 'snow globe', 'Dexter': 'scarf'}; room 231 = Iris
+P6 without key 5 solutions, with star=4: bell 5, tree 3; tree+star = 7
+P7 every 7th letter: ROOMNUMBERTIMESNINE
+P8 vault 231 x 9 = 2079 (digit sum 18)
+[0, 2, 5, 0, 0, 0]
+[3, 0, 0, 0, 2, 0]
+[4, 0, 3, 6, 1, 0]
+[2, 0, 0, 0, 0, 0]
+[0, 0, 2, 0, 0, 5]
+[0, 6, 0, 0, 0, 0]
+boxes checked: 58 on 16 pages; violations: 0
