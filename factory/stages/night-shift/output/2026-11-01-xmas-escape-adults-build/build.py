@@ -178,7 +178,7 @@ def cover():
         c.setFillColor(d.P); c.setFont(d.FM, 10); c.drawString(x0 + PAD + 18, yy + 1, f"{i + 1}")
         c.setFillColor(d.INK); c.setFont(d.F, 11); c.drawString(x0 + PAD + 34, yy + 1, n)
         yy -= 21
-    c.setFont(d.FM, 9.5); c.setFillColor(d.MUT); c.drawString(x0, 74, "US LETTER + A4  ·  PRINT AT HOME  ·  45 TO 60 MIN")
+    c.setFont(d.FM, 9.5); c.setFillColor(d.MUT); c.drawString(x0, 74, "US LETTER PDF  ·  PRINT AT HOME  ·  45 TO 60 MIN")
     c.setFont(d.F, 8.5); c.drawString(x0, 54, "GM's Digital Creations")
     c.showPage()
 
@@ -194,7 +194,7 @@ y = scene(y, "Read aloud: \"The storm closed the mountain road at noon. The keep
 colw = (W - 14) / 2
 h1 = 300
 yy = card(L, y, colw, h1, "How to run it")
-steps = ["Print one full set per team (pages 3 to 13).", "Cut the hint cards apart; keep them face down.",
+steps = ["Print one full set per team (pages 3 to 11).", "Cut the hint cards apart; keep them face down.",
          "Give each team Puzzle 1, the Lock Sheet and a pencil.", "Hand out the next puzzle only when a team shows you the right answer.",
          "A team may ask for a hint card; each hint adds 2 minutes.", "First team to the vault code with the best time wins."]
 for i, s in enumerate(steps):
@@ -202,7 +202,7 @@ for i, s in enumerate(steps):
     yy = para(L + PAD + 16, yy, s, colw - 2 * PAD - 16, 10, d.F, lead=1.4) - 7
 x2 = L + colw + 14
 yy = card(x2, y, colw, h1, "Before guests arrive")
-for s in ["Print on plain paper, US Letter or A4", "Put each puzzle in a numbered envelope", "Set a 60-minute timer you can show",
+for s in ["Print on plain US Letter paper", "Put each puzzle in a numbered envelope", "Set a 60-minute timer you can show",
           "Keep the answer key (page 14) out of sight", "Pencils and scrap paper for every team", "Optional: a small prize in a box for the vault"]:
     c.setStrokeColor(d.P); c.setLineWidth(1); c.rect(x2 + PAD, yy - 11, 9, 9, fill=0, stroke=1)
     yy = para(x2 + PAD + 16, yy, s, colw - 2 * PAD - 16, 10, d.F, lead=1.4) - 9

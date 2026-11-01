@@ -165,7 +165,7 @@ COLS = 16
 
 def make_telegram(seed=5):
     rnd = random.Random(seed)
-    n = COLS * 9
+    n = COLS * 8  # fix round 1: 128 letters, so every 7th letter lands exactly 19 times (was 144 -> 21)
     s = [rnd.choice("ABCDEFGHIJKLMNOPRSTUVWY") for _ in range(n)]
     for i, ch in enumerate(P7_HIDDEN):
         s[i * P6_ANS] = ch
@@ -202,7 +202,8 @@ def verify():
     s, b, t = keyed[0]
     assert t + s == P6_ANS
     out.append(f"P6 without key {len(free)} solutions, with star={STAR}: bell {b}, tree {t}; tree+star = {P6_ANS}")
-    read = TELEGRAM[::P6_ANS][:len(P7_HIDDEN)]
+    read = TELEGRAM[::P6_ANS]  # the WHOLE skip read, no trimming: no extra letters allowed
+    assert 127 <= len(TELEGRAM) <= 133, len(TELEGRAM)
     assert read == P7_HIDDEN
     out.append(f"P7 every {P6_ANS}th letter: {read}")
     assert 1000 <= CODE <= 9999 and sum(map(int, str(CODE))) == sum(map(int, str(CODE)))

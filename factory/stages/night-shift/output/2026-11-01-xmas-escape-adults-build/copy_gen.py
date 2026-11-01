@@ -23,7 +23,7 @@ Hidden message, letter shift cipher, keyword cipher with a letter grid, 6x6 numb
 
 HOW IT WORKS
 1. Download the PDF after purchase (Etsy: You > Purchases).
-2. Print one set per team on plain paper at home, US Letter or A4.
+2. Print one set per team on plain US Letter paper at home (8.5 x 11 in).
 3. Cut the hint cards, set a 60-minute timer and hand out Puzzle 1.
 
 Plan about an hour of play. No props, no apps, nothing to buy.
