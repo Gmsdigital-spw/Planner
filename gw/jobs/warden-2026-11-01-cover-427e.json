@@ -1,0 +1,5 @@
+{"id":"warden-2026-11-01-cover-427e","stopOnError":true,"ops":[
+{"op":"etsy_upload","path":"/shops/68605457/listings/4599447958/images","fileUrl":"https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/fun/v2/4599447958.jpg","field":"image","fileName":"christmas-scavenger-hunt-cover.jpg","fields":{"rank":"1","alt_text":"Christmas Scavenger Hunt printable: 24 rhyming clue cards for kids ages 4 to 12, four real Little Elves clue cards on candy cane stripes"},"tag":"upload"},
+{"op":"etsy","method":"DELETE","path":"/shops/68605457/listings/4599447958/images/8731516016","tag":"delete-old"},
+{"op":"etsy","method":"GET","path":"/listings/4599447958/images","tag":"verify"}
+]}
