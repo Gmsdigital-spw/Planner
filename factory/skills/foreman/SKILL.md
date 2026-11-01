@@ -18,15 +18,18 @@ updated: 2026-10-23
 - End every standup with one dated "What I've learned" line of the Foreman's own: the scoreboard number, the one change for tomorrow, and "predict: <number>" for the next standup; grade it first next time.
 
 ## Running judgment of each agent (rewrite weekly at all-hands)
-_Rewritten Sunday Oct 25, 2026 from standups 10-21 to 10-24, the 10-25 run notes and the sales collection. Numbers only; unknown stays unknown._
-- Floors by verified money this month: Etsy $2.24 (1 sales doc, receipt 4209403073); Studio $0 logged in sales; Trading $0 (paper only). A 2nd Etsy sale ($3.37, receipt 4210031031) is in a Bolt event only: unverified.
-- Foreman: verified $2.24 of $250 (recovery -0.9% net); predictions 10-23 miss, 10-24 miss.
-- Atlas, Forge, Quill, Lens (build line): under 10-21 to 10-24 (builds 85, 73, 75, 83, 84 failed); Oct 25 1 passed at 92 (91 first, market 13), 1 of 2 target, slot 2 empty for no proven brief; self-inspected.
-- Scout: under 10-22 to 10-24; briefs 1, 2, 2, then 0 of 3 on Oct 25 (13 held).
-- Idea Judge: under 10-22 to 10-24; approved 0 on Oct 24 and Oct 25 (7 kept proposed).
-- Pixel: under 10-22, 10-23; meh 10-24; re-imaged 7 on Oct 24 and 7 on Oct 25 (imageless 22 left); 5 new pins Oct 25.
-- Bolt: Pink Bow invite live Oct 25 (4602703062); 53 queued pins with images per its Oct 25 event.
-- Herald, Warden, Ledger, Medic, Mechanic, Studio, Trading, Beacon: not graded by this run; numbers in their own run logs (unknown here).
+_Rewritten Sunday Nov 1, 2026 from standups 10-25 to 11-01, the 11-01 run notes and the sales collection. Numbers only; unknown stays unknown._
+- Floors by verified money this month (November): Etsy $0, Studio $0 logged in sales, Trading $0 (paper only). October closed 3 verified Etsy sales, $8.30 gross (receipts 4209403073, 4210031031, 4216110644).
+- Foreman: predictions 10-29 HIT, 10-30 half, 10-31 HIT, 11-01 MISS (86 vs 88+, 0 Games Bundle pins).
+- Atlas (judge): week grades 62, 35, 55, 60, 62, 55, 60, 62 (avg 56.4, under 7 standups running); first looks 81, 79, 82, 81 vs finals 90, 87, 90, 86; 0 at 92 in 6 nights.
+- Forge: 66 to 62 (avg 61.6); file 22-24 on finals; check_boxes 41 to 0 on Nov 1; Exact steps rewritten Nov 1.
+- Quill: 64 to 58 (avg 60.4); copy 17-19, phrase check stale since Oct 29; Exact steps rewritten Nov 1.
+- Lens: 62 to 58 (avg 58.7); images 13 to 16 on Nov 1 (cover pages 29% to 63%); Exact steps rewritten Nov 1.
+- Scout: 30 to 55 (avg 51.0, weakest); briefs 1, 0, 2 of 3 on Oct 30, Oct 31, Nov 1; Exact steps rewritten Nov 1.
+- Idea Judge: 35 to 66 (avg 57.4, most improved +31); approved 0 on Nov 1 (3 kept proposed at 91, 90, 89).
+- Pixel: 66 to 50 (avg 56.9, slid 16); 0 Games Bundle pins 4 runs; 3 party pins Nov 1 at 92-93; Exact steps rewritten Nov 1.
+- Ledger: 68, 70 (meh); no change on Nov 1.
+- Herald, Warden, Bolt, Medic, Mechanic, Studio, Trading, Beacon: not graded by this run; numbers in their own run logs (unknown here).
 
 ## What I've learned (append-only, newest last)
 - 2026-10-23: first scoreboard: verified this month $0 of $250, 8 days left, builds 0 passed / 1 failed (83) / 1 skipped for time; no earlier Foreman prediction on file to grade. Tomorrow: the run starts Santa Mail first and the budget cut goes to pins extras, never to a build. Predict: 1 build passes 92 next run.
@@ -38,3 +41,4 @@ _Rewritten Sunday Oct 25, 2026 from standups 10-21 to 10-24, the 10-25 run notes
 - 2026-10-29: predict 1 build passes 90+: HIT (Thanksgiving Escape Room PASS 90, tier check, independent Judge after 81, 84, 84; 0 at 92; second build skipped for the 75 min budget). Verified $5.61 of $250 (net -$0.02), 2 days left. Tomorrow: Office Christmas Party Games builds first and round 1's fix list names root checks, so the budget reaches the second build. Predict: 1 build passes 90+ and the second reaches inspection.
 - 2026-10-30: predict 1 build passes 90+ and the second reaches inspection: MISS on the first half (Office Party Games PASS 87 after 79, 84), HIT on the second (Coupon Book reached inspection, FAIL 82). Verified $8.30 of $250 (net $1.96), 1 day left; briefs 1 of 3; pins 3 of 6; run over its 75 min budget. Tomorrow: the Coupon Book fix round goes first and pins start with the 2 Games Bundle pins. Predict: Coupon Book passes 87+ next run.
 - 2026-10-31: predict Coupon Book passes 87+: HIT (PASS 90 tier check after 89, 89; under the 92 aim). Verified $1.76 net of $250 (gross $8.30, 3 sales), 0 days left in October; briefs 0 new of 3; builds 1 of 2 (0 at 92); pins 3 of 6, 0 to the party lane for the 3rd run. Tomorrow: the Adult Escape Room builds first and stage 08 starts with the Games Bundle pins from pages rendered earlier. Predict: 1 build passes 88+ and 2 Games Bundle pins go out.
+- 2026-11-01: predict 1 build passes 88+ and 2 Games Bundle pins: MISS (PASS 86 tier check after 81; 0 Games Bundle pins, 4th run). Verified $0 of $250, 30 days left; builds 1 of 2, briefs 2 of 3, pins 3 of 6 (3 party). Tomorrow: Games Bundle pins before any new pin and slot 2 filled only by a brief with 2 opened 100+ pages. Predict: 2 Games Bundle pins and 1 pass at 86+ next run.
