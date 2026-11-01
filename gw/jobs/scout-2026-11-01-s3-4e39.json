@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-01-s3-4e39", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=elf+arrival+letter&sort_on=score&limit=25&offset=0", "tag": "s3_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=elf+arrival+letter&sort_on=score&limit=25&offset=25", "tag": "s3_o25"}]}

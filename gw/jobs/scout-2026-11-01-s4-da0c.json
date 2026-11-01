@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-01-s4-da0c", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=12+days+of+christmas+gift+tags&sort_on=score&limit=25&offset=0", "tag": "s4_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=12+days+of+christmas+gift+tags&sort_on=score&limit=25&offset=25", "tag": "s4_o25"}]}

@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-01-s2-f933", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+minute+to+win+it+games&sort_on=score&limit=25&offset=0", "tag": "s2_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+minute+to+win+it+games&sort_on=score&limit=25&offset=25", "tag": "s2_o25"}]}
