@@ -1,0 +1,1 @@
+{"id":"warden-2026-11-01-verify-146f","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=active&limit=100&includes=Images","tag":"listings"}]}
