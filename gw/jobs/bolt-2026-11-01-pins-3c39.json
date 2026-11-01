@@ -1,0 +1,90 @@
+{
+ "id": "bolt-2026-11-01-pins-3c39",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-escape-room-adults-s2",
+   "tag": "pin-prod-xmas-escape-room-adults-s2",
+   "body": {
+    "content": "A printable Christmas escape room for adults and teens. The Snowbound Lodge has 8 linked puzzles, each answer opening the next lock, plus a host guide, lock sheet, 8 two-step hint cards, a team timer and score sheet, an answer key for the host and a certificate. For 2 to 20 players in teams of 2 to 5, about 45 to 60 minutes. A 16-page US Letter PDF you print at home for an office party, game night or family Christmas.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-adults-s2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-05T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Escape Room Game for Adults and Teens: Printable Party Game, Little Prep",
+       "link": "https://www.etsy.com/listing/4607508985"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-escape-room-adults-s3",
+   "tag": "pin-prod-xmas-escape-room-adults-s3",
+   "body": {
+    "content": "A printable Christmas escape room for adults and teens. The Snowbound Lodge has 8 linked puzzles, each answer opening the next lock, plus a host guide, lock sheet, 8 two-step hint cards, a team timer and score sheet, an answer key for the host and a certificate. For 2 to 20 players in teams of 2 to 5, about 45 to 60 minutes. A 16-page US Letter PDF you print at home for an office party, game night or family Christmas.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-adults-s3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-07T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Printable Christmas Escape Room for Adults: Can Your Team Crack the Clock Puzzle?",
+       "link": "https://www.etsy.com/listing/4607508985"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-escape-room-adults-s1",
+   "tag": "pin-prod-xmas-escape-room-adults-s1",
+   "body": {
+    "content": "A printable Christmas escape room for adults and teens. The Snowbound Lodge has 8 linked puzzles, each answer opening the next lock, plus a host guide, lock sheet, 8 two-step hint cards, a team timer and score sheet, an answer key for the host and a certificate. For 2 to 20 players in teams of 2 to 5, about 45 to 60 minutes. A 16-page US Letter PDF you print at home for an office party, game night or family Christmas.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-adults-s1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-08T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Escape Room for Adults Printable: 8 Puzzle Party Game You Print Tonight",
+       "link": "https://www.etsy.com/listing/4607508985"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
