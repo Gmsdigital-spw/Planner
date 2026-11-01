@@ -1,0 +1,66 @@
+{
+ "id": "bolt-2026-11-01-img-a4e1",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4607508985/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-escape-room-adults/1.jpg",
+   "field": "image",
+   "fileName": "christmas-escape-room-adults-1.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Christmas Escape Room for Adults and Teens: Printable Party Game for Office and Friends, 8 Puzzles"
+   },
+   "tag": "img1"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4607508985/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-escape-room-adults/2.jpg",
+   "field": "image",
+   "fileName": "christmas-escape-room-adults-2.jpg",
+   "fields": {
+    "rank": "2",
+    "alt_text": "Printable Christmas escape room puzzle pages for adults and teens"
+   },
+   "tag": "img2"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4607508985/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-escape-room-adults/3.jpg",
+   "field": "image",
+   "fileName": "christmas-escape-room-adults-3.jpg",
+   "fields": {
+    "rank": "3",
+    "alt_text": "Christmas escape room hint cards with folded flaps"
+   },
+   "tag": "img3"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4607508985/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-escape-room-adults/4.jpg",
+   "field": "image",
+   "fileName": "christmas-escape-room-adults-4.jpg",
+   "fields": {
+    "rank": "4",
+    "alt_text": "Christmas escape room team timer and score sheet pages"
+   },
+   "tag": "img4"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4607508985/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-escape-room-adults/5.jpg",
+   "field": "image",
+   "fileName": "christmas-escape-room-adults-5.jpg",
+   "fields": {
+    "rank": "5",
+    "alt_text": "Christmas escape room host guide and party setup pages"
+   },
+   "tag": "img5"
+  }
+ ]
+}
