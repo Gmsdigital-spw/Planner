@@ -1,0 +1,239 @@
+{
+ "dur": 18.98,
+ "vo": "social/studio/media/vo/games1101-vo2.mp3",
+ "music": "social/studio/media/vo/games1101-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/games",
+   "cover": "cover.jpg",
+   "price": "2.99",
+   "pages": 13,
+   "listTitle": "Christmas Party Games Printable Bundle, 8 Holiday Games for Family, Office Party and Kids (Digital Download)",
+   "strip": [
+    "p-03.png",
+    "p-08.png",
+    "p-09.png",
+    "p-12.png"
+   ],
+   "bg": [
+    "#c8282e",
+    "#560e12"
+   ],
+   "accent": "#a3191e",
+   "hl": "#ffd34d",
+   "dot": "#ffe3e3"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-03.png",
+     "p-04.png",
+     "p-08.png",
+     "p-12.png"
+    ],
+    "type": "grid",
+    "t0": 0,
+    "t1": 2.98,
+    "beats": [
+     0.1,
+     0.73,
+     1.37,
+     2.0
+    ]
+   },
+   {
+    "pages": [
+     "p-03.png",
+     "p-04.png",
+     "p-05.png"
+    ],
+    "type": "fan",
+    "t0": 2.98,
+    "t1": 5.98,
+    "beats": [
+     3.08,
+     4.04,
+     5.0
+    ]
+   },
+   {
+    "page": "p-08.png",
+    "type": "pan",
+    "t0": 5.98,
+    "t1": 8.44,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-06.png",
+     "p-09.png",
+     "p-13.png"
+    ],
+    "type": "fan",
+    "t0": 8.44,
+    "t1": 12.24,
+    "beats": [
+     8.54,
+     9.82,
+     11.1
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 12.24,
+    "t1": 15.3,
+    "beats": [
+     0.33,
+     1.0,
+     1.2,
+     1.83,
+     2.23
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 15.3,
+    "t1": 19.28
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.56,
+   "*8* Christmas games | one *download*"
+  ],
+  [
+   2.98,
+   5.56,
+   "*Trivia* and a | *word scramble* | with answer keys"
+  ],
+  [
+   5.98,
+   8.04,
+   "*Find the Guest* bingo | gets everyone *mingling*"
+  ],
+  [
+   8.44,
+   11.93,
+   "*Kids* to *grandparents* | everyone joins in"
+  ],
+  [
+   12.24,
+   14.01,
+   "Just *print* | grab some *pens* | and *play*"
+  ],
+  [
+   14.42,
+   15.11,
+   "Tap the *link*"
+  ],
+  [
+   15.3,
+   17.28,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.73,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.37,
+   "pop"
+  ],
+  [
+   2.0,
+   "pop"
+  ],
+  [
+   2.93,
+   "whoosh"
+  ],
+  [
+   3.08,
+   "pop"
+  ],
+  [
+   4.04,
+   "pop"
+  ],
+  [
+   5.0,
+   "pop"
+  ],
+  [
+   5.93,
+   "whoosh"
+  ],
+  [
+   8.39,
+   "whoosh"
+  ],
+  [
+   8.54,
+   "pop"
+  ],
+  [
+   9.82,
+   "pop"
+  ],
+  [
+   11.1,
+   "pop"
+  ],
+  [
+   12.19,
+   "whoosh"
+  ],
+  [
+   12.57,
+   "whoosh"
+  ],
+  [
+   14.47,
+   "tap"
+  ],
+  [
+   14.72,
+   "pop"
+  ],
+  [
+   15.25,
+   "whoosh"
+  ],
+  [
+   15.65,
+   "impact"
+  ],
+  [
+   16.1,
+   "pop"
+  ]
+ ]
+}

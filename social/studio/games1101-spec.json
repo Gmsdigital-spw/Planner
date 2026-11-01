@@ -1,5 +1,5 @@
 {
- "vo": "social/studio/media/vo/games1101-vo.mp3",
+ "vo": "social/studio/media/vo/games1101-vo2.mp3",
  "music": "social/studio/media/vo/games1101-music.wav",
  "product": {
   "dir": "/social/studio/media/games",
@@ -36,8 +36,12 @@
   {
    "say": "Trivia and a word scramble, with answer keys.",
    "cap": "*Trivia* and a | *word scramble* | with answer keys",
-   "scene": "pan",
-   "page": "p-03.png"
+   "scene": "fan",
+   "pages": [
+    "p-03.png",
+    "p-04.png",
+    "p-05.png"
+   ]
   },
   {
    "say": "Find the Guest Bingo gets everyone mingling.",

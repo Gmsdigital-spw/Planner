@@ -1,0 +1,219 @@
+{
+ "dur": 17.56,
+ "vo": "social/studio/media/vo/nye1101-vo2.mp3",
+ "music": "social/studio/media/vo/nye1101-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/nye",
+   "cover": "cover.jpg",
+   "price": "4.99",
+   "pages": 12,
+   "listTitle": "New Years Eve Games Printable, 8 Family Friendly NYE Party Games for Kids and Adults (Digital Download)",
+   "strip": [
+    "p-03.png",
+    "p-07.png",
+    "p-08.png",
+    "p-10.png"
+   ],
+   "bg": [
+    "#2c4a85",
+    "#0e1a36"
+   ],
+   "accent": "#1d3566",
+   "hl": "#ffd34d",
+   "dot": "#e3ebff"
+  },
+  "scenes": [
+   {
+    "page": "p-08.png",
+    "badge": "8 GAMES",
+    "type": "hook",
+    "t0": 0,
+    "t1": 2.39
+   },
+   {
+    "pages": [
+     "p-03.png",
+     "p-06.png",
+     "p-07.png",
+     "p-11.png"
+    ],
+    "type": "grid",
+    "t0": 2.39,
+    "t1": 5.77,
+    "beats": [
+     2.49,
+     3.23,
+     3.97,
+     4.71
+    ]
+   },
+   {
+    "pages": [
+     "p-03.png",
+     "p-08.png",
+     "p-07.png"
+    ],
+    "type": "fan",
+    "t0": 5.77,
+    "t1": 8.31,
+    "beats": [
+     5.87,
+     6.65,
+     7.42
+    ]
+   },
+   {
+    "page": "p-10.png",
+    "type": "pan",
+    "t0": 8.31,
+    "t1": 10.91,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "type": "phone",
+    "t0": 10.91,
+    "t1": 15.8,
+    "beats": [
+     0.45,
+     1.35,
+     1.82,
+     2.62,
+     3.02
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 15.8,
+    "t1": 17.86
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   1.98,
+   "Keep the whole family | up till *midnight*"
+  ],
+  [
+   2.39,
+   5.36,
+   "*8* New Year's Eve games | *no* drinking games"
+  ],
+  [
+   5.77,
+   7.9,
+   "*Trivia* | *bingo* | and *would you rather*"
+  ],
+  [
+   8.31,
+   10.49,
+   "Write your | *2027* predictions"
+  ],
+  [
+   10.91,
+   13.7,
+   "*Kids* and *grown-ups* | can all play"
+  ],
+  [
+   13.88,
+   14.92,
+   "Tap the *link*"
+  ],
+  [
+   15.8,
+   16.2,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   2.34,
+   "whoosh"
+  ],
+  [
+   2.49,
+   "pop"
+  ],
+  [
+   3.23,
+   "pop"
+  ],
+  [
+   3.97,
+   "pop"
+  ],
+  [
+   4.71,
+   "pop"
+  ],
+  [
+   5.72,
+   "whoosh"
+  ],
+  [
+   5.87,
+   "pop"
+  ],
+  [
+   6.65,
+   "pop"
+  ],
+  [
+   7.42,
+   "pop"
+  ],
+  [
+   8.26,
+   "whoosh"
+  ],
+  [
+   10.86,
+   "whoosh"
+  ],
+  [
+   11.36,
+   "whoosh"
+  ],
+  [
+   13.93,
+   "tap"
+  ],
+  [
+   14.18,
+   "pop"
+  ],
+  [
+   15.75,
+   "whoosh"
+  ],
+  [
+   16.15,
+   "impact"
+  ],
+  [
+   16.6,
+   "pop"
+  ]
+ ]
+}
