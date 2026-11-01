@@ -26,3 +26,4 @@
 |---|---|---|---|---|---|---|
 | 2026-10-23 | 24 | 188 | 0 | 0 | ~5/day | $24.96 equity, -$0.04 total |
 | 2026-10-30 (stats 2026-10-29, read Oct 30) | 29 | 244 (78 views7; Games Bundle 69, 46 views7) | 2 listing favs (Goal Workbook), 1 shop favorer, 1 review | 3 verified, $8.30 gross; Etsy fees $1.54, listing fees $4.80: net $1.96 | unknown (pinstats) | unknown (trading ledger) |
+| 2026-11-01 (stats 2026-10-31, read Nov 1) | 32 | 251 (49 views7; Games Bundle 70, 22 views7) | 2 listing favs (Goal Workbook), 1 shop favorer, 1 review | 3 verified all-time, $8.30 gross (Oct); 0 in November so far | unknown (pinstats not read) | unknown (trading ledger not read) |

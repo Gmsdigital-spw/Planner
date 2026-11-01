@@ -18,6 +18,7 @@
 - Oct 23: titles/tags rewritten around buyer search phrases on the 12 lowest-view listings (before values in notebook/seo-before-2026-10-23.json). 5 of them also got new covers the same day, so their result mixes both changes. Check Nov 6: views and favorites vs the Oct 23 baseline.
 - Varied cover layouts vs the single fun_covers template. 5 zero-view listings got new covers Oct 23 (all at 0 views/0 favs before; baseline in results.jsonl). Check Nov 6: favorites and views per listing before vs after (stats/ snapshots).
 - Christmas listings under $3 (Christmas Party Games Bundle $2.99, Awards Kit $1.99): views yes, sales no so far. Check Nov 6.
+- 2026-11-01 (Sunday party lane vs rest, stats 10-31 vs 10-24): party lane 14 listings, 31 views7, 0 favs7, 2 of 3 sales; rest 18 listings, 18 views7, 2 favs7, 1 sale. Under 100 views per side = too early for What works. Re-measure Sun Nov 8.
 
 ## What doesn't work (tried, failed, or Grayson rejected)
 - 2026-10-21: cream-desk + coffee cup covers (Grayson: bland, all alike).
