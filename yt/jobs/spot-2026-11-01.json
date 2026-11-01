@@ -1,0 +1,45 @@
+{
+ "id": "spot-2026-11-01",
+ "hook": "MY NYE PARTY WAS DEAD BY 10",
+ "end_text": "",
+ "loop": false,
+ "engine": "edge",
+ "voice": "andrew",
+ "speed": 1.03,
+ "caption_words": 3,
+ "music": "uplifting",
+ "music_volume": 0.14,
+ "style": "3D animated movie still, Pixar and Illumination style CGI render, cute stylized cartoon characters, soft cinematic lighting, vibrant saturated colors, glossy detailed textures, shallow depth of field, character centered in frame, no text, no letters, no watermark",
+ "cast": {
+  "max": "Max, a lanky cartoon man in his thirties with messy brown hair, a short brown beard and thick black rectangular glasses, wearing a navy blue sweater and a gold cone party hat"
+ },
+ "lines": [
+  {
+   "text": "Every New Year's Eve, my party is dead by ten o'clock.",
+   "image": {
+    "prompt": "{max} slumped alone on a grey couch holding a limp party noisemaker, bored tired face, wall clock showing ten o'clock, living room with sagging gold streamers and a few deflated balloons, night",
+    "seed": 3101,
+    "motion": "push"
+   },
+   "pause": 0.3
+  },
+  {
+   "text": "Two hours to midnight, and everyone is staring at their phones.",
+   "image": {
+    "prompt": "{max} standing in the middle of a dim living room with wide panicked eyes, blurry out-of-focus guests in the background lit by glowing phone screens, gold streamers, night",
+    "seed": 3102,
+    "motion": "punch"
+   },
+   "pause": 0.3
+  },
+  {
+   "text": "So this year... I printed the games.",
+   "image": {
+    "prompt": "{max} holding up a fanned stack of printed paper game sheets with a big proud grin, bright living room with gold and navy balloons and streamers, confetti in the air, night",
+    "seed": 3103,
+    "motion": "push"
+   },
+   "pause": 0.05
+  }
+ ]
+}
