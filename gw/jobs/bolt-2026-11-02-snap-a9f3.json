@@ -1,0 +1,42 @@
+{
+ "id": "bolt-2026-11-02-snap-a9f3",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/active?limit=100&includes=Images",
+   "tag": "active"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457",
+   "tag": "shop"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings?state=draft&limit=100",
+   "tag": "drafts"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/receipts?limit=100",
+   "tag": "receipts"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/reviews?limit=100",
+   "tag": "reviews"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ffa106f4c7145613b7a6",
+   "tag": "pinchk-pin-prod-xmas-party-awards-s2"
+  }
+ ]
+}
