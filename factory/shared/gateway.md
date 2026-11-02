@@ -86,8 +86,12 @@ Load only the service section your stage names.
 - Live mode (Grayson's go Nov 2, 2026): while the repo variable ALPACA_LIVE is 1 the same ops hit the REAL account
   with the separate ALPACA_LIVE_KEY_ID / ALPACA_LIVE_SECRET_KEY secrets. /bankroll then returns {"mode":"live",
   "profile":"live-aggressive","equity","cash","buyingPower","accountId":"…xxxx","tradingBlocked"}: real numbers,
-  no $25 virtual bankroll. The money rules come from factory/trading/profiles/<mode>.json (live: $5 floor, 100% of
-  cash, 8:35-2:45 CT; paper: $20 floor, 40%). Every live POST/DELETE is refused (423 "account") unless the account
-  matches ALPACA_LIVE_ACCOUNT_ID when that variable is set; a buy is refused (423 "blocked") when Alpaca reports the
-  account blocked. The crew never sends a live buy; reads, and the close run's verify-only flatten when the
-  autopilot failed, are the only live ops a crew may push.
+  no $25 virtual bankroll; GET /account answers with that same view (never the full record: the account number and
+  id stay out of gw/out, which is public). The money rules come from factory/trading/profiles/<profile>.json
+  (paper.json: $20 floor, 40%; live-aggressive.json: $5 floor, 100% of cash, 8:35-2:45 CT). Every live POST/DELETE
+  is refused (423 "account") unless the account matches ALPACA_LIVE_ACCOUNT_ID (dashboard account number or API id)
+  when that variable is set. A live BUY is refused in code from any process but the Trading autopilot workflow
+  (423 "buyer": only that workflow sets ALPACA_LIVE_BUYS), when Alpaca reports the account blocked (423 "blocked"),
+  or when the live profile file cannot be read (423 "profile"). So the crew cannot send a live buy; reads, cancels,
+  and the close run's verify-only flatten (DELETE /positions?cancel_orders=true, then GET /positions to confirm) when
+  the autopilot failed, are the only live ops a crew may push.

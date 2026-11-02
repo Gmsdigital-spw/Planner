@@ -37,31 +37,49 @@ DEFAULT = {
 LOCKED = {"bankroll", "floor", "risk_pct", "max_pos_pct", "max_positions", "daily_loss", "flat_ct", "min_rr"}
 
 PROFILES_DIR = os.path.join(ROOT, "profiles")
+# a profile that is used strictly (live) must carry every money rule itself; nothing may come from DEFAULT by accident
+REQUIRED_PROFILE_KEYS = ("floor", "max_pos_pct", "max_positions", "max_entries", "daily_loss", "start_ct", "last_entry_ct", "flat_ct")
 
 
-def load_profile(name):
+class ProfileError(RuntimeError):
+    """A money profile could not be loaded or is incomplete (raised only when strict, i.e. for real money)."""
+
+
+def load_profile(name, strict=False):
     """A money profile = Grayson's rules for one mode: factory/trading/profiles/<name>.json ("paper" = the Oct 21
-    rules, "live-aggressive" = his Nov 2, 2026 real-money rules). {} when there is no such file."""
+    rules, "live-aggressive" = his Nov 2, 2026 real-money rules). {} when there is no such file, unless strict: then
+    a missing, broken or incomplete profile raises ProfileError (real money never runs on a silent fallback)."""
     if not name:
         return {}
+    path = os.path.join(PROFILES_DIR, f"{name}.json")
     try:
-        with open(os.path.join(PROFILES_DIR, f"{name}.json")) as f:
+        with open(path) as f:
             prof = json.load(f)
-        return prof if isinstance(prof, dict) else {}
-    except Exception:
+        if not isinstance(prof, dict):
+            raise ValueError("not a JSON object")
+    except Exception as e:
+        if strict:
+            raise ProfileError(f"profile {name} ({path}) could not be loaded: {type(e).__name__}: {e}")
         return {}
+    if strict:
+        params = prof.get("params") if isinstance(prof.get("params"), dict) else {}
+        missing = [k for k in REQUIRED_PROFILE_KEYS if k not in params]
+        if missing:
+            raise ProfileError(f"profile {name} is missing money rules {missing}: no trading")
+    return prof
 
 
-def load_params(profile=None):
+def load_params(profile=None, strict=False):
     """DEFAULT, then the lab's params.json (never a LOCKED money rule), then the profile's params (all keys: the
-    profile IS the money rules for its mode). No profile = the paper rules, exactly as before Nov 2, 2026."""
+    profile IS the money rules for its mode). No profile = the paper rules, exactly as before Nov 2, 2026.
+    strict (live): the profile must load and carry every money rule, else ProfileError."""
     p = dict(DEFAULT)
     if os.path.exists(PARAMS_FILE):
         try:
             p.update({k: v for k, v in json.load(open(PARAMS_FILE)).get("params", {}).items() if k not in LOCKED})
         except Exception:
             pass
-    p.update({k: v for k, v in (load_profile(profile).get("params") or {}).items() if k in DEFAULT})
+    p.update({k: v for k, v in (load_profile(profile, strict=strict).get("params") or {}).items() if k in DEFAULT})
     return p
 
 # ---------------- data ----------------

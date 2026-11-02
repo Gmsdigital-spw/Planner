@@ -13,6 +13,7 @@ name: Trading autopilot
 # V8 (Nov 2, 2026, Grayson's live go): the repo VARIABLE ALPACA_LIVE = "1" switches the bot to REAL MONEY on the live
 # endpoint with the separate secrets ALPACA_LIVE_KEY_ID / ALPACA_LIVE_SECRET_KEY and the money rules in
 # factory/trading/profiles/live-aggressive.json ($5 floor, all-in, 3x ETFs). Empty/"0" = paper, exactly as before.
+# ALPACA_LIVE_BUYS=1 is set here and nowhere else: the gateway refuses a live BUY from any other process (gw.yml crew jobs).
 # Optional variables: ALPACA_LIVE_FLOOR (overrides the live floor), ALPACA_LIVE_ACCOUNT_ID (pins the account: any
 # other account is refused). Runbook: factory/trading/LIVE_SETUP.md. The paper keys are never used in live mode.
 on:
@@ -54,6 +55,8 @@ jobs:
           ALPACA_LIVE_SECRET_KEY: ${{ secrets.ALPACA_LIVE_SECRET_KEY }}
           ALPACA_LIVE_FLOOR: ${{ vars.ALPACA_LIVE_FLOOR }}
           ALPACA_LIVE_ACCOUNT_ID: ${{ vars.ALPACA_LIVE_ACCOUNT_ID }}
+          # only THIS workflow may open a real-money position; the gateway refuses live buys from any other process
+          ALPACA_LIVE_BUYS: "1"
         run: python factory/trading/autopilot.py --loop 330
       - name: Save state (the loop pushes as it goes; this catches anything left)
         if: always()

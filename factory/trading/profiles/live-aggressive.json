@@ -2,7 +2,7 @@
  "name": "live-aggressive",
  "mode": "live",
  "set_by": "Grayson, Nov 2, 2026: real money, big trades, start with $20-25. These are his money rules for the live account; the crew and the lab never change them.",
- "note": "Used only when the repo variable ALPACA_LIVE is 1 (real-money endpoint, live key pair). All-in: one position at a time with the whole cash balance, 3x ETFs, opening-range-breakout entry, 3R target with the same breakeven/trail exits the paper bot runs, flat by 2:45 PM CT (no overnight holds: a fractional stop order only lives for the day). Hard stops: equity at or below the $5 floor = flatten and lock; a $5 loss on the day = flatten and done. Past-day evidence (factory/trading/lab/live-aggressive-2026-11-02.json) shows this profile LOSING on the last 60 trading days; it is a hypothesis, not an edge. The account can lose all of it. Not financial advice.",
+ "note": "Used only when the repo variable ALPACA_LIVE is 1 (real-money endpoint, live key pair). All-in: one position at a time with the whole cash balance, 3x ETFs, opening-range-breakout entry, 3R target with the same breakeven/trail exits the paper bot runs, flat by 2:45 PM CT (no overnight holds: a fractional stop order only lives for the day). Hard stops: equity at or below the $5 floor = flatten and lock; a $5 loss on the day = flatten and done. Past-day evidence (factory/trading/lab/live-aggressive-2026-11-02.json) shows this profile LOSING on the last 60 trading days; it is a hypothesis, not an edge. The account can lose all of it. Not financial advice. Review fixes (Nov 2, 2026): a flatten counts only once Alpaca's positions read back empty; on early-close days the flat time is 15 minutes before the close; a broken copy of this file stops the bot instead of falling back to the paper rules.",
  "params": {
   "bankroll": 25.0,
   "floor": 5.0,
@@ -26,9 +26,22 @@
   "orb_min": 15,
   "orb_stop": "mid"
  },
- "universe": ["TQQQ", "SQQQ", "SOXL", "SOXS", "SPXL", "SPXS", "TNA", "TZA", "LABU", "LABD", "NVDL", "TSLL", "CONL"],
+ "universe": [
+  "TQQQ",
+  "SQQQ",
+  "SOXL",
+  "SOXS",
+  "SPXL",
+  "SPXS",
+  "TNA",
+  "TZA",
+  "LABU",
+  "LABD",
+  "NVDL",
+  "TSLL",
+  "CONL"
+ ],
  "universe_note": "Leveraged ETFs (3x index, 2x single-stock). Each name is checked once a day against Alpaca /assets and dropped unless active, tradable and fractionable. The crew's daily avoid list (earnings, halts, gaps, the FOMC hour) still applies.",
- "expected_account_id": "",
- "expected_account_id_note": "Paste the live account id here (or set the repo variable ALPACA_LIVE_ACCOUNT_ID) once the first live heartbeat shows its last 4 characters; the gateway then refuses every order on any other account.",
- "hold_overnight": false
+ "hold_overnight": false,
+ "account_pin_note": "The account pin is the repo VARIABLE ALPACA_LIVE_ACCOUNT_ID only (the account number Alpaca's dashboard shows, or the API account id): never paste an account id into this public file. The first live heartbeat shows the last 4 characters of the account number so you can check which account is trading."
 }

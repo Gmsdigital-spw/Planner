@@ -125,12 +125,14 @@ endpoint + the separate ALPACA_LIVE_KEY_ID / ALPACA_LIVE_SECRET_KEY secrets; emp
 | Size | 100% of cash, one position at a time (risk_pct 100, max_pos_pct 100, max_positions 1) |
 | Names | TQQQ SQQQ SOXL SOXS SPXL SPXS TNA TZA LABU LABD NVDL TSLL CONL, each checked daily against /assets (active, tradable, fractionable); the crew's avoid list applies, the crew's symbols list does not |
 | Entry | opening-range breakout (`setup` orb, 15-minute range, stop under the range midpoint, at least 0.5% away) on completed 5-minute bars, 8:35 AM to 2:00 PM CT |
-| Exit | breakeven at 1R, trail 1R behind the high from 1.5R, target 3R, flat at 2:45 PM CT, day orders only, no overnight holds |
+| Exit | breakeven at 1R, trail 1R behind the high from 1.5R, target 3R, flat at 2:45 PM CT (15 minutes before the close on early-close days, read from Alpaca's /clock next_close), day orders only, no overnight holds |
 | Entries | 6 a day, never twice in a name that lost today |
-| Hard floor | $5: equity at or below it = flatten and lock for the day; the gateway refuses every buy |
+| Hard floor | $5: equity at or below it = flatten and lock for the day; the gateway refuses every buy. A flatten counts only once GET /positions reads back empty (Alpaca's DELETE /positions answers 207 whether each leg worked or not); until then the day stays open and the next cycle retries |
 | Daily loss | $5 down on the day (marked to market) = flatten, done for the day |
 | Duplicate protection | every buy carries a client_order_id (gm-<day>-<SYM>-<bar>) and is looked up at Alpaca before the POST |
-| Account pin | variable ALPACA_LIVE_ACCOUNT_ID: any other account is refused (423) for every order; a blocked account gets no buys |
+| Account pin | variable ALPACA_LIVE_ACCOUNT_ID (dashboard account number or API id; never a value in a committed file): any other account is refused (423) for every order; a blocked account gets no buys; a live buy from any process but the autopilot workflow is refused (ALPACA_LIVE_BUYS) |
+| Per-mode records | the day file belongs to one mode; a switch of ALPACA_LIVE during the day archives the other mode's record as <day>-<mode>.json and starts fresh from this account (a position the other mode still held is called out as nobody's) |
+| Broken profile | a missing or unreadable live-aggressive.json stops the autopilot and the gateway refuses buys; real money never falls back to the paper rules or the crew's stock list |
 | What is NOT a guarantee | the floor and the daily loss are entry halts after the fact; a 3x ETF can gap through a stop and a market sell fills where the market is; the account can lose all of it |
 
 Crew in live mode: reads only (`/bankroll` returns `mode: live`, real equity and cash, the account hint,
@@ -139,3 +141,9 @@ apart by the day file's `mode`. Tape's avoid list is the crew's one lever over t
 verifies `/positions` is empty after 2:45 and flattens only if the autopilot failed to. Nobody but Grayson sets the
 variable, edits a profile, or changes a floor. Pattern-day-trader limits no longer apply (FINRA ended them June 4,
 2026; Alpaca removed its counters July 6, 2026). Not financial advice.
+
+Review before the first real dollar (Nov 2, 2026): seven adversarial reviews with a verifier each confirmed 22
+findings; all are fixed and covered by `factory/trading/tests/test_live_mode.py` (20 scenarios) and
+`test_gateway_rules.py`. The two high ones were pre-existing paper-era habits that real money could not afford: a
+flatten believed on Alpaca's status code (now confirmed by reading positions back) and a fixed 2:45 flat time that
+an early-close day never reaches (now 15 minutes before `next_close`).

@@ -1,9 +1,11 @@
 """Offline checks of the gateway's Alpaca money rules (gw/run.py op_alpaca) in paper and live mode with a fake
 `requests`: no network, no keys of Grayson's, no orders. Run: python3 factory/trading/tests/test_gateway_rules.py
 
-Covers: live mode needs its own key pair (never the paper pair); the pinned-account check on every order; the
-blocked-account check on buys; the floor, size cap and hours from the profile for each mode; the repo-variable
-overrides (ALPACA_FLOOR paper only, ALPACA_LIVE_FLOOR / ALPACA_LIVE_ACCOUNT_ID live only)."""
+Covers: live mode needs its own key pair (never the paper pair); live buys only from the autopilot's own process
+(ALPACA_LIVE_BUYS); the pinned-account check on every order (the pin may be the dashboard account number or the API
+id); the blocked-account check on buys; a broken live profile refuses buys; the floor, size cap and hours from the
+profile for each mode; the repo-variable overrides (ALPACA_FLOOR paper only, ALPACA_LIVE_FLOOR / ALPACA_LIVE_ACCOUNT_ID
+live only; a non-numeric floor is ignored, never fatal); GET /account in live mode answers with the hint view."""
 import datetime as _dt
 import importlib.util
 import json
@@ -63,7 +65,7 @@ class FixedDT(_dt.datetime):
 
 def load_gw(env):
     for k in ("ALPACA_LIVE", "ALPACA_KEY_ID", "ALPACA_SECRET_KEY", "ALPACA_LIVE_KEY_ID", "ALPACA_LIVE_SECRET_KEY",
-              "ALPACA_FLOOR", "ALPACA_LIVE_FLOOR", "ALPACA_LIVE_ACCOUNT_ID", "ALPACA_BANKROLL", "STARSHIP_KEY"):
+              "ALPACA_FLOOR", "ALPACA_LIVE_FLOOR", "ALPACA_LIVE_ACCOUNT_ID", "ALPACA_BANKROLL", "STARSHIP_KEY", "ALPACA_LIVE_BUYS"):
         os.environ.pop(k, None)
     os.environ.update(env)
     spec = importlib.util.spec_from_file_location("gw_run_test", GW)
@@ -90,8 +92,9 @@ def main():
                  "non_marginable_buying_power": "25.00", "status": "ACTIVE", "trading_blocked": False,
                  "account_blocked": False, "trade_suspended_by_user": False, "multiplier": "1"}
     PAPER = {"ALPACA_KEY_ID": "paper-key", "ALPACA_SECRET_KEY": "paper-secret"}
-    LIVE = {"ALPACA_LIVE": "1", "ALPACA_KEY_ID": "paper-key", "ALPACA_SECRET_KEY": "paper-secret",
-            "ALPACA_LIVE_KEY_ID": "live-key", "ALPACA_LIVE_SECRET_KEY": "live-secret"}
+    LIVE_NOBUY = {"ALPACA_LIVE": "1", "ALPACA_KEY_ID": "paper-key", "ALPACA_SECRET_KEY": "paper-secret",
+                  "ALPACA_LIVE_KEY_ID": "live-key", "ALPACA_LIVE_SECRET_KEY": "live-secret"}
+    LIVE = {**LIVE_NOBUY, "ALPACA_LIVE_BUYS": "1"}   # what the Trading autopilot workflow sets
     # 10:00 CT on a Tuesday for the hours rule, whatever the real clock says
     _dt.datetime = FixedDT
     try:
@@ -104,6 +107,17 @@ def main():
             check(False, "op_alpaca should refuse to run without live keys")
         except RuntimeError as e:
             check("ALPACA_LIVE_KEY_ID" in str(e) and "never falls back" in str(e), f"refused: {e}")
+
+        print("== live mode: a crew gateway job (no ALPACA_LIVE_BUYS) may read, cancel and flatten but never buy")
+        gw = load_gw(LIVE_NOBUY)
+        gw.requests = FakeRequests(dict(LIVE_ACCT))
+        code, body = buy(gw, 10)
+        check(code == 423 and body.get("refused") == "buyer" and not [x for x in gw.requests.log if x[0] == "POST"], f"buy refused, nothing posted: {code} {body.get('refused')}")
+        code, body = gw.op_alpaca({"op": "alpaca", "method": "DELETE", "path": "/positions?cancel_orders=true"}, {})
+        check(code < 300 and gw.requests.log[-1][0] == "DELETE", f"flatten still allowed ({code})")
+        code, body = gw.op_alpaca({"op": "alpaca", "path": "/account"}, {})
+        check(code == 200 and body.get("mode") == "live" and "id" not in body and "account_number" not in body and body.get("accountId") == "…0001", f"live GET /account = the hint view, never the full record: {body}")
+        check(gw.scrub({"account_number": "PA3URSYHA", "id": "x", "nested": {"account_number": "y"}}) == {"account_number": "[hidden]", "id": "x", "nested": {"account_number": "[hidden]"}}, "scrub hides account_number everywhere")
 
         print("== live mode: keys, profile, pinned account, blocked account")
         gw = load_gw(LIVE)
@@ -129,6 +143,20 @@ def main():
         check(not [x for x in gw.requests.log if x[0] == "POST"], "no POST reached Alpaca")
         code, body = gw.op_alpaca({"op": "alpaca", "method": "DELETE", "path": "/positions"}, {})
         check(code == 423 and body.get("refused") == "account", f"flatten on the wrong account refused too: {code}")
+        both = {**LIVE_ACCT, "id": "6dbbc996-5e5f-4328-b003-92c43773422a", "account_number": "PA3URSYHA"}
+        gw = load_gw({**LIVE, "ALPACA_LIVE_ACCOUNT_ID": "pa3ursyha "})
+        gw.requests = FakeRequests(dict(both))
+        code, body = buy(gw, 10)
+        check(code == 200, f"the pin may be the dashboard account number (any case, stray space): buy goes through ({code})")
+        _, view = gw.op_alpaca({"op": "alpaca", "path": "/bankroll"}, {})
+        check(view["accountId"] == "…SYHA", f"the hint is the account number's last 4 (what the dashboard shows): {view['accountId']}")
+        gw = load_gw({**LIVE, "ALPACA_LIVE_ACCOUNT_ID": "6dbbc996-5e5f-4328-b003-92c43773422a"})
+        gw.requests = FakeRequests(dict(both))
+        check(buy(gw, 10)[0] == 200, "the pin may be the API id too")
+        gw.requests = FakeRequests({**both, "account_number": "PA9OTHER1", "id": "other-uuid"})
+        code, body = buy(gw, 10)
+        check(code == 423 and body.get("account") == "…HER1", f"neither matches: refused with the number's hint ({body.get('account')})")
+        gw = load_gw(LIVE)
         gw.requests = FakeRequests({**LIVE_ACCT, "trading_blocked": True})
         code, body = buy(gw, 10)
         check(code == 423 and body.get("refused") == "blocked", f"blocked account: no buy ({code} {body.get('refused')})")
@@ -148,6 +176,29 @@ def main():
         _, view = gw.op_alpaca({"op": "alpaca", "path": "/bankroll"}, {})
         check(view["mode"] == "live" and view["profile"] == "live-aggressive" and view["accountId"] == "…0001" and view["equity"] == 7.0, f"/bankroll live view: {view}")
 
+        gw = load_gw({**LIVE, "ALPACA_LIVE_FLOOR": "$5"})
+        rules = gw.money_rules()
+        check(rules["floor"] == 5.0 and "not a number" in rules["floorWarning"], f"ALPACA_LIVE_FLOOR='$5' ignored with a warning, profile floor kept: {rules['floor']}")
+        gw.requests = FakeRequests(dict(LIVE_ACCT))
+        code, body = gw.op_alpaca({"op": "alpaca", "method": "DELETE", "path": "/orders/stop-1"}, {})
+        check(code < 300, f"a bad floor variable never blocks a cancel or a sell ({code})")
+
+        print("== live mode: a broken live profile refuses every buy, allows the flatten")
+        gw = load_gw(LIVE)
+        bad_root = Path(__file__).parent / "out" / "gw-broken" / "gw"
+        (bad_root.parent / "factory" / "trading" / "profiles").mkdir(parents=True, exist_ok=True)
+        (bad_root.parent / "factory" / "trading" / "profiles" / "live-aggressive.json").write_text('{"params": {"floor": 5.0,}}')
+        gw.ROOT = bad_root
+        rules = gw.money_rules()
+        check(rules.get("broken", "").startswith("live profile"), f"rules marked broken: {rules.get('broken', '')[:70]}")
+        gw.requests = FakeRequests(dict(LIVE_ACCT))
+        code, body = buy(gw, 10)
+        check(code == 423 and body.get("refused") == "profile" and not [x for x in gw.requests.log if x[0] == "POST"], f"buy refused ({code} {body.get('refused')})")
+        code, body = gw.op_alpaca({"op": "alpaca", "method": "DELETE", "path": "/positions?cancel_orders=true"}, {})
+        check(code < 300, f"flatten allowed ({code})")
+        gw = load_gw(PAPER)
+        gw.ROOT = bad_root
+        check(gw.money_rules()["floor"] == 20.0 and not gw.money_rules().get("broken"), "paper with a missing profile file = the paper defaults, not broken")
         print("== paper mode: unchanged rules (40% cap, $20 floor, paper keys), ALPACA_FLOOR override")
         gw = load_gw({**PAPER, "ALPACA_LIVE_KEY_ID": "live-key", "ALPACA_LIVE_SECRET_KEY": "live-secret", "ALPACA_LIVE_FLOOR": "8"})
         check(not gw.ALPACA_LIVE and gw.AKEY == "paper-key" and gw.PROFILE == "paper", "paper keys and paper profile when ALPACA_LIVE is unset")
@@ -185,7 +236,7 @@ def main():
         check(code == 422 and body.get("refused") == "hours" and "08:35 to 14:45" in body["message"], f"3:00 PM CT buy refused: {code} {body.get('message')}")
     finally:
         _dt.datetime = FixedDT.__mro__[1]
-        for k in ("ALPACA_LIVE", "ALPACA_KEY_ID", "ALPACA_SECRET_KEY", "ALPACA_LIVE_KEY_ID", "ALPACA_LIVE_SECRET_KEY", "ALPACA_FLOOR", "ALPACA_LIVE_FLOOR", "ALPACA_LIVE_ACCOUNT_ID"):
+        for k in ("ALPACA_LIVE", "ALPACA_KEY_ID", "ALPACA_SECRET_KEY", "ALPACA_LIVE_KEY_ID", "ALPACA_LIVE_SECRET_KEY", "ALPACA_FLOOR", "ALPACA_LIVE_FLOOR", "ALPACA_LIVE_ACCOUNT_ID", "ALPACA_LIVE_BUYS"):
             os.environ.pop(k, None)
 
     print()

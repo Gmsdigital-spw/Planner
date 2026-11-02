@@ -1,7 +1,7 @@
 # Live-aggressive profile: past-day replay (Nov 2, 2026)
 
 Full numbers: `live-aggressive-2026-11-02.json`. Data: Yahoo Finance 5-minute bars, regular hours, the last 60
-trading days (Aug 7 to Oct 31, 2026), plus 2 years of daily bars. Not the Alpaca IEX feed the bot trades on, so
+trading days (Aug 7 to Oct 30, 2026), plus 2 years of daily bars. Not the Alpaca IEX feed the bot trades on, so
 fills and spreads differ a little. Strategy code: `factory/trading/backtest.simulate`, the autopilot's exact setups
 and exits. No parameter search was run; seven fixed variants were replayed once each. Past days only: a strategy
 that lost on past days can win tomorrow and the other way round. The account can lose money. Not financial advice.

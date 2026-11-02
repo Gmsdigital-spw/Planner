@@ -50,9 +50,12 @@ else:
     AKEY, ASEC = os.environ.get("ALPACA_KEY_ID", "").strip(), os.environ.get("ALPACA_SECRET_KEY", "").strip()
 ALPACA = "https://api.alpaca.markets/v2" if ALPACA_LIVE else "https://paper-api.alpaca.markets/v2"
 ALPACA_DATA = "https://data.alpaca.markets/v2"
-PROFILE = "live-aggressive" if ALPACA_LIVE else "paper"   # money rules: factory/trading/profiles/<PROFILE>.json
-MONEY_DEFAULT = {"floor": 20.0, "max_pos_pct": 40.0, "start_ct": "08:35", "flat_ct": "14:45", "expected_account_id": ""}
-SENSITIVE = ("token", "secret", "password", "authorization", "cookie", "apikey", "api_key")
+PROFILE = "live-aggressive" if ALPACA_LIVE else "paper"   # money rules: factory/trading/profiles/<PROFILE>.json (paper.json / live-aggressive.json)
+# Live BUYS are the autopilot's alone: only the "Trading autopilot" workflow sets ALPACA_LIVE_BUYS=1. The crew's gateway
+# jobs (gw.yml) never get it, so with real money they can read, cancel and flatten but never open a position.
+LIVE_BUYS = os.environ.get("ALPACA_LIVE_BUYS", "") == "1"
+MONEY_DEFAULT = {"floor": 20.0, "max_pos_pct": 40.0, "start_ct": "08:35", "flat_ct": "14:45", "expected_account_id": "", "broken": ""}
+SENSITIVE = ("token", "secret", "password", "authorization", "cookie", "apikey", "api_key", "account_number")
 MAX_OUT = 400_000
 
 
@@ -392,31 +395,40 @@ def op_fetch_images(o, st):
     return 200, {"dir": str(d.relative_to(ROOT)), "saved": saved}
 
 
+def _floor_override(var, current):
+    """A repo-variable floor; a value that is not a number ("$5") is ignored, because a parse error here would block
+    sells, cancels and the flatten too (money_rules runs on every live order)."""
+    raw = (os.environ.get(var) or "").strip()
+    if not raw:
+        return current, ""
+    try:
+        return float(raw), ""
+    except ValueError:
+        return current, f"{var}={raw!r} is not a number; the profile floor {current:g} applies"
+
+
 def money_rules():
-    """The money rules this gateway enforces in code, from factory/trading/profiles/<PROFILE>.json: paper = the Oct 21
-    rules ($20 floor, 40% of cash, 8:35-2:45 CT), live = Grayson's live-aggressive profile (Nov 2, 2026). Overrides from
-    the repo variables: ALPACA_FLOOR (paper only), ALPACA_LIVE_FLOOR and ALPACA_LIVE_ACCOUNT_ID (live only). A missing or
-    broken profile file falls back to the paper defaults, never to something looser."""
+    """The money rules this gateway enforces in code, from factory/trading/profiles/<PROFILE>.json (paper.json = the
+    Oct 21 rules: $20 floor, 40% of cash, 8:35-2:45 CT; live-aggressive.json = Grayson's Nov 2, 2026 rules). Overrides
+    from the repo variables: ALPACA_FLOOR (paper only), ALPACA_LIVE_FLOOR and ALPACA_LIVE_ACCOUNT_ID (live only; the
+    account pin comes from the variable alone, never from a committed file). A missing or broken profile file: paper
+    falls back to the paper defaults (never looser); live marks the rules "broken" and every buy is refused."""
     m = dict(MONEY_DEFAULT)
     try:
         prof = json.loads((ROOT.parent / "factory" / "trading" / "profiles" / f"{PROFILE}.json").read_text())
         p = prof.get("params") or {}
         for k in ("floor", "max_pos_pct"):
-            if k in p:
-                m[k] = float(p[k])
+            m[k] = float(p[k])
         for k in ("start_ct", "flat_ct"):
-            if k in p:
-                m[k] = str(p[k])
-        m["expected_account_id"] = str(prof.get("expected_account_id") or "").strip()
-    except Exception:
-        pass
+            m[k] = str(p[k])
+    except Exception as e:
+        if ALPACA_LIVE:
+            m["broken"] = f"live profile {PROFILE}.json could not be read: {type(e).__name__}: {str(e)[:120]}"
     if ALPACA_LIVE:
-        if os.environ.get("ALPACA_LIVE_FLOOR"):
-            m["floor"] = float(os.environ["ALPACA_LIVE_FLOOR"])
-        if os.environ.get("ALPACA_LIVE_ACCOUNT_ID", "").strip():
-            m["expected_account_id"] = os.environ["ALPACA_LIVE_ACCOUNT_ID"].strip()
-    elif os.environ.get("ALPACA_FLOOR"):
-        m["floor"] = float(os.environ["ALPACA_FLOOR"])
+        m["floor"], m["floorWarning"] = _floor_override("ALPACA_LIVE_FLOOR", m["floor"])
+        m["expected_account_id"] = os.environ.get("ALPACA_LIVE_ACCOUNT_ID", "").strip()
+    else:
+        m["floor"], m["floorWarning"] = _floor_override("ALPACA_FLOOR", m["floor"])
     return m
 
 
@@ -425,27 +437,41 @@ def hm_tuple(s):
     return int(h), int(mi)
 
 
-def account_hint(acct_id):
-    """Last 4 characters of the account id: enough to recognise the account on the Factory page, never the whole id
-    in a public file."""
-    s = str(acct_id or "")
+def account_hint(acct):
+    """Last 4 characters of the account NUMBER (the one Alpaca's dashboard shows; the API id when there is none):
+    enough to recognise the account on the Factory page, never the whole number or id in a public file."""
+    if isinstance(acct, dict):
+        s = str(acct.get("account_number") or acct.get("id") or "")
+    else:
+        s = str(acct or "")
     return ("…" + s[-4:]) if len(s) >= 4 else None
 
 
+def account_ids(acct):
+    """Both identifiers Alpaca gives an account (dashboard account_number, API id), lowercased, for the pin."""
+    return {str(acct.get(k) or "").strip().lower() for k in ("id", "account_number")} - {""}
+
+
 def live_gate(acct, rules, side=None):
-    """Live mode only: refuse any order on an account that is not the pinned one, and any BUY on a blocked account.
-    Returns (code, body) to send back, or None when the order may go on."""
+    """Live mode only: refuse any order on an account that is not the pinned one (ALPACA_LIVE_ACCOUNT_ID may be the
+    account number from the dashboard or the API id), and any BUY when the account is blocked, the live profile is
+    broken, or this process is not the autopilot (ALPACA_LIVE_BUYS). Returns (code, body), or None = may go on."""
     if not ALPACA_LIVE:
         return None
-    want = rules.get("expected_account_id") or ""
-    if want and str(acct.get("id") or "") != want:
-        return 423, {"refused": "account", "account": account_hint(acct.get("id")),
-                     "message": "This key pair is not the pinned live account; no order was sent. Fix ALPACA_LIVE_ACCOUNT_ID or the keys."}
+    want = str(rules.get("expected_account_id") or "").strip().lower()
+    if want and want not in account_ids(acct):
+        return 423, {"refused": "account", "account": account_hint(acct),
+                     "message": "This key pair is not the pinned live account; no order was sent. Fix ALPACA_LIVE_ACCOUNT_ID (account number or API id) or the keys."}
     blocked = bool(acct.get("trading_blocked") or acct.get("account_blocked") or acct.get("trade_suspended_by_user")) \
         or str(acct.get("status") or "").upper() not in ("ACTIVE", "")
-    if side == "buy" and blocked:
-        return 423, {"refused": "blocked", "status": acct.get("status"),
-                     "message": "Alpaca reports the live account as blocked or not active; no new buys."}
+    if side == "buy":
+        if not LIVE_BUYS:
+            return 423, {"refused": "buyer", "message": "Live buys are the Trading autopilot's alone (ALPACA_LIVE_BUYS is set only in its workflow); crew gateway jobs read, cancel and flatten, never buy."}
+        if rules.get("broken"):
+            return 423, {"refused": "profile", "message": rules["broken"] + "; no buys until the profile loads."}
+        if blocked:
+            return 423, {"refused": "blocked", "status": acct.get("status"),
+                         "message": "Alpaca reports the live account as blocked or not active; no new buys."}
     return None
 
 
@@ -460,7 +486,7 @@ def account_view(hdr, st):
         bp = float(acct.get("non_marginable_buying_power") or acct.get("buying_power") or 0)
         return {"mode": "live", "profile": PROFILE, "equity": real_eq, "cash": real_cash, "realEquity": real_eq,
                 "buyingPower": bp, "multiplier": acct.get("multiplier"), "status": acct.get("status"),
-                "accountId": account_hint(acct.get("id")),
+                "accountId": account_hint(acct),
                 "tradingBlocked": bool(acct.get("trading_blocked") or acct.get("account_blocked") or acct.get("trade_suspended_by_user"))}, acct
     return virtual_paper(hdr, st, acct, real_eq, real_cash), acct
 
@@ -492,8 +518,10 @@ def op_alpaca(o, st):
     Hard rules enforced here, not just in the prompt: paper endpoint and paper keys unless the repo variable ALPACA_LIVE
     is "1" (then the live endpoint with the separate ALPACA_LIVE_* keys); no margin (notional orders only, size capped by
     cash); every buy must carry a stop; buys only inside the profile's hours; the floor: equity at or below it = every
-    new buy is refused. The numbers come from factory/trading/profiles/<mode>.json (money_rules above). Live adds: the
-    pinned account check on every order and a blocked-account check on buys.
+    new buy is refused. The numbers come from factory/trading/profiles/<PROFILE>.json, paper.json or
+    live-aggressive.json (money_rules above). Live adds: the pinned account check on every order, a blocked-account
+    check on buys, buys only from the autopilot's own process (ALPACA_LIVE_BUYS), and GET /account answers with the
+    /bankroll view (equity, cash, the account hint) so the full live account record never lands in gw/out.
     Data reads: {"op":"alpaca","data":true,"path":"/stocks/AAPL/bars?timeframe=5Min&limit=50"}"""
     if not (AKEY and ASEC):
         if ALPACA_LIVE:
@@ -510,6 +538,8 @@ def op_alpaca(o, st):
             pass
     if o.get("path") == "/bankroll" and not o.get("data"):
         return 200, virtual_account(hdr, st)
+    if ALPACA_LIVE and m == "GET" and not o.get("data") and str(o.get("path", "")).split("?")[0].rstrip("/") == "/account":
+        return 200, virtual_account(hdr, st)   # real money: the hint view, never the full record (id, account number) in a public file
     if ALPACA_LIVE and m in ("POST", "DELETE") and not o.get("data"):
         # real money: every order-changing call is checked against the pinned account first
         _, acct = account_view(hdr, st)

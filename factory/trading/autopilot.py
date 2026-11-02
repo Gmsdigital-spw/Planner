@@ -25,6 +25,15 @@ V8 (Nov 2, 2026, Grayson's live go): the money rules come from a PROFILE, factor
   loss, $5 floor, 6 entries a day. Every entry carries a client_order_id and is looked up by it before the POST, so a
   cycle that died after Alpaca accepted a buy never buys twice. Live names are checked once a day against /assets
   (active, tradable, fractionable). The gateway enforces the same profile's floor, size cap, hours and account pin.
+  Review fixes (Nov 2, 2026, before the first real dollar): a flatten is "flat" only once GET /positions comes back
+  empty (Alpaca answers DELETE /positions 207 whether each leg worked or not), and the day locks only when flat, else
+  the next cycle retries. The flat time is the earlier of the profile's flat_ct and 15 minutes before Alpaca's
+  next_close (early-close days). The day file is per mode: flipping ALPACA_LIVE during the day archives the other
+  mode's record as <day>-<mode>.json and starts fresh from THIS account. A live profile that is missing or broken
+  stops the bot (real money never falls back to the paper rules or the crew's stock list). The buy lookup fails
+  closed (an unknown answer = no POST this cycle). A gateway 207 (stop refused, sold at once) is journaled, never
+  kept as a position. Stop fills carry Alpaca's filled_at and filled_avg_price; flatten exits are read back from
+  the closed orders, never invented.
 Pause it: set "paused": true in factory/trading/auto/control.json (or disable the workflow in GitHub).
 Writes factory/trading/auto/<day>.json (state + every action) so the crew and the Factory can show it.
 Not financial advice: this can lose money. It never adds money, changes the floor, or switches itself to live.
@@ -61,16 +70,30 @@ def profile_name():
 
 def floor_for(P):
     """The hard floor: the profile's, unless Grayson overrides it with the repo variable for THAT mode
-    (ALPACA_LIVE_FLOOR for live, ALPACA_FLOOR for paper; the paper variable never reaches the live account)."""
+    (ALPACA_LIVE_FLOOR for live, ALPACA_FLOOR for paper; the paper variable never reaches the live account).
+    A value that is not a number ("$5") is ignored with a warning in the heartbeat: it must never stop a cycle,
+    because the cycle is what manages an open position."""
     var = "ALPACA_LIVE_FLOOR" if gw.ALPACA_LIVE else "ALPACA_FLOOR"
-    return float(os.environ.get(var) or P["floor"])
+    raw = (os.environ.get(var) or "").strip()
+    if raw:
+        try:
+            return float(raw)
+        except ValueError:
+            LAST["floorWarning"] = f"{var}={raw!r} is not a number; the profile floor ${float(P['floor']):.2f} applies"
+    return float(P["floor"])
+
+
+def profile(strict=None):
+    """The active profile's JSON. Live = strict: a file that is missing, broken or incomplete raises, so real money
+    never runs on the paper rules or the crew's stock list by accident."""
+    return backtest.load_profile(profile_name(), strict=gw.ALPACA_LIVE if strict is None else strict)
 
 
 def rules_summary(P=None):
     """What the Factory page shows under 'Real money' / 'Paper money': the active profile and its money rules."""
     name = profile_name()
     P = P or backtest.load_params(name)
-    prof = backtest.load_profile(name)
+    prof = profile(strict=False)
     return {"profile": name, "mode": "live" if gw.ALPACA_LIVE else "paper", "floor": floor_for(P),
             "dailyLoss": P["daily_loss"], "maxPosPct": P["max_pos_pct"], "maxPositions": P["max_positions"],
             "maxEntries": P["max_entries"], "riskPct": P["risk_pct"], "targetR": P["target_r"],
@@ -102,7 +125,7 @@ def load_json(p, default):
 def watchlist(day):
     w = load_json(HERE / "watchlist.json", {})
     avoid = set(s.upper() for s in w.get("avoid", [])) if w.get("day") == day else set()
-    universe = [str(s).upper() for s in (backtest.load_profile(profile_name()).get("universe") or [])]
+    universe = [str(s).upper() for s in (profile().get("universe") or [])]
     if universe:   # a profile universe (live): Grayson's list; the crew's avoid list for today still applies
         syms = universe
     else:
@@ -229,53 +252,174 @@ def cancel_and_sell(sym, qty, stop_id, st, why, day, stop_px=None):
     code (HTTP status of the sell, 200 when nothing had to be sent), qty (what was sold; None when the position was
     already gone because the stop filled first), fill (price the old stop filled at, when it did, else stop_px),
     partial (qty the old stop filled before the cancel landed, 0.0 when none)."""
-    fill_px, partial = stop_px, 0.0
+    fill_px, partial, filled_at = stop_px, 0.0, None
     if stop_id:
         outcome, order = cancel_order(stop_id, st)
         pq, fill_px = fill_of(order, stop_px)
+        filled_at = order.get("filled_at") if isinstance(order, dict) else None
         if outcome == "filled":
-            return {"code": 200, "qty": None, "fill": fill_px, "partial": 0.0}
+            return {"code": 200, "qty": None, "fill": fill_px, "partial": 0.0, "filledAt": filled_at}
         partial = pq
         qty = live_qty(sym, st, qty)
         if qty is None:
-            return {"code": 200, "qty": None, "fill": fill_px, "partial": 0.0}
+            return {"code": 200, "qty": None, "fill": fill_px, "partial": 0.0, "filledAt": filled_at}
     code, js = alpaca({"op": "alpaca", "method": "POST", "path": "/orders", "body": {
         "symbol": sym, "qty": str(qty), "side": "sell", "type": "market", "time_in_force": "day"}}, st)
     day["actions"].append({"t": now_ct().strftime("%H:%M"), "do": "sell", "sym": sym, "qty": qty, "why": why,
                            "status": code, "id": (js or {}).get("id") if isinstance(js, dict) else None})
-    return {"code": code, "qty": qty, "fill": fill_px, "partial": partial}
+    return {"code": code, "qty": qty, "fill": fill_px, "partial": partial, "filledAt": filled_at}
 
 
-def journal_exit(day, sym, rec, exit_px, why, R, qty=None):
-    """One trades[] line with the real exit price and R; a losing exit marks the name as lost for today."""
-    t = {"sym": sym, "entry": rec["entry"], "exit": exit_px, "r": round((exit_px - rec["entry"]) / R, 2), "why": why}
+def journal_exit(day, sym, rec, exit_px, why, R, qty=None, at=None):
+    """One trades[] line with the real exit price and R (None when no price could be read: never invented), the
+    cycle time "t" and Alpaca's fill time "exitAt" when known; a losing exit marks the name as lost for today."""
+    r = round((exit_px - rec["entry"]) / R, 2) if (exit_px is not None and R) else None
+    t = {"sym": sym, "entry": rec["entry"], "exit": exit_px, "r": r, "why": why, "t": now_ct().strftime("%H:%M")}
     if qty is not None:
         t["qty"] = qty
+    if at:
+        t["exitAt"] = at
     day["trades"].append(t)
-    if exit_px < rec["entry"] and sym not in day["lostToday"]:
+    if exit_px is not None and exit_px < rec["entry"] and sym not in day["lostToday"]:
         day["lostToday"].append(sym)
 
 
+def closed_sells(st, limit=50):
+    """{symbol: its latest FILLED sell order} from GET /orders?status=closed, for exits the bot did not watch fill
+    (a flatten, a stop that filled between cycles, a close by hand). {} on any read error: the journal then says
+    "fill not read" instead of inventing a price."""
+    try:
+        code, orders = alpaca({"op": "alpaca", "path": f"/orders?status=closed&limit={limit}&direction=desc"}, st)
+    except Exception:
+        return {}
+    out = {}
+    if code >= 300 or not isinstance(orders, list):
+        return out
+    for o in orders:
+        if isinstance(o, dict) and o.get("side") == "sell" and o.get("status") == "filled" and o.get("symbol") not in out:
+            out[o["symbol"]] = o
+    return out
+
+
+def journal_closed(day, sym, rec, sells, why):
+    """A position closed by a flatten (or by hand): the exit is Alpaca's filled sell when it can be read, else the
+    row says so (exit None; the Atlas importer skips it) rather than carrying a made-up number."""
+    R = (rec["entry"] - rec["stop0"]) if rec.get("stop0") is not None else None
+    o = sells.get(sym)
+    if o and o.get("filled_avg_price"):
+        q, px = fill_of(o, None)
+        journal_exit(day, sym, rec, px, why, R, qty=(q or rec.get("qty")), at=o.get("filled_at"))
+    else:
+        journal_exit(day, sym, rec, None, f"{why} (fill not read)", R, qty=rec.get("qty"))
+
+
 def flatten(st, day, why):
+    """Cancel every open order and close every position, then CHECK before believing it. Alpaca answers
+    DELETE /positions with 207 whether each leg worked or not (a leg is refused, for one, while a stop still holds
+    the shares), so the day file says "flat" only once a fresh GET /positions comes back empty. Returns True when
+    flat. Not flat = the names still held stay in day["positions"] and the caller leaves the day open, so the next
+    cycle tries again: a real-money position is never written off as closed on a status code."""
+    hm = now_ct().strftime("%H:%M")
     alpaca({"op": "alpaca", "method": "DELETE", "path": "/orders"}, st)
     time.sleep(1.5)
-    code, _ = alpaca({"op": "alpaca", "method": "DELETE", "path": "/positions"}, st)
-    day["actions"].append({"t": now_ct().strftime("%H:%M"), "do": "flatten", "why": why, "status": code})
-    for p in day["positions"].values():
-        p["closed"] = p.get("closed") or why
-    day["positions"] = {}
+    act = {"t": hm, "do": "flatten", "why": why}
+    still = None
+    for attempt in range(2):
+        if attempt:
+            time.sleep(3.0)
+        code, body = alpaca({"op": "alpaca", "method": "DELETE", "path": "/positions?cancel_orders=true"}, st)
+        act["status"] = code
+        legs = [x for x in body if isinstance(x, dict)] if isinstance(body, list) else []
+        failed = [f"{x.get('symbol')}:{x.get('status')}" for x in legs if str(x.get("status") or "").isdigit() and int(x["status"]) >= 300]
+        if failed:
+            act["failed"] = failed[:10]
+        if DRY:
+            still = []
+            break
+        time.sleep(2.0)
+        c2, pos = alpaca({"op": "alpaca", "path": "/positions"}, st)
+        if c2 < 300 and isinstance(pos, list):
+            still = sorted(str(p.get("symbol")) for p in pos if isinstance(p, dict) and p.get("symbol"))
+            if not still:
+                break
+        else:
+            still = None
+            act["check"] = f"positions read failed ({c2})"
+    flat = still == []
+    act["flat"] = flat
+    if still:
+        act["still"] = still
+    day["actions"].append(act)
+    if not flat:
+        day["flattenFailed"] = {"t": hm, "why": why, "still": still}
+        if still is not None:   # the names that did close are journaled; the rest stay open on the record
+            closed = [s for s in list(day["positions"]) if s not in still]
+            sells = closed_sells(st) if closed else {}
+            for sym in closed:
+                journal_closed(day, sym, day["positions"].pop(sym), sells, f"flat: {why}")
+        return False
+    day.pop("flattenFailed", None)
+    sells = closed_sells(st) if day["positions"] else {}
+    for sym in list(day["positions"]):
+        journal_closed(day, sym, day["positions"].pop(sym), sells, f"flat: {why}")
+    return True
+
+
+def flat_time(now, P, clock):
+    """When today's flatten happens: the profile's flat_ct, or 15 minutes before Alpaca's next_close when that is
+    earlier (early-close days: the day after Thanksgiving, Christmas Eve). Returns (datetime, "HH:MM")."""
+    h, mi = (int(x) for x in str(P["flat_ct"]).split(":"))
+    flat_at = now.replace(hour=h, minute=mi, second=0, microsecond=0)
+    nc = clock.get("next_close") if isinstance(clock, dict) else None
+    if nc:
+        try:
+            close_at = datetime.fromisoformat(str(nc).replace("Z", "+00:00")).astimezone(CT)
+            if close_at.date() == now.date() and close_at - timedelta(minutes=15) < flat_at:
+                flat_at = (close_at - timedelta(minutes=15)).replace(second=0, microsecond=0)
+        except ValueError:
+            pass
+    return flat_at, flat_at.strftime("%H:%M")
+
+
+def new_day(key, mode):
+    return {"day": key, "mode": mode, "profile": profile_name(), "equityOpen": None, "entries": 0, "lostToday": [],
+            "positions": {}, "trades": [], "actions": [], "done": None, "runs": 0, "lastSignal": {}}
+
+
+def switch_mode(old, key, mode):
+    """ALPACA_LIVE changed during the day: the other mode's record is kept as <day>-<mode>.json (never mixed into
+    this account's equityOpen, entries, positions or lostToday) and this mode starts a fresh day file. Positions the
+    other mode still had open are nobody's now: say so loudly."""
+    old_mode = str(old.get("mode") or "paper")
+    n, arch = 1, AUTO / f"{key}-{old_mode}.json"
+    while arch.exists():
+        n += 1
+        arch = AUTO / f"{key}-{old_mode}{n}.json"
+    arch.write_text(json.dumps(old, indent=1))
+    day = new_day(key, mode)
+    note = f"switched from {old_mode} to {mode}; the {old_mode} record is {arch.name}"
+    if old.get("positions"):
+        note += f"; {old_mode} still held {', '.join(sorted(old['positions']))}: NOBODY manages them now, close them in the Alpaca app"
+    day["actions"].append({"t": now_ct().strftime("%H:%M"), "do": "mode switch", "why": note})
+    day["switchedFrom"] = {"mode": old_mode, "file": arch.name, "positions": sorted(old.get("positions") or [])}
+    return day
 
 
 def run():
     now = now_ct()
     key = now.strftime("%Y-%m-%d")
     AUTO.mkdir(parents=True, exist_ok=True)
+    mode = "live" if gw.ALPACA_LIVE else "paper"
     path = AUTO / f"{key}.json"
-    day = load_json(path, {"day": key, "mode": "live" if gw.ALPACA_LIVE else "paper", "profile": profile_name(),
-                           "equityOpen": None, "entries": 0, "lostToday": [], "positions": {}, "trades": [],
-                           "actions": [], "done": None, "runs": 0, "lastSignal": {}})
+    day = load_json(path, None)
+    if isinstance(day, dict) and str(day.get("mode") or "paper") != mode:
+        day = switch_mode(day, key, mode)   # the other mode's record is archived; this account starts fresh
+    if not isinstance(day, dict):
+        day = new_day(key, mode)
+    day["mode"] = mode
     day["runs"] += 1
     day["lastRun"] = now.strftime("%H:%M")
+    hm = now.strftime("%H:%M")
 
     n_actions = len(day["actions"])
 
@@ -302,13 +446,29 @@ def run():
     except Exception:
         st = {}
     code, clock = alpaca({"op": "alpaca", "path": "/clock"}, st)
-    if not (isinstance(clock, dict) and clock.get("is_open")):
+    clock = clock if isinstance(clock, dict) else {}
+    if not clock.get("is_open"):
+        if day["positions"] and (now.hour, now.minute) >= (9, 0):
+            # carried past the close (an early close before the flat time, or no runner alive at the end): nothing
+            # can fill now and the day stop has expired; the next open's first cycle sells it at market
+            names = sorted(day["positions"])
+            if day.get("heldAfterClose") != names:
+                day["heldAfterClose"] = names
+                day["actions"].append({"t": hm, "do": "held after close", "sym": ",".join(names),
+                                       "why": "market closed before the flatten; sold at the next open"})
+            return save(f"market closed with {', '.join(names)} still held: sold at the next open", "closed")
         # a weekday with the market shut (holiday) or the open not reached yet: wait, don't quit
         return save("market closed", "waiting" if (now.hour, now.minute) < (9, 0) else "closed")
 
-    P = backtest.load_params(profile_name())
+    # live = strict: a missing or broken live profile raises here, before any order (never the paper rules by accident)
+    P = backtest.load_params(profile_name(), strict=gw.ALPACA_LIVE)
+    prof = profile()
+    if gw.ALPACA_LIVE and not prof.get("universe"):
+        raise RuntimeError(f"live profile {profile_name()} has no universe: no trading")
     floor = floor_for(P)
     day["profile"] = profile_name()
+    flat_at, flat_hm = flat_time(now, P, clock)
+    day["flatAt"] = LAST["flatAt"] = flat_hm
     _, acct = alpaca({"op": "alpaca", "path": "/bankroll"}, st)
     equity, cash = float(acct["equity"]), float(acct["cash"])
     LAST["accountId"] = acct.get("accountId") if isinstance(acct, dict) else None
@@ -318,23 +478,28 @@ def run():
         day["equityOpen"] = equity
     day["equity"] = equity
     day["dayPnl"] = round(equity - day["equityOpen"], 2)
-    hm = now.strftime("%H:%M")
 
-    # ---- Bear's hard stops ----
+    # ---- Bear's hard stops (the day locks only once the flatten is CONFIRMED; otherwise the next cycle retries) ----
     if equity <= floor:
-        flatten(st, day, f"floor hit at ${equity:.2f}")
-        day["done"] = "floor"; day["floorLocked"] = True
-        if gw.ALPACA_LIVE and equity < 1.0:   # an unfunded live account: say so instead of crying wolf
-            return save(f"under the ${floor:.2f} floor at ${equity:.2f}: no trading until the account is funded above it", "done")
-        return save(f"FLOOR HIT ${equity:.2f}: flattened and locked", "done")
+        if gw.ALPACA_LIVE and equity < 1.0:   # an unfunded live account: nothing to flatten or lock; check again next cycle
+            return save(f"under the ${floor:.2f} floor at ${equity:.2f}: no trading until the account is funded above it", "waiting")
+        day["floorLocked"] = True; day["locked"] = "floor"
+        if flatten(st, day, f"floor hit at ${equity:.2f}"):
+            day["done"] = "floor"
+            return save(f"FLOOR HIT ${equity:.2f}: flattened and locked", "done")
+        return save(f"FLOOR HIT ${equity:.2f}: flatten NOT confirmed ({day['flattenFailed'].get('still')}); retrying next cycle")
     if day["dayPnl"] <= -P["daily_loss"]:
-        flatten(st, day, "daily loss limit")
-        day["done"] = "daily loss limit"
-        return save(f"daily loss limit hit ({day['dayPnl']}); flat for the day", "done")
-    if hm >= P["flat_ct"]:
-        flatten(st, day, "2:45 PM flat")
-        day["done"] = "closed for the day"
-        return save(f"flat for the day, P/L {day['dayPnl']}", "done")
+        day["locked"] = "daily loss limit"
+        if flatten(st, day, "daily loss limit"):
+            day["done"] = "daily loss limit"
+            return save(f"daily loss limit hit ({day['dayPnl']}); flat for the day", "done")
+        return save(f"daily loss limit hit ({day['dayPnl']}): flatten NOT confirmed ({day['flattenFailed'].get('still')}); retrying next cycle")
+    if now >= flat_at:
+        day["locked"] = "flat time"
+        if flatten(st, day, f"{flat_hm} flat"):
+            day["done"] = "closed for the day"
+            return save(f"flat for the day, P/L {day['dayPnl']}", "done")
+        return save(f"flat time {flat_hm}: flatten NOT confirmed ({day['flattenFailed'].get('still')}); retrying next cycle")
 
     _, positions = alpaca({"op": "alpaca", "path": "/positions"}, st)
     _, orders = alpaca({"op": "alpaca", "path": "/orders?status=open"}, st)
@@ -343,18 +508,28 @@ def run():
     held = {p["symbol"]: p for p in positions}
     stops = {o["symbol"]: o for o in orders if o.get("side") == "sell" and o.get("type") == "stop"}
 
-    # positions that disappeared since last run = closed by their stop (or the crew)
-    for sym in list(day["positions"]):
-        if sym not in held:
-            rec = day["positions"].pop(sym)
-            exit_px = rec.get("stop")
-            r = round((exit_px - rec["entry"]) / (rec["entry"] - rec["stop0"]), 2) if exit_px else None
-            day["trades"].append({"sym": sym, "entry": rec["entry"], "exit": exit_px, "r": r, "why": "stop filled"})
-            if exit_px is not None and exit_px < rec["entry"]:
-                day["lostToday"].append(sym)
+    # positions that disappeared since last run = closed by their stop (or by hand): read the real fill back
+    gone = [sym for sym in list(day["positions"]) if sym not in held]
+    sells = closed_sells(st) if gone else {}
+    for sym in gone:
+        rec = day["positions"].pop(sym)
+        R = rec["entry"] - rec["stop0"]
+        o = None
+        if rec.get("stopId"):
+            c3, o = alpaca({"op": "alpaca", "path": f"/orders/{rec['stopId']}"}, st)
+            o = o if (c3 < 300 and isinstance(o, dict)) else None
+        if o and o.get("status") == "filled":
+            q, px = fill_of(o, rec.get("stop"))
+            journal_exit(day, sym, rec, px, "stop filled", R, qty=(q or rec.get("qty")), at=o.get("filled_at"))
+        elif sym in sells:   # closed some other way (by hand, by the crew): the last filled sell is the exit
+            journal_closed(day, sym, rec, sells, "closed outside the bot")
+        elif o is None and rec.get("stopId") is None:
+            journal_closed(day, sym, rec, sells, "closed outside the bot")
+        else:   # the stop is gone and no fill could be read: the stop price stands in, marked as such
+            journal_exit(day, sym, rec, rec.get("stop"), "stop filled (fill not read; stop price assumed)", R, qty=rec.get("qty"))
 
     watch, avoid = watchlist(key)
-    if backtest.load_profile(profile_name()).get("universe"):   # live: only names Alpaca will fill fractionally
+    if prof.get("universe"):   # live: only names Alpaca will fill fractionally
         watch = tradable(watch, st, day)
     bars = today_bars(sorted(set(watch) | set(held)), st, now)
 
@@ -382,9 +557,9 @@ def run():
             r = cancel_and_sell(sym, qty, rec.get("stopId"), st, f"target {rec['target']:.2f} hit", day,
                                 stop_px=float(so["stop_price"]) if so else rec["stop"])
             if r["partial"] > 0:   # part of the position left at the old stop before the cancel landed
-                journal_exit(day, sym, rec, r["fill"], "stop filled (partial)", R, qty=r["partial"])
+                journal_exit(day, sym, rec, r["fill"], "stop filled (partial)", R, qty=r["partial"], at=r.get("filledAt"))
             if r["qty"] is None:   # the stop filled while we were canceling it
-                journal_exit(day, sym, rec, r["fill"], "stop filled", R)
+                journal_exit(day, sym, rec, r["fill"], "stop filled", R, qty=rec.get("qty"), at=r.get("filledAt"))
             elif r["code"] < 300:
                 journal_exit(day, sym, rec, px, "target", R, qty=r["qty"])
             else:   # sell refused; the stop is gone, so the next cycle's "no stop found" exit takes over
@@ -413,17 +588,18 @@ def run():
                 day["actions"].append({"t": hm, "do": "cancel unconfirmed", "sym": sym, "id": so["id"]})
                 continue
             part_qty, fill_px = fill_of(old, float(so["stop_price"]))
+            old_at = old.get("filled_at") if isinstance(old, dict) else None
             if outcome == "filled":   # the old stop filled while we were canceling it
-                journal_exit(day, sym, rec, fill_px, "stop filled", R)
+                journal_exit(day, sym, rec, fill_px, "stop filled", R, qty=(part_qty or rec.get("qty")), at=old_at)
                 day["positions"].pop(sym, None)
                 continue
             if part_qty > 0:   # part of the position left at the old stop before the cancel landed
-                journal_exit(day, sym, rec, fill_px, "stop filled (partial)", R, qty=part_qty)
+                journal_exit(day, sym, rec, fill_px, "stop filled (partial)", R, qty=part_qty, at=old_at)
             sell_qty, c, js = qty, 0, None
             try:
                 sell_qty = live_qty(sym, st, qty)
                 if sell_qty is None:   # position gone after all
-                    journal_exit(day, sym, rec, fill_px, "stop filled", R)
+                    journal_exit(day, sym, rec, fill_px, "stop filled", R, qty=rec.get("qty"), at=old_at)
                     day["positions"].pop(sym, None)
                     continue
                 for attempt in range(2):   # one retry: a cancel can take a moment to release the shares
@@ -454,7 +630,9 @@ def run():
 
     # ---- new entries (Bull's setup, Bear's limits) ----
     open_n = len(day["positions"])
-    can_enter = P["start_ct"] <= hm <= P["last_entry_ct"]
+    # no entry after the profile's last entry time, within 30 minutes of today's flat time (early closes), or once
+    # a floor / daily-loss / flat-time lock is on (even when its flatten is still being retried)
+    can_enter = P["start_ct"] <= hm <= P["last_entry_ct"] and now < flat_at - timedelta(minutes=30) and not day.get("locked")
     scanned = 0
     # the entry rule the profile/lab names ("pullback" default, "orb", "pullback_orh"), exactly as backtest.simulate
     setup_fn = backtest.SETUPS.get(P.get("setup", "pullback"), backtest.setup_at)
@@ -493,6 +671,11 @@ def run():
             day["actions"].append({"t": hm, "do": "skip", "sym": sym, "why": f"order {coid} already at Alpaca ({prior.get('status')})",
                                    "id": prior.get("id")})
             continue
+        if not (c0 == 404 or (c0 < 300 and isinstance(prior, dict))):
+            # the lookup did not answer (5xx, 429, junk): fail CLOSED, no blind POST; the same bar is tried again next minute
+            day["actions"].append({"t": hm, "do": "skip", "sym": sym, "why": f"lookup of {coid} failed ({c0}); no order sent, retry next cycle"})
+            day["lastSignal"].pop(sym, None)
+            continue
         c, js = alpaca({"op": "alpaca", "method": "POST", "path": "/orders", "tag": f"buy-{sym}", "body": {
             "symbol": sym, "notional": f"{notional:.2f}", "side": "buy", "type": "market", "time_in_force": "day",
             "client_order_id": coid, "protect": {"stop_price": f"{stop:.2f}", "take_profit": f"{target:.2f}"}}}, st)
@@ -500,13 +683,26 @@ def run():
                "status": c, "coid": coid}
         entry = (js or {}).get("entry") if isinstance(js, dict) else None
         stop_o = (js or {}).get("stop") if isinstance(js, dict) else None
-        if c < 300 and isinstance(entry, dict) and entry.get("status") == "filled" and isinstance(stop_o, dict):
+        if c == 200 and isinstance(entry, dict) and entry.get("status") == "filled" and isinstance(stop_o, dict) and stop_o.get("id"):
             fill = float(entry["filled_avg_price"])
             target = round(fill + P["target_r"] * (fill - stop), 2)
             day["positions"][sym] = {"entry": fill, "stop0": stop, "stop": stop, "target": target, "high": fill,
                                      "stopId": stop_o.get("id"), "since": b[-1]["t"], "qty": entry.get("filled_qty")}
             day["entries"] += 1; open_n += 1
             act.update({"fill": fill, "target": target})
+        elif c == 207 and isinstance(entry, dict) and entry.get("status") == "filled":
+            # the gateway could not place the stop and sold the fill at once: an entry, never a position. The sell's
+            # fill is read back next cycle (closed_sells); if the sell itself was refused, the next cycle adopts the
+            # unprotected position and sells it ("no stop found").
+            fx = js.get("flattened") if isinstance(js.get("flattened"), dict) else {}
+            fill = float(entry.get("filled_avg_price") or px)
+            day["entries"] += 1
+            if sym not in day["lostToday"]:
+                day["lostToday"].append(sym)   # no second try in a name whose stop Alpaca refused today
+            act.update({"fill": fill, "stopRefused": str(stop_o)[:160], "sold": fx.get("status"), "sellId": fx.get("id")})
+            day["trades"].append({"sym": sym, "entry": fill, "exit": None, "r": None, "t": hm,
+                                  "why": "stop refused, sold at once" + ("" if fx.get("id") else " (sell NOT confirmed)"),
+                                  "qty": entry.get("filled_qty")})
         elif DRY:
             act["dry"] = True
         else:
@@ -554,7 +750,8 @@ def heartbeat(status, note, cycles, started, until):
         "status": status, "note": str(note)[:160], "loop": True, "cycles": cycles,
         "runnerStarted": started.isoformat(), "runnerUntil": until.isoformat(),
         "cadence": "every minute during market hours", "mode": "live" if gw.ALPACA_LIVE else "paper",
-        "profile": profile_name(), "rules": safe_rules(), "accountId": LAST.get("accountId")}, indent=1))
+        "profile": profile_name(), "rules": safe_rules(), "accountId": LAST.get("accountId"),
+        "flatAt": LAST.get("flatAt"), "floorWarning": LAST.get("floorWarning")}, indent=1))
 
 
 def git(*args, check=False):

@@ -12,11 +12,19 @@ on:
   push:
     paths:
       - "factory/trading/**"
+      - "!factory/trading/auto/**"      # the bot's own state commits (heartbeat, day files) are not code changes
+      - "!factory/trading/kick/**"
+      - "!factory/trading/lab/**"
+      - "!factory/trading/watchlist.json"
       - "gw/run.py"
       - ".github/workflows/trading-tests.yml"
   pull_request:
     paths:
       - "factory/trading/**"
+      - "!factory/trading/auto/**"
+      - "!factory/trading/kick/**"
+      - "!factory/trading/lab/**"
+      - "!factory/trading/watchlist.json"
       - "gw/run.py"
   workflow_dispatch:
 

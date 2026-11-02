@@ -2,7 +2,9 @@ name: Starship free gateway
 
 # Runs Etsy + Zernio (TikTok/Pinterest) API jobs for the GM Starship for free,
 # so the crew doesn't spend Make operations. Jobs: gw/jobs/*.json -> results gw/out/*.json.
-# Only touches the gw/ folder.
+# Only touches the gw/ folder. Alpaca ops here run under the crew's rules: in live mode (repo variable ALPACA_LIVE=1)
+# the gateway refuses a BUY from this workflow (ALPACA_LIVE_BUYS is set only in trading-autopilot.yml); reads, cancels
+# and the close run's verify-only flatten are the live ops a crew job may carry.
 on:
   push:
     paths:

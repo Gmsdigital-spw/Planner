@@ -2,21 +2,17 @@
  "name": "paper",
  "mode": "paper",
  "set_by": "Grayson, Oct 20-23, 2026 (the Trading Floor V6/V7 money rules)",
- "note": "Paper money rules, unchanged: the same values as backtest.DEFAULT, so the paper bot behaves exactly as it has since Oct 21, 2026. The lab tunes only the non-money knobs through params.json. universe null = the crew's daily watchlist.json (or the ETF default list).",
+ "note": "Paper money rules, unchanged: the LOCKED money rules only (the same values as backtest.DEFAULT), so the paper bot behaves exactly as it has since Oct 21, 2026 and load_params(\"paper\") == load_params(): a lab adoption in params.json (max_entries, last_entry_ct, setup, sma_len ...) still reaches the paper bot. universe null = the crew's daily watchlist.json (or the ETF default list). The account pin is the repo variable only, never a value in this public file.",
  "params": {
   "bankroll": 25.0,
   "floor": 20.0,
   "risk_pct": 2.0,
   "max_pos_pct": 40.0,
   "max_positions": 2,
-  "max_entries": 4,
   "daily_loss": 1.5,
   "min_rr": 2.0,
-  "start_ct": "08:35",
-  "last_entry_ct": "14:00",
   "flat_ct": "14:45"
  },
  "universe": null,
- "expected_account_id": "",
  "hold_overnight": false
 }

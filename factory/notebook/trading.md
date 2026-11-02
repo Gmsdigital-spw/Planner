@@ -12,4 +12,5 @@
 - Opening-range breakout and VWAP reclaim setups in the nightly lab. Prove: positive holdout net on 2 different holdout sets with 20+ trades each.
 
 ## What doesn't work (tried, failed, or Grayson rejected)
+- 2026-11-02: Trusting a DELETE /positions status code. Alpaca answers 207 whether each leg closed or not; since Oct 21 the paper bot wrote "flat" on that code alone (8 paper days, 8 flatten actions with status 207, 0 ever read back). Fixed Nov 2: flat only once GET /positions is empty, else retry every minute. Evidence: factory/trading/tests/test_live_mode.py "flatten_failed".
 - 2026-11-02: On the last 60 past days (Yahoo 5-minute bars) no variant of the bot's strategy was positive: paper rules on SPY/QQQ -$1.42 (101 trades), all-in 3x pullback -$8.95 (116 trades, PF 0.34), all-in 3x ORB -$2.37 (72 trades, PF 0.81, best day +$1.87). Evidence: factory/trading/lab/live-aggressive-2026-11-02.md. Past days only.
