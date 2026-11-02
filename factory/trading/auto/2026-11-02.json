@@ -8,10 +8,10 @@
   "WMT": {
    "entry": 125.996,
    "stop0": 125.34,
-   "stop": 126.52,
+   "stop": 126.54,
    "target": 127.31,
-   "high": 127.18,
-   "stopId": "8a5d6bf6-4817-4074-a454-c2e9164a9d17",
+   "high": 127.2,
+   "stopId": "6c0e1be8-6f7f-4631-bb72-43c9396b29af",
    "since": "2026-11-02T16:20:00Z",
    "qty": "0.07865329"
   },
@@ -111,15 +111,23 @@
    "stop": 126.52,
    "qty": "0.07865329",
    "gainR": 1.8
+  },
+  {
+   "t": "12:53",
+   "do": "raise stop",
+   "sym": "WMT",
+   "stop": 126.54,
+   "qty": "0.07865329",
+   "gainR": 1.84
   }
  ],
  "done": null,
- "runs": 321,
+ "runs": 322,
  "lastSignal": {
   "WMT": "2026-11-02T16:20:00Z",
   "XLF": "2026-11-02T16:25:00Z"
  },
- "lastRun": "12:52",
+ "lastRun": "12:53",
  "lastNote": "equity $24.96, day +0.10, 2 open, 2 entries",
  "equity": 24.96,
  "dayPnl": 0.1,
