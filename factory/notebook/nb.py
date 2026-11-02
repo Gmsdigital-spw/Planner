@@ -89,7 +89,8 @@ def cmd_pending(a):
 def cmd_outcome(a):
     rows, hit = load(), 0
     for r in rows:
-        if r.get("id") == str(a.id) and (not a.lane or r.get("lane") == a.lane):
+        if r.get("id") == str(a.id) and (not a.lane or r.get("lane") == a.lane) \
+                and (not a.day or r.get("day") == a.day) and (a.all or not r.get("outcome")):
             r["outcome"] = {**(r.get("outcome") or {}), **kv(a.set)}
             r["checked"] = today()
             hit += 1
@@ -118,6 +119,7 @@ def main():
     x.add_argument("--day"); x.set_defaults(f=cmd_add)
     x = s.add_parser("pending"); x.add_argument("--days", type=int, default=7); x.set_defaults(f=cmd_pending)
     x = s.add_parser("outcome"); x.add_argument("--id", required=True); x.add_argument("--lane")
+    x.add_argument("--day"); x.add_argument("--all", action="store_true", help="also overwrite rows that already have an outcome")
     x.add_argument("--set", required=True); x.set_defaults(f=cmd_outcome)
     x = s.add_parser("compare"); x.add_argument("--lane", choices=LANES, required=True)
     x.add_argument("--tag", required=True); x.add_argument("--metric", required=True); x.set_defaults(f=cmd_compare)
