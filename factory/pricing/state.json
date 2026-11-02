@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-01",
+ "updatedAt": "2026-11-02",
  "note": "Pricing agent state. basePrice = the normal price before any change (from backups/listings-backup-2026-10-21.json).",
  "listings": {
   "4600177510": {
@@ -284,6 +284,14 @@
    "title": "Christmas Coupon Book Printable, Editable PDF: 30 Coupons for Partner, Kids and ",
    "basePrice": 4.49,
    "price": 4.49,
+   "starter": false,
+   "lastChange": null,
+   "history": []
+  },
+  "4607508985": {
+   "title": "Christmas Escape Room for Adults and Teens",
+   "basePrice": 7.99,
+   "price": 7.99,
    "starter": false,
    "lastChange": null,
    "history": []
