@@ -2,7 +2,7 @@
  "day": "2026-11-02",
  "mode": "paper",
  "equityOpen": 24.86,
- "entries": 2,
+ "entries": 3,
  "lostToday": [],
  "positions": {
   "XLF": {
@@ -14,6 +14,16 @@
    "stopId": "22341c11-54ff-4223-a2af-c1081b52677a",
    "since": "2026-11-02T16:25:00Z",
    "qty": "0.103427895"
+  },
+  "WMT": {
+   "entry": 127.306,
+   "stop0": 126.91,
+   "stop": 126.91,
+   "target": 128.1,
+   "high": 127.306,
+   "stopId": "7b155f86-bc72-4ae3-83ae-746a5f0d6d03",
+   "since": "2026-11-02T19:15:00Z",
+   "qty": "0.059463026"
   }
  },
  "trades": [
@@ -151,18 +161,28 @@
    "why": "target 127.31 hit",
    "status": 200,
    "id": "aa9b485e-b00a-45e0-8ef1-b1d0a700010b"
+  },
+  {
+   "t": "13:21",
+   "do": "buy",
+   "sym": "WMT",
+   "notional": 7.58,
+   "stop": 126.91,
+   "target": 128.1,
+   "status": 200,
+   "fill": 127.306
   }
  ],
  "done": null,
- "runs": 349,
+ "runs": 350,
  "lastSignal": {
-  "WMT": "2026-11-02T16:20:00Z",
+  "WMT": "2026-11-02T19:15:00Z",
   "XLF": "2026-11-02T16:25:00Z"
  },
- "lastRun": "13:20",
- "lastNote": "equity $24.97, day +0.11, 1 open, 2 entries",
- "equity": 24.97,
- "dayPnl": 0.11,
+ "lastRun": "13:21",
+ "lastNote": "equity $24.96, day +0.10, 2 open, 3 entries",
+ "equity": 24.96,
+ "dayPnl": 0.1,
  "watch": [
   "SPY",
   "QQQ",
