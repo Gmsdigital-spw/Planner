@@ -1,0 +1,78 @@
+{
+ "vo": "social/studio/media/vo/escadult1102-vo.mp3",
+ "music": "social/studio/media/vo/escadult1102-music.wav",
+ "product": {
+  "dir": "/social/studio/media/escadult",
+  "cover": "cover.jpg",
+  "price": "7.99",
+  "pages": 16,
+  "listTitle": "Christmas Escape Room for Adults and Teens: Printable Party Game for Office and Friends, 8 Puzzles",
+  "strip": [
+   "p-03.png",
+   "p-06.png",
+   "p-09.png",
+   "p-12.png"
+  ],
+  "bg": [
+   "#8a2433",
+   "#2e0a12"
+  ],
+  "accent": "#2f5a46",
+  "hl": "#f0c870",
+  "dot": "#ffe3e6"
+ },
+ "phrases": [
+  {
+   "say": "Can your team escape in sixty minutes?",
+   "cap": "Can your team *escape* | in *60 minutes?*",
+   "scene": "fan",
+   "pages": [
+    "p-03.png",
+    "p-06.png",
+    "p-08.png"
+   ]
+  },
+  {
+   "say": "Eight linked puzzles. Each answer opens the next lock.",
+   "cap": "*8* linked puzzles | each answer opens | the *next lock*",
+   "scene": "grid",
+   "pages": [
+    "p-04.png",
+    "p-05.png",
+    "p-07.png",
+    "p-10.png"
+   ]
+  },
+  {
+   "say": "Ciphers, a number grid, and a logic puzzle.",
+   "cap": "*Ciphers* | a *number grid* | and *logic*",
+   "scene": "pan",
+   "page": "p-06.png"
+  },
+  {
+   "say": "Hint cards keep every team moving.",
+   "cap": "*Hint cards* keep | every team *moving*",
+   "scene": "fan",
+   "pages": [
+    "p-11.png",
+    "p-13.png",
+    "p-12.png"
+   ]
+  },
+  {
+   "say": "Made for adults and teens. Two to twenty players.",
+   "cap": "For *adults* and *teens* | *2 to 20* players",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

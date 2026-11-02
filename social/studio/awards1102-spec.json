@@ -1,0 +1,75 @@
+{
+ "vo": "social/studio/media/vo/awards1102-vo.mp3",
+ "music": "social/studio/media/vo/awards1102-music.wav",
+ "product": {
+  "dir": "/social/studio/media/awards",
+  "cover": "cover.jpg",
+  "price": "1.99",
+  "pages": 13,
+  "listTitle": "Funny Christmas Party Awards Printable, 36 Office Holiday Superlatives and Certificates for Coworkers or Family, Work Party Game",
+  "strip": [
+   "p-03.png",
+   "p-05.png",
+   "p-09.png",
+   "p-10.png"
+  ],
+  "bg": [
+   "#2f6a52",
+   "#0f2a20"
+  ],
+  "accent": "#a3191e",
+  "hl": "#ffd34d",
+  "dot": "#e3f2ea"
+ },
+ "phrases": [
+  {
+   "say": "Thirty-six funny awards for your Christmas party.",
+   "cap": "*36* funny awards | for your *Christmas party*",
+   "scene": "hook",
+   "page": "p-03.png",
+   "badge": "36 AWARDS"
+  },
+  {
+   "say": "Guests nominate. Everyone votes.",
+   "cap": "Guests *nominate* | everyone *votes*",
+   "scene": "fan",
+   "pages": [
+    "p-05.png",
+    "p-06.png",
+    "p-07.png"
+   ]
+  },
+  {
+   "say": "A host script does the talking for you.",
+   "cap": "A *host script* | does the talking",
+   "scene": "pan",
+   "page": "p-08.png"
+  },
+  {
+   "say": "Then crown the winners with ready-to-print certificates.",
+   "cap": "Crown the *winners* | with *certificates*",
+   "scene": "grid",
+   "pages": [
+    "p-09.png",
+    "p-10.png",
+    "p-11.png",
+    "p-12.png"
+   ]
+  },
+  {
+   "say": "For the office, family, or friends night.",
+   "cap": "*Office* | *family* | or *friends* night",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}
