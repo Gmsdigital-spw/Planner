@@ -1,7 +1,7 @@
 {
  "id": "ep25",
  "format": "story",
- "rev": 1,
+ "rev": 2,
  "title": "My Mom Said My Games Cost Me My Friends #shorts",
  "title_card": "The Friendship Paradox",
  "voice": "andrew",
@@ -41,7 +41,7 @@
   },
   {
    "text": "Next day my math teacher smiled, \"That's the friendship paradox, and it fools even grown-ups.\"",
-   "image": "{teacher} alone in a classroom smiling and pointing at a chalkboard covered in simple dot-and-line drawings"
+   "image": "{teacher} is the only person in the picture, standing alone at one chalkboard in an empty classroom, smiling and pointing at a few simple dots joined by lines"
   },
   {
    "text": "\"A kid with fifty friends is on fifty lists; a quiet kid is on two.\"",
