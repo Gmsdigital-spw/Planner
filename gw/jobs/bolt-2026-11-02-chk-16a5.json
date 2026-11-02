@@ -1,0 +1,6 @@
+{"id":"bolt-2026-11-02-chk-16a5","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"},
+{"op":"zernio","method":"GET","path":"/posts/6ad9ffa306f4c7145613b7c3","tag":"pin-prod-pink-coquette-verse-art-s3"},
+{"op":"zernio","method":"GET","path":"/posts/6adb98875b7ee357a7af82dd","tag":"pin-prod-santa-mail-bundle-s3"}]}
