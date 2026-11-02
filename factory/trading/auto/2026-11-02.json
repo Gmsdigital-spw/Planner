@@ -174,13 +174,13 @@
   }
  ],
  "done": null,
- "runs": 384,
+ "runs": 390,
  "lastSignal": {
   "WMT": "2026-11-02T19:15:00Z",
   "XLF": "2026-11-02T16:25:00Z"
  },
- "lastRun": "13:56",
- "lastNote": "equity $24.96, day +0.10, 2 open, 3 entries",
+ "lastRun": "14:02",
+ "lastNote": "equity $24.96, day +0.10, 2 open, 3 entries; no new entries now (8:35-2:00 CT window)",
  "equity": 24.96,
  "dayPnl": 0.1,
  "watch": [
