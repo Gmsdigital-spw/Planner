@@ -1,0 +1,1 @@
+{"id":"trade-2026-11-02-close-9357","ops":[{"op":"alpaca","tag":"fees","path":"/account/activities?activity_types=FEE,CFEE,PTC&after=2026-10-20"}]}
