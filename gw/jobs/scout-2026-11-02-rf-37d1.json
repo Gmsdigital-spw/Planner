@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-02-rf-37d1", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+selfie+scavenger+hunt&sort_on=score&limit=25&offset=25", "tag": "rf_o25"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+selfie+scavenger+hunt&sort_on=score&limit=25&offset=50", "tag": "rf_o50"}]}
