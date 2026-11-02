@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Atlas · Trading Lab</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail" aria-label="Atlas identity">
+      <div class="monogram" aria-label="Atlas">A<span>↗</span></div>
+      <a href="#overview" aria-label="Overview" class="rail-item active">◈</a>
+      <a href="#research" aria-label="Research" class="rail-item">⌁</a>
+      <a href="#orders" aria-label="Order log" class="rail-item">≡</a>
+      <div class="rail-foot">LAB<br>01</div>
+    </aside>
+    <main id="overview">
+      <header class="topbar">
+        <a class="wordmark" href="#overview">ATLAS <span>/ TRADING LAB</span></a>
+        <div class="top-right"><span id="mode" class="pill">Loading</span><button id="refresh" type="button">Refresh <span>↻</span></button></div>
+      </header>
+      <section class="intro">
+        <div><p class="eyebrow">THE TRADING DESK</p><h1>Find an edge.<br><span>Measure every move.</span></h1><p class="sub">Your capital, your evidence, one clear view.</p></div>
+        <div class="session"><span id="status-dot" class="dot"></span><div><strong id="session-label">No saved snapshot</strong><small id="updated">Unknown</small></div></div>
+      </section>
+      <div id="notice" class="notice" role="status">Loading local records…</div>
+      <section class="stats" aria-label="Account overview">
+        <article class="stat"><p>TOTAL EQUITY <span>01</span></p><h2 id="equity">—</h2><small id="initial-pnl">Experiment change unknown</small></article>
+        <article class="stat"><p>DAY CHANGE <span>02</span></p><h2 id="day-pnl">—</h2><small>Account equity · includes open positions</small></article>
+        <article class="stat"><p>CASH <span>03</span></p><h2 id="cash">—</h2><small>Cash balance · settled funds need verification</small></article>
+        <article class="stat"><p>OPEN EXPOSURE <span>04</span></p><h2 id="exposure">—</h2><small>Long holdings · before pending orders</small></article>
+      </section>
+      <div class="grid">
+        <section class="panel chart-panel">
+          <div class="panel-head"><div><p class="eyebrow">CAPITAL HISTORY</p><h3>Equity, as recorded</h3></div><span class="subtle" id="point-count">No samples</span></div>
+          <div id="chart" class="chart" aria-label="Saved equity snapshots"></div>
+          <div class="chart-caption"><span><i></i> Saved account equity</span><span id="chart-range">Waiting for data</span></div>
+        </section>
+        <section class="panel controls">
+          <div class="panel-head"><div><p class="eyebrow">THE EXPERIMENT</p><h3>Entry controls</h3></div><span class="shield">◇</span></div>
+          <dl id="policy"></dl>
+          <div class="rule-note">Loss thresholds pause new entries. Holdings can keep losing value until closed; these controls do not guarantee a loss cap.</div>
+        </section>
+        <section id="research" class="panel research-panel">
+          <div class="panel-head"><div><p class="eyebrow">EVIDENCE BEFORE SIZE</p><h3>Strategy test</h3></div><span id="research-badge" class="badge">UNKNOWN</span></div>
+          <div id="research-stats" class="research-stats"></div>
+          <p id="research-description" class="muted">No trade report has been imported.</p>
+          <ul id="research-failures" class="failure-list"></ul>
+          <p class="fine">A passed research filter does not approve live trading. Targets are scenarios, not forecasts.</p>
+        </section>
+        <section class="panel memory-panel">
+          <div class="panel-head"><div><p class="eyebrow">AGENT MEMORY</p><h3>Lessons & hypotheses</h3></div><span id="lesson-count" class="subtle">0 recorded</span></div>
+          <div id="lessons" class="lessons"><p class="muted">No lessons recorded.</p></div>
+        </section>
+      </div>
+      <section id="orders" class="panel order-panel">
+        <div class="panel-head"><div><p class="eyebrow">EXECUTION RECORD</p><h3>Order activity</h3></div><span class="subtle">Broker status · partial fills require reconciliation</span></div>
+        <div class="table-wrap"><table><thead><tr><th>TIME</th><th>SYMBOL</th><th>SIDE</th><th>ORDER SIZE</th><th>STRATEGY</th><th>STATUS</th></tr></thead><tbody id="order-rows"></tbody></table></div>
+        <p id="empty-orders" class="muted">No submitted orders.</p>
+      </section>
+      <footer><span>ATLAS <b>·</b> Built to keep a record.</span><span>Read-only desk · keys stay on the server</span></footer>
+    </main>
+  </div>
+</body>
+</html>

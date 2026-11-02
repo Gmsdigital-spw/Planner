@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+config.paper.json
+config.live.json
+data/
+*.sqlite3*
+*.lock

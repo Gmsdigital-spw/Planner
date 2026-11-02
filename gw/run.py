@@ -42,10 +42,16 @@ ZKEY, SKEY = os.environ.get("ZERNIO_API_KEY", ""), os.environ.get("STARSHIP_KEY"
 GKEY = os.environ.get("GUMROAD_TOKEN", "")
 PKEY = os.environ.get("POSTPROXY_API_KEY", "").strip()
 GUMROAD = "https://api.gumroad.com/v2"
-AKEY, ASEC = os.environ.get("ALPACA_KEY_ID", "").strip(), os.environ.get("ALPACA_SECRET_KEY", "").strip()
-ALPACA_LIVE = os.environ.get("ALPACA_LIVE", "") == "1"   # stays "0": paper only until Grayson flips it himself
+ALPACA_LIVE = os.environ.get("ALPACA_LIVE", "") == "1"   # empty/"0" = paper. Only Grayson flips the repo variable (live go: Nov 2, 2026)
+if ALPACA_LIVE:
+    # Real money uses its OWN key pair. The paper pair is never sent to the live endpoint, and vice versa.
+    AKEY, ASEC = os.environ.get("ALPACA_LIVE_KEY_ID", "").strip(), os.environ.get("ALPACA_LIVE_SECRET_KEY", "").strip()
+else:
+    AKEY, ASEC = os.environ.get("ALPACA_KEY_ID", "").strip(), os.environ.get("ALPACA_SECRET_KEY", "").strip()
 ALPACA = "https://api.alpaca.markets/v2" if ALPACA_LIVE else "https://paper-api.alpaca.markets/v2"
 ALPACA_DATA = "https://data.alpaca.markets/v2"
+PROFILE = "live-aggressive" if ALPACA_LIVE else "paper"   # money rules: factory/trading/profiles/<PROFILE>.json
+MONEY_DEFAULT = {"floor": 20.0, "max_pos_pct": 40.0, "start_ct": "08:35", "flat_ct": "14:45", "expected_account_id": ""}
 SENSITIVE = ("token", "secret", "password", "authorization", "cookie", "apikey", "api_key")
 MAX_OUT = 400_000
 
@@ -386,13 +392,85 @@ def op_fetch_images(o, st):
     return 200, {"dir": str(d.relative_to(ROOT)), "saved": saved}
 
 
-def virtual_account(hdr, st):
-    """Paper accounts start with $100k. The Trading Floor plays them as a $25 account: virtual equity =
-    ALPACA_BANKROLL (default 25) + (real equity - equity when the floor first ran). Live accounts use real numbers."""
+def money_rules():
+    """The money rules this gateway enforces in code, from factory/trading/profiles/<PROFILE>.json: paper = the Oct 21
+    rules ($20 floor, 40% of cash, 8:35-2:45 CT), live = Grayson's live-aggressive profile (Nov 2, 2026). Overrides from
+    the repo variables: ALPACA_FLOOR (paper only), ALPACA_LIVE_FLOOR and ALPACA_LIVE_ACCOUNT_ID (live only). A missing or
+    broken profile file falls back to the paper defaults, never to something looser."""
+    m = dict(MONEY_DEFAULT)
+    try:
+        prof = json.loads((ROOT.parent / "factory" / "trading" / "profiles" / f"{PROFILE}.json").read_text())
+        p = prof.get("params") or {}
+        for k in ("floor", "max_pos_pct"):
+            if k in p:
+                m[k] = float(p[k])
+        for k in ("start_ct", "flat_ct"):
+            if k in p:
+                m[k] = str(p[k])
+        m["expected_account_id"] = str(prof.get("expected_account_id") or "").strip()
+    except Exception:
+        pass
+    if ALPACA_LIVE:
+        if os.environ.get("ALPACA_LIVE_FLOOR"):
+            m["floor"] = float(os.environ["ALPACA_LIVE_FLOOR"])
+        if os.environ.get("ALPACA_LIVE_ACCOUNT_ID", "").strip():
+            m["expected_account_id"] = os.environ["ALPACA_LIVE_ACCOUNT_ID"].strip()
+    elif os.environ.get("ALPACA_FLOOR"):
+        m["floor"] = float(os.environ["ALPACA_FLOOR"])
+    return m
+
+
+def hm_tuple(s):
+    h, mi = str(s).split(":")
+    return int(h), int(mi)
+
+
+def account_hint(acct_id):
+    """Last 4 characters of the account id: enough to recognise the account on the Factory page, never the whole id
+    in a public file."""
+    s = str(acct_id or "")
+    return ("…" + s[-4:]) if len(s) >= 4 else None
+
+
+def live_gate(acct, rules, side=None):
+    """Live mode only: refuse any order on an account that is not the pinned one, and any BUY on a blocked account.
+    Returns (code, body) to send back, or None when the order may go on."""
+    if not ALPACA_LIVE:
+        return None
+    want = rules.get("expected_account_id") or ""
+    if want and str(acct.get("id") or "") != want:
+        return 423, {"refused": "account", "account": account_hint(acct.get("id")),
+                     "message": "This key pair is not the pinned live account; no order was sent. Fix ALPACA_LIVE_ACCOUNT_ID or the keys."}
+    blocked = bool(acct.get("trading_blocked") or acct.get("account_blocked") or acct.get("trade_suspended_by_user")) \
+        or str(acct.get("status") or "").upper() not in ("ACTIVE", "")
+    if side == "buy" and blocked:
+        return 423, {"refused": "blocked", "status": acct.get("status"),
+                     "message": "Alpaca reports the live account as blocked or not active; no new buys."}
+    return None
+
+
+def account_view(hdr, st):
+    """(view, raw account). Paper accounts start with $100k: the Trading Floor plays them as a $25 account, virtual
+    equity = ALPACA_BANKROLL (default 25) + (real equity - equity when the floor first ran). Live = real numbers."""
     acct = requests.get(ALPACA + "/account", headers=hdr, timeout=60).json()
+    if not isinstance(acct, dict):
+        raise RuntimeError(f"Alpaca /account did not return an account: {str(acct)[:200]}")
     real_eq = float(acct.get("equity") or 0); real_cash = float(acct.get("cash") or 0)
     if ALPACA_LIVE:
-        return {"mode": "live", "equity": real_eq, "cash": real_cash, "realEquity": real_eq}
+        bp = float(acct.get("non_marginable_buying_power") or acct.get("buying_power") or 0)
+        return {"mode": "live", "profile": PROFILE, "equity": real_eq, "cash": real_cash, "realEquity": real_eq,
+                "buyingPower": bp, "multiplier": acct.get("multiplier"), "status": acct.get("status"),
+                "accountId": account_hint(acct.get("id")),
+                "tradingBlocked": bool(acct.get("trading_blocked") or acct.get("account_blocked") or acct.get("trade_suspended_by_user"))}, acct
+    return virtual_paper(hdr, st, acct, real_eq, real_cash), acct
+
+
+def virtual_account(hdr, st):
+    """The /bankroll view (see account_view)."""
+    return account_view(hdr, st)[0]
+
+
+def virtual_paper(hdr, st, acct, real_eq, real_cash):
     bank = float(os.environ.get("ALPACA_BANKROLL", "25") or 25)
     base = st.get("alpaca_paper_base")
     if base is None:
@@ -405,17 +483,21 @@ def virtual_account(hdr, st):
     pos = requests.get(ALPACA + "/positions", headers=hdr, timeout=60).json()
     held = sum(abs(float(p.get("market_value") or 0)) for p in pos) if isinstance(pos, list) else 0.0
     eq = round(bank + pnl, 2)
-    return {"mode": "paper", "equity": eq, "cash": round(max(0.0, eq - held), 2), "pnl": round(pnl, 2),
+    return {"mode": "paper", "profile": PROFILE, "equity": eq, "cash": round(max(0.0, eq - held), 2), "pnl": round(pnl, 2),
             "bankroll": bank, "held": round(held, 2), "realEquity": real_eq}
 
 
 def op_alpaca(o, st):
-    """Trading Floor (V6, paper first). {"op":"alpaca","method":"GET|POST|DELETE","path":"/account" | "/orders" | "/positions" ...,"body":{...}}
-    Hard rules enforced here, not just in the prompt: paper endpoint unless the ALPACA_LIVE secret is "1"; no margin
-    (notional orders only, buying power capped by cash); every buy must carry a stop_loss (bracket); no order after
-    19:45 UTC (2:45 PM CT); the floor: if equity would drop below ALPACA_FLOOR (default 20) all new buys are refused.
+    """Trading Floor (V6 paper; V8 live, Nov 2, 2026). {"op":"alpaca","method":"GET|POST|DELETE","path":"/account" | "/orders" | "/positions" ...,"body":{...}}
+    Hard rules enforced here, not just in the prompt: paper endpoint and paper keys unless the repo variable ALPACA_LIVE
+    is "1" (then the live endpoint with the separate ALPACA_LIVE_* keys); no margin (notional orders only, size capped by
+    cash); every buy must carry a stop; buys only inside the profile's hours; the floor: equity at or below it = every
+    new buy is refused. The numbers come from factory/trading/profiles/<mode>.json (money_rules above). Live adds: the
+    pinned account check on every order and a blocked-account check on buys.
     Data reads: {"op":"alpaca","data":true,"path":"/stocks/AAPL/bars?timeframe=5Min&limit=50"}"""
     if not (AKEY and ASEC):
+        if ALPACA_LIVE:
+            raise RuntimeError("ALPACA_LIVE_KEY_ID / ALPACA_LIVE_SECRET_KEY secrets are missing: live mode never falls back to the paper keys")
         raise RuntimeError("ALPACA_KEY_ID / ALPACA_SECRET_KEY secrets are missing (paper keys from a free Alpaca account)")
     hdr = {"APCA-API-KEY-ID": AKEY, "APCA-API-SECRET-KEY": ASEC, "Content-Type": "application/json"}
     base = ALPACA_DATA if o.get("data") else ALPACA
@@ -428,8 +510,15 @@ def op_alpaca(o, st):
             pass
     if o.get("path") == "/bankroll" and not o.get("data"):
         return 200, virtual_account(hdr, st)
+    if ALPACA_LIVE and m in ("POST", "DELETE") and not o.get("data"):
+        # real money: every order-changing call is checked against the pinned account first
+        _, acct = account_view(hdr, st)
+        gate = live_gate(acct, money_rules(), str((body or {}).get("side", "")).lower() if m == "POST" else None)
+        if gate:
+            return gate
     if m == "POST" and o["path"].startswith("/orders") and not o.get("data"):
-        floor = float(os.environ.get("ALPACA_FLOOR") or "20")
+        rules = money_rules()
+        floor = rules["floor"]
         va = virtual_account(hdr, st)
         equity, cash = va["equity"], va["cash"]
         side = str((body or {}).get("side", "")).lower()
@@ -444,15 +533,17 @@ def op_alpaca(o, st):
                 if not px:
                     return 422, {"refused": "qty", "message": "Use notional dollars, or give limit_price with whole-share qty so size can be checked."}
                 notional = px * float(body["qty"])
-            if notional > cash * 0.4 + 0.01:
-                return 422, {"refused": "size", "message": f"Position {notional:.2f} is over 40% of cash ({cash:.2f})."}
+            cap = rules["max_pos_pct"]
+            if notional > cash * cap / 100 + 0.01:
+                return 422, {"refused": "size", "message": f"Position {notional:.2f} is over {cap:g}% of cash ({cash:.2f})."}
             if body.get("time_in_force", "day") != "day":
                 return 422, {"refused": "tif", "message": "Day orders only; no overnight holds."}
             from datetime import datetime
             from zoneinfo import ZoneInfo
             now = datetime.now(ZoneInfo("America/Chicago"))
-            if now.weekday() > 4 or (now.hour, now.minute) < (8, 35) or (now.hour, now.minute) >= (14, 45):
-                return 422, {"refused": "hours", "message": "Buys only on weekdays 8:35 AM to 2:45 PM Central (market opens 8:30 CT)."}
+            start, flat = hm_tuple(rules["start_ct"]), hm_tuple(rules["flat_ct"])
+            if now.weekday() > 4 or (now.hour, now.minute) < start or (now.hour, now.minute) >= flat:
+                return 422, {"refused": "hours", "message": f"Buys only on weekdays {rules['start_ct']} to {rules['flat_ct']} Central (market opens 8:30 CT)."}
             protect = body.pop("protect", None)
             if protect:
                 # fractional entry, then a protective stop for exactly the filled quantity; no stop = sell at once

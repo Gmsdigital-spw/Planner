@@ -55,6 +55,15 @@ Central.
   factory/trading/auto/heartbeat.json, day file factory/trading/auto/<day key>.json, errors at
   factory/trading/auto/last-error.json, watchlist at factory/trading/watchlist.json.
 
+## Trading (live, Grayson's go Nov 2, 2026)
+- Same Alpaca login, the LIVE brokerage account, funded with $20-25 by Grayson. Secrets ALPACA_LIVE_KEY_ID /
+  ALPACA_LIVE_SECRET_KEY (never the paper pair); variables ALPACA_LIVE (1 = live, empty = paper),
+  ALPACA_LIVE_ACCOUNT_ID (pins the account; any other is refused), ALPACA_LIVE_FLOOR (optional override of the
+  $5 floor). Profile: factory/trading/profiles/live-aggressive.json ($5 floor, $5 daily loss, 100% of cash, one
+  position, 6 entries, 13 leveraged ETFs). Runbook: factory/trading/LIVE_SETUP.md.
+- The heartbeat and day files carry "mode": "live", "profile": "live-aggressive" and "accountId": the last 4
+  characters of the account id. Never the whole id, never a key. /bankroll in live mode = real equity and cash.
+
 ## Scheduled task ids (for the Mechanic and the schedule sync only)
 - Night Shift trig_01AKhkcKn5cgKDgpZavQEun1 (re-created Oct 21, 2026; the old trig_01AAr8ck2SDQBQUNtAvm58YF is disabled) · Bolt trig_01QWbpg22o89x2sFANkEcG67 ·
   Herald trig_01WukPSxb5DtW4tL2Zs9EKhu · Mechanic trig_01LjWHeBBnHMDPfAyT752hPJ ·

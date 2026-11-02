@@ -111,3 +111,31 @@ Every trading run (scans, close, lab) first runs `python3 factory/notebook/nb.py
 and follows its "Grayson's rules" and "Proven" lines. The Night Shift's keeper writes each trading
 day's results into the notebook from modules/trading/ledger/<day>; the lab's proven or retired
 setups go there too. Past days only; not financial advice.
+
+## V8: real money (Grayson's go, Nov 2, 2026)
+Grayson: "make my trading all with real money, big risky trades, start with $20-25." The autopilot now has two money
+profiles, `factory/trading/profiles/paper.json` (these V6 rules, unchanged) and `profiles/live-aggressive.json`
+(his live rules). Which one runs is decided by ONE switch he sets himself: the repo variable ALPACA_LIVE (1 = live
+endpoint + the separate ALPACA_LIVE_KEY_ID / ALPACA_LIVE_SECRET_KEY secrets; empty = paper). Runbook:
+`factory/trading/LIVE_SETUP.md`. Evidence before size: `factory/trading/lab/live-aggressive-2026-11-02.md`
+(every variant lost on the last 60 past days; the shipped ORB variant -$2.37 of $25 with +$1.87 / -$1.14 days).
+
+| Rule | Live-aggressive |
+|---|---|
+| Size | 100% of cash, one position at a time (risk_pct 100, max_pos_pct 100, max_positions 1) |
+| Names | TQQQ SQQQ SOXL SOXS SPXL SPXS TNA TZA LABU LABD NVDL TSLL CONL, each checked daily against /assets (active, tradable, fractionable); the crew's avoid list applies, the crew's symbols list does not |
+| Entry | opening-range breakout (`setup` orb, 15-minute range, stop under the range midpoint, at least 0.5% away) on completed 5-minute bars, 8:35 AM to 2:00 PM CT |
+| Exit | breakeven at 1R, trail 1R behind the high from 1.5R, target 3R, flat at 2:45 PM CT, day orders only, no overnight holds |
+| Entries | 6 a day, never twice in a name that lost today |
+| Hard floor | $5: equity at or below it = flatten and lock for the day; the gateway refuses every buy |
+| Daily loss | $5 down on the day (marked to market) = flatten, done for the day |
+| Duplicate protection | every buy carries a client_order_id (gm-<day>-<SYM>-<bar>) and is looked up at Alpaca before the POST |
+| Account pin | variable ALPACA_LIVE_ACCOUNT_ID: any other account is refused (423) for every order; a blocked account gets no buys |
+| What is NOT a guarantee | the floor and the daily loss are entry halts after the fact; a 3x ETF can gap through a stop and a market sell fills where the market is; the account can lose all of it |
+
+Crew in live mode: reads only (`/bankroll` returns `mode: live`, real equity and cash, the account hint,
+`tradingBlocked`). Bear's gate lines use the live floor and day room ($5 / $5). Vault keeps live and paper ledgers
+apart by the day file's `mode`. Tape's avoid list is the crew's one lever over the live universe. The close run
+verifies `/positions` is empty after 2:45 and flattens only if the autopilot failed to. Nobody but Grayson sets the
+variable, edits a profile, or changes a floor. Pattern-day-trader limits no longer apply (FINRA ended them June 4,
+2026; Alpaca removed its counters July 6, 2026). Not financial advice.

@@ -83,3 +83,11 @@ Load only the service section your stage names.
   below the $20 floor. A refusal is final: log it, never work around it.
 - Exits: DELETE /orders/<stop id> then POST a market sell for the held qty. Trail = cancel and
   place a higher stop (never lower). Flatten everything: DELETE /orders then DELETE /positions.
+- Live mode (Grayson's go Nov 2, 2026): while the repo variable ALPACA_LIVE is 1 the same ops hit the REAL account
+  with the separate ALPACA_LIVE_KEY_ID / ALPACA_LIVE_SECRET_KEY secrets. /bankroll then returns {"mode":"live",
+  "profile":"live-aggressive","equity","cash","buyingPower","accountId":"…xxxx","tradingBlocked"}: real numbers,
+  no $25 virtual bankroll. The money rules come from factory/trading/profiles/<mode>.json (live: $5 floor, 100% of
+  cash, 8:35-2:45 CT; paper: $20 floor, 40%). Every live POST/DELETE is refused (423 "account") unless the account
+  matches ALPACA_LIVE_ACCOUNT_ID when that variable is set; a buy is refused (423 "blocked") when Alpaca reports the
+  account blocked. The crew never sends a live buy; reads, and the close run's verify-only flatten when the
+  autopilot failed, are the only live ops a crew may push.

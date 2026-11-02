@@ -43,6 +43,10 @@ jobs:
           ALPACA_LIVE: ${{ vars.ALPACA_LIVE }}
           ALPACA_FLOOR: ${{ vars.ALPACA_FLOOR }}
           ALPACA_BANKROLL: ${{ vars.ALPACA_BANKROLL }}
+          ALPACA_LIVE_KEY_ID: ${{ secrets.ALPACA_LIVE_KEY_ID }}
+          ALPACA_LIVE_SECRET_KEY: ${{ secrets.ALPACA_LIVE_SECRET_KEY }}
+          ALPACA_LIVE_FLOOR: ${{ vars.ALPACA_LIVE_FLOOR }}
+          ALPACA_LIVE_ACCOUNT_ID: ${{ vars.ALPACA_LIVE_ACCOUNT_ID }}
         run: python gw/run.py "${{ github.event.inputs.job }}"
       - name: Save results
         run: |

@@ -1120,7 +1120,7 @@ const FLOORS=["etsy","youtube","third","trading"]; // V7: funnel parked (data ke
 const V7_STORES=["etsy"]; // V7: Gumroad + Payhip hidden, records kept
 const FLOOR_INFO={
   funnel:{name:"Funnel Floor",tag:"F",color:"#a970ff",phase:6,status:"waiting on 2 taps",kind:"Instagram comment-the-word DM business · Frontier Nav app",crew:"Dispatch · Scout-F · Hook · Reel · QC · Ship · Stats",does:"A Reel says comment the word, the DM carries the link, the link sells the GM Starter Kit on Gumroad. Judged on four numbers: comments, DMs sent, link taps, sales."},
-  trading:{name:"Trading Floor",tag:"$",color:"#ffcc4a",phase:7,status:"paper · armed",kind:"Alpaca day trading · paper first",crew:"Bull · Bear · Vault · Tape",does:"Paper trading for 2 days before a dollar goes in. $25 in, $20 hard floor: the most it can ever lose is $5, then it flattens and locks. 2% risk per trade, stop-loss on every order, no overnight holds. Not financial advice; you can still lose money."}
+  trading:{name:"Trading Floor",tag:"$",color:"#ffcc4a",phase:7,status:"paper · armed",kind:"Alpaca day trading · paper first",crew:"Bull · Bear · Vault · Tape",does:"Paper by default: $25 in, $20 hard floor, 2% risk, stop on every order, no overnight holds. Live (Grayson's switch, Nov 2, 2026): the live-aggressive profile, all-in one position in 3x ETFs, $5 hard floor, $5 daily loss, stop on every order, flat by 2:45 PM. The Trading tab's money rules card shows which one is running. Not financial advice; the account can lose all of it."}
 };
 function openFloorInfo(id){const f=FLOOR_INFO[id];if(!f)return;sheetRoom=null;ySheet=null;fleetSheet="floor:"+id;openSheet(f.name,(f.status||"under construction")+" · Phase "+f.phase,f.color,floorInfoHtml(id),"f:floor:"+id,id)}
 /* ---------- Funnel Floor (Phase 6) and Trading Floor (Phase 7): built, gated on Grayson's taps ---------- */
@@ -1136,8 +1136,9 @@ function funnelSheetHtml(){const f=FLOOR_INFO.funnel;
   return h;}
 const TRADE_RULES=[["Deposit","$25 in (paper money for 14 days first)"],["Hard floor","$20 · the account can never lose more than $5, then it flattens and locks"],["Risk per trade","2% of equity ($0.50 on $25)"],["Stop-loss","on every order, placed with the entry (bracket order)"],["Take-profit","at least 2:1 reward-to-risk or the trade is skipped"],["Position size","risk ÷ (entry − stop), fractional shares, max 40% of cash in one name"],["Max exposure","2 open positions, no overnight holds, flat by 2:45 PM CT"],["Daily loss limit","$1.50 (6%) · hit it and Bear closes the day"],["Paper → live","2 paper days (your call), then a separate go from you; live needs its own key"]];
 const TRADE_GLOSSARY=[["Equity","What the account is worth right now: cash plus open positions at today's price."],["Buying power","How much the broker lets you buy. Here: cash only, no margin ever."],["Bullish / bearish","Expecting the price to go up / down."],["Entry","The price you get in at."],["Stop-loss","An order that sells automatically if the price falls to your line. The most you planned to lose."],["Take-profit","An order that sells automatically when the price reaches your target."],["Bracket order","Entry, stop-loss and take-profit sent together as one order."],["Risk-to-reward (R:R)","Target distance ÷ stop distance. 2:1 means you aim to make twice what you risk."],["Position sizing","How many shares: risk dollars ÷ (entry − stop)."],["Fractional shares","Buying part of a share, so $25 can still size a trade correctly."],["Drawdown","How far equity has fallen from its high point."],["Volatility","How much the price swings. More swing = smaller position."],["Spread","Gap between the buy and sell price. A cost you pay on every trade."],["Slippage","Getting filled at a worse price than you asked for, usually in fast markets."],["Liquidity","How easily you can buy or sell without moving the price. Trade only liquid names."],["Trailing stop","A stop-loss that follows the price up and locks in gains."],["Market / limit order","Market = fill now at any price. Limit = fill only at your price or better."],["Day trade","In and out the same day. No overnight holds on this floor."],["Compounding / reinvestment","Gains stay in the account and size the next trade; nothing is ever added above the floor rule."],["Paper trading","Practice with fake money on real prices. 2 days of it before a real dollar."]];
+TRADE_RULES.push(["Live mode (Nov 2, 2026)","Grayson's switch: repo variable ALPACA_LIVE on = real money on the live-aggressive profile (all-in one position, 3x ETFs, opening-range entry, 3R target, $5 floor, $5 daily loss, 6 entries, flat by 2:45 PM). Off = paper, the rules above. The money rules card on the Trading tab shows the active profile."]);
 function tradingSheetHtml(){const f=FLOOR_INFO.trading;
-  let h='<div class="card glow" style="--g:'+f.color+'"><div class="ch"><span class="px" style="color:'+f.color+'">Paper first · the rules</span><span class="pill warn">paper · not live</span></div><div class="small muted" style="line-height:1.5">Day trading with Alpaca, built last and gated hardest. Not financial advice: even with every rule below you can lose the $25.</div><div class="col" style="gap:0;margin-top:6px">'+TRADE_RULES.map(([k,v])=>'<div class="kv"><span class="k">'+esc(k)+'</span><span class="v wrap small" style="text-align:right;color:var(--ink-2)">'+esc(v)+'</span></div>').join("")+'</div></div>';
+  let h='<div class="card glow" style="--g:'+f.color+'"><div class="ch"><span class="px" style="color:'+f.color+'">'+(trLive()?"Real money · the rules":"Paper first · the rules")+'</span>'+(trLive()?'<span class="pill bad">LIVE · real money</span>':'<span class="pill warn">paper · not live</span>')+'</div><div class="small muted" style="line-height:1.5">Day trading with Alpaca, built last and gated hardest. Not financial advice: even with every rule below you can lose the $25.</div><div class="col" style="gap:0;margin-top:6px">'+TRADE_RULES.map(([k,v])=>'<div class="kv"><span class="k">'+esc(k)+'</span><span class="v wrap small" style="text-align:right;color:var(--ink-2)">'+esc(v)+'</span></div>').join("")+'</div></div>';
   const T=S.trade||{};const sg=v=>v==null?"—":(Number(v)>=0?"+":"")+money(v);
   h+='<div class="row" style="gap:6px;flex-wrap:wrap">'+[["Equity",T.equity!=null?money(T.equity):"—"],["Day P/L",sg(T.dayPnl)],["Total P/L",sg(T.totalPnl)],["Drawdown",T.maxDrawdown!=null?money(T.maxDrawdown):"—"],["Trades",T.trades!=null?String(T.trades):"—"],["Rule breaches",T.breaches!=null?String(T.breaches):"—"],[(T.mode||"paper")==="live"?"LIVE":"Paper day",(T.mode||"paper")==="live"?"real money":(T.paperDay||0)+" of 2"]].map(([k,v])=>'<span class="pill'+(k==="Rule breaches"&&Number(v)>0?" bad":"")+'">'+esc(k)+' · '+esc(v)+'</span>').join("")+'</div>'+(T.floorLocked?'<div class="card glow" style="--g:#ff5d6c"><b>Floor locked.</b> <span class="small muted">Equity hit the $20 floor; every new buy is refused until you reset it.</span></div>':"")+(T.lastNote?'<div class="small muted" style="margin:6px 0">'+esc(T.lastNote)+(T.updatedAt?' · '+esc(ago(T.updatedAt)):"")+'</div>':"");
   if(!T.updatedAt)h+=tapCard(1,"Open a free Alpaca account and paste the PAPER keys into GitHub","The crew never opens accounts. Paper keys trade fake money on real prices, so nothing real can be lost while the rules are proven.","On your phone: alpaca.markets → sign up (free) → Paper Trading → generate API key + secret. In GitHub: repo Settings → Secrets → Actions → add ALPACA_KEY_ID and ALPACA_SECRET_KEY. Then say \"paper go\" and I switch on the Trading run (one scheduled task on your plan, weekday mornings).");
@@ -5433,18 +5434,21 @@ function tPositions(T){const p=T.positions||T.open||[];return Array.isArray(p)?p
 function tBars(T){const b=T.bars||{};const out={};for(const k in b){const arr=Array.isArray(b[k])?b[k]:[];out[k]=arr.map(x=>Array.isArray(x)?[String(x[0]),Number(x[1])]:[String(x.t||x.time||""),Number(x.c!=null?x.c:x.close)]).filter(x=>!isNaN(x[1]))}return out}
 function renderTrading(){
   const el=$("#trBody");if(!el)return;const T=SM.live||{};const R=S.trade||{};const has=!!SM.live;
-  const mode=String(T.mode||R.mode||"paper").toLowerCase();
-  const eq=T.equity!=null?Number(T.equity):(R.equity!=null?Number(R.equity):null);
-  const pnl=T.dayPnl!=null?Number(T.dayPnl):(R.dayPnl!=null?Number(R.dayPnl):null);
-  const upd=T.at||R.updatedAt||null;
+  const mode=String(((typeof HB!=="undefined"&&HB.doc)||{}).mode||T.mode||R.mode||"paper").toLowerCase(); /* the bot's heartbeat is the truth about paper vs live */
+  const DD=(typeof DF!=="undefined"&&DF.doc)||{}; /* the bot's own day file: the fallback when the crew's board is empty */
+  const eq=T.equity!=null?Number(T.equity):(R.equity!=null?Number(R.equity):(DD.equity!=null?Number(DD.equity):null));
+  const pnl=T.dayPnl!=null?Number(T.dayPnl):(R.dayPnl!=null?Number(R.dayPnl):(DD.dayPnl!=null?Number(DD.dayPnl):null));
+  const upd=T.at||R.updatedAt||((typeof HB!=="undefined"&&HB.doc&&HB.doc.at)||null);
   const scan=trigByName("Trading Floor (paper) · scan")||Object.values(Object.assign({},S.trigs,REP.trigs||{})).find(t=>/trading floor/i.test(t.name||"")&&!/close/i.test(t.name||""));
   const lastRun=T.lastRunAt||(T.autopilot&&T.autopilot.at)||(scan&&scan.last_run&&scan.last_run.fired_at)||null;
   let h='<div class="tb-head"><div class="row1"><span class="paper'+(mode==="live"?" live":"")+'">'+(mode==="live"?"Real money":"Paper money")+'</span><span class="tb-meta">'+(upd?"updated "+esc(clk(upd)||ago(upd)):"no update yet")+'</span></div>'+
     '<span class="tb-eq">'+(eq==null?"—":money(eq))+'</span>'+
     '<span class="tb-pnl '+(pnl==null?"flat":(pnl>0?"pos":(pnl<0?"neg":"flat")))+'">'+(pnl==null?"Today: —":"Today "+(pnl>0?"+":"")+money(pnl))+(R.totalPnl!=null?' · all time '+(Number(R.totalPnl)>=0?"+":"")+money(R.totalPnl):"")+'</span>'+
     (function(){const hb=botHeartbeat();const late=botLate();const when=hb.at?(clk(hb.at)||fmtTime(hb.at)):(lastRun?(clk(lastRun)||fmtTime(lastRun)):null);return '<span class="tb-meta'+(late?' bot-late':'')+'">Bot last checked: '+(when?esc(when):"unknown")+(late?' · late':"")+(hb.status&&hb.status!=="unknown"?' · '+esc(hb.status):"")+(R.floorLocked||T.floorLocked?' · <b style="color:var(--bad)">floor locked</b>':"")+'</span>'})()+'</div>';
+  h+=tradeRulesCard();
   if(!has){
-    h+='<div class="emptyc"><b>The live board turns on soon.</b>'+esc(R.lastNote||"The bots haven\'t posted a live board yet.")+' Once the autopilot writes its first board, you\'ll see the chart, open trades and every move here.</div>';
+    const dfh=dayFileHtml();
+    h+=dfh||('<div class="emptyc"><b>The live board turns on soon.</b>'+esc(R.lastNote||"The bots haven\'t posted a live board yet.")+' Once the autopilot writes its first board, you\'ll see the chart, open trades and every move here.</div>');
   }else{
     const bars=tBars(T);const pos=tPositions(T);
     const syms=[...new Set(["SPY"].concat(pos.map(p=>p.symbol)).concat(Object.keys(bars)))].filter(s=>bars[s]&&bars[s].length);
@@ -5461,11 +5465,12 @@ function renderTrading(){
     const w=Array.isArray(T.watch)?T.watch:[];
     if(w.length)h+='<div class="tlab"><span>Watchlist</span></div><div class="watch">'+w.slice(0,12).map(x=>{const c=Number(x.changePct!=null?x.changePct:x.change);return '<div class="wt"><b>'+esc(x.symbol)+'</b><span>'+(x.last!=null?money(x.last):"—")+'</span><span class="'+(isNaN(c)?"":(c>=0?"pos":"neg"))+'">'+(isNaN(c)?"—":(c>=0?"+":"")+c.toFixed(2)+"%")+'</span></div>'}).join("")+'</div>';
   }
+  if(has)h+=dayTradesHtml();
   const crew=(T.crew)||{};
   h+='<div class="tlab"><span>The crew</span></div><div class="crew4">'+Object.keys(BOTS).map(k=>{const c=crew[k]||{};const work=c.state==="working";return '<div class="bot"><img src="'+avatar(k)+'" alt=""><div><b>'+BOTS[k].name+(work?' <span class="ldot ok" style="display:inline-block;width:7px;height:7px;vertical-align:middle"></span>':"")+'</b><span>'+esc(c.task||c.now||BOTS[k].job)+'</span></div></div>'}).join("")+'</div>';
   const acts=(Array.isArray(T.actions)?T.actions:[]).slice().sort((a,b)=>String(b.t).localeCompare(String(a.t))).slice(0,20);
   h+='<div class="tlab"><span>Trading floor feed</span></div><div class="tapel">'+(acts.length?acts.map((a,i)=>{const k=botOf(a.bot||a.who);return '<div class="tkr'+(i===0&&Date.now()-Date.parse(a.t)<15*60000?" new":"")+'"><img src="'+avatar(k)+'" alt="'+esc(BOTS[k].name)+'"><span class="t">'+esc(clk(a.t))+'</span><span class="x"><b style="color:'+BOTS[k].c+'">'+BOTS[k].name+'</b> '+esc(a.text||"")+'</span></div>'}).join(""):'<div class="tkr"><img src="'+avatar("tape")+'" alt=""><span class="t">—</span><span class="x">'+esc(R.lastNote||"Quiet floor. Moves show up here as they happen.")+'</span></div>')+'</div>';
-  h+='<div class="fine">The bot checks the market once a minute, all day, on a free GitHub runner that hands off to a fresh one before its time runs out; the hourly scans and a 10-minute safety timer wake it if it ever stops. Paper money: not real dollars, not financial advice.</div>';
+  h+='<div class="fine">The bot checks the market once a minute, all day, on a free GitHub runner that hands off to a fresh one before its time runs out; the hourly scans and a 10-minute safety timer wake it if it ever stops. '+(mode==="live"?'<b style="color:var(--bad)">REAL MONEY</b> on the live-aggressive profile: all-in, 3x ETFs, $5 floor. The account can lose all of it. Not financial advice.':'Paper money: not real dollars, not financial advice.')+'</div>';
   h+='<div class="btns"><button type="button" class="btn sm" data-floorinfo="trading">Rules &amp; trading words</button><button type="button" class="btn sm" data-report="open">Today\'s trade log</button></div>';
   el.innerHTML=h;drawTradeChart();
 }
@@ -5586,6 +5591,40 @@ function botLate(){ /* true when no check-in for 70+ min during market hours (8:
 }
 async function pullHeartbeat(){try{const r=await fetch(HB_URL+"?t="+Math.floor(Date.now()/60000),{cache:"no-store"});if(!r.ok)return;const j=await r.json();if(j&&j.at){HB.doc=j;HB.fetchedAt=Date.now();if(currentView==="trading"||currentView==="today")renderAll()}}catch(e){}}
 pullHeartbeat();setInterval(pullHeartbeat,120000);
+/* V8 (Nov 2 2026, live go): today's autopilot day file straight from the repo, so the Trading tab shows the bot's real
+   positions, closed trades and actions (paper or live, whatever it wrote) even when the crew's board is empty or late. */
+const DAY_URL=d=>"https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/factory/trading/auto/"+d+".json";
+const DF={doc:null,fetchedAt:0};
+function trLive(){try{const hb=HB.doc||{};const T=SM.live||{};return String(hb.mode||T.mode||"").toLowerCase()==="live"}catch(e){return false}}
+async function pullDayFile(){try{const d=ctToday();const r=await fetch(DAY_URL(d)+"?t="+Math.floor(Date.now()/60000),{cache:"no-store"});if(!r.ok){if(DF.doc&&DF.doc.day!==d)DF.doc=null;return}const j=await r.json();if(j&&j.day){DF.doc=j;DF.fetchedAt=Date.now();if(currentView==="trading")renderAll()}}catch(e){}}
+pullDayFile();setInterval(pullDayFile,120000);
+function tradeRulesCard(){ /* the active money profile, from the bot's heartbeat (never from a guess) */
+  const hb=(typeof HB!=="undefined"&&HB.doc)||{};const r=hb.rules;if(!r)return "";
+  const live=String(hb.mode||"").toLowerCase()==="live";const m=v=>v==null||isNaN(Number(v))?"—":money(v);
+  const kv=(k,v)=>'<div><span class="k">'+esc(k)+'</span><span class="v">'+esc(v)+'</span></div>';
+  return '<div class="pos-c"><div class="ph"><b>'+(live?"Real money rules":"Paper money rules")+'</b><span class="tb-meta">'+esc(r.profile||"")+(hb.accountId?' · acct '+esc(hb.accountId):"")+'</span></div>'+
+    kv("Floor",m(r.floor))+kv("Daily loss",m(r.dailyLoss))+kv("Size",r.maxPosPct!=null?r.maxPosPct+"% of cash":"—")+
+    kv("Positions",String(r.maxPositions!=null?r.maxPositions:"—"))+kv("Entries/day",String(r.maxEntries!=null?r.maxEntries:"—"))+kv("Target",r.targetR!=null?r.targetR+"R · "+(r.setup||"pullback"):"—")+
+    '<div style="grid-column:1/-1" class="small muted">'+esc(r.hours||"")+(Array.isArray(r.universe)&&r.universe.length?' · '+esc(r.universe.join(" ")):"")+(r.setBy?' · '+esc(r.setBy):"")+'</div></div>';
+}
+function dayTradesHtml(){
+  const d=(typeof DF!=="undefined"&&DF.doc)||null;if(!d)return "";const trades=Array.isArray(d.trades)?d.trades:[];
+  const m=v=>v==null||isNaN(Number(v))?"—":money(v);
+  let h='<div class="tlab"><span>Today\'s closed trades</span><span style="letter-spacing:0;text-transform:none;font-weight:600">'+trades.length+(d.mode?' · '+esc(d.mode):"")+'</span></div>';
+  h+=trades.length?trades.map(t=>{const r=t.r==null?null:Number(t.r);return '<div class="pos-c"><div class="ph"><b>'+esc(t.sym||"")+'</b><span class="tb-pnl '+(r==null?"flat":(r>0?"pos":(r<0?"neg":"flat")))+'">'+(r==null?"—":(r>0?"+":"")+r.toFixed(2)+"R")+'</span></div><div><span class="k">In</span><span class="v">'+m(t.entry)+'</span></div><div><span class="k">Out</span><span class="v">'+m(t.exit)+'</span></div><div><span class="k">Why</span><span class="v">'+esc(t.why||"")+'</span></div></div>'}).join(""):'<div class="calm"><span class="ldot idle"></span><span>No closed trades yet today.</span></div>';
+  return h;
+}
+function dayFileHtml(){ /* the bot's own record of today when the crew has not posted a board */
+  const d=(typeof DF!=="undefined"&&DF.doc)||null;if(!d)return "";
+  const pos=Object.entries(d.positions||{});const acts=(Array.isArray(d.actions)?d.actions:[]).slice(-12).reverse();
+  const m=v=>v==null||isNaN(Number(v))?"—":money(v);
+  let h='<div class="tlab"><span>Open trades</span><span style="letter-spacing:0;text-transform:none;font-weight:600">'+pos.length+'</span></div>';
+  h+=pos.length?pos.map(([s,p])=>'<div class="pos-c"><div class="ph"><b>'+esc(s)+'</b><span class="tb-meta">'+(p.adopted?"adopted":"")+'</span></div><div><span class="k">Entry</span><span class="v">'+m(p.entry)+'</span></div><div><span class="k">High</span><span class="v">'+m(p.high)+'</span></div><div><span class="k">Qty</span><span class="v">'+(p.qty!=null?esc(String(p.qty)):"—")+'</span></div><div><span class="k">Stop</span><span class="v" style="color:var(--bad)">'+m(p.stop)+'</span></div><div><span class="k">Target</span><span class="v" style="color:var(--ok)">'+m(p.target)+'</span></div><div><span class="k">Stop order</span><span class="v">'+(p.stopId?"set":"none")+'</span></div></div>').join(""):'<div class="calm"><span class="ldot idle"></span><span>No open trades. <b>'+esc(d.lastNote||"Waiting for a setup.")+'</b></span></div>';
+  h+=dayTradesHtml();
+  const who=a=>/buy|skip/.test(String(a.do||""))?"bull":(/stop|sell|flatten|trail/.test(String(a.do||""))?"bear":"tape");
+  h+='<div class="tlab"><span>Bot actions today</span></div><div class="tapel">'+(acts.length?acts.map(a=>'<div class="tkr"><img src="'+avatar(who(a))+'" alt=""><span class="t">'+esc(a.t||"")+'</span><span class="x"><b>'+esc(a.do||"")+'</b> '+esc(a.sym||"")+(a.notional!=null?' $'+esc(String(a.notional)):"")+(a.stop!=null?' stop '+esc(String(a.stop)):"")+(a.status!=null?' · '+esc(String(a.status)):"")+(a.why?' · '+esc(a.why):"")+'</span></div>').join(""):'<div class="tkr"><img src="'+avatar("tape")+'" alt=""><span class="t">—</span><span class="x">'+esc(d.lastNote||"Nothing yet today.")+'</span></div>')+'</div>';
+  return h;
+}
 
 
 /* ---------- V8 ENGINE ROOM (add-on Phase 8) ----------

@@ -19,9 +19,15 @@ This script trades the SAME strategy the Trading lab backtests (backtest.setup_a
   - Oct 23, 2026 fix: a stop re-place (breakeven, trail) sends the WHOLE position qty and waits for the old stop's cancel
     to be confirmed. On Oct 22 both re-places used Alpaca's qty_available, which is "0" while the stop order holds the
     shares, so they were refused (422) and both winners were dumped at market without a stop.
+V8 (Nov 2, 2026, Grayson's live go): the money rules come from a PROFILE, factory/trading/profiles/<name>.json.
+  paper (repo variable ALPACA_LIVE empty) = the rules above, unchanged. live (ALPACA_LIVE set to 1, separate live key
+  pair) = "live-aggressive": one all-in position, 3x ETF universe, opening-range-breakout entry, 3R target, $5 daily
+  loss, $5 floor, 6 entries a day. Every entry carries a client_order_id and is looked up by it before the POST, so a
+  cycle that died after Alpaca accepted a buy never buys twice. Live names are checked once a day against /assets
+  (active, tradable, fractionable). The gateway enforces the same profile's floor, size cap, hours and account pin.
 Pause it: set "paused": true in factory/trading/auto/control.json (or disable the workflow in GitHub).
 Writes factory/trading/auto/<day>.json (state + every action) so the crew and the Factory can show it.
-Not financial advice: this can lose money. It never adds money, changes the floor, or switches to live.
+Not financial advice: this can lose money. It never adds money, changes the floor, or switches itself to live.
 """
 import importlib.util, json, os, subprocess, sys, time, urllib.parse
 from datetime import datetime, timedelta, timezone
@@ -41,10 +47,42 @@ CT = ZoneInfo("America/Chicago")
 AUTO = HERE / "auto"
 DRY = os.environ.get("AUTOPILOT_DRY") == "1"
 DEFAULT_WATCH = ["SPY", "QQQ", "IWM", "DIA", "XLK", "XLF"]  # ETFs only when the crew hasn't written today's list
+LAST = {}   # last account hint read this runner (for the heartbeat; never a secret)
 
 
 def now_ct():
     return datetime.now(CT)
+
+
+def profile_name():
+    """The money profile for the mode the gateway is in: live-aggressive when ALPACA_LIVE is set, else paper."""
+    return "live-aggressive" if gw.ALPACA_LIVE else "paper"
+
+
+def floor_for(P):
+    """The hard floor: the profile's, unless Grayson overrides it with the repo variable for THAT mode
+    (ALPACA_LIVE_FLOOR for live, ALPACA_FLOOR for paper; the paper variable never reaches the live account)."""
+    var = "ALPACA_LIVE_FLOOR" if gw.ALPACA_LIVE else "ALPACA_FLOOR"
+    return float(os.environ.get(var) or P["floor"])
+
+
+def rules_summary(P=None):
+    """What the Factory page shows under 'Real money' / 'Paper money': the active profile and its money rules."""
+    name = profile_name()
+    P = P or backtest.load_params(name)
+    prof = backtest.load_profile(name)
+    return {"profile": name, "mode": "live" if gw.ALPACA_LIVE else "paper", "floor": floor_for(P),
+            "dailyLoss": P["daily_loss"], "maxPosPct": P["max_pos_pct"], "maxPositions": P["max_positions"],
+            "maxEntries": P["max_entries"], "riskPct": P["risk_pct"], "targetR": P["target_r"],
+            "setup": P.get("setup", "pullback"), "hours": f"{P['start_ct']}-{P['flat_ct']} CT",
+            "universe": prof.get("universe"), "setBy": prof.get("set_by")}
+
+
+def safe_rules():
+    try:
+        return rules_summary()
+    except Exception:
+        return None
 
 
 def alpaca(o, st):
@@ -64,9 +102,33 @@ def load_json(p, default):
 def watchlist(day):
     w = load_json(HERE / "watchlist.json", {})
     avoid = set(s.upper() for s in w.get("avoid", [])) if w.get("day") == day else set()
-    syms = [s.upper() for s in w.get("symbols", [])] if w.get("day") == day else []
-    syms = syms or DEFAULT_WATCH
+    universe = [str(s).upper() for s in (backtest.load_profile(profile_name()).get("universe") or [])]
+    if universe:   # a profile universe (live): Grayson's list; the crew's avoid list for today still applies
+        syms = universe
+    else:
+        syms = [s.upper() for s in w.get("symbols", [])] if w.get("day") == day else []
+        syms = syms or DEFAULT_WATCH
     return [s for s in dict.fromkeys(syms) if s not in avoid][:20], sorted(avoid)
+
+
+def tradable(symbols, st, day):
+    """Profile universes only: keep the names Alpaca reports as active, tradable AND fractionable (one /assets read
+    per name per day, cached in the day file). A read error keeps the name: Alpaca's own order check then decides."""
+    cache = day.setdefault("assets", {})
+    keep = []
+    for s in symbols:
+        if s not in cache:
+            try:
+                code, a = alpaca({"op": "alpaca", "path": f"/assets/{s}"}, st)
+                if code >= 300 or not isinstance(a, dict) or "tradable" not in a:
+                    cache[s] = None
+                else:
+                    cache[s] = bool(a.get("tradable") and a.get("fractionable") and str(a.get("status", "active")) == "active")
+            except Exception:
+                cache[s] = None
+        if cache[s] is not False:
+            keep.append(s)
+    return keep
 
 
 def today_bars(symbols, st, now):
@@ -209,9 +271,9 @@ def run():
     key = now.strftime("%Y-%m-%d")
     AUTO.mkdir(parents=True, exist_ok=True)
     path = AUTO / f"{key}.json"
-    day = load_json(path, {"day": key, "mode": "live" if gw.ALPACA_LIVE else "paper", "equityOpen": None,
-                           "entries": 0, "lostToday": [], "positions": {}, "trades": [], "actions": [],
-                           "done": None, "runs": 0, "lastSignal": {}})
+    day = load_json(path, {"day": key, "mode": "live" if gw.ALPACA_LIVE else "paper", "profile": profile_name(),
+                           "equityOpen": None, "entries": 0, "lostToday": [], "positions": {}, "trades": [],
+                           "actions": [], "done": None, "runs": 0, "lastSignal": {}})
     day["runs"] += 1
     day["lastRun"] = now.strftime("%H:%M")
 
@@ -244,10 +306,14 @@ def run():
         # a weekday with the market shut (holiday) or the open not reached yet: wait, don't quit
         return save("market closed", "waiting" if (now.hour, now.minute) < (9, 0) else "closed")
 
-    P = backtest.load_params()
-    floor = float(os.environ.get("ALPACA_FLOOR") or P["floor"])
+    P = backtest.load_params(profile_name())
+    floor = floor_for(P)
+    day["profile"] = profile_name()
     _, acct = alpaca({"op": "alpaca", "path": "/bankroll"}, st)
     equity, cash = float(acct["equity"]), float(acct["cash"])
+    LAST["accountId"] = acct.get("accountId") if isinstance(acct, dict) else None
+    if LAST["accountId"]:
+        day["accountId"] = LAST["accountId"]   # last 4 characters only, so the page can confirm which account trades
     if day["equityOpen"] is None:
         day["equityOpen"] = equity
     day["equity"] = equity
@@ -258,6 +324,8 @@ def run():
     if equity <= floor:
         flatten(st, day, f"floor hit at ${equity:.2f}")
         day["done"] = "floor"; day["floorLocked"] = True
+        if gw.ALPACA_LIVE and equity < 1.0:   # an unfunded live account: say so instead of crying wolf
+            return save(f"under the ${floor:.2f} floor at ${equity:.2f}: no trading until the account is funded above it", "done")
         return save(f"FLOOR HIT ${equity:.2f}: flattened and locked", "done")
     if day["dayPnl"] <= -P["daily_loss"]:
         flatten(st, day, "daily loss limit")
@@ -286,6 +354,8 @@ def run():
                 day["lostToday"].append(sym)
 
     watch, avoid = watchlist(key)
+    if backtest.load_profile(profile_name()).get("universe"):   # live: only names Alpaca will fill fractionally
+        watch = tradable(watch, st, day)
     bars = today_bars(sorted(set(watch) | set(held)), st, now)
 
     # ---- manage open positions (same exits as the backtest) ----
@@ -386,6 +456,8 @@ def run():
     open_n = len(day["positions"])
     can_enter = P["start_ct"] <= hm <= P["last_entry_ct"]
     scanned = 0
+    # the entry rule the profile/lab names ("pullback" default, "orb", "pullback_orh"), exactly as backtest.simulate
+    setup_fn = backtest.SETUPS.get(P.get("setup", "pullback"), backtest.setup_at)
     for sym in watch:
         if not can_enter or open_n >= P["max_positions"] or day["entries"] >= P["max_entries"]:
             break
@@ -397,7 +469,7 @@ def run():
         scanned += 1
         if day["lastSignal"].get(sym) == b[-1]["t"]:
             continue
-        s = backtest.setup_at(b, len(b) - 1, P)
+        s = setup_fn(b, len(b) - 1, P)
         if not s:
             continue
         day["lastSignal"][sym] = b[-1]["t"]
@@ -412,11 +484,20 @@ def run():
         if notional < 1.0:
             day["actions"].append({"t": hm, "do": "skip", "sym": sym, "why": f"size ${notional:.2f} under $1"})
             continue
+        # One durable id per (day, name, signal bar). If an earlier cycle died after Alpaca accepted this buy, the
+        # lookup finds it and nothing is sent twice (read before you retry; never a blind second POST).
+        coid = f"gm-{key}-{sym}-{str(b[-1]['t'])[11:16].replace(':', '')}"[:48]
+        c0, prior = alpaca({"op": "alpaca", "path": "/orders:by_client_order_id?" +
+                            urllib.parse.urlencode({"client_order_id": coid})}, st)
+        if c0 < 300 and isinstance(prior, dict) and prior.get("id") and prior.get("status") not in ("canceled", "expired", "rejected"):
+            day["actions"].append({"t": hm, "do": "skip", "sym": sym, "why": f"order {coid} already at Alpaca ({prior.get('status')})",
+                                   "id": prior.get("id")})
+            continue
         c, js = alpaca({"op": "alpaca", "method": "POST", "path": "/orders", "tag": f"buy-{sym}", "body": {
             "symbol": sym, "notional": f"{notional:.2f}", "side": "buy", "type": "market", "time_in_force": "day",
-            "protect": {"stop_price": f"{stop:.2f}", "take_profit": f"{target:.2f}"}}}, st)
+            "client_order_id": coid, "protect": {"stop_price": f"{stop:.2f}", "take_profit": f"{target:.2f}"}}}, st)
         act = {"t": hm, "do": "buy", "sym": sym, "notional": round(notional, 2), "stop": stop, "target": target,
-               "status": c}
+               "status": c, "coid": coid}
         entry = (js or {}).get("entry") if isinstance(js, dict) else None
         stop_o = (js or {}).get("stop") if isinstance(js, dict) else None
         if c < 300 and isinstance(entry, dict) and entry.get("status") == "filled" and isinstance(stop_o, dict):
@@ -472,7 +553,8 @@ def heartbeat(status, note, cycles, started, until):
         "at": now.isoformat(), "lastRun": now.strftime("%H:%M"), "day": now.strftime("%Y-%m-%d"),
         "status": status, "note": str(note)[:160], "loop": True, "cycles": cycles,
         "runnerStarted": started.isoformat(), "runnerUntil": until.isoformat(),
-        "cadence": "every minute during market hours", "mode": "live" if gw.ALPACA_LIVE else "paper"}, indent=1))
+        "cadence": "every minute during market hours", "mode": "live" if gw.ALPACA_LIVE else "paper",
+        "profile": profile_name(), "rules": safe_rules(), "accountId": LAST.get("accountId")}, indent=1))
 
 
 def git(*args, check=False):

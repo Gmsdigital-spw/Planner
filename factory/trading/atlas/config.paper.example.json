@@ -1,0 +1,21 @@
+{
+  "mode": "paper",
+  "database": "data/atlas-paper.sqlite3",
+  "capital_cap_usd": "25",
+  "protected_equity_floor_usd": "20",
+  "max_order_usd": "10",
+  "max_exposure_usd": "10",
+  "max_scenario_loss_usd": "1.50",
+  "max_daily_loss_usd": "1.50",
+  "max_total_loss_usd": "5",
+  "max_entries_per_day": 4,
+  "max_spread_bps": "25",
+  "assumed_cost_bps_per_side": "10",
+  "max_quote_age_seconds": 5,
+  "max_snapshot_seconds": 10,
+  "live_enabled": false,
+  "expected_account_id": "PASTE_YOUR_PAPER_ACCOUNT_ID",
+  "approved_strategy_versions": [],
+  "allowed_symbols": ["SPY", "QQQ", "IWM", "DIA"],
+  "data_feed": "iex"
+}

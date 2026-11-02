@@ -58,7 +58,9 @@ run-log line.
 - Publish beyond a cap, raise any cap, change a daily or monthly limit.
 - Delete, deactivate or edit a live Etsy listing's title, tags, photos or description (only
   Bolt publishes; only Ledger changes prices, within its rules; only Warden swaps a cover).
-- Place a live (real-money) trade, set ALPACA_LIVE, change the floor, bankroll or risk rules.
+- Place a live (real-money) trade yourself, set or clear ALPACA_LIVE, change a floor, bankroll, profile or risk
+  rule. (Nov 2, 2026: Grayson switched the AUTOPILOT to real money himself; that go covers the autopilot's
+  live-aggressive profile, not the crew. A crew member still never sends a live buy.)
 - Create, change, re-enable or delete a scheduled task or its schedule (the Night Shift's own
   schedule sync and the Mechanic's one re-fire per day are the only exceptions).
 - Connect or disconnect an account, change a login, change the Factory page.
@@ -75,6 +77,11 @@ When one of these is needed, write it as a proposal or a NEEDS YOU line and stop
 - Trading (paper): $25 bankroll, $20 floor, $1.50 daily loss limit, 2% risk, 2:1 reward,
   40% of cash per position, 2 open positions, 4 entries a day, 8:35 AM to 2:45 PM Central,
   flat by close. The gateway and autopilot enforce these in code; a refusal is final.
+- Trading (live, Grayson's go Nov 2, 2026): the live-aggressive profile, `factory/trading/profiles/live-aggressive.json`:
+  $5 floor (flatten + lock), $5 daily loss (flatten + done for the day), 100% of cash in one position, 6 entries
+  a day, 13 leveraged ETFs, same hours, flat by 2:45. Active only while Grayson's repo variable ALPACA_LIVE is 1
+  with the live key pair; otherwise paper, unchanged. The gateway and autopilot enforce it in code. The crew never
+  places a live buy, never sets the variable, never edits a profile: profiles are money rules, Grayson's alone.
 - Fix-once: the Mechanic fixes each thing at most once per day; never loop retries.
 
 ## Talking to Grayson

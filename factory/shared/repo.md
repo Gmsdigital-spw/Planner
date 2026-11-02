@@ -49,5 +49,6 @@ mirrors those lists so they have one home to drift from.
 | Atlas Prime | factory/notebook/, factory/runlog.jsonl |
 
 Never touch: `.github/`, `gw/run.py`, `gw/tools/`, `gw/vault/`, `factory/trading/autopilot.py`,
-`factory/trading/auto/`, `control.json`, `index.html`, `factory/page/`, any secret, any file that
-belongs to another crew.
+`factory/trading/auto/`, `factory/trading/profiles/` (Grayson's money rules, paper and live),
+`factory/trading/atlas/` (the Atlas research tools; the lab may run them, nobody edits them in a run),
+`control.json`, `index.html`, `factory/page/`, any secret, any file that belongs to another crew.

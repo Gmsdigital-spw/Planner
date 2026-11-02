@@ -36,13 +36,32 @@ DEFAULT = {
 # Hard limits the lab may never change (the money rules belong to Grayson)
 LOCKED = {"bankroll", "floor", "risk_pct", "max_pos_pct", "max_positions", "daily_loss", "flat_ct", "min_rr"}
 
-def load_params():
+PROFILES_DIR = os.path.join(ROOT, "profiles")
+
+
+def load_profile(name):
+    """A money profile = Grayson's rules for one mode: factory/trading/profiles/<name>.json ("paper" = the Oct 21
+    rules, "live-aggressive" = his Nov 2, 2026 real-money rules). {} when there is no such file."""
+    if not name:
+        return {}
+    try:
+        with open(os.path.join(PROFILES_DIR, f"{name}.json")) as f:
+            prof = json.load(f)
+        return prof if isinstance(prof, dict) else {}
+    except Exception:
+        return {}
+
+
+def load_params(profile=None):
+    """DEFAULT, then the lab's params.json (never a LOCKED money rule), then the profile's params (all keys: the
+    profile IS the money rules for its mode). No profile = the paper rules, exactly as before Nov 2, 2026."""
     p = dict(DEFAULT)
     if os.path.exists(PARAMS_FILE):
         try:
             p.update({k: v for k, v in json.load(open(PARAMS_FILE)).get("params", {}).items() if k not in LOCKED})
         except Exception:
             pass
+    p.update({k: v for k, v in (load_profile(profile).get("params") or {}).items() if k in DEFAULT})
     return p
 
 # ---------------- data ----------------
@@ -254,7 +273,7 @@ def main():
         print("usage: backtest.py <job.json>"); return 2
     job = json.load(open(sys.argv[1]))
     jid = job.get("id") or os.path.splitext(os.path.basename(sys.argv[1]))[0]
-    base = load_params()
+    base = load_params(job.get("profile"))   # a job may name a money profile ("live-aggressive"); default = paper rules
     cands = [{}] + [c for c in job.get("candidates", []) if isinstance(c, dict)][:12]
     syms = job.get("symbols") or ["SPY", "QQQ", "IWM", "AAPL", "MSFT", "NVDA", "AMZN", "META", "AMD", "TSLA"]
     cache = {}
@@ -287,6 +306,7 @@ def main():
                 and (ch["avgR"] or -9) > (bh["avgR"] or -9) and ch["breaches"] == 0):
             adopt = best["overrides"]
     out = {"id": jid, "at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "symbols": syms,
+           "profile": job.get("profile") or "paper",
            "tuneDays": [d for d, _ in tune], "holdoutDays": [d for d, _ in hold], "params": base,
            "baseline": baseline, "results": results, "bestOnTune": best["overrides"] if best else None,
            "adoptable": adopt,

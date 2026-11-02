@@ -1,0 +1,46 @@
+name: Trading tests
+
+# Offline checks of the Trading Floor code (added Nov 2, 2026 with the live profile). No keys, no network to Alpaca,
+# no orders: every suite runs against a fake broker. Red = the Mechanic reads the log in the morning; the autopilot
+# itself is not stopped by this workflow.
+#   factory/trading/tests/test_trail_stop.py      the paper bot's raise-stop path (7 scenarios, Oct 23 fix)
+#   factory/trading/tests/test_live_mode.py       the live-aggressive profile through autopilot.run() (8 scenarios)
+#   factory/trading/tests/test_gateway_rules.py   gw/run.py money rules in paper and live mode (keys, pin, floor, cap, hours)
+#   factory/trading/tests/test_backtest_profit_factor.py   lab arithmetic
+#   factory/trading/atlas/tests                   Atlas Trading Lab (50 tests: engine, risk, research)
+on:
+  push:
+    paths:
+      - "factory/trading/**"
+      - "gw/run.py"
+      - ".github/workflows/trading-tests.yml"
+  pull_request:
+    paths:
+      - "factory/trading/**"
+      - "gw/run.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -q requests cryptography
+      - name: Paper bot regression (trail stop)
+        run: python factory/trading/tests/test_trail_stop.py
+      - name: Live profile through the autopilot (fake broker)
+        run: python factory/trading/tests/test_live_mode.py
+      - name: Gateway money rules, paper and live (fake requests)
+        run: python factory/trading/tests/test_gateway_rules.py
+      - name: Lab arithmetic
+        run: python factory/trading/tests/test_backtest_profit_factor.py
+      - name: Atlas Trading Lab unit tests
+        working-directory: factory/trading/atlas
+        run: python -m unittest discover -s tests -q
