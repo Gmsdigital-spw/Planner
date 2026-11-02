@@ -1,0 +1,67 @@
+{
+ "id": "ep25",
+ "format": "story",
+ "rev": 1,
+ "title": "My Mom Said My Games Cost Me My Friends #shorts",
+ "title_card": "The Friendship Paradox",
+ "voice": "andrew",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "uplifting",
+ "music_volume": 0.05,
+ "cast": {
+  "kid": "a stick-figure boy with a round white head, dot eyes, thin black limbs, messy black hair and a green hoodie",
+  "mom": "a stick-figure mother with a round white head, dot eyes, thin black limbs, a short blonde bob and a red cardigan",
+  "teacher": "a stick-figure math teacher with a round white head, dot eyes, thin black limbs, gray curly hair, square glasses and a blue sweater"
+ },
+ "lines": [
+  {
+   "text": "Mom said my games left me with fewer friends than anyone, so was she right?",
+   "image": "{kid} alone on a living room floor holding a game controller, looking up worried, a glowing TV behind him"
+  },
+  {
+   "text": "Mom scrolled my game's friend list, where every player shows how many friends they have.",
+   "image": "{mom} alone on a couch scrolling a tablet with a long blank list on the screen, eyebrows raised"
+  },
+  {
+   "text": "\"Every single friend of yours has more friends than you,\" she said with a frown.",
+   "image": "{mom} alone in a living room, frowning, holding a tablet out at arm's length"
+  },
+  {
+   "text": "\"That's too much gaming, so the console stays off until you make more friends.\"",
+   "image": "{mom} alone carrying a game console under one arm toward a hallway closet, stern face"
+  },
+  {
+   "text": "I checked, and every one of my friends really did have more friends than me.",
+   "image": "{kid} alone at a desk in his room staring at a tablet, mouth open in shock"
+  },
+  {
+   "text": "I sat on my floor staring at that list, feeling like the loneliest kid alive.",
+   "image": "{kid} alone sitting on the floor of his room hugging his knees, a tablet beside him, sad, a tear on his cheek"
+  },
+  {
+   "text": "Next day my math teacher smiled, \"That's the friendship paradox, and it fools even grown-ups.\"",
+   "image": "{teacher} alone in a classroom smiling and pointing at a chalkboard covered in simple dot-and-line drawings"
+  },
+  {
+   "text": "\"A kid with fifty friends is on fifty lists; a quiet kid is on two.\"",
+   "image": "{teacher} alone at a chalkboard drawing one big dot with many lines and one small dot with two lines"
+  },
+  {
+   "text": "\"So popular kids crowd every list, and most of your friends end up more popular.\"",
+   "image": "{teacher} alone in a classroom spreading both arms wide, chalkboard of connected dots behind"
+  },
+  {
+   "text": "So I had Mom open her own friend page, and Mom never plays games.",
+   "image": "{kid} alone in a living room holding out a phone toward the viewer, confident grin"
+  },
+  {
+   "text": "Almost every friend on her list had more friends than her, and her jaw dropped.",
+   "image": "{mom} alone on a couch staring at her phone, jaw dropped, eyes wide"
+  },
+  {
+   "text": "Games never cost me friends, so the console came back, and now Mom blames math.",
+   "image": "{kid} alone on the living room floor happily playing a video game, a glowing TV in front of him, warm evening light"
+  }
+ ]
+}
