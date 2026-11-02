@@ -1,0 +1,239 @@
+{
+ "dur": 17.16,
+ "vo": "social/studio/media/vo/awards1102-vo.mp3",
+ "music": "social/studio/media/vo/awards1102-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/awards",
+   "cover": "cover.jpg",
+   "price": "1.99",
+   "pages": 13,
+   "listTitle": "Funny Christmas Party Awards Printable, 36 Office Holiday Superlatives and Certificates for Coworkers or Family, Work Party Game",
+   "strip": [
+    "p-03.png",
+    "p-05.png",
+    "p-09.png",
+    "p-10.png"
+   ],
+   "bg": [
+    "#2f6a52",
+    "#0f2a20"
+   ],
+   "accent": "#a3191e",
+   "hl": "#ffd34d",
+   "dot": "#e3f2ea"
+  },
+  "scenes": [
+   {
+    "page": "p-03.png",
+    "badge": "36 AWARDS",
+    "type": "hook",
+    "t0": 0,
+    "t1": 3.08
+   },
+   {
+    "pages": [
+     "p-05.png",
+     "p-06.png",
+     "p-07.png",
+     "p-04.png"
+    ],
+    "type": "grid",
+    "t0": 3.08,
+    "t1": 5.43,
+    "beats": [
+     3.18,
+     3.65,
+     4.11,
+     4.58
+    ]
+   },
+   {
+    "pages": [
+     "p-13.png",
+     "p-02.png",
+     "p-08.png"
+    ],
+    "type": "fan",
+    "t0": 5.43,
+    "t1": 7.5,
+    "beats": [
+     5.53,
+     6.12,
+     6.71
+    ]
+   },
+   {
+    "pages": [
+     "p-09.png",
+     "p-10.png",
+     "p-11.png",
+     "p-12.png"
+    ],
+    "type": "grid",
+    "t0": 7.5,
+    "t1": 10.55,
+    "beats": [
+     7.6,
+     8.25,
+     8.91,
+     9.56
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 10.55,
+    "t1": 14.13,
+    "beats": [
+     0.41,
+     1.24,
+     1.56,
+     2.36,
+     2.76
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 14.13,
+    "t1": 17.46
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.68,
+   "*36* funny awards | for your *Christmas party*"
+  ],
+  [
+   3.08,
+   5.02,
+   "Guests *nominate* | everyone *votes*"
+  ],
+  [
+   5.43,
+   7.11,
+   "A *host script* | does the talking"
+  ],
+  [
+   7.5,
+   10.13,
+   "Crown the *winners* | with *certificates*"
+  ],
+  [
+   10.55,
+   12.76,
+   "*Office* | *family* | or *friends* night"
+  ],
+  [
+   13.26,
+   13.9,
+   "Tap the *link*"
+  ],
+  [
+   14.13,
+   15.1,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   3.03,
+   "whoosh"
+  ],
+  [
+   3.18,
+   "pop"
+  ],
+  [
+   3.65,
+   "pop"
+  ],
+  [
+   4.11,
+   "pop"
+  ],
+  [
+   4.58,
+   "pop"
+  ],
+  [
+   5.38,
+   "whoosh"
+  ],
+  [
+   5.53,
+   "pop"
+  ],
+  [
+   6.12,
+   "pop"
+  ],
+  [
+   6.71,
+   "pop"
+  ],
+  [
+   7.45,
+   "whoosh"
+  ],
+  [
+   7.6,
+   "pop"
+  ],
+  [
+   8.25,
+   "pop"
+  ],
+  [
+   8.91,
+   "pop"
+  ],
+  [
+   9.56,
+   "pop"
+  ],
+  [
+   10.5,
+   "whoosh"
+  ],
+  [
+   10.96,
+   "whoosh"
+  ],
+  [
+   13.31,
+   "tap"
+  ],
+  [
+   13.56,
+   "pop"
+  ],
+  [
+   14.08,
+   "whoosh"
+  ],
+  [
+   14.48,
+   "impact"
+  ],
+  [
+   14.93,
+   "pop"
+  ]
+ ]
+}

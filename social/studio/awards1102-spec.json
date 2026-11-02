@@ -32,18 +32,23 @@
   {
    "say": "Guests nominate. Everyone votes.",
    "cap": "Guests *nominate* | everyone *votes*",
-   "scene": "fan",
+   "scene": "grid",
    "pages": [
     "p-05.png",
     "p-06.png",
-    "p-07.png"
+    "p-07.png",
+    "p-04.png"
    ]
   },
   {
    "say": "A host script does the talking for you.",
    "cap": "A *host script* | does the talking",
-   "scene": "pan",
-   "page": "p-08.png"
+   "scene": "fan",
+   "pages": [
+    "p-13.png",
+    "p-02.png",
+    "p-08.png"
+   ]
   },
   {
    "say": "Then crown the winners with ready-to-print certificates.",
