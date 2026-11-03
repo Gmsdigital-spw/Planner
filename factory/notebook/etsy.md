@@ -9,13 +9,14 @@
 - 2026-10-21: Covers like top Etsy sellers: the whole product visible, big count ("36 games"), real pages. Beige/cream-desk covers are retired.
 - 2026-10-19: Realistic looks (real pages, hands holding prints, prints on walls); no drawn or fake-looking mockups.
 - 2026-10-23: A new listing every day; a day with none is a problem. But never ship under 92 and never ship slop.
+- 2026-11-02: Weekly cap, highest authority: "1 a week until it starts picking up". One new product a week (Monday build), Christmas/holiday party lane until Dec 15; other nights fix weak listings and make pins.
 - 2026-10-25: "Whatever you think will get more sales, we need more." Both first sales (Oct 24) were Christmas party kits, so the Party Lane Push runs to Dec 15 (specs/thrive-plan-2026-10-23.md): party kits get most pins, posts and new builds.
 
 ## What works (proven by numbers)
 - 2026-10-23: Web app and spreadsheet listings pull the most views: ADHD Budget Planner App 41 views (top of 24), Monthly Budget Tracker 21 (3rd). Held: 1 time (includes a paid Pinterest ad on the app).
 
 ## Testing (not proven yet)
-- Oct 23: titles/tags rewritten around buyer search phrases on the 12 lowest-view listings (before values in notebook/seo-before-2026-10-23.json). 5 of them also got new covers the same day, so their result mixes both changes. Check Nov 6: views and favorites vs the Oct 23 baseline.
+- Oct 23: titles/tags rewritten around buyer search phrases on the 12 lowest-view listings (before values in notebook/seo-before-2026-10-23.json). 5 of them also got new covers the same day, so their result mixes both changes. Check Nov 6: views and favorites vs the Oct 23 baseline. Interim Nov 3 (stats 10-23 to 11-02): the 12 gained 14 views in total, 8 of 12 gained 0, Gingerbread +8 and 1 sale; under 100 views = too early. Advent, Scavenger Hunt and Party Bundle got a 2nd title/tag/cover fix on Nov 3 (products/prod-listing-update-*-1103).
 - Varied cover layouts vs the single fun_covers template. 5 zero-view listings got new covers Oct 23 (all at 0 views/0 favs before; baseline in results.jsonl). Check Nov 6: favorites and views per listing before vs after (stats/ snapshots).
 - Christmas listings under $3 (Christmas Party Games Bundle $2.99, Awards Kit $1.99): views yes, sales no so far. Check Nov 6.
 - 2026-11-01 (Sunday party lane vs rest, stats 10-31 vs 10-24): party lane 14 listings, 31 views7, 0 favs7, 2 of 3 sales; rest 18 listings, 18 views7, 2 favs7, 1 sale. Under 100 views per side = too early for What works. Re-measure Sun Nov 8.
