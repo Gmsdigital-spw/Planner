@@ -1,0 +1,66 @@
+{
+ "id": "ep26",
+ "format": "story",
+ "rev": 1,
+ "title": "My Dad Said My Games Were Killing Our Wi-Fi #shorts",
+ "title_card": "The Wi-Fi Killer",
+ "voice": "andrew",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "uplifting",
+ "music_volume": 0.05,
+ "cast": {
+  "kid": "a stick-figure boy with a round white head, dot eyes, thin black limbs, short spiky brown hair and an orange hoodie",
+  "dad": "a stick-figure father with a round white head, dot eyes, thin black limbs, a short black beard, thick eyebrows and a gray sweater"
+ },
+ "lines": [
+  {
+   "text": "\"Your games keep killing our Wi-Fi,\" Dad said, so were my games the guilty ones?",
+   "image": "{kid} is the only person in the picture, sitting alone on a bedroom floor holding exactly one game controller, looking up worried, one glowing TV behind him"
+  },
+  {
+   "text": "Every night at dinner, Dad's favorite show froze and spun at the very best part.",
+   "image": "{dad} is the only person in the picture, sitting alone on a living room couch with one dinner bowl on his lap, staring angrily at one frozen TV"
+  },
+  {
+   "text": "\"It always freezes the second I get my dinner, while you game upstairs,\" he said.",
+   "image": "{dad} is the only person in the picture, standing alone at the bottom of a staircase, pointing up the stairs, frowning"
+  },
+  {
+   "text": "\"So your console goes in my closet, and it stays there for a whole month.\"",
+   "image": "{dad} is the only person in the picture, walking alone toward a hallway closet carrying exactly one game console under one arm, stern face"
+  },
+  {
+   "text": "The very next night, with my console locked in his closet, his show froze again.",
+   "image": "{dad} is the only person in the picture, sitting alone on a couch holding one dinner bowl, mouth open at one frozen TV screen"
+  },
+  {
+   "text": "\"Then it's your phone,\" Dad said, and took it too, but his show still froze.",
+   "image": "{dad} is the only person in the picture, standing alone in a hallway holding up exactly one phone in one hand, eyebrows raised, annoyed"
+  },
+  {
+   "text": "I sat on the stairs with nothing to play, blamed for something I never did.",
+   "image": "{kid} is the only person in the picture, sitting alone on a staircase hugging his knees, sad, a tear on his cheek"
+  },
+  {
+   "text": "So I wrote down every freeze, and every single one began right after a beep.",
+   "image": "{kid} is the only person in the picture, sitting alone at the top of a staircase writing in exactly one small notebook, one hand cupped to his ear, listening hard"
+  },
+  {
+   "text": "The beep was the microwave starting up, heating Dad's dinner right as his show froze.",
+   "image": "{kid} is the only person in the picture, standing alone in a kitchen, pointing at exactly one glowing microwave oven, eyes wide"
+  },
+  {
+   "text": "Microwave ovens use nearly the same radio waves as Wi-Fi, and a little leaks out.",
+   "image": "{kid} is the only person in the picture, standing alone in a kitchen, exactly one microwave oven on the counter giving off soft wavy lines toward one small router on a shelf"
+  },
+  {
+   "text": "I ran a speed test, Dad warmed his soup, and the speed dropped to nothing.",
+   "image": "{dad} is the only person in the picture, standing alone in a kitchen beside exactly one running microwave oven, staring at one phone in his hand, jaw dropped"
+  },
+  {
+   "text": "My games were innocent, so the console came back, and the microwave got grounded instead.",
+   "image": "{kid} is the only person in the picture, sitting alone on a bedroom floor happily playing a video game with exactly one controller, one glowing TV in front of him, warm evening light"
+  }
+ ]
+}
