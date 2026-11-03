@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-03-a3-88ff", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+emoji+game&sort_on=score&limit=25&offset=0", "tag": "em_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+emoji+game&sort_on=score&limit=25&offset=25", "tag": "em_o25"}]}

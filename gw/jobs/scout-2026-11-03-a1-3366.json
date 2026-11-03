@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-03-a1-3366", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=left+right+christmas+game&sort_on=score&limit=25&offset=0", "tag": "lr_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=left+right+christmas+game&sort_on=score&limit=25&offset=25", "tag": "lr_o25"}]}
