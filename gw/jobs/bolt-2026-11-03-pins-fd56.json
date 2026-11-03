@@ -1,0 +1,202 @@
+{
+ "id": "bolt-2026-11-03-pins-fd56",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-party-awards-n1",
+   "body": {
+    "content": "36 kind, funny Christmas party awards for the office, family or friends. The 13-page kit has the award list with a line to read aloud for each, nomination cards and sheets, a vote tally sheet, a host script, award certificates, fill-in certificates and a Hall of Fame page. Print on US Letter or A4 and run the whole awards moment from one file.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-party-awards-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-07T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Funny Christmas Party Awards Printable: 36 Office Holiday Superlatives With Certificates",
+       "link": "https://www.etsy.com/listing/4598379368"
+      }
+     }
+    ]
+   },
+   "tag": "pin-prod-xmas-party-awards-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-charades-120-n1",
+   "body": {
+    "content": "120 Christmas charades cards for a big group: 40 kids cards, 40 family cards and 40 adults cards with grown-up holiday moments like hosting the in-laws and the Secret Santa reveal. Includes how-to-play rules, a Draw It bonus mode, a team score sheet and blank cards. For family nights, friends and office parties. Print on US Letter or A4, cut and play. 16 pages.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-charades-120-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-08T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Charades Printable Game: 120 Cards in 3 Levels for Kids, Family and Adults",
+       "link": "https://www.etsy.com/listing/4604847087"
+      }
+     }
+    ]
+   },
+   "tag": "pin-prod-xmas-charades-120-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-cookie-exchange-kit-n1",
+   "body": {
+    "content": "Everything to host a Christmas cookie swap in one 13-page printable: fill-in invitations, a host countdown, guest sign-up sheet, swap rules with baking math, recipe cards, cookie labels with allergen checkboxes, best cookie ballots, a voting tally with 4 awards, thank-you cards and take-home box tags. Print on US Letter or A4.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-cookie-exchange-kit-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-08T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Cookie Exchange Kit Printable: Cookie Swap Invitations, Labels, Ballots and Tags",
+       "link": "https://www.etsy.com/listing/4600177510"
+      }
+     }
+    ]
+   },
+   "tag": "pin-prod-cookie-exchange-kit-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-party-mega-bundle-n1",
+   "body": {
+    "content": "One 18-page printable file for a whole Christmas party: word scramble, This or That, Would You Rather, trivia quiz, Find the Guest Who and charades cards, 12 party award certificates, a white elephant dice game with a left-right story, and a gingerbread house contest with judge score cards and ribbons. A host timeline is included. For family, friends or office parties. Print at home on US Letter or A4.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-party-mega-bundle-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-08T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Party Bundle Printable: 6 Games, 12 Awards and a White Elephant Dice Swap",
+       "link": "https://www.etsy.com/listing/4604185747"
+      }
+     }
+    ]
+   },
+   "tag": "pin-prod-xmas-party-mega-bundle-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-advent-activities-n1",
+   "body": {
+    "content": "24 Christmas activity cards, one for each night of December: write letters to Santa, build a blanket fort, bake cookies, take a winter walk and more. Each card has a short idea, a talk-about-it question and what you need (many need nothing). Includes blank cards for your own traditions, a countdown tracker, a supply list and a family memories page. For kids 4 to 12 and their grown-ups. 13 printable pages.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-advent-activities-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-08T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Advent Calendar Activity Cards Printable: 24 Screen-Free Christmas Activities for Families",
+       "link": "https://www.etsy.com/listing/4597998190"
+      }
+     }
+    ]
+   },
+   "tag": "pin-prod-advent-activities-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-scavenger-hunt-n1",
+   "body": {
+    "content": "A Christmas morning treasure hunt that ends at the big gift. 24 clue cards in two levels: Little Elves rhymes for early readers (about ages 4 to 7) and Big Kid Riddles for ages 8 to 12. A parent setup sheet and answer key, blank cards for your own spots and Final Gift cards are included. Print on US Letter or A4 and hide the clues the night before. 13 pages.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-scavenger-hunt-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-08T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Christmas Scavenger Hunt Printable: 24 Rhyming Clue Cards That Lead Kids to Their Gift",
+       "link": "https://www.etsy.com/listing/4599447958"
+      }
+     }
+    ]
+   },
+   "tag": "pin-prod-xmas-scavenger-hunt-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-santa-mail-bundle-n1",
+   "body": {
+    "content": "Six editable letters from Santa for different kinds of years: the Nice List, baby's first Christmas, a new big sibling, a kindness star, a hard year and a new home. Type your child's name and three good things right into the PDF in free Adobe Reader, no Canva or account. Also inside: a Nice List certificate, a checked-twice list, a wish list, North Pole envelope labels and 12 gift tags from Santa. 14 pages.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-santa-mail-bundle-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-09T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "Letter from Santa Editable Printable: 6 Personalized Santa Letters, Nice List Certificate",
+       "link": "https://www.etsy.com/listing/4601798994"
+      }
+     }
+    ]
+   },
+   "tag": "pin-prod-santa-mail-bundle-n1"
+  }
+ ]
+}
