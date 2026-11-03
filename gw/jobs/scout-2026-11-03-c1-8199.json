@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-03-c1-8199", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=ugly+sweater+party+invitation&sort_on=score&limit=25&offset=25", "tag": "us_o25"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+party+invitation+editable&sort_on=score&limit=25&offset=25", "tag": "ci_o25"}]}
