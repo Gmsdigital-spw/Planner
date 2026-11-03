@@ -1,0 +1,54 @@
+{
+ "id": "bolt-2026-11-03-snap-7323",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/active?limit=100&includes=Images",
+   "tag": "active"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457",
+   "tag": "shop"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings?state=draft&limit=100",
+   "tag": "drafts"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/receipts?limit=100",
+   "tag": "receipts"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/reviews?limit=100",
+   "tag": "reviews"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ffa106f4c7145613b7b2",
+   "tag": "chk-pin-prod-xmas-scavenger-hunt-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ad9ffa429104cfb543cf948",
+   "tag": "chk-pin-prod-thanksgiving-games-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6addf4af34f093bc8233d45e",
+   "tag": "chk-pin-prod-xmas-murder-mystery-8-s2"
+  }
+ ]
+}
