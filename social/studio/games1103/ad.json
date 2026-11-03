@@ -1,0 +1,260 @@
+{
+ "dur": 21.07,
+ "vo": "social/studio/media/vo/games1103-vo.mp3",
+ "music": "social/studio/media/vo/games1103-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/games",
+   "cover": "cover.jpg",
+   "price": "2.99",
+   "pages": 13,
+   "listTitle": "Christmas Party Games Printable Bundle, 8 Games for Office, Family or Classroom, Trivia, Bingo, Would You Rather, Kids and Adults",
+   "strip": [
+    "p-03.png",
+    "p-08.png",
+    "p-09.png",
+    "p-12.png"
+   ],
+   "bg": [
+    "#c8282e",
+    "#560e12"
+   ],
+   "accent": "#a3191e",
+   "hl": "#ffd34d",
+   "dot": "#ffe3e3"
+  },
+  "scenes": [
+   {
+    "page": "p-06.png",
+    "badge": "8 games",
+    "type": "hook",
+    "t0": 0,
+    "t1": 3.41
+   },
+   {
+    "pages": [
+     "p-04.png",
+     "p-12.png",
+     "p-03.png"
+    ],
+    "type": "fan",
+    "t0": 3.41,
+    "t1": 5.73,
+    "beats": [
+     3.51,
+     4.2,
+     4.89
+    ]
+   },
+   {
+    "page": "p-03.png",
+    "type": "pan",
+    "t0": 5.73,
+    "t1": 8.67,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-06.png",
+     "p-07.png",
+     "p-10.png",
+     "p-09.png"
+    ],
+    "type": "grid",
+    "t0": 8.67,
+    "t1": 11.18,
+    "beats": [
+     8.77,
+     9.28,
+     9.79,
+     10.3
+    ]
+   },
+   {
+    "pages": [
+     "p-13.png",
+     "p-09.png",
+     "p-08.png"
+    ],
+    "type": "fan",
+    "t0": 11.18,
+    "t1": 13.76,
+    "beats": [
+     11.28,
+     12.07,
+     12.86
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 13.76,
+    "t1": 17.95,
+    "beats": [
+     0.47,
+     1.37,
+     1.91,
+     2.71,
+     3.11
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 17.95,
+    "t1": 21.37
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   1.6,
+   "Hosting *Christmas* | this year?"
+  ],
+  [
+   2.02,
+   2.99,
+   "Plan the *fun* now"
+  ],
+  [
+   3.41,
+   5.28,
+   "*8* party games | one *download*"
+  ],
+  [
+   5.73,
+   8.22,
+   "*Trivia* and a | *word scramble* | with answer keys"
+  ],
+  [
+   8.67,
+   10.75,
+   "*Would you rather* | and *this or that*"
+  ],
+  [
+   11.18,
+   13.33,
+   "*Find the Guest* bingo | gets people *talking*"
+  ],
+  [
+   13.76,
+   16.42,
+   "*Kids* to *grandparents* | just *print* and *play*"
+  ],
+  [
+   16.82,
+   17.54,
+   "Tap the *link*"
+  ],
+  [
+   17.95,
+   19.04,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   3.36,
+   "whoosh"
+  ],
+  [
+   3.51,
+   "pop"
+  ],
+  [
+   4.2,
+   "pop"
+  ],
+  [
+   4.89,
+   "pop"
+  ],
+  [
+   5.68,
+   "whoosh"
+  ],
+  [
+   8.62,
+   "whoosh"
+  ],
+  [
+   8.77,
+   "pop"
+  ],
+  [
+   9.28,
+   "pop"
+  ],
+  [
+   9.79,
+   "pop"
+  ],
+  [
+   10.3,
+   "pop"
+  ],
+  [
+   11.13,
+   "whoosh"
+  ],
+  [
+   11.28,
+   "pop"
+  ],
+  [
+   12.07,
+   "pop"
+  ],
+  [
+   12.86,
+   "pop"
+  ],
+  [
+   13.71,
+   "whoosh"
+  ],
+  [
+   14.23,
+   "whoosh"
+  ],
+  [
+   16.87,
+   "tap"
+  ],
+  [
+   17.12,
+   "pop"
+  ],
+  [
+   17.9,
+   "whoosh"
+  ],
+  [
+   18.3,
+   "impact"
+  ],
+  [
+   18.75,
+   "pop"
+  ]
+ ]
+}

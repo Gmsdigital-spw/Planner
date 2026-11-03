@@ -1,0 +1,280 @@
+{
+ "dur": 21.33,
+ "vo": "social/studio/media/vo/goals1103-vo.mp3",
+ "music": "social/studio/media/vo/goals1103-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/goals",
+   "cover": "cover.jpg",
+   "price": "4.49",
+   "pages": 14,
+   "listTitle": "2027 Goal Setting Workbook Printable, 12 Week Goal Planner, New Year Resolutions Journal, 2026 Year in Review PDF",
+   "strip": [
+    "p-04.png",
+    "p-06.png",
+    "p-08.png",
+    "p-09.png"
+   ],
+   "bg": [
+    "#b0835a",
+    "#45301e"
+   ],
+   "accent": "#8a5a32",
+   "hl": "#ffe9b8",
+   "dot": "#f3e3cc"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-06.png",
+     "p-07.png",
+     "p-10.png",
+     "p-11.png"
+    ],
+    "type": "grid",
+    "t0": 0,
+    "t1": 5.73,
+    "beats": [
+     0.1,
+     1.47,
+     2.84,
+     4.2
+    ]
+   },
+   {
+    "pages": [
+     "p-04.png",
+     "p-02.png",
+     "p-03.png"
+    ],
+    "type": "fan",
+    "t0": 5.73,
+    "t1": 8.01,
+    "beats": [
+     5.83,
+     6.5,
+     7.17
+    ]
+   },
+   {
+    "page": "p-06.png",
+    "badge": "3 goals",
+    "type": "hook",
+    "t0": 8.01,
+    "t1": 9.43
+   },
+   {
+    "pages": [
+     "p-07.png",
+     "p-08.png",
+     "p-14.png",
+     "p-11.png"
+    ],
+    "type": "grid",
+    "t0": 9.43,
+    "t1": 11.68,
+    "beats": [
+     9.53,
+     9.97,
+     10.41,
+     10.85
+    ]
+   },
+   {
+    "pages": [
+     "p-12.png",
+     "p-10.png",
+     "p-09.png"
+    ],
+    "type": "fan",
+    "t0": 11.68,
+    "t1": 13.89,
+    "beats": [
+     11.78,
+     12.42,
+     13.07
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 13.89,
+    "t1": 18.15,
+    "beats": [
+     0.49,
+     1.39,
+     2.06,
+     2.86,
+     3.26
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 18.15,
+    "t1": 21.63
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   3.21,
+   "*12 weeks* to finish | what you start | in *2027*"
+  ],
+  [
+   3.55,
+   5.4,
+   "Get a *head start* | before *January*"
+  ],
+  [
+   5.73,
+   7.68,
+   "Review *2026* first"
+  ],
+  [
+   8.01,
+   9.1,
+   "Pick *3 big goals*"
+  ],
+  [
+   9.43,
+   11.34,
+   "Break each one | into *weekly steps*"
+  ],
+  [
+   11.68,
+   13.57,
+   "A *weekly check-in* | keeps you on track"
+  ],
+  [
+   13.89,
+   16.77,
+   "*14* printable pages | no giant *binder*"
+  ],
+  [
+   17.1,
+   17.82,
+   "Tap the *link*"
+  ],
+  [
+   18.15,
+   19.63,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.47,
+   "pop"
+  ],
+  [
+   2.84,
+   "pop"
+  ],
+  [
+   4.2,
+   "pop"
+  ],
+  [
+   5.68,
+   "whoosh"
+  ],
+  [
+   5.83,
+   "pop"
+  ],
+  [
+   6.5,
+   "pop"
+  ],
+  [
+   7.17,
+   "pop"
+  ],
+  [
+   7.96,
+   "whoosh"
+  ],
+  [
+   9.38,
+   "whoosh"
+  ],
+  [
+   9.53,
+   "pop"
+  ],
+  [
+   9.97,
+   "pop"
+  ],
+  [
+   10.41,
+   "pop"
+  ],
+  [
+   10.85,
+   "pop"
+  ],
+  [
+   11.63,
+   "whoosh"
+  ],
+  [
+   11.78,
+   "pop"
+  ],
+  [
+   12.42,
+   "pop"
+  ],
+  [
+   13.07,
+   "pop"
+  ],
+  [
+   13.84,
+   "whoosh"
+  ],
+  [
+   14.38,
+   "whoosh"
+  ],
+  [
+   17.15,
+   "tap"
+  ],
+  [
+   17.4,
+   "pop"
+  ],
+  [
+   18.1,
+   "whoosh"
+  ],
+  [
+   18.5,
+   "impact"
+  ],
+  [
+   18.95,
+   "pop"
+  ]
+ ]
+}

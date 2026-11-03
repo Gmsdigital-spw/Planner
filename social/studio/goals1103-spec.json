@@ -6,7 +6,7 @@
   "cover": "cover.jpg",
   "price": "4.49",
   "pages": 14,
-  "listTitle": "2027 Goal Setting Workbook, 12-Week Planner, Year in Review (PDF Download)",
+  "listTitle": "2027 Goal Setting Workbook Printable, 12 Week Goal Planner, New Year Resolutions Journal, 2026 Year in Review PDF",
   "strip": [
    "p-04.png",
    "p-06.png",
@@ -40,33 +40,39 @@
   {
    "say": "Review twenty twenty-six first.",
    "cap": "Review *2026* first",
-   "scene": "pan",
-   "page": "p-03.png"
+   "scene": "fan",
+   "pages": [
+    "p-04.png",
+    "p-02.png",
+    "p-03.png"
+   ]
   },
   {
    "say": "Pick three big goals.",
    "cap": "Pick *3 big goals*",
-   "scene": "fan",
-   "pages": [
-    "p-04.png",
-    "p-05.png",
-    "p-06.png"
-   ]
+   "scene": "hook",
+   "page": "p-06.png",
+   "badge": "3 goals"
   },
   {
    "say": "Break each one into weekly steps.",
    "cap": "Break each one | into *weekly steps*",
-   "scene": "pan",
-   "page": "p-07.png"
+   "scene": "grid",
+   "pages": [
+    "p-07.png",
+    "p-08.png",
+    "p-14.png",
+    "p-11.png"
+   ]
   },
   {
    "say": "A weekly check-in keeps you on track.",
    "cap": "A *weekly check-in* | keeps you on track",
    "scene": "fan",
    "pages": [
-    "p-11.png",
     "p-12.png",
-    "p-10.png"
+    "p-10.png",
+    "p-09.png"
    ]
   },
   {

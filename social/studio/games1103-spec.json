@@ -6,7 +6,7 @@
   "cover": "cover.jpg",
   "price": "2.99",
   "pages": 13,
-  "listTitle": "Christmas Party Games Printable Bundle, 8 Holiday Games for Family, Office Party and Kids (Digital Download)",
+  "listTitle": "Christmas Party Games Printable Bundle, 8 Games for Office, Family or Classroom, Trivia, Bingo, Would You Rather, Kids and Adults",
   "strip": [
    "p-03.png",
    "p-08.png",
@@ -36,12 +36,11 @@
   {
    "say": "Eight party games in one download.",
    "cap": "*8* party games | one *download*",
-   "scene": "grid",
+   "scene": "fan",
    "pages": [
-    "p-03.png",
-    "p-07.png",
-    "p-08.png",
-    "p-12.png"
+    "p-04.png",
+    "p-12.png",
+    "p-03.png"
    ]
   },
   {
@@ -53,18 +52,23 @@
   {
    "say": "Would you rather, and this or that cards.",
    "cap": "*Would you rather* | and *this or that*",
-   "scene": "fan",
+   "scene": "grid",
    "pages": [
-    "p-10.png",
+    "p-06.png",
     "p-07.png",
-    "p-06.png"
+    "p-10.png",
+    "p-09.png"
    ]
   },
   {
    "say": "Find the Guest bingo gets people talking.",
    "cap": "*Find the Guest* bingo | gets people *talking*",
-   "scene": "pan",
-   "page": "p-08.png"
+   "scene": "fan",
+   "pages": [
+    "p-13.png",
+    "p-09.png",
+    "p-08.png"
+   ]
   },
   {
    "say": "Kids to grandparents. Just print and play.",
