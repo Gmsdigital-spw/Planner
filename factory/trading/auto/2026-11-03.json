@@ -5,7 +5,8 @@
  "entries": 4,
  "lostToday": [
   "XLV",
-  "NVDA"
+  "NVDA",
+  "SPY"
  ],
  "positions": {
   "KO": {
@@ -17,16 +18,6 @@
    "stopId": "a34c9d09-b2ca-4b00-a7a1-2005a925191e",
    "since": "2026-11-03T16:15:00Z",
    "qty": "0.104871519"
-  },
-  "SPY": {
-   "entry": 756.226,
-   "stop0": 754.17,
-   "stop": 754.17,
-   "target": 760.34,
-   "high": 756.45,
-   "stopId": "533d3ad3-0875-4b90-be86-85a7582fe834",
-   "since": "2026-11-03T18:55:00Z",
-   "qty": "0.007868018"
   }
  },
  "trades": [
@@ -41,6 +32,13 @@
    "sym": "NVDA",
    "entry": 208.648,
    "exit": 207.68,
+   "r": -1.0,
+   "why": "stop filled"
+  },
+  {
+   "sym": "SPY",
+   "entry": 756.226,
+   "exit": 754.17,
    "r": -1.0,
    "why": "stop filled"
   }
@@ -96,17 +94,17 @@
   }
  ],
  "done": null,
- "runs": 372,
+ "runs": 378,
  "lastSignal": {
   "KO": "2026-11-03T16:15:00Z",
   "XLV": "2026-11-03T16:20:00Z",
   "NVDA": "2026-11-03T17:20:00Z",
   "SPY": "2026-11-03T18:55:00Z"
  },
- "lastRun": "13:48",
- "lastNote": "equity $24.93, day -0.03, 2 open, 4 entries",
- "equity": 24.93,
- "dayPnl": -0.03,
+ "lastRun": "13:54",
+ "lastNote": "equity $24.92, day -0.04, 1 open, 4 entries",
+ "equity": 24.92,
+ "dayPnl": -0.04,
  "watch": [
   "SPY",
   "QQQ",
