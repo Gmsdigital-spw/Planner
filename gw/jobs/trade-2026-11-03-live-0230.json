@@ -1,0 +1,1 @@
+{"id":"trade-2026-11-03-live-0230","ops":[{"op":"alpaca","path":"/bankroll"},{"op":"alpaca","path":"/positions"},{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY,KO,XLV&timeframe=5Min&limit=78&feed=iex&start=2026-11-03T14:30:00Z"},{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SPY,QQQ,IWM,DIA,XLK,SMH,NVDA,MSFT,META,XLI,XLV,XLE,XLF,WMT,KO&feed=iex"}]}
