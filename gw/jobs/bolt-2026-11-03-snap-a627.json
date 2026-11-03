@@ -1,0 +1,6 @@
+{"id":"bolt-2026-11-03-snap-a627","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"},
+{"op":"zernio","method":"GET","path":"/posts/6ae23018712b38228fd8369b","tag":"pin-prod-xmas-charades-120-s2"},
+{"op":"zernio","method":"GET","path":"/posts/6adf45a14409e2f268d27ebc","tag":"pin-prod-xmas-escape-room-s1"}]}
