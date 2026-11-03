@@ -78,13 +78,13 @@
   }
  ],
  "done": null,
- "runs": 311,
+ "runs": 317,
  "lastSignal": {
   "KO": "2026-11-03T16:15:00Z",
   "XLV": "2026-11-03T16:20:00Z",
   "NVDA": "2026-11-03T17:20:00Z"
  },
- "lastRun": "12:43",
+ "lastRun": "12:49",
  "lastNote": "equity $24.97, day +0.01, 2 open, 3 entries",
  "equity": 24.97,
  "dayPnl": 0.01,
