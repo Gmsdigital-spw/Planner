@@ -4,7 +4,8 @@
  "equityOpen": 24.96,
  "entries": 3,
  "lostToday": [
-  "XLV"
+  "XLV",
+  "NVDA"
  ],
  "positions": {
   "KO": {
@@ -12,20 +13,10 @@
    "stop0": 94.47,
    "stop": 94.88,
    "target": 95.69,
-   "high": 95.38,
+   "high": 95.455,
    "stopId": "a34c9d09-b2ca-4b00-a7a1-2005a925191e",
    "since": "2026-11-03T16:15:00Z",
    "qty": "0.104871519"
-  },
-  "NVDA": {
-   "entry": 208.648,
-   "stop0": 207.68,
-   "stop": 207.68,
-   "target": 210.58,
-   "high": 208.88,
-   "stopId": "cbc16598-992a-46c1-8522-c1caf96d2b37",
-   "since": "2026-11-03T17:20:00Z",
-   "qty": "0.028612783"
   }
  },
  "trades": [
@@ -33,6 +24,13 @@
    "sym": "XLV",
    "entry": 185.286,
    "exit": 184.68,
+   "r": -1.0,
+   "why": "stop filled"
+  },
+  {
+   "sym": "NVDA",
+   "entry": 208.648,
+   "exit": 207.68,
    "r": -1.0,
    "why": "stop filled"
   }
@@ -78,14 +76,14 @@
   }
  ],
  "done": null,
- "runs": 317,
+ "runs": 323,
  "lastSignal": {
   "KO": "2026-11-03T16:15:00Z",
   "XLV": "2026-11-03T16:20:00Z",
   "NVDA": "2026-11-03T17:20:00Z"
  },
- "lastRun": "12:49",
- "lastNote": "equity $24.97, day +0.01, 2 open, 3 entries",
+ "lastRun": "12:55",
+ "lastNote": "equity $24.97, day +0.01, 1 open, 3 entries",
  "equity": 24.97,
  "dayPnl": 0.01,
  "watch": [
