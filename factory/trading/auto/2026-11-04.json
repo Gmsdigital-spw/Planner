@@ -50,12 +50,12 @@
   }
  ],
  "done": null,
- "runs": 304,
+ "runs": 310,
  "lastSignal": {
   "XLV": "2026-11-04T16:15:00Z",
   "KO": "2026-11-04T16:15:00Z"
  },
- "lastRun": "12:31",
+ "lastRun": "12:37",
  "lastNote": "equity $24.91, day +0.04, 2 open, 2 entries",
  "equity": 24.91,
  "dayPnl": 0.04,
