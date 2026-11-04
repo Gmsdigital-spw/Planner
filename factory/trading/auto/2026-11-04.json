@@ -75,13 +75,13 @@
   }
  ],
  "done": "closed for the day",
- "runs": 437,
+ "runs": 438,
  "lastSignal": {
   "XLV": "2026-11-04T16:15:00Z",
   "KO": "2026-11-04T16:15:00Z"
  },
- "lastRun": "14:45",
- "lastNote": "flat for the day, P/L 0.11",
+ "lastRun": "15:15",
+ "lastNote": "outside market hours",
  "equity": 24.98,
  "dayPnl": 0.11,
  "watch": [
