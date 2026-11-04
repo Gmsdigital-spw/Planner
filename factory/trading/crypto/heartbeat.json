@@ -1,12 +1,14 @@
 {
- "at": "2026-11-03T22:15:05.138634-06:00",
- "lastRun": "22:15",
+ "at": "2026-11-03T23:11:17.131182-06:00",
+ "lastRun": "23:11",
  "day": "2026-11-03",
  "status": "ok",
- "equity": 23.54,
- "openPositions": 0,
+ "equity": 23.5,
+ "openPositions": 1,
  "trades": 18,
- "entriesThisRun": [],
+ "entriesThisRun": [
+  "ETH/USD"
+ ],
  "mode": "virtual",
  "cadence": "every 5 minutes, 24/7"
 }
