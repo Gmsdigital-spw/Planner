@@ -1,11 +1,11 @@
 {
- "at": "2026-11-04T12:41:47.895783-06:00",
- "lastRun": "12:41",
+ "at": "2026-11-04T13:40:52.952847-06:00",
+ "lastRun": "13:40",
  "day": "2026-11-04",
  "status": "ok",
- "equity": 23.18,
- "openPositions": 2,
- "trades": 21,
+ "equity": 23.03,
+ "openPositions": 0,
+ "trades": 23,
  "entriesThisRun": [],
  "mode": "virtual",
  "cadence": "every 5 minutes, 24/7"
