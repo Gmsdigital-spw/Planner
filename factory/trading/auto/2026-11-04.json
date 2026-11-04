@@ -8,10 +8,10 @@
   "XLV": {
    "entry": 188.236,
    "stop0": 187.02,
-   "stop": 188.84,
+   "stop": 188.9,
    "target": 190.67,
-   "high": 190.06,
-   "stopId": "8a84af86-1ad9-4514-9cae-70d50f11c4cf",
+   "high": 190.115,
+   "stopId": "b1ca297a-2c5a-4242-aecf-0332498a2a4b",
    "since": "2026-11-04T16:15:00Z",
    "qty": "0.052699802"
   },
@@ -20,7 +20,7 @@
    "stop0": 95.33,
    "stop": 95.33,
    "target": 97.66,
-   "high": 96.425,
+   "high": 96.435,
    "stopId": "bd5ff4dc-53fa-4d90-81c1-0bab6752c367",
    "since": "2026-11-04T16:15:00Z",
    "qty": "0.061909518"
@@ -63,18 +63,26 @@
    "stop": 188.84,
    "qty": "0.052699802",
    "gainR": 1.5
+  },
+  {
+   "t": "14:35",
+   "do": "raise stop",
+   "sym": "XLV",
+   "stop": 188.9,
+   "qty": "0.052699802",
+   "gainR": 1.55
   }
  ],
  "done": null,
- "runs": 426,
+ "runs": 427,
  "lastSignal": {
   "XLV": "2026-11-04T16:15:00Z",
   "KO": "2026-11-04T16:15:00Z"
  },
- "lastRun": "14:34",
- "lastNote": "equity $24.98, day +0.11, 2 open, 2 entries; no new entries now (8:35-2:00 CT window)",
- "equity": 24.98,
- "dayPnl": 0.11,
+ "lastRun": "14:35",
+ "lastNote": "equity $24.99, day +0.12, 2 open, 2 entries; no new entries now (8:35-2:00 CT window)",
+ "equity": 24.99,
+ "dayPnl": 0.12,
  "watch": [
   "SPY",
   "QQQ",
