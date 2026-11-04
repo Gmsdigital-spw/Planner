@@ -1,12 +1,15 @@
 {
- "at": "2026-11-04T09:19:29.381595-06:00",
- "lastRun": "09:19",
+ "at": "2026-11-04T10:14:07.407823-06:00",
+ "lastRun": "10:14",
  "day": "2026-11-04",
  "status": "ok",
- "equity": 23.45,
- "openPositions": 0,
+ "equity": 23.37,
+ "openPositions": 2,
  "trades": 20,
- "entriesThisRun": [],
+ "entriesThisRun": [
+  "BTC/USD",
+  "DOGE/USD"
+ ],
  "mode": "virtual",
  "cadence": "every 5 minutes, 24/7"
 }
