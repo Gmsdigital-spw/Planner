@@ -1,0 +1,146 @@
+{
+ "id": "bolt-2026-11-04-pins-361c",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-nye-games-n1",
+   "tag": "pin-prod-nye-games-n1",
+   "body": {
+    "content": "Eight printable New Year's Eve games for kids, teens and grown-ups: trivia and a word scramble with answer keys, This or That, Would You Rather cards, Find the Guest bingo, My 2026 in Review, My Predictions for 2027 and a countdown scavenger hunt, plus a party scorecard. For 3 to 30 players, pens and paper only, no drinking games. 12 pages, US Letter or A4.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-nye-games-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-09T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595725",
+       "title": "New Year's Eve Party Games Printable: 8 Family Games, Trivia, Bingo and 2027 Predictions",
+       "link": "https://www.etsy.com/listing/4597755593"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-friendsgiving-kit-n1",
+   "tag": "pin-prod-friendsgiving-kit-n1",
+   "body": {
+    "content": "A 15-page printable Friendsgiving kit for a table of friends: 7 games (trivia, Would You Rather, Most Likely To, Leftover Scramble, bingo, Find a Friend Who and thankful toast cards) with answer keys, plus a potluck sign-up, a host timeline, a team scorecard and leftover labels. Print at home on US Letter or A4.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-friendsgiving-kit-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-09T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "Friendsgiving Games Printable for Adults: Most Likely To, Trivia, Bingo and a Potluck Sign-Up",
+       "link": "https://www.etsy.com/listing/4598501430"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-secret-santa-kit-n2",
+   "tag": "pin-prod-secret-santa-kit-n2",
+   "body": {
+    "content": "A printable Secret Santa questionnaire everyone fills in before the draw: 14 questions from favorite snack and drink to sizes, allergies and a dream small gift. The kit also has a gift idea list by budget (under $10, $20 and $30), name-draw slips, a tracker, gift tags and thank-you notes. 11 pages for office, school or family exchanges. US Letter or A4.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-secret-santa-kit-n2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-09T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "Secret Santa Questionnaire Printable: Know What Your Office Gift Exchange Wants",
+       "link": "https://www.etsy.com/listing/4597755725"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-secret-santa-kit-n1",
+   "tag": "pin-prod-secret-santa-kit-n1",
+   "body": {
+    "content": "An 11-page printable kit to run a Secret Santa or white elephant exchange at work, school or with family. Inside: organizer page and sign-up sheet, a 14-question Secret Santa questionnaire, a gift idea list by budget, 24 name-draw slips, rules, white elephant and dice swap rules, a who-has-who tracker, 12 cut-out gift tags and 6 thank-you notes. Print at home on US Letter or A4.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-secret-santa-kit-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-10T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "Secret Santa Gift Exchange Kit Printable: Questionnaire, Name Draw Slips and Gift Tags",
+       "link": "https://www.etsy.com/listing/4597755725"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-friendsgiving-kit-n2",
+   "tag": "pin-prod-friendsgiving-kit-n2",
+   "body": {
+    "content": "Seven printable Friendsgiving games in one 15-page kit: Friendsgiving trivia, Would You Rather, Most Likely To, Leftover Scramble, 4 bingo cards, Find a Friend Who and thankful toast cards, with answer keys and a team scorecard. Also a potluck sign-up, host timeline and leftover labels. For adults and groups of friends. US Letter or A4.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-friendsgiving-kit-n2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-10T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595722",
+       "title": "7 Friendsgiving Games Printable: Trivia, Bingo, Scramble and Toasts for a Friends Thanksgiving",
+       "link": "https://www.etsy.com/listing/4598501430"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
