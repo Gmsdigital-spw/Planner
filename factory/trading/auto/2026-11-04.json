@@ -8,10 +8,10 @@
   "XLV": {
    "entry": 188.236,
    "stop0": 187.02,
-   "stop": 188.9,
+   "stop": 188.96,
    "target": 190.67,
-   "high": 190.115,
-   "stopId": "b1ca297a-2c5a-4242-aecf-0332498a2a4b",
+   "high": 190.18,
+   "stopId": "9a193255-73aa-44bb-ac8c-3ba9ae0bf3ab",
    "since": "2026-11-04T16:15:00Z",
    "qty": "0.052699802"
   },
@@ -71,15 +71,23 @@
    "stop": 188.9,
    "qty": "0.052699802",
    "gainR": 1.55
+  },
+  {
+   "t": "14:37",
+   "do": "raise stop",
+   "sym": "XLV",
+   "stop": 188.96,
+   "qty": "0.052699802",
+   "gainR": 1.6
   }
  ],
  "done": null,
- "runs": 427,
+ "runs": 429,
  "lastSignal": {
   "XLV": "2026-11-04T16:15:00Z",
   "KO": "2026-11-04T16:15:00Z"
  },
- "lastRun": "14:35",
+ "lastRun": "14:37",
  "lastNote": "equity $24.99, day +0.12, 2 open, 2 entries; no new entries now (8:35-2:00 CT window)",
  "equity": 24.99,
  "dayPnl": 0.12,
