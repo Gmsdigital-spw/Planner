@@ -1,0 +1,69 @@
+{
+ "id": "ep27",
+ "format": "story",
+ "rev": 1,
+ "title": "My Mom Blamed My Games for My Missing Homework #shorts",
+ "title_card": "The Homework Thief",
+ "voice": "andrew",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "uplifting",
+ "music_volume": 0.05,
+ "cast": {
+  "kid": "a stick-figure boy with a round white head, dot eyes, thin black limbs, messy curly black hair and a green hoodie",
+  "mom": "a stick-figure mother with a round white head, dot eyes, thin black limbs, a high red ponytail and a blue cardigan",
+  "grandma": "a stick-figure grandmother with a round white head, dot eyes, thin black limbs, a white hair bun, round glasses and a purple apron",
+  "max": "a stick-figure little boy, half the height of a grown-up, with a round white head, dot eyes, thin black limbs, a yellow cap and red overalls",
+  "dog": "a small round brown cartoon dog with floppy ears and a red collar"
+ },
+ "lines": [
+  {
+   "text": "Mom said my games made me lie about homework, so who really kept taking it?",
+   "image": "{kid} is the only person in the picture, sitting alone on a bedroom floor holding exactly one open empty backpack upside down, looking up worried, exactly one switched-off TV with a plain black screen behind him"
+  },
+  {
+   "text": "Every night I did my math, every morning it vanished, so Mom locked my console.",
+   "image": "{mom} is the only person in the picture, standing alone at a hallway closet, pushing exactly one game console onto a closet shelf, exactly one big gray padlock hanging on the closet door handle, stern face"
+  },
+  {
+   "text": "With no games at all, I redid my math, and by morning it vanished again.",
+   "image": "{kid} is the only person in the picture, sitting alone at a small desk at night, writing on exactly one sheet of paper under exactly one glowing desk lamp, a dark window behind him, tired eyes"
+  },
+  {
+   "text": "Another zero came home, Mom took my phone too, and I cried on my bed.",
+   "image": "{kid} is the only person in the picture, close-up, sitting alone on his bed hugging his knees, a single tear running down his cheek, sad"
+  },
+  {
+   "text": "Suspect one: Biscuit, our dog, who chews anything that smells even a little like me.",
+   "image": "{dog} is the only character in the picture, no people, alone on a living room rug chewing exactly one old sneaker, guilty eyes"
+  },
+  {
+   "text": "Suspect two: Grandma June, who tidies every bag in the house before anyone wakes up.",
+   "image": "{grandma} is the only person in the picture, alone in a dim hallway at dawn, zipping shut exactly one school backpack hanging on a wall hook, busy and cheerful"
+  },
+  {
+   "text": "Suspect three: my brother Max, five years old, who begged me for paper all week.",
+   "image": "{max} is the only person in the picture, standing alone in a kitchen holding out both empty hands, pleading face"
+  },
+  {
+   "text": "I wrote my math on bright yellow paper, then hid behind the couch at dawn.",
+   "image": "{kid} is the only person in the picture, crouching alone behind a living room couch at dawn, peeking over the top, exactly one backpack on the floor in front of the couch with exactly one bright yellow sheet of paper sticking out of it"
+  },
+  {
+   "text": "Grandma tidied my backpack and put my loose yellow page in her scrap paper box.",
+   "image": "{grandma} is the only person in the picture, alone in a living room at dawn, dropping exactly one bright yellow sheet of paper into exactly one open cardboard box full of scrap paper, exactly one backpack at her feet"
+  },
+  {
+   "text": "Max grabbed it from her box, folded a plane, and flew it onto the roof.",
+   "image": "{max} is the only person in the picture, alone at an open window, throwing exactly one bright yellow paper airplane out of the window toward a garage roof outside"
+  },
+  {
+   "text": "Mom climbed the garage roof and found my missing week of math, folded into airplanes.",
+   "image": "{mom} is the only person in the picture, alone at the top of a ladder at the edge of a garage roof covered in white and bright yellow paper airplanes, mouth open in surprise"
+  },
+  {
+   "text": "My console came back, but Grandma blames Max, and Max swears Grandma started it all.",
+   "image": "{kid} is the only person in the picture, sitting alone on a bedroom floor happily playing a video game with exactly one controller, exactly one TV in front of him showing a bright colorful game, a few paper airplanes on the floor beside him"
+  }
+ ]
+}
