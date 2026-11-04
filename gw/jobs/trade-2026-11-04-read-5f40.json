@@ -1,0 +1,1 @@
+{"id":"trade-2026-11-04-read-5f40","ops":[{"op":"alpaca","path":"/bankroll"},{"op":"alpaca","path":"/clock"},{"op":"alpaca","path":"/positions"},{"op":"alpaca","path":"/orders?status=open"},{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SPY,QQQ,IWM,DIA,XLK,XLF,XLE,XLV,XLI,SMH,NVDA,MSFT,META,AAPL,AMZN,GOOGL,TSLA,AMD,JPM,WMT,KO,COST,UNH,XOM,AVGO&feed=iex"}]}
