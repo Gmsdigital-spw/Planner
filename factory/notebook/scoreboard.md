@@ -1,4 +1,4 @@
-# Scoreboard 2026-11-02 (buyer numbers, from 17 daily snapshots)
+# Scoreboard 2026-11-03 (buyer numbers, from 18 daily snapshots)
 
 Every crew reads this before working. It is the only proof of what buyers want; our own
 inspection scores are not. Written by factory/notebook/scoreboard.py, never by hand.
@@ -6,10 +6,11 @@ inspection scores are not. Written by factory/notebook/scoreboard.py, never by h
 Shop: 33 live, 4 sales ($11.79), 2 shop favorites, 1 reviews, 256 listing views.
 
 ## Winners (sold, or 7-day views 5+, or favorited): copy what they do
-- 2027 Goal Setting Workbook Printable, 12 Week Goal Planner [planners] $4.49: 1 sold, 15 views (+10 in 7 d), 2 favs
+- 2027 Goal Setting Workbook Printable, 12 Week Goal Planner [planners] $4.49: 1 sold, 15 views (+9 in 7 d), 2 favs
 - Christmas Party Games Printable Bundle, 8 Games for Office [party games] $2.99: 1 sold, 70 views (+2 in 7 d), 0 favs
 - Gingerbread House Decorating Contest Kit Printable, Judge  [party games] $4.49: 1 sold, 8 views (+2 in 7 d), 0 favs
 - Undated ADHD Planner Digital and Printable, Hyperlinked Go [planners] $6.99: 1 sold, 16 views (+1 in 7 d), 0 favs
+- Christmas Coupon Book Printable, Editable PDF: 30 Coupons  [christmas] $4.49: 0 sold, 0 views (+None in 7 d), 1 favs
 
 ## Dead (live 4+ days, 0 views gained in 7 d, 0 sales): fix cover/title/tags or stop making this kind
 - ADHD Budget Planner App, Safe to Spend Daily Budget, Paych [money] $8.99: 41 views total
@@ -33,11 +34,13 @@ Shop: 33 live, 4 sales ($11.79), 2 shop favorites, 1 reviews, 256 listing views.
 - Christmas Party Kit Printable, 6 Games Plus White Elephant [party games] $5.99: 0 views total
 - Christmas Charades Printable Game, 120 Cards in 3 Levels f [party games] $3.99: 0 views total
 - Thanksgiving Escape Room for Kids and Families, Printable  [party games] $6.99: 0 views total
+- Office Christmas Party Games Printable: 24 No-Prep Team Ga [party games] $4.99: 0 views total
+- Christmas Coupon Book Printable, Editable PDF: 30 Coupons  [christmas] $4.49: 0 views total
 
 ## By lane (where buyers look): build more of the top lane, less of the bottom
 | Lane | Listings | Views | Views/listing | Views gained | Sales |
 |---|---|---|---|---|---|
-| planners | 3 | 39 | 13.0 | 11 | 2 |
+| planners | 3 | 39 | 13.0 | 10 | 2 |
 | party games | 14 | 95 | 6.8 | 4 | 2 |
 | money | 7 | 105 | 15.0 | 8 | 0 |
 | wall art | 2 | 10 | 5.0 | 2 | 0 |
@@ -48,15 +51,15 @@ Shop: 33 live, 4 sales ($11.79), 2 shop favorites, 1 reviews, 256 listing views.
 ## Every listing
 | Listing | Lane | Price | Views | +1d | +3d | +7d | Favs | Sold |
 |---|---|---|---|---|---|---|---|---|
-| 2027 Goal Setting Workbook Printable, 12 Week Goal Planner | planners | 4.49 | 15 | 0 | 2 | 10 | 2 | 1 |
+| 2027 Goal Setting Workbook Printable, 12 Week Goal Planner | planners | 4.49 | 15 | 0 | 2 | 9 | 2 | 1 |
 | Christmas Party Games Printable Bundle, 8 Games for Office | party games | 2.99 | 70 | 0 | 0 | 2 | 0 | 1 |
 | Gingerbread House Decorating Contest Kit Printable, Judge  | party games | 4.49 | 8 | 0 | 0 | 2 | 0 | 1 |
 | Undated ADHD Planner Digital and Printable, Hyperlinked Go | planners | 6.99 | 16 | 0 | 0 | 1 | 0 | 1 |
-| Christmas Planner Printable 2026, Holiday Budget and Gift  | money | 6.99 | 15 | 3 | 3 | 3 | 0 | 0 |
+| Christmas Planner Printable 2026, Holiday Budget and Gift  | money | 6.99 | 15 | 0 | 3 | 3 | 0 | 0 |
 | Irregular Income Budget Planner, Tip and Commission Tracke | money | 4.99 | 10 | 0 | 0 | 2 | 0 | 0 |
-| Pink Bible Verse Wall Art Set of 6, Coquette Christian Pri | wall art | 7.49 | 9 | 0 | 2 | 2 | 0 | 0 |
+| Pink Bible Verse Wall Art Set of 6, Coquette Christian Pri | wall art | 7.49 | 9 | 0 | 0 | 2 | 0 | 0 |
 | No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  | money | 4.49 | 4 | 0 | 0 | 2 | 0 | 0 |
-| Debt Payoff Planner Printable 2027, Debt Snowball and Aval | money | 4.99 | 3 | 0 | 1 | 1 | 0 | 0 |
+| Debt Payoff Planner Printable 2027, Debt Snowball and Aval | money | 4.99 | 3 | 0 | 0 | 1 | 0 | 0 |
 | ADHD Budget Planner App, Safe to Spend Daily Budget, Paych | money | 8.99 | 41 | 0 | 0 | 0 | 0 | 0 |
 | Monthly Budget Tracker Spreadsheet, 2027 Budget Template f | money | 6.99 | 22 | 0 | 0 | 0 | 0 | 0 |
 | 2027 Savings Challenge Printable, ADHD Friendly Color In T | money | 4.49 | 10 | 0 | 0 | 0 | 0 | 0 |
@@ -75,11 +78,11 @@ Shop: 33 live, 4 sales ($11.79), 2 shop favorites, 1 reviews, 256 listing views.
 | Letter from Santa Editable Printable, 6 Personalized Santa | christmas | 4.99 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Pink Bow Birthday Invitation Template, Coquette Bow Invite | invitations | 7.99 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Christmas Murder Mystery Party Game for 8 Players, Printab | party games | 7.99 | 0 | 0 | 0 | 0 | 0 | 0 |
-| Christmas Party Kit Printable, 6 Games Plus White Elephant | party games | 5.99 | 0 | 0 | 0 | - | 0 | 0 |
+| Christmas Party Kit Printable, 6 Games Plus White Elephant | party games | 5.99 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Christmas Charades Printable Game, 120 Cards in 3 Levels f | party games | 3.99 | 0 | 0 | 0 | - | 0 | 0 |
 | Thanksgiving Escape Room for Kids and Families, Printable  | party games | 6.99 | 0 | 0 | 0 | - | 0 | 0 |
-| Office Christmas Party Games Printable: 24 No-Prep Team Ga | party games | 4.99 | 0 | 0 | - | - | 0 | 0 |
-| Christmas Coupon Book Printable, Editable PDF: 30 Coupons  | christmas | 4.49 | 0 | 0 | - | - | 0 | 0 |
+| Office Christmas Party Games Printable: 24 No-Prep Team Ga | party games | 4.99 | 0 | 0 | 0 | - | 0 | 0 |
+| Christmas Coupon Book Printable, Editable PDF: 30 Coupons  | christmas | 4.49 | 0 | 0 | 0 | - | 1 | 0 |
 | Christmas Escape Room for Adults and Teens: Printable Part | party games | 7.99 | 0 | 0 | - | - | 0 | 0 |
 
 ## How crews use this
