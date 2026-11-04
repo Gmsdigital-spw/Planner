@@ -134,10 +134,20 @@
       "listingId": "4597749137",
       "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-03/4597749137/video.mp4",
       "zernioPostId": "6aea31cc6781ba10b242ab4f",
+      "status": "failed",
+      "postUrl": null,
+      "error": "Pinterest: \"This site doesn't allow you to save Pins\" (link/domain refused) after 3 attempts; link was bare etsy.com/listing/<id>.",
+      "link": "https://www.etsy.com/listing/4597749137"
+    },
+    {
+      "day": "2026-11-04",
+      "listingId": "4600177510",
+      "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-04/4600177510/video.mp4",
+      "zernioPostId": "6aeb8182347ff9b31c2af7dd",
       "status": "scheduled",
       "postUrl": null,
       "error": null,
-      "link": "https://www.etsy.com/listing/4597749137"
+      "link": "https://www.etsy.com/listing/4600177510/christmas-cookie-exchange-kit-printable"
     }
   ]
 }
