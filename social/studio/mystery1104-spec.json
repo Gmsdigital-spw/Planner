@@ -1,0 +1,93 @@
+{
+ "vo": "social/studio/media/vo/mystery1104-vo.mp3",
+ "music": "social/studio/media/vo/mystery1104-music.wav",
+ "product": {
+  "dir": "/social/studio/media/mystery",
+  "cover": "cover.jpg",
+  "price": "7.99",
+  "pages": 16,
+  "listTitle": "Christmas Murder Mystery Party Game for 8 Players, Printable Family Friendly Whodunit, Christmas Dinner or Office Party Kit",
+  "strip": [
+   "p-05.png",
+   "p-13.png",
+   "p-14.png",
+   "p-16.png"
+  ],
+  "bg": [
+   "#a3324a",
+   "#3a0c16"
+  ],
+  "accent": "#7a1f2b",
+  "hl": "#ffd34d",
+  "dot": "#ffe0e6"
+ },
+ "phrases": [
+  {
+   "say": "Who stole the Christmas star?",
+   "cap": "Who stole the | *Christmas star?*",
+   "scene": "fan",
+   "pages": [
+    "p-04.png",
+    "p-13.png",
+    "p-05.png"
+   ]
+  },
+  {
+   "say": "A cozy whodunit for exactly eight players.",
+   "cap": "A cozy *whodunit* | for *8 players*",
+   "scene": "grid",
+   "pages": [
+    "p-05.png",
+    "p-06.png",
+    "p-07.png",
+    "p-08.png"
+   ]
+  },
+  {
+   "say": "Christmas Eve. A snowed-in lodge. The lights go out.",
+   "cap": "*Christmas Eve* | a snowed-in *lodge* | the lights go *out*",
+   "scene": "fan",
+   "pages": [
+    "p-03.png",
+    "p-02.png",
+    "p-04.png"
+   ]
+  },
+  {
+   "say": "Everyone gets a character, a secret, and an alibi.",
+   "cap": "A *character* | a *secret* | and an *alibi*",
+   "scene": "grid",
+   "pages": [
+    "p-09.png",
+    "p-10.png",
+    "p-11.png",
+    "p-12.png"
+   ]
+  },
+  {
+   "say": "Clue cards point to one fair answer.",
+   "cap": "*Clue cards* | one *fair* answer",
+   "scene": "fan",
+   "pages": [
+    "p-14.png",
+    "p-16.png",
+    "p-13.png"
+   ]
+  },
+  {
+   "say": "Family friendly. Sixteen printable pages.",
+   "cap": "*Family friendly* | *16* printable pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

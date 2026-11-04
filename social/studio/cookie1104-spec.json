@@ -1,0 +1,87 @@
+{
+ "vo": "social/studio/media/vo/cookie1104-vo.mp3",
+ "music": "social/studio/media/vo/cookie1104-music.wav",
+ "product": {
+  "dir": "/social/studio/media/cookie",
+  "cover": "cover.jpg",
+  "price": "4.99",
+  "pages": 13,
+  "listTitle": "Christmas Cookie Exchange Kit Printable, Cookie Swap Party Invitation, Sign Up Sheet, Allergen Labels, Voting Ballots, Recipe Cards",
+  "strip": [
+   "p-05.png",
+   "p-07.png",
+   "p-08.png",
+   "p-09.png"
+  ],
+  "bg": [
+   "#b8323f",
+   "#5a1520"
+  ],
+  "accent": "#8f2a35",
+  "hl": "#ffd34d",
+  "dot": "#ffe3e6"
+ },
+ "phrases": [
+  {
+   "say": "Nobody brings the same cookie.",
+   "cap": "*Nobody* brings | the *same cookie*",
+   "scene": "fan",
+   "pages": [
+    "p-08.png",
+    "p-09.png",
+    "p-05.png"
+   ]
+  },
+  {
+   "say": "Guests sign up first, so every plate is different.",
+   "cap": "Guests *sign up* | every plate | is *different*",
+   "scene": "grid",
+   "pages": [
+    "p-03.png",
+    "p-05.png",
+    "p-04.png",
+    "p-07.png"
+   ]
+  },
+  {
+   "say": "The baking math tells each guest how many to bake.",
+   "cap": "*Baking math* | for *every guest*",
+   "scene": "fan",
+   "pages": [
+    "p-07.png",
+    "p-02.png",
+    "p-06.png"
+   ]
+  },
+  {
+   "say": "Allergen labels go on every plate.",
+   "cap": "*Allergen* labels | on every *plate*",
+   "scene": "grid",
+   "pages": [
+    "p-08.png",
+    "p-12.png",
+    "p-11.png",
+    "p-10.png"
+   ]
+  },
+  {
+   "say": "Ballots crown the best cookie.",
+   "cap": "*Ballots* crown | the *best cookie*"
+  },
+  {
+   "say": "Thirteen printable pages.",
+   "cap": "*13* printable pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}
