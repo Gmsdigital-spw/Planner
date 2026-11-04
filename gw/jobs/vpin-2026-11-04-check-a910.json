@@ -1,0 +1,1 @@
+{"id":"vpin-2026-11-04-check-a910","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100"},{"op":"zernio","method":"GET","path":"/posts/6aea31cc6781ba10b242ab4f"}]}
