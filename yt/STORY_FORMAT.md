@@ -83,3 +83,8 @@ Warnings in yt/out/<id>.json (image model fallback, word timings, music) are log
 The moment a build, an image, the voice or a post fails, message Grayson ONE line right away
 (SendUserMessage AND PushNotification, status "proactive"), e.g. "Short ep18: build failed:
 image failed on scene 4 (Cloudflare daily limit)." Do not wait for stage 06. Then log it.
+
+## Proven (won twice or more on real numbers; every worker uses these)
+- Title: first person, a parent's charge against the kid's games, "My Mom/Dad Said/Blamed My Games ..." ending " #shorts", no emoji, no "...". 4 for 4: ep23 1,306, ep24 1,425, ep25 1,177 (25 h), ep26 414 (1.3 h) views, while every other Short in the same 14 days sits at 6-24 views with 0 likes (Analyst reads Oct 31-Nov 3, 2026).
+- Line 1 states the parent's charge in REPORTED speech plus the hook question (ep23-ep25 won; ep26's direct quote started 36% slower, Nov 3, 2026).
+
