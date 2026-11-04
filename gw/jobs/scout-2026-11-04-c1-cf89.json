@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-04-c1-cf89", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+dice+game&sort_on=score&limit=25&offset=25", "tag": "dice_o25"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+this+or+that+game&sort_on=score&limit=25&offset=25", "tag": "tot_o25"}]}
