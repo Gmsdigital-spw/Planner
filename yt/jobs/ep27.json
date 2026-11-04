@@ -1,7 +1,7 @@
 {
  "id": "ep27",
  "format": "story",
- "rev": 1,
+ "rev": 2,
  "title": "My Mom Blamed My Games for My Missing Homework #shorts",
  "title_card": "The Homework Thief",
  "voice": "andrew",
@@ -35,7 +35,7 @@
   },
   {
    "text": "Suspect one: Biscuit, our dog, who chews anything that smells even a little like me.",
-   "image": "{dog} is the only character in the picture, no people, alone on a living room rug chewing exactly one old sneaker, guilty eyes"
+   "image": "close-up of {dog} alone, the only living thing in the picture, lying on a living room rug chewing exactly one old sneaker, guilty eyes, an empty room with no people and no stick figures anywhere"
   },
   {
    "text": "Suspect two: Grandma June, who tidies every bag in the house before anyone wakes up.",
