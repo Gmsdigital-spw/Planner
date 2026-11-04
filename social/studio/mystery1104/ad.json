@@ -1,0 +1,295 @@
+{
+ "dur": 21.31,
+ "vo": "social/studio/media/vo/mystery1104-vo.mp3",
+ "music": "social/studio/media/vo/mystery1104-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/mystery",
+   "cover": "cover.jpg",
+   "price": "7.99",
+   "pages": 16,
+   "listTitle": "Christmas Murder Mystery Party Game for 8 Players, Printable Family Friendly Whodunit, Christmas Dinner or Office Party Kit",
+   "strip": [
+    "p-05.png",
+    "p-13.png",
+    "p-14.png",
+    "p-16.png"
+   ],
+   "bg": [
+    "#a3324a",
+    "#3a0c16"
+   ],
+   "accent": "#7a1f2b",
+   "hl": "#ffd34d",
+   "dot": "#ffe0e6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-04.png",
+     "p-13.png",
+     "p-05.png"
+    ],
+    "type": "fan",
+    "t0": 0,
+    "t1": 1.85,
+    "beats": [
+     0.1,
+     0.6,
+     1.1
+    ]
+   },
+   {
+    "pages": [
+     "p-05.png",
+     "p-06.png",
+     "p-07.png",
+     "p-08.png"
+    ],
+    "type": "grid",
+    "t0": 1.85,
+    "t1": 4.54,
+    "beats": [
+     1.95,
+     2.51,
+     3.06,
+     3.62
+    ]
+   },
+   {
+    "pages": [
+     "p-03.png",
+     "p-02.png",
+     "p-04.png"
+    ],
+    "type": "fan",
+    "t0": 4.54,
+    "t1": 8.33,
+    "beats": [
+     4.64,
+     5.92,
+     7.19
+    ]
+   },
+   {
+    "pages": [
+     "p-09.png",
+     "p-10.png",
+     "p-11.png",
+     "p-12.png"
+    ],
+    "type": "grid",
+    "t0": 8.33,
+    "t1": 11.47,
+    "beats": [
+     8.43,
+     9.11,
+     9.78,
+     10.46
+    ]
+   },
+   {
+    "pages": [
+     "p-14.png",
+     "p-16.png",
+     "p-13.png"
+    ],
+    "type": "fan",
+    "t0": 11.47,
+    "t1": 14.83,
+    "beats": [
+     11.57,
+     12.67,
+     13.78
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 14.83,
+    "t1": 19.54,
+    "beats": [
+     0.43,
+     1.29,
+     1.66,
+     2.46,
+     2.86
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 19.54,
+    "t1": 21.61
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   1.53,
+   "Who stole the | *Christmas star?*"
+  ],
+  [
+   1.85,
+   4.21,
+   "A cozy *whodunit* | for *8 players*"
+  ],
+  [
+   4.54,
+   8.0,
+   "*Christmas Eve* | a snowed-in *lodge* | the lights go *out*"
+  ],
+  [
+   8.33,
+   11.13,
+   "A *character* | a *secret* | and an *alibi*"
+  ],
+  [
+   11.47,
+   14.51,
+   "*Clue cards* | one *fair* answer"
+  ],
+  [
+   14.83,
+   17.46,
+   "*Family friendly* | *16* printable pages"
+  ],
+  [
+   17.64,
+   18.68,
+   "Tap the *link*"
+  ],
+  [
+   19.54,
+   19.94,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.6,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.1,
+   "pop"
+  ],
+  [
+   1.8,
+   "whoosh"
+  ],
+  [
+   1.95,
+   "pop"
+  ],
+  [
+   2.51,
+   "pop"
+  ],
+  [
+   3.06,
+   "pop"
+  ],
+  [
+   3.62,
+   "pop"
+  ],
+  [
+   4.49,
+   "whoosh"
+  ],
+  [
+   4.64,
+   "pop"
+  ],
+  [
+   5.92,
+   "pop"
+  ],
+  [
+   7.19,
+   "pop"
+  ],
+  [
+   8.28,
+   "whoosh"
+  ],
+  [
+   8.43,
+   "pop"
+  ],
+  [
+   9.11,
+   "pop"
+  ],
+  [
+   9.78,
+   "pop"
+  ],
+  [
+   10.46,
+   "pop"
+  ],
+  [
+   11.42,
+   "whoosh"
+  ],
+  [
+   11.57,
+   "pop"
+  ],
+  [
+   12.67,
+   "pop"
+  ],
+  [
+   13.78,
+   "pop"
+  ],
+  [
+   14.78,
+   "whoosh"
+  ],
+  [
+   15.26,
+   "whoosh"
+  ],
+  [
+   17.69,
+   "tap"
+  ],
+  [
+   17.94,
+   "pop"
+  ],
+  [
+   19.49,
+   "whoosh"
+  ],
+  [
+   19.89,
+   "impact"
+  ],
+  [
+   20.34,
+   "pop"
+  ]
+ ]
+}
