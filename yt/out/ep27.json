@@ -2,8 +2,8 @@
  "id": "ep27",
  "format": "story",
  "duration": 66.67,
- "bytes": 4423900,
- "mb": 4.22,
+ "bytes": 4337905,
+ "mb": 4.14,
  "width": 1080,
  "height": 1920,
  "scenes": [
@@ -47,14 +47,14 @@
   ],
   [
    32.95,
-   38.43
+   38.44
   ],
   [
-   39.13,
-   43.35
+   39.14,
+   43.36
   ],
   [
-   44.05,
+   44.06,
    48.9
   ],
   [
@@ -77,5 +77,6 @@
  "fakeTts": false,
  "tts": "edge",
  "voice": "andrew",
- "art": "stickfigure"
+ "art": "stickfigure",
+ "patch": "shipped rev 1 picture; scene 5 had two extra stick figures beside the dog, removed locally by inpainting (cutter, 2026-11-03); rev 2 rebuild drew six figures in scene 5 and doubled the TV and backpack in scene 1, so it was not used"
 }
