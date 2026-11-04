@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-04-a3-fbf4", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=vision+board+printable&sort_on=score&limit=25&offset=25", "tag": "vb_o25"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=vision+board+printable&sort_on=score&limit=25&offset=50", "tag": "vb_o50"}]}

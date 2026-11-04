@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-04-a2-8f02", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=ugly+sweater+contest+ballot&sort_on=score&limit=25&offset=25", "tag": "usb_o25"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=ugly+sweater+party+games&sort_on=score&limit=25&offset=25", "tag": "usg_o25"}]}

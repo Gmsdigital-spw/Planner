@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-04-a4-f73a", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+bible+verse+wall+art+set&sort_on=score&limit=25&offset=25", "tag": "wa_o25"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+bible+verse+wall+art+set&sort_on=score&limit=25&offset=50", "tag": "wa_o50"}]}
