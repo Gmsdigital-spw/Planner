@@ -1,0 +1,8 @@
+{"id":"bolt-2026-11-04-pinchk-5cc3","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"},
+{"op":"zernio","method":"GET","path":"/posts/6ad9ffa506f4c7145613b7d2","tag":"pin-prod-thanksgiving-host-planner-s3"},
+{"op":"zernio","method":"GET","path":"/posts/6addf4b034f093bc8233d463","tag":"pin-prod-xmas-murder-mystery-8-s3"},
+{"op":"zernio","method":"GET","path":"/posts/6adf45a24409e2f268d27ec1","tag":"pin-prod-xmas-escape-room-s2"}
+]}
