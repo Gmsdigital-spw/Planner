@@ -50,12 +50,12 @@
   }
  ],
  "done": null,
- "runs": 345,
+ "runs": 351,
  "lastSignal": {
   "TLT": "2026-11-05T16:15:00Z",
   "GLD": "2026-11-05T16:50:00Z"
  },
- "lastRun": "13:31",
+ "lastRun": "13:37",
  "lastNote": "equity $24.93, day -0.03, 1 open, 2 entries",
  "equity": 24.93,
  "dayPnl": -0.03,
