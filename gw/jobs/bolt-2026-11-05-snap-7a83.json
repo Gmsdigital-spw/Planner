@@ -1,0 +1,54 @@
+{
+ "id": "bolt-2026-11-05-snap-7a83",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/active?limit=100&includes=Images",
+   "tag": "active"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457",
+   "tag": "shop"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings?state=draft&limit=100",
+   "tag": "drafts"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/receipts?limit=100",
+   "tag": "receipts"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/reviews?limit=100",
+   "tag": "reviews"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ae5dd24e648c6a8e41fcf4c",
+   "tag": "chk:pin-prod-xmas-office-party-games-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6adf45a20d0a68110fd4090a",
+   "tag": "chk:pin-prod-xmas-escape-room-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ae48d65b69d2ba7a2727579",
+   "tag": "chk:pin-prod-thanksgiving-escape-room-s2"
+  }
+ ]
+}
