@@ -41,7 +41,7 @@
   },
   {
    "say": "Thankful toast cards for everyone at the table.",
-   "cap": "*Thankful toast* | cards",
+   "cap": "*Thankful toast* cards",
    "scene": "grid",
    "pages": [
     "p-12.png",
@@ -55,9 +55,9 @@
    "cap": "*Potluck* sign-up | no *double* dishes",
    "scene": "fan",
    "pages": [
-    "p-03.png",
+    "p-13.png",
     "p-04.png",
-    "p-13.png"
+    "p-03.png"
    ]
   },
   {

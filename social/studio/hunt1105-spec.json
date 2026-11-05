@@ -59,9 +59,9 @@
    "cap": "*Blank cards* | for your own *spots*",
    "scene": "fan",
    "pages": [
+    "p-02.png",
     "p-13.png",
-    "p-12.png",
-    "p-02.png"
+    "p-12.png"
    ]
   },
   {
@@ -69,9 +69,9 @@
    "cap": "*Answer key* | for the *grown-ups*",
    "scene": "fan",
    "pages": [
+    "p-01.png",
     "p-02.png",
-    "p-03.png",
-    "p-01.png"
+    "p-03.png"
    ]
   },
   {

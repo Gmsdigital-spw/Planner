@@ -1,0 +1,295 @@
+{
+ "dur": 17.88,
+ "vo": "social/studio/media/vo/hunt1105-vo.mp3",
+ "music": "social/studio/media/vo/hunt1105-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/hunt",
+   "cover": "cover.jpg",
+   "price": "3.99",
+   "pages": 13,
+   "listTitle": "Christmas Scavenger Hunt Printable, 24 Rhyming Clue Cards for Little and Big Kids, Christmas Morning Gift Hunt, Treasure Riddles",
+   "strip": [
+    "p-04.png",
+    "p-08.png",
+    "p-12.png",
+    "p-13.png"
+   ],
+   "bg": [
+    "#b03a48",
+    "#4a1218"
+   ],
+   "accent": "#9e2a36",
+   "hl": "#ffd34d",
+   "dot": "#ffe3e6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-04.png",
+     "p-05.png",
+     "p-08.png",
+     "p-09.png"
+    ],
+    "type": "grid",
+    "t0": 0,
+    "t1": 2.58,
+    "beats": [
+     0.1,
+     0.63,
+     1.16,
+     1.68
+    ]
+   },
+   {
+    "pages": [
+     "p-06.png",
+     "p-05.png",
+     "p-04.png"
+    ],
+    "type": "fan",
+    "t0": 2.58,
+    "t1": 4.53,
+    "beats": [
+     2.68,
+     3.22,
+     3.76
+    ]
+   },
+   {
+    "pages": [
+     "p-08.png",
+     "p-09.png",
+     "p-10.png",
+     "p-11.png"
+    ],
+    "type": "grid",
+    "t0": 4.53,
+    "t1": 6.57,
+    "beats": [
+     4.63,
+     5.01,
+     5.4,
+     5.78
+    ]
+   },
+   {
+    "pages": [
+     "p-02.png",
+     "p-13.png",
+     "p-12.png"
+    ],
+    "type": "fan",
+    "t0": 6.57,
+    "t1": 8.97,
+    "beats": [
+     6.67,
+     7.39,
+     8.11
+    ]
+   },
+   {
+    "pages": [
+     "p-01.png",
+     "p-02.png",
+     "p-03.png"
+    ],
+    "type": "fan",
+    "t0": 8.97,
+    "t1": 12.31,
+    "beats": [
+     9.07,
+     10.17,
+     11.26
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 12.31,
+    "t1": 14.92,
+    "beats": [
+     0.27,
+     0.82,
+     1.02,
+     1.43,
+     1.83
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 14.92,
+    "t1": 18.18
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.18,
+   "*24 clues* | *one* hidden gift"
+  ],
+  [
+   2.58,
+   4.11,
+   "Easy *rhymes* | for *little elves*"
+  ],
+  [
+   4.53,
+   6.13,
+   "Tricky *riddles* | for the *big kids*"
+  ],
+  [
+   6.57,
+   8.56,
+   "*Blank cards* | for your own *spots*"
+  ],
+  [
+   8.97,
+   11.85,
+   "*Answer key* | for the *grown-ups*"
+  ],
+  [
+   12.31,
+   13.67,
+   "*13* printable pages"
+  ],
+  [
+   14.09,
+   14.73,
+   "Tap the *link*"
+  ],
+  [
+   14.92,
+   15.85,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.63,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.16,
+   "pop"
+  ],
+  [
+   1.68,
+   "pop"
+  ],
+  [
+   2.53,
+   "whoosh"
+  ],
+  [
+   2.68,
+   "pop"
+  ],
+  [
+   3.22,
+   "pop"
+  ],
+  [
+   3.76,
+   "pop"
+  ],
+  [
+   4.48,
+   "whoosh"
+  ],
+  [
+   4.63,
+   "pop"
+  ],
+  [
+   5.01,
+   "pop"
+  ],
+  [
+   5.4,
+   "pop"
+  ],
+  [
+   5.78,
+   "pop"
+  ],
+  [
+   6.52,
+   "whoosh"
+  ],
+  [
+   6.67,
+   "pop"
+  ],
+  [
+   7.39,
+   "pop"
+  ],
+  [
+   8.11,
+   "pop"
+  ],
+  [
+   8.92,
+   "whoosh"
+  ],
+  [
+   9.07,
+   "pop"
+  ],
+  [
+   10.17,
+   "pop"
+  ],
+  [
+   11.26,
+   "pop"
+  ],
+  [
+   12.26,
+   "whoosh"
+  ],
+  [
+   12.58,
+   "whoosh"
+  ],
+  [
+   14.14,
+   "tap"
+  ],
+  [
+   14.39,
+   "pop"
+  ],
+  [
+   14.87,
+   "whoosh"
+  ],
+  [
+   15.27,
+   "impact"
+  ],
+  [
+   15.72,
+   "pop"
+  ]
+ ]
+}
