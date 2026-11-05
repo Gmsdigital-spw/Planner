@@ -1,0 +1,93 @@
+{
+ "vo": "social/studio/media/vo/hunt1105-vo.mp3",
+ "music": "social/studio/media/vo/hunt1105-music.wav",
+ "product": {
+  "dir": "/social/studio/media/hunt",
+  "cover": "cover.jpg",
+  "price": "3.99",
+  "pages": 13,
+  "listTitle": "Christmas Scavenger Hunt Printable, 24 Rhyming Clue Cards for Little and Big Kids, Christmas Morning Gift Hunt, Treasure Riddles",
+  "strip": [
+   "p-04.png",
+   "p-08.png",
+   "p-12.png",
+   "p-13.png"
+  ],
+  "bg": [
+   "#b03a48",
+   "#4a1218"
+  ],
+  "accent": "#9e2a36",
+  "hl": "#ffd34d",
+  "dot": "#ffe3e6"
+ },
+ "phrases": [
+  {
+   "say": "Twenty-four clues. One hidden gift.",
+   "cap": "*24 clues* | *one* hidden gift",
+   "scene": "grid",
+   "pages": [
+    "p-04.png",
+    "p-05.png",
+    "p-08.png",
+    "p-09.png"
+   ]
+  },
+  {
+   "say": "Easy rhymes for little elves.",
+   "cap": "Easy *rhymes* | for *little elves*",
+   "scene": "fan",
+   "pages": [
+    "p-06.png",
+    "p-05.png",
+    "p-04.png"
+   ]
+  },
+  {
+   "say": "Tricky riddles for the big kids.",
+   "cap": "Tricky *riddles* | for the *big kids*",
+   "scene": "grid",
+   "pages": [
+    "p-08.png",
+    "p-09.png",
+    "p-10.png",
+    "p-11.png"
+   ]
+  },
+  {
+   "say": "Blank cards for your own hiding spots.",
+   "cap": "*Blank cards* | for your own *spots*",
+   "scene": "fan",
+   "pages": [
+    "p-13.png",
+    "p-12.png",
+    "p-02.png"
+   ]
+  },
+  {
+   "say": "The answer key keeps grown-ups one step ahead.",
+   "cap": "*Answer key* | for the *grown-ups*",
+   "scene": "fan",
+   "pages": [
+    "p-02.png",
+    "p-03.png",
+    "p-01.png"
+   ]
+  },
+  {
+   "say": "Thirteen printable pages.",
+   "cap": "*13* printable pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}
