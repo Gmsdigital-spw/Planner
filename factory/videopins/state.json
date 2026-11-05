@@ -144,10 +144,20 @@
       "listingId": "4600177510",
       "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-04/4600177510/video.mp4",
       "zernioPostId": "6aeb8182347ff9b31c2af7dd",
+      "status": "failed",
+      "postUrl": null,
+      "error": "Pinterest video processing timeout after 60s (last status: processing); retries exhausted after 3 attempts.",
+      "link": "https://www.etsy.com/listing/4600177510/christmas-cookie-exchange-kit-printable"
+    },
+    {
+      "day": "2026-11-05",
+      "listingId": "4599447958",
+      "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-05/4599447958/video.mp4",
+      "zernioPostId": "6aecd15d9b28179478d3ea21",
       "status": "scheduled",
       "postUrl": null,
       "error": null,
-      "link": "https://www.etsy.com/listing/4600177510/christmas-cookie-exchange-kit-printable"
+      "link": "https://www.etsy.com/listing/4599447958/christmas-scavenger-hunt-clues-printable"
     }
   ]
 }
