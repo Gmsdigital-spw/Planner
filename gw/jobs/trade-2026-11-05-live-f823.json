@@ -1,0 +1,1 @@
+{"id":"trade-2026-11-05-live-f823","ops":[{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY,TLT&timeframe=5Min&limit=78&feed=iex&start=2026-11-05T13:30:00Z"},{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SPY,IWM,DIA,XLE,XLF,XLV,XLC,XLI,KO,GLD,BAC,GOOGL,TLT&feed=iex"},{"op":"alpaca","path":"/bankroll"}]}
