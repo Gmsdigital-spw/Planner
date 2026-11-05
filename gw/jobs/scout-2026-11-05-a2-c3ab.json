@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-05-a2-c3ab", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=hot+cocoa+bar+sign&sort_on=score&limit=25&offset=0", "tag": "cocoa_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=hot+cocoa+bar+sign&sort_on=score&limit=25&offset=25", "tag": "cocoa_o25"}]}

@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-05-a3-4a32", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+headband+game&sort_on=score&limit=25&offset=0", "tag": "head_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+who+am+i+game&sort_on=score&limit=25&offset=0", "tag": "whoami_o0"}]}
