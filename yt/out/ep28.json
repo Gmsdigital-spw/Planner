@@ -2,8 +2,8 @@
  "id": "ep28",
  "format": "story",
  "duration": 65.37,
- "bytes": 4438623,
- "mb": 4.23,
+ "bytes": 4518210,
+ "mb": 4.31,
  "width": 1080,
  "height": 1920,
  "scenes": [
@@ -75,5 +75,6 @@
  "fakeTts": false,
  "tts": "edge",
  "voice": "andrew",
- "art": "stickfigure"
+ "art": "stickfigure",
+ "patch": "best-of-two splice by the Cutter: rev 1 video and audio, with scenes 5, 8, 10, 11 taken from rev 2 (identical line timings), blended across the 0.4 s crossfades, re-encoded libx264 slow ~425 kbps, audio copied from rev 1"
 }
