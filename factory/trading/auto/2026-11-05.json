@@ -45,12 +45,12 @@
   }
  ],
  "done": "closed for the day",
- "runs": 419,
+ "runs": 420,
  "lastSignal": {
   "TLT": "2026-11-05T16:15:00Z",
   "GLD": "2026-11-05T16:50:00Z"
  },
- "lastRun": "15:23",
+ "lastRun": "16:13",
  "lastNote": "outside market hours",
  "equity": 24.92,
  "dayPnl": -0.04,
