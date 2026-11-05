@@ -3,7 +3,9 @@
  "mode": "paper",
  "equityOpen": 24.96,
  "entries": 2,
- "lostToday": [],
+ "lostToday": [
+  "GLD"
+ ],
  "positions": {
   "TLT": {
    "entry": 82.088,
@@ -14,19 +16,17 @@
    "stopId": "512ed67c-06f1-4437-aa78-c3aab10e4cce",
    "since": "2026-11-05T16:15:00Z",
    "qty": "0.121211382"
-  },
-  "GLD": {
-   "entry": 377.846,
-   "stop0": 375.83,
-   "stop": 375.83,
-   "target": 381.88,
-   "high": 378.19,
-   "stopId": "a1753056-7751-4f42-8c71-803b8d0c26aa",
-   "since": "2026-11-05T16:50:00Z",
-   "qty": "0.015800087"
   }
  },
- "trades": [],
+ "trades": [
+  {
+   "sym": "GLD",
+   "entry": 377.846,
+   "exit": 375.83,
+   "r": -1.0,
+   "why": "stop filled"
+  }
+ ],
  "actions": [
   {
    "t": "10:20",
@@ -50,13 +50,13 @@
   }
  ],
  "done": null,
- "runs": 237,
+ "runs": 243,
  "lastSignal": {
   "TLT": "2026-11-05T16:15:00Z",
   "GLD": "2026-11-05T16:50:00Z"
  },
- "lastRun": "11:43",
- "lastNote": "equity $24.93, day -0.03, 2 open, 2 entries",
+ "lastRun": "11:49",
+ "lastNote": "equity $24.93, day -0.03, 1 open, 2 entries",
  "equity": 24.93,
  "dayPnl": -0.03,
  "watch": [
