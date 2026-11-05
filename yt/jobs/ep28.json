@@ -1,0 +1,67 @@
+{
+ "id": "ep28",
+ "format": "story",
+ "rev": 1,
+ "title": "My Mom Said My Games Were Eating All Our Batteries #shorts",
+ "title_card": "The Battery Thief",
+ "voice": "andrew",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "uplifting",
+ "music_volume": 0.05,
+ "cast": {
+  "kid": "a stick-figure boy with a round white head, dot eyes, thin black limbs, short curly black hair and a green hoodie",
+  "mom": "a stick-figure mother with a round white head, dot eyes, thin black limbs, a long brown ponytail and a red cardigan",
+  "lily": "a small stick-figure girl with a round white head, dot eyes, thin black limbs, two yellow pigtails and purple pajamas"
+ },
+ "lines": [
+  {
+   "text": "Mom said my games were eating all our batteries, so who was really taking them?",
+   "image": "{kid} is the only person in the picture, sitting alone on a living room floor holding exactly one game controller with its battery cover open and its battery slot empty, looking up worried, a cozy evening living room"
+  },
+  {
+   "text": "Every morning, batteries went missing from the TV remote, the wall clock, and Dad's flashlight.",
+   "image": "{kid} is the only person in the picture, standing alone in a living room at morning holding exactly one TV remote with its battery cover open and its battery slot empty, exactly one stopped round wall clock behind him, exactly one flashlight lying open and empty on a side table"
+  },
+  {
+   "text": "\"You take them for your controller,\" Mom said, while my sister Lily hugged her blanket.",
+   "image": "exactly two people in the picture: {mom} standing in front in a living room, frowning and pointing at exactly one game controller on a coffee table, and behind her on the couch {lily} sitting quietly hugging exactly one small pink blanket"
+  },
+  {
+   "text": "She locked my console and controller in her closet: no games for two whole weeks.",
+   "image": "{mom} is the only person in the picture, walking alone toward a hallway closet carrying exactly one game console and exactly one controller, exactly one big gray padlock hanging on the closet door handle, stern face"
+  },
+  {
+   "text": "Next morning the bathroom scale's batteries were gone too, and Mom stared right at me.",
+   "image": "{mom} is the only person in the picture, standing alone in a bathroom holding exactly one bathroom scale with its battery cover open and its battery slot empty, eyes narrowed, staring straight at the viewer, morning light"
+  },
+  {
+   "text": "She took my phone too, and I sat alone, a thief in my own house.",
+   "image": "{kid} is the only person in the picture, close-up, sitting alone on his bed hugging his knees, a single tear on his cheek, sad, exactly one empty phone charger cable on the nightstand with no phone"
+  },
+  {
+   "text": "Gamers beat bosses by learning their patterns, so I studied our house like a boss.",
+   "image": "{kid} is the only person in the picture, sitting alone on his bed at night drawing a simple floor plan of a house in exactly one open notebook, determined face, exactly one glowing lamp"
+  },
+  {
+   "text": "Every single night at nine-oh-five, a tiny tune played through the wall from Lily's room.",
+   "image": "{kid} is the only person in the picture, sitting alone on his bed at night with one ear pressed to the bedroom wall, little music notes drifting through the wall, exactly one round wall clock showing five past nine"
+  },
+  {
+   "text": "I knew it from a thousand tries: the level-one music from an old handheld game.",
+   "image": "{kid} is the only person in the picture, sitting alone on his bed at night, eyes wide, one finger raised, a thought bubble above his head showing exactly one small old handheld game console"
+  },
+  {
+   "text": "So I told Mom the exact minute, and right at nine-oh-five she lifted Lily's blanket.",
+   "image": "{mom} is the only person in the picture, standing alone beside a small bed in a girl's dark bedroom at night, lifting exactly one pink blanket that glows softly from underneath, surprised face, exactly one round wall clock showing five past nine"
+  },
+  {
+   "text": "Lily was playing Dad's old handheld under there, powered by every battery she'd taken.",
+   "image": "{lily} is the only person in the picture, lying alone on a small bed under exactly one pink blanket lifted up, playing exactly one small glowing old handheld game console, a few loose batteries and exactly one open empty TV remote beside her, caught, guilty grin"
+  },
+  {
+   "text": "Console back: Mom says games still caused it, and I say my games solved it.",
+   "image": "exactly two people in the picture: {kid} sitting in front on a living room floor happily playing a video game with exactly one controller, exactly one TV showing a bright colorful game, and {mom} standing behind him with arms crossed and a small smile, warm evening light"
+  }
+ ]
+}
