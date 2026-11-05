@@ -50,15 +50,15 @@
   }
  ],
  "done": null,
- "runs": 195,
+ "runs": 201,
  "lastSignal": {
   "TLT": "2026-11-05T16:15:00Z",
   "GLD": "2026-11-05T16:50:00Z"
  },
- "lastRun": "11:01",
- "lastNote": "equity $24.96, day +0.00, 2 open, 2 entries",
- "equity": 24.96,
- "dayPnl": 0.0,
+ "lastRun": "11:07",
+ "lastNote": "equity $24.95, day -0.01, 2 open, 2 entries",
+ "equity": 24.95,
+ "dayPnl": -0.01,
  "watch": [
   "SPY",
   "IWM",
