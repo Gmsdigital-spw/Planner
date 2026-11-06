@@ -1,0 +1,102 @@
+{
+ "vo": "social/studio/media/vo/escape1106-vo.mp3",
+ "music": "social/studio/media/vo/escape1106-music.wav",
+ "product": {
+  "dir": "/social/studio/media/escape",
+  "cover": "cover.jpg",
+  "price": "11.99",
+  "pages": 16,
+  "listTitle": "Christmas Escape Room for Kids, Printable Family Escape Game with 2 Levels, Ages 6-9 and 10+, No Phone or QR Code, Classroom Party",
+  "strip": [
+   "p-03.png",
+   "p-04.png",
+   "p-08.png",
+   "p-12.png"
+  ],
+  "bg": [
+   "#a3303d",
+   "#3d0f15"
+  ],
+  "accent": "#2f7a4f",
+  "hl": "#ffd34d",
+  "dot": "#ffe3e6"
+ },
+ "phrases": [
+  {
+   "say": "Can your kids crack the Bell Vault?",
+   "cap": "Can your kids | crack the *Bell Vault?*",
+   "scene": "fan",
+   "pages": [
+    "p-01.png",
+    "p-03.png",
+    "p-12.png"
+   ]
+  },
+  {
+   "say": "Four clues.",
+   "cap": "*4 clues*",
+   "scene": "grid",
+   "pages": [
+    "p-04.png",
+    "p-06.png",
+    "p-08.png",
+    "p-10.png"
+   ]
+  },
+  {
+   "say": "Each one gives a digit.",
+   "cap": "each gives | *one digit*"
+  },
+  {
+   "say": "Little kids play level one.",
+   "cap": "Little kids: | *Level 1*",
+   "scene": "fan",
+   "pages": [
+    "p-08.png",
+    "p-06.png",
+    "p-10.png"
+   ]
+  },
+  {
+   "say": "Big kids get harder puzzles, with the same answer.",
+   "cap": "Big kids: *Level 2* | *same* answer",
+   "scene": "fan",
+   "pages": [
+    "p-05.png",
+    "p-07.png",
+    "p-11.png",
+    "p-09.png"
+   ]
+  },
+  {
+   "say": "No phone. No app.",
+   "cap": "*No* phone | *No* app",
+   "scene": "grid",
+   "pages": [
+    "p-13.png",
+    "p-14.png",
+    "p-15.png",
+    "p-16.png"
+   ]
+  },
+  {
+   "say": "Forty-five minutes on the clock.",
+   "cap": "*45 minutes* | on the clock"
+  },
+  {
+   "say": "Sixteen pages.",
+   "cap": "*16* pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

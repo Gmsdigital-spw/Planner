@@ -1,0 +1,89 @@
+{
+ "vo": "social/studio/media/vo/nobuy1106-vo.mp3",
+ "music": "social/studio/media/vo/nobuy1106-music.wav",
+ "product": {
+  "dir": "/social/studio/media/nobuy",
+  "cover": "cover.jpg",
+  "price": "4.49",
+  "pages": 13,
+  "listTitle": "No Buy Year Planner 2027 Printable, Low Buy Year Tracker, No Spend Challenge Calendar, Shopping Ban Tracker, 30 Day Want List PDF",
+  "strip": [
+   "p-03.png",
+   "p-04.png",
+   "p-06.png",
+   "p-12.png"
+  ],
+  "bg": [
+   "#7d9468",
+   "#2e3d24"
+  ],
+  "accent": "#5e7a4a",
+  "hl": "#ffd34d",
+  "dot": "#eef5e6"
+ },
+ "phrases": [
+  {
+   "say": "Planning a no-buy year for 2027?",
+   "cap": "Planning a *no-buy year* | for *2027?*",
+   "scene": "fan",
+   "pages": [
+    "p-02.png",
+    "p-03.png",
+    "p-01.png"
+   ]
+  },
+  {
+   "say": "Write your rules once.",
+   "cap": "Write your *rules* | once",
+   "scene": "hook",
+   "page": "p-03.png",
+   "badge": "Your rules"
+  },
+  {
+   "say": "Park every want on a thirty-day list.",
+   "cap": "Park every *want* | on a *30-day list*",
+   "scene": "fan",
+   "pages": [
+    "p-05.png",
+    "p-02.png",
+    "p-04.png"
+   ]
+  },
+  {
+   "say": "Tick off every no-spend day, January to December.",
+   "cap": "Tick every | *no-spend day* | *Jan* to *Dec*",
+   "scene": "grid",
+   "pages": [
+    "p-06.png",
+    "p-07.png",
+    "p-08.png",
+    "p-09.png"
+   ]
+  },
+  {
+   "say": "Then add up the money you kept.",
+   "cap": "Add up the *money* | you *kept*",
+   "scene": "fan",
+   "pages": [
+    "p-13.png",
+    "p-10.png",
+    "p-12.png"
+   ]
+  },
+  {
+   "say": "Thirteen printable pages.",
+   "cap": "*13* printable pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

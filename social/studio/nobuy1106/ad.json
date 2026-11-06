@@ -1,0 +1,269 @@
+{
+ "dur": 18.64,
+ "vo": "social/studio/media/vo/nobuy1106-vo.mp3",
+ "music": "social/studio/media/vo/nobuy1106-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/nobuy",
+   "cover": "cover.jpg",
+   "price": "4.49",
+   "pages": 13,
+   "listTitle": "No Buy Year Planner 2027 Printable, Low Buy Year Tracker, No Spend Challenge Calendar, Shopping Ban Tracker, 30 Day Want List PDF",
+   "strip": [
+    "p-03.png",
+    "p-04.png",
+    "p-06.png",
+    "p-12.png"
+   ],
+   "bg": [
+    "#7d9468",
+    "#2e3d24"
+   ],
+   "accent": "#5e7a4a",
+   "hl": "#ffd34d",
+   "dot": "#eef5e6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-02.png",
+     "p-03.png",
+     "p-01.png"
+    ],
+    "type": "fan",
+    "t0": 0,
+    "t1": 3.0,
+    "beats": [
+     0.1,
+     1.06,
+     2.02
+    ]
+   },
+   {
+    "page": "p-03.png",
+    "badge": "Your rules",
+    "type": "hook",
+    "t0": 3.0,
+    "t1": 4.56
+   },
+   {
+    "pages": [
+     "p-05.png",
+     "p-02.png",
+     "p-04.png"
+    ],
+    "type": "fan",
+    "t0": 4.56,
+    "t1": 7.13,
+    "beats": [
+     4.66,
+     5.45,
+     6.24
+    ]
+   },
+   {
+    "pages": [
+     "p-06.png",
+     "p-07.png",
+     "p-08.png",
+     "p-09.png"
+    ],
+    "type": "grid",
+    "t0": 7.13,
+    "t1": 10.51,
+    "beats": [
+     7.23,
+     7.97,
+     8.71,
+     9.45
+    ]
+   },
+   {
+    "pages": [
+     "p-13.png",
+     "p-10.png",
+     "p-12.png"
+    ],
+    "type": "fan",
+    "t0": 10.51,
+    "t1": 12.49,
+    "beats": [
+     10.61,
+     11.16,
+     11.71
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 12.49,
+    "t1": 15.51,
+    "beats": [
+     0.29,
+     0.87,
+     1.07,
+     1.54,
+     1.94
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 15.51,
+    "t1": 18.94
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.58,
+   "Planning a *no-buy year* | for *2027?*"
+  ],
+  [
+   3.0,
+   4.12,
+   "Write your *rules* | once"
+  ],
+  [
+   4.56,
+   6.68,
+   "Park every *want* | on a *30-day list*"
+  ],
+  [
+   7.13,
+   10.07,
+   "Tick every | *no-spend day* | *Jan* to *Dec*"
+  ],
+  [
+   10.51,
+   12.04,
+   "Add up the *money* | you *kept*"
+  ],
+  [
+   12.49,
+   13.97,
+   "*13* printable pages"
+  ],
+  [
+   14.38,
+   15.1,
+   "Tap the *link*"
+  ],
+  [
+   15.51,
+   16.6,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.06,
+   "pop"
+  ],
+  [
+   2.02,
+   "pop"
+  ],
+  [
+   2.95,
+   "whoosh"
+  ],
+  [
+   4.51,
+   "whoosh"
+  ],
+  [
+   4.66,
+   "pop"
+  ],
+  [
+   5.45,
+   "pop"
+  ],
+  [
+   6.24,
+   "pop"
+  ],
+  [
+   7.08,
+   "whoosh"
+  ],
+  [
+   7.23,
+   "pop"
+  ],
+  [
+   7.97,
+   "pop"
+  ],
+  [
+   8.71,
+   "pop"
+  ],
+  [
+   9.45,
+   "pop"
+  ],
+  [
+   10.46,
+   "whoosh"
+  ],
+  [
+   10.61,
+   "pop"
+  ],
+  [
+   11.16,
+   "pop"
+  ],
+  [
+   11.71,
+   "pop"
+  ],
+  [
+   12.44,
+   "whoosh"
+  ],
+  [
+   12.78,
+   "whoosh"
+  ],
+  [
+   14.43,
+   "tap"
+  ],
+  [
+   14.68,
+   "pop"
+  ],
+  [
+   15.46,
+   "whoosh"
+  ],
+  [
+   15.86,
+   "impact"
+  ],
+  [
+   16.31,
+   "pop"
+  ]
+ ]
+}
