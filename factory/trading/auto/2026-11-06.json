@@ -2,21 +2,12 @@
  "day": "2026-11-06",
  "mode": "paper",
  "equityOpen": 24.9,
- "entries": 3,
+ "entries": 4,
  "lostToday": [
-  "SPY"
+  "SPY",
+  "XLE"
  ],
  "positions": {
-  "XLE": {
-   "entry": 62.118,
-   "stop0": 61.82,
-   "stop": 61.82,
-   "target": 62.71,
-   "high": 62.39,
-   "stopId": "97c4f3d0-744f-4844-89fd-f6e79bcc9239",
-   "since": "2026-11-06T16:15:00Z",
-   "qty": "0.159857046"
-  },
   "KO": {
    "entry": 96.058,
    "stop0": 95.74,
@@ -26,6 +17,16 @@
    "stopId": "a9c1bbe8-d23f-421f-b291-defc5b7282b6",
    "since": "2026-11-06T17:30:00Z",
    "qty": "0.061941743"
+  },
+  "AAPL": {
+   "entry": 344.454,
+   "stop0": 343.47,
+   "stop": 343.47,
+   "target": 346.42,
+   "high": 344.454,
+   "stopId": "93a8c6b9-661a-4f27-a242-6077f8f710ca",
+   "since": "2026-11-06T18:55:00Z",
+   "qty": "0.021831652"
   }
  },
  "trades": [
@@ -33,6 +34,13 @@
    "sym": "SPY",
    "entry": 739.882,
    "exit": 737.09,
+   "r": -1.0,
+   "why": "stop filled"
+  },
+  {
+   "sym": "XLE",
+   "entry": 62.118,
+   "exit": 61.82,
    "r": -1.0,
    "why": "stop filled"
   }
@@ -67,19 +75,30 @@
    "target": 96.69,
    "status": 200,
    "fill": 96.058
+  },
+  {
+   "t": "13:02",
+   "do": "buy",
+   "sym": "AAPL",
+   "notional": 7.53,
+   "stop": 343.47,
+   "target": 346.42,
+   "status": 200,
+   "fill": 344.454
   }
  ],
  "done": null,
- "runs": 331,
+ "runs": 332,
  "lastSignal": {
   "XLE": "2026-11-06T16:15:00Z",
   "SPY": "2026-11-06T16:20:00Z",
-  "KO": "2026-11-06T17:30:00Z"
+  "KO": "2026-11-06T17:30:00Z",
+  "AAPL": "2026-11-06T18:55:00Z"
  },
- "lastRun": "13:01",
- "lastNote": "equity $24.84, day -0.06, 2 open, 3 entries",
- "equity": 24.84,
- "dayPnl": -0.06,
+ "lastRun": "13:02",
+ "lastNote": "equity $24.83, day -0.07, 2 open, 4 entries",
+ "equity": 24.83,
+ "dayPnl": -0.07,
  "watch": [
   "SPY",
   "QQQ",
