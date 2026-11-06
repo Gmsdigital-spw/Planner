@@ -1,0 +1,66 @@
+{
+ "id": "ep29",
+ "format": "story",
+ "rev": 1,
+ "title": "My Dad Said My Games Rotted My Math Brain #shorts",
+ "title_card": "The Birthday Paradox",
+ "voice": "andrew",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "uplifting",
+ "music_volume": 0.05,
+ "cast": {
+  "kid": "a stick-figure boy with a round white head, dot eyes, thin black limbs, spiky brown hair and an orange hoodie",
+  "dad": "a stick-figure father with a round white head, dot eyes, thin black limbs, a short black beard, square glasses and a blue plaid shirt"
+ },
+ "lines": [
+  {
+   "text": "Dad said my games rotted my math brain, so who was really bad at math?",
+   "image": "{kid} is the only person in the picture, sitting alone on a living room couch holding one game controller, looking up worried, a cozy evening living room"
+  },
+  {
+   "text": "My game squad has twenty-three players, and the game puts a cake on each birthday.",
+   "image": "{kid} is the only person in the picture, sitting on a bedroom floor holding one game controller, smiling at exactly one glowing TV screen in front of him showing two small birthday cakes, a cozy bedroom"
+  },
+  {
+   "text": "Two friends got cakes the same day, and I told Dad that happens a lot.",
+   "image": "{kid} is the only person in the picture, standing in a kitchen doorway, pointing back toward his bedroom and smiling, explaining something excitedly"
+  },
+  {
+   "text": "Dad laughed, still eating leftover cake from his office party, \"One in three sixty-five, buddy.\"",
+   "image": "{dad} is the only person in the picture, sitting at a kitchen table eating exactly one slice of birthday cake from one paper plate, laughing, an evening kitchen"
+  },
+  {
+   "text": "He locked my console in his closet until I could prove it with real math.",
+   "image": "{dad} is the only person in the picture, putting exactly one game console onto a high closet shelf in a hallway, a stern face"
+  },
+  {
+   "text": "I sat alone on my floor, scared my games really had broken my brain.",
+   "image": "close-up of {kid} sitting alone on his bedroom floor, hugging his knees, sad eyes looking down, a single tear on his cheek, dim bedroom light"
+  },
+  {
+   "text": "Next day, a library book showed me a famous math puzzle called the birthday paradox.",
+   "image": "{kid} is the only person in the picture, sitting at a school library table reading one big open book, eyes wide with surprise, bookshelves behind him"
+  },
+  {
+   "text": "Dad counted one birthday, but any two people in a group can be the match.",
+   "image": "{kid} is the only person in the picture, standing at a classroom chalkboard drawing many small stick people joined by lines, pointing at two of them"
+  },
+  {
+   "text": "Twenty-three people make two hundred fifty-three pairs, so a shared birthday beats a coin flip.",
+   "image": "{kid} is the only person in the picture, flipping one big coin into the air in a backyard, grinning with confidence, afternoon sun"
+  },
+  {
+   "text": "So I asked Dad one question: why was there leftover cake from his office party?",
+   "image": "{kid} is the only person in the picture, standing in a kitchen with arms crossed and a sly smile, exactly one half-eaten cake on the counter beside him"
+  },
+  {
+   "text": "He admitted two of his twenty-three coworkers share a birthday, so they share one cake.",
+   "image": "{dad} is the only person in the picture, standing frozen in a kitchen holding exactly one paper plate with one cake slice, mouth wide open in shock"
+  },
+  {
+   "text": "Console back, and Dad still says luck, but his own office cake says math.",
+   "image": "{kid} is the only person in the picture, sitting on a living room couch happily holding one game controller, exactly one slice of cake on a plate beside him, cozy evening"
+  }
+ ]
+}
