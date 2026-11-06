@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-06-a2-01dc", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+trivia&sort_on=score&limit=25&offset=0", "tag": "triv2_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=holiday+trivia+game&sort_on=score&limit=25&offset=0", "tag": "htriv_o0"}]}

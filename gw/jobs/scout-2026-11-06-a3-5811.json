@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-06-a3-5811", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=white+elephant+game&sort_on=score&limit=25&offset=0", "tag": "we_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=white+elephant+game&sort_on=score&limit=25&offset=25", "tag": "we_o25"}]}
