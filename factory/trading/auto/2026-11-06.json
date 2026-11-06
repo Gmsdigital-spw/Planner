@@ -2,16 +2,40 @@
  "day": "2026-11-06",
  "mode": "paper",
  "equityOpen": 24.9,
- "entries": 0,
+ "entries": 1,
  "lostToday": [],
- "positions": {},
+ "positions": {
+  "XLE": {
+   "entry": 62.118,
+   "stop0": 61.82,
+   "stop": 61.82,
+   "target": 62.71,
+   "high": 62.118,
+   "stopId": "97c4f3d0-744f-4844-89fd-f6e79bcc9239",
+   "since": "2026-11-06T16:15:00Z",
+   "qty": "0.159857046"
+  }
+ },
  "trades": [],
- "actions": [],
+ "actions": [
+  {
+   "t": "10:20",
+   "do": "buy",
+   "sym": "XLE",
+   "notional": 9.94,
+   "stop": 61.82,
+   "target": 62.71,
+   "status": 200,
+   "fill": 62.118
+  }
+ ],
  "done": null,
- "runs": 166,
- "lastSignal": {},
- "lastRun": "10:16",
- "lastNote": "equity $24.90, day +0.00, 0 open, 0 entries; scanned 14 names, no A+ setup",
+ "runs": 170,
+ "lastSignal": {
+  "XLE": "2026-11-06T16:15:00Z"
+ },
+ "lastRun": "10:20",
+ "lastNote": "equity $24.90, day +0.00, 1 open, 1 entries",
  "equity": 24.9,
  "dayPnl": 0.0,
  "watch": [
