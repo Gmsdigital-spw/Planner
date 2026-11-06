@@ -70,13 +70,13 @@
   }
  ],
  "done": null,
- "runs": 259,
+ "runs": 265,
  "lastSignal": {
   "XLE": "2026-11-06T16:15:00Z",
   "SPY": "2026-11-06T16:20:00Z",
   "KO": "2026-11-06T17:30:00Z"
  },
- "lastRun": "11:49",
+ "lastRun": "11:55",
  "lastNote": "equity $24.86, day -0.04, 2 open, 3 entries",
  "equity": 24.86,
  "dayPnl": -0.04,
