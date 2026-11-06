@@ -154,10 +154,20 @@
       "listingId": "4599447958",
       "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-05/4599447958/video.mp4",
       "zernioPostId": "6aecd15d9b28179478d3ea21",
+      "status": "failed",
+      "postUrl": null,
+      "error": "Pinterest: \"This site doesn't allow you to save Pins\" (link/domain refused) after 3 attempts; link was etsy.com/listing/<id>/<slug>.",
+      "link": "https://www.etsy.com/listing/4599447958/christmas-scavenger-hunt-clues-printable"
+    },
+    {
+      "day": "2026-11-06",
+      "listingId": "4602402578",
+      "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-06/4602402578/video.mp4",
+      "zernioPostId": "6aee2434d660c9a5cb5453bf",
       "status": "scheduled",
       "postUrl": null,
       "error": null,
-      "link": "https://www.etsy.com/listing/4599447958/christmas-scavenger-hunt-clues-printable"
+      "link": "https://www.etsy.com/listing/4602402578"
     }
   ]
 }
