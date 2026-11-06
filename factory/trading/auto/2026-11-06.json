@@ -86,14 +86,14 @@
   }
  ],
  "done": null,
- "runs": 396,
+ "runs": 402,
  "lastSignal": {
   "XLE": "2026-11-06T16:15:00Z",
   "SPY": "2026-11-06T16:20:00Z",
   "KO": "2026-11-06T17:30:00Z",
   "AAPL": "2026-11-06T18:55:00Z"
  },
- "lastRun": "14:07",
+ "lastRun": "14:13",
  "lastNote": "equity $24.81, day -0.09, 1 open, 4 entries; no new entries now (8:35-2:00 CT window)",
  "equity": 24.81,
  "dayPnl": -0.09,
