@@ -2,7 +2,7 @@
  "day": "2026-11-06",
  "mode": "paper",
  "equityOpen": 24.9,
- "entries": 1,
+ "entries": 2,
  "lostToday": [],
  "positions": {
   "XLE": {
@@ -10,10 +10,20 @@
    "stop0": 61.82,
    "stop": 61.82,
    "target": 62.71,
-   "high": 62.118,
+   "high": 62.335,
    "stopId": "97c4f3d0-744f-4844-89fd-f6e79bcc9239",
    "since": "2026-11-06T16:15:00Z",
    "qty": "0.159857046"
+  },
+  "SPY": {
+   "entry": 739.882,
+   "stop0": 737.09,
+   "stop": 737.09,
+   "target": 745.47,
+   "high": 739.882,
+   "stopId": "5130b6e0-293a-48e3-b1b4-d2e48dcaa2de",
+   "since": "2026-11-06T16:20:00Z",
+   "qty": "0.008055338"
   }
  },
  "trades": [],
@@ -27,17 +37,28 @@
    "target": 62.71,
    "status": 200,
    "fill": 62.118
+  },
+  {
+   "t": "10:25",
+   "do": "buy",
+   "sym": "SPY",
+   "notional": 5.97,
+   "stop": 737.09,
+   "target": 745.47,
+   "status": 200,
+   "fill": 739.882
   }
  ],
  "done": null,
- "runs": 170,
+ "runs": 175,
  "lastSignal": {
-  "XLE": "2026-11-06T16:15:00Z"
+  "XLE": "2026-11-06T16:15:00Z",
+  "SPY": "2026-11-06T16:20:00Z"
  },
- "lastRun": "10:20",
- "lastNote": "equity $24.90, day +0.00, 1 open, 1 entries",
- "equity": 24.9,
- "dayPnl": 0.0,
+ "lastRun": "10:25",
+ "lastNote": "equity $24.93, day +0.03, 2 open, 2 entries",
+ "equity": 24.93,
+ "dayPnl": 0.03,
  "watch": [
   "SPY",
   "QQQ",
