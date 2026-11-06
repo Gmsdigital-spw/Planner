@@ -1,0 +1,174 @@
+{
+ "id": "bolt-2026-11-06-pins-7692",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-advent-activities-n2",
+   "tag": "pin-prod-advent-activities-n2",
+   "body": {
+    "content": "A printable family advent countdown: 24 activity cards for December 1 to 24, blank cards for your own traditions, a countdown tracker, a plan-ahead supply list and a family memories page. One small activity a day; 7 of the 24 need nothing at all. Print, cut and start on December 1.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-advent-activities-n2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-11T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "24 Days of Christmas Family Activities: Printable Advent Activity Cards and Countdown Tracker",
+       "link": "https://www.etsy.com/listing/4597998190"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-cookie-exchange-kit-n2",
+   "tag": "pin-prod-cookie-exchange-kit-n2",
+   "body": {
+    "content": "A printable Christmas cookie exchange party kit. Inside: host guide, fill-in invitations, host countdown, guest sign-up sheet, swap rules and baking math, recipe cards, cookie labels, best cookie ballots, a voting tally with 4 award cards, thank-you cards, take-home box tags and a recipe swap list. 13 pages, US Letter, print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-cookie-exchange-kit-n2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-11T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Cookie Exchange Party Kit Printable: Best Cookie Ballots, Awards and Box Tags",
+       "link": "https://www.etsy.com/listing/4600177510"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-coupon-book-n1",
+   "tag": "pin-prod-xmas-coupon-book-n1",
+   "body": {
+    "content": "An editable Christmas coupon book you type and print at home. Inside: front and back covers, 30 coupons in three books (partner, kids and family, 10 each), 5 blank coupons to write your own and a fold-up gift envelope. Type the names and details in the PDF, then print, cut and assemble. A small, personal stocking stuffer.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-coupon-book-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-11T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "Editable Christmas Coupon Book Printable: 30 Gift Coupons for Partner, Kids and Family",
+       "link": "https://www.etsy.com/listing/4606924165"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-escape-room-n1",
+   "tag": "pin-prod-xmas-escape-room-n1",
+   "body": {
+    "content": "A printable Christmas escape room for kids and families: The Bell Vault. Inside: a game master guide, a mission letter, 4 clues in two levels (ages 6-9 and 10+), the final lock page, envelope lock tags, hint cards, an answer key and escape expert certificates. About 45 minutes of screen-free puzzles for a family night, a class party or a Christmas get-together. Print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-n1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-11T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Christmas Escape Room for Kids: Printable Family Puzzle Game, 2 Levels for Ages 6-9 and 10+",
+       "link": "https://www.etsy.com/listing/4602402578"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-cookie-exchange-kit-n3",
+   "tag": "pin-prod-cookie-exchange-kit-n3",
+   "body": {
+    "content": "Everything to host a Christmas cookie swap, printed at home: fill-in invitations, a guest sign-up sheet so no cookie repeats, recipe cards, cookie labels, ballots, awards, thank-you cards and take-home box tags. 13 pages with a step-by-step host guide and baking math for any number of guests.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-cookie-exchange-kit-n3.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-12T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Cookie Swap Party Printables: Invitations, Sign-Up Sheet, Recipe Cards and Tags",
+       "link": "https://www.etsy.com/listing/4600177510"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-escape-room-n2",
+   "tag": "pin-prod-xmas-escape-room-n2",
+   "body": {
+    "content": "A printable Christmas escape room for the whole family. Kids crack 4 clues (gift tag code, workshop shelf count, tangled lights, snowflake sudoku for ages 6-9; harder versions for 10+), then open the Bell Vault. Includes a game master guide, hint cards, answer key and certificates. About 45 minutes, no phone or internet needed.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-n2.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-12T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Printable Christmas Escape Room for Kids and Family: Puzzle Game with Two Levels",
+       "link": "https://www.etsy.com/listing/4602402578"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
