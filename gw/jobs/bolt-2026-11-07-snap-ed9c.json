@@ -1,0 +1,48 @@
+{
+ "id": "bolt-2026-11-07-snap-ed9c",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/active?limit=100&includes=Images",
+   "tag": "active"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings?state=draft&limit=100",
+   "tag": "drafts"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/receipts?limit=100",
+   "tag": "receipts"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/reviews?limit=100",
+   "tag": "reviews"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ae622e227d61034cf708826",
+   "tag": "chk-pin-prod-xmas-coupon-book-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ae782bc8a2af1975dae4d75",
+   "tag": "chk-pin-prod-xmas-escape-room-adults-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6ae8915968be793f2e3d2784",
+   "tag": "chk-pin-legacy-xmas-game-bundle-n4"
+  }
+ ]
+}
