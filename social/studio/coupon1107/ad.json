@@ -1,0 +1,278 @@
+{
+ "dur": 17.78,
+ "vo": "social/studio/media/vo/coupon1107-vo.mp3",
+ "music": "social/studio/media/vo/coupon1107-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/coupon",
+   "cover": "cover.jpg",
+   "price": "4.49",
+   "pages": 13,
+   "listTitle": "Christmas Coupon Book Printable, Editable PDF: 30 Coupons for Partner, Kids and Family, 5 Blank Coupons and Gift Envelope",
+   "strip": [
+    "p-03.png",
+    "p-05.png",
+    "p-07.png",
+    "p-12.png"
+   ],
+   "bg": [
+    "#c96b7a",
+    "#5a1622"
+   ],
+   "accent": "#8a2a35",
+   "hl": "#ffe08a",
+   "dot": "#fbe3e7"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-03.png",
+     "p-05.png",
+     "p-07.png",
+     "p-09.png"
+    ],
+    "type": "grid",
+    "t0": 0,
+    "t1": 2.67,
+    "beats": [
+     0.1,
+     0.65,
+     1.2,
+     1.76
+    ]
+   },
+   {
+    "page": "p-01.png",
+    "badge": "30 COUPONS",
+    "type": "hook",
+    "t0": 2.67,
+    "t1": 4.36
+   },
+   {
+    "page": "p-05.png",
+    "type": "hook",
+    "t0": 4.36,
+    "t1": 6.41
+   },
+   {
+    "pages": [
+     "p-08.png",
+     "p-07.png"
+    ],
+    "type": "fan",
+    "t0": 6.41,
+    "t1": 8.27,
+    "beats": [
+     6.51,
+     7.52
+    ]
+   },
+   {
+    "pages": [
+     "p-10.png",
+     "p-09.png"
+    ],
+    "type": "fan",
+    "t0": 8.27,
+    "t1": 10.07,
+    "beats": [
+     8.37,
+     9.33
+    ]
+   },
+   {
+    "pages": [
+     "p-02.png",
+     "p-11.png",
+     "p-04.png",
+     "p-03.png"
+    ],
+    "type": "grid",
+    "t0": 10.07,
+    "t1": 11.99,
+    "beats": [
+     10.17,
+     10.52,
+     10.87,
+     11.23
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 11.99,
+    "t1": 14.74,
+    "beats": [
+     0.3,
+     0.9,
+     1.1,
+     1.6,
+     2.0
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 14.74,
+    "t1": 18.080000000000002
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.24,
+   "A gift that fits | in a *stocking*"
+  ],
+  [
+   2.67,
+   3.94,
+   "*30* written coupons"
+  ],
+  [
+   4.36,
+   5.98,
+   "*Breakfast in bed* | for your partner"
+  ],
+  [
+   6.41,
+   7.85,
+   "A *blanket fort* | for the kids"
+  ],
+  [
+   8.27,
+   9.65,
+   "*Game night* | for the family"
+  ],
+  [
+   10.07,
+   11.57,
+   "*Type* the names | then *print*"
+  ],
+  [
+   11.99,
+   13.52,
+   "plus a *gift envelope*"
+  ],
+  [
+   13.94,
+   14.54,
+   "Tap the *link*"
+  ],
+  [
+   14.74,
+   16.08,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.65,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.2,
+   "pop"
+  ],
+  [
+   1.76,
+   "pop"
+  ],
+  [
+   2.62,
+   "whoosh"
+  ],
+  [
+   4.31,
+   "whoosh"
+  ],
+  [
+   6.36,
+   "whoosh"
+  ],
+  [
+   6.51,
+   "pop"
+  ],
+  [
+   7.52,
+   "pop"
+  ],
+  [
+   8.22,
+   "whoosh"
+  ],
+  [
+   8.37,
+   "pop"
+  ],
+  [
+   9.33,
+   "pop"
+  ],
+  [
+   10.02,
+   "whoosh"
+  ],
+  [
+   10.17,
+   "pop"
+  ],
+  [
+   10.52,
+   "pop"
+  ],
+  [
+   10.87,
+   "pop"
+  ],
+  [
+   11.23,
+   "pop"
+  ],
+  [
+   11.94,
+   "whoosh"
+  ],
+  [
+   12.29,
+   "whoosh"
+  ],
+  [
+   13.99,
+   "tap"
+  ],
+  [
+   14.24,
+   "pop"
+  ],
+  [
+   14.69,
+   "whoosh"
+  ],
+  [
+   15.09,
+   "impact"
+  ],
+  [
+   15.54,
+   "pop"
+  ]
+ ]
+}

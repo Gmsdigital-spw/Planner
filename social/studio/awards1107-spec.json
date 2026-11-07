@@ -32,12 +32,8 @@
   {
    "say": "Best Ugly Sweater.",
    "cap": "*Best Ugly Sweater*",
-   "scene": "fan",
-   "pages": [
-    "p-11.png",
-    "p-10.png",
-    "p-09.png"
-   ]
+   "scene": "hook",
+   "page": "p-09.png"
   },
   {
    "say": "Most Likely to Re-Gift.",
