@@ -1,0 +1,90 @@
+{
+ "id": "ep30",
+ "format": "story",
+ "rev": 1,
+ "title": "My Dad Said My Games Burned a Ghost Into Our TV #shorts",
+ "title_card": "The TV Ghost",
+ "voice": "andrew",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "tense",
+ "music_volume": 0.05,
+ "cast": {
+  "dad": "a stick-figure father with a round white head, dot eyes, thin black limbs, a short black beard, square glasses and a green sweater",
+  "kid": "a stick-figure boy with a round white head, dot eyes, thin black limbs, curly black hair and a red hoodie"
+ },
+ "lines": [
+  {
+   "text": "Dad said my games burned a ghost into our TV, so who really burned it?",
+   "label": "hook",
+   "headline": "who burned the ghost",
+   "image": "{kid} is the only person in the picture, standing in a dim living room pointing at exactly one big flat TV with a faint gray ghostly shape on its dark screen, worried face, evening"
+  },
+  {
+   "text": "One morning, a faint gray shape was stuck on our TV, no matter what played.",
+   "label": "problem",
+   "headline": "a shape that stays",
+   "image": "{kid} is the only person in the picture, kneeling close to exactly one big flat TV in a sunny morning living room, squinting at a faint gray smudge on the bright screen"
+  },
+  {
+   "text": "Dad said, \"I just doze off watching shows, buddy, and shows can't hurt a TV.\"",
+   "label": "the charge",
+   "headline": "dad dozes, blames game",
+   "image": "{dad} is the only person in the picture, slumped sleepily on a living room couch in front of exactly one big flat TV, droopy half-closed eyes, mouth open mid-sentence talking, a cozy dim evening living room"
+  },
+  {
+   "text": "He locked my console in the garage for a month so the TV could heal.",
+   "label": "stakes",
+   "headline": "console locked away",
+   "image": "{dad} is the only person in the picture, putting exactly one game console into exactly one cardboard box on a high garage shelf, stern face, a dim garage"
+  },
+  {
+   "text": "A week later, with zero games played, the ghost on the screen got even darker.",
+   "label": "worse",
+   "headline": "the ghost gets darker",
+   "image": "{kid} is the only person in the picture, standing in a living room staring at exactly one big flat TV whose dark gray ghostly shape is now clearly darker, shocked face"
+  },
+  {
+   "text": "Dad said I must be sneaking games at night, so he took my phone too.",
+   "label": "more blame",
+   "headline": "phone gone too",
+   "image": "{dad} is the only person in the picture, standing in a hallway holding exactly one phone up high out of reach, frowning, evening light"
+  },
+  {
+   "text": "I sat alone on the stairs, blamed for a gray ghost I never even made.",
+   "label": "alone",
+   "headline": "blamed for nothing",
+   "image": "close-up of {kid} sitting alone on a staircase, hugging his knees, sad eyes looking down, a single tear on his cheek, dim hallway light"
+  },
+  {
+   "text": "My science teacher said pictures left frozen for hours, night after night, can burn in.",
+   "label": "the fact",
+   "headline": "frozen pictures burn in",
+   "image": "{kid} is the only person in the picture, sitting at a classroom desk with eyes wide in surprise, a chalkboard behind him with a drawing of a TV and a clock"
+  },
+  {
+   "text": "So I filled the whole screen with plain red, and the ghost lit up clear.",
+   "label": "the test",
+   "headline": "the red screen test",
+   "image": "{kid} is the only person in the picture, holding exactly one TV remote toward exactly one big flat TV glowing solid bright red, a faint ghostly shape showing on the red, determined face"
+  },
+  {
+   "text": "My game's health bar sits at the top, but this ghost ran along the bottom.",
+   "label": "gamer clue",
+   "headline": "wrong spot for my game",
+   "image": "{kid} is the only person in the picture, standing beside exactly one big red-glowing TV, tracing a finger along a faint long ghostly stripe across the bottom of the screen, thinking hard"
+  },
+  {
+   "text": "I showed Dad: his news channel's logo and headline bar, burned in by sleepy nights.",
+   "label": "the twist",
+   "headline": "it was dad's news",
+   "image": "{dad} is the only person in the picture, frozen in shock with mouth wide open, standing in front of exactly one big red-glowing TV showing a faint ghostly square in the corner and a ghostly stripe along the bottom"
+  },
+  {
+   "text": "Console's back, and Dad still blames my games, but the red screen clearly says news.",
+   "label": "payoff",
+   "headline": "team dad or team me",
+   "image": "{kid} is the only person in the picture, sitting on a living room couch happily holding exactly one game controller, grinning, exactly one big TV glowing in front of him, cozy evening"
+  }
+ ]
+}
