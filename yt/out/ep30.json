@@ -2,8 +2,8 @@
  "id": "ep30",
  "format": "story",
  "duration": 62.43,
- "bytes": 4458609,
- "mb": 4.25,
+ "bytes": 4352953,
+ "mb": 4.15,
  "width": 1080,
  "height": 1920,
  "scenes": [
@@ -72,7 +72,8 @@
  ],
  "credits": [],
  "warnings": [
-  "scene 8 runs 6.6s"
+  "scene 8 runs 6.6s",
+  "post-build splice (Cutter, free ffmpeg): scenes 1-2 taken from rev 1 (rev 2 scene 2 hid the TV), rev 2 for 3-12; a faint gray stripe painted along the bottom of the red screen in scenes 9-10 (rev 1 drew a face, rev 2 drew no stripe)"
  ],
  "fakeTts": false,
  "tts": "edge",
