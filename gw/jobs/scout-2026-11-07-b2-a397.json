@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-07-b2-a397", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/1780687570/reviews?limit=1", "tag": "rv_1780687570"}, {"op": "etsy", "method": "GET", "path": "/listings/4379503927/reviews?limit=1", "tag": "rv_4379503927"}, {"op": "etsy", "method": "GET", "path": "/listings/617684768/reviews?limit=1", "tag": "rv_617684768"}]}
