@@ -1,0 +1,89 @@
+{
+ "vo": "social/studio/media/vo/awards1107-vo.mp3",
+ "music": "social/studio/media/vo/awards1107-music.wav",
+ "product": {
+  "dir": "/social/studio/media/awards",
+  "cover": "cover.jpg",
+  "price": "1.99",
+  "pages": 13,
+  "listTitle": "Funny Christmas Party Awards Printable, 36 Office Holiday Superlatives and Certificates for Coworkers or Family, Work Party Game",
+  "strip": [
+   "p-03.png",
+   "p-05.png",
+   "p-09.png",
+   "p-10.png"
+  ],
+  "bg": [
+   "#a3191e",
+   "#4a0a0d"
+  ],
+  "accent": "#2f6a52",
+  "hl": "#ffd34d",
+  "dot": "#ffe3e3"
+ },
+ "phrases": [
+  {
+   "say": "Want your party to end with a big laugh?",
+   "cap": "End the party | with a *big laugh*",
+   "scene": "hook",
+   "page": "p-03.png",
+   "badge": "36 AWARDS"
+  },
+  {
+   "say": "Best Ugly Sweater.",
+   "cap": "*Best Ugly Sweater*",
+   "scene": "fan",
+   "pages": [
+    "p-11.png",
+    "p-10.png",
+    "p-09.png"
+   ]
+  },
+  {
+   "say": "Most Likely to Re-Gift.",
+   "cap": "*Most Likely* | *to Re-Gift*"
+  },
+  {
+   "say": "Thirty-six awards in all.",
+   "cap": "*36 awards* | in all",
+   "scene": "grid",
+   "pages": [
+    "p-03.png",
+    "p-04.png",
+    "p-10.png",
+    "p-11.png"
+   ]
+  },
+  {
+   "say": "Guests fill in ballots, and you tally the votes.",
+   "cap": "Guests fill *ballots* | you *tally* the votes",
+   "scene": "fan",
+   "pages": [
+    "p-06.png",
+    "p-05.png",
+    "p-07.png"
+   ]
+  },
+  {
+   "say": "The host script reads the winners.",
+   "cap": "A *host script* | reads the winners",
+   "scene": "hook",
+   "page": "p-08.png"
+  },
+  {
+   "say": "Thirteen printable pages.",
+   "cap": "*13* printable pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

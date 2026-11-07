@@ -1,0 +1,94 @@
+{
+ "vo": "social/studio/media/vo/coupon1107-vo.mp3",
+ "music": "social/studio/media/vo/coupon1107-music.wav",
+ "product": {
+  "dir": "/social/studio/media/coupon",
+  "cover": "cover.jpg",
+  "price": "4.49",
+  "pages": 13,
+  "listTitle": "Christmas Coupon Book Printable, Editable PDF: 30 Coupons for Partner, Kids and Family, 5 Blank Coupons and Gift Envelope",
+  "strip": [
+   "p-03.png",
+   "p-05.png",
+   "p-07.png",
+   "p-12.png"
+  ],
+  "bg": [
+   "#c96b7a",
+   "#5a1622"
+  ],
+  "accent": "#8a2a35",
+  "hl": "#ffe08a",
+  "dot": "#fbe3e7"
+ },
+ "phrases": [
+  {
+   "say": "A Christmas gift that fits in a stocking.",
+   "cap": "A gift that fits | in a *stocking*",
+   "scene": "grid",
+   "pages": [
+    "p-03.png",
+    "p-05.png",
+    "p-07.png",
+    "p-09.png"
+   ]
+  },
+  {
+   "say": "Thirty written coupons.",
+   "cap": "*30* written coupons",
+   "scene": "hook",
+   "page": "p-01.png",
+   "badge": "30 COUPONS"
+  },
+  {
+   "say": "Breakfast in bed for your partner.",
+   "cap": "*Breakfast in bed* | for your partner",
+   "scene": "fan",
+   "pages": [
+    "p-06.png",
+    "p-05.png"
+   ]
+  },
+  {
+   "say": "A blanket fort for the kids.",
+   "cap": "A *blanket fort* | for the kids",
+   "scene": "hook",
+   "page": "p-07.png"
+  },
+  {
+   "say": "Game night for the whole family.",
+   "cap": "*Game night* | for the family",
+   "scene": "fan",
+   "pages": [
+    "p-10.png",
+    "p-09.png"
+   ]
+  },
+  {
+   "say": "Type the names, then print.",
+   "cap": "*Type* the names | then *print*",
+   "scene": "grid",
+   "pages": [
+    "p-02.png",
+    "p-11.png",
+    "p-04.png",
+    "p-03.png"
+   ]
+  },
+  {
+   "say": "A gift envelope is included.",
+   "cap": "plus a *gift envelope*",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}
