@@ -1,0 +1,8 @@
+{"id":"bolt-2026-11-07-snap-e2bd","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457","tag":"shop"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=draft&limit=100","tag":"drafts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"},
+{"op":"zernio","method":"GET","path":"/posts/6ae8915a68be793f2e3d2797","tag":"pinchk-pin-prod-gingerbread-contest-kit-n2"}
+]}
