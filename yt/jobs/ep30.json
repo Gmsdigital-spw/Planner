@@ -1,7 +1,7 @@
 {
  "id": "ep30",
  "format": "story",
- "rev": 1,
+ "rev": 2,
  "title": "My Dad Said My Games Burned a Ghost Into Our TV #shorts",
  "title_card": "The TV Ghost",
  "voice": "andrew",
@@ -24,7 +24,7 @@
    "text": "One morning, a faint gray shape was stuck on our TV, no matter what played.",
    "label": "problem",
    "headline": "a shape that stays",
-   "image": "{kid} is the only person in the picture, kneeling close to exactly one big flat TV in a sunny morning living room, squinting at a faint gray smudge on the bright screen"
+   "image": "{kid} is the only person in the picture, kneeling close to exactly one big flat TV, the only screen in the room, in a sunny morning living room, squinting at a faint gray smudge on its bright screen"
   },
   {
    "text": "Dad said, \"I just doze off watching shows, buddy, and shows can't hurt a TV.\"",
@@ -66,13 +66,13 @@
    "text": "So I filled the whole screen with plain red, and the ghost lit up clear.",
    "label": "the test",
    "headline": "the red screen test",
-   "image": "{kid} is the only person in the picture, holding exactly one TV remote toward exactly one big flat TV glowing solid bright red, a faint ghostly shape showing on the red, determined face"
+   "image": "{kid} is the only person in the picture, holding exactly one TV remote toward exactly one big flat TV whose whole screen is plain solid bright red, with only a faint pale gray stripe along the bottom edge and a small pale gray square in one top corner, no face and no picture on the screen, determined face"
   },
   {
    "text": "My game's health bar sits at the top, but this ghost ran along the bottom.",
    "label": "gamer clue",
    "headline": "wrong spot for my game",
-   "image": "{kid} is the only person in the picture, standing beside exactly one big red-glowing TV, tracing a finger along a faint long ghostly stripe across the bottom of the screen, thinking hard"
+   "image": "{kid} is the only person in the picture, standing beside exactly one big flat TV whose whole screen is plain solid bright red, pointing a finger at a faint pale gray stripe along the very bottom edge of the red screen, the rest of the screen empty plain red, thinking hard"
   },
   {
    "text": "I showed Dad: his news channel's logo and headline bar, burned in by sleepy nights.",
