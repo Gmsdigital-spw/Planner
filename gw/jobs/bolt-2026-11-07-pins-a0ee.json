@@ -1,0 +1,174 @@
+{
+ "id": "bolt-2026-11-07-pins-a0ee",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-secret-santa-kit-p1",
+   "tag": "pin-prod-secret-santa-kit-p1",
+   "body": {
+    "content": "A printable Secret Santa kit for an office or family gift exchange, 11 pages. Inside: how-to guide, organizer page and sign-up, Secret Santa questionnaire, gift idea starter list, name-draw slips, rules, White Elephant and dice swap rules, a who-has-who tracker, cut-out gift tags and thank-you notes. Print at home and run the whole exchange in one night.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-secret-santa-kit-p1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-11T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "Secret Santa Questionnaire and Gift Exchange Kit Printable for the Office Party",
+       "link": "https://www.etsy.com/listing/4597755725"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-murder-mystery-8-p1",
+   "tag": "pin-prod-xmas-murder-mystery-8-p1",
+   "body": {
+    "content": "A printable Christmas murder mystery for 8 players set at Hollyridge Lodge. Inside: host guide, party timeline and host script, invitations, 8 character booklets, 9 clue cards played over 3 rounds, detective notes, the solution, and name tags with awards. Print at home and host a whodunit dinner party for adults and teens.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-murder-mystery-8-p1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-11T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Murder Mystery Party Game for 8 Players, Printable Whodunit for Adults and Teens",
+       "link": "https://www.etsy.com/listing/4602816114"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-advent-activities-p1",
+   "tag": "pin-prod-advent-activities-p1",
+   "body": {
+    "content": "24 printable activity cards for a family Christmas countdown, one small activity a day through December. Includes a how-to page, 24 activity cards, blank cards for your own traditions, a countdown tracker to color in, a plan-ahead supply list and a family memories page. Print at home for an advent calendar the kids will look forward to.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-advent-activities-p1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-12T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Advent Calendar Activity Cards Printable, 24 Family Christmas Activities with Countdown Tracker",
+       "link": "https://www.etsy.com/listing/4597998190"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-coupon-book-p1",
+   "tag": "pin-prod-xmas-coupon-book-p1",
+   "body": {
+    "content": "An editable Christmas coupon book PDF with 30 coupons: 10 for a partner, 10 for kids and 10 for the family, plus 5 blank coupons you type yourself. Includes front and back covers, how to edit, print and assemble, and a fold-up gift envelope. Type the names, print at home and give it as a last-minute stocking stuffer.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-coupon-book-p1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-12T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "Christmas Coupon Book Printable, 30 Editable Gift Coupons for Partner, Kids and Family",
+       "link": "https://www.etsy.com/listing/4606924165"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-party-mega-bundle-p1",
+   "tag": "pin-prod-xmas-party-mega-bundle-p1",
+   "body": {
+    "content": "A printable Christmas party kit with 6 games (word scramble, this or that, would you rather, trivia quiz, find the guest who, charades cards), 12 party awards, a gingerbread house contest with score cards and ribbons, and 2 gift swap games: a White Elephant dice game and a left-right gift story. Includes a host timeline. Print at home for a family or office party.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-party-mega-bundle-p1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-12T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Party Kit Printable: 6 Games, 12 Awards, White Elephant Gift Swap and Gingerbread Contest",
+       "link": "https://www.etsy.com/listing/4604185747"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-office-party-games-p1",
+   "tag": "pin-prod-xmas-office-party-games-p1",
+   "body": {
+    "content": "24 printable office Christmas party games for coworkers. Includes a 45-minute party plan, a game finder for all 24 games, how-to-play pages, printable game sheets like Holiday Trivia Showdown and Coworker Holiday Bingo, a team score sheet and answer keys. No prep: print and play at the office party or a holiday luncheon.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-office-party-games-p1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-12T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Office Christmas Party Games Printable, 24 No-Prep Team Games for Coworkers with Answer Keys",
+       "link": "https://www.etsy.com/listing/4606483866"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
