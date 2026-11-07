@@ -1,16 +1,16 @@
-# Scoreboard 2026-11-05 (buyer numbers, from 20 daily snapshots)
+# Scoreboard 2026-11-06 (buyer numbers, from 21 daily snapshots)
 
 Every crew reads this before working. It is the only proof of what buyers want; our own
 inspection scores are not. Written by factory/notebook/scoreboard.py, never by hand.
 
-Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 285 listing views.
+Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 294 listing views.
 
 ## Winners (sold, or 7-day views 5+, or favorited): copy what they do
-- Undated ADHD Planner Digital and Printable, Hyperlinked Go [planners] $6.99: 1 sold, 23 views (+8 in 7 d), 0 favs
+- Undated ADHD Planner Digital and Printable, Hyperlinked Go [planners] $6.99: 1 sold, 25 views (+9 in 7 d), 0 favs
 - Gingerbread House Decorating Contest Kit Printable, Judge  [party games] $4.49: 1 sold, 14 views (+6 in 7 d), 0 favs
-- 2027 Goal Setting Workbook Printable, 12 Week Goal Planner [planners] $4.49: 1 sold, 15 views (+4 in 7 d), 1 favs
-- Christmas Party Games Printable Bundle, 8 Games for Office [party games] $2.99: 1 sold, 70 views (+1 in 7 d), 0 favs
-- No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  [money] $4.49: 1 sold, 4 views (+0 in 7 d), 1 favs
+- 2027 Goal Setting Workbook Printable, 12 Week Goal Planner [planners] $4.49: 1 sold, 17 views (+4 in 7 d), 1 favs
+- No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  [money] $4.49: 1 sold, 8 views (+4 in 7 d), 1 favs
+- Christmas Party Games Printable Bundle, 8 Games for Office [party games] $2.99: 1 sold, 70 views (+0 in 7 d), 0 favs
 - Pink Bible Verse Wall Art Set of 6, Coquette Christian Pri [wall art] $7.49: 0 sold, 16 views (+9 in 7 d), 0 favs
 - Christmas Coupon Book Printable, Editable PDF: 30 Coupons  [christmas] $4.49: 0 sold, 2 views (+None in 7 d), 1 favs
 
@@ -40,9 +40,9 @@ Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 285 listing views.
 ## By lane (where buyers look): build more of the top lane, less of the bottom
 | Lane | Listings | Views | Views/listing | Views gained | Sales |
 |---|---|---|---|---|---|
-| planners | 3 | 46 | 15.3 | 12 | 2 |
-| party games | 14 | 105 | 7.5 | 11 | 2 |
-| money | 7 | 107 | 15.3 | 6 | 1 |
+| planners | 3 | 50 | 16.7 | 13 | 2 |
+| party games | 14 | 106 | 7.6 | 11 | 2 |
+| money | 7 | 111 | 15.9 | 10 | 1 |
 | wall art | 2 | 18 | 9.0 | 10 | 0 |
 | christmas | 4 | 7 | 1.8 | 0 | 0 |
 | invitations | 2 | 2 | 1.0 | 0 | 0 |
@@ -51,15 +51,15 @@ Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 285 listing views.
 ## Every listing
 | Listing | Lane | Price | Views | +1d | +3d | +7d | Favs | Sold |
 |---|---|---|---|---|---|---|---|---|
-| Undated ADHD Planner Digital and Printable, Hyperlinked Go | planners | 6.99 | 23 | 7 | 7 | 8 | 0 | 1 |
-| Gingerbread House Decorating Contest Kit Printable, Judge  | party games | 4.49 | 14 | 5 | 6 | 6 | 0 | 1 |
-| 2027 Goal Setting Workbook Printable, 12 Week Goal Planner | planners | 4.49 | 15 | 0 | 0 | 4 | 1 | 1 |
-| Christmas Party Games Printable Bundle, 8 Games for Office | party games | 2.99 | 70 | 0 | 0 | 1 | 0 | 1 |
-| No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  | money | 4.49 | 4 | 0 | 0 | 0 | 1 | 1 |
+| Undated ADHD Planner Digital and Printable, Hyperlinked Go | planners | 6.99 | 25 | 2 | 9 | 9 | 0 | 1 |
+| Gingerbread House Decorating Contest Kit Printable, Judge  | party games | 4.49 | 14 | 0 | 6 | 6 | 0 | 1 |
+| 2027 Goal Setting Workbook Printable, 12 Week Goal Planner | planners | 4.49 | 17 | 2 | 2 | 4 | 1 | 1 |
+| No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  | money | 4.49 | 8 | 4 | 4 | 4 | 1 | 1 |
+| Christmas Party Games Printable Bundle, 8 Games for Office | party games | 2.99 | 70 | 0 | 0 | 0 | 0 | 1 |
 | Pink Bible Verse Wall Art Set of 6, Coquette Christian Pri | wall art | 7.49 | 16 | 0 | 7 | 9 | 0 | 0 |
 | Christmas Planner Printable 2026, Holiday Budget and Gift  | money | 6.99 | 15 | 0 | 0 | 3 | 0 | 0 |
-| Debt Payoff Planner Printable 2027, Debt Snowball and Aval | money | 4.99 | 5 | 2 | 2 | 3 | 0 | 0 |
-| Christmas Charades Printable Game, 120 Cards in 3 Levels f | party games | 3.99 | 2 | 0 | 2 | 2 | 0 | 0 |
+| Debt Payoff Planner Printable 2027, Debt Snowball and Aval | money | 4.99 | 5 | 0 | 2 | 3 | 0 | 0 |
+| Christmas Charades Printable Game, 120 Cards in 3 Levels f | party games | 3.99 | 3 | 1 | 3 | 3 | 0 | 0 |
 | Funny Christmas Party Awards Printable, 36 Office Holiday  | party games | 1.99 | 8 | 0 | 1 | 1 | 0 | 0 |
 | Thanksgiving Games Printable, 7 Game Bundle for Family, Ki | party games | 4.99 | 4 | 0 | 1 | 1 | 0 | 0 |
 | Christmas Bible Verse Wall Art Set of 6, Pink Christian Ch | wall art | 7.99 | 2 | 0 | 1 | 1 | 0 | 0 |
@@ -81,7 +81,7 @@ Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 285 listing views.
 | Pink Bow Birthday Invitation Template, Coquette Bow Invite | invitations | 7.99 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Christmas Murder Mystery Party Game for 8 Players, Printab | party games | 7.99 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Christmas Party Kit Printable, 6 Games Plus White Elephant | party games | 5.99 | 0 | 0 | 0 | 0 | 0 | 0 |
-| Thanksgiving Escape Room for Kids and Families, Printable  | party games | 6.99 | 0 | 0 | 0 | - | 0 | 0 |
+| Thanksgiving Escape Room for Kids and Families, Printable  | party games | 6.99 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Office Christmas Party Games Printable: 24 No-Prep Team Ga | party games | 4.99 | 0 | 0 | 0 | - | 0 | 0 |
 | Christmas Escape Room for Adults and Teens: Printable Part | party games | 7.99 | 0 | 0 | 0 | - | 0 | 0 |
 
