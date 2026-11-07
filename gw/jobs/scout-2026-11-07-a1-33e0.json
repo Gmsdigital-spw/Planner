@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-07-a1-33e0", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=xmas+trivia&sort_on=score&limit=25&offset=0", "tag": "xtriv_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+quiz&sort_on=score&limit=25&offset=0", "tag": "xquiz_o0"}]}
