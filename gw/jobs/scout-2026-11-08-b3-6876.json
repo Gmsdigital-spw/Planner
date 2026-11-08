@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-08-b3-6876", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=habit+tracker&sort_on=score&limit=25&offset=0", "tag": "habit_tracker_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=2027+planner+printable&sort_on=score&limit=25&offset=25", "tag": "2027_planner_printab_o25"}]}

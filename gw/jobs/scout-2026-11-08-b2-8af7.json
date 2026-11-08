@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-08-b2-8af7", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=2027+planner&sort_on=score&limit=25&offset=0", "tag": "2027_planner_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=meal+planner&sort_on=score&limit=25&offset=0", "tag": "meal_planner_o0"}]}
