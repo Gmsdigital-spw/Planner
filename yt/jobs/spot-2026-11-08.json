@@ -1,0 +1,45 @@
+{
+ "id": "spot-2026-11-08",
+ "hook": "CHRISTMAS EVE WAS BORING",
+ "end_text": "",
+ "loop": false,
+ "engine": "edge",
+ "voice": "ava",
+ "speed": 1.03,
+ "caption_words": 3,
+ "music": "cozy",
+ "music_volume": 0.14,
+ "style": "3D animated movie still, Pixar and Illumination style CGI render, cute stylized cartoon characters, soft cinematic lighting, vibrant saturated colors, glossy detailed textures, shallow depth of field, character centered in frame, no text, no letters, no watermark",
+ "cast": {
+  "rosa": "Rosa, a cheerful cartoon woman in her forties with curly dark auburn hair in a loose bun, round red glasses, wearing a cream knit Christmas sweater with a green pine tree pattern"
+ },
+ "lines": [
+  {
+   "text": "Every Christmas Eve, my family is bored by seven o'clock.",
+   "image": {
+    "prompt": "{rosa} sitting alone on the arm of a sofa with her chin in her hand, bored sigh, cozy living room with a lit Christmas tree, blurred out-of-focus family members slouched on couches in the background, evening",
+    "seed": 4811,
+    "motion": "push"
+   },
+   "pause": 0.3
+  },
+  {
+   "text": "The kids are restless, and the grown-ups are glued to their phones.",
+   "image": {
+    "prompt": "{rosa} standing in the middle of a cozy living room with wide exasperated eyes and hands on her hips, blurred out-of-focus people in the background lit by glowing phone screens, Christmas tree with warm lights, evening",
+    "seed": 4812,
+    "motion": "punch"
+   },
+   "pause": 0.3
+  },
+  {
+   "text": "So this year... we played charades, and nobody wanted to stop.",
+   "image": {
+    "prompt": "{rosa} laughing hard with her eyes squeezed shut and both hands on her cheeks, cozy bright living room with a lit Christmas tree, blurred out-of-focus family laughing in the background, warm golden light, evening",
+    "seed": 4813,
+    "motion": "orbit"
+   },
+   "pause": 0.05
+  }
+ ]
+}
