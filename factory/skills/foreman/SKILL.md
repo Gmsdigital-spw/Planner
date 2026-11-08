@@ -18,17 +18,15 @@ updated: 2026-10-23
 - End every standup with one dated "What I've learned" line of the Foreman's own: the scoreboard number, the one change for tomorrow, and "predict: <number>" for the next standup; grade it first next time.
 
 ## Running judgment of each agent (rewrite weekly at all-hands)
-_Rewritten Sunday Nov 1, 2026 from standups 10-25 to 11-01, the 11-01 run notes and the sales collection. Numbers only; unknown stays unknown._
-- Floors by verified money this month (November): Etsy $0, Studio $0 logged in sales, Trading $0 (paper only). October closed 3 verified Etsy sales, $8.30 gross (receipts 4209403073, 4210031031, 4216110644).
-- Foreman: predictions 10-29 HIT, 10-30 half, 10-31 HIT, 11-01 MISS (86 vs 88+, 0 Games Bundle pins).
-- Atlas (judge): week grades 62, 35, 55, 60, 62, 55, 60, 62 (avg 56.4, under 7 standups running); first looks 81, 79, 82, 81 vs finals 90, 87, 90, 86; 0 at 92 in 6 nights.
-- Forge: 66 to 62 (avg 61.6); file 22-24 on finals; check_boxes 41 to 0 on Nov 1; Exact steps rewritten Nov 1.
-- Quill: 64 to 58 (avg 60.4); copy 17-19, phrase check stale since Oct 29; Exact steps rewritten Nov 1.
-- Lens: 62 to 58 (avg 58.7); images 13 to 16 on Nov 1 (cover pages 29% to 63%); Exact steps rewritten Nov 1.
-- Scout: 30 to 55 (avg 51.0, weakest); briefs 1, 0, 2 of 3 on Oct 30, Oct 31, Nov 1; Exact steps rewritten Nov 1.
-- Idea Judge: 35 to 66 (avg 57.4, most improved +31); approved 0 on Nov 1 (3 kept proposed at 91, 90, 89).
-- Pixel: 66 to 50 (avg 56.9, slid 16); 0 Games Bundle pins 4 runs; 3 party pins Nov 1 at 92-93; Exact steps rewritten Nov 1.
-- Ledger: 68, 70 (meh); no change on Nov 1.
+_Rewritten Sunday Nov 8, 2026 from standups 11-02 to 11-08, the 11-08 run notes and the sales collection. Numbers only; unknown stays unknown._
+- Floors by verified money this month (November): Etsy $6.86 gross, $5.51 net (2 sales: ADHD Planner Nov 1, No Buy Year Nov 4); Studio $0 logged in sales; Trading $0 (paper only).
+- Foreman: predictions Nov 2 HALF, Nov 3 MISS, Nov 4 not due, Nov 5-7 HALF, Nov 8 HIT (0 of 17 applied, views7 45 vs 40+).
+- Atlas (review): grades 62, 68, 55, 58, 58, 56, 58 (avg 59.3); predictions 6 of 6 HIT; 17 listing updates written Nov 3-8, 0 applied.
+- Scout: grades 40, 55, 58, 45, 48, 50, 45 (avg 48.7, weakest; under 7 standups running); briefs 3 of 21 targeted this week (Nov 3: 1, Nov 4: 2, then 0 four nights); predictions 0 hit, 1 half, 6 miss; Exact steps rewritten Nov 8.
+- Idea Judge: grades 50, 60, 70, 65, 65, 64, 64 (avg 62.6, most improved +14 from Nov 2); predictions 3 HIT, 3 on track, 1 MISS.
+- Pixel: grades 76, 74, 74, 66, 62, 52, 60 (avg 66.3, slid 16 from Nov 2); still pins 6 a night, 4+ party; 24 pins 0 impressions (pinstats 11-07); video pin 0 of 1 for 5 runs; Exact steps rewritten Nov 8.
+- Ledger: grades 68, 72, 70, 70 (meh); predictions 2 HIT, 2 on track.
+- Forge, Quill, Lens: 0 builds this week (weekly cap since Nov 2); last grades 62, 58, 58 (Nov 1).
 - Herald, Warden, Bolt, Medic, Mechanic, Studio, Trading, Beacon: not graded by this run; numbers in their own run logs (unknown here).
 
 ## What I've learned (append-only, newest last)
@@ -48,3 +46,4 @@ _Rewritten Sunday Nov 1, 2026 from standups 10-25 to 11-01, the 11-01 run notes 
 - 2026-11-05: predict 0 new listing updates written and Left Right still under 93: HALF (3 updates written on the task prompt's order; Left Right still 89). Verified $2.71 of $250, 25 days left; views7 34 (was 24), favs7 2; weekly cap: no build tonight; briefs 0 of 3, still pins 6 of 6, video 0 of 1, 3 updates ready, 11 waiting, 0 applied. Tomorrow: Pins makes the video pin first and Scout spends reads on Trivia's 2nd 100+ review page, no new niche. Predict: 1 video pin made and 0 of the 11 updates applied next run.
 - 2026-11-06: predict 1 video pin made and 0 of the 11 updates applied: HALF (video pin MISS, 0 again; updates HIT, 0 applied, 14 now waiting). Verified $5.51 of $250 (gross $6.86, 2 sales), 24 days left; views7 39, favs7 1; weekly cap: no build tonight; briefs 0 of 3, still pins 6 of 6 (4 party), video 0 of 1, 3 updates ready. Tomorrow: Pins starts with the video pin, and the report puts the Left Right vs Trivia call (both 89, Trivia meets the 100+ review gate) in front of Monday's build. Predict: 1 video pin made next run and 0 of the 14 updates applied.
 - 2026-11-07: predict 1 video pin made and 0 of the 14 updates applied: HALF (video pin MISS, 0 for the 4th run; updates HIT, 0 applied, 17 now waiting). Verified $5.51 of $250 (gross $6.86, 2 sales), 23 days left; views7 44 (was 39), favs7 1; weekly cap: no build tonight; briefs 0 of 3, still pins 6 of 6 (4 party), video 0 of 1, 3 updates ready; all 25 pins at 0 impressions (pinstats 11-06). Pixel and Atlas left no learned line: written for them. Tomorrow (Sunday): the scorecard leads with pins 0 impressions as the week's weakest number and the video pin gets a written blocker or is made. Predict: 0 of the 17 updates applied and views7 40+ at the next run.
+- 2026-11-08: predict 0 of the 17 updates applied and views7 40+: HIT (0 applied on stats 11-07; views7 45). Verified $5.51 of $250 (gross $6.86, 2 sales), 22 days left; weekly cap: no build tonight; briefs 0 new of 3, still pins 6 of 6 (4 party), video 0 of 1, 3 updates ready; 24 pins 0 impressions. Sunday: Scout and Pixel Exact steps rewritten, 3 lessons promoted (scout, pixel, lens). Tomorrow: Monday's Trivia build gets the full budget and the standup grades its first independent look. Predict: Trivia's first independent inspection scores 80-86.

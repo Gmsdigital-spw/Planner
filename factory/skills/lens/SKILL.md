@@ -27,6 +27,7 @@ Covers that win the tap (Grayson, Oct 23, 2026, overrides the Oct 21 line that f
 - The hero pages card fills about 40% or more of the Etsy square (slop (a) was borderline at about 39% on Oct 22: run notes 2026-10-22 "## Inspect"; rubric.md slop check (a)).
 - Theme AND layout differ from the last 3 published covers (card side, badge place, decor set), not only the theme; Oct 22's theme differed from money, ginger and xmas_red but the layout was the shared template (run notes 2026-10-22 "## Photos"; rubric.md slop (g); stage 06 Audit "Rotation").
 - Replacing a live cover (the Warden's job, never the Night Shift's) = upload the new one at rank 1 AND delete the old one in the same run, then re-pull and verify exactly one 2000x1500 image (18 listings had two covers in a row: qa/MISSES.md 2026-10-21 TWO_COVERS; LESSONS.md 2026-10-21).
+- (Promoted from LESSONS Nov 8) Real pages fill 60%+ of the cover frame, measured in pixels before the hand-off — evidence: Snowbound Lodge cover pages 29% FAIL 81 (images 13), rebuilt at 63% PASS 86 (images 16) on Nov 1.
 
 ## What I've learned (append-only, newest last)
 - 2026-10-21: Beige desk covers read as bland to Grayson and a cover refresh left 18 double covers; switched to tools/fun_covers.py (bold color + 3D themed art) and replace = upload + delete old in one run.
