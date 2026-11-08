@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-08-a2-674d", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+bunco&sort_on=score&limit=25&offset=0", "tag": "christmas_bunco_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+bunco&sort_on=score&limit=25&offset=25", "tag": "christmas_bunco_o25"}]}
