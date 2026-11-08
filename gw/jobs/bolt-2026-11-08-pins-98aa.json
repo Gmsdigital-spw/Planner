@@ -1,0 +1,174 @@
+{
+ "id": "bolt-2026-11-08-pins-98aa",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-party-mega-bundle-q1",
+   "tag": "pin-prod-xmas-party-mega-bundle-q1",
+   "body": {
+    "content": "A printable Christmas party bundle: 6 games (word scramble, this or that, would you rather, trivia quiz, find the guest who, charades cards), 12 party awards, a gingerbread house contest with judge's score cards and ribbons, a White Elephant dice game and a left-right gift story. Includes a host timeline. 16 pages, print at home for a family or office party.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-party-mega-bundle-q1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-13T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Party Games Bundle Printable: 6 Games, 12 Awards and a White Elephant Dice Game",
+       "link": "https://www.etsy.com/listing/4604185747"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-escape-room-adults-q1",
+   "tag": "pin-prod-xmas-escape-room-adults-q1",
+   "body": {
+    "content": "The Snowbound Lodge, a printable Christmas escape room for adults and teens. Eight linked puzzles: each answer opens the next lock, ending at the gift vault. For teams of 2 to 20, about 45 to 60 minutes. Includes a host guide, lock sheet, hint cards, team timer and score sheet, answer key and a certificate of escape. US Letter PDF, print at home for an office party, friends or game night.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-adults-q1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-13T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Escape Room for Adults and Teens: Printable Party Game With 8 Linked Puzzles",
+       "link": "https://www.etsy.com/listing/4607508985"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-office-party-games-q1",
+   "tag": "pin-prod-xmas-office-party-games-q1",
+   "body": {
+    "content": "24 no-prep Christmas games for coworkers. A Game Finder page lists every game by group size, time and type. Games 1 to 5 have printable sheets (Coworker Holiday Bingo, Holiday Word Scramble, Holiday Trivia Showdown, Letter Lists, Guess the Coworker); the other 19 need nothing but people. Also a 45-minute run sheet, a team score sheet and answer keys. 15 pages, print at home for a staff or team holiday party.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-office-party-games-q1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-13T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Office Christmas Party Games Printable: 24 No-Prep Games for 6 to 60 Coworkers",
+       "link": "https://www.etsy.com/listing/4606483866"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-murder-mystery-8-q1",
+   "tag": "pin-prod-xmas-murder-mystery-8-q1",
+   "body": {
+    "content": "The Stolen Star of Hollyridge Lodge, a cozy Christmas whodunit for 8 players. Includes a host guide, a party timeline with lines to read aloud (about 1 hour 45 minutes from arrival to reveal), invitations (2 per sheet), 8 character sheets, 9 clue cards in 3 rounds, a Detective Notes sheet, a sealed solution page, 8 name tags and 2 awards. 16 pages, print at home for a Christmas dinner party.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-murder-mystery-8-q1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-13T19:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Murder Mystery Party Game for 8 Players, Printable Kit With Timeline and Read-Aloud Script",
+       "link": "https://www.etsy.com/listing/4602816114"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-santa-mail-bundle-q1",
+   "tag": "pin-prod-santa-mail-bundle-q1",
+   "body": {
+    "content": "A Santa Mail Bundle you type in Adobe Reader: 6 letters from Santa (nice list, first Christmas, new big sibling, kindness, a hard year, new home), an Official Nice List certificate, Santa's Nice List, a Dear Santa wish list, 4 North Pole envelope labels and 12 From Santa gift tags. Type the child's name, print at home and deliver on Christmas Eve. 13 pages, instant download.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-santa-mail-bundle-q1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-13T21:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "Letter from Santa Printable: Editable Nice List Certificate, 6 Santa Letters and Gift Tags",
+       "link": "https://www.etsy.com/listing/4601798994"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-advent-activities-q1",
+   "tag": "pin-prod-advent-activities-q1",
+   "body": {
+    "content": "24 Days of Christmas Family Activities: a screen-free December countdown with one simple activity a day. 24 activity cards (6 pages) with a talk-about-it question on each, blank cards for your own traditions, a countdown tracker, a plan-ahead supply list (7 of the 24 need nothing at all) and a family memories page. 13 pages, print at home for kids and families.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-advent-activities-q1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-13T23:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Advent Calendar Activity Cards Printable: 24 Days of Family Christmas Activities",
+       "link": "https://www.etsy.com/listing/4597998190"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
