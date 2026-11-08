@@ -1,0 +1,90 @@
+{
+ "id": "ep31",
+ "format": "story",
+ "rev": 1,
+ "title": "My Dad Said My Games Were Wrecking Our New Floor #shorts",
+ "title_card": "The Floor Scratches",
+ "voice": "ava",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "tense",
+ "music_volume": 0.05,
+ "cast": {
+  "dad": "a stick-figure father with a round white head, dot eyes, thin black limbs, short brown hair and a blue flannel shirt",
+  "girl": "a stick-figure girl with a round white head, dot eyes, thin black limbs, two black pigtails and a purple hoodie"
+ },
+ "lines": [
+  {
+   "text": "Dad said my gaming was wrecking our brand new floor, so who really scratched it?",
+   "label": "hook",
+   "headline": "who scratched the floor",
+   "image": "{girl} is the only person in the picture, standing in a living room on a shiny new light wood floor, pointing down at a few clear straight white scratch lines on the wood floor, worried face, evening"
+  },
+  {
+   "text": "Dad put in shiny new wood floors, then scratches showed up by my gaming desk.",
+   "label": "new floor",
+   "headline": "scratches by the desk",
+   "image": "{girl} is the only person in the picture, sitting at exactly one small gaming desk on exactly one rolling desk chair, looking down at clear straight white scratch lines on the shiny light wood floor beside the desk, puzzled face, afternoon"
+  },
+  {
+   "text": "Dad said, \"My floor was perfect before your gaming started, so your chair did it.\"",
+   "label": "the charge",
+   "headline": "dad blames the chair",
+   "image": "{dad} is the only person in the picture, standing on shiny new wood floor with arms crossed, pointing at exactly one rolling desk chair, stern face, mouth open talking, a bright living room"
+  },
+  {
+   "text": "He locked my console and my rolling chair in the garage for a whole month.",
+   "label": "stakes",
+   "headline": "console locked away",
+   "image": "{dad} is the only person in the picture, carrying exactly one game console and pushing exactly one rolling desk chair into a dim garage, stern face"
+  },
+  {
+   "text": "Three mornings later, there were fresh scratches in the hallway, where my chair never goes.",
+   "label": "worse",
+   "headline": "hallway scratches",
+   "image": "{girl} is the only person in the picture, kneeling in an empty hallway with a shiny light wood floor, staring wide-eyed at clear straight white scratch lines on the floor, no chair anywhere, morning light"
+  },
+  {
+   "text": "Dad said I must be sneaking around at night, so he took my phone too.",
+   "label": "more blame",
+   "headline": "phone gone too",
+   "image": "{dad} is the only person in the picture, standing in a hallway holding exactly one phone up high out of reach, frowning, evening light"
+  },
+  {
+   "text": "I sat alone on my bed and cried, grounded for scratches I never even made.",
+   "label": "alone",
+   "headline": "blamed for nothing",
+   "image": "close-up of {girl} sitting alone on her bed hugging her knees, a single tear running down her cheek, sad eyes looking down, dim bedroom"
+  },
+  {
+   "text": "Then I noticed the scratches ran in straight rows that turned sharp at every wall.",
+   "label": "the rows",
+   "headline": "straight rows",
+   "image": "{girl} is the only person in the picture, standing in a doorway looking down at a light wood floor covered in long straight parallel white scratch lines that turn at a sharp right angle at the wall, eyes wide, realizing, morning"
+  },
+  {
+   "text": "In every game I play, only computer guards patrol like that, never a real person.",
+   "label": "gamer clue",
+   "headline": "guards patrol like that",
+   "image": "{girl} is the only person in the picture, sitting cross-legged on her bedroom floor, thinking hard with one finger on her chin, a simple drawing of a guard walking a square path in a thought bubble above her head"
+  },
+  {
+   "text": "So at two AM, I watched Dad's robot vacuum roll out from under my desk.",
+   "label": "the twist",
+   "headline": "the 2 AM robot",
+   "image": "{girl} is the only person in the picture, peeking from behind a doorframe in a dark room at two in the morning, watching exactly one small round robot vacuum roll out from under exactly one small desk, moonlight, tense"
+  },
+  {
+   "text": "A tiny pebble stuck in its wheel was carving lines all over Dad's new floor.",
+   "label": "the proof",
+   "headline": "pebble in the wheel",
+   "image": "{girl} is the only person in the picture, kneeling on a light wood floor in a dark hallway, holding exactly one small round robot vacuum upside down, pointing at one small gray pebble stuck in its wheel, a straight white scratch line on the floor behind her, shocked face, moonlight"
+  },
+  {
+   "text": "Console's back, Dad blames my muddy sneakers for the pebble, and I blame his robot.",
+   "label": "payoff",
+   "headline": "team dad or team me",
+   "image": "{girl} is the only person in the picture, sitting happily on exactly one rolling desk chair at her gaming desk holding exactly one game controller, grinning, exactly one small round robot vacuum parked in a corner, cozy evening"
+  }
+ ]
+}
