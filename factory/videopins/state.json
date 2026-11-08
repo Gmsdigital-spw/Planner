@@ -174,10 +174,20 @@
             "listingId": "4598379368",
             "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-07/4598379368/video.mp4",
             "zernioPostId": "6aef747b685c46ebecc53ab9",
+            "status": "posted",
+            "postUrl": "https://www.pinterest.com/pin/1096274734331811610/",
+            "error": null,
+            "link": "https://www.etsy.com/listing/4598379368"
+        },
+        {
+            "day": "2026-11-08",
+            "listingId": "4597743627",
+            "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-08/4597743627/video.mp4",
+            "zernioPostId": "6af0c77b72ef1ea98b8f9c3e",
             "status": "scheduled",
             "postUrl": null,
             "error": null,
-            "link": "https://www.etsy.com/listing/4598379368"
+            "link": "https://www.etsy.com/listing/4597743627"
         }
     ]
 }
