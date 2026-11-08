@@ -1,18 +1,18 @@
-# Scoreboard 2026-11-06 (buyer numbers, from 21 daily snapshots)
+# Scoreboard 2026-11-07 (buyer numbers, from 22 daily snapshots)
 
 Every crew reads this before working. It is the only proof of what buyers want; our own
 inspection scores are not. Written by factory/notebook/scoreboard.py, never by hand.
 
-Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 294 listing views.
+Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 296 listing views.
 
 ## Winners (sold, or 7-day views 5+, or favorited): copy what they do
 - Undated ADHD Planner Digital and Printable, Hyperlinked Go [planners] $6.99: 1 sold, 25 views (+9 in 7 d), 0 favs
 - Gingerbread House Decorating Contest Kit Printable, Judge  [party games] $4.49: 1 sold, 14 views (+6 in 7 d), 0 favs
+- No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  [money] $4.49: 1 sold, 9 views (+5 in 7 d), 1 favs
 - 2027 Goal Setting Workbook Printable, 12 Week Goal Planner [planners] $4.49: 1 sold, 17 views (+4 in 7 d), 1 favs
-- No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  [money] $4.49: 1 sold, 8 views (+4 in 7 d), 1 favs
 - Christmas Party Games Printable Bundle, 8 Games for Office [party games] $2.99: 1 sold, 70 views (+0 in 7 d), 0 favs
-- Pink Bible Verse Wall Art Set of 6, Coquette Christian Pri [wall art] $7.49: 0 sold, 16 views (+9 in 7 d), 0 favs
-- Christmas Coupon Book Printable, Editable PDF: 30 Coupons  [christmas] $4.49: 0 sold, 2 views (+None in 7 d), 1 favs
+- Pink Bible Verse Wall Art Set of 6, Coquette Christian Pri [wall art] $7.49: 0 sold, 16 views (+7 in 7 d), 0 favs
+- Christmas Coupon Book Printable, Editable PDF: 30 Coupons  [christmas] $4.49: 0 sold, 2 views (+2 in 7 d), 1 favs
 
 ## Dead (live 4+ days, 0 views gained in 7 d, 0 sales): fix cover/title/tags or stop making this kind
 - ADHD Budget Planner App, Safe to Spend Daily Budget, Paych [money] $8.99: 41 views total
@@ -23,12 +23,10 @@ Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 294 listing views.
 - New Years Eve Party Games Printable, 8 Family Friendly NYE [party games] $4.99: 5 views total
 - Secret Santa Questionnaire Printable, Office Gift Exchange [christmas] $3.49: 5 views total
 - Christmas Cookie Exchange Kit Printable, Cookie Swap Party [invitations] $4.99: 2 views total
-- Christmas Coupon Book Printable, Editable PDF: 30 Coupons  [christmas] $4.49: 2 views total
 - Friendsgiving Games Printable, 7 Thanksgiving Party Games  [party games] $4.49: 1 views total
 - Christmas Escape Room for Kids, Printable Family Escape Ga [party games] $11.99: 1 views total
 - Thanksgiving Planner Printable for First Time Hosts, 3 Wee [thanksgiving] $4.49: 0 views total
 - Advent Calendar Activity Cards Printable, 24 Days of Famil [christmas] $3.99: 0 views total
-- Christmas Scavenger Hunt Printable, 24 Rhyming Clue Cards  [party games] $3.99: 0 views total
 - Letter from Santa Editable Printable, 6 Personalized Santa [christmas] $4.99: 0 views total
 - Pink Bow Birthday Invitation Template, Coquette Bow Invite [invitations] $7.99: 0 views total
 - Christmas Murder Mystery Party Game for 8 Players, Printab [party games] $7.99: 0 views total
@@ -41,28 +39,30 @@ Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 294 listing views.
 | Lane | Listings | Views | Views/listing | Views gained | Sales |
 |---|---|---|---|---|---|
 | planners | 3 | 50 | 16.7 | 13 | 2 |
-| party games | 14 | 106 | 7.6 | 11 | 2 |
-| money | 7 | 111 | 15.9 | 10 | 1 |
-| wall art | 2 | 18 | 9.0 | 10 | 0 |
-| christmas | 4 | 7 | 1.8 | 0 | 0 |
+| party games | 14 | 107 | 7.6 | 12 | 2 |
+| money | 7 | 112 | 16.0 | 10 | 1 |
+| wall art | 2 | 18 | 9.0 | 8 | 0 |
+| christmas | 4 | 7 | 1.8 | 2 | 0 |
 | invitations | 2 | 2 | 1.0 | 0 | 0 |
 | thanksgiving | 1 | 0 | 0.0 | 0 | 0 |
 
 ## Every listing
 | Listing | Lane | Price | Views | +1d | +3d | +7d | Favs | Sold |
 |---|---|---|---|---|---|---|---|---|
-| Undated ADHD Planner Digital and Printable, Hyperlinked Go | planners | 6.99 | 25 | 2 | 9 | 9 | 0 | 1 |
-| Gingerbread House Decorating Contest Kit Printable, Judge  | party games | 4.49 | 14 | 0 | 6 | 6 | 0 | 1 |
-| 2027 Goal Setting Workbook Printable, 12 Week Goal Planner | planners | 4.49 | 17 | 2 | 2 | 4 | 1 | 1 |
-| No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  | money | 4.49 | 8 | 4 | 4 | 4 | 1 | 1 |
+| Undated ADHD Planner Digital and Printable, Hyperlinked Go | planners | 6.99 | 25 | 0 | 9 | 9 | 0 | 1 |
+| Gingerbread House Decorating Contest Kit Printable, Judge  | party games | 4.49 | 14 | 0 | 5 | 6 | 0 | 1 |
+| No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  | money | 4.49 | 9 | 1 | 5 | 5 | 1 | 1 |
+| 2027 Goal Setting Workbook Printable, 12 Week Goal Planner | planners | 4.49 | 17 | 0 | 2 | 4 | 1 | 1 |
 | Christmas Party Games Printable Bundle, 8 Games for Office | party games | 2.99 | 70 | 0 | 0 | 0 | 0 | 1 |
-| Pink Bible Verse Wall Art Set of 6, Coquette Christian Pri | wall art | 7.49 | 16 | 0 | 7 | 9 | 0 | 0 |
+| Pink Bible Verse Wall Art Set of 6, Coquette Christian Pri | wall art | 7.49 | 16 | 0 | 0 | 7 | 0 | 0 |
 | Christmas Planner Printable 2026, Holiday Budget and Gift  | money | 6.99 | 15 | 0 | 0 | 3 | 0 | 0 |
-| Debt Payoff Planner Printable 2027, Debt Snowball and Aval | money | 4.99 | 5 | 0 | 2 | 3 | 0 | 0 |
-| Christmas Charades Printable Game, 120 Cards in 3 Levels f | party games | 3.99 | 3 | 1 | 3 | 3 | 0 | 0 |
-| Funny Christmas Party Awards Printable, 36 Office Holiday  | party games | 1.99 | 8 | 0 | 1 | 1 | 0 | 0 |
-| Thanksgiving Games Printable, 7 Game Bundle for Family, Ki | party games | 4.99 | 4 | 0 | 1 | 1 | 0 | 0 |
-| Christmas Bible Verse Wall Art Set of 6, Pink Christian Ch | wall art | 7.99 | 2 | 0 | 1 | 1 | 0 | 0 |
+| Christmas Charades Printable Game, 120 Cards in 3 Levels f | party games | 3.99 | 3 | 0 | 1 | 3 | 0 | 0 |
+| Debt Payoff Planner Printable 2027, Debt Snowball and Aval | money | 4.99 | 5 | 0 | 2 | 2 | 0 | 0 |
+| Christmas Coupon Book Printable, Editable PDF: 30 Coupons  | christmas | 4.49 | 2 | 0 | 0 | 2 | 1 | 0 |
+| Funny Christmas Party Awards Printable, 36 Office Holiday  | party games | 1.99 | 8 | 0 | 0 | 1 | 0 | 0 |
+| Thanksgiving Games Printable, 7 Game Bundle for Family, Ki | party games | 4.99 | 4 | 0 | 0 | 1 | 0 | 0 |
+| Christmas Bible Verse Wall Art Set of 6, Pink Christian Ch | wall art | 7.99 | 2 | 0 | 0 | 1 | 0 | 0 |
+| Christmas Scavenger Hunt Printable, 24 Rhyming Clue Cards  | party games | 3.99 | 1 | 1 | 1 | 1 | 0 | 0 |
 | ADHD Budget Planner App, Safe to Spend Daily Budget, Paych | money | 8.99 | 41 | 0 | 0 | 0 | 0 | 0 |
 | Monthly Budget Tracker Spreadsheet, 2027 Budget Template f | money | 6.99 | 22 | 0 | 0 | 0 | 0 | 0 |
 | Irregular Income Budget Planner, Tip and Commission Tracke | money | 4.99 | 10 | 0 | 0 | 0 | 0 | 0 |
@@ -71,18 +71,16 @@ Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 294 listing views.
 | New Years Eve Party Games Printable, 8 Family Friendly NYE | party games | 4.99 | 5 | 0 | 0 | 0 | 0 | 0 |
 | Secret Santa Questionnaire Printable, Office Gift Exchange | christmas | 3.49 | 5 | 0 | 0 | 0 | 0 | 0 |
 | Christmas Cookie Exchange Kit Printable, Cookie Swap Party | invitations | 4.99 | 2 | 0 | 0 | 0 | 0 | 0 |
-| Christmas Coupon Book Printable, Editable PDF: 30 Coupons  | christmas | 4.49 | 2 | 0 | 2 | - | 1 | 0 |
 | Friendsgiving Games Printable, 7 Thanksgiving Party Games  | party games | 4.49 | 1 | 0 | 0 | 0 | 0 | 0 |
 | Christmas Escape Room for Kids, Printable Family Escape Ga | party games | 11.99 | 1 | 0 | 0 | 0 | 0 | 0 |
 | Thanksgiving Planner Printable for First Time Hosts, 3 Wee | thanksgiving | 4.49 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Advent Calendar Activity Cards Printable, 24 Days of Famil | christmas | 3.99 | 0 | 0 | 0 | 0 | 0 | 0 |
-| Christmas Scavenger Hunt Printable, 24 Rhyming Clue Cards  | party games | 3.99 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Letter from Santa Editable Printable, 6 Personalized Santa | christmas | 4.99 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Pink Bow Birthday Invitation Template, Coquette Bow Invite | invitations | 7.99 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Christmas Murder Mystery Party Game for 8 Players, Printab | party games | 7.99 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Christmas Party Kit Printable, 6 Games Plus White Elephant | party games | 5.99 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Thanksgiving Escape Room for Kids and Families, Printable  | party games | 6.99 | 0 | 0 | 0 | 0 | 0 | 0 |
-| Office Christmas Party Games Printable: 24 No-Prep Team Ga | party games | 4.99 | 0 | 0 | 0 | - | 0 | 0 |
+| Office Christmas Party Games Printable: 24 No-Prep Team Ga | party games | 4.99 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Christmas Escape Room for Adults and Teens: Printable Part | party games | 7.99 | 0 | 0 | 0 | - | 0 | 0 |
 
 ## How crews use this
