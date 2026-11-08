@@ -44,7 +44,10 @@ tot = sum(L); acc = 0; guesses = []
 for l in L[:-1]:
     acc += l; guesses.append(speech_end * acc / tot)
 nb = len(guesses)
-if len(gaps) >= nb:
+if S.get("bounds") and len(S["bounds"]) == nb:
+    # measured pause list from the spec (used when comma pauses fool the DP; bug rule Nov 8)
+    bounds = [tuple(b) for b in S["bounds"]]
+elif len(gaps) >= nb:
     # pick nb pauses in order, closest overall to the guesses (small DP, keeps phrases in order)
     INF = 1e9; G = len(gaps); mid = [(a + b) / 2 for a, b in gaps]
     cost = [[INF] * (G + 1) for _ in range(nb + 1)]; back = [[0] * (G + 1) for _ in range(nb + 1)]

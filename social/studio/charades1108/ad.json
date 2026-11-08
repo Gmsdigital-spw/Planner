@@ -1,0 +1,247 @@
+{
+ "dur": 21.02,
+ "vo": "social/studio/media/vo/charades1108-vo.mp3",
+ "music": "social/studio/media/vo/charades1108-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/charades",
+   "cover": "cover.jpg",
+   "price": "3.99",
+   "pages": 16,
+   "listTitle": "Christmas Charades Printable Game, 120 Cards in 3 Levels for Kids, Family and Adults, Draw It Mode, Holiday Party and Classroom Game",
+   "strip": [
+    "p-04.png",
+    "p-06.png",
+    "p-10.png",
+    "p-13.png"
+   ],
+   "bg": [
+    "#b0283a",
+    "#4a0d16"
+   ],
+   "accent": "#2f6a52",
+   "hl": "#ffd34d",
+   "dot": "#ffe3e6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-06.png",
+     "p-04.png",
+     "p-10.png"
+    ],
+    "type": "fan",
+    "t0": 0,
+    "t1": 5.31,
+    "beats": [
+     0.1,
+     1.98,
+     3.87
+    ]
+   },
+   {
+    "page": "p-04.png",
+    "badge": "3 LEVELS",
+    "type": "hook",
+    "t0": 5.31,
+    "t1": 7.76
+   },
+   {
+    "page": "p-10.png",
+    "type": "hook",
+    "t0": 7.76,
+    "t1": 10.04
+   },
+   {
+    "pages": [
+     "p-03.png",
+     "p-08.png",
+     "p-10.png",
+     "p-12.png"
+    ],
+    "type": "grid",
+    "t0": 10.04,
+    "t1": 12.95,
+    "beats": [
+     10.14,
+     10.76,
+     11.37,
+     11.99
+    ]
+   },
+   {
+    "pages": [
+     "p-13.png",
+     "p-14.png"
+    ],
+    "type": "fan",
+    "t0": 12.95,
+    "t1": 15.46,
+    "beats": [
+     13.05,
+     14.58
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 15.46,
+    "t1": 17.94,
+    "beats": [
+     0.25,
+     0.74,
+     0.94,
+     1.25,
+     1.65
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 17.94,
+    "t1": 21.32
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.33,
+   "Can you act out | *untangling the lights?*"
+  ],
+  [
+   2.75,
+   4.89,
+   "No words. | *60 seconds.*"
+  ],
+  [
+   5.31,
+   7.34,
+   "Kids get | easy ones: *Penguin*"
+  ],
+  [
+   7.76,
+   9.62,
+   "Grown-ups get | *hiding from the carolers*"
+  ],
+  [
+   10.04,
+   12.53,
+   "*120 cards* | in *3 levels*"
+  ],
+  [
+   12.95,
+   15.04,
+   "Plus *Draw It* mode | and a *score sheet*"
+  ],
+  [
+   15.46,
+   16.64,
+   "*16* pages"
+  ],
+  [
+   17.06,
+   17.77,
+   "Tap the *link*"
+  ],
+  [
+   17.94,
+   19.32,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.98,
+   "pop"
+  ],
+  [
+   3.87,
+   "pop"
+  ],
+  [
+   5.26,
+   "whoosh"
+  ],
+  [
+   7.71,
+   "whoosh"
+  ],
+  [
+   9.99,
+   "whoosh"
+  ],
+  [
+   10.14,
+   "pop"
+  ],
+  [
+   10.76,
+   "pop"
+  ],
+  [
+   11.37,
+   "pop"
+  ],
+  [
+   11.99,
+   "pop"
+  ],
+  [
+   12.9,
+   "whoosh"
+  ],
+  [
+   13.05,
+   "pop"
+  ],
+  [
+   14.58,
+   "pop"
+  ],
+  [
+   15.41,
+   "whoosh"
+  ],
+  [
+   15.71,
+   "whoosh"
+  ],
+  [
+   17.11,
+   "tap"
+  ],
+  [
+   17.36,
+   "pop"
+  ],
+  [
+   17.89,
+   "whoosh"
+  ],
+  [
+   18.29,
+   "impact"
+  ],
+  [
+   18.74,
+   "pop"
+  ]
+ ]
+}

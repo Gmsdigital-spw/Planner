@@ -1,0 +1,125 @@
+{
+ "vo": "social/studio/media/vo/tgames1108-vo.mp3",
+ "music": "social/studio/media/vo/tgames1108-music.wav",
+ "product": {
+  "dir": "/social/studio/media/tgames",
+  "cover": "cover.jpg",
+  "price": "4.99",
+  "pages": 11,
+  "listTitle": "Thanksgiving Games Printable, 7 Game Bundle for Family, Kids and Adults, Trivia, Would You Rather, Scavenger Hunt, Kids Table Fun",
+  "strip": [
+   "p-03.png",
+   "p-07.png",
+   "p-09.png",
+   "p-10.png"
+  ],
+  "bg": [
+   "#c0612f",
+   "#5a2410"
+  ],
+  "accent": "#2f5d3a",
+  "hl": "#ffd34d",
+  "dot": "#ffe9dc"
+ },
+ "phrases": [
+  {
+   "say": "Thanksgiving dinner, and the kids are already bored?",
+   "cap": "Kids bored | before *dinner?*",
+   "scene": "fan",
+   "pages": [
+    "p-03.png",
+    "p-04.png",
+    "p-10.png"
+   ]
+  },
+  {
+   "say": "Seven printable games, for every age.",
+   "cap": "*7* printable games | for *every age*",
+   "scene": "grid",
+   "pages": [
+    "p-03.png",
+    "p-06.png",
+    "p-07.png",
+    "p-09.png"
+   ]
+  },
+  {
+   "say": "Trivia, with an answer key.",
+   "cap": "*Trivia* | with an *answer key*",
+   "scene": "hook",
+   "page": "p-03.png",
+   "badge": "7 GAMES"
+  },
+  {
+   "say": "Would You Rather cards for the table.",
+   "cap": "*Would You Rather* | for the table",
+   "scene": "hook",
+   "page": "p-07.png"
+  },
+  {
+   "say": "A scavenger hunt keeps the kids busy.",
+   "cap": "A *scavenger hunt* | keeps kids busy",
+   "scene": "hook",
+   "page": "p-10.png"
+  },
+  {
+   "say": "Then crown a champion on the scorecard.",
+   "cap": "Crown a *champion*",
+   "scene": "fan",
+   "pages": [
+    "p-09.png",
+    "p-08.png",
+    "p-11.png"
+   ]
+  },
+  {
+   "say": "Eleven pages. Instant download.",
+   "cap": "*11* pages | instant *download*",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ],
+ "bounds": [
+  [
+   2.58,
+   3.0
+  ],
+  [
+   5.43,
+   5.85
+  ],
+  [
+   7.32,
+   7.74
+  ],
+  [
+   9.22,
+   9.64
+  ],
+  [
+   11.62,
+   12.05
+  ],
+  [
+   13.87,
+   14.29
+  ],
+  [
+   16.6,
+   17.02
+  ],
+  [
+   17.73,
+   17.89
+  ]
+ ]
+}

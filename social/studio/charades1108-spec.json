@@ -1,0 +1,122 @@
+{
+ "vo": "social/studio/media/vo/charades1108-vo.mp3",
+ "music": "social/studio/media/vo/charades1108-music.wav",
+ "product": {
+  "dir": "/social/studio/media/charades",
+  "cover": "cover.jpg",
+  "price": "3.99",
+  "pages": 16,
+  "listTitle": "Christmas Charades Printable Game, 120 Cards in 3 Levels for Kids, Family and Adults, Draw It Mode, Holiday Party and Classroom Game",
+  "strip": [
+   "p-04.png",
+   "p-06.png",
+   "p-10.png",
+   "p-13.png"
+  ],
+  "bg": [
+   "#b0283a",
+   "#4a0d16"
+  ],
+  "accent": "#2f6a52",
+  "hl": "#ffd34d",
+  "dot": "#ffe3e6"
+ },
+ "phrases": [
+  {
+   "say": "Can you act out untangling the Christmas lights?",
+   "cap": "Can you act out | *untangling the lights?*",
+   "scene": "fan",
+   "pages": [
+    "p-06.png",
+    "p-04.png",
+    "p-10.png"
+   ]
+  },
+  {
+   "say": "No words. Sixty seconds.",
+   "cap": "No words. | *60 seconds.*"
+  },
+  {
+   "say": "Kids get easy cards, like a penguin.",
+   "cap": "Kids get | easy ones: *Penguin*",
+   "scene": "hook",
+   "page": "p-04.png",
+   "badge": "3 LEVELS"
+  },
+  {
+   "say": "Grown-ups get hiding from the carolers.",
+   "cap": "Grown-ups get | *hiding from the carolers*",
+   "scene": "hook",
+   "page": "p-10.png"
+  },
+  {
+   "say": "A hundred and twenty cards, in three levels.",
+   "cap": "*120 cards* | in *3 levels*",
+   "scene": "grid",
+   "pages": [
+    "p-03.png",
+    "p-08.png",
+    "p-10.png",
+    "p-12.png"
+   ]
+  },
+  {
+   "say": "Plus Draw It mode, and a score sheet.",
+   "cap": "Plus *Draw It* mode | and a *score sheet*",
+   "scene": "fan",
+   "pages": [
+    "p-13.png",
+    "p-14.png"
+   ]
+  },
+  {
+   "say": "Sixteen pages.",
+   "cap": "*16* pages",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ],
+ "bounds": [
+  [
+   2.33,
+   2.75
+  ],
+  [
+   4.89,
+   5.31
+  ],
+  [
+   7.34,
+   7.76
+  ],
+  [
+   9.62,
+   10.04
+  ],
+  [
+   12.53,
+   12.95
+  ],
+  [
+   15.04,
+   15.46
+  ],
+  [
+   16.64,
+   17.06
+  ],
+  [
+   17.77,
+   17.94
+  ]
+ ]
+}
