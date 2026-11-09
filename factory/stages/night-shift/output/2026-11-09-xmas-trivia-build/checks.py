@@ -1,3 +1,4 @@
+# Run only through build.py (it exec()s this file with BOXES and OUT defined); not a standalone script.
 import re
 # ------------------------------------------------------------------ fix round 2: EVERY page's lowest element ends 0.25 in+ above the footer rule
 def check_clearance(pdf, dpi=100):
@@ -109,8 +110,6 @@ def check_meaning_dups(items, share=0.60):
 
 
 if __name__ == "__main__":
-    import os, sys
-    OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "christmas-trivia-game.pdf")
     box_bad = check_boxes(OUT)
     print(f"boxes checked: {len(BOXES)} on {len(set(b[0] for b in BOXES))} pages; violations: {len(box_bad)}")
     for v in box_bad: print("  BOX", v)
