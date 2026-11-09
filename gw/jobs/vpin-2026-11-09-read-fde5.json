@@ -1,0 +1,1 @@
+{"id":"vpin-2026-11-09-read-fde5","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100"},{"op":"zernio","method":"GET","path":"/posts/6af0c77b72ef1ea98b8f9c3e"}]}
