@@ -1,7 +1,7 @@
 {
  "id": "ep32",
  "format": "story",
- "rev": 1,
+ "rev": 2,
  "title": "My Mom Said My Games Were Heating Up Our Whole House #shorts",
  "title_card": "The Mirror Heat",
  "voice": "ava",
@@ -30,7 +30,7 @@
    "text": "Mom said, \"Your console blows hot air all afternoon, right when the house gets hottest.\"",
    "label": "the charge",
    "headline": "mom blames console",
-   "image": "{mom} is the only person in the picture, standing in a living room with arms crossed, pointing at exactly one small game console on a shelf, stern face, mouth open talking"
+   "image": "{mom} is the only person in the picture, standing in a living room with arms crossed, pointing at exactly one small flat black game console box with one controller lying beside it on a low shelf, no TV in the picture, stern face, mouth open talking"
   },
   {
    "text": "She locked my console in the hall closet, right beside her shiny new birthday mirror.",
@@ -84,7 +84,7 @@
    "text": "Mom moved her mirror and returned my console, but swears it still heats my room.",
    "label": "the ending",
    "headline": "console back",
-   "image": "{mom} is the only person in the picture, carrying a big round mirror down a hallway, rolling her eyes, grumpy smile, late afternoon"
+   "image": "{mom} is the only person in the picture, walking down a hallway carrying exactly one big round mirror in both hands in front of her, the only mirror in the picture, rolling her eyes, grumpy smile, late afternoon"
   }
  ]
 }
