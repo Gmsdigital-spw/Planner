@@ -50,15 +50,15 @@
   }
  ],
  "done": null,
- "runs": 181,
+ "runs": 187,
  "lastSignal": {
   "XLF": "2026-11-09T16:15:00Z",
   "XLI": "2026-11-09T16:15:00Z"
  },
- "lastRun": "10:50",
- "lastNote": "equity $24.79, day +0.02, 2 open, 2 entries",
- "equity": 24.79,
- "dayPnl": 0.02,
+ "lastRun": "10:56",
+ "lastNote": "equity $24.77, day +0.00, 2 open, 2 entries",
+ "equity": 24.77,
+ "dayPnl": 0.0,
  "watch": [
   "SPY",
   "QQQ",
