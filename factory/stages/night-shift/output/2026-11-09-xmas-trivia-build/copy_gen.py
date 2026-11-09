@@ -11,7 +11,7 @@ tags = ["christmas trivia", "xmas trivia quiz", "xmas trivia game", "christmas q
         "trivia printable", "christmas party game", "office party games", "holiday party game", "christmas games",
         "xmas party games", "family game night", "christmas eve games"]
 rounds_list = "\n".join(f"{i}. {t} (20)" for i, (t, s, q) in enumerate(ROUNDS, 1))
-desc = f"""200 Christmas trivia questions for your family Christmas party, office party or holiday game night: 10 themed rounds of 20, with answer keys, a host script and team sheets, so a group of any size can play with no prep. Fun for a large group, and Round 9 is an easy Kids' Round so younger players can join in.
+desc = f"""200 Christmas trivia questions for your family Christmas party, office party or holiday game night: 10 themed rounds of 20, with answer keys, a host script and team sheets, so up to 10 teams of 2 to 6 can play with no prep. Round 9 is an easy Kids' Round so younger players can join in.
 
 Every question is original and fact-checked. There are no movie, song or TV rounds, so it works for church groups, classrooms, offices and mixed ages alike.
 
@@ -69,5 +69,16 @@ for i, (t, s, q) in enumerate(ROUNDS, 1):
     assert t.replace("'", "’") in pg(i + 2).replace("'", "’") or t in pg(i + 2), (i, t)
 assert sum(len(q) for t, s, q in ROUNDS) == 200 and len(TIEBREAKERS) == 3
 assert pg(16).count("TEAM") >= 1
+# fix round 1: every claim in the copy read back from the PDF by code
+import re as _re
+p2 = _re.sub(r"\s+", " ", pg(2)); p16 = pg(16)
+assert "any size" not in desc and "large group" not in desc
+assert "up to 10 teams of 2 to 6" in desc and "Teams of 2 to 6 players" in p2 and "fits up to 10 teams" in p2
+_nt = _re.search(r"^NT\s*=\s*(\d+)", open(HERE + "/build.py").read(), _re.M); assert _nt and int(_nt.group(1)) == 10, "score sheet team rows"
+assert "Joker" in p2 and "15 minutes" in p2 and "any 4 rounds" in p2 and "twice" in p2
+assert "Kids' Round" in pg(11).replace("’", "'") and "ROUND 9" in pg(11)
+assert "Ded Moroz" in pg(13) and "Grandfather Frost" in pg(4)
+assert not any(w in " ".join(pg(i) for i in range(3, 13)).lower() for w in ["movie", " song", " tv "])
+print("copy claims OK: teams 2-6 / 10 teams, Joker, 15 min, any 4 rounds, Kids' Round 9, 17 pages Letter")
 print(f"copy OK: title {len(title)} chars, 13 tags (max {max(map(len, tags))}), description {len(desc)} chars, price {price}, PDF 17 pages Letter, page list matches")
 json.dump(copy, open(HERE + "/copy.json", "w"), indent=1, ensure_ascii=False)

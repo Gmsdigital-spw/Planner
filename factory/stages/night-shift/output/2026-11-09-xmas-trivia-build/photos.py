@@ -21,53 +21,46 @@ font = gs.font
 used = {}
 
 
-# ------------------------------------------------------------------ 1 cover: real pages on the holiday-table scene, big cream headline card
+# ------------------------------------------------------------------ 1 cover (fix round 1): device family, landscape tablet
+# showing the real 2-page spread on a flat midnight-navy ground; gold + warm-white headline, no card, no table scene.
+NAVY = (27, 38, 64); GOLD = (233, 196, 112); WARM = (250, 244, 230)
 def cover():
     W, H = 2000, 1500
-    cx0, cy0, cw = 164, 55, 1110
-    s = W / cw
-    full = place.place("christmas", [P[3], P[5]], None, scale=s)
-    im = full.crop((round(cx0 * s), round(cy0 * s), round(cx0 * s) + W, round(cy0 * s) + H))
-    # page mask from the scene's slot quads (same numbers place.py uses)
-    quads = place.SCENES["christmas"][1]
-    mask = Image.new("L", (W, H), 0); md = ImageDraw.Draw(mask)
-    for q in quads:
-        md.polygon([((x - cx0) * s, (y - cy0) * s) for x, y in q], fill=255)
-    page_top = min(y for q in quads for x, y in q)
-    page_top_px = (page_top - cy0) * s
+    im = Image.new("RGB", (W, H), NAVY)
+    g = np.random.default_rng(7).normal(0, 4, (H, W, 1))
+    im = Image.fromarray(np.clip(np.asarray(im).astype(float) + g, 0, 255).astype("uint8"))
     d = ImageDraw.Draw(im)
-    # headline card
     l1, l2 = "200 Christmas", "Trivia Questions"
-    f1 = font("serifB", 138)
-    while max(f1.getlength(l1), f1.getlength(l2)) > 1300: f1 = font("serifB", f1.size - 4)
-    fs = font("sansM", 35)
-    sub = "10 ROUNDS  ·  ANSWER KEYS  ·  TEAM SHEETS"
-    b1 = d.textbbox((0, 0), l1, font=f1); b2 = d.textbbox((0, 0), l2, font=f1)
-    lh = f1.size * 0.95
-    q_bot = ImageDraw.Draw(Image.new('RGB', (10, 10))).textbbox((0, 0), l2, font=f1, anchor='ma')[3]   # incl. the Q tail
-    card_w = max(f1.getlength(l1), f1.getlength(l2), fs.getlength(sub) + 8 * len(sub)) + 120
-    card_h = 22 + lh + q_bot + 14 + 38 + 26
-    x0 = (W - card_w) / 2; y0 = 22
-    sh = Image.new("RGBA", (W, H), (0, 0, 0, 0)); sd = ImageDraw.Draw(sh)
-    sd.rounded_rectangle([x0 + 6, y0 + 14, x0 + card_w + 6, y0 + card_h + 14], 34, fill=(0, 0, 0, 70))
+    f1 = font("serifB", 142)
+    while max(f1.getlength(l1), f1.getlength(l2)) > 1440: f1 = font("serifB", f1.size - 4)
+    y = 8
+    d.text((W / 2, y), l1, font=f1, fill=GOLD, anchor="ma"); bb1 = d.textbbox((W / 2, y), l1, font=f1, anchor="ma")
+    y = bb1[3] + 2
+    d.text((W / 2, y), l2, font=f1, fill=WARM, anchor="ma"); bb2 = d.textbbox((W / 2, y), l2, font=f1, anchor="ma")
+    # tablet: bezel, screen with the two real pages side by side (whole pages, footers included)
+    top = bb2[3] + 22
+    bez, side, bot = 20, 40, 14
+    sh_ = H - bot - top - 2 * bez                 # screen height
+    pw = round(sh_ * 612 / 792); gut = 6
+    sw = 2 * pw + gut
+    tw = sw + 2 * side; th = sh_ + 2 * bez
+    tx = (W - tw) // 2; ty = top
     from PIL import ImageFilter
-    im.paste(Image.new("RGB", (W, H), (0, 0, 0)), (0, 0), sh.filter(ImageFilter.GaussianBlur(18)).split()[3])
+    shadow = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(shadow).rounded_rectangle([tx + 10, ty + 24, tx + tw + 10, ty + th + 24], 60, fill=150)
+    im.paste((8, 12, 24), (0, 0), shadow.filter(ImageFilter.GaussianBlur(26)))
     d = ImageDraw.Draw(im)
-    d.rounded_rectangle([x0, y0, x0 + card_w, y0 + card_h], 34, fill=DEEP, outline=ACC, width=6)
-    y = y0 + 22
-    d.text((W / 2, y), l1, font=f1, fill=CREAM, anchor="ma"); bb1 = d.textbbox((W / 2, y), l1, font=f1, anchor="ma")
-    y += lh
-    d.text((W / 2, y), l2, font=f1, fill=CREAM, anchor="ma"); bb2 = d.textbbox((W / 2, y), l2, font=f1, anchor="ma")
-    y = bb2[3] + 14
-    # spaced small caps subline
-    tw = sum(fs.getlength(ch) for ch in sub) + 8 * (len(sub) - 1); xx = W / 2 - tw / 2
-    for ch in sub:
-        d.text((xx, y), ch, font=fs, fill=(226, 196, 132)); xx += fs.getlength(ch) + 8
-    card = (x0, y0, x0 + card_w, y0 + card_h)
-    sb = d.textbbox((W / 2, y), sub, font=fs, anchor='ma')
-    assert sb[1] >= bb2[3] + 10 and sb[3] <= card[3] - 18, ('subline crowded', sb, bb2, card)
-    mask.paste(0, [int(x0), int(y0), int(x0 + card_w) + 1, int(y0 + card_h) + 1])
-    return im, mask, {"line1": bb1, "line2": bb2, "card": card}, page_top_px
+    d.rounded_rectangle([tx, ty, tx + tw, ty + th], 58, fill=(24, 24, 27), outline=(92, 94, 102), width=4)
+    d.ellipse([tx + side / 2 - 7, ty + th / 2 - 7, tx + side / 2 + 7, ty + th / 2 + 7], fill=(52, 54, 60))
+    sx, sy = tx + side, ty + bez
+    d.rectangle([sx, sy, sx + sw, sy + sh_], fill=(214, 216, 220))
+    mask = Image.new("L", (W, H), 0); md = ImageDraw.Draw(mask)
+    for k, n in enumerate([3, 5]):
+        pg = P[n].convert("RGB").resize((pw, sh_), Image.LANCZOS)
+        x = sx + k * (pw + gut)
+        im.paste(pg, (x, sy)); md.rectangle([x, sy, x + pw - 1, sy + sh_ - 1], fill=255)
+    return im, mask, {"line1": bb1, "line2": bb2, "card": (min(bb1[0], bb2[0]), bb1[1], max(bb1[2], bb2[2]), bb2[3]),
+                      "tablet": (tx, ty, tx + tw, ty + th), "screen": (sx, sy, sx + sw, sy + sh_)}, sy
 
 
 im, mask, boxes, page_top_px = cover()
@@ -76,24 +69,18 @@ gs.thumb_check(im, OUT + "/thumb400.png")
 s_ = min(im.size); x_ = (im.width - s_) // 2
 im.crop((x_, 0, x_ + s_, s_)).resize((300, 300), Image.LANCZOS).save(OUT + "/thumb300.png")
 card = boxes["card"]
-assert card[0] >= 270 and card[2] <= 1730, ("headline card outside the centred square", card)
+assert card[0] >= 270 and card[2] <= 1730, ("headline outside the centred square", card)
 ink = boxes["line2"][3] - boxes["line1"][1]
 line_h = boxes["line1"][3] - boxes["line1"][1]
 print(f"cover headline: 2 lines, ink {ink}px = {ink / 1500 * 100:.1f}% of height (one line {line_h}px = {line_h / 1500 * 100:.1f}%)")
 assert line_h / 1500 >= 0.07 and ink / 1500 >= 0.09
-overlap = card[3] - page_top_px
-print(f"card bottom {card[3]:.0f}px, page tops {page_top_px:.0f}px: card overlaps the pages' top stripe by {max(0, overlap):.0f}px")
-# page text starts below the page's own stripe frame + kicker: about 7.5% of the page height
-page_h = (879 - 273) * 2000 / 1110
-assert overlap < 0.06 * page_h, ("headline card covers page text", overlap, page_h)
 m = np.asarray(mask) > 0
 print(f"real page pixels: {m.mean() * 100:.1f}% of the frame, {m[:, 250:1750].mean() * 100:.1f}% of the centred square")
 assert m.mean() >= 0.60 and m[:, 250:1750].mean() >= 0.60
-# whole pages: every slot corner (footers included) sits inside the frame
-for q in place.SCENES["christmas"][1]:
-    for x, y in q:
-        X, Y = (x - 164) * 2000 / 1110, (y - 55) * 2000 / 1110
-        assert 0 <= X <= 2000 and 0 <= Y <= 1500 - 8, ("cover crop cuts a page", X, Y)
+# whole pages: the tablet (and so every page edge and footer) sits inside the frame, nothing cut
+t = boxes["tablet"]; print("tablet box", t)
+assert t[0] >= 8 and t[1] >= 0 and t[2] <= 1992 and t[3] <= 1500 - 12, ("cover crop cuts the device/pages", t)
+ys, xs = np.nonzero(m); assert ys.max() <= 1500 - 30 and xs.min() >= 30 and xs.max() <= 1970
 
 
 def safe_text(d, xy, text, f, fill, anchor="la"):
@@ -156,29 +143,28 @@ def closeup():
 gs.save_jpeg(closeup(), OUT + "/3-closeup.jpg")
 
 
-# ------------------------------------------------------------------ 4 included: count + list, the PDF cover page big
+# ------------------------------------------------------------------ 4 included (fix round 1): 3 real pages fanned big
+# (PDF cover + Rounds 6 and 7, none shown elsewhere, never an answer key) over a 2-line list of what is inside
 def included():
     im = gs.paper(PAL["paper"], (2000, 1600)); d = ImageDraw.Draw(im)
-    d.rectangle([1080, 0, 2000, 1600], fill=gs.rgb(PAL["tint"]))
-    pw = 800
-    bb = gs.place(im, P[1], pw, (1150, 170), angle=-2, shadow=0.3)
+    safe_text(d, (1000, 40), "Everything in the 16-Page PDF", font("serifB", 88), DEEP, "ma")
+    w = 790
+    bl = gs.place(im, P[8], w, (175, 205), angle=6, shadow=0.3)
+    br = gs.place(im, P[9], w, (1035, 205), angle=-6, shadow=0.3)
+    bm = gs.place(im, P[1], w, (605, 170), angle=0, shadow=0.34)
     d = ImageDraw.Draw(im)
-    x = 270; y = 140
-    safe_text(d, (x, y), "16-Page PDF", font("serifB", 112), DEEP); y += 150
-    d.rectangle([x, y, x + 110, y + 6], fill=ACC); y += 46
-    f = font("sans", 50)
-    for it in ["How to play + host script", "10 rounds of 20 questions", "Answer keys for all 200",
-               "Team answer sheet", "Score sheet for 10 teams", "3 tie-breaker questions", "Easy Kids' Round included"]:
-        d.ellipse([x, y + 22, x + 20, y + 42], fill=PRIM)
-        b = d.textbbox((x + 48, y), it, font=f); assert b[2] < 1060, it
-        d.text((x + 48, y), it, font=f, fill=(43, 43, 43)); y += 118
-    y += 20
-    safe_text(d, (x, y), "Teams of 2 to 6  ·  mixed ages", font("sansM", 44), PRIM)
-    d.rectangle([0, 1490, 2000, 1600], fill=DEEP)
-    safe_text(d, (1000, 1545), "INSTANT DOWNLOAD  ·  PRINT AT HOME  ·  US LETTER PDF", font("sansM", 38), WHITE, "mm")
-    print("photo 4 list ends at y", y + 56, "; PDF cover page", bb)
-    assert bb[3] <= 1490 and bb[2] <= 2000
-    used[4] = [1]
+    span = max(bl[2], br[2], bm[2]) - min(bl[0], br[0], bm[0])
+    bot = max(bl[3], br[3], bm[3])
+    f = font("sansM", 41)
+    y = bot + 26
+    for line in ["Host script  ·  10 rounds of 20 questions  ·  answer keys for all 200",
+                 "Team answer sheet  ·  score sheet for 10 teams  ·  3 tie-breakers"]:
+        safe_text(d, (1000, y), line, f, PRIM, "ma"); y += 64
+    d.rectangle([0, 1500, 2000, 1600], fill=DEEP)
+    safe_text(d, (1000, 1550), "INSTANT DOWNLOAD  ·  PRINT AT HOME  ·  US LETTER PDF", font("sansM", 38), WHITE, "mm")
+    print(f"photo 4: 3 pages span {span}px = {span / 2000 * 100:.0f}% of width, pages end y {bot}, list ends y {y}")
+    assert span >= 0.8 * 2000 and y <= 1500 and min(bl[0], br[0], bm[0]) >= 0 and max(bl[2], br[2], bm[2]) <= 2000
+    used[4] = [1, 8, 9]
     return im
 
 

@@ -173,15 +173,21 @@ y = y - h2 - GAP
 
 tips = ["Each round takes about 15 minutes with marking. Short on time? Play any 4 rounds in about an hour.",
         "Round 9 is an easy Kids' Round: use it as a warm-up or as a round for younger players.",
-        "A tie at the end? Three closest-number tie-breakers are on the score sheet (page 16)."]
+        "A tie at the end? Three closest-number tie-breakers are on the score sheet (page 16).",
+        "Keep a timer handy: about 30 seconds per question keeps every round moving."]
 
 h4 = y - BOTTOM
 need = HEAD + PAD + bullet_h(tips, W - 2 * PAD) + PAD
 print("host page: h1 %.0f h2 %.0f tips need %.0f have %.0f" % (h1, h2, need, h4))
 assert h4 >= need, ("host page overflow", h4, need)
 yy = card(L, y, W, h4, "Tips for a smooth game")
-yy -= (h4 - need) / 2   # center the tips so the page reaches the footer with no empty band
-bullet_draw(L + PAD, yy, tips, W - 2 * PAD)
+# fix round 1 (Judge): no empty band at the top of the tips card: spread the spare height between the tips
+spare = h4 - need
+print("tips spare %.0f pt over %d tips" % (spare, len(tips)))
+assert spare < 40, ("tips card has an empty band", spare)
+yy -= spare / (2 * len(tips))
+for t_ in tips:
+    yy = bullet_draw(L + PAD, yy, [t_], W - 2 * PAD) - spare / len(tips)
 d.end()
 
 # ================================================================== pages 3-12: the rounds
@@ -347,7 +353,7 @@ calc = {
     "If the winter solstice is on December 21, how many days later is Christmas Day?": str(25 - 21),
     "How many letters are in the word CHRISTMAS?": str(len("CHRISTMAS")),
     "Counting both days, how many days are there from December 1 to December 25?": str((datetime.date(2026, 12, 25) - datetime.date(2026, 12, 1)).days + 1),
-    "On which day of the week does Christmas Day 2026 fall?": datetime.date(2026, 12, 25).strftime("%A"),
+    "How many days are there in the month of December?": str(__import__("calendar").monthrange(2027, 12)[1]),
     "How many minutes are there in Christmas Day?": f"{24 * 60:,}",
     "24 party guests split into teams of 4. How many teams is that?": str(24 // 4),
     "By number, which month of the year is December?": f"{datetime.date(2026, 12, 1).month}th",

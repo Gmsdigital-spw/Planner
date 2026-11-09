@@ -45,7 +45,7 @@ ROUNDS = [
         ("In Poland, Christmas Eve dinner traditionally waits until what appears in the sky?", "The first star"),
         ("Each year, Oslo, Norway, gives a giant Christmas tree to which city as a thank-you?", "London"),
         ("In Greece, which saint traditionally brings children gifts on January 1?", "St. Basil"),
-        ("In Russia, who is 'Grandfather Frost', the gift-bringer at New Year?", "Ded Moroz"),
+        ("What is the Russian name of Grandfather Frost, the New Year gift-bringer?", "Ded Moroz"),
     ]),
     ("Festive Food and Drink", "Puddings, cookies and holiday feasts", [
         ("On 'Stir-up Sunday', British families traditionally prepare which dessert?", "Christmas pudding"),
@@ -219,7 +219,7 @@ ROUNDS = [
         ("How many letters are in the word CHRISTMAS?", "9"),
         ("Roughly how far is Bethlehem from Jerusalem: 6, 60 or 600 miles?", "About 6 miles"),
         ("Counting both days, how many days are there from December 1 to December 25?", "25"),
-        ("On which day of the week does Christmas Day 2026 fall?", "Friday"),
+        ("How many days are there in the month of December?", "31"),
         ("How many minutes are there in Christmas Day?", "1,440"),
         ("24 party guests split into teams of 4. How many teams is that?", "6"),
     ]),
