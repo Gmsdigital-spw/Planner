@@ -184,10 +184,20 @@
             "listingId": "4597743627",
             "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-08/4597743627/video.mp4",
             "zernioPostId": "6af0c77b72ef1ea98b8f9c3e",
+            "status": "failed",
+            "postUrl": null,
+            "error": "Pinterest video processing timeout after 60s (last status: processing); retries exhausted after 3 attempts.",
+            "link": "https://www.etsy.com/listing/4597743627"
+        },
+        {
+            "day": "2026-11-09",
+            "listingId": "4606483866",
+            "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-09/4606483866/video.mp4",
+            "zernioPostId": "6af217f00013615204ea0cb2",
             "status": "scheduled",
             "postUrl": null,
             "error": null,
-            "link": "https://www.etsy.com/listing/4597743627"
+            "link": "https://www.etsy.com/listing/4606483866"
         }
     ]
 }
