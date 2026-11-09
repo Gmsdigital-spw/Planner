@@ -1,0 +1,242 @@
+{
+ "dur": 19.08,
+ "vo": "social/studio/media/vo/ginger1109-vo.mp3",
+ "music": "social/studio/media/vo/ginger1109-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/ginger",
+   "cover": "cover-1105.jpg",
+   "price": "4.49",
+   "pages": 15,
+   "listTitle": "Gingerbread House Decorating Contest Printable, Judge Score Cards, Voting Ballots and Award Certificates for Kids, Teens and Adults",
+   "strip": [
+    "p-07.png",
+    "p-10.png",
+    "p-11.png",
+    "p-12.png"
+   ],
+   "bg": [
+    "#c0603a",
+    "#4a1f10"
+   ],
+   "accent": "#9a3f1c",
+   "hl": "#ffd34d",
+   "dot": "#ffe6d6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-02.png",
+     "p-07.png",
+     "p-10.png",
+     "p-12.png"
+    ],
+    "type": "grid",
+    "t0": 0,
+    "t1": 2.64,
+    "beats": [
+     0.1,
+     0.64,
+     1.19,
+     1.73
+    ]
+   },
+   {
+    "page": "p-07.png",
+    "badge": "1 TO 5",
+    "type": "hook",
+    "t0": 2.64,
+    "t1": 5.45
+   },
+   {
+    "page": "p-10.png",
+    "type": "hook",
+    "t0": 5.45,
+    "t1": 7.3
+   },
+   {
+    "pages": [
+     "p-12.png",
+     "p-11.png"
+    ],
+    "type": "fan",
+    "t0": 7.3,
+    "t1": 11.43,
+    "beats": [
+     7.4,
+     10.22
+    ]
+   },
+   {
+    "pages": [
+     "p-12.png",
+     "p-13.png",
+     "p-14.png"
+    ],
+    "type": "fan",
+    "t0": 11.43,
+    "t1": 13.89,
+    "beats": [
+     11.53,
+     12.27,
+     13.02
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 13.89,
+    "t1": 16.09,
+    "beats": [
+     0.21,
+     0.63,
+     0.83,
+     1.13,
+     1.39
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 16.09,
+    "t1": 19.38
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.23,
+   "Your *gingerbread contest* | judged *fair*"
+  ],
+  [
+   2.64,
+   5.02,
+   "Judges score *5 things* | from *1 to 5*"
+  ],
+  [
+   5.45,
+   6.89,
+   "Guests vote | *People's Choice*"
+  ],
+  [
+   7.3,
+   11.17,
+   "*12 awards* | *Grand Champion* to | *Pretzel Architect*"
+  ],
+  [
+   11.43,
+   13.41,
+   "*Kids* *teens* *adults* | each get *winners*"
+  ],
+  [
+   13.89,
+   14.81,
+   "*15* pages"
+  ],
+  [
+   15.23,
+   15.88,
+   "Tap the *link*"
+  ],
+  [
+   16.09,
+   17.04,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.64,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.19,
+   "pop"
+  ],
+  [
+   1.73,
+   "pop"
+  ],
+  [
+   2.59,
+   "whoosh"
+  ],
+  [
+   5.4,
+   "whoosh"
+  ],
+  [
+   7.25,
+   "whoosh"
+  ],
+  [
+   7.4,
+   "pop"
+  ],
+  [
+   10.22,
+   "pop"
+  ],
+  [
+   11.38,
+   "whoosh"
+  ],
+  [
+   11.53,
+   "pop"
+  ],
+  [
+   12.27,
+   "pop"
+  ],
+  [
+   13.02,
+   "pop"
+  ],
+  [
+   13.84,
+   "whoosh"
+  ],
+  [
+   14.1,
+   "whoosh"
+  ],
+  [
+   15.28,
+   "tap"
+  ],
+  [
+   15.53,
+   "pop"
+  ],
+  [
+   16.04,
+   "whoosh"
+  ],
+  [
+   16.44,
+   "impact"
+  ],
+  [
+   16.89,
+   "pop"
+  ]
+ ]
+}
