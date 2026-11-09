@@ -1,0 +1,66 @@
+{
+ "id": "bolt-2026-11-09-img-6f62",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4613237408/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-trivia-200/1.jpg",
+   "field": "image",
+   "fileName": "christmas-trivia-game-printable-1.jpg",
+   "fields": {
+    "rank": "1",
+    "alt_text": "Christmas Trivia Game Printable: 200 Questions in 10 Rounds for Family, Office and Game Night, Answer Keys and Team Score Sheets"
+   },
+   "tag": "img1"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4613237408/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-trivia-200/2.jpg",
+   "field": "image",
+   "fileName": "christmas-trivia-game-printable-2.jpg",
+   "fields": {
+    "rank": "2",
+    "alt_text": "What's inside the Christmas trivia game: host script, round pages and answer key pages"
+   },
+   "tag": "img2"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4613237408/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-trivia-200/3.jpg",
+   "field": "image",
+   "fileName": "christmas-trivia-game-printable-3.jpg",
+   "fields": {
+    "rank": "3",
+    "alt_text": "Close-up of Christmas trivia Round 2 questions 1 to 12"
+   },
+   "tag": "img3"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4613237408/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-trivia-200/4.jpg",
+   "field": "image",
+   "fileName": "christmas-trivia-game-printable-4.jpg",
+   "fields": {
+    "rank": "4",
+    "alt_text": "Christmas trivia printable cover page with Rounds 6 and 7 fanned out"
+   },
+   "tag": "img4"
+  },
+  {
+   "op": "etsy_upload",
+   "path": "/shops/68605457/listings/4613237408/images",
+   "fileUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/prod-xmas-trivia-200/5.jpg",
+   "field": "image",
+   "fileName": "christmas-trivia-game-printable-5.jpg",
+   "fields": {
+    "rank": "5",
+    "alt_text": "Christmas trivia team answer sheet and team score sheet"
+   },
+   "tag": "img5"
+  }
+ ]
+}
