@@ -1,0 +1,8 @@
+{"id":"bolt-2026-11-09-chk-5a15","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/listings/4613237408","tag":"draftchk"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"},
+{"op":"zernio","method":"GET","path":"/posts/6aeb31ec9fd5d3bcdaa35b7e","tag":"pin-prod-friendsgiving-kit-n1"},
+{"op":"zernio","method":"GET","path":"/posts/6aeb31eb4b7159644b167634","tag":"pin-prod-nye-games-n1"}
+]}
