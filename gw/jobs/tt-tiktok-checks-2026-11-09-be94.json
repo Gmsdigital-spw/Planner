@@ -1,0 +1,36 @@
+{
+ "id": "tt-tiktok-checks-2026-11-09-be94",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "postproxy",
+   "method": "GET",
+   "path": "/posts/latVe3V",
+   "tag": "tiktok-4597755725-2026-10-23"
+  },
+  {
+   "op": "postproxy",
+   "method": "GET",
+   "path": "/posts/J5tVJjP",
+   "tag": "tiktok-4604185747-2026-10-28"
+  },
+  {
+   "op": "postproxy",
+   "method": "GET",
+   "path": "/posts/latoa3d",
+   "tag": "tiktok-4606483866-2026-10-31"
+  },
+  {
+   "op": "postproxy",
+   "method": "GET",
+   "path": "/posts/2xtKl5y",
+   "tag": "tiktok-4597749137-2026-11-03"
+  },
+  {
+   "op": "postproxy",
+   "method": "GET",
+   "path": "/posts/xltxzE3",
+   "tag": "tiktok-4602402578-2026-11-06"
+  }
+ ]
+}
