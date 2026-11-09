@@ -219,7 +219,7 @@ ROUNDS = [
         ("How many letters are in the word CHRISTMAS?", "9"),
         ("Roughly how far is Bethlehem from Jerusalem: 6, 60 or 600 miles?", "About 6 miles"),
         ("Counting both days, how many days are there from December 1 to December 25?", "25"),
-        ("How many days are there in the month of December?", "31"),
+        ("How many days after Christmas Day is Epiphany, on January 6?", "12"),
         ("How many minutes are there in Christmas Day?", "1,440"),
         ("24 party guests split into teams of 4. How many teams is that?", "6"),
     ]),

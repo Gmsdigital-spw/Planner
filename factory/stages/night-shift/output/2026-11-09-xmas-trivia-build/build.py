@@ -353,7 +353,7 @@ calc = {
     "If the winter solstice is on December 21, how many days later is Christmas Day?": str(25 - 21),
     "How many letters are in the word CHRISTMAS?": str(len("CHRISTMAS")),
     "Counting both days, how many days are there from December 1 to December 25?": str((datetime.date(2026, 12, 25) - datetime.date(2026, 12, 1)).days + 1),
-    "How many days are there in the month of December?": str(__import__("calendar").monthrange(2027, 12)[1]),
+    "How many days after Christmas Day is Epiphany, on January 6?": str((datetime.date(2027, 1, 6) - datetime.date(2026, 12, 25)).days),
     "How many minutes are there in Christmas Day?": f"{24 * 60:,}",
     "24 party guests split into teams of 4. How many teams is that?": str(24 // 4),
     "By number, which month of the year is December?": f"{datetime.date(2026, 12, 1).month}th",
@@ -394,6 +394,10 @@ print(f"verify OK: 200 questions unique, T/F 10/10, {len(calc)} number answers c
 
 PAD = 18  # the bar: 0.25 in
 exec(open(HERE + "/checks.py").read().replace('if __name__ == "__main__":', "if True:"))
+# fix round 2: same-meaning duplicate check over all 200 + tie-breakers (exact-text uniqueness missed R10 Q18 = R9 Q7)
+dups, near = check_meaning_dups([(f"R{ri}", q, a) for ri, q, a in qs_all] + [(f"TB{i + 1}", q, a) for i, (q, a) in enumerate(TIEBREAKERS)])
+print(f"meaning duplicates: {len(dups)} (same answer + 60%+ shared content words); closest same-answer pair: {near}")
+assert not dups, ("same-meaning duplicate questions", dups)
 # fill check: every content page reaches within 1.2 in of the footer rule (no empty band over ~15%)
 for n, gap_in, has_rule in check_clearance(OUT):
     if has_rule: assert gap_in < 1.2, ("half-empty page", n, gap_in)

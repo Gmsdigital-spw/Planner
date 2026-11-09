@@ -1,3 +1,4 @@
+import re
 # ------------------------------------------------------------------ fix round 2: EVERY page's lowest element ends 0.25 in+ above the footer rule
 def check_clearance(pdf, dpi=100):
     """Render every page and assert no ink sits between the footer rule and 0.25 in above it (x L..R).
@@ -71,6 +72,40 @@ def check_boxes(pdf, dpi=150):
             worst = {kk: round(v / 72, 3) for kk, v in side.items() if v < PAD}
             bad.append((pg, name, "ink inside 0.25 in", worst))
     return bad
+
+
+# ------------------------------------------------------------------ fix round 2: same-meaning duplicates (Judge, Nov 9)
+STOP = set("a an the of in on at to for from is are was were be do does did how many what which who whom whose when where why "
+           "there their this that these those it its by with and or as into out up your you we our they each every one "
+           "called name named kind often most usually traditionally".split())
+
+
+def _words(s):
+    w = re.sub(r"[^a-z0-9 ]", " ", s.lower().replace("'s", "")).split()
+    return {x[:-1] if len(x) > 3 and x.endswith("s") else x for x in w if x not in STOP}
+
+
+def _ans(a):
+    a = re.sub(r"[^a-z0-9 ]", " ", a.lower().replace(",", ""))
+    return " ".join(x for x in a.split() if x not in ("the", "a", "an", "about", "st"))
+
+
+def check_meaning_dups(items, share=0.60):
+    """items = [(where, question, answer)]. A pair is a same-meaning duplicate when the normalized answers match
+    and the questions share 60%+ of their content words (overlap over the smaller set). True/False answers are
+    compared on words only at 80%+ (100 statements share 2 answers). Returns (dups, closest same-answer pair)."""
+    dups, best = [], (0.0, None)
+    for i in range(len(items)):
+        for j in range(i + 1, len(items)):
+            (r1, q1, a1), (r2, q2, a2) = items[i], items[j]
+            w1, w2 = _words(q1), _words(q2)
+            ov = len(w1 & w2) / max(1, min(len(w1), len(w2)))
+            same = _ans(a1) == _ans(a2)
+            tf = _ans(a1) in ("true", "false")
+            if same and ov > best[0]: best = (round(ov, 2), (r1, q1, r2, q2))
+            if (same and not tf and ov >= share) or (same and tf and ov >= 0.80):
+                dups.append((r1, q1, r2, q2, round(ov, 2)))
+    return dups, best
 
 
 if __name__ == "__main__":

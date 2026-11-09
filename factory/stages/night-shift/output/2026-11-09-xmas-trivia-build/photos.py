@@ -21,45 +21,58 @@ font = gs.font
 used = {}
 
 
-# ------------------------------------------------------------------ 1 cover (fix round 1): device family, landscape tablet
-# showing the real 2-page spread on a flat midnight-navy ground; gold + warm-white headline, no card, no table scene.
-NAVY = (27, 38, 64); GOLD = (233, 196, 112); WARM = (250, 244, 230)
+# ------------------------------------------------------------------ 1 cover (fix round 2): side layout on a light frost-blue ground.
+# Portrait tablet with a light silver bezel + soft shadow on the right (Round 1 page), one printed page (Round 3) tucked
+# under its left edge, the headline stacked BESIDE the tablet in deep ink with a burnt-orange "200". No dark ground,
+# no centred top headline, no gold-over-cream, no card, no table scene.
+FROST = (198, 212, 223); INK = (24, 36, 56); EMBER = (184, 72, 28); SILVER = (247, 248, 250)
 def cover():
-    W, H = 2000, 1500
-    im = Image.new("RGB", (W, H), NAVY)
-    g = np.random.default_rng(7).normal(0, 4, (H, W, 1))
-    im = Image.fromarray(np.clip(np.asarray(im).astype(float) + g, 0, 255).astype("uint8"))
-    d = ImageDraw.Draw(im)
-    l1, l2 = "200 Christmas", "Trivia Questions"
-    f1 = font("serifB", 142)
-    while max(f1.getlength(l1), f1.getlength(l2)) > 1440: f1 = font("serifB", f1.size - 4)
-    y = 8
-    d.text((W / 2, y), l1, font=f1, fill=GOLD, anchor="ma"); bb1 = d.textbbox((W / 2, y), l1, font=f1, anchor="ma")
-    y = bb1[3] + 2
-    d.text((W / 2, y), l2, font=f1, fill=WARM, anchor="ma"); bb2 = d.textbbox((W / 2, y), l2, font=f1, anchor="ma")
-    # tablet: bezel, screen with the two real pages side by side (whole pages, footers included)
-    top = bb2[3] + 22
-    bez, side, bot = 20, 40, 14
-    sh_ = H - bot - top - 2 * bez                 # screen height
-    pw = round(sh_ * 612 / 792); gut = 6
-    sw = 2 * pw + gut
-    tw = sw + 2 * side; th = sh_ + 2 * bez
-    tx = (W - tw) // 2; ty = top
     from PIL import ImageFilter
-    shadow = Image.new("L", (W, H), 0)
-    ImageDraw.Draw(shadow).rounded_rectangle([tx + 10, ty + 24, tx + tw + 10, ty + th + 24], 60, fill=150)
-    im.paste((8, 12, 24), (0, 0), shadow.filter(ImageFilter.GaussianBlur(26)))
-    d = ImageDraw.Draw(im)
-    d.rounded_rectangle([tx, ty, tx + tw, ty + th], 58, fill=(24, 24, 27), outline=(92, 94, 102), width=4)
-    d.ellipse([tx + side / 2 - 7, ty + th / 2 - 7, tx + side / 2 + 7, ty + th / 2 + 7], fill=(52, 54, 60))
-    sx, sy = tx + side, ty + bez
-    d.rectangle([sx, sy, sx + sw, sy + sh_], fill=(214, 216, 220))
+    W, H = 2000, 1500
+    g = np.random.default_rng(7).normal(0, 3, (H, W, 1))
+    im = Image.fromarray(np.clip(np.full((H, W, 3), FROST, float) + g, 0, 255).astype("uint8"))
     mask = Image.new("L", (W, H), 0); md = ImageDraw.Draw(mask)
-    for k, n in enumerate([3, 5]):
-        pg = P[n].convert("RGB").resize((pw, sh_), Image.LANCZOS)
-        x = sx + k * (pw + gut)
-        im.paste(pg, (x, sy)); md.rectangle([x, sy, x + pw - 1, sy + sh_ - 1], fill=255)
-    return im, mask, {"line1": bb1, "line2": bb2, "card": (min(bb1[0], bb2[0]), bb1[1], max(bb1[2], bb2[2]), bb2[3]),
+    def shadow(box, r, off=(14, 26), blur=30, a=120):
+        sh = Image.new("L", (W, H), 0)
+        ImageDraw.Draw(sh).rounded_rectangle([box[0] + off[0], box[1] + off[1], box[2] + off[0], box[3] + off[1]], r, fill=a)
+        im.paste((92, 108, 124), (0, 0), sh.filter(ImageFilter.GaussianBlur(blur)))
+    # tablet geometry (portrait), right side
+    bez = 34; sh_ = 1352; sw = round(sh_ * 612 / 792)
+    tw, th = sw + 2 * bez, sh_ + 2 * bez
+    tx, ty = W - 46 - tw, (H - th) // 2 - 8
+    # printed page under the tablet's left edge, whole (footer included)
+    pw = 620; ph = round(pw * 792 / 612)
+    px_, py_ = 262, H - 34 - ph
+    shadow((px_, py_, px_ + pw, py_ + ph), 4, off=(8, 14), blur=16, a=110)
+    im.paste(P[5].convert("RGB").resize((pw, ph), Image.LANCZOS), (px_, py_))
+    md.rectangle([px_, py_, px_ + pw - 1, py_ + ph - 1], fill=255)
+    shadow((tx, ty, tx + tw, ty + th), 64)
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle([tx, ty, tx + tw, ty + th], 64, fill=SILVER, outline=(168, 178, 190), width=4)
+    d.rounded_rectangle([tx + 10, ty + 10, tx + tw - 10, ty + th - 10], 56, outline=(226, 230, 235), width=2)
+    d.ellipse([tx + tw / 2 - 8, ty + bez / 2 - 8, tx + tw / 2 + 8, ty + bez / 2 + 8], fill=(150, 158, 168))
+    sx, sy = tx + bez, ty + bez
+    im.paste(P[3].convert("RGB").resize((sw, sh_), Image.LANCZOS), (sx, sy))
+    d.rectangle([sx, sy, sx + sw - 1, sy + sh_ - 1], outline=(120, 128, 138), width=2)
+    md.rectangle([px_, py_, px_ + pw - 1, py_ + ph - 1], fill=0)     # recount: page minus what the tablet covers
+    vis = Image.new("L", (W, H), 0); vd = ImageDraw.Draw(vis)
+    vd.rectangle([px_, py_, px_ + pw - 1, py_ + ph - 1], fill=255); vd.rounded_rectangle([tx, ty, tx + tw, ty + th], 64, fill=0)
+    mask.paste(255, (0, 0), vis); md = ImageDraw.Draw(mask); md.rectangle([sx, sy, sx + sw - 1, sy + sh_ - 1], fill=255)
+    # headline, stacked beside the tablet, left-aligned at x 272, above the printed page
+    x0, xmax = 272, tx - 28
+    words = ["Christmas", "Trivia", "Questions"]
+    fw = font("serifB", 150)
+    while max(fw.getlength(w_) for w_ in words) > xmax - x0: fw = font("serifB", fw.size - 2)
+    fn = font("serifB", round(fw.size * 2.3))
+    while fn.getlength("200") > xmax - x0: fn = font("serifB", fn.size - 4)
+    y = 30 - (d.textbbox((x0, 0), "200", font=fn, anchor="la")[1])      # ink top at y 30
+    d.text((x0, y), "200", font=fn, fill=EMBER, anchor="la"); b0 = d.textbbox((x0, y), "200", font=fn, anchor="la")
+    y = b0[3] + 18; bbs = [b0]
+    for w_ in words:
+        d.text((x0, y), w_, font=fw, fill=INK, anchor="la"); b = d.textbbox((x0, y), w_, font=fw, anchor="la"); bbs.append(b)
+        y = b[3] + round(fw.size * 0.16)
+    head = (min(b[0] for b in bbs), bbs[0][1], max(b[2] for b in bbs), bbs[-1][3])
+    return im, mask, {"line1": bbs[0], "line2": bbs[1], "words": bbs, "card": head, "page": (px_, py_, px_ + pw, py_ + ph),
                       "tablet": (tx, ty, tx + tw, ty + th), "screen": (sx, sy, sx + sw, sy + sh_)}, sy
 
 
@@ -70,15 +83,17 @@ s_ = min(im.size); x_ = (im.width - s_) // 2
 im.crop((x_, 0, x_ + s_, s_)).resize((300, 300), Image.LANCZOS).save(OUT + "/thumb300.png")
 card = boxes["card"]
 assert card[0] >= 270 and card[2] <= 1730, ("headline outside the centred square", card)
-ink = boxes["line2"][3] - boxes["line1"][1]
-line_h = boxes["line1"][3] - boxes["line1"][1]
-print(f"cover headline: 2 lines, ink {ink}px = {ink / 1500 * 100:.1f}% of height (one line {line_h}px = {line_h / 1500 * 100:.1f}%)")
-assert line_h / 1500 >= 0.07 and ink / 1500 >= 0.09
+ink = card[3] - card[1]
+line_h = boxes["line1"][3] - boxes["line1"][1]; word_h = boxes["line2"][3] - boxes["line2"][1]
+print(f"cover headline: 4 stacked lines beside the tablet, ink {ink}px = {ink / 1500 * 100:.1f}% of height ('200' {line_h}px = {line_h / 1500 * 100:.1f}%, word line {word_h}px = {word_h / 1500 * 100:.1f}%)", card)
+assert line_h / 1500 >= 0.09 and ink / 1500 >= 0.09
+assert card[2] < boxes["tablet"][0] and card[3] + 24 < boxes["page"][1], "headline must sit beside the tablet, clear of the page"
 m = np.asarray(mask) > 0
 print(f"real page pixels: {m.mean() * 100:.1f}% of the frame, {m[:, 250:1750].mean() * 100:.1f}% of the centred square")
 assert m.mean() >= 0.60 and m[:, 250:1750].mean() >= 0.60
 # whole pages: the tablet (and so every page edge and footer) sits inside the frame, nothing cut
-t = boxes["tablet"]; print("tablet box", t)
+t = boxes["tablet"]; print("tablet box", t, "printed page", boxes["page"])
+pg_ = boxes["page"]; assert pg_[0] >= 8 and pg_[1] >= 0 and pg_[3] <= 1500 - 12, ("printed page cut by the frame", pg_)
 assert t[0] >= 8 and t[1] >= 0 and t[2] <= 1992 and t[3] <= 1500 - 12, ("cover crop cuts the device/pages", t)
 ys, xs = np.nonzero(m); assert ys.max() <= 1500 - 30 and xs.min() >= 30 and xs.max() <= 1970
 
