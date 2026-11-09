@@ -1,0 +1,1 @@
+{"id":"trade-2026-11-09-bars-a4cf","ops":[{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=XLF&timeframe=5Min&limit=78&feed=iex&start=2026-11-09T14:30:00Z"},{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=XLI&timeframe=5Min&limit=78&feed=iex&start=2026-11-09T14:30:00Z"}]}
