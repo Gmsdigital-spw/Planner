@@ -1,0 +1,90 @@
+{
+ "id": "ep32",
+ "format": "story",
+ "rev": 1,
+ "title": "My Mom Said My Games Were Heating Up Our Whole House #shorts",
+ "title_card": "The Mirror Heat",
+ "voice": "ava",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "tense",
+ "music_volume": 0.05,
+ "cast": {
+  "mom": "a stick-figure mother with a round white head, dot eyes, thin black limbs, a curly red hair bun and a green sweater",
+  "girl": "a stick-figure girl with a round white head, dot eyes, thin black limbs, two black pigtails and a purple hoodie"
+ },
+ "lines": [
+  {
+   "text": "Mom said my gaming was heating up our house, so what was really heating it?",
+   "label": "hook",
+   "headline": "who heated the house",
+   "image": "{girl} is the only person in the picture, standing in a living room fanning herself with one hand next to exactly one small game console, worried face, afternoon"
+  },
+  {
+   "text": "All month, our air conditioner ran nonstop every afternoon, and the power bill kept climbing.",
+   "label": "setup",
+   "headline": "ac runs nonstop",
+   "image": "{mom} is the only person in the picture, standing in a kitchen holding up exactly one paper bill, shocked face, mouth open, afternoon"
+  },
+  {
+   "text": "Mom said, \"Your console blows hot air all afternoon, right when the house gets hottest.\"",
+   "label": "the charge",
+   "headline": "mom blames console",
+   "image": "{mom} is the only person in the picture, standing in a living room with arms crossed, pointing at exactly one small game console on a shelf, stern face, mouth open talking"
+  },
+  {
+   "text": "She locked my console in the hall closet, right beside her shiny new birthday mirror.",
+   "label": "stakes",
+   "headline": "console locked away",
+   "image": "{mom} is the only person in the picture, putting exactly one small game console into a hallway closet, a big round wall mirror hanging on the hallway wall beside the closet, stern face"
+  },
+  {
+   "text": "But the next afternoon, with my console unplugged, the air conditioner roared on anyway.",
+   "label": "worse",
+   "headline": "ac still runs",
+   "image": "{girl} is the only person in the picture, standing in a living room beside an empty shelf, looking up at an air vent on the ceiling, eyes wide, afternoon"
+  },
+  {
+   "text": "Mom said I must be sneaking the closet key, so she took my tablet too.",
+   "label": "more blame",
+   "headline": "tablet gone too",
+   "image": "{mom} is the only person in the picture, standing in a hallway holding exactly one tablet up high out of reach, frowning, evening light"
+  },
+  {
+   "text": "I sat shivering in my hoodie and cried, blamed for heat I never even made.",
+   "label": "alone",
+   "headline": "blamed and cold",
+   "image": "close-up of {girl} sitting alone on her bed hugging her knees, shivering, a single tear running down her cheek, sad eyes looking down, dim bedroom"
+  },
+  {
+   "text": "Then I noticed the cold blasts only started at three, and only on sunny days.",
+   "label": "the pattern",
+   "headline": "only at three",
+   "image": "{girl} is the only person in the picture, standing by a window with bright sunshine pouring in, cold air from a ceiling vent blowing her pigtails, finger raised, realizing face, afternoon"
+  },
+  {
+   "text": "In games, every timed monster has a trigger, so at three I watched the thermostat.",
+   "label": "gamer clue",
+   "headline": "every spawn has a trigger",
+   "image": "{girl} is the only person in the picture, sitting cross-legged on her bedroom floor, thinking hard with one finger on her chin, a simple drawing of a cartoon monster next to an hourglass in a thought bubble above her head"
+  },
+  {
+   "text": "Sunlight through the window hit Mom's mirror and bounced a beam onto the hallway thermostat.",
+   "label": "the twist",
+   "headline": "the mirror beam",
+   "image": "{girl} is the only person in the picture, peeking around a hallway corner, sunlight streaming through a window hits a big round wall mirror and bounces one bright beam of light onto exactly one small white wall thermostat with a round dial, eyes wide, afternoon"
+  },
+  {
+   "text": "Baking in that beam, it read eighty-five in a freezing house, so it kept cooling.",
+   "label": "the proof",
+   "headline": "fooled by the sun",
+   "image": "close-up of {girl} in her purple hoodie touching exactly one small white wall thermostat with a round dial that glows in a bright patch of sunlight on the hallway wall, surprised face, no numbers or text"
+  },
+  {
+   "text": "Mom moved her mirror and returned my console, but swears it still heats my room.",
+   "label": "the ending",
+   "headline": "console back",
+   "image": "{mom} is the only person in the picture, carrying a big round mirror down a hallway, rolling her eyes, grumpy smile, late afternoon"
+  }
+ ]
+}
