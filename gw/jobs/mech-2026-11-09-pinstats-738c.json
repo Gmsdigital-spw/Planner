@@ -1,0 +1,156 @@
+{
+ "id": "mech-2026-11-09-pinstats-738c",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aea2976174b40d4fc2007d2",
+   "tag": "pin-prod-xmas-scavenger-hunt-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aea2976174b40d4fc2007c2",
+   "tag": "pin-prod-advent-activities-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aea2975174b40d4fc2007bd",
+   "tag": "pin-prod-xmas-party-mega-bundle-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aea2975174b40d4fc2007b8",
+   "tag": "pin-prod-cookie-exchange-kit-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aea2975174b40d4fc2007b3",
+   "tag": "pin-prod-xmas-charades-120-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae782bd8a2af1975dae4d7a",
+   "tag": "pin-prod-xmas-escape-room-adults-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aea29745143eeae184c01ad",
+   "tag": "pin-prod-xmas-party-awards-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae8915a68be793f2e3d2797",
+   "tag": "pin-prod-gingerbread-contest-kit-n2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae8915968be793f2e3d278d",
+   "tag": "pin-prod-goal-workbook-2027-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae8915968be793f2e3d2784",
+   "tag": "pin-legacy-xmas-game-bundle-n4"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae782bc8a2af1975dae4d75",
+   "tag": "pin-prod-xmas-escape-room-adults-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae622e227d61034cf708826",
+   "tag": "pin-prod-xmas-coupon-book-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae8915868be793f2e3d277f",
+   "tag": "pin-prod-xmas-murder-mystery-8-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae8915768be793f2e3d277a",
+   "tag": "pin-prod-gingerbread-contest-kit-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae622e18aecae0a30e9f05f",
+   "tag": "pin-prod-xmas-coupon-book-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae5dd24e648c6a8e41fcf53",
+   "tag": "pin-prod-xmas-office-party-games-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae48d651fd67dcc0e2b9126",
+   "tag": "pin-prod-thanksgiving-escape-room-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae230196616fdaa49ffbbaa",
+   "tag": "pin-prod-xmas-escape-room-m1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae89157229e3ee49381c018",
+   "tag": "pin-legacy-xmas-game-bundle-n3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae782bc8a2af1975dae4d70",
+   "tag": "pin-prod-xmas-escape-room-adults-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae622e127d61034cf708821",
+   "tag": "pin-prod-xmas-coupon-book-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae5dd24e648c6a8e41fcf4c",
+   "tag": "pin-prod-xmas-office-party-games-s1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae48d65b69d2ba7a2727579",
+   "tag": "pin-prod-thanksgiving-escape-room-s2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6adf45a20d0a68110fd4090a",
+   "tag": "pin-prod-xmas-escape-room-s3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6ae5dd23e648c6a8e41fcf43",
+   "tag": "pin-prod-xmas-office-party-games-s2"
+  }
+ ]
+}
