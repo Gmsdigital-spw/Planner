@@ -8,10 +8,10 @@
   "XLP": {
    "entry": 90.888,
    "stop0": 90.57,
-   "stop": 90.89,
+   "stop": 91.06,
    "target": 91.52,
-   "high": 91.35,
-   "stopId": "5778c6d2-1b35-4fae-80a1-a417294052b4",
+   "high": 91.375,
+   "stopId": "624e7b4b-a8da-4706-bb6b-3e6ba246b9e8",
    "since": "2026-11-10T16:35:00Z",
    "qty": "0.108815245"
   },
@@ -55,18 +55,26 @@
    "stop": 90.89,
    "qty": "0.108815245",
    "gainR": 1.01
+  },
+  {
+   "t": "11:40",
+   "do": "raise stop",
+   "sym": "XLP",
+   "stop": 91.06,
+   "qty": "0.108815245",
+   "gainR": 1.53
   }
  ],
  "done": null,
- "runs": 248,
+ "runs": 249,
  "lastSignal": {
   "XLP": "2026-11-10T16:35:00Z",
   "XLF": "2026-11-10T16:40:00Z"
  },
- "lastRun": "11:39",
- "lastNote": "equity $24.88, day +0.07, 2 open, 2 entries",
- "equity": 24.88,
- "dayPnl": 0.07,
+ "lastRun": "11:40",
+ "lastNote": "equity $24.87, day +0.06, 2 open, 2 entries",
+ "equity": 24.87,
+ "dayPnl": 0.06,
  "watch": [
   "SPY",
   "XLF",
