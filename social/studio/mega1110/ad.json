@@ -1,0 +1,243 @@
+{
+ "dur": 19.44,
+ "vo": "social/studio/media/vo/mega1110-vo.mp3",
+ "music": "social/studio/media/vo/mega1110-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/mega",
+   "cover": "cover.jpg",
+   "price": "5.99",
+   "pages": 16,
+   "listTitle": "Christmas Party Kit Printable, 6 Games Plus White Elephant Dice Game, Gingerbread House Contest, 12 Awards, Office or Family Party",
+   "strip": [
+    "p-07.png",
+    "p-09.png",
+    "p-16.png",
+    "p-15.png"
+   ],
+   "bg": [
+    "#b8333a",
+    "#4a0f14"
+   ],
+   "accent": "#1f5a3d",
+   "hl": "#ffe9a8",
+   "dot": "#ffe1e1"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-03.png",
+     "p-04.png",
+     "p-05.png",
+     "p-06.png"
+    ],
+    "type": "grid",
+    "t0": 0,
+    "t1": 2.93,
+    "beats": [
+     0.1,
+     0.72,
+     1.34,
+     1.96
+    ]
+   },
+   {
+    "page": "p-07.png",
+    "badge": "MINGLE",
+    "type": "hook",
+    "t0": 2.93,
+    "t1": 5.5
+   },
+   {
+    "pages": [
+     "p-03.png",
+     "p-08.png",
+     "p-09.png"
+    ],
+    "type": "fan",
+    "t0": 5.5,
+    "t1": 7.97,
+    "beats": [
+     5.6,
+     6.35,
+     7.1
+    ]
+   },
+   {
+    "page": "p-16.png",
+    "badge": "ROLL 1 TO 6",
+    "type": "hook",
+    "t0": 7.97,
+    "t1": 9.88
+   },
+   {
+    "pages": [
+     "p-14.png",
+     "p-15.png"
+    ],
+    "type": "fan",
+    "t0": 9.88,
+    "t1": 12.13,
+    "beats": [
+     9.98,
+     11.3
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 12.13,
+    "t1": 16.32,
+    "beats": [
+     0.46,
+     1.36,
+     1.9,
+     2.7,
+     3.1
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 16.32,
+    "t1": 19.740000000000002
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.43,
+   "Your whole | *Christmas party* night | in *one* print"
+  ],
+  [
+   2.93,
+   5.05,
+   "*Find the Guest Who* | gets everyone | *mingling*"
+  ],
+  [
+   5.5,
+   7.52,
+   "*6 games* | and *12* funny awards"
+  ],
+  [
+   7.97,
+   9.45,
+   "A *white elephant* | *dice* game"
+  ],
+  [
+   9.88,
+   11.67,
+   "And a *gingerbread* | house *contest*"
+  ],
+  [
+   12.13,
+   14.76,
+   "*16 pages* | for *family* or *office*"
+  ],
+  [
+   15.18,
+   15.88,
+   "Tap the *link*"
+  ],
+  [
+   16.32,
+   17.4,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.72,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.34,
+   "pop"
+  ],
+  [
+   1.96,
+   "pop"
+  ],
+  [
+   2.88,
+   "whoosh"
+  ],
+  [
+   5.45,
+   "whoosh"
+  ],
+  [
+   5.6,
+   "pop"
+  ],
+  [
+   6.35,
+   "pop"
+  ],
+  [
+   7.1,
+   "pop"
+  ],
+  [
+   7.92,
+   "whoosh"
+  ],
+  [
+   9.83,
+   "whoosh"
+  ],
+  [
+   9.98,
+   "pop"
+  ],
+  [
+   11.3,
+   "pop"
+  ],
+  [
+   12.08,
+   "whoosh"
+  ],
+  [
+   12.6,
+   "whoosh"
+  ],
+  [
+   15.23,
+   "tap"
+  ],
+  [
+   15.48,
+   "pop"
+  ],
+  [
+   16.27,
+   "whoosh"
+  ],
+  [
+   16.67,
+   "impact"
+  ],
+  [
+   17.12,
+   "pop"
+  ]
+ ]
+}

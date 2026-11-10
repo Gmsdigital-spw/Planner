@@ -1,0 +1,227 @@
+{
+ "dur": 18.69,
+ "vo": "social/studio/media/vo/ssanta1110-vo.mp3",
+ "music": "social/studio/media/vo/ssanta1110-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/ssanta2",
+   "cover": "cover.jpg",
+   "price": "3.49",
+   "pages": 11,
+   "listTitle": "Secret Santa Questionnaire Printable, Office Gift Exchange Kit, Sign Up Sheet, Name Draw Slips, White Elephant Rules, Gift Tags",
+   "strip": [
+    "p-03.png",
+    "p-04.png",
+    "p-06.png",
+    "p-08.png"
+   ],
+   "bg": [
+    "#2f6e4f",
+    "#0f2b1e"
+   ],
+   "accent": "#2a6b4a",
+   "hl": "#ffffff",
+   "dot": "#d8f5e4"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-04.png",
+     "p-03.png",
+     "p-06.png"
+    ],
+    "type": "fan",
+    "t0": 0,
+    "t1": 2.93,
+    "beats": [
+     0.1,
+     1.03,
+     1.96
+    ]
+   },
+   {
+    "page": "p-04.png",
+    "badge": "14 Qs",
+    "type": "hook",
+    "t0": 2.93,
+    "t1": 5.67
+   },
+   {
+    "pages": [
+     "p-05.png",
+     "p-10.png",
+     "p-11.png",
+     "p-09.png"
+    ],
+    "type": "grid",
+    "t0": 5.67,
+    "t1": 8.97,
+    "beats": [
+     5.77,
+     6.49,
+     7.21,
+     7.93
+    ]
+   },
+   {
+    "pages": [
+     "p-07.png",
+     "p-08.png"
+    ],
+    "type": "fan",
+    "t0": 8.97,
+    "t1": 11.65,
+    "beats": [
+     9.07,
+     10.73
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 11.65,
+    "t1": 15.57,
+    "beats": [
+     0.43,
+     1.28,
+     1.64,
+     2.44,
+     2.84
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 15.57,
+    "t1": 18.990000000000002
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.49,
+   "Drawing *names* | for *Secret Santa* | this year?"
+  ],
+  [
+   2.93,
+   5.24,
+   "Everyone fills in | a *14-question* form"
+  ],
+  [
+   5.67,
+   8.54,
+   "Gift ideas | by *budget* | *tags* and *thank-yous*"
+  ],
+  [
+   8.97,
+   11.22,
+   "Plus *white elephant* | and *dice swap* rules"
+  ],
+  [
+   11.65,
+   14.02,
+   "*11 pages* | for *work* or *family*"
+  ],
+  [
+   14.44,
+   15.15,
+   "Tap the *link*"
+  ],
+  [
+   15.57,
+   16.66,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.03,
+   "pop"
+  ],
+  [
+   1.96,
+   "pop"
+  ],
+  [
+   2.88,
+   "whoosh"
+  ],
+  [
+   5.62,
+   "whoosh"
+  ],
+  [
+   5.77,
+   "pop"
+  ],
+  [
+   6.49,
+   "pop"
+  ],
+  [
+   7.21,
+   "pop"
+  ],
+  [
+   7.93,
+   "pop"
+  ],
+  [
+   8.92,
+   "whoosh"
+  ],
+  [
+   9.07,
+   "pop"
+  ],
+  [
+   10.73,
+   "pop"
+  ],
+  [
+   11.6,
+   "whoosh"
+  ],
+  [
+   12.08,
+   "whoosh"
+  ],
+  [
+   14.49,
+   "tap"
+  ],
+  [
+   14.74,
+   "pop"
+  ],
+  [
+   15.52,
+   "whoosh"
+  ],
+  [
+   15.92,
+   "impact"
+  ],
+  [
+   16.37,
+   "pop"
+  ]
+ ]
+}
