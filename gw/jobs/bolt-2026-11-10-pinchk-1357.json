@@ -1,0 +1,4 @@
+{"id":"bolt-2026-11-10-pinchk-1357","stopOnError":false,"ops":[
+{"op":"zernio","method":"GET","path":"/posts/6aec8422e4114d8be5bfd8e4","tag":"pin-prod-xmas-scavenger-hunt-n2"},
+{"op":"zernio","method":"GET","path":"/posts/6aeb31ed4b7159644b167642","tag":"pin-prod-secret-santa-kit-n1"},
+{"op":"zernio","method":"GET","path":"/posts/6aeb31ed4b7159644b16764c","tag":"pin-prod-friendsgiving-kit-n2"}]}
