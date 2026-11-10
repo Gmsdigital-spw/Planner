@@ -194,10 +194,20 @@
             "listingId": "4606483866",
             "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-09/4606483866/video.mp4",
             "zernioPostId": "6af217f00013615204ea0cb2",
+            "status": "failed",
+            "postUrl": null,
+            "error": "Pinterest: \"This site doesn't allow you to save Pins\" (link/domain refused) after 3 attempts; bare etsy.com/listing/<id> link.",
+            "link": "https://www.etsy.com/listing/4606483866"
+        },
+        {
+            "day": "2026-11-10",
+            "listingId": "4604185747",
+            "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-10/4604185747/video.mp4",
+            "zernioPostId": "6af36959169e81423599431c",
             "status": "scheduled",
             "postUrl": null,
             "error": null,
-            "link": "https://www.etsy.com/listing/4606483866"
+            "link": "https://www.etsy.com/listing/4604185747/christmas-party-bundle-printable-6-games"
         }
     ]
 }
