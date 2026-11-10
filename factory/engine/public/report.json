@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "generated_at": "2026-11-09T23:47:41Z",
+ "generated_at": "2026-11-10T13:09:11Z",
  "worker": "python -m factory.engine worker",
  "health": {
   "engine_schema": 4,
   "kill": false,
   "paused_agents": [],
-  "last_tick": "2026-11-09T23:47:41Z",
+  "last_tick": "2026-11-10T13:09:11Z",
   "last_runner": "cli",
   "last_tick_age_s": 0,
   "counts": {
@@ -26,17 +26,17 @@
    "id": "atlas",
    "name": "Atlas (inspection)",
    "role": "quality",
-   "version": 439,
+   "version": 441,
    "state": "idle",
    "counts": {},
    "last_activity": null,
-   "skill_sha": "7aad8307"
+   "skill_sha": "0ff8cd15"
   },
   {
    "id": "bolt",
    "name": "Bolt + Rocket",
    "role": "publishing",
-   "version": 447,
+   "version": 449,
    "state": "idle",
    "counts": {},
    "last_activity": null,
@@ -46,17 +46,17 @@
    "id": "foreman",
    "name": "The Foreman",
    "role": "orchestrator",
-   "version": 415,
+   "version": 417,
    "state": "idle",
    "counts": {},
    "last_activity": null,
-   "skill_sha": "04772635"
+   "skill_sha": "d4146ddf"
   },
   {
    "id": "forge",
    "name": "Forge + Quill + Lens",
    "role": "product_factory",
-   "version": 439,
+   "version": 441,
    "state": "idle",
    "counts": {},
    "last_activity": null,
@@ -66,17 +66,17 @@
    "id": "graph",
    "name": "Graph + Medic (analytics)",
    "role": "analytics",
-   "version": 439,
+   "version": 441,
    "state": "idle",
    "counts": {},
    "last_activity": null,
-   "skill_sha": "c8064829"
+   "skill_sha": "abf06c0e"
   },
   {
    "id": "hawk",
    "name": "Hawk + Santa",
    "role": "distribution",
-   "version": 415,
+   "version": 417,
    "state": "idle",
    "counts": {},
    "last_activity": null,
@@ -86,7 +86,7 @@
    "id": "herald",
    "name": "Herald + Pixel + Tick",
    "role": "channel_adapter",
-   "version": 431,
+   "version": 433,
    "state": "idle",
    "counts": {},
    "last_activity": null,
@@ -96,7 +96,7 @@
    "id": "ledger",
    "name": "Ledger (model + cost)",
    "role": "model_cost",
-   "version": 415,
+   "version": 417,
    "state": "idle",
    "counts": {},
    "last_activity": null,
@@ -106,7 +106,7 @@
    "id": "mechanic",
    "name": "Mechanic",
    "role": "engineering",
-   "version": 415,
+   "version": 417,
    "state": "idle",
    "counts": {},
    "last_activity": null,
@@ -116,11 +116,11 @@
    "id": "scout",
    "name": "Scout",
    "role": "research",
-   "version": 439,
+   "version": 441,
    "state": "idle",
    "counts": {},
    "last_activity": null,
-   "skill_sha": "e1ef88e1"
+   "skill_sha": "fe4aaf1f"
   }
  ],
  "workflows": [],
@@ -141,7 +141,7 @@
   "recommendations": []
  },
  "usage": {
-  "today": "2026-11-09",
+  "today": "2026-11-10",
   "calls": 0,
   "cached_calls": 0,
   "cost_usd_known": 0.0,
@@ -161,7 +161,7 @@
    "state": "connected",
    "last_ok_at": "2026-11-09T16:32:01Z",
    "last_error": null,
-   "checked_at": "2026-11-09T23:47:41Z",
+   "checked_at": "2026-11-10T13:09:11Z",
    "note": "GitHub Actions gw.yml; secrets live there only"
   },
   {
@@ -169,7 +169,7 @@
    "state": "missing",
    "last_ok_at": null,
    "last_error": null,
-   "checked_at": "2026-11-09T23:47:41Z",
+   "checked_at": "2026-11-10T13:09:11Z",
    "note": "Make is reachable only from the Factory page / crews (Claude connector); Python writes drafts"
   }
  ],
