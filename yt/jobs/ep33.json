@@ -1,0 +1,90 @@
+{
+ "id": "ep33",
+ "format": "story",
+ "rev": 1,
+ "title": "My Dad Blamed My Games for Our Water Bill #shorts",
+ "title_card": "The Phantom Flush",
+ "voice": "ava",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "tense",
+ "music_volume": 0.05,
+ "cast": {
+  "dad": "a stick-figure father with a round white head, dot eyes, thin black limbs, short brown hair and a blue flannel shirt",
+  "girl": "a stick-figure girl with a round white head, dot eyes, thin black limbs, two black pigtails and a purple hoodie"
+ },
+ "lines": [
+  {
+   "text": "Dad blamed my gaming for our water bill, so where was all that water going?",
+   "label": "hook",
+   "headline": "where did the water go",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, standing in a kitchen holding up exactly one paper water bill, shocked face, pointing at exactly one small flat black game console box on a shelf, no TV in the picture, evening"
+  },
+  {
+   "text": "Dad said, \"You game past midnight with soda, so I hear you flushing all night.\"",
+   "label": "the charge",
+   "headline": "dad hears flushing",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, standing in a dark upstairs hallway at night with one hand cupped to his ear, frowning, mouth open talking"
+  },
+  {
+   "text": "The bill had doubled, so he locked my console in the garage for a month.",
+   "label": "stakes",
+   "headline": "console locked away",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, putting exactly one small flat black game console box into exactly one metal cabinet in a garage, stern face, no TV in the picture"
+  },
+  {
+   "text": "But that night, with no games and no soda, Dad still heard the flushing.",
+   "label": "worse",
+   "headline": "still flushing",
+   "image": "close-up of {dad}, the only person in the picture, short brown hair and blue flannel shirt, standing in a dark hallway at night beside one closed bathroom door, hand cupped to his ear, eyes wide"
+  },
+  {
+   "text": "Dad said flushing meant I was up sneaking games, so he took my phone too.",
+   "label": "more blame",
+   "headline": "phone gone too",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, standing in a hallway holding exactly one phone up high out of reach, frowning, evening light"
+  },
+  {
+   "text": "I cried into my pillow, blamed and grounded for water I never even used.",
+   "label": "alone",
+   "headline": "blamed and grounded",
+   "image": "close-up of {girl}, the only person in the picture, two black pigtails and purple hoodie, lying alone in bed hugging her pillow, a single tear running down her cheek, sad eyes, dim bedroom at night"
+  },
+  {
+   "text": "Lying awake, I heard the flushing hiss every twenty minutes, like a game's respawn timer.",
+   "label": "gamer clue",
+   "headline": "respawn timer",
+   "image": "close-up of {girl}, the only person in the picture, two black pigtails and purple hoodie, lying awake in bed in the dark, eyes wide open, one finger raised as if counting, a simple drawing of one hourglass in a thought bubble above her head, no clock, no numbers or text"
+  },
+  {
+   "text": "At the next hiss, I checked the bathroom: empty, but the toilet was refilling itself.",
+   "label": "discovery",
+   "headline": "toilet refills itself",
+   "image": "{girl} is the only person in the picture, two black pigtails and purple hoodie, standing alone in a bathroom doorway at night looking at exactly one white toilet, a small trickle of water running inside its bowl as the tank refills, small night light glowing, eyes wide, nobody else in the picture"
+  },
+  {
+   "text": "I dripped food coloring into the tank and told Dad, \"Nobody flush for ten minutes.\"",
+   "label": "hero move",
+   "headline": "food coloring test",
+   "image": "{girl} is the only person in the picture, two black pigtails and purple hoodie, kneeling beside exactly one white toilet with the tank lid off, squeezing exactly one small bottle of blue food coloring into the tank water, focused face, morning"
+  },
+  {
+   "text": "Ten minutes later Dad's jaw dropped: the bowl was blue, and nobody had flushed.",
+   "label": "proof",
+   "headline": "the bowl turns blue",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, bending over exactly one white toilet and staring at bright blue water in the bowl, jaw dropped, eyes wide, morning"
+  },
+  {
+   "text": "A worn rubber flap was leaking, and each refill was the flushing Dad heard.",
+   "label": "the twist",
+   "headline": "the worn flap",
+   "image": "{girl} is the only person in the picture, two black pigtails and purple hoodie, pointing into exactly one open white toilet tank at one worn cracked black rubber flap at the bottom with a thin trickle of water escaping, proud face"
+  },
+  {
+   "text": "New flap, normal bill, console back, but Dad still says I game way too late.",
+   "label": "the ending",
+   "headline": "console back",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, standing in a living room doorway at night with arms crossed, grumpy smile, exactly one small flat black game console box back on a shelf behind him, the only console in the picture, no TV in the picture"
+  }
+ ]
+}
