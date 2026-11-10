@@ -8,19 +8,42 @@
  "trades": [],
  "actions": [],
  "done": null,
- "runs": 75,
+ "runs": 81,
  "lastSignal": {},
- "lastRun": "08:46",
- "lastNote": "equity $24.81, day +0.00, 0 open, 0 entries; scanned 6 names, no A+ setup",
+ "lastRun": "08:52",
+ "lastNote": "equity $24.81, day +0.00, 0 open, 0 entries; scanned 15 names, no A+ setup",
  "equity": 24.81,
  "dayPnl": 0.0,
  "watch": [
   "SPY",
+  "XLF",
+  "XLP",
+  "XLV",
   "QQQ",
   "IWM",
   "DIA",
+  "XLY",
   "XLK",
-  "XLF"
+  "XLI",
+  "AAPL",
+  "AMZN",
+  "BAC",
+  "SMH",
+  "TLT"
  ],
- "avoid": []
+ "avoid": [
+  "AMD",
+  "AVGO",
+  "COST",
+  "GLD",
+  "GOOGL",
+  "JPM",
+  "META",
+  "MSFT",
+  "NVDA",
+  "TSLA",
+  "UNH",
+  "WMT",
+  "XOM"
+ ]
 }
