@@ -1,0 +1,118 @@
+{
+ "id": "bolt-2026-11-10-pins-34a1",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-santa-mail-bundle-r1",
+   "tag": "pin-prod-santa-mail-bundle-r1",
+   "body": {
+    "content": "Six letters from Santa you type in Adobe Reader and print at home: nice list, first Christmas, new big sibling, kindness, a hard year and new home. The bundle also has an official Nice List certificate, Santa's Nice List, a Dear Santa wish list, 4 North Pole envelope labels and 12 From Santa gift tags. 14-page editable PDF for parents and grandparents this Christmas.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-santa-mail-bundle-r1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-14T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "Easy to Edit Letters from Santa: 6 Personalized Santa Letters Printable",
+       "link": "https://www.etsy.com/listing/4601798994"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-cookie-exchange-kit-r1",
+   "tag": "pin-prod-cookie-exchange-kit-r1",
+   "body": {
+    "content": "Everything to host a Christmas cookie exchange: fill-in invitations (2 per page), a host countdown, a guest sign-up sheet so no two guests bake the same cookie, swap rules and baking math, recipe cards, cookie labels with allergen boxes, Best Cookie ballots, a voting tally with 4 award cards, thank-you cards and take-home box tags. 13-page printable PDF, US Letter.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-cookie-exchange-kit-r1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-14T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Cookie Swap Invitations and Party Kit Printable: Invite Friends",
+       "link": "https://www.etsy.com/listing/4600177510"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-secret-santa-kit-r1",
+   "tag": "pin-prod-secret-santa-kit-r1",
+   "body": {
+    "content": "A printable Secret Santa kit for a team, class, friend group or family: an organizer page and sign-up sheet, the Secret Santa questionnaire, a gift idea list by budget, 24 name-draw slips, Secret Santa rules, white elephant and dice swap rules, a who-has-who tracker, 12 cut-out gift tags and thank-you notes. 11 pages, US Letter and A4.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-secret-santa-kit-r1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-14T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595726",
+       "title": "Secret Santa Questionnaire Printable: Easy Office Gift Exchange Kit",
+       "link": "https://www.etsy.com/listing/4597755725"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-escape-room-r1",
+   "tag": "pin-prod-xmas-escape-room-r1",
+   "body": {
+    "content": "A printable Christmas escape room for kids and families: one story, the Bell Vault, with two levels (ages 6-9 and 10+) so mixed ages play together. Puzzles include a gift tag code, workshop shelf count, bell maze and snowflake sudoku, plus envelope lock tags, hint cards, an answer key and certificates. About 45 minutes, no phone or internet needed. 17-page PDF, print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-r1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-15T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "45-Minute Christmas Escape Room for Kids, No Screens: Printable Family Game",
+       "link": "https://www.etsy.com/listing/4602402578"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
