@@ -100,16 +100,16 @@
   }
  ],
  "done": null,
- "runs": 414,
+ "runs": 420,
  "lastSignal": {
   "XLP": "2026-11-10T16:35:00Z",
   "XLF": "2026-11-10T16:40:00Z",
   "SPY": "2026-11-10T19:05:00Z"
  },
- "lastRun": "14:26",
- "lastNote": "equity $24.86, day +0.05, 2 open, 3 entries; no new entries now (8:35-2:00 CT window)",
- "equity": 24.86,
- "dayPnl": 0.05,
+ "lastRun": "14:32",
+ "lastNote": "equity $24.85, day +0.04, 2 open, 3 entries; no new entries now (8:35-2:00 CT window)",
+ "equity": 24.85,
+ "dayPnl": 0.04,
  "watch": [
   "SPY",
   "XLF",
