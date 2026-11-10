@@ -1,0 +1,1 @@
+{"id":"trade-2026-11-10-live-95af","ops":[{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY,XLP,XLF&timeframe=5Min&limit=78&feed=iex&start=2026-11-10T13:30:00Z"},{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SPY,XLF,XLP,XLV,QQQ,IWM,DIA,XLY,XLK,XLI,AAPL,AMZN,BAC,SMH,TLT&feed=iex"},{"op":"alpaca","path":"/bankroll"},{"op":"alpaca","path":"/positions"}]}
