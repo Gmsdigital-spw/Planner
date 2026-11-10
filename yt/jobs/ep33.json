@@ -1,7 +1,7 @@
 {
  "id": "ep33",
  "format": "story",
- "rev": 1,
+ "rev": 2,
  "title": "My Dad Blamed My Games for Our Water Bill #shorts",
  "title_card": "The Phantom Flush",
  "voice": "ava",
@@ -30,7 +30,7 @@
    "text": "The bill had doubled, so he locked my console in the garage for a month.",
    "label": "stakes",
    "headline": "console locked away",
-   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, putting exactly one small flat black game console box into exactly one metal cabinet in a garage, stern face, no TV in the picture"
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, inside a garage with a concrete floor and tool shelves, putting exactly one small flat black game console box into exactly one metal cabinet, stern face, no TV in the picture"
   },
   {
    "text": "But that night, with no games and no soda, Dad still heard the flushing.",
@@ -60,7 +60,7 @@
    "text": "At the next hiss, I checked the bathroom: empty, but the toilet was refilling itself.",
    "label": "discovery",
    "headline": "toilet refills itself",
-   "image": "{girl} is the only person in the picture, two black pigtails and purple hoodie, standing alone in a bathroom doorway at night looking at exactly one white toilet, a small trickle of water running inside its bowl as the tank refills, small night light glowing, eyes wide, nobody else in the picture"
+   "image": "{girl} is the only person in the picture, two black pigtails and purple hoodie, standing in a bathroom doorway at night looking at exactly one white toilet against the far wall, the only toilet in the picture, a small trickle of water running down inside its bowl as it refills, small night light glowing, eyes wide, nobody else in the picture"
   },
   {
    "text": "I dripped food coloring into the tank and told Dad, \"Nobody flush for ten minutes.\"",
@@ -78,7 +78,7 @@
    "text": "A worn rubber flap was leaking, and each refill was the flushing Dad heard.",
    "label": "the twist",
    "headline": "the worn flap",
-   "image": "{girl} is the only person in the picture, two black pigtails and purple hoodie, pointing into exactly one open white toilet tank at one worn cracked black rubber flap at the bottom with a thin trickle of water escaping, proud face"
+   "image": "{girl} is the only person in the picture, two black pigtails and purple hoodie, standing on the bathroom floor beside exactly one white toilet, the only toilet in the picture, holding its tank lid in one hand and pointing down into the open tank with the other, inside the tank one worn cracked black rubber flap with a thin trickle of water escaping, proud face"
   },
   {
    "text": "New flap, normal bill, console back, but Dad still says I game way too late.",
