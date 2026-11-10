@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-10-b4-a950", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+gift+tags&sort_on=score&limit=25&offset=0", "tag": "s_christmas+gift+tags"}]}
