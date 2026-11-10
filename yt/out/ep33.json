@@ -2,8 +2,8 @@
  "id": "ep33",
  "format": "story",
  "duration": 66.94,
- "bytes": 4396058,
- "mb": 4.19,
+ "bytes": 4538972,
+ "mb": 4.3,
  "width": 1080,
  "height": 1920,
  "scenes": [
@@ -77,5 +77,6 @@
  "fakeTts": false,
  "tts": "edge",
  "voice": "ava",
- "art": "stickfigure"
+ "art": "stickfigure",
+ "splice": "scene 1 video (0-4.98 s) from rev 1 (one bill; rev 2 drew two), rest rev 2, 0.4 s crossfade at 4.58 s; audio rev 2 unchanged"
 }
