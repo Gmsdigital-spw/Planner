@@ -1,0 +1,1 @@
+{"id":"vpin-2026-11-11-read-b605","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100"},{"op":"zernio","method":"GET","path":"/posts/6af36959169e81423599431c"}]}
