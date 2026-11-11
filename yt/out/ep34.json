@@ -2,8 +2,8 @@
  "id": "ep34",
  "format": "story",
  "duration": 61.2,
- "bytes": 4438948,
- "mb": 4.23,
+ "bytes": 4140033,
+ "mb": 3.95,
  "width": 1080,
  "height": 1920,
  "scenes": [
@@ -75,5 +75,6 @@
  "fakeTts": false,
  "tts": "edge",
  "voice": "ava",
- "art": "stickfigure"
+ "art": "stickfigure",
+ "splice": "scene 11 video (50.33-56.13 s) from rev 1 (rev 2 drew a blank extra figure beside Dad in the car; rev 1 clean), rest rev 2, 0.4 s crossfades; audio rev 2 unchanged; line timings identical in both revs"
 }
