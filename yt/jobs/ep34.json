@@ -1,0 +1,91 @@
+{
+ "id": "ep34",
+ "format": "story",
+ "rev": 1,
+ "title": "My Dad Blamed My Games for His Dead Car Battery #shorts",
+ "title_card": "The Glowing Trunk",
+ "voice": "ava",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "tense",
+ "music_volume": 0.05,
+ "cast": {
+  "dad": "a stick-figure father with a round white head, dot eyes, thin black limbs, short brown hair and a blue flannel shirt",
+  "girl": "a stick-figure girl with a round white head, dot eyes, thin black limbs, two black pigtails and a purple hoodie",
+  "car": "one small silver four-door sedan car"
+ },
+ "lines": [
+  {
+   "text": "Dad said my games killed his car battery, so what was really draining it?",
+   "label": "hook",
+   "headline": "what drained the battery",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, standing in a garage beside {car}, the only car in the picture, with its hood open, holding exactly one car battery, the only battery in the picture in both hands, shocked angry face, morning light"
+  },
+  {
+   "text": "Sunday morning, right after Dad's golf trip, his car would not even start.",
+   "label": "dead car",
+   "headline": "car won't start",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, sitting in the driver seat of {car}, the only car in the picture, parked in a garage, turning the key, frustrated face, dashboard dark, morning, no golf clubs in the picture"
+  },
+  {
+   "text": "He found my controller cable in his car and said I charged it there nightly.",
+   "label": "the charge",
+   "headline": "cable in the car",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, standing next to {car}, the only car in the picture, in a garage, holding up exactly one black charging cable in one hand, frowning, mouth open talking"
+  },
+  {
+   "text": "The new battery cost a hundred eighty dollars, so he locked my console away.",
+   "label": "stakes",
+   "headline": "console locked away",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, inside a garage putting exactly one small flat black game console box into exactly one metal cabinet, stern face, {car}, the only car in the picture, parked behind him, no TV in the picture"
+  },
+  {
+   "text": "Two mornings later, with no cable and no console, the car was dead again.",
+   "label": "worse",
+   "headline": "dead again",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, standing beside {car}, the only car in the picture, in a garage with the hood up, both hands on his head, mouth open in disbelief, morning"
+  },
+  {
+   "text": "Dad said I still sneaked out to his car at night, and took my phone.",
+   "label": "more blame",
+   "headline": "phone gone too",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, standing in a hallway holding exactly one phone up high out of reach, frowning, evening light"
+  },
+  {
+   "text": "I cried into my pillow, blamed for a car I can't even drive yet.",
+   "label": "alone",
+   "headline": "blamed and grounded",
+   "image": "close-up of {girl}, the only person in the picture, two black pigtails and purple hoodie, lying alone in bed hugging her pillow, a single tear running down her cheek, sad eyes, dim bedroom at night"
+  },
+  {
+   "text": "That night I peeked into the garage and saw a faint glow by the trunk.",
+   "label": "the glow",
+   "headline": "a glow in the dark",
+   "image": "{girl} is the only person in the picture, two black pigtails and purple hoodie, peeking around a door into a dark garage at night, eyes wide, {car}, the only car in the picture, parked inside with a soft yellow glow coming from the back of the car"
+  },
+  {
+   "text": "In my games, a glow means something's hidden there, so I tiptoed closer.",
+   "label": "gamer clue",
+   "headline": "glow means loot",
+   "image": "{girl} is the only person in the picture, two black pigtails and purple hoodie, tiptoeing across a dark garage floor at night toward the back of {car}, the only car in the picture, one finger on her lips, curious face, soft yellow glow at the back of the car"
+  },
+  {
+   "text": "Dad's golf bag kept the trunk from latching, so its light burned all night.",
+   "label": "the twist",
+   "headline": "the open trunk",
+   "image": "{girl} is the only person in the picture, two black pigtails and purple hoodie, standing at the back of {car}, the only car in the picture, in a dark garage at night, lifting the trunk lid slightly, inside the trunk one small light glowing and one brown golf bag, the only golf bag in the picture, with clubs sticking up against the lid, surprised face"
+  },
+  {
+   "text": "I showed Dad the glowing trunk, he moved his clubs, and the car started.",
+   "label": "proof",
+   "headline": "the car starts",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, sitting in the driver seat of {car}, the only car in the picture, in a garage, dashboard lights on, big relieved smile, exactly one brown golf bag, the only golf bag in the picture, leaning against the garage wall, morning"
+  },
+  {
+   "text": "Console back, but Dad still blames my cable, and I blame his golf bag.",
+   "label": "the ending",
+   "headline": "console back",
+   "image": "{dad} is the only person in the picture, short brown hair and blue flannel shirt, standing in a living room doorway with arms crossed, grumpy smile, holding exactly one brown golf bag on his shoulder, the only golf bag in the picture, exactly one small flat black game console box back on a shelf behind him, the only console in the picture, no TV in the picture"
+  }
+ ]
+}
