@@ -10,7 +10,7 @@
    "stop0": 352.56,
    "stop": 353.82,
    "target": 356.35,
-   "high": 355.24,
+   "high": 355.305,
    "stopId": "47b77a8e-73bc-4b01-bb71-995b2211b4b5",
    "since": "2026-11-11T16:15:00Z",
    "qty": "0.028008275"
@@ -66,12 +66,12 @@
   }
  ],
  "done": null,
- "runs": 292,
+ "runs": 298,
  "lastSignal": {
   "AAPL": "2026-11-11T16:15:00Z",
   "XLI": "2026-11-11T16:15:00Z"
  },
- "lastRun": "12:29",
+ "lastRun": "12:35",
  "lastNote": "equity $24.90, day +0.06, 2 open, 2 entries",
  "equity": 24.9,
  "dayPnl": 0.06,
