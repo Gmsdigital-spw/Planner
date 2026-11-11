@@ -1,0 +1,1 @@
+{"id":"price-2026-11-11-inv-bbcc","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/listings/4598379368/inventory"}]}
