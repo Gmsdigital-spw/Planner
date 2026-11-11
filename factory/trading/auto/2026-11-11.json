@@ -117,14 +117,14 @@
   }
  ],
  "done": "closed for the day",
- "runs": 427,
+ "runs": 428,
  "lastSignal": {
   "AAPL": "2026-11-11T16:15:00Z",
   "XLI": "2026-11-11T16:15:00Z",
   "XLP": "2026-11-11T19:05:00Z"
  },
- "lastRun": "14:45",
- "lastNote": "flat for the day, P/L 0.08",
+ "lastRun": "15:59",
+ "lastNote": "outside market hours",
  "equity": 24.92,
  "dayPnl": 0.08,
  "watch": [
