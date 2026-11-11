@@ -18,10 +18,10 @@
   "XLP": {
    "entry": 90.888,
    "stop0": 90.58,
-   "stop": 90.89,
+   "stop": 91.05,
    "target": 91.5,
-   "high": 91.3,
-   "stopId": "326d1e2c-a953-45c6-80a5-cfda5ff3b09c",
+   "high": 91.355,
+   "stopId": "fb5306a6-dfa5-430d-b064-19c3971f12b3",
    "since": "2026-11-11T19:05:00Z",
    "qty": "0.065465187"
   }
@@ -105,19 +105,27 @@
    "stop": 90.89,
    "qty": "0.065465187",
    "gainR": 1.01
+  },
+  {
+   "t": "14:35",
+   "do": "raise stop",
+   "sym": "XLP",
+   "stop": 91.05,
+   "qty": "0.065465187",
+   "gainR": 1.52
   }
  ],
  "done": null,
- "runs": 411,
+ "runs": 417,
  "lastSignal": {
   "AAPL": "2026-11-11T16:15:00Z",
   "XLI": "2026-11-11T16:15:00Z",
   "XLP": "2026-11-11T19:05:00Z"
  },
- "lastRun": "14:29",
- "lastNote": "equity $24.90, day +0.06, 2 open, 3 entries; no new entries now (8:35-2:00 CT window)",
- "equity": 24.9,
- "dayPnl": 0.06,
+ "lastRun": "14:35",
+ "lastNote": "equity $24.92, day +0.08, 2 open, 3 entries; no new entries now (8:35-2:00 CT window)",
+ "equity": 24.92,
+ "dayPnl": 0.08,
  "watch": [
   "SMH",
   "XLK",
