@@ -32,8 +32,12 @@
   {
    "say": "Kids act out building a snowman.",
    "cap": "Kids act out | *building a snowman*",
-   "scene": "pan",
-   "page": "p-03.png"
+   "scene": "fan",
+   "pages": [
+    "p-03.png",
+    "p-04.png",
+    "p-05.png"
+   ]
   },
   {
    "say": "Grown-ups act out the Secret Santa reveal.",

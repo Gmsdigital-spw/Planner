@@ -1,0 +1,255 @@
+{
+ "dur": 21.69,
+ "vo": "social/studio/media/vo/mystery1111-vo.mp3",
+ "music": "social/studio/media/vo/mystery1111-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/mystery",
+   "cover": "cover.jpg",
+   "price": "7.99",
+   "pages": 16,
+   "listTitle": "Christmas Murder Mystery Party Game for 8 Players, Printable Family Friendly Whodunit, Christmas Dinner or Office Party Kit",
+   "strip": [
+    "p-05.png",
+    "p-13.png",
+    "p-14.png",
+    "p-16.png"
+   ],
+   "bg": [
+    "#a3324a",
+    "#3a0c16"
+   ],
+   "accent": "#7a1f2b",
+   "hl": "#ffd34d",
+   "dot": "#ffe0e6"
+  },
+  "scenes": [
+   {
+    "page": "p-05.png",
+    "badge": "8 GUESTS",
+    "type": "hook",
+    "t0": 0,
+    "t1": 3.02
+   },
+   {
+    "pages": [
+     "p-03.png",
+     "p-02.png",
+     "p-04.png"
+    ],
+    "type": "fan",
+    "t0": 3.02,
+    "t1": 6.03,
+    "beats": [
+     3.12,
+     4.08,
+     5.05
+    ]
+   },
+   {
+    "page": "p-03.png",
+    "type": "pan",
+    "t0": 6.03,
+    "t1": 8.91,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-07.png",
+     "p-08.png",
+     "p-09.png",
+     "p-10.png"
+    ],
+    "type": "grid",
+    "t0": 8.91,
+    "t1": 12.25,
+    "beats": [
+     9.01,
+     9.74,
+     10.47,
+     11.2
+    ]
+   },
+   {
+    "pages": [
+     "p-13.png",
+     "p-14.png",
+     "p-16.png"
+    ],
+    "type": "fan",
+    "t0": 12.25,
+    "t1": 14.91,
+    "beats": [
+     12.35,
+     13.17,
+     14.0
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 14.91,
+    "t1": 18.53,
+    "beats": [
+     0.42,
+     1.26,
+     1.6,
+     2.4,
+     2.8
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 18.53,
+    "t1": 21.990000000000002
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.76,
+   "*8 guests* | *8 secrets* | *1 thief*"
+  ],
+  [
+   3.02,
+   5.72,
+   "*Christmas Eve* | every light | goes *out*"
+  ],
+  [
+   6.03,
+   8.5,
+   "The *gold star* | is *gone*"
+  ],
+  [
+   8.91,
+   11.86,
+   "A *character* | a *secret* | an *alibi*"
+  ],
+  [
+   12.25,
+   14.51,
+   "*9 clue cards* | one *fair* answer"
+  ],
+  [
+   14.91,
+   17.25,
+   "*16 pages* | the *host* can play"
+  ],
+  [
+   17.66,
+   18.35,
+   "Tap the *link*"
+  ],
+  [
+   18.53,
+   19.58,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   2.97,
+   "whoosh"
+  ],
+  [
+   3.12,
+   "pop"
+  ],
+  [
+   4.08,
+   "pop"
+  ],
+  [
+   5.05,
+   "pop"
+  ],
+  [
+   5.98,
+   "whoosh"
+  ],
+  [
+   8.86,
+   "whoosh"
+  ],
+  [
+   9.01,
+   "pop"
+  ],
+  [
+   9.74,
+   "pop"
+  ],
+  [
+   10.47,
+   "pop"
+  ],
+  [
+   11.2,
+   "pop"
+  ],
+  [
+   12.2,
+   "whoosh"
+  ],
+  [
+   12.35,
+   "pop"
+  ],
+  [
+   13.17,
+   "pop"
+  ],
+  [
+   14.0,
+   "pop"
+  ],
+  [
+   14.86,
+   "whoosh"
+  ],
+  [
+   15.33,
+   "whoosh"
+  ],
+  [
+   17.71,
+   "tap"
+  ],
+  [
+   17.96,
+   "pop"
+  ],
+  [
+   18.48,
+   "whoosh"
+  ],
+  [
+   18.88,
+   "impact"
+  ],
+  [
+   19.33,
+   "pop"
+  ]
+ ]
+}
