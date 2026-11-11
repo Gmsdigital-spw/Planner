@@ -1,0 +1,1 @@
+{"id":"trade-2026-11-11-live-e78d","ops":[{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY&timeframe=5Min&limit=78&feed=iex"},{"op":"alpaca","data":true,"path":"/stocks/snapshots?symbols=SMH,XLK,QQQ,SPY,AAPL,XLI,XLE,IWM,DIA,WMT,XLF,BAC,XLP&feed=iex"}]}
