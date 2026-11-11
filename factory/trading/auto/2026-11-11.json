@@ -58,12 +58,12 @@
   }
  ],
  "done": null,
- "runs": 214,
+ "runs": 220,
  "lastSignal": {
   "AAPL": "2026-11-11T16:15:00Z",
   "XLI": "2026-11-11T16:15:00Z"
  },
- "lastRun": "11:11",
+ "lastRun": "11:17",
  "lastNote": "equity $24.88, day +0.04, 2 open, 2 entries",
  "equity": 24.88,
  "dayPnl": 0.04,
