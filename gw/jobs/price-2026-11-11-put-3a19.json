@@ -1,0 +1,1 @@
+{"id":"price-2026-11-11-put-3a19","stopOnError":false,"ops":[{"op":"etsy","method":"PUT","path":"/listings/4598379368/inventory","body":{"products":[{"sku":"","property_values":[],"offerings":[{"price":3.99,"quantity":999,"is_enabled":true}]}],"price_on_property":[],"quantity_on_property":[],"sku_on_property":[]}}]}
