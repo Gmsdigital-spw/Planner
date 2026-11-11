@@ -1,9 +1,9 @@
-# Scoreboard 2026-11-09 (buyer numbers, from 24 daily snapshots)
+# Scoreboard 2026-11-10 (buyer numbers, from 25 daily snapshots)
 
 Every crew reads this before working. It is the only proof of what buyers want; our own
 inspection scores are not. Written by factory/notebook/scoreboard.py, never by hand.
 
-Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 299 listing views.
+Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 301 listing views.
 
 ## Winners (sold, or 7-day views 5+, or favorited): copy what they do
 - Undated ADHD Planner Digital and Printable, Hyperlinked Go [planners] $6.99: 1 sold, 25 views (+9 in 7 d), 0 favs
@@ -17,7 +17,6 @@ Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 299 listing views.
 ## Dead (live 4+ days, 0 views gained in 7 d, 0 sales): fix cover/title/tags or stop making this kind
 - ADHD Budget Planner App, Safe to Spend Daily Budget, Paych [money] $8.99: 41 views total
 - Monthly Budget Tracker Spreadsheet, 2027 Budget Template f [money] $6.99: 22 views total
-- Christmas Planner Printable 2026, Holiday Budget and Gift  [money] $6.99: 15 views total
 - Irregular Income Budget Planner, Tip and Commission Tracke [money] $4.99: 10 views total
 - 2027 Savings Challenge Printable, ADHD Friendly Color In T [money] $4.49: 10 views total
 - New Years Eve Party Games Printable, 8 Family Friendly NYE [party games] $4.99: 5 views total
@@ -40,7 +39,7 @@ Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 299 listing views.
 |---|---|---|---|---|---|
 | planners | 3 | 53 | 17.7 | 14 | 2 |
 | party games | 14 | 107 | 7.6 | 12 | 2 |
-| money | 7 | 112 | 16.0 | 7 | 1 |
+| money | 7 | 114 | 16.3 | 9 | 1 |
 | wall art | 2 | 18 | 9.0 | 8 | 0 |
 | christmas | 4 | 7 | 1.8 | 2 | 0 |
 | invitations | 2 | 2 | 1.0 | 0 | 0 |
@@ -51,21 +50,21 @@ Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 299 listing views.
 |---|---|---|---|---|---|---|---|---|
 | Undated ADHD Planner Digital and Printable, Hyperlinked Go | planners | 6.99 | 25 | 0 | 0 | 9 | 0 | 1 |
 | Gingerbread House Decorating Contest Kit Printable, Judge  | party games | 4.49 | 14 | 0 | 0 | 6 | 0 | 1 |
-| No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  | money | 4.49 | 9 | 0 | 1 | 5 | 1 | 1 |
-| 2027 Goal Setting Workbook Printable, 12 Week Goal Planner | planners | 4.49 | 19 | 2 | 2 | 4 | 1 | 1 |
+| No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  | money | 4.49 | 9 | 0 | 0 | 5 | 1 | 1 |
+| 2027 Goal Setting Workbook Printable, 12 Week Goal Planner | planners | 4.49 | 19 | 0 | 2 | 4 | 1 | 1 |
 | Christmas Party Games Printable Bundle, 8 Games for Office | party games | 2.99 | 70 | 0 | 0 | 0 | 0 | 1 |
 | Pink Bible Verse Wall Art Set of 6, Coquette Christian Pri | wall art | 7.49 | 16 | 0 | 0 | 7 | 0 | 0 |
 | Christmas Charades Printable Game, 120 Cards in 3 Levels f | party games | 3.99 | 3 | 0 | 0 | 3 | 0 | 0 |
+| Christmas Planner Printable 2026, Holiday Budget and Gift  | money | 6.99 | 17 | 2 | 2 | 2 | 0 | 0 |
 | Debt Payoff Planner Printable 2027, Debt Snowball and Aval | money | 4.99 | 5 | 0 | 0 | 2 | 0 | 0 |
 | Christmas Coupon Book Printable, Editable PDF: 30 Coupons  | christmas | 4.49 | 2 | 0 | 0 | 2 | 1 | 0 |
-| 2027 Planner Printable, Sage Green Minimalist Monthly Cale | planners | 4.99 | 9 | 1 | 1 | 1 | 0 | 0 |
+| 2027 Planner Printable, Sage Green Minimalist Monthly Cale | planners | 4.99 | 9 | 0 | 1 | 1 | 0 | 0 |
 | Funny Christmas Party Awards Printable, 36 Office Holiday  | party games | 1.99 | 8 | 0 | 0 | 1 | 0 | 0 |
 | Thanksgiving Games Printable, 7 Game Bundle for Family, Ki | party games | 4.99 | 4 | 0 | 0 | 1 | 0 | 0 |
 | Christmas Bible Verse Wall Art Set of 6, Pink Christian Ch | wall art | 7.99 | 2 | 0 | 0 | 1 | 0 | 0 |
-| Christmas Scavenger Hunt Printable, 24 Rhyming Clue Cards  | party games | 3.99 | 1 | 0 | 1 | 1 | 0 | 0 |
+| Christmas Scavenger Hunt Printable, 24 Rhyming Clue Cards  | party games | 3.99 | 1 | 0 | 0 | 1 | 0 | 0 |
 | ADHD Budget Planner App, Safe to Spend Daily Budget, Paych | money | 8.99 | 41 | 0 | 0 | 0 | 0 | 0 |
 | Monthly Budget Tracker Spreadsheet, 2027 Budget Template f | money | 6.99 | 22 | 0 | 0 | 0 | 0 | 0 |
-| Christmas Planner Printable 2026, Holiday Budget and Gift  | money | 6.99 | 15 | 0 | 0 | 0 | 0 | 0 |
 | Irregular Income Budget Planner, Tip and Commission Tracke | money | 4.99 | 10 | 0 | 0 | 0 | 0 | 0 |
 | 2027 Savings Challenge Printable, ADHD Friendly Color In T | money | 4.49 | 10 | 0 | 0 | 0 | 0 | 0 |
 | New Years Eve Party Games Printable, 8 Family Friendly NYE | party games | 4.99 | 5 | 0 | 0 | 0 | 0 | 0 |
