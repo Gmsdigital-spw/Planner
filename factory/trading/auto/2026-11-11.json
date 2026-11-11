@@ -20,7 +20,7 @@
    "stop0": 90.58,
    "stop": 90.58,
    "target": 91.5,
-   "high": 90.888,
+   "high": 90.92,
    "stopId": "d40bd179-fe18-4c40-81d1-4590624662b4",
    "since": "2026-11-11T19:05:00Z",
    "qty": "0.065465187"
@@ -100,16 +100,16 @@
   }
  ],
  "done": null,
- "runs": 333,
+ "runs": 339,
  "lastSignal": {
   "AAPL": "2026-11-11T16:15:00Z",
   "XLI": "2026-11-11T16:15:00Z",
   "XLP": "2026-11-11T19:05:00Z"
  },
- "lastRun": "13:10",
- "lastNote": "equity $24.87, day +0.03, 2 open, 3 entries",
- "equity": 24.87,
- "dayPnl": 0.03,
+ "lastRun": "13:16",
+ "lastNote": "equity $24.88, day +0.04, 2 open, 3 entries",
+ "equity": 24.88,
+ "dayPnl": 0.04,
  "watch": [
   "SMH",
   "XLK",
