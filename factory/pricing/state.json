@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-10",
+ "updatedAt": "2026-11-11",
  "note": "Pricing agent state. basePrice = the normal price before any change (from backups/listings-backup-2026-10-21.json).",
  "listings": {
   "4600177510": {
@@ -85,15 +85,21 @@
   "4598379368": {
    "title": "36 Funny Christmas Party Awards Kit, Office Holiday Superlatives (PDF Download)",
    "basePrice": 3.99,
-   "price": 1.99,
-   "starter": true,
-   "lastChange": "2026-10-21",
+   "price": 3.99,
+   "starter": false,
+   "lastChange": "2026-11-11",
    "history": [
     {
      "d": "2026-10-21",
      "from": 3.99,
      "to": 1.99,
      "why": "starter price to get first sales and reviews (approved by Grayson)"
+    },
+    {
+     "d": "2026-11-11",
+     "from": 1.99,
+     "to": 3.99,
+     "why": "Starter ended: 0 sales in 21 days at $1.99 (8 views total), so it returns to the $3.99 base price."
     }
    ],
    "starterSince": "2026-10-21"
