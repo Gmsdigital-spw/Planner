@@ -108,16 +108,16 @@
   }
  ],
  "done": null,
- "runs": 399,
+ "runs": 405,
  "lastSignal": {
   "AAPL": "2026-11-11T16:15:00Z",
   "XLI": "2026-11-11T16:15:00Z",
   "XLP": "2026-11-11T19:05:00Z"
  },
- "lastRun": "14:17",
- "lastNote": "equity $24.91, day +0.07, 2 open, 3 entries; no new entries now (8:35-2:00 CT window)",
- "equity": 24.91,
- "dayPnl": 0.07,
+ "lastRun": "14:23",
+ "lastNote": "equity $24.90, day +0.06, 2 open, 3 entries; no new entries now (8:35-2:00 CT window)",
+ "equity": 24.9,
+ "dayPnl": 0.06,
  "watch": [
   "SMH",
   "XLK",
