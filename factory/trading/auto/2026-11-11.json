@@ -2,16 +2,61 @@
  "day": "2026-11-11",
  "mode": "paper",
  "equityOpen": 24.84,
- "entries": 0,
+ "entries": 2,
  "lostToday": [],
- "positions": {},
+ "positions": {
+  "AAPL": {
+   "entry": 353.824,
+   "stop0": 352.56,
+   "stop": 352.56,
+   "target": 356.35,
+   "high": 353.824,
+   "stopId": "dcd222fd-e139-4d4f-9824-32a1b15c1513",
+   "since": "2026-11-11T16:15:00Z",
+   "qty": "0.028008275"
+  },
+  "XLI": {
+   "entry": 170.538,
+   "stop0": 169.98,
+   "stop": 169.98,
+   "target": 171.65,
+   "high": 170.538,
+   "stopId": "6304c8d5-8a91-4603-b7ce-ef066bedb5e7",
+   "since": "2026-11-11T16:15:00Z",
+   "qty": "0.034830946"
+  }
+ },
  "trades": [],
- "actions": [],
+ "actions": [
+  {
+   "t": "10:20",
+   "do": "buy",
+   "sym": "AAPL",
+   "notional": 9.92,
+   "stop": 352.56,
+   "target": 356.35,
+   "status": 200,
+   "fill": 353.824
+  },
+  {
+   "t": "10:20",
+   "do": "buy",
+   "sym": "XLI",
+   "notional": 5.95,
+   "stop": 169.98,
+   "target": 171.65,
+   "status": 200,
+   "fill": 170.538
+  }
+ ],
  "done": null,
- "runs": 161,
- "lastSignal": {},
- "lastRun": "10:18",
- "lastNote": "equity $24.84, day +0.00, 0 open, 0 entries; scanned 13 names, no A+ setup",
+ "runs": 163,
+ "lastSignal": {
+  "AAPL": "2026-11-11T16:15:00Z",
+  "XLI": "2026-11-11T16:15:00Z"
+ },
+ "lastRun": "10:20",
+ "lastNote": "equity $24.84, day +0.00, 2 open, 2 entries",
  "equity": 24.84,
  "dayPnl": 0.0,
  "watch": [
