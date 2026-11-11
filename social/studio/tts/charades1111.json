@@ -1,0 +1,17 @@
+{
+ "id": "charades1111",
+ "lines": [
+  {
+   "voice": "en-US-ChristopherNeural",
+   "rate": "+6%",
+   "path": "social/studio/media/vo/charades1111-vo.mp3",
+   "text": "One game the whole family can play. Kids act out building a snowman. Grown-ups act out the Secret Santa reveal. A hundred and twenty cards, in three levels. Or switch to Draw It mode. Sixteen pages, with a score sheet. Tap the link, and grab it on Etsy."
+  },
+  {
+   "voice": "en-US-EricNeural",
+   "rate": "+6%",
+   "path": "social/studio/media/vo/charades1111-vo-b.mp3",
+   "text": "One game the whole family can play. Kids act out building a snowman. Grown-ups act out the Secret Santa reveal. A hundred and twenty cards, in three levels. Or switch to Draw It mode. Sixteen pages, with a score sheet. Tap the link, and grab it on Etsy."
+  }
+ ]
+}

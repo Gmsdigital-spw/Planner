@@ -1,0 +1,17 @@
+{
+ "id": "mystery1111",
+ "lines": [
+  {
+   "voice": "en-US-ChristopherNeural",
+   "rate": "+6%",
+   "path": "social/studio/media/vo/mystery1111-vo.mp3",
+   "text": "Eight guests, eight secrets, one thief. On Christmas Eve, every light in the lodge goes out. When they come back on, the gold star is gone. Each guest gets a character, a secret, and an alibi. Nine clue cards lead to one fair answer. Sixteen pages, and the host can play. Tap the link, and grab it on Etsy."
+  },
+  {
+   "voice": "en-US-EricNeural",
+   "rate": "+6%",
+   "path": "social/studio/media/vo/mystery1111-vo-b.mp3",
+   "text": "Eight guests, eight secrets, one thief. On Christmas Eve, every light in the lodge goes out. When they come back on, the gold star is gone. Each guest gets a character, a secret, and an alibi. Nine clue cards lead to one fair answer. Sixteen pages, and the host can play. Tap the link, and grab it on Etsy."
+  }
+ ]
+}
