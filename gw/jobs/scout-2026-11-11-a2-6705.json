@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-11-a2-6705", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=kids+christmas+activity&sort_on=score&limit=25&offset=0", "tag": "s_kids+christmas+activity"}]}

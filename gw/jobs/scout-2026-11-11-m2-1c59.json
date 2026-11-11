@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-11-m2-1c59", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+place+cards&sort_on=score&limit=25&offset=0", "tag": "s_christmas+place+cards"}]}
