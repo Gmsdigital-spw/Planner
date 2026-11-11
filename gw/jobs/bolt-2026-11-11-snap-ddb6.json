@@ -1,0 +1,9 @@
+{"id":"bolt-2026-11-11-snap-ddb6","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457","tag":"shop"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=draft&limit=100","tag":"drafts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"},
+{"op":"etsy","method":"GET","path":"/listings/4613237408","tag":"trivia"},
+{"op":"zernio","method":"GET","path":"/posts/6aef25596a10a5e76a8d8963","tag":"pinchk-pin-prod-secret-santa-kit-p1"}
+]}
