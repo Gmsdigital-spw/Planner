@@ -20,10 +20,10 @@
   "XOM": {
    "entry": 170.186,
    "stop0": 169.54,
-   "stop": 169.54,
+   "stop": 170.19,
    "target": 171.48,
-   "high": 170.67,
-   "stopId": "bdeedb5b-2ca1-4b2f-99bc-51e20dfa916d",
+   "high": 170.85,
+   "stopId": "2e6457a5-813e-4a41-9a5b-adab7ff7077c",
    "since": "2026-11-12T18:05:00Z",
    "qty": "0.034961747"
   }
@@ -67,16 +67,24 @@
    "target": 171.48,
    "status": 200,
    "fill": 170.186
+  },
+  {
+   "t": "13:42",
+   "do": "raise stop",
+   "sym": "XOM",
+   "stop": 170.19,
+   "qty": "0.034961747",
+   "gainR": 1.03
   }
  ],
  "done": null,
- "runs": 353,
+ "runs": 356,
  "lastSignal": {
   "QQQ": "2026-11-12T16:15:00Z",
   "XLF": "2026-11-12T16:20:00Z",
   "XOM": "2026-11-12T18:05:00Z"
  },
- "lastRun": "13:39",
+ "lastRun": "13:42",
  "lastNote": "equity $24.81, day -0.09, 2 open, 3 entries",
  "equity": 24.81,
  "dayPnl": -0.09,
