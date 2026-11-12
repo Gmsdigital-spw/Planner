@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-12-t4-f2c0", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=holiday+murder+mystery&sort_on=score&limit=25&offset=0", "tag": "s_holiday+murder+mystery_o0"}]}
