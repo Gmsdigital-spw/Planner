@@ -1,0 +1,233 @@
+{
+ "dur": 19.68,
+ "vo": "social/studio/media/vo/escadult1112-vo.mp3",
+ "music": "social/studio/media/vo/escadult1112-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/escadult",
+   "cover": "cover.jpg",
+   "price": "7.99",
+   "pages": 16,
+   "listTitle": "Christmas Escape Room for Adults and Teens: Printable Party Game for Office and Friends, 8 Puzzles",
+   "strip": [
+    "p-03.png",
+    "p-06.png",
+    "p-09.png",
+    "p-12.png"
+   ],
+   "bg": [
+    "#8a2433",
+    "#2e0a12"
+   ],
+   "accent": "#2f5a46",
+   "hl": "#f0c870",
+   "dot": "#ffe3e6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-04.png",
+     "p-06.png",
+     "p-08.png",
+     "p-10.png"
+    ],
+    "type": "grid",
+    "t0": 0,
+    "t1": 3.76,
+    "beats": [
+     0.1,
+     0.94,
+     1.79,
+     2.63
+    ]
+   },
+   {
+    "pages": [
+     "p-05.png",
+     "p-07.png",
+     "p-11.png"
+    ],
+    "type": "fan",
+    "t0": 3.76,
+    "t1": 7.01,
+    "beats": [
+     3.86,
+     4.92,
+     5.98
+    ]
+   },
+   {
+    "pages": [
+     "p-06.png",
+     "p-04.png",
+     "p-08.png"
+    ],
+    "type": "fan",
+    "t0": 7.01,
+    "t1": 10.48,
+    "beats": [
+     7.11,
+     8.26,
+     9.41
+    ]
+   },
+   {
+    "page": "p-12.png",
+    "badge": "8 HINTS",
+    "type": "hook",
+    "t0": 10.48,
+    "t1": 12.65
+   },
+   {
+    "type": "phone",
+    "t0": 12.65,
+    "t1": 16.69,
+    "beats": [
+     0.48,
+     1.38,
+     2.02,
+     2.82,
+     3.22
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 16.69,
+    "t1": 19.98
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   3.33,
+   "*Snowed in* | every present | *locked* in the vault"
+  ],
+  [
+   3.76,
+   6.6,
+   "*8 puzzles* | each answer opens | the *next lock*"
+  ],
+  [
+   7.01,
+   10.02,
+   "A *clock grid* | a *cipher* | an *ornament scale*"
+  ],
+  [
+   10.48,
+   12.25,
+   "*Hint cards* keep | every team *moving*"
+  ],
+  [
+   12.65,
+   15.41,
+   "Teams of *2 to 5* | about *1 hour*"
+  ],
+  [
+   15.82,
+   16.47,
+   "Tap the *link*"
+  ],
+  [
+   16.69,
+   17.64,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.94,
+   "pop"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.79,
+   "pop"
+  ],
+  [
+   2.63,
+   "pop"
+  ],
+  [
+   3.71,
+   "whoosh"
+  ],
+  [
+   3.86,
+   "pop"
+  ],
+  [
+   4.92,
+   "pop"
+  ],
+  [
+   5.98,
+   "pop"
+  ],
+  [
+   6.96,
+   "whoosh"
+  ],
+  [
+   7.11,
+   "pop"
+  ],
+  [
+   8.26,
+   "pop"
+  ],
+  [
+   9.41,
+   "pop"
+  ],
+  [
+   10.43,
+   "whoosh"
+  ],
+  [
+   12.6,
+   "whoosh"
+  ],
+  [
+   13.13,
+   "whoosh"
+  ],
+  [
+   15.87,
+   "tap"
+  ],
+  [
+   16.12,
+   "pop"
+  ],
+  [
+   16.64,
+   "whoosh"
+  ],
+  [
+   17.04,
+   "impact"
+  ],
+  [
+   17.49,
+   "pop"
+  ]
+ ]
+}

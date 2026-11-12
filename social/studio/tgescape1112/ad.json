@@ -1,0 +1,227 @@
+{
+ "dur": 18.57,
+ "vo": "social/studio/media/vo/tgescape1112-vo.mp3",
+ "music": "social/studio/media/vo/tgescape1112-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/tgescape",
+   "cover": "cover.jpg",
+   "price": "6.99",
+   "pages": 17,
+   "listTitle": "Thanksgiving Escape Room for Kids and Families, Printable Game, 2 Levels Ages 6-9 and 10+, No Phone or QR Code, Kids Table Activity",
+   "strip": [
+    "p-03.png",
+    "p-06.png",
+    "p-09.png",
+    "p-16.png"
+   ],
+   "bg": [
+    "#c8662e",
+    "#5a240f"
+   ],
+   "accent": "#a3461d",
+   "hl": "#ffd34d",
+   "dot": "#ffe6d6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-04.png",
+     "p-06.png",
+     "p-12.png"
+    ],
+    "type": "fan",
+    "t0": 0,
+    "t1": 2.5,
+    "beats": [
+     0.1,
+     0.86,
+     1.62
+    ]
+   },
+   {
+    "page": "p-03.png",
+    "badge": "4 PIES",
+    "type": "hook",
+    "t0": 2.5,
+    "t1": 5.35
+   },
+   {
+    "pages": [
+     "p-06.png",
+     "p-08.png",
+     "p-05.png",
+     "p-09.png"
+    ],
+    "type": "grid",
+    "t0": 5.35,
+    "t1": 8.89,
+    "beats": [
+     5.45,
+     6.23,
+     7.02,
+     7.8
+    ]
+   },
+   {
+    "pages": [
+     "p-05.png",
+     "p-04.png"
+    ],
+    "type": "fan",
+    "t0": 8.89,
+    "t1": 11.76,
+    "beats": [
+     8.99,
+     10.81
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 11.76,
+    "t1": 15.57,
+    "beats": [
+     0.45,
+     1.35,
+     1.82,
+     2.62,
+     3.02
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 15.57,
+    "t1": 18.87
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.11,
+   "Keep the *kids table* | busy until | the *pie*"
+  ],
+  [
+   2.5,
+   4.9,
+   "Grandma locked | *4 pies* | in the *Pie Safe*"
+  ],
+  [
+   5.35,
+   8.47,
+   "Little kids | *count pumpkins* | big kids | crack *ciphers*"
+  ],
+  [
+   8.89,
+   11.33,
+   "Same story | same code | *2 levels*"
+  ],
+  [
+   11.76,
+   14.34,
+   "About *45 minutes* | *no phone* needed"
+  ],
+  [
+   14.73,
+   15.34,
+   "Tap the *link*"
+  ],
+  [
+   15.57,
+   16.53,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.86,
+   "pop"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.62,
+   "pop"
+  ],
+  [
+   2.45,
+   "whoosh"
+  ],
+  [
+   5.3,
+   "whoosh"
+  ],
+  [
+   5.45,
+   "pop"
+  ],
+  [
+   6.23,
+   "pop"
+  ],
+  [
+   7.02,
+   "pop"
+  ],
+  [
+   7.8,
+   "pop"
+  ],
+  [
+   8.84,
+   "whoosh"
+  ],
+  [
+   8.99,
+   "pop"
+  ],
+  [
+   10.81,
+   "pop"
+  ],
+  [
+   11.71,
+   "whoosh"
+  ],
+  [
+   12.21,
+   "whoosh"
+  ],
+  [
+   14.78,
+   "tap"
+  ],
+  [
+   15.03,
+   "pop"
+  ],
+  [
+   15.52,
+   "whoosh"
+  ],
+  [
+   15.92,
+   "impact"
+  ],
+  [
+   16.37,
+   "pop"
+  ]
+ ]
+}
