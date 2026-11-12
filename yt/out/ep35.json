@@ -2,8 +2,8 @@
  "id": "ep35",
  "format": "story",
  "duration": 65.97,
- "bytes": 4395552,
- "mb": 4.19,
+ "bytes": 4421474,
+ "mb": 4.22,
  "width": 1080,
  "height": 1920,
  "scenes": [
@@ -75,5 +75,6 @@
  "fakeTts": false,
  "tts": "edge",
  "voice": "ava",
- "art": "stickfigure"
+ "art": "stickfigure",
+ "splice": "Cutter 2026-11-12: scenes 1,3,5,7,11 from rev 2 (chart without garbled header text; scene 7 split line), scenes 2,4,6,8,9,10,12 from rev 1 (pigtails held, girl washing dishes, console box); identical line timings, blended over the builder's 0.4 s crossfades; rev 2 audio."
 }
