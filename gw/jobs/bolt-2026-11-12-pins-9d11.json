@@ -1,0 +1,146 @@
+{
+"id": "bolt-2026-11-12-pins-9d11",
+"stopOnError": false,
+"ops": [
+{
+"op": "zernio",
+"method": "POST",
+"path": "/posts",
+"idem": "pin-pin-prod-xmas-escape-room-adults-w1",
+"tag": "pin-prod-xmas-escape-room-adults-w1",
+"body": {
+"content": "A printable Christmas escape room for adults and teens: The Snowbound Lodge. Eight linked puzzles, each answer opens the next lock, ending at the Gift Vault. For teams of 2 to 20 at an office party, a friends night or game night, about 45 to 60 minutes. Includes host guide, lock sheet, hint cards, team timer and scores, answer key and a certificate. US Letter PDF, print at home.",
+"mediaItems": [
+{
+"type": "image",
+"url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-adults-w1.jpg"
+}
+],
+"scheduledFor": "2026-11-15T15:30:00Z",
+"platforms": [
+{
+"platform": "pinterest",
+"accountId": "6ad7b245350e86dff5e25133",
+"platformSpecificData": {
+"boardId": "1096274802985595723",
+"title": "Christmas Escape Room for Adults: Printable Party Game, 8 Puzzles, Teams of 2 to 20",
+"link": "https://www.etsy.com/listing/4607508985"
+}
+}
+]
+}
+},
+{
+"op": "zernio",
+"method": "POST",
+"path": "/posts",
+"idem": "pin-pin-prod-xmas-office-party-games-w1",
+"tag": "pin-prod-xmas-office-party-games-w1",
+"body": {
+"content": "24 no-prep office Christmas party games for coworkers, with a 45-minute run sheet so whoever got handed the staff party can host it. Coworker bingo, holiday trivia, word scramble, guess the coworker, letter lists and more. No props to buy, no drinking, no movie or song knowledge needed. Score sheet and answer keys included. Printable PDF, black and white is fine.",
+"mediaItems": [
+{
+"type": "image",
+"url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-office-party-games-w1.jpg"
+}
+],
+"scheduledFor": "2026-11-15T17:30:00Z",
+"platforms": [
+{
+"platform": "pinterest",
+"accountId": "6ad7b245350e86dff5e25133",
+"platformSpecificData": {
+"boardId": "1096274802985595723",
+"title": "Office Christmas Party Games Printable: 24 No-Prep Games for Coworkers",
+"link": "https://www.etsy.com/listing/4606483866"
+}
+}
+]
+}
+},
+{
+"op": "zernio",
+"method": "POST",
+"path": "/posts",
+"idem": "pin-pin-prod-xmas-party-mega-bundle-w1",
+"tag": "pin-prod-xmas-party-mega-bundle-w1",
+"body": {
+"content": "A printable Christmas party games bundle for one whole party night: 6 games (word scramble, this or that, would you rather, trivia, find the guest who, charades), 12 party awards, a white elephant dice game, a left-right gift story and a gingerbread house contest with judge cards and ribbons. Host timeline and answer keys included. 16 pages, US Letter or A4.",
+"mediaItems": [
+{
+"type": "image",
+"url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-party-mega-bundle-w1.jpg"
+}
+],
+"scheduledFor": "2026-11-15T19:30:00Z",
+"platforms": [
+{
+"platform": "pinterest",
+"accountId": "6ad7b245350e86dff5e25133",
+"platformSpecificData": {
+"boardId": "1096274802985595726",
+"title": "Christmas Party Games Bundle Printable: 6 Games, 12 Awards, White Elephant Dice Game",
+"link": "https://www.etsy.com/listing/4604185747"
+}
+}
+]
+}
+},
+{
+"op": "zernio",
+"method": "POST",
+"path": "/posts",
+"idem": "pin-pin-prod-xmas-party-awards-w1",
+"tag": "pin-prod-xmas-party-awards-w1",
+"body": {
+"content": "36 funny, kind Christmas party awards to print for an office, family or friends holiday party. Includes the award list with a line to read aloud for each, nomination sheets and quick ballot cards, a vote tally sheet, a host script, award and fill-in certificates and a hall of fame page. 13 pages, US Letter, also prints on A4.",
+"mediaItems": [
+{
+"type": "image",
+"url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-party-awards-w1.jpg"
+}
+],
+"scheduledFor": "2026-11-15T21:30:00Z",
+"platforms": [
+{
+"platform": "pinterest",
+"accountId": "6ad7b245350e86dff5e25133",
+"platformSpecificData": {
+"boardId": "1096274802985595723",
+"title": "Funny Christmas Party Awards Printable: 36 Office Holiday Awards, Ballots, Certificates",
+"link": "https://www.etsy.com/listing/4598379368"
+}
+}
+]
+}
+},
+{
+"op": "zernio",
+"method": "POST",
+"path": "/posts",
+"idem": "pin-pin-prod-xmas-murder-mystery-8-w1",
+"tag": "pin-prod-xmas-murder-mystery-8-w1",
+"body": {
+"content": "A printable Christmas murder mystery party for 8 players: The Stolen Star of Hollyridge Lodge, a cozy whodunit set on a snowed-in Christmas Eve. Inside: host guide, party timeline and host script, invitations, 8 character sheets, 9 clue cards in 3 rounds, a Detective Notes sheet, a sealed solution page, name tags and 2 awards. 16 pages, print at home.",
+"mediaItems": [
+{
+"type": "image",
+"url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-murder-mystery-8-w1.jpg"
+}
+],
+"scheduledFor": "2026-11-15T23:30:00Z",
+"platforms": [
+{
+"platform": "pinterest",
+"accountId": "6ad7b245350e86dff5e25133",
+"platformSpecificData": {
+"boardId": "1096274802985595732",
+"title": "Christmas Murder Mystery Party Game for 8 Players: Printable Dinner Party Kit",
+"link": "https://www.etsy.com/listing/4602816114"
+}
+}
+]
+}
+}
+]
+}
