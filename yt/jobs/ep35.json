@@ -1,0 +1,91 @@
+{
+ "id": "ep35",
+ "format": "story",
+ "rev": 1,
+ "title": "My Dad Said My Games Made Me Lazy on Our Chore Chart #shorts",
+ "title_card": "The Chore Chart Paradox",
+ "voice": "ava",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "tense",
+ "music_volume": 0.05,
+ "cast": {
+  "dad": "a stick-figure father with a round white head, dot eyes, thin black limbs, short brown hair and a green sweater",
+  "girl": "a stick-figure girl with a round white head, dot eyes, thin black limbs, two black pigtails and a yellow hoodie",
+  "max": "a small stick-figure boy with a round white head, dot eyes, thin black limbs, messy orange hair and a red t-shirt"
+ },
+ "lines": [
+  {
+   "text": "Dad said gaming made me lazy on our chore chart, so who really worked harder?",
+   "label": "hook",
+   "headline": "who really worked harder",
+   "image": "{dad} is the only person in the picture, short brown hair and green sweater, standing in a kitchen pointing angrily at exactly one paper chore chart covered only in colored checkmarks and gold star stickers, the only chart in the picture, taped on the fridge, frowning, mouth open talking, evening light"
+  },
+  {
+   "text": "On Sunday's fridge chart, my brother Max finished ten of twelve chores; I finished eight.",
+   "label": "the score",
+   "headline": "Max ten, me eight",
+   "image": "{girl} is the only person in the picture, two black pigtails and yellow hoodie, standing in a kitchen staring up at exactly one paper chore chart covered only in colored checkmarks and gold star stickers, the only chart in the picture, taped on the fridge, one row of checkmarks longer than the other, worried face, morning light"
+  },
+  {
+   "text": "Dad said Max is only seven and beats me anyway, so games made me lazy.",
+   "label": "the charge",
+   "headline": "games made me lazy",
+   "image": "{dad} is the only person in the picture, short brown hair and green sweater, standing in a kitchen with arms crossed, stern face, mouth open talking, exactly one paper chore chart covered only in colored checkmarks and gold star stickers, the only chart in the picture taped on the fridge behind him"
+  },
+  {
+   "text": "He locked my console in his closet until I beat Max on the chart.",
+   "label": "locked away",
+   "headline": "console locked away",
+   "image": "{dad} is the only person in the picture, short brown hair and green sweater, in a hallway putting exactly one small flat black game console box on a high closet shelf and turning a small key in the closet door, stern face, no TV in the picture"
+  },
+  {
+   "text": "Next Sunday I worked harder, lost ten to eight again, and Dad took my phone.",
+   "label": "worse",
+   "headline": "lost again, phone gone",
+   "image": "{dad} is the only person in the picture, short brown hair and green sweater, standing in a kitchen holding exactly one phone up high out of reach, frowning, exactly one paper chore chart covered only in colored checkmarks and gold star stickers, the only chart in the picture taped on the fridge behind him, evening"
+  },
+  {
+   "text": "I cried alone at the kitchen table, staring at that unfair chart on the fridge.",
+   "label": "tears",
+   "headline": "crying at the table",
+   "image": "close-up of {girl}, the only person in the picture, two black pigtails and yellow hoodie, sitting alone at a kitchen table, a single tear running down her cheek, sad eyes, dim evening kitchen"
+  },
+  {
+   "text": "But my games never compare hard-mode scores with easy-mode scores, so I split the chart.",
+   "label": "gamer clue",
+   "headline": "split the chart",
+   "image": "{girl} is the only person in the picture, two black pigtails and yellow hoodie, kneeling on a chair at a kitchen table drawing one straight line down the middle of exactly one paper chore chart covered only in colored checkmarks and gold star stickers, the only chart in the picture with a black marker, determined face, lamp light"
+  },
+  {
+   "text": "Dishes were hard mode: I finished six of ten nights, Max just one of two.",
+   "label": "hard mode",
+   "headline": "dishes are hard mode",
+   "image": "{girl} is the only person in the picture, two black pigtails and yellow hoodie, standing on a step stool at a kitchen sink washing a tall stack of dirty plates and pots, sleeves rolled up, tired but proud face, night"
+  },
+  {
+   "text": "Feeding the dog was easy mode: I finished two of two, Max nine of ten.",
+   "label": "easy mode",
+   "headline": "dog is easy mode",
+   "image": "{max} is the only person in the picture, messy orange hair and red t-shirt, pouring dry food into exactly one dog bowl on a kitchen floor, exactly one small brown dog wagging its tail beside the bowl, happy face, morning"
+  },
+  {
+   "text": "Dad gave me ten dish nights because Max is seven, so Max got easy mode.",
+   "label": "the twist",
+   "headline": "Dad gave me hard mode",
+   "image": "{dad} is the only person in the picture, short brown hair and green sweater, standing at a kitchen sink stacking a tall pile of dirty plates and pots on the counter, cheerful face, exactly one small dog bowl on the floor across the kitchen, the only dog bowl in the picture, night"
+  },
+  {
+   "text": "I showed Dad I won both modes, and only lost because I got hard mode.",
+   "label": "proof",
+   "headline": "won both modes",
+   "image": "{dad} is the only person in the picture, short brown hair and green sweater, sitting at a kitchen table reading exactly one paper chore chart covered only in colored checkmarks and gold star stickers, the only chart in the picture with a black line drawn down its middle, stunned face, mouth open, eyebrows raised"
+  },
+  {
+   "text": "Console back, but Dad still says I'm lazy, and I say I'm on hard mode.",
+   "label": "the ending",
+   "headline": "console back",
+   "image": "{dad} is the only person in the picture, short brown hair and green sweater, standing in a living room with arms crossed and a grumpy smile, exactly one small flat black game console box back on a shelf behind him, the only console in the picture, no TV in the picture"
+  }
+ ]
+}
