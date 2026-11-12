@@ -1,0 +1,17 @@
+{
+ "id": "tgescape1112",
+ "lines": [
+  {
+   "voice": "en-US-AndrewMultilingualNeural",
+   "rate": "+6%",
+   "path": "social/studio/media/vo/tgescape1112-vo.mp3",
+   "text": "Keep the kids table busy until the pie. Grandma locked four pies in the Pie Safe. Little kids count pumpkins. Big kids crack ciphers. Same story, same code, two levels. About forty five minutes. No phone needed. Tap the link, and grab it on Etsy."
+  },
+  {
+   "voice": "en-US-AndrewNeural",
+   "rate": "+6%",
+   "path": "social/studio/media/vo/tgescape1112-vo-b.mp3",
+   "text": "Keep the kids table busy until the pie. Grandma locked four pies in the Pie Safe. Little kids count pumpkins. Big kids crack ciphers. Same story, same code, two levels. About forty five minutes. No phone needed. Tap the link, and grab it on Etsy."
+  }
+ ]
+}

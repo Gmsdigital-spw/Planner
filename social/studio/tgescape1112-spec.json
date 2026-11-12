@@ -1,0 +1,78 @@
+{
+ "vo": "social/studio/media/vo/tgescape1112-vo.mp3",
+ "music": "social/studio/media/vo/tgescape1112-music.wav",
+ "product": {
+  "dir": "/social/studio/media/tgescape",
+  "cover": "cover.jpg",
+  "price": "6.99",
+  "pages": 17,
+  "listTitle": "Thanksgiving Escape Room for Kids and Families, Printable Game, 2 Levels Ages 6-9 and 10+, No Phone or QR Code, Kids Table Activity",
+  "strip": [
+   "p-03.png",
+   "p-06.png",
+   "p-09.png",
+   "p-16.png"
+  ],
+  "bg": [
+   "#c8662e",
+   "#5a240f"
+  ],
+  "accent": "#a3461d",
+  "hl": "#ffd34d",
+  "dot": "#ffe6d6"
+ },
+ "phrases": [
+  {
+   "say": "Keep the kids table busy until the pie.",
+   "cap": "Keep the *kids table* | busy until | the *pie*",
+   "scene": "fan",
+   "pages": [
+    "p-04.png",
+    "p-06.png",
+    "p-12.png"
+   ]
+  },
+  {
+   "say": "Grandma locked four pies in the Pie Safe.",
+   "cap": "Grandma locked | *4 pies* | in the *Pie Safe*",
+   "scene": "hook",
+   "page": "p-03.png",
+   "badge": "4 PIES"
+  },
+  {
+   "say": "Little kids count pumpkins. Big kids crack ciphers.",
+   "cap": "Little kids | *count pumpkins* | big kids | crack *ciphers*",
+   "scene": "grid",
+   "pages": [
+    "p-06.png",
+    "p-08.png",
+    "p-05.png",
+    "p-09.png"
+   ]
+  },
+  {
+   "say": "Same story, same code, two levels.",
+   "cap": "Same story | same code | *2 levels*",
+   "scene": "fan",
+   "pages": [
+    "p-05.png",
+    "p-04.png"
+   ]
+  },
+  {
+   "say": "About forty five minutes. No phone needed.",
+   "cap": "About *45 minutes* | *no phone* needed",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "vo": "social/studio/media/vo/escadult1112-vo.mp3",
+ "music": "social/studio/media/vo/escadult1112-music.wav",
+ "product": {
+  "dir": "/social/studio/media/escadult",
+  "cover": "cover.jpg",
+  "price": "7.99",
+  "pages": 16,
+  "listTitle": "Christmas Escape Room for Adults and Teens: Printable Party Game for Office and Friends, 8 Puzzles",
+  "strip": [
+   "p-03.png",
+   "p-06.png",
+   "p-09.png",
+   "p-12.png"
+  ],
+  "bg": [
+   "#8a2433",
+   "#2e0a12"
+  ],
+  "accent": "#2f5a46",
+  "hl": "#f0c870",
+  "dot": "#ffe3e6"
+ },
+ "phrases": [
+  {
+   "say": "Snowed in, and every present is locked in the vault.",
+   "cap": "*Snowed in* | every present | *locked* in the vault",
+   "scene": "grid",
+   "pages": [
+    "p-04.png",
+    "p-06.png",
+    "p-08.png",
+    "p-10.png"
+   ]
+  },
+  {
+   "say": "Eight puzzles. Each answer opens the next lock.",
+   "cap": "*8 puzzles* | each answer opens | the *next lock*",
+   "scene": "fan",
+   "pages": [
+    "p-05.png",
+    "p-07.png",
+    "p-11.png"
+   ]
+  },
+  {
+   "say": "A clock grid, a cipher, an ornament scale.",
+   "cap": "A *clock grid* | a *cipher* | an *ornament scale*",
+   "scene": "fan",
+   "pages": [
+    "p-06.png",
+    "p-04.png",
+    "p-08.png"
+   ]
+  },
+  {
+   "say": "Hint cards keep every team moving.",
+   "cap": "*Hint cards* keep | every team *moving*",
+   "scene": "hook",
+   "page": "p-12.png",
+   "badge": "8 HINTS"
+  },
+  {
+   "say": "Teams of two to five. About one hour.",
+   "cap": "Teams of *2 to 5* | about *1 hour*",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

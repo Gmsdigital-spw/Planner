@@ -1,0 +1,17 @@
+{
+ "id": "escadult1112",
+ "lines": [
+  {
+   "voice": "en-US-AndrewMultilingualNeural",
+   "rate": "+6%",
+   "path": "social/studio/media/vo/escadult1112-vo.mp3",
+   "text": "Snowed in, and every present is locked in the vault. Eight puzzles. Each answer opens the next lock. A clock grid, a cipher, an ornament scale. Hint cards keep every team moving. Teams of two to five. About one hour. Tap the link, and grab it on Etsy."
+  },
+  {
+   "voice": "en-US-AndrewNeural",
+   "rate": "+6%",
+   "path": "social/studio/media/vo/escadult1112-vo-b.mp3",
+   "text": "Snowed in, and every present is locked in the vault. Eight puzzles. Each answer opens the next lock. A clock grid, a cipher, an ornament scale. Hint cards keep every team moving. Teams of two to five. About one hour. Tap the link, and grab it on Etsy."
+  }
+ ]
+}
