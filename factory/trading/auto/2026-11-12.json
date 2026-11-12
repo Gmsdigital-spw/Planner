@@ -16,16 +16,6 @@
    "stopId": "cf140fe1-01da-4375-904a-d1ec75025c83",
    "since": "2026-11-12T16:15:00Z",
    "qty": "0.014308481"
-  },
-  "XOM": {
-   "entry": 170.186,
-   "stop0": 169.54,
-   "stop": 170.19,
-   "target": 171.48,
-   "high": 170.91,
-   "stopId": "2e6457a5-813e-4a41-9a5b-adab7ff7077c",
-   "since": "2026-11-12T18:05:00Z",
-   "qty": "0.034961747"
   }
  },
  "trades": [
@@ -34,6 +24,13 @@
    "entry": 58.758,
    "exit": 58.51,
    "r": -1.0,
+   "why": "stop filled"
+  },
+  {
+   "sym": "XOM",
+   "entry": 170.186,
+   "exit": 170.19,
+   "r": 0.01,
    "why": "stop filled"
   }
  ],
@@ -78,14 +75,14 @@
   }
  ],
  "done": null,
- "runs": 410,
+ "runs": 416,
  "lastSignal": {
   "QQQ": "2026-11-12T16:15:00Z",
   "XLF": "2026-11-12T16:20:00Z",
   "XOM": "2026-11-12T18:05:00Z"
  },
- "lastRun": "14:36",
- "lastNote": "equity $24.78, day -0.12, 2 open, 3 entries; no new entries now (8:35-2:00 CT window)",
+ "lastRun": "14:42",
+ "lastNote": "equity $24.78, day -0.12, 1 open, 3 entries; no new entries now (8:35-2:00 CT window)",
  "equity": 24.78,
  "dayPnl": -0.12,
  "watch": [
