@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-12-r6-f61c", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+party+games&sort_on=score&limit=25&offset=25", "tag": "s_christmas+party+games_o25"}]}

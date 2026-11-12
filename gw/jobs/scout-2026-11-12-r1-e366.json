@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-12-r1-e366", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+mystery+game&sort_on=score&limit=25&offset=0", "tag": "s_christmas+mystery+game_o0"}]}

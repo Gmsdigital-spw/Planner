@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-12-r3-c0ac", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=classroom+christmas+party&sort_on=score&limit=25&offset=0", "tag": "s_classroom+christmas+party_o0"}]}

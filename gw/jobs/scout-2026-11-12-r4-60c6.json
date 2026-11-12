@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-12-r4-60c6", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=hanukkah+games&sort_on=score&limit=25&offset=0", "tag": "s_hanukkah+games_o0"}]}
