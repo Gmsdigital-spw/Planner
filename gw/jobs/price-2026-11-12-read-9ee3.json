@@ -1,0 +1,21 @@
+{
+ "id": "price-2026-11-12-read-9ee3",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/active?limit=100"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/transactions?limit=100"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457"
+  }
+ ]
+}
