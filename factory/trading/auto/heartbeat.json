@@ -1,13 +1,13 @@
 {
- "at": "2026-11-12T13:37:10.673395-06:00",
- "lastRun": "13:37",
+ "at": "2026-11-12T13:39:21.636746-06:00",
+ "lastRun": "13:39",
  "day": "2026-11-12",
  "status": "ok",
  "note": "equity $24.81, day -0.09, 2 open, 3 entries",
  "loop": true,
- "cycles": 352,
- "runnerStarted": "2026-11-12T08:08:07.733531-06:00",
- "runnerUntil": "2026-11-12T13:38:07.733531-06:00",
+ "cycles": 1,
+ "runnerStarted": "2026-11-12T13:39:19.332814-06:00",
+ "runnerUntil": "2026-11-12T19:09:19.332814-06:00",
  "cadence": "every minute during market hours",
  "mode": "paper"
 }
