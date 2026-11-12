@@ -21,6 +21,7 @@
 - Christmas listings under $3 (Christmas Party Games Bundle $2.99, Awards Kit $1.99): views yes, sales no so far. Check Nov 6.
 - 2026-11-08: 17 listing updates written Oct 29 to Nov 7 and 0 applied (stats 11-07), so the title/tag fixes are untested, not failed. Nov 8 superseding docs test new lead phrases backed by a 100+ fav leader: 'Christmas Gift Exchange Dice Game' (Party Bundle 4604185747), 'Office Christmas Party Games' kept (4606483866). Check 7 days after Apply: views vs 0.
 - 2026-11-01 (Sunday party lane vs rest, stats 10-31 vs 10-24): party lane 14 listings, 31 views7, 0 favs7, 2 of 3 sales; rest 18 listings, 18 views7, 2 favs7, 1 sale. Under 100 views per side = too early for What works. Re-measure Sun Nov 8.
+- 2026-11-12: 28 of 29 ready cards un-applied (stats 11-11), so title fixes stay untested. 3 superseding cards tonight: Party Kit lead 'Christmas Gift Exchange Dice Game' minus Left Right (Nov 16 build) plus 'Pass the Gift' (leaders 120/98/52 favs); Office keeps its live head phrase (0 views in 12 days with it) and moves 5 tags to Etsy market phrases (coworker, team building, corporate, employee); Scavenger 'Christmas Scavenger Hunt for Kids, 48 Printable Clue Cards' (kids side has no leader over 17 favs). Check 7 days after Apply: views7 vs 0/0/1.
 
 ## What doesn't work (tried, failed, or Grayson rejected)
 - 2026-10-21: cream-desk + coffee cup covers (Grayson: bland, all alike).
