@@ -1,7 +1,7 @@
 {
  "id": "ep35",
  "format": "story",
- "rev": 1,
+ "rev": 2,
  "title": "My Dad Said My Games Made Me Lazy on Our Chore Chart #shorts",
  "title_card": "The Chore Chart Paradox",
  "voice": "ava",
@@ -19,19 +19,19 @@
    "text": "Dad said gaming made me lazy on our chore chart, so who really worked harder?",
    "label": "hook",
    "headline": "who really worked harder",
-   "image": "{dad} is the only person in the picture, short brown hair and green sweater, standing in a kitchen pointing angrily at exactly one paper chore chart covered only in colored checkmarks and gold star stickers, the only chart in the picture, taped on the fridge, frowning, mouth open talking, evening light"
+   "image": "{dad} is the only person in the picture, short brown hair and green sweater, standing in a kitchen pointing angrily at exactly one plain white paper grid chart whose boxes hold only colored checkmarks, a blank empty white strip along its top edge, the only chart in the picture, taped on the fridge, frowning, mouth open talking, evening light"
   },
   {
    "text": "On Sunday's fridge chart, my brother Max finished ten of twelve chores; I finished eight.",
    "label": "the score",
    "headline": "Max ten, me eight",
-   "image": "{girl} is the only person in the picture, two black pigtails and yellow hoodie, standing in a kitchen staring up at exactly one paper chore chart covered only in colored checkmarks and gold star stickers, the only chart in the picture, taped on the fridge, one row of checkmarks longer than the other, worried face, morning light"
+   "image": "{girl} is the only person in the picture, two black pigtails and yellow hoodie, standing in a kitchen staring up at exactly one plain white paper grid chart whose boxes hold only colored checkmarks, a blank empty white strip along its top edge, the only chart in the picture, taped on the fridge, one row of checkmarks longer than the other, worried face, morning light"
   },
   {
    "text": "Dad said Max is only seven and beats me anyway, so games made me lazy.",
    "label": "the charge",
    "headline": "games made me lazy",
-   "image": "{dad} is the only person in the picture, short brown hair and green sweater, standing in a kitchen with arms crossed, stern face, mouth open talking, exactly one paper chore chart covered only in colored checkmarks and gold star stickers, the only chart in the picture taped on the fridge behind him"
+   "image": "{dad} is the only person in the picture, short brown hair and green sweater, standing in a kitchen with arms crossed, stern face, mouth open talking, exactly one plain white paper grid chart whose boxes hold only colored checkmarks, a blank empty white strip along its top edge, the only chart in the picture taped on the fridge behind him"
   },
   {
    "text": "He locked my console in his closet until I beat Max on the chart.",
@@ -43,7 +43,7 @@
    "text": "Next Sunday I worked harder, lost ten to eight again, and Dad took my phone.",
    "label": "worse",
    "headline": "lost again, phone gone",
-   "image": "{dad} is the only person in the picture, short brown hair and green sweater, standing in a kitchen holding exactly one phone up high out of reach, frowning, exactly one paper chore chart covered only in colored checkmarks and gold star stickers, the only chart in the picture taped on the fridge behind him, evening"
+   "image": "{dad} is the only person in the picture, short brown hair and green sweater, standing in a kitchen holding exactly one phone up high out of reach, frowning, exactly one plain white paper grid chart whose boxes hold only colored checkmarks, a blank empty white strip along its top edge, the only chart in the picture taped on the fridge behind him, evening"
   },
   {
    "text": "I cried alone at the kitchen table, staring at that unfair chart on the fridge.",
@@ -55,7 +55,7 @@
    "text": "But my games never compare hard-mode scores with easy-mode scores, so I split the chart.",
    "label": "gamer clue",
    "headline": "split the chart",
-   "image": "{girl} is the only person in the picture, two black pigtails and yellow hoodie, kneeling on a chair at a kitchen table drawing one straight line down the middle of exactly one paper chore chart covered only in colored checkmarks and gold star stickers, the only chart in the picture with a black marker, determined face, lamp light"
+   "image": "{girl} is the only person in the picture, two black pigtails and yellow hoodie, sitting at a kitchen table holding a black marker and drawing one thick straight black line from top to bottom down the middle of exactly one plain white paper grid chart whose boxes hold only colored checkmarks, a blank empty white strip along its top edge, the only chart in the picture, the line clearly cutting the chart into a left half and a right half, determined face, lamp light"
   },
   {
    "text": "Dishes were hard mode: I finished six of ten nights, Max just one of two.",
@@ -79,7 +79,7 @@
    "text": "I showed Dad I won both modes, and only lost because I got hard mode.",
    "label": "proof",
    "headline": "won both modes",
-   "image": "{dad} is the only person in the picture, short brown hair and green sweater, sitting at a kitchen table reading exactly one paper chore chart covered only in colored checkmarks and gold star stickers, the only chart in the picture with a black line drawn down its middle, stunned face, mouth open, eyebrows raised"
+   "image": "{dad} is the only person in the picture, short brown hair and green sweater, sitting at a kitchen table reading exactly one plain white paper grid chart whose boxes hold only colored checkmarks, a blank empty white strip along its top edge, the only chart in the picture with a black line drawn down its middle, stunned face, mouth open, eyebrows raised"
   },
   {
    "text": "Console back, but Dad still says I'm lazy, and I say I'm on hard mode.",
