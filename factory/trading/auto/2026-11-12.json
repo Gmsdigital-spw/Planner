@@ -70,13 +70,13 @@
   }
  ],
  "done": "closed for the day",
- "runs": 420,
+ "runs": 421,
  "lastSignal": {
   "QQQ": "2026-11-12T16:15:00Z",
   "XLF": "2026-11-12T16:20:00Z",
   "XOM": "2026-11-12T18:05:00Z"
  },
- "lastRun": "15:16",
+ "lastRun": "16:02",
  "lastNote": "outside market hours",
  "equity": 24.79,
  "dayPnl": -0.11,
