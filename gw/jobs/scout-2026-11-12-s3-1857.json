@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-12-s3-1857", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+never+have+i+ever&sort_on=score&limit=25&offset=0", "tag": "s_christmas+never+have+i+ever"}]}

@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-12-s6-6ceb", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+couples+game&sort_on=score&limit=25&offset=0", "tag": "s_christmas+couples+game"}]}

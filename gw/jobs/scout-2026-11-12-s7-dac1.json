@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-12-s7-dac1", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+decorating+contest&sort_on=score&limit=25&offset=0", "tag": "s_christmas+decorating+contest"}]}
