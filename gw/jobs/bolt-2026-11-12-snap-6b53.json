@@ -1,0 +1,48 @@
+{
+ "id": "bolt-2026-11-12-snap-6b53",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/active?limit=100&includes=Images",
+   "tag": "active"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/receipts?limit=100",
+   "tag": "receipts"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/reviews?limit=100",
+   "tag": "reviews"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4613237408",
+   "tag": "draft-4613237408"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6aedd4e2ca6faf1ded0a1b38",
+   "tag": "chk-pin-prod-cookie-exchange-kit-n3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6aedd4e3587c3d1e7c76ba8b",
+   "tag": "chk-pin-prod-xmas-escape-room-n2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts/6aef25596a10a5e76a8d896d",
+   "tag": "chk-pin-prod-advent-activities-p1"
+  }
+ ]
+}
