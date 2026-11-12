@@ -214,10 +214,20 @@
             "listingId": "4602816114",
             "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-11/4602816114/video.mp4",
             "zernioPostId": "6af4bb2e0458f270e9dcc537",
+            "status": "failed",
+            "postUrl": null,
+            "error": "Pinterest: \"This site doesn't allow you to save Pins\" (link/domain refused) after 3 attempts; bare etsy.com/listing/<id> link.",
+            "link": "https://www.etsy.com/listing/4602816114"
+        },
+        {
+            "day": "2026-11-12",
+            "listingId": "4605581711",
+            "videoUrl": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-12/4605581711/video.mp4",
+            "zernioPostId": "6af60becb6f697e51d2463c9",
             "status": "scheduled",
             "postUrl": null,
             "error": null,
-            "link": "https://www.etsy.com/listing/4602816114"
+            "link": "https://www.etsy.com/listing/4605581711"
         }
     ]
 }
