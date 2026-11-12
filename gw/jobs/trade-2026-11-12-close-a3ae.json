@@ -1,0 +1,1 @@
+{"id":"trade-2026-11-12-close-a3ae","ops":[{"op":"alpaca","data":true,"path":"/stocks/bars?symbols=SPY&timeframe=5Min&limit=78&start=2026-11-12T14:30:00Z&feed=iex"},{"op":"alpaca","path":"/bankroll"},{"op":"alpaca","path":"/positions"},{"op":"alpaca","path":"/orders?status=open"},{"op":"alpaca","path":"/orders?status=closed&after=2026-11-12T20:40:00Z&limit=20"}]}
