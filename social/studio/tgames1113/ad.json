@@ -1,0 +1,224 @@
+{
+ "dur": 21.84,
+ "vo": "social/studio/media/vo/tgames1113-vo.mp3",
+ "music": "social/studio/media/vo/tgames1113-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/tgames",
+   "cover": "cover.jpg",
+   "price": "4.99",
+   "pages": 11,
+   "listTitle": "Thanksgiving Games Printable, 7 Game Bundle for Family, Kids and Adults, Trivia, Would You Rather, Scavenger Hunt, Kids Table Fun",
+   "strip": [
+    "p-03.png",
+    "p-06.png",
+    "p-09.png",
+    "p-10.png"
+   ],
+   "bg": [
+    "#c0612f",
+    "#5a2410"
+   ],
+   "accent": "#2f5d3a",
+   "hl": "#ffd34d",
+   "dot": "#ffe9dc"
+  },
+  "scenes": [
+   {
+    "page": "p-09.png",
+    "badge": "7 GAMES",
+    "type": "hook",
+    "t0": 0,
+    "t1": 4.64
+   },
+   {
+    "page": "p-03.png",
+    "type": "pan",
+    "t0": 4.64,
+    "t1": 7.39,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-06.png",
+     "p-07.png",
+     "p-09.png"
+    ],
+    "type": "fan",
+    "t0": 7.39,
+    "t1": 10.24,
+    "beats": [
+     7.49,
+     8.39,
+     9.29
+    ]
+   },
+   {
+    "pages": [
+     "p-08.png",
+     "p-10.png",
+     "p-07.png",
+     "p-04.png"
+    ],
+    "type": "grid",
+    "t0": 10.24,
+    "t1": 14.24,
+    "beats": [
+     10.34,
+     11.25,
+     12.15,
+     13.06
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 14.24,
+    "t1": 18.72,
+    "beats": [
+     0.5,
+     1.4,
+     2.2,
+     3.0,
+     3.4
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 18.72,
+    "t1": 22.14
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.34,
+   "*7* games for the | *Thanksgiving* table"
+  ],
+  [
+   2.8,
+   4.2,
+   "Here's what's *inside*"
+  ],
+  [
+   4.64,
+   6.96,
+   "*20* trivia questions | with an *answer key*"
+  ],
+  [
+   7.39,
+   9.8,
+   "*Find the Guest* bingo | gets the room *talking*"
+  ],
+  [
+   10.24,
+   13.8,
+   "*Gratitude A to Z* | and a *scavenger hunt*"
+  ],
+  [
+   14.24,
+   17.17,
+   "*3* to *30* players | just *pens* and *paper*"
+  ],
+  [
+   17.59,
+   18.3,
+   "Tap the *link*"
+  ],
+  [
+   18.72,
+   19.8,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   4.59,
+   "whoosh"
+  ],
+  [
+   7.34,
+   "whoosh"
+  ],
+  [
+   7.49,
+   "pop"
+  ],
+  [
+   8.39,
+   "pop"
+  ],
+  [
+   9.29,
+   "pop"
+  ],
+  [
+   10.19,
+   "whoosh"
+  ],
+  [
+   10.34,
+   "pop"
+  ],
+  [
+   11.25,
+   "pop"
+  ],
+  [
+   12.15,
+   "pop"
+  ],
+  [
+   13.06,
+   "pop"
+  ],
+  [
+   14.19,
+   "whoosh"
+  ],
+  [
+   14.74,
+   "whoosh"
+  ],
+  [
+   17.64,
+   "tap"
+  ],
+  [
+   17.89,
+   "pop"
+  ],
+  [
+   18.67,
+   "whoosh"
+  ],
+  [
+   19.07,
+   "impact"
+  ],
+  [
+   19.52,
+   "pop"
+  ]
+ ]
+}

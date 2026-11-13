@@ -1,0 +1,197 @@
+{
+ "dur": 18.81,
+ "vo": "social/studio/media/vo/games1113-vo.mp3",
+ "music": "social/studio/media/vo/games1113-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/games",
+   "cover": "cover.jpg",
+   "price": "2.99",
+   "pages": 13,
+   "listTitle": "Christmas Party Games Printable Bundle, 8 Games for Office, Family or Classroom, Trivia, Bingo, Would You Rather, Kids and Adults",
+   "strip": [
+    "p-03.png",
+    "p-08.png",
+    "p-09.png",
+    "p-12.png"
+   ],
+   "bg": [
+    "#c8282e",
+    "#560e12"
+   ],
+   "accent": "#a3191e",
+   "hl": "#ffd34d",
+   "dot": "#ffe3e3"
+  },
+  "scenes": [
+   {
+    "page": "p-08.png",
+    "badge": "8 GAMES",
+    "type": "hook",
+    "t0": 0,
+    "t1": 5.01
+   },
+   {
+    "pages": [
+     "p-04.png",
+     "p-07.png",
+     "p-03.png"
+    ],
+    "type": "fan",
+    "t0": 5.01,
+    "t1": 7.01,
+    "beats": [
+     5.11,
+     5.67,
+     6.23
+    ]
+   },
+   {
+    "page": "p-09.png",
+    "type": "pan",
+    "t0": 7.01,
+    "t1": 9.74,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "page": "p-05.png",
+    "type": "hook",
+    "t0": 9.74,
+    "t1": 11.61
+   },
+   {
+    "type": "phone",
+    "t0": 11.61,
+    "t1": 15.69,
+    "beats": [
+     0.45,
+     1.35,
+     1.8,
+     2.6,
+     3.0
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 15.69,
+    "t1": 19.11
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.5,
+   "Guests just | *standing around?*"
+  ],
+  [
+   2.92,
+   4.62,
+   "Hand out | *Find the Guest* bingo"
+  ],
+  [
+   5.01,
+   6.54,
+   "*8* games | one *download*"
+  ],
+  [
+   7.01,
+   9.31,
+   "*Who Am I?* cards | and *carol* fill-ins"
+  ],
+  [
+   9.74,
+   11.16,
+   "*Answer keys* | for the host"
+  ],
+  [
+   11.61,
+   14.16,
+   "*4* to *30* people | just *print* and *play*"
+  ],
+  [
+   14.56,
+   15.28,
+   "Tap the *link*"
+  ],
+  [
+   15.69,
+   16.78,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   4.96,
+   "whoosh"
+  ],
+  [
+   5.11,
+   "pop"
+  ],
+  [
+   5.67,
+   "pop"
+  ],
+  [
+   6.23,
+   "pop"
+  ],
+  [
+   6.96,
+   "whoosh"
+  ],
+  [
+   9.69,
+   "whoosh"
+  ],
+  [
+   11.56,
+   "whoosh"
+  ],
+  [
+   12.06,
+   "whoosh"
+  ],
+  [
+   14.61,
+   "tap"
+  ],
+  [
+   14.86,
+   "pop"
+  ],
+  [
+   15.64,
+   "whoosh"
+  ],
+  [
+   16.04,
+   "impact"
+  ],
+  [
+   16.49,
+   "pop"
+  ]
+ ]
+}
