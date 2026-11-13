@@ -19,7 +19,7 @@ Night Shift builds more like it and Pixel/Herald promote it right. Read by: Nigh
 ### Christmas Party Games Bundle (4597749137)
 - Sold: 1 (Oct 24, 2026) · Review: 5★, buyer says it was fun to use with family
 - Price at sale: $2.99 (Ledger starter price) · Lane: party games · Season: Christmas, ~2 months out
-- Views: 70 total, +0 in 7 days to Nov 11 (stats 11-11; +1 to Nov 5, +22 the week to Oct 31) · Favorites: 0
+- Views: 70 total, +0 in 7 days to Nov 12 (stats 11-12; +1 to Nov 5, +22 the week to Oct 31) · Favorites: 0
 - Cover at sale: real pages on Grayson's Atlas holiday-table scene + one cream label card (since Oct 24)
 - Traffic: unknown (Etsy does not share traffic sources through the API)
 - Copy this: a bundle of several games with the count in the title, Christmas timing, a low starter price for a new shop, real pages in the cover
@@ -27,7 +27,7 @@ Night Shift builds more like it and Pixel/Herald promote it right. Read by: Nigh
 ### Gingerbread House Contest Kit (4600177516)
 - Sold: 1 (Oct 24-25, 2026; $3.37 per the check-up) · Review: none yet
 - Price: $4.49 · Lane: christmas · Season: Christmas
-- Views: 14 total, +5 in 7 days to Nov 11 (stats 11-11; sold on very few views: strong conversion, small sample)
+- Views: 14 total, +0 in 7 days to Nov 12 (stats 11-12; sold on very few views: strong conversion, small sample)
 - Cover at sale: unknown (keeper fills from the product doc)
 - Traffic: unknown
 - Copy this: a specific family activity with a clear event (a contest) at a normal price; a title update to "Gingerbread House Decorating Contest Kit" was proposed Oct 26 (see results.jsonl)
@@ -35,7 +35,7 @@ Night Shift builds more like it and Pixel/Herald promote it right. Read by: Nigh
 ### 2027 Goal Setting Workbook (4598358317)
 - Sold: 1 (Oct 28, 2026; gross $2.69, list $4.49) · Review: none yet
 - Price at sale: list $4.49 · Lane: planner · Season: new year, ~2 months out
-- Views: 19 total, +4 in 7 days to Nov 11 (stats 11-11) · Favorites: 1 now (was 2: the shop's first listing favorites)
+- Views: 19 total, +4 in 7 days to Nov 12 (stats 11-12) · Favorites: 1 now (was 2: the shop's first listing favorites)
 - Cover at sale: real pages on Grayson's Atlas scene + one cream label card (layout atlas-binder, since Oct 24)
 - Traffic: unknown
 - Copy this: a dated 2027 planner with the year and "12 Week" in the title under $5, sold 2 months before New Year
@@ -43,7 +43,7 @@ Night Shift builds more like it and Pixel/Herald promote it right. Read by: Nigh
 ### Undated ADHD Planner (4596311765)
 - Sold: 1 (Nov 1, 2026; gross $3.49, list $6.99) · Review: none yet
 - Price at sale: list $6.99 · Lane: planners · Season: new year, ~2 months out
-- Views: 25 total, +9 in 7 days to Nov 11 (stats 11-11) · Favorites: 0
+- Views: 25 total, +2 in 7 days to Nov 12 (stats 11-12) · Favorites: 0
 - Cover at sale: tablet on marigold linen (real Today page on a tablet, printed Brain Dump and Overwhelm Reset pages beside it; cover redo Oct 31, results.jsonl)
 - Traffic: unknown
 - Copy this: a digital-plus-printable planner sold the day after its cover moved to a real page on a tablet; new-year timing, 117 pages named in the copy
@@ -51,7 +51,7 @@ Night Shift builds more like it and Pixel/Herald promote it right. Read by: Nigh
 ### No Buy Year Planner 2027 (4599444986)
 - Sold: 1 (Nov 4, 2026; gross $3.37, list $4.49; sales/etsy-4221095657) · Review: none yet
 - Price at sale: list $4.49 · Lane: money (planner) · Season: new year, ~2 months out
-- Views: 11 total, +7 in 7 days to Nov 11 (stats 11-11) · Favorites: 1
+- Views: 11 total, +7 in 7 days to Nov 12 (stats 11-12) · Favorites: 1
 - Cover at sale: real pages on Grayson's Atlas binder scene + one cream label card (layout atlas-binder, since Oct 24, results.jsonl)
 - Traffic: unknown
 - Copy this: a dated 2027 money planner with the year and a buyer phrase ("No Buy Year Planner 2027") first in the title, $4.49, sold 2 months before New Year on only 4 views
