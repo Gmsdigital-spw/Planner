@@ -1,0 +1,4 @@
+{"id":"bolt-2026-11-13-check-2148","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/listings/4613237408","tag":"trivia-draft"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"}]}
