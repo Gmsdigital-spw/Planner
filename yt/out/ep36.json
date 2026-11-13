@@ -2,8 +2,8 @@
  "id": "ep36",
  "format": "story",
  "duration": 65.7,
- "bytes": 4445974,
- "mb": 4.24,
+ "bytes": 4398363,
+ "mb": 4.19,
  "width": 1080,
  "height": 1920,
  "scenes": [
@@ -75,5 +75,6 @@
  "fakeTts": false,
  "tts": "edge",
  "voice": "andrew",
- "art": "stickfigure"
+ "art": "stickfigure",
+ "splice": "scene 1 (0-5.09 s) from rev 1 (rev 2 drew two bills), 0.4 s crossfade at 4.89 s into rev 2; identical line timings; rev 2 audio throughout"
 }
