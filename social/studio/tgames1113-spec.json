@@ -36,7 +36,7 @@
   {
    "say": "Twenty trivia questions with an answer key.",
    "cap": "*20* trivia questions | with an *answer key*",
-   "scene": "pan",
+   "scene": "hook",
    "page": "p-03.png"
   },
   {
