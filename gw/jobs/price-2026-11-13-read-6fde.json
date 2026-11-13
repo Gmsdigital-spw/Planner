@@ -1,0 +1,1 @@
+{"id":"price-2026-11-13-read-6fde","stopOnError":false,"ops":[{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100"},{"op":"etsy","method":"GET","path":"/shops/68605457/transactions?limit=100"},{"op":"etsy","method":"GET","path":"/shops/68605457"}]}
