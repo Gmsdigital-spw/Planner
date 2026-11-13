@@ -1,0 +1,74 @@
+{
+ "vo": "social/studio/media/vo/games1113-vo.mp3",
+ "music": "social/studio/media/vo/games1113-music.wav",
+ "product": {
+  "dir": "/social/studio/media/games",
+  "cover": "cover.jpg",
+  "price": "2.99",
+  "pages": 13,
+  "listTitle": "Christmas Party Games Printable Bundle, 8 Games for Office, Family or Classroom, Trivia, Bingo, Would You Rather, Kids and Adults",
+  "strip": [
+   "p-03.png",
+   "p-08.png",
+   "p-09.png",
+   "p-12.png"
+  ],
+  "bg": [
+   "#c8282e",
+   "#560e12"
+  ],
+  "accent": "#a3191e",
+  "hl": "#ffd34d",
+  "dot": "#ffe3e3"
+ },
+ "phrases": [
+  {
+   "say": "Guests just standing around at your Christmas party?",
+   "cap": "Guests just | *standing around?*",
+   "scene": "hook",
+   "page": "p-08.png",
+   "badge": "8 GAMES"
+  },
+  {
+   "say": "Hand out Find the Guest bingo.",
+   "cap": "Hand out | *Find the Guest* bingo"
+  },
+  {
+   "say": "Eight games in one download.",
+   "cap": "*8* games | one *download*",
+   "scene": "fan",
+   "pages": [
+    "p-04.png",
+    "p-07.png",
+    "p-03.png"
+   ]
+  },
+  {
+   "say": "Who Am I cards and a carol title fill in.",
+   "cap": "*Who Am I?* cards | and *carol* fill-ins",
+   "scene": "pan",
+   "page": "p-09.png"
+  },
+  {
+   "say": "Answer keys for the host.",
+   "cap": "*Answer keys* | for the host",
+   "scene": "hook",
+   "page": "p-05.png"
+  },
+  {
+   "say": "Four to thirty people. Just print and play.",
+   "cap": "*4* to *30* people | just *print* and *play*",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}

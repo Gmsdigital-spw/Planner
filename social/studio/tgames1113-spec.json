@@ -1,0 +1,79 @@
+{
+ "vo": "social/studio/media/vo/tgames1113-vo.mp3",
+ "music": "social/studio/media/vo/tgames1113-music.wav",
+ "product": {
+  "dir": "/social/studio/media/tgames",
+  "cover": "cover.jpg",
+  "price": "4.99",
+  "pages": 11,
+  "listTitle": "Thanksgiving Games Printable, 7 Game Bundle for Family, Kids and Adults, Trivia, Would You Rather, Scavenger Hunt, Kids Table Fun",
+  "strip": [
+   "p-03.png",
+   "p-06.png",
+   "p-09.png",
+   "p-10.png"
+  ],
+  "bg": [
+   "#c0612f",
+   "#5a2410"
+  ],
+  "accent": "#2f5d3a",
+  "hl": "#ffd34d",
+  "dot": "#ffe9dc"
+ },
+ "phrases": [
+  {
+   "say": "Seven games for the Thanksgiving table.",
+   "cap": "*7* games for the | *Thanksgiving* table",
+   "scene": "hook",
+   "page": "p-09.png",
+   "badge": "7 GAMES"
+  },
+  {
+   "say": "Here is what is inside.",
+   "cap": "Here's what's *inside*"
+  },
+  {
+   "say": "Twenty trivia questions with an answer key.",
+   "cap": "*20* trivia questions | with an *answer key*",
+   "scene": "pan",
+   "page": "p-03.png"
+  },
+  {
+   "say": "Find the Guest bingo gets the whole room talking.",
+   "cap": "*Find the Guest* bingo | gets the room *talking*",
+   "scene": "fan",
+   "pages": [
+    "p-06.png",
+    "p-07.png",
+    "p-09.png"
+   ]
+  },
+  {
+   "say": "Gratitude A to Z and a scavenger hunt for kids and grown ups.",
+   "cap": "*Gratitude A to Z* | and a *scavenger hunt*",
+   "scene": "grid",
+   "pages": [
+    "p-08.png",
+    "p-10.png",
+    "p-07.png",
+    "p-04.png"
+   ]
+  },
+  {
+   "say": "Three to thirty players. Just pens and paper.",
+   "cap": "*3* to *30* players | just *pens* and *paper*",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}
