@@ -1,0 +1,90 @@
+{
+ "id": "ep36",
+ "format": "story",
+ "rev": 1,
+ "title": "My Dad Blamed My Games for Our Phone Bill #shorts",
+ "title_card": "The Porch Data Leak",
+ "voice": "andrew",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "tense",
+ "music_volume": 0.05,
+ "cast": {
+  "boy": "a stick-figure boy with a round white head, dot eyes, thin black limbs, short spiky black hair and a red hoodie",
+  "dad": "a stick-figure father with a round white head, dot eyes, thin black limbs, short brown hair, round glasses and a green flannel shirt"
+ },
+ "lines": [
+  {
+   "text": "Dad said my phone games caused our sixty-dollar data charge, so who really used it?",
+   "label": "hook",
+   "headline": "who really used the data",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, standing in a kitchen holding up exactly one plain white paper phone bill whose page holds only thin gray lines and one red circle, a blank empty white strip along its top edge, no words or numbers, the only bill in the picture, shocked face, pointing at exactly one smartphone lying on the table, the only phone in the picture, evening light"
+  },
+  {
+   "text": "Dad swore, \"My phone's always on Wi-Fi, even when I watch ballgames on the porch.\"",
+   "label": "the plant",
+   "headline": "Dad always on Wi-Fi",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, sitting in exactly one lawn chair on a wooden back porch at dusk, smiling, watching a ballgame on exactly one smartphone held sideways, the screen shows a tiny green field with no text"
+  },
+  {
+   "text": "So he took my phone away for a month, sure the extra charges would stop.",
+   "label": "phone gone",
+   "headline": "phone taken a month",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, standing in a hallway dropping exactly one smartphone into one open desk drawer, stern face, evening"
+  },
+  {
+   "text": "One week later, our data was nearly gone again, while my phone stayed locked away.",
+   "label": "still gone",
+   "headline": "data gone again",
+   "image": "close-up of {dad}, the only person in the picture, short brown hair, round glasses and green flannel shirt, staring at exactly one plain white paper phone bill whose page holds only thin gray lines and one red circle, a blank empty white strip along its top edge, no words or numbers, the only bill in the picture in his hands, eyes wide, mouth open, kitchen at night"
+  },
+  {
+   "text": "Dad said I was sneaking games, so he locked my console in his closet too.",
+   "label": "console too",
+   "headline": "console locked too",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, putting exactly one small flat black game console box onto a high closet shelf, the only console in the picture, frowning, no TV in the picture"
+  },
+  {
+   "text": "I sat alone on the stairs, grounded from everything for data I never even touched.",
+   "label": "alone",
+   "headline": "grounded alone",
+   "image": "close-up of {boy}, the only person in the picture, short spiky black hair and red hoodie, sitting alone on a staircase hugging his knees, a single tear running down his cheek, dim hallway light"
+  },
+  {
+   "text": "My gamer brain clicked: the porch is our worst lag spot, farthest from the router.",
+   "label": "gamer clue",
+   "headline": "porch is the lag spot",
+   "image": "close-up of {boy}, the only person in the picture, short spiky black hair and red hoodie, sitting up in bed in his dark bedroom, eyes wide, one finger raised as if an idea just hit, exactly one small black wifi router with two antennas glowing on his desk beside him, the only router in the picture"
+  },
+  {
+   "text": "When Dad went inside for snacks, I checked his phone, still streaming the porch ballgame.",
+   "label": "the test",
+   "headline": "checking Dad's phone",
+   "image": "{boy} is the only person in the picture, short spiky black hair and red hoodie, standing on a wooden back porch at dusk beside exactly one empty lawn chair, holding exactly one smartphone that shows a tiny green ballgame field with no text, sneaky glance over his shoulder"
+  },
+  {
+   "text": "His Wi-Fi bars were nearly empty, yet the ballgame played perfectly smooth, with zero lag.",
+   "label": "zero lag",
+   "headline": "empty bars, zero lag",
+   "image": "close-up of {boy}, the only person in the picture, short spiky black hair and red hoodie, on the porch at dusk staring at exactly one smartphone in his hands, eyebrows raised in surprise, the phone screen shows a smooth green ballgame field with no text"
+  },
+  {
+   "text": "His settings showed why: the phone had quietly switched over to our paid cell data.",
+   "label": "the twist",
+   "headline": "switched to cell data",
+   "image": "{boy} is the only person in the picture, short spiky black hair and red hoodie, on the porch at dusk holding exactly one smartphone up toward the viewer, the screen shows a simple bar chart with one very tall bar and no words or numbers, proud determined face"
+  },
+  {
+   "text": "Many phones do that when Wi-Fi gets weak, so every porch ballgame ate our data.",
+   "label": "real reason",
+   "headline": "phones do this",
+   "image": "{boy} is the only person in the picture, short spiky black hair and red hoodie, standing in a backyard at dusk pointing from the wooden back porch toward a distant upstairs house window, a dotted line of fading wifi arcs between them, knowing face"
+  },
+  {
+   "text": "Dad switched that setting off, gave my console back, and still blames my games anyway.",
+   "label": "the ending",
+   "headline": "console back, still blamed",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, standing in a living room doorway at night with arms crossed and a grumpy smile, exactly one small flat black game console box back on a shelf behind him, the only console in the picture, no TV in the picture"
+  }
+ ]
+}
