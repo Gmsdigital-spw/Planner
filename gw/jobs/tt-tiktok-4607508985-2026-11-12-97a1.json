@@ -1,0 +1,59 @@
+{
+ "id": "tt-tiktok-4607508985-2026-11-12-97a1",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "postproxy",
+   "method": "POST",
+   "path": "/posts",
+   "tag": "tt-tiktok-4607508985-2026-11-12",
+   "body": {
+    "post": {
+     "body": "An escape room for your office party. 8 puzzles, each answer opens the next lock. Teams of 2 to 5, about an hour. Link in bio.\n\n#escaperoom #christmasparty #officeparty #partygames #christmasgames"
+    },
+    "profiles": [
+     "tiktok"
+    ],
+    "media": [
+     "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/social/2026-11-12/4607508985/video-small.mp4"
+    ],
+    "platforms": {
+     "tiktok": {
+      "privacy_status": "PUBLIC_TO_EVERYONE",
+      "made_with_ai": true
+     }
+    }
+   }
+  },
+  {
+   "op": "postproxy",
+   "method": "GET",
+   "path": "/posts/2xtKl5y",
+   "tag": "2xtKl5y"
+  },
+  {
+   "op": "postproxy",
+   "method": "GET",
+   "path": "/posts/xltxzE3",
+   "tag": "xltxzE3"
+  },
+  {
+   "op": "postproxy",
+   "method": "GET",
+   "path": "/posts/J5tVJjP",
+   "tag": "J5tVJjP"
+  },
+  {
+   "op": "postproxy",
+   "method": "GET",
+   "path": "/posts/latoa3d",
+   "tag": "latoa3d"
+  },
+  {
+   "op": "postproxy",
+   "method": "GET",
+   "path": "/posts/RGt4ebV",
+   "tag": "RGt4ebV"
+  }
+ ]
+}
