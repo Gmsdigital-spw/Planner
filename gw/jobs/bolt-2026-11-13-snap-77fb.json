@@ -1,0 +1,10 @@
+{"id":"bolt-2026-11-13-snap-77fb","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457","tag":"shop"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=draft&limit=100","tag":"drafts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"},
+{"op":"etsy","method":"GET","path":"/listings/4613237408","tag":"draftchk-4613237408"},
+{"op":"zernio","method":"GET","path":"/posts/6af076ee8fed42b4c1c3a4a1","tag":"pinchk-pin-prod-xmas-party-mega-bundle-q1"},
+{"op":"zernio","method":"GET","path":"/posts/6af076efb7adf0ec399f2bb0","tag":"pinchk-pin-prod-xmas-escape-room-adults-q1"}
+]}
