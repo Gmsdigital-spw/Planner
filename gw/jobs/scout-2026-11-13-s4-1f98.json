@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-13-s4-1f98", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=new+years+eve+invitation&sort_on=score&limit=25", "tag": "s_new+years+eve+invitation_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+reindeer+games&sort_on=score&limit=25", "tag": "s_christmas+reindeer+games_o0"}]}

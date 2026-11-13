@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-13-s2-8538", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+who+am+i+game&sort_on=score&limit=25", "tag": "s_christmas+who+am+i+game_o0"}, {"op": "etsy", "method": "GET", "path": "/listings/active?keywords=christmas+eve+games&sort_on=score&limit=25", "tag": "s_christmas+eve+games_o0"}]}
