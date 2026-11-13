@@ -1,13 +1,13 @@
 {
- "at": "2026-11-12T16:02:22.653017-06:00",
- "lastRun": "16:02",
- "day": "2026-11-12",
- "status": "closed",
- "note": "outside market hours",
+ "at": "2026-11-13T08:03:11.386106-06:00",
+ "lastRun": "08:03",
+ "day": "2026-11-13",
+ "status": "waiting",
+ "note": "waiting for the open (8:30 CT)",
  "loop": true,
  "cycles": 1,
- "runnerStarted": "2026-11-12T16:02:22.652341-06:00",
- "runnerUntil": "2026-11-12T21:32:22.652341-06:00",
+ "runnerStarted": "2026-11-13T08:03:11.385795-06:00",
+ "runnerUntil": "2026-11-13T13:33:11.385795-06:00",
  "cadence": "every minute during market hours",
  "mode": "paper"
 }
