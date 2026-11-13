@@ -4,28 +4,7 @@
  "equityOpen": 24.77,
  "entries": 2,
  "lostToday": [],
- "positions": {
-  "XLF": {
-   "entry": 58.578,
-   "stop0": 58.42,
-   "stop": 58.42,
-   "target": 58.89,
-   "high": 58.6,
-   "stopId": "881ed192-4e1d-468e-8d09-9e94fd23a6be",
-   "since": "2026-11-13T16:25:00Z",
-   "qty": "0.168664003"
-  },
-  "BAC": {
-   "entry": 50.728,
-   "stop0": 50.54,
-   "stop": 50.54,
-   "target": 51.1,
-   "high": 50.84,
-   "stopId": "8532bde3-9427-4670-90d5-92d5cca1cff1",
-   "since": "2026-11-13T16:30:00Z",
-   "qty": "0.116897965"
-  }
- },
+ "positions": {},
  "trades": [],
  "actions": [
   {
@@ -47,16 +26,22 @@
    "target": 51.1,
    "status": 200,
    "fill": 50.728
+  },
+  {
+   "t": "14:45",
+   "do": "flatten",
+   "why": "2:45 PM flat",
+   "status": 207
   }
  ],
- "done": null,
- "runs": 424,
+ "done": "closed for the day",
+ "runs": 429,
  "lastSignal": {
   "XLF": "2026-11-13T16:25:00Z",
   "BAC": "2026-11-13T16:30:00Z"
  },
- "lastRun": "14:40",
- "lastNote": "equity $24.76, day -0.01, 2 open, 2 entries; no new entries now (8:35-2:00 CT window)",
+ "lastRun": "14:45",
+ "lastNote": "flat for the day, P/L -0.01",
  "equity": 24.76,
  "dayPnl": -0.01,
  "watch": [
