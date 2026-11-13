@@ -1,0 +1,155 @@
+{
+ "id": "mech-2026-11-13-pinstats-f461",
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aef255a6a10a5e76a8d897f",
+   "tag": "pin-prod-xmas-office-party-games-p1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aef255af4272d93a4346fd6",
+   "tag": "pin-prod-xmas-party-mega-bundle-p1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aef255a6a10a5e76a8d8972",
+   "tag": "pin-prod-xmas-coupon-book-p1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aef25596a10a5e76a8d896d",
+   "tag": "pin-prod-advent-activities-p1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aedd4e3587c3d1e7c76ba8b",
+   "tag": "pin-prod-xmas-escape-room-n2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aedd4e2ca6faf1ded0a1b38",
+   "tag": "pin-prod-cookie-exchange-kit-n3"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aef25596a10a5e76a8d8968",
+   "tag": "pin-prod-xmas-murder-mystery-8-p1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aef25596a10a5e76a8d8963",
+   "tag": "pin-prod-secret-santa-kit-p1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aedd4e215bc4d0d9772eea0",
+   "tag": "pin-prod-xmas-escape-room-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aedd4e115bc4d0d9772ee97",
+   "tag": "pin-prod-xmas-coupon-book-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aedd4e115bc4d0d9772ee92",
+   "tag": "pin-prod-cookie-exchange-kit-n2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aedd4e0587c3d1e7c76ba7c",
+   "tag": "pin-prod-advent-activities-n2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aec8424cd9ba3848b1bd867",
+   "tag": "pin-prod-pink-christmas-verse-art-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aec8423cd9ba3848b1bd85c",
+   "tag": "pin-prod-xmas-office-party-games-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aec8423cd9ba3848b1bd852",
+   "tag": "pin-prod-xmas-escape-room-adults-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aec8422e4114d8be5bfd8e4",
+   "tag": "pin-prod-xmas-scavenger-hunt-n2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aeb31ed4b7159644b16764c",
+   "tag": "pin-prod-friendsgiving-kit-n2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aeb31ed4b7159644b167642",
+   "tag": "pin-prod-secret-santa-kit-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aec8422cd9ba3848b1bd846",
+   "tag": "pin-prod-xmas-party-mega-bundle-n2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aec8422cd9ba3848b1bd83f",
+   "tag": "pin-prod-xmas-murder-mystery-8-n2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aeb31ece9ce01e218db56b8",
+   "tag": "pin-prod-secret-santa-kit-n2"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aeb31ec9fd5d3bcdaa35b7e",
+   "tag": "pin-prod-friendsgiving-kit-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aeb31eb4b7159644b167634",
+   "tag": "pin-prod-nye-games-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aea2977174b40d4fc2007df",
+   "tag": "pin-prod-santa-mail-bundle-n1"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/analytics?postId=6aea2976174b40d4fc2007d2",
+   "tag": "pin-prod-xmas-scavenger-hunt-n1"
+  }
+ ]
+}
