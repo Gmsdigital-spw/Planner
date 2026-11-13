@@ -20,7 +20,7 @@
    "stop0": 50.54,
    "stop": 50.54,
    "target": 51.1,
-   "high": 50.825,
+   "high": 50.84,
    "stopId": "8532bde3-9427-4670-90d5-92d5cca1cff1",
    "since": "2026-11-13T16:30:00Z",
    "qty": "0.116897965"
@@ -50,15 +50,15 @@
   }
  ],
  "done": null,
- "runs": 394,
+ "runs": 400,
  "lastSignal": {
   "XLF": "2026-11-13T16:25:00Z",
   "BAC": "2026-11-13T16:30:00Z"
  },
- "lastRun": "14:10",
- "lastNote": "equity $24.78, day +0.01, 2 open, 2 entries; no new entries now (8:35-2:00 CT window)",
- "equity": 24.78,
- "dayPnl": 0.01,
+ "lastRun": "14:16",
+ "lastNote": "equity $24.77, day +0.00, 2 open, 2 entries; no new entries now (8:35-2:00 CT window)",
+ "equity": 24.77,
+ "dayPnl": 0.0,
  "watch": [
   "SPY",
   "QQQ",
