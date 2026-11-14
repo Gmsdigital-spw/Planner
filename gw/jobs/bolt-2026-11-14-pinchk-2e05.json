@@ -1,0 +1,8 @@
+{"id":"bolt-2026-11-14-pinchk-2e05","stopOnError":false,"ops":[
+{"op":"zernio","method":"GET","path":"/posts/6af31c52481d79f7da6bf54a","tag":"chk-pin-prod-santa-mail-bundle-r1"},
+{"op":"zernio","method":"GET","path":"/posts/6af31c52b54f9b41ec5ad0d5","tag":"chk-pin-prod-secret-santa-kit-r1"},
+{"op":"zernio","method":"GET","path":"/posts/6af31c52b54f9b41ec5ad0ce","tag":"chk-pin-prod-cookie-exchange-kit-r1"},
+{"op":"fetch_images","dir":"bolt-2026-11-14-pinchk-2e05","tag":"imgcheck","items":[
+ {"name":"scav-y1.jpg","url":"https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-scavenger-hunt-y1.jpg"},
+ {"name":"cookie-y1.jpg","url":"https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-cookie-exchange-kit-y1.jpg"},
+ {"name":"escape-y1.jpg","url":"https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-y1.jpg"}]}]}
