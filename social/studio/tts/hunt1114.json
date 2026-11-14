@@ -1,0 +1,17 @@
+{
+ "id": "hunt1114",
+ "lines": [
+  {
+   "voice": "en-US-GuyNeural",
+   "rate": "+6%",
+   "path": "social/studio/media/vo/hunt1114-vo.mp3",
+   "text": "Turn Christmas morning into a treasure hunt. Kids follow the clues to their gift. Easy rhymes for little elves. And tricky riddles for big kids. Every spot comes in both levels, so siblings hunt together. Thirteen pages, ready to print tonight. Tap the link, and grab it on Etsy."
+  },
+  {
+   "voice": "en-US-EricNeural",
+   "rate": "+6%",
+   "path": "social/studio/media/vo/hunt1114-vo-b.mp3",
+   "text": "Turn Christmas morning into a treasure hunt. Kids follow the clues to their gift. Easy rhymes for little elves. And tricky riddles for big kids. Every spot comes in both levels, so siblings hunt together. Thirteen pages, ready to print tonight. Tap the link, and grab it on Etsy."
+  }
+ ]
+}
