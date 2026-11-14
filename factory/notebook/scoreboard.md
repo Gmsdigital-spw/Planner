@@ -1,15 +1,15 @@
-# Scoreboard 2026-11-12 (buyer numbers, from 27 daily snapshots)
+# Scoreboard 2026-11-13 (buyer numbers, from 28 daily snapshots)
 
 Every crew reads this before working. It is the only proof of what buyers want; our own
 inspection scores are not. Written by factory/notebook/scoreboard.py, never by hand.
 
-Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 305 listing views.
+Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 308 listing views.
 
 ## Winners (sold, or 7-day views 5+, or favorited): copy what they do
-- No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  [money] $4.49: 1 sold, 11 views (+7 in 7 d), 1 favs
-- 2027 Goal Setting Workbook Printable, 12 Week Goal Planner [planners] $4.49: 1 sold, 19 views (+4 in 7 d), 1 favs
-- Undated ADHD Planner Digital and Printable, Hyperlinked Go [planners] $6.99: 1 sold, 25 views (+2 in 7 d), 0 favs
-- Christmas Party Games Printable Bundle, 8 Games for Office [party games] $2.99: 1 sold, 70 views (+0 in 7 d), 0 favs
+- No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  [money] $4.49: 1 sold, 13 views (+5 in 7 d), 1 favs
+- 2027 Goal Setting Workbook Printable, 12 Week Goal Planner [planners] $4.49: 1 sold, 19 views (+2 in 7 d), 1 favs
+- Christmas Party Games Printable Bundle, 8 Games for Office [party games] $2.99: 1 sold, 71 views (+1 in 7 d), 0 favs
+- Undated ADHD Planner Digital and Printable, Hyperlinked Go [planners] $6.99: 1 sold, 25 views (+0 in 7 d), 0 favs
 - Gingerbread House Decorating Contest Kit Printable, Judge  [party games] $4.49: 1 sold, 14 views (+0 in 7 d), 0 favs
 - Christmas Coupon Book Printable, Editable PDF: 30 Coupons  [christmas] $4.49: 0 sold, 2 views (+0 in 7 d), 1 favs
 
@@ -42,9 +42,9 @@ Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 305 listing views.
 ## By lane (where buyers look): build more of the top lane, less of the bottom
 | Lane | Listings | Views | Views/listing | Views gained | Sales |
 |---|---|---|---|---|---|
-| planners | 3 | 53 | 17.7 | 7 | 2 |
-| party games | 14 | 109 | 7.8 | 4 | 2 |
-| money | 7 | 116 | 16.6 | 9 | 1 |
+| planners | 3 | 53 | 17.7 | 3 | 2 |
+| party games | 14 | 110 | 7.9 | 4 | 2 |
+| money | 7 | 118 | 16.9 | 7 | 1 |
 | wall art | 2 | 18 | 9.0 | 0 | 0 |
 | christmas | 4 | 7 | 1.8 | 0 | 0 |
 | invitations | 2 | 2 | 1.0 | 0 | 0 |
@@ -53,13 +53,13 @@ Shop: 33 live, 5 sales ($15.16), 3 shop favorites, 1 reviews, 305 listing views.
 ## Every listing
 | Listing | Lane | Price | Views | +1d | +3d | +7d | Favs | Sold |
 |---|---|---|---|---|---|---|---|---|
-| No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  | money | 4.49 | 11 | 0 | 2 | 7 | 1 | 1 |
-| 2027 Goal Setting Workbook Printable, 12 Week Goal Planner | planners | 4.49 | 19 | 0 | 0 | 4 | 1 | 1 |
-| Undated ADHD Planner Digital and Printable, Hyperlinked Go | planners | 6.99 | 25 | 0 | 0 | 2 | 0 | 1 |
-| Christmas Party Games Printable Bundle, 8 Games for Office | party games | 2.99 | 70 | 0 | 0 | 0 | 0 | 1 |
+| No Buy Year Planner 2027 Printable, Low Buy Year Tracker,  | money | 4.49 | 13 | 2 | 4 | 5 | 1 | 1 |
+| 2027 Goal Setting Workbook Printable, 12 Week Goal Planner | planners | 4.49 | 19 | 0 | 0 | 2 | 1 | 1 |
+| Christmas Party Games Printable Bundle, 8 Games for Office | party games | 2.99 | 71 | 1 | 1 | 1 | 0 | 1 |
+| Undated ADHD Planner Digital and Printable, Hyperlinked Go | planners | 6.99 | 25 | 0 | 0 | 0 | 0 | 1 |
 | Gingerbread House Decorating Contest Kit Printable, Judge  | party games | 4.49 | 14 | 0 | 0 | 0 | 0 | 1 |
-| Christmas Charades Printable Game, 120 Cards in 3 Levels f | party games | 3.99 | 5 | 0 | 2 | 3 | 0 | 0 |
-| Christmas Planner Printable 2026, Holiday Budget and Gift  | money | 6.99 | 17 | 0 | 2 | 2 | 0 | 0 |
+| Christmas Planner Printable 2026, Holiday Budget and Gift  | money | 6.99 | 17 | 0 | 0 | 2 | 0 | 0 |
+| Christmas Charades Printable Game, 120 Cards in 3 Levels f | party games | 3.99 | 5 | 0 | 2 | 2 | 0 | 0 |
 | 2027 Planner Printable, Sage Green Minimalist Monthly Cale | planners | 4.99 | 9 | 0 | 0 | 1 | 0 | 0 |
 | Christmas Scavenger Hunt Printable, 24 Rhyming Clue Cards  | party games | 3.99 | 1 | 0 | 0 | 1 | 0 | 0 |
 | ADHD Budget Planner App, Safe to Spend Daily Budget, Paych | money | 8.99 | 41 | 0 | 0 | 0 | 0 | 0 |
