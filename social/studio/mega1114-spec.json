@@ -1,0 +1,116 @@
+{
+ "vo": "social/studio/media/vo/mega1114-vot.mp3",
+ "music": "social/studio/media/vo/mega1114-music.wav",
+ "product": {
+  "dir": "/social/studio/media/mega",
+  "cover": "cover.jpg",
+  "price": "5.99",
+  "pages": 16,
+  "listTitle": "Christmas Party Kit Printable, 6 Games Plus White Elephant Dice Game, Gingerbread House Contest, 12 Awards, Office or Family Party",
+  "strip": [
+   "p-07.png",
+   "p-16.png",
+   "p-09.png",
+   "p-15.png"
+  ],
+  "bg": [
+   "#2f6b4f",
+   "#123224"
+  ],
+  "accent": "#b8333a",
+  "hl": "#ffe9a8",
+  "dot": "#e3f2ea"
+ },
+ "phrases": [
+  {
+   "say": "Hosting the Christmas party this year?",
+   "cap": "*Hosting* the Christmas | party this *year?*",
+   "scene": "fan",
+   "pages": [
+    "p-04.png",
+    "p-06.png",
+    "p-02.png"
+   ]
+  },
+  {
+   "say": "Print one file, and the whole night is planned.",
+   "cap": "Print *one file* | the whole *night* is planned",
+   "scene": "grid",
+   "pages": [
+    "p-03.png",
+    "p-05.png",
+    "p-08.png",
+    "p-06.png"
+   ]
+  },
+  {
+   "say": "Guests mingle with Find the Guest Who.",
+   "cap": "Guests *mingle* with | *Find the Guest Who*",
+   "scene": "hook",
+   "page": "p-07.png",
+   "badge": "MIXER"
+  },
+  {
+   "say": "Swap gifts with the white elephant dice game.",
+   "cap": "Swap gifts with the | *white elephant* *dice* game",
+   "scene": "hook",
+   "page": "p-16.png",
+   "badge": "ROLL 1-6"
+  },
+  {
+   "say": "Then crown the winners with twelve funny awards.",
+   "cap": "Crown the *winners* | with *12* funny awards",
+   "scene": "fan",
+   "pages": [
+    "p-11.png",
+    "p-10.png",
+    "p-09.png"
+   ]
+  },
+  {
+   "say": "Six games and sixteen pages, for family or office.",
+   "cap": "*6 games* *16 pages* | for *family* or *office*",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ],
+ "bounds": [
+  [
+   2.01,
+   2.43
+  ],
+  [
+   4.56,
+   4.98
+  ],
+  [
+   6.85,
+   7.27
+  ],
+  [
+   9.4,
+   9.82
+  ],
+  [
+   12.08,
+   12.5
+  ],
+  [
+   15.36,
+   15.78
+  ],
+  [
+   16.38,
+   16.57
+  ]
+ ]
+}

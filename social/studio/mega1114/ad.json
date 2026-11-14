@@ -1,0 +1,249 @@
+{
+ "dur": 20.13,
+ "vo": "social/studio/media/vo/mega1114-vot.mp3",
+ "music": "social/studio/media/vo/mega1114-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/mega",
+   "cover": "cover.jpg",
+   "price": "5.99",
+   "pages": 16,
+   "listTitle": "Christmas Party Kit Printable, 6 Games Plus White Elephant Dice Game, Gingerbread House Contest, 12 Awards, Office or Family Party",
+   "strip": [
+    "p-07.png",
+    "p-16.png",
+    "p-09.png",
+    "p-15.png"
+   ],
+   "bg": [
+    "#2f6b4f",
+    "#123224"
+   ],
+   "accent": "#b8333a",
+   "hl": "#ffe9a8",
+   "dot": "#e3f2ea"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-04.png",
+     "p-06.png",
+     "p-02.png"
+    ],
+    "type": "fan",
+    "t0": 0,
+    "t1": 2.43,
+    "beats": [
+     0.1,
+     0.83,
+     1.56
+    ]
+   },
+   {
+    "pages": [
+     "p-03.png",
+     "p-05.png",
+     "p-08.png",
+     "p-06.png"
+    ],
+    "type": "grid",
+    "t0": 2.43,
+    "t1": 4.98,
+    "beats": [
+     2.53,
+     3.05,
+     3.57,
+     4.09
+    ]
+   },
+   {
+    "page": "p-07.png",
+    "badge": "MIXER",
+    "type": "hook",
+    "t0": 4.98,
+    "t1": 7.27
+   },
+   {
+    "page": "p-16.png",
+    "badge": "ROLL 1-6",
+    "type": "hook",
+    "t0": 7.27,
+    "t1": 9.82
+   },
+   {
+    "pages": [
+     "p-11.png",
+     "p-10.png",
+     "p-09.png"
+    ],
+    "type": "fan",
+    "t0": 9.82,
+    "t1": 12.5,
+    "beats": [
+     9.92,
+     10.75,
+     11.58
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 12.5,
+    "t1": 16.57,
+    "beats": [
+     0.5,
+     1.4,
+     2.13,
+     2.93,
+     3.33
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 16.57,
+    "t1": 20.43
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.01,
+   "*Hosting* the Christmas | party this *year?*"
+  ],
+  [
+   2.43,
+   4.56,
+   "Print *one file* | the whole *night* is planned"
+  ],
+  [
+   4.98,
+   6.85,
+   "Guests *mingle* with | *Find the Guest Who*"
+  ],
+  [
+   7.27,
+   9.4,
+   "Swap gifts with the | *white elephant* *dice* game"
+  ],
+  [
+   9.82,
+   12.08,
+   "Crown the *winners* | with *12* funny awards"
+  ],
+  [
+   12.5,
+   15.36,
+   "*6 games* *16 pages* | for *family* or *office*"
+  ],
+  [
+   15.78,
+   16.38,
+   "Tap the *link*"
+  ],
+  [
+   16.57,
+   17.54,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.83,
+   "pop"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.56,
+   "pop"
+  ],
+  [
+   2.38,
+   "whoosh"
+  ],
+  [
+   2.53,
+   "pop"
+  ],
+  [
+   3.05,
+   "pop"
+  ],
+  [
+   3.57,
+   "pop"
+  ],
+  [
+   4.09,
+   "pop"
+  ],
+  [
+   4.93,
+   "whoosh"
+  ],
+  [
+   7.22,
+   "whoosh"
+  ],
+  [
+   9.77,
+   "whoosh"
+  ],
+  [
+   9.92,
+   "pop"
+  ],
+  [
+   10.75,
+   "pop"
+  ],
+  [
+   11.58,
+   "pop"
+  ],
+  [
+   12.45,
+   "whoosh"
+  ],
+  [
+   13.0,
+   "whoosh"
+  ],
+  [
+   15.83,
+   "tap"
+  ],
+  [
+   16.08,
+   "pop"
+  ],
+  [
+   16.52,
+   "whoosh"
+  ],
+  [
+   16.92,
+   "impact"
+  ],
+  [
+   17.37,
+   "pop"
+  ]
+ ]
+}

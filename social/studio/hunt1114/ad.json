@@ -1,0 +1,227 @@
+{
+ "dur": 18.96,
+ "vo": "social/studio/media/vo/hunt1114-vot.mp3",
+ "music": "social/studio/media/vo/hunt1114-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/hunt",
+   "cover": "cover.jpg",
+   "price": "3.99",
+   "pages": 13,
+   "listTitle": "Christmas Scavenger Hunt Printable, 24 Rhyming Clue Cards for Little and Big Kids, Christmas Morning Gift Hunt, Treasure Riddles",
+   "strip": [
+    "p-04.png",
+    "p-09.png",
+    "p-03.png",
+    "p-13.png"
+   ],
+   "bg": [
+    "#c4404c",
+    "#4a1218"
+   ],
+   "accent": "#2f6b4f",
+   "hl": "#ffd34d",
+   "dot": "#ffe3e6"
+  },
+  "scenes": [
+   {
+    "pages": [
+     "p-04.png",
+     "p-05.png",
+     "p-08.png",
+     "p-09.png"
+    ],
+    "type": "grid",
+    "t0": 0,
+    "t1": 2.62,
+    "beats": [
+     0.1,
+     0.64,
+     1.18,
+     1.72
+    ]
+   },
+   {
+    "page": "p-13.png",
+    "badge": "24 CLUES",
+    "type": "hook",
+    "t0": 2.62,
+    "t1": 4.67
+   },
+   {
+    "page": "p-05.png",
+    "type": "hook",
+    "t0": 4.67,
+    "t1": 6.54
+   },
+   {
+    "pages": [
+     "p-10.png",
+     "p-11.png",
+     "p-09.png"
+    ],
+    "type": "fan",
+    "t0": 6.54,
+    "t1": 8.64,
+    "beats": [
+     6.64,
+     7.24,
+     7.84
+    ]
+   },
+   {
+    "page": "p-03.png",
+    "type": "hook",
+    "t0": 8.64,
+    "t1": 12.14
+   },
+   {
+    "type": "phone",
+    "t0": 12.14,
+    "t1": 15.41,
+    "beats": [
+     0.38,
+     1.13,
+     1.33,
+     2.12,
+     2.52
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 15.41,
+    "t1": 19.26
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   2.2,
+   "Turn *Christmas morning* | into a *treasure hunt*"
+  ],
+  [
+   2.62,
+   4.25,
+   "Kids follow the *clues* | to their *gift*"
+  ],
+  [
+   4.67,
+   6.12,
+   "Easy *rhymes* | for *little elves*"
+  ],
+  [
+   6.54,
+   8.21,
+   "Tricky *riddles* | for *big kids*"
+  ],
+  [
+   8.64,
+   11.72,
+   "*Both levels* for every spot | siblings hunt *together*"
+  ],
+  [
+   12.14,
+   14.19,
+   "*13 pages* | ready to *print tonight*"
+  ],
+  [
+   14.61,
+   15.21,
+   "Tap the *link*"
+  ],
+  [
+   15.41,
+   16.37,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.1,
+   "pop"
+  ],
+  [
+   0.64,
+   "pop"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   1.18,
+   "pop"
+  ],
+  [
+   1.72,
+   "pop"
+  ],
+  [
+   2.57,
+   "whoosh"
+  ],
+  [
+   4.62,
+   "whoosh"
+  ],
+  [
+   6.49,
+   "whoosh"
+  ],
+  [
+   6.64,
+   "pop"
+  ],
+  [
+   7.24,
+   "pop"
+  ],
+  [
+   7.84,
+   "pop"
+  ],
+  [
+   8.59,
+   "whoosh"
+  ],
+  [
+   12.09,
+   "whoosh"
+  ],
+  [
+   12.52,
+   "whoosh"
+  ],
+  [
+   14.66,
+   "tap"
+  ],
+  [
+   14.91,
+   "pop"
+  ],
+  [
+   15.36,
+   "whoosh"
+  ],
+  [
+   15.76,
+   "impact"
+  ],
+  [
+   16.21,
+   "pop"
+  ]
+ ]
+}
