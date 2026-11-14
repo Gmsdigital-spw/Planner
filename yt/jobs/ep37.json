@@ -1,7 +1,7 @@
 {
  "id": "ep37",
  "format": "story",
- "rev": 1,
+ "rev": 2,
  "title": "My Mom Said My Games Were Waking Up Our Whole House #shorts",
  "title_card": "The 3 AM Beep",
  "voice": "andrew",
@@ -42,7 +42,7 @@
    "text": "She said I'd hidden another handheld, took away my phone, and searched my entire bedroom.",
    "label": "phone gone",
    "headline": "room searched",
-   "image": "{mom} is the only person in the picture, long curly red hair in a ponytail and purple sweater, kneeling to look under a bed in a messy kid's bedroom, shining exactly one flashlight, holding exactly one smartphone in her other hand, the only phone in the picture, suspicious face"
+   "image": "{mom} is the only person in the picture, long curly red hair in a ponytail and purple sweater, dot eyes, kneeling beside a kid's bed, shining exactly one flashlight under the bed with one hand, holding exactly one smartphone up in her other hand, the only phone in the picture, nothing on the floor, suspicious face, tidy bedroom at night"
   },
   {
    "text": "I cried into my pillow that night, punished for a beep I never even made.",
@@ -72,7 +72,7 @@
    "text": "Weak alarm batteries lose power in the cold, so they chirp at night, then recover.",
    "label": "real reason",
    "headline": "cold weak battery",
-   "image": "close-up of {boy}, the only person in the picture, short spiky black hair and red hoodie, in a chilly dark hallway holding up exactly one small rectangular battery with frost on its edges, the only battery in the picture, plain with no words or numbers, shivering, knowing face"
+   "image": "close-up of {boy}, the only person in the picture, short spiky black hair and red hoodie, in a chilly dark hallway, pinching exactly one small rectangular battery with frost on its edges between the finger and thumb of one hand, his other hand tucked in his hoodie pocket, the only battery in the picture, nothing else in his hands, plain with no words or numbers, shivering, knowing face"
   },
   {
    "text": "Mom turned the heating way down every night, so our house was coldest around three.",
