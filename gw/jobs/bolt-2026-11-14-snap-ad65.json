@@ -1,0 +1,8 @@
+{"id":"bolt-2026-11-14-snap-ad65","stopOnError":false,"ops":[
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/active?limit=100&includes=Images","tag":"active"},
+{"op":"etsy","method":"GET","path":"/shops/68605457","tag":"shop"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings?state=draft&limit=100","tag":"drafts"},
+{"op":"etsy","method":"GET","path":"/listings/4613237408","tag":"trivia"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/receipts?limit=100","tag":"receipts"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/reviews?limit=100","tag":"reviews"},
+{"op":"zernio","method":"GET","path":"/posts/6af31c52481d79f7da6bf54a","tag":"pinchk-pin-prod-santa-mail-bundle-r1"}]}
