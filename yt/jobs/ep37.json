@@ -1,0 +1,90 @@
+{
+ "id": "ep37",
+ "format": "story",
+ "rev": 1,
+ "title": "My Mom Said My Games Were Waking Up Our Whole House #shorts",
+ "title_card": "The 3 AM Beep",
+ "voice": "andrew",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "tense",
+ "music_volume": 0.05,
+ "cast": {
+  "boy": "a stick-figure boy with a round white head, dot eyes, thin black limbs, short spiky black hair and a red hoodie",
+  "mom": "a stick-figure mother with a round white head, dot eyes, thin black limbs, long curly red hair in a ponytail and a purple sweater"
+ },
+ "lines": [
+  {
+   "text": "Mom said my video games kept waking our whole house, so what really woke us?",
+   "label": "hook",
+   "headline": "what really woke us",
+   "image": "{mom} is the only person in the picture, long curly red hair in a ponytail and purple sweater, standing in a dark upstairs hallway at night, hands on hips, frowning, pointing at exactly one closed bedroom door, moonlight from a window"
+  },
+  {
+   "text": "At three every morning, a tiny beep went off, exactly like my game's low-health warning.",
+   "label": "the beep",
+   "headline": "beep at three",
+   "image": "close-up of {boy}, the only person in the picture, short spiky black hair and red hoodie, sitting up in bed in a dark bedroom at night, eyes wide, both hands over his ears, faint curved sound lines in the air"
+  },
+  {
+   "text": "Mom, wearing two sweaters to save on heating, said only gamers are awake at three.",
+   "label": "the plant",
+   "headline": "two sweaters",
+   "image": "{mom} is the only person in the picture, long curly red hair in a ponytail and purple sweater, wearing a second thick gray sweater over her purple sweater, arms crossed, shivering, stern face, in a chilly dim living room at night"
+  },
+  {
+   "text": "She locked my console in her bedroom closet, yet that night the beep came anyway.",
+   "label": "console gone",
+   "headline": "console locked away",
+   "image": "{mom} is the only person in the picture, long curly red hair in a ponytail and purple sweater, standing at an open bedroom closet at night holding exactly one small flat black game console box with a plus-shaped d-pad printed on its side in both hands, the only console in the picture, frowning, no TV, no screen and no monitor anywhere in the picture"
+  },
+  {
+   "text": "She said I'd hidden another handheld, took away my phone, and searched my entire bedroom.",
+   "label": "phone gone",
+   "headline": "room searched",
+   "image": "{mom} is the only person in the picture, long curly red hair in a ponytail and purple sweater, kneeling to look under a bed in a messy kid's bedroom, shining exactly one flashlight, holding exactly one smartphone in her other hand, the only phone in the picture, suspicious face"
+  },
+  {
+   "text": "I cried into my pillow that night, punished for a beep I never even made.",
+   "label": "alone",
+   "headline": "crying alone",
+   "image": "close-up of {boy}, the only person in the picture, short spiky black hair and red hoodie, lying in bed hugging a pillow, a single tear running down his cheek, dark bedroom"
+  },
+  {
+   "text": "Smoke alarms beep when batteries die, so next afternoon I tested every one; all worked.",
+   "label": "red herring",
+   "headline": "every alarm passed",
+   "image": "{boy} is the only person in the picture, short spiky black hair and red hoodie, standing on a small step stool in a sunny hallway, pressing the button on exactly one round white smoke alarm on the ceiling, the only smoke alarm in the picture, plain with no words or numbers, relieved face"
+  },
+  {
+   "text": "At three I crept down the hall, tracking the beep like enemy footsteps in games.",
+   "label": "gamer ear",
+   "headline": "tracking the beep",
+   "image": "{boy} is the only person in the picture, short spiky black hair and red hoodie, tiptoeing down a dark hallway at night, crouched low like a sneaking game hero, one hand cupped behind his ear, focused face, moonlight"
+  },
+  {
+   "text": "It led me directly to the hallway smoke alarm, the very one that passed.",
+   "label": "the twist",
+   "headline": "the alarm that passed",
+   "image": "close-up of {boy}, the only person in the picture, short spiky black hair and red hoodie, in a dark hallway looking straight up, mouth open in surprise, at exactly one round white smoke alarm on the ceiling with one tiny red light glowing, the only smoke alarm in the picture, plain with no words or numbers"
+  },
+  {
+   "text": "Weak alarm batteries lose power in the cold, so they chirp at night, then recover.",
+   "label": "real reason",
+   "headline": "cold weak battery",
+   "image": "close-up of {boy}, the only person in the picture, short spiky black hair and red hoodie, in a chilly dark hallway holding up exactly one small rectangular battery with frost on its edges, the only battery in the picture, plain with no words or numbers, shivering, knowing face"
+  },
+  {
+   "text": "Mom turned the heating way down every night, so our house was coldest around three.",
+   "label": "Mom's heat",
+   "headline": "heat turned down",
+   "image": "{mom} is the only person in the picture, long curly red hair in a ponytail and purple sweater, turning exactly one plain round wall thermostat dial with no words or numbers, the only thermostat in the picture, at night in cold blue light, her breath showing as a small puff"
+  },
+  {
+   "text": "New battery, no beeping, console back, but Mom swears it sounded exactly like my game.",
+   "label": "the ending",
+   "headline": "console back, Mom swears",
+   "image": "{mom} is the only person in the picture, long curly red hair in a ponytail and purple sweater, in a warm sunny morning living room, holding out exactly one small flat black game console box with a plus-shaped d-pad printed on its side in both hands, handing it toward the viewer, the only console in the picture, one eyebrow raised, unconvinced grumpy face, no TV, no screen and no monitor anywhere in the picture"
+  }
+ ]
+}
