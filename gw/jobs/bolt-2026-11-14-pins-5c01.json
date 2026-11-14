@@ -1,0 +1,90 @@
+{
+ "id": "bolt-2026-11-14-pins-5c01",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-escape-room-y1",
+   "tag": "pin-prod-xmas-escape-room-y1",
+   "body": {
+    "content": "A printable Christmas escape room where big and little kids play the same story together. Every clue comes in two versions, Level 1 for ages 6-9 and Level 2 for ages 10+, and both lead to the same digit for the Bell Vault code. 16 pages: game master guide, mission letter, 8 clue sheets, vault lock sheet, envelope lock tags, hint cards, answer key and certificates. About 45 minutes, 1 to 12 players. No phone needed.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-escape-room-y1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-17T13:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Christmas Escape Room for Kids and Families: Printable Game with 2 Levels, Ages 6-9 and 10+",
+       "link": "https://www.etsy.com/listing/4602402578"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-cookie-exchange-kit-y1",
+   "tag": "pin-prod-cookie-exchange-kit-y1",
+   "body": {
+    "content": "Host a Christmas cookie swap without the guesswork. The baking math table tells each guest how many cookies to bring for 6 to 15 guests, and the sign-up sheet stops repeat cookies. 13 pages: how to host, fill-in invitations, host countdown, sign-up sheet, swap rules, recipe cards, cookie labels with allergen checkboxes, Best Cookie ballots, tally and award cards, thank-you cards, box tags and a recipe swap list. Print at home.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-cookie-exchange-kit-y1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-17T15:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595723",
+       "title": "Christmas Cookie Exchange Kit Printable: Cookie Swap Sign-Up, Baking Math, Labels and Ballots",
+       "link": "https://www.etsy.com/listing/4600177510"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "op": "zernio",
+   "method": "POST",
+   "path": "/posts",
+   "idem": "pin-pin-prod-xmas-scavenger-hunt-y1",
+   "tag": "pin-prod-xmas-scavenger-hunt-y1",
+   "body": {
+    "content": "A printable Christmas morning scavenger hunt for kids. Every one of the 24 hiding spots has two clue cards: Little Elves rhymes for early readers (about ages 4 to 7) and Big Kid Riddles for older kids (about ages 8 to 12). Includes a How the Hunt Works page, a setup sheet and answer key, 6 blank Write Your Own Clue cards and 6 Final Gift cards. 13 pages. Print at home on cardstock and cut.",
+    "mediaItems": [
+     {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/listing-photos/auto/pins/pin-prod-xmas-scavenger-hunt-y1.jpg"
+     }
+    ],
+    "scheduledFor": "2026-11-17T17:30:00Z",
+    "platforms": [
+     {
+      "platform": "pinterest",
+      "accountId": "6ad7b245350e86dff5e25133",
+      "platformSpecificData": {
+       "boardId": "1096274802985595734",
+       "title": "Christmas Scavenger Hunt Clues for Kids: 24 Printable Clue Cards in 2 Levels for Christmas Morning",
+       "link": "https://www.etsy.com/listing/4599447958"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
