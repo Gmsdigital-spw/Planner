@@ -1,0 +1,164 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:IT;src:url(/social/studio/media/fonts/InterTight.ttf)}
+@font-face{font-family:IS;src:url(/social/studio/media/fonts/InstrumentSerif-Regular.ttf)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#111}
+#stage{position:absolute;inset:0;overflow:hidden;font-family:IT,sans-serif}
+#bg{position:absolute;inset:-200px}
+.dot{position:absolute;border-radius:50%;filter:blur(18px);opacity:.35}
+.layer{position:absolute;inset:0;transform-origin:540px 1000px}
+.page{position:absolute;background:#fff center/cover no-repeat;border-radius:10px;box-shadow:0 40px 90px rgba(0,0,0,.45),0 8px 20px rgba(0,0,0,.25)}
+.chip{position:absolute;padding:18px 34px;border-radius:999px;background:#fff;color:#222;font:800 44px IT;box-shadow:0 14px 40px rgba(0,0,0,.3);white-space:nowrap}
+.big{position:absolute;left:0;right:0;text-align:center;color:#fff;font:900 150px/1 IT;letter-spacing:-4px;text-shadow:0 10px 40px rgba(0,0,0,.4)}
+.sub{position:absolute;left:0;right:0;text-align:center;color:#fff;font:700 52px IT;opacity:.92}
+/* phone */
+#phone{position:absolute;left:150px;top:420px;width:780px;height:1500px;border-radius:96px;background:#0d0d0f;padding:26px;box-shadow:0 60px 120px rgba(0,0,0,.55),inset 0 0 0 4px #2a2a2e}
+#screen{position:relative;width:100%;height:100%;border-radius:72px;overflow:hidden;background:#fff}
+#notch{position:absolute;left:50%;top:22px;width:200px;height:56px;margin-left:-100px;background:#0d0d0f;border-radius:30px;z-index:5}
+#scroll{position:absolute;left:0;top:0;width:100%}
+.bar{height:150px;background:#fff;border-bottom:2px solid #eee;display:flex;align-items:flex-end;padding:0 36px 22px;gap:18px;font:600 30px IT;color:#222}
+.bar .s{flex:1;height:64px;border-radius:32px;background:#f1f1f1;display:flex;align-items:center;padding:0 26px;color:#777;font:500 26px IT}
+.hero{width:100%;height:580px;background:#f6f6f6 center/cover no-repeat}
+.dots{display:flex;gap:10px;justify-content:center;padding:18px 0}
+.dots i{width:12px;height:12px;border-radius:6px;background:#ccc}.dots i:first-child{background:#222}
+.info{padding:6px 40px}
+.price{font:800 54px IT;color:#222}.price s{font:500 32px IT;color:#888;margin-left:14px}
+.ttl{font:500 32px/1.3 IT;color:#333;margin:14px 0 18px}
+.shop{font:600 28px IT;color:#555;display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.shop b{color:#222}.stars{color:#222;letter-spacing:2px}
+.dl{font:600 26px IT;color:#2f6d3a;background:#eaf5ec;display:inline-block;padding:10px 18px;border-radius:10px;margin-bottom:24px}
+.btn{height:96px;border-radius:48px;background:#222;color:#fff;font:700 36px IT;display:flex;align-items:center;justify-content:center;margin:0 0 18px}
+.btn2{height:96px;border-radius:48px;border:3px solid #222;color:#222;font:700 34px IT;display:flex;align-items:center;justify-content:center}
+.strip{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:30px 40px}
+.strip div{aspect-ratio:8.5/11;background:#fff center/cover;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.wh{font:700 34px IT;color:#222;padding:30px 40px 0}
+#ring{position:absolute;width:120px;height:120px;border-radius:60px;border:6px solid #fff;background:rgba(255,255,255,.25);box-shadow:0 0 0 4px rgba(0,0,0,.25);opacity:0;z-index:9}
+#toast{position:absolute;left:60px;right:60px;bottom:70px;height:110px;border-radius:24px;background:#1f7a3a;color:#fff;font:700 36px IT;display:flex;align-items:center;justify-content:center;gap:16px;opacity:0;z-index:8}
+/* captions */
+#cap{position:absolute;left:50%;top:150px;transform:translateX(-50%);max-width:980px;width:max-content;text-align:center;z-index:20;padding:18px 34px 24px;border-radius:36px;background:rgba(10,10,14,.55);backdrop-filter:blur(6px)}#cap:empty{display:none}
+#cap span{display:inline-block;font:900 84px/1.08 IT;color:#fff;margin:0 10px;letter-spacing:-1.5px;-webkit-text-stroke:3px rgba(0,0,0,.55);paint-order:stroke fill;text-shadow:0 8px 26px rgba(0,0,0,.55)}
+#cap span.hl{color:var(--hl)}
+#brand{position:absolute;left:0;right:0;bottom:46px;text-align:center;font:600 30px IT;color:rgba(255,255,255,.7);letter-spacing:1px;z-index:20}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;z-index:30;pointer-events:none}
+</style></head><body>
+<div id="stage">
+  <div id="bg"></div>
+  <div id="L" class="layer"></div>
+  <div id="cap"></div>
+  <div id="brand">GM's Digital Creations</div>
+  <div id="flash"></div>
+</div>
+<script>
+const D = window.AD_DATA, T = D.tl, P = T.product;
+document.documentElement.style.setProperty('--hl', P.hl || '#ffd34d');
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), lin=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const img=p=>`url(${P.dir}/${p})`;
+
+// background: gradient + drifting bokeh
+const bg=document.getElementById('bg');
+bg.style.background=`radial-gradient(1200px 1400px at 50% 35%, ${P.bg[0]}, ${P.bg[1]} 70%)`;
+const dots=[];let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
+for(let i=0;i<22;i++){const d=document.createElement('div');d.className='dot';const s=40+rnd()*160;
+  Object.assign(d.style,{width:s+'px',height:s+'px',background:P.dot||'#fff'});bg.appendChild(d);
+  dots.push({el:d,x:rnd()*1480,y:rnd()*2320,vx:(rnd()-.5)*18,vy:-8-rnd()*22,ph:rnd()*6})}
+
+const L=document.getElementById('L');
+// scene builders: each returns {root, draw(t, k) } where k = local time
+function el(tag,cls,css,parent){const e=document.createElement(tag);if(cls)e.className=cls;if(css)Object.assign(e.style,css);(parent||L).appendChild(e);return e}
+const W=680,H=880; // page size (8.5x11)
+function pageEl(src,parent,w=W){return el('div','page',{width:w+'px',height:(w*11/8.5)+'px',backgroundImage:img(src)},parent)}
+
+const builders={
+ hook(s){ // hero page flies in in 3D, slow push-in, count badge pops
+  const r=el('div','layer');const pg=pageEl(s.page,r,700);
+  const badge=s.badge?el('div','chip',{background:P.accent,color:'#fff',font:'900 64px IT',padding:'24px 40px'},r):null;if(badge)badge.textContent=s.badge;
+  return {r,draw(k){const a=eo(lin(k,0,.9));
+    pg.style.left='190px';pg.style.top='560px';
+    pg.style.transform=`perspective(1600px) translateY(${(1-a)*900}px) rotateX(${(1-a)*35}deg) rotateZ(${(1-a)*-12+Math.sin(k*.8)*1.2}deg) scale(${.92+.05*k/4})`;
+    if(badge){const b=back(lin(k,.7,1.1));badge.style.left='640px';badge.style.top='500px';badge.style.transform=`scale(${b}) rotate(${-8+Math.sin(k*2)*2}deg)`;badge.style.opacity=b>0?1:0}
+  }}},
+ pan(s){ // close-up glide across a real page
+  const r=el('div','layer');const pg=pageEl(s.page,r,1250);
+  return {r,draw(k){const d=s.t1-s.t0,f=eio(lin(k,0,d));const [x0,y0,x1,y1]=s.path;
+    pg.style.left=(x0+(x1-x0)*f)+'px';pg.style.top=(y0+(y1-y0)*f)+'px';
+    pg.style.transform=`rotate(${-2+f*2}deg) scale(${1+.06*f})`}}},
+ fan(s){ // pages deal out into a fan, one pop each
+  const r=el('div','layer');const pgs=s.pages.map(p=>pageEl(p,r,520));
+  return {r,draw(k){const n=pgs.length;pgs.forEach((pg,i)=>{const st=s.beats?s.beats[i]-s.t0:i*.16;const a=back(lin(k,st,st+.5));
+    const ang=(i-(n-1)/2)*11, x=280+(i-(n-1)/2)*95, y=640+Math.abs(i-(n-1)/2)*40;
+    pg.style.left=x+'px';pg.style.top=y+'px';pg.style.opacity=a>0?1:0;
+    pg.style.transform=`translateY(${(1-a)*700}px) rotate(${ang*a+Math.sin(k+i)*.6}deg) scale(${1+.03*k/3})`;pg.style.zIndex=i})}}},
+ grid(s){ // pages snap into a 2x2 grid with a stat
+  const r=el('div','layer');const pgs=s.pages.map(p=>pageEl(p,r,400));
+  return {r,draw(k){pgs.forEach((pg,i)=>{const st=s.beats?s.beats[i]-s.t0:i*.12;const a=back(lin(k,st,st+.45));const cx=i%2,cy=Math.floor(i/2);
+    pg.style.left=(110+cx*460)+'px';pg.style.top=(520+cy*560)+'px';pg.style.opacity=a>0?1:0;
+    pg.style.transform=`scale(${a*(1+.02*Math.sin(k*1.5+i))}) rotate(${(cx?2:-2)}deg)`})}}},
+ phone(s){ // the real listing on a phone: scroll, tap, add to cart
+  const r=el('div','layer');const ph=el('div',null,{},r);ph.id='phone';
+  ph.innerHTML=`<div id="screen"><div id="notch"></div><div id="scroll">
+   <div class="bar"><span style="font:800 34px IT">‹</span><div class="s">Search for anything</div><span>♡</span></div>
+   <div class="hero" style="background-image:${img(P.cover)}"></div>
+   <div class="dots"><i></i><i></i><i></i><i></i><i></i></div>
+   <div class="info"><div class="price">$${P.price}</div>
+   <div class="ttl">${P.listTitle}</div>
+   <div class="shop"><b>GM's Digital Creations</b></div>
+   <div class="dl">⬇ Digital download · ${P.pages} pages</div>
+   <div class="btn" id="add">Add to cart</div><div class="btn2">Buy it now</div></div>
+   <div class="wh">What's inside</div>
+   <div class="strip">${P.strip.map(p=>`<div style="background-image:${img(p)}"></div>`).join('')}</div>
+   </div><div id="toast">✓ Added to cart</div><div id="ring"></div></div>`;
+  const sc=ph.querySelector('#scroll'),ring=ph.querySelector('#ring'),add=ph.querySelector('#add'),toast=ph.querySelector('#toast');
+  return {r,draw(k){const a=eo(lin(k,0,.6));
+    ph.style.transform=`translateY(${(1-a)*1200}px) rotate(${(1-a)*8}deg) scale(${.98+.02*Math.sin(k*.7)})`;
+    // scroll down to the pages, back up, tap Add to cart
+    const [s1a,s1b,s2a,s2b,tap]=s.beats;
+    const down=eio(lin(k,s1a,s1b)), up=eio(lin(k,s2a,s2b));
+    sc.style.transform=`translateY(${-(down-up)*900}px)`;
+    const tk=k-tap; ring.style.left='300px';ring.style.top='880px';
+    ring.style.opacity=tk>-.35&&tk<.5?(tk<0?lin(tk,-.35,-.1):1-lin(tk,.15,.5)):0;
+    ring.style.transform=`scale(${tk<0?1.2-.2*lin(tk,-.35,0):1-.25*Math.sin(clamp(tk/.25)*Math.PI)})`;
+    add.style.transform=`scale(${tk>0&&tk<.25?.94:1})`;add.style.background=tk>0?'#1f7a3a':'#222';add.textContent=tk>0?'✓ In your cart':'Add to cart';
+    const ta=lin(k,tap+.15,tap+.4);toast.style.opacity=ta;toast.style.transform=`translateY(${(1-eo(ta))*60}px)`;
+  }}},
+ end(s){ // cover hero + CTA
+  const r=el('div','layer');
+  const cv=el('div','page',{width:'900px',height:'720px',left:'90px',top:'560px',backgroundImage:img(P.cover),borderRadius:'26px'},r);
+  const pr=el('div','chip',{background:P.accent,color:'#fff',font:'900 66px IT'},r);pr.textContent='$'+P.price;
+  const c1=el('div','chip',{font:'800 46px IT'},r);c1.textContent='⬇ Instant download';
+  const c2=el('div','chip',{background:'#111',color:'#fff',font:'800 46px IT'},r);c2.textContent=s.cta||'Tap the link · grab it on Etsy';
+  return {r,draw(k){const a=back(lin(k,0,.6));cv.style.transform=`scale(${a*(1+.03*k/3)}) rotate(${-1.5+Math.sin(k)*.5}deg)`;
+    const b=back(lin(k,.35,.75));pr.style.left='760px';pr.style.top='500px';pr.style.transform=`scale(${b}) rotate(8deg)`;
+    const c=eo(lin(k,.5,.9));c1.style.left='50%';c1.style.top='1360px';c1.style.transform=`translateX(-50%) translateY(${(1-c)*80}px)`;c1.style.opacity=c;
+    const d=eo(lin(k,.7,1.1));c2.style.left='50%';c2.style.top='1480px';c2.style.transform=`translateX(-50%) translateY(${(1-d)*80}px) scale(${1+.03*Math.sin(k*5)*(k>1.2?1:0)})`;c2.style.opacity=d;
+  }}}
+};
+const scenes=T.scenes.map(s=>({s,...builders[s.type](s)}));
+
+// captions
+const cap=document.getElementById('cap');let lastCap=-1;
+function drawCap(t){const i=D.captions.findIndex(c=>t>=c.t0&&t<c.t1);
+  if(i!==lastCap){cap.innerHTML=i<0?'':D.captions[i].words.map(w=>`<span class="${w.hl?'hl':''}">${w.w}</span>`).join(' ');lastCap=i}
+  if(i>=0){const c=D.captions[i],a=lin(t,c.t0,c.t0+.12);cap.querySelectorAll('span').forEach((s,j)=>{const b=back(lin(t,c.t0+j*.04,c.t0+j*.04+.18));s.style.transform=`scale(${.6+.4*b}) translateY(${(1-b)*20}px)`;s.style.opacity=clamp(b*3)})}}
+
+window.render=function(t){
+  dots.forEach(d=>{d.el.style.transform=`translate(${d.x+d.vx*t+Math.sin(t*.6+d.ph)*30}px,${((d.y+d.vy*t)%2320+2320)%2320}px)`});
+  bg.style.transform=`scale(${1.05+.02*Math.sin(t*.3)})`;
+  let fl=0;
+  scenes.forEach((S,i)=>{const {s}=S;const pad=.35;const vis=t>=s.t0-.01&&t<s.t1+pad;S.r.style.display=vis?'block':'none';if(!vis)return;
+    S.draw(Math.max(0,t-s.t0));
+    // transitions: incoming zoom-through / whip; outgoing scales up and blurs
+    const out=lin(t,s.t1,s.t1+pad), inn=1-lin(t,s.t0,s.t0+pad);
+    const kind=s.cut||'zoom';
+    if(kind==='whip'){S.r.style.transform=`translateX(${-out*1400+inn*1400}px) skewX(${(out-inn)*-8}deg)`;S.r.style.filter=`blur(${(out+inn)*22}px)`}
+    else{S.r.style.transform=`scale(${1+out*1.6-inn*.25})`;S.r.style.filter=`blur(${(out+inn)*18}px)`;S.r.style.opacity=1-out}
+    if(t>=s.t0&&t<s.t0+.12&&i>0&&kind==='zoom')fl=Math.max(fl,.35*(1-lin(t,s.t0,s.t0+.12)));
+  });
+  document.getElementById('flash').style.opacity=fl;
+  drawCap(t);
+};
+window.ready=Promise.all([...new Set([P.cover,...P.strip,...T.scenes.flatMap(s=>[s.page,...(s.pages||[])]).filter(Boolean)])].map(p=>new Promise(r=>{const i=new Image();i.onload=i.onerror=r;i.src=P.dir+'/'+p}))).then(()=>document.fonts.ready);
+</script></body></html>

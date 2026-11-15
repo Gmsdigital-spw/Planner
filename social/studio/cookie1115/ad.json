@@ -1,0 +1,219 @@
+{
+ "dur": 18.28,
+ "vo": "social/studio/media/vo/cookie1115-vo.mp3",
+ "music": "social/studio/media/vo/cookie1115-music.wav",
+ "musicVol": 0.7,
+ "grade": "eq=contrast=1.04:saturation=1.08,noise=alls=2:allf=t",
+ "tl": {
+  "product": {
+   "dir": "/social/studio/media/cookie",
+   "cover": "cover.jpg",
+   "price": "4.99",
+   "pages": 13,
+   "listTitle": "Christmas Cookie Exchange Kit Printable, Cookie Swap Party Invitation, Sign Up Sheet, Allergen Labels, Voting Ballots, Recipe Cards",
+   "strip": [
+    "p-05.png",
+    "p-07.png",
+    "p-08.png",
+    "p-09.png"
+   ],
+   "bg": [
+    "#b8323f",
+    "#5a1520"
+   ],
+   "accent": "#8f2a35",
+   "hl": "#ffd34d",
+   "dot": "#ffe3e6"
+  },
+  "scenes": [
+   {
+    "page": "p-03.png",
+    "badge": "13 PAGES",
+    "type": "hook",
+    "t0": 0,
+    "t1": 2.1
+   },
+   {
+    "pages": [
+     "p-05.png",
+     "p-04.png",
+     "p-03.png",
+     "p-02.png"
+    ],
+    "type": "grid",
+    "t0": 2.1,
+    "t1": 5.46,
+    "beats": [
+     2.2,
+     2.94,
+     3.67,
+     4.41
+    ]
+   },
+   {
+    "page": "p-06.png",
+    "type": "pan",
+    "t0": 5.46,
+    "t1": 7.73,
+    "path": [
+     -60,
+     430,
+     -150,
+     -300
+    ],
+    "cut": "whip"
+   },
+   {
+    "pages": [
+     "p-08.png",
+     "p-07.png",
+     "p-09.png"
+    ],
+    "type": "fan",
+    "t0": 7.73,
+    "t1": 11.7,
+    "beats": [
+     7.83,
+     9.18,
+     10.53
+    ]
+   },
+   {
+    "type": "phone",
+    "t0": 11.7,
+    "t1": 15.2,
+    "beats": [
+     0.4,
+     1.2,
+     1.47,
+     2.27,
+     2.67
+    ]
+   },
+   {
+    "type": "end",
+    "t0": 15.2,
+    "t1": 18.580000000000002
+   }
+  ]
+ },
+ "captions": [
+  [
+   0.0,
+   1.67,
+   "Hosting a *cookie swap* | this year?"
+  ],
+  [
+   2.1,
+   5.03,
+   "Guests *sign up* first | *nobody* bakes | the *same cookie*"
+  ],
+  [
+   5.46,
+   7.31,
+   "*Baking math* says | how many to *bring*"
+  ],
+  [
+   7.73,
+   11.28,
+   "*Allergen* labels | *recipe* cards | *best cookie* ballots"
+  ],
+  [
+   11.7,
+   13.9,
+   "*13* pages | print at *home*"
+  ],
+  [
+   14.32,
+   15.0,
+   "Tap the *link*"
+  ],
+  [
+   15.2,
+   16.58,
+   "grab it on *Etsy!*"
+  ]
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh"
+  ],
+  [
+   0.75,
+   "thud"
+  ],
+  [
+   0.95,
+   "pop"
+  ],
+  [
+   2.05,
+   "whoosh"
+  ],
+  [
+   2.2,
+   "pop"
+  ],
+  [
+   2.94,
+   "pop"
+  ],
+  [
+   3.67,
+   "pop"
+  ],
+  [
+   4.41,
+   "pop"
+  ],
+  [
+   5.41,
+   "whoosh"
+  ],
+  [
+   7.68,
+   "whoosh"
+  ],
+  [
+   7.83,
+   "pop"
+  ],
+  [
+   9.18,
+   "pop"
+  ],
+  [
+   10.53,
+   "pop"
+  ],
+  [
+   11.65,
+   "whoosh"
+  ],
+  [
+   12.1,
+   "whoosh"
+  ],
+  [
+   14.37,
+   "tap"
+  ],
+  [
+   14.62,
+   "pop"
+  ],
+  [
+   15.15,
+   "whoosh"
+  ],
+  [
+   15.55,
+   "impact"
+  ],
+  [
+   16.0,
+   "pop"
+  ]
+ ]
+}
