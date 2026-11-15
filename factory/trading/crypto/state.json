@@ -1,34 +1,8 @@
 {
  "mode": "virtual",
  "startBalance": 25.0,
- "cash": 11.414943143262631,
- "positions": [
-  {
-   "sym": "DOGE/USD",
-   "qty": 199.62141980021866,
-   "qty0": 199.62141980021866,
-   "entry": 0.05704,
-   "stop": 0.056424139381020234,
-   "stop0": 0.056424139381020234,
-   "R": 0.0006158606189797661,
-   "hs": 0.0016190265471186002,
-   "cost": 11.414943143262628,
-   "proceeds": 0.0,
-   "half": false,
-   "high": 0.05787625,
-   "t": 1794700200,
-   "lastBarT": 1794701700,
-   "score": 87.0,
-   "parts": {
-    "aboveHourlyEma": 0,
-    "fastEmaRising": 12,
-    "breakout": 25,
-    "rvol": 30.0,
-    "rsiOk": 20
-   },
-   "fills": []
-  }
- ],
+ "cash": 22.632061028316322,
+ "positions": [],
  "history": [
   {
    "sym": "ETH/USD",
@@ -407,57 +381,71 @@
    "score": 75.0,
    "reason": "stop",
    "partial": false
+  },
+  {
+   "sym": "DOGE/USD",
+   "entryAt": "2026-11-14T23:50:00Z",
+   "exitAt": "2026-11-15T01:05:00Z",
+   "entry": 0.05704,
+   "exit": 0.056333,
+   "stop0": 0.056424,
+   "cost": 11.4149,
+   "pnl": -0.1978,
+   "R": -1.61,
+   "score": 87.0,
+   "reason": "stop",
+   "partial": false
   }
  ],
  "floorLocked": false,
- "lastBarT": 1794701700,
+ "lastBarT": 1794706200,
  "lastClose": {
-  "BTC/USD": 64283.813,
-  "ETH/USD": 1768.7,
-  "SOL/USD": 70.4518,
-  "DOGE/USD": 0.0577295,
-  "AVAX/USD": 7.11496
+  "BTC/USD": 62420.0775,
+  "ETH/USD": 1720.2765,
+  "SOL/USD": 68.2455,
+  "DOGE/USD": 0.055849,
+  "AVAX/USD": 6.8336
  },
  "lastExit": {
   "ETH/USD": 1793819100,
   "BTC/USD": 1794436800,
   "SOL/USD": 1793233200,
-  "DOGE/USD": 1794136500
+  "DOGE/USD": 1794704400
  },
- "updatedAt": "2026-11-14T18:22:18.882731-06:00",
- "equity": 22.9203,
+ "updatedAt": "2026-11-14T19:36:44.984817-06:00",
+ "equity": 22.6321,
  "lastScores": {
   "BTC/USD": {
-   "score": 32.0,
-   "rvol": 0.02,
-   "rsi": 56.0,
+   "score": 33.9,
+   "rvol": 1.23,
+   "rsi": 27.5,
    "thin": false
   },
   "ETH/USD": {
-   "score": 32.0,
-   "rvol": 0.0,
-   "rsi": 54.6,
+   "score": 50.0,
+   "rvol": 1.71,
+   "rsi": 34.0,
    "thin": false
   },
   "SOL/USD": {
-   "score": 32.0,
-   "rvol": 0.0,
-   "rsi": 61.4,
+   "score": 41.4,
+   "rvol": 1.36,
+   "rsi": 32.1,
    "thin": false
   },
   "DOGE/USD": {
-   "score": 32.0,
+   "score": 20.0,
    "rvol": 0.0,
-   "rsi": 64.1,
+   "rsi": 35.0,
    "thin": false
   },
   "AVAX/USD": {
-   "score": 32.0,
+   "score": 20.0,
    "rvol": 0.0,
-   "rsi": 56.6,
+   "rsi": 26.5,
    "thin": false
   }
  },
- "barsProcessed": 6,
+ "barsProcessed": 15,
  "missingSymbols": []
 }
