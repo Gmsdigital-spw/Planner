@@ -1,0 +1,90 @@
+{
+ "id": "ep38",
+ "format": "story",
+ "rev": 1,
+ "title": "I Lost My Console Because Our Showers Kept Going Cold #shorts",
+ "title_card": "The Cold Shower Mystery",
+ "voice": "andrew",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "tense",
+ "music_volume": 0.05,
+ "cast": {
+  "boy": "a stick-figure boy with a round white head, dot eyes, thin black limbs, short spiky black hair and a red hoodie",
+  "dad": "a stick-figure father with a round white head, dot eyes, thin black limbs, short brown hair, round glasses and a green flannel shirt"
+ },
+ "lines": [
+  {
+   "text": "Dad said my late-night gaming drained all our hot water, so what really drained it?",
+   "label": "hook",
+   "headline": "Who drained the hot water?",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, wet dripping hair, shivering in a hallway at night, angrily pointing with one hand at exactly one closed bedroom door with a faint blue glow under it, his other hand clutching a towel around his neck, cold blue light"
+  },
+  {
+   "text": "Every shower froze after five minutes, and Dad swore I showered forever after late gaming.",
+   "label": "cold showers",
+   "headline": "Cold in five minutes",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, wet hair, standing in a small tiled bathroom, holding one hand under exactly one running shower head, shivering with a shocked cold face, goosebumps, no steam, the only shower in the picture"
+  },
+  {
+   "text": "He also grumbled about white rice bits clogging the kitchen faucet, and blamed my snacks.",
+   "label": "the plant",
+   "headline": "Rice bits in the faucet",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, bent over a kitchen sink frowning at a few tiny white grains stuck in exactly one kitchen faucet tip, his other hand holding exactly one open bag of chips, the only bag in the picture, morning light"
+  },
+  {
+   "text": "He locked my console in the garage and banned my showers after eight at night.",
+   "label": "console gone",
+   "headline": "Console locked in garage",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, in a garage putting exactly one small flat black game console box with a plus-shaped d-pad printed on its side, the only console in the picture, no TV, no screen and no monitor anywhere in the picture into a gray metal cabinet with one hand, holding exactly one padlock in his other hand, stern face, evening"
+  },
+  {
+   "text": "At dawn his shower froze again; he swore I'd snuck one and took my phone.",
+   "label": "phone gone",
+   "headline": "Phone taken too",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, wet hair, shivering, in a hallway at dawn, holding up exactly one smartphone in one hand, the only phone in the picture, his other hand on his hip, stern angry face, pale orange dawn light"
+  },
+  {
+   "text": "I sat alone on the cold stairs, grounded for hot water I never even used.",
+   "label": "alone",
+   "headline": "Grounded for nothing",
+   "image": "close-up of {boy}, the only person in the picture, short spiky black hair and red hoodie, sitting alone on a staircase hugging his knees, a single tear running down his cheek, cold dim hallway light"
+  },
+  {
+   "text": "I timed every shower like a speedrun: hot water always died at exactly five minutes.",
+   "label": "speedrun timer",
+   "headline": "Five minutes, every time",
+   "image": "{boy} is the only person in the picture, short spiky black hair and red hoodie, standing outside a closed bathroom door, holding exactly one plain round stopwatch with no numbers or words in one hand, his other hand raised with five fingers spread, eyes narrowed in focus, morning light"
+  },
+  {
+   "text": "I dared Dad to guard the bathroom overnight; his dawn shower still froze at five.",
+   "label": "the dare",
+   "headline": "Dad guards the bathroom",
+   "image": "close-up of {dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, sitting on exactly one wooden chair in a dark hallway right outside a closed bathroom door, arms crossed, wide awake, stubborn guarding face, moonlight from a window"
+  },
+  {
+   "text": "Then I squished Dad's rice bits between my fingers, and they bent like soft plastic.",
+   "label": "the bits",
+   "headline": "They bend like plastic",
+   "image": "close-up of {boy}, the only person in the picture, short spiky black hair and red hoodie, pinching a few tiny white bits between the finger and thumb of one hand, the bits bending like soft plastic, his other hand resting on the kitchen counter, curious face, kitchen sink behind him"
+  },
+  {
+   "text": "A water heater's plastic dip tube carries incoming cold water down to the tank's bottom.",
+   "label": "dip tube",
+   "headline": "How a dip tube works",
+   "image": "{boy} is the only person in the picture, short spiky black hair and red hoodie, in a basement pointing at exactly one tall white water heater tank, the only tank in the picture, a cutaway view inside showing one thin white plastic tube running from the top down to the bottom, blue water at the bottom, plain with no words, labels or numbers, soft light"
+  },
+  {
+   "text": "Ours crumbled into those bits, so cold water poured in up top, where hot leaves.",
+   "label": "the twist",
+   "headline": "Cold water in up top",
+   "image": "{boy} is the only person in the picture, short spiky black hair and red hoodie, in a basement holding up exactly one short broken crumbled white plastic tube in one hand, his other hand pointing up at the top of exactly one tall white water heater tank behind him, the only tank in the picture, surprised face, plain with no words or numbers"
+  },
+  {
+   "text": "New tube, endless hot showers, console back, but Dad still says I game too late.",
+   "label": "the ending",
+   "headline": "Hot water back",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, wet hair, standing in a steamy warm bathroom doorway in the morning, holding out exactly one small flat black game console box with a plus-shaped d-pad printed on its side, the only console in the picture, no TV, no screen and no monitor anywhere in the picture in both hands, handing it toward the viewer, one eyebrow raised, grudging grumpy half-smile"
+  }
+ ]
+}
