@@ -3,7 +3,7 @@
 Every agent guesses its numbers before something goes out (pred_* tags, see grade.py).
 Before your next guess, read your Calibration line and adjust. Hit = within 2x.
 
-_Updated 2026-11-14_
+_Updated 2026-11-15_
 
 ## Calibration (read this before guessing)
 - atlas · favs: too few graded to calibrate
@@ -24,6 +24,6 @@ _Updated 2026-11-14_
 | pixel | saves | 11 | 11 | 100% | 0 -> 0 (pin-prod-xmas-charades-120-s3) |
 
 ## Waiting to be graded
-- atlas: 4 guess(es)
-- herald: 4 guess(es)
-- pixel: 76 guess(es)
+- atlas: 7 guess(es)
+- herald: 5 guess(es)
+- pixel: 82 guess(es)
