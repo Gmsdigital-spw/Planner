@@ -1,0 +1,45 @@
+{
+ "id": "spot-2026-11-15",
+ "hook": "I HOSTED A COOKIE SWAP",
+ "end_text": "",
+ "loop": false,
+ "engine": "edge",
+ "voice": "ava",
+ "speed": 1.03,
+ "caption_words": 3,
+ "music": "cozy",
+ "music_volume": 0.14,
+ "style": "3D animated movie still, Pixar and Illumination style CGI render, cute stylized cartoon characters, soft cinematic lighting, vibrant saturated colors, glossy detailed textures, shallow depth of field, character centered in frame, no text, no letters, no watermark",
+ "cast": {
+  "dana": "Dana, a grown adult cartoon woman about forty years old with a tall adult build, short wavy chestnut brown hair, small gold hoop earrings, wearing a solid mustard yellow apron over a plain white long-sleeve shirt"
+ },
+ "lines": [
+  {
+   "text": "Last year I hosted a cookie swap.",
+   "image": {
+    "prompt": "{dana} standing proudly in a bright cozy kitchen holding up one tray of cookies, warm smile, Christmas garland on the cabinets, daytime, full upper body",
+    "seed": 5151,
+    "motion": "push"
+   },
+   "pause": 0.3
+  },
+  {
+   "text": "Six people brought sugar cookies. Nobody brought enough.",
+   "image": {
+    "prompt": "{dana} standing in the same bright cozy kitchen staring at a kitchen table covered in identical plates of plain sugar cookies, eyebrows raised, mouth open in mild disbelief, Christmas garland on the cabinets, daytime, full upper body",
+    "seed": 5152,
+    "motion": "punch"
+   },
+   "pause": 0.3
+  },
+  {
+   "text": "This year, everyone signs up first... so I printed this.",
+   "image": {
+    "prompt": "{dana} standing in the same bright cozy kitchen laughing and holding a single blank sheet of paper on a clipboard, table behind her with many different kinds of Christmas cookies on plates, Christmas garland on the cabinets, daytime, full upper body",
+    "seed": 5153,
+    "motion": "orbit"
+   },
+   "pause": 0.05
+  }
+ ]
+}
