@@ -1,0 +1,1 @@
+{"id": "scout-2026-11-15-u1-6a8e", "stopOnError": false, "ops": [{"op": "etsy", "method": "GET", "path": "/listings/active?keywords=ugly+sweater+party&sort_on=score&limit=25&offset=0", "tag": "s_ugly+sweater+party_o0"}]}
