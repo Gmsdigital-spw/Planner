@@ -1,0 +1,75 @@
+{
+ "vo": "social/studio/media/vo/nye1115-vo.mp3",
+ "music": "social/studio/media/vo/nye1115-music.wav",
+ "product": {
+  "dir": "/social/studio/media/nye",
+  "cover": "cover.jpg",
+  "price": "4.99",
+  "pages": 12,
+  "listTitle": "New Years Eve Party Games Printable, 8 Family Friendly NYE Games and Activities for Kids and Adults, Trivia, Bingo, 2027 Predictions",
+  "strip": [
+   "p-03.png",
+   "p-07.png",
+   "p-08.png",
+   "p-10.png"
+  ],
+  "bg": [
+   "#2c4a85",
+   "#0e1a36"
+  ],
+  "accent": "#1d3566",
+  "hl": "#ffd34d",
+  "dot": "#e3ebff"
+ },
+ "phrases": [
+  {
+   "say": "Eight games to count down to twenty twenty-seven.",
+   "cap": "*8* games to count | down to *2027*",
+   "scene": "hook",
+   "page": "p-10.png",
+   "badge": "8 GAMES"
+  },
+  {
+   "say": "No drinking games. Kids and grown-ups all play.",
+   "cap": "*No* drinking games | *kids* and *grown-ups* play",
+   "scene": "pan",
+   "page": "p-07.png"
+  },
+  {
+   "say": "Twenty trivia questions, with an answer key.",
+   "cap": "*20* trivia questions | with an *answer key*",
+   "scene": "grid",
+   "pages": [
+    "p-03.png",
+    "p-05.png",
+    "p-04.png",
+    "p-06.png"
+   ]
+  },
+  {
+   "say": "Then seal your predictions for next year.",
+   "cap": "Seal your *predictions* | for *next year*",
+   "scene": "fan",
+   "pages": [
+    "p-10.png",
+    "p-09.png",
+    "p-08.png"
+   ]
+  },
+  {
+   "say": "Three to thirty players. Just pens and paper.",
+   "cap": "*3* to *30* players | just *pens* and *paper*",
+   "scene": "phone"
+  },
+  {
+   "say": "Tap the link,",
+   "cap": "Tap the *link*",
+   "tap": true
+  },
+  {
+   "say": "and grab it on Etsy.",
+   "cap": "grab it on *Etsy!*",
+   "scene": "end"
+  }
+ ]
+}
