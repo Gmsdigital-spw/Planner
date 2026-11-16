@@ -1,0 +1,4 @@
+{"id":"bolt-2026-11-16-pdf-ca20","stopOnError":false,"ops":[
+{"op":"etsy_upload","path":"/shops/68605457/listings/4618536126/files","fileUrl":"https://raw.githubusercontent.com/Gmsdigital-spw/Planner/main/dl-temp/b58caa79d9bdd166/left-right-christmas-game-printable-6-pass-the-gift-stories.pdf","field":"file","fileName":"left-right-christmas-game.pdf","fields":{"rank":"1","name":"left-right-christmas-game.pdf"},"tag":"pdf"},
+{"op":"etsy","method":"GET","path":"/shops/68605457/listings/4618536126/files","tag":"files"}
+]}
