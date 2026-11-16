@@ -50,14 +50,14 @@
   }
  ],
  "done": null,
- "runs": 119,
+ "runs": 125,
  "lastSignal": {
   "XLE": "2026-11-16T16:15:00Z",
   "MSFT": "2026-11-16T16:20:00Z"
  },
- "lastRun": "10:43",
- "equity": 24.69,
- "dayPnl": -0.05,
+ "lastRun": "10:49",
+ "equity": 24.68,
+ "dayPnl": -0.06,
  "watch": [
   "XLP",
   "XLV",
@@ -90,5 +90,5 @@
   "WMT",
   "XLK"
  ],
- "lastNote": "equity $24.69, day -0.05, 1 open, 2 entries"
+ "lastNote": "equity $24.68, day -0.06, 1 open, 2 entries"
 }
