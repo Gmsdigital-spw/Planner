@@ -1,0 +1,18 @@
+{
+ "id": "claude-2026-11-16-f-feecheck-814c",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/payment-account/ledger-entries?min_created=1792257674&max_created=1794849674&limit=100",
+   "tag": "ledger-30d"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/payment-account/ledger-entries?min_created=1792257674&max_created=1794849674&limit=100&offset=100",
+   "tag": "ledger-30d-p2"
+  }
+ ]
+}
