@@ -1,0 +1,21 @@
+{
+ "id": "claude-2026-11-16-b-etsytest-81c6",
+ "stopOnError": true,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4599444986",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "test-4599444986"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/listings/4599444986",
+   "tag": "verify-4599444986"
+  }
+ ]
+}

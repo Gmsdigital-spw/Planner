@@ -1,0 +1,78 @@
+{
+ "id": "claude-2026-11-16-a-cancelqueue-43e3",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "zernio",
+   "method": "DELETE",
+   "path": "/posts/6af72b368f47ca7cb660eaf8",
+   "tag": "cancel-6af72b368f47ca7cb660eaf8"
+  },
+  {
+   "op": "zernio",
+   "method": "DELETE",
+   "path": "/posts/6af72b36e9f8c2f58a449ffe",
+   "tag": "cancel-6af72b36e9f8c2f58a449ffe"
+  },
+  {
+   "op": "zernio",
+   "method": "DELETE",
+   "path": "/posts/6af72b37bc02388caba6d43c",
+   "tag": "cancel-6af72b37bc02388caba6d43c"
+  },
+  {
+   "op": "zernio",
+   "method": "DELETE",
+   "path": "/posts/6af72b37c231dbd0c49ef720",
+   "tag": "cancel-6af72b37c231dbd0c49ef720"
+  },
+  {
+   "op": "zernio",
+   "method": "DELETE",
+   "path": "/posts/6afa6f3dee06323d7f1e095e",
+   "tag": "cancel-6afa6f3dee06323d7f1e095e"
+  },
+  {
+   "op": "zernio",
+   "method": "DELETE",
+   "path": "/posts/6af8a73a88714a9edfadda25",
+   "tag": "cancel-6af8a73a88714a9edfadda25"
+  },
+  {
+   "op": "zernio",
+   "method": "DELETE",
+   "path": "/posts/6af8a73a88714a9edfadda2a",
+   "tag": "cancel-6af8a73a88714a9edfadda2a"
+  },
+  {
+   "op": "zernio",
+   "method": "DELETE",
+   "path": "/posts/6af8a73b88714a9edfadda33",
+   "tag": "cancel-6af8a73b88714a9edfadda33"
+  },
+  {
+   "op": "zernio",
+   "method": "DELETE",
+   "path": "/posts/6af9b16eff960efcbc42c4af",
+   "tag": "cancel-6af9b16eff960efcbc42c4af"
+  },
+  {
+   "op": "zernio",
+   "method": "DELETE",
+   "path": "/posts/6af9b16fff960efcbc42c4b4",
+   "tag": "cancel-6af9b16fff960efcbc42c4b4"
+  },
+  {
+   "op": "zernio",
+   "method": "DELETE",
+   "path": "/posts/6af9b16f0551afc3edef033f",
+   "tag": "cancel-6af9b16f0551afc3edef033f"
+  },
+  {
+   "op": "zernio",
+   "method": "GET",
+   "path": "/posts?status=scheduled&limit=100",
+   "tag": "scheduled-after"
+  }
+ ]
+}
