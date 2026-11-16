@@ -1,0 +1,91 @@
+{
+ "id": "ep39",
+ "format": "story",
+ "rev": 1,
+ "title": "My Dad Said My Games Made Me Steal a Dollar #shorts",
+ "title_card": "The Missing Dollar",
+ "voice": "andrew",
+ "speed": 1.0,
+ "art": "stickfigure",
+ "music": "uplifting",
+ "music_volume": 0.05,
+ "cast": {
+  "boy": "a stick-figure boy with a round white head, dot eyes, thin black limbs, short spiky black hair and a red hoodie",
+  "dad": "a stick-figure father with a round white head, dot eyes, thin black limbs, short brown hair, round glasses and a green flannel shirt",
+  "uncle": "a stick-figure man with a round white head, dot eyes, thin black limbs, a bushy red beard, a bald head and a yellow t-shirt"
+ },
+ "lines": [
+  {
+   "text": "Dad said my games made me steal a dollar, so where did that dollar go?",
+   "label": "hook",
+   "headline": "Where did the dollar go?",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, standing beside a kitchen table with exactly one open plain white pizza box, plain, no words or letters, holding up exactly one plain green paper bill, plain, no words or letters, no numbers, no faces in one hand, pointing toward the viewer with his other hand, narrowed suspicious eyes, warm evening kitchen light"
+  },
+  {
+   "text": "Friday night, Dad and my two uncles paid ten dollars each for a thirty-dollar pizza.",
+   "label": "pizza night",
+   "headline": "Ten dollars each",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, sitting at a kitchen table, laying exactly three plain green paper bills, plain, no words or letters, no numbers, no faces in a row beside exactly one closed plain white pizza box, plain, no words or letters, two empty chairs at the table, cheerful Friday night light"
+  },
+  {
+   "text": "At the door, the delivery driver handed me five dollars back because of Dad's coupon.",
+   "label": "coupon change",
+   "headline": "Five dollars back",
+   "image": "{boy} is the only person in the picture, short spiky black hair and red hoodie, standing at an open front door at night, exactly one closed plain white pizza box, plain, no words or letters tucked under one arm, holding exactly five plain green paper bills, plain, no words or letters, no numbers, no faces fanned out in his other hand, porch light, a blurred car on the street"
+  },
+  {
+   "text": "Dad said to return one dollar to each grown-up and keep two for my tip.",
+   "label": "the tip",
+   "headline": "Keep two as a tip",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, sitting at a kitchen table beside exactly one open plain white pizza box, plain, no words or letters, smiling, holding up one finger on one hand and two fingers on his other hand, warm light"
+  },
+  {
+   "text": "Then Uncle Ray started calculating out loud: each grown-up paid nine, so that's twenty-seven dollars.",
+   "label": "the math",
+   "headline": "Nine each is twenty-seven",
+   "image": "{uncle} is the only person in the picture, bald head, bushy red beard and yellow t-shirt, sitting at a kitchen table with exactly one slice of pizza on exactly one plate, counting on his fingers, eyes looking up, deep in thought, warm light"
+  },
+  {
+   "text": "Add my two-dollar tip and that only made twenty-nine, so where was dollar number thirty?",
+   "label": "dollar thirty",
+   "headline": "Only twenty-nine?",
+   "image": "{uncle} is the only person in the picture, bald head, bushy red beard and yellow t-shirt, sitting at a kitchen table, both palms up in a big puzzled shrug, exactly three plain green paper bills, plain, no words or letters, no numbers, no faces lying on the table in front of him, raised eyebrows"
+  },
+  {
+   "text": "Dad decided my games' coin shops had made me sneaky, and he emptied my pockets.",
+   "label": "the charge",
+   "headline": "Empty your pockets",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, standing in a living room, stern frowning face, one open palm held out toward the viewer as if demanding something, his other hand on his hip, evening light"
+  },
+  {
+   "text": "Only my two tip dollars fell out, and my face burned as my uncles stared.",
+   "label": "shame",
+   "headline": "Only my tip",
+   "image": "close-up of {boy}, the only person in the picture, short spiky black hair and red hoodie, cheeks bright red with embarrassment, eyes looking down, holding exactly two plain green paper bills, plain, no words or letters, no numbers, no faces in one open palm, his other hand tugging his hoodie pocket inside out, dim warm light"
+  },
+  {
+   "text": "So I used my favorite video game trick: ignore the story and count the inventory.",
+   "label": "game trick",
+   "headline": "Count the inventory",
+   "image": "{boy} is the only person in the picture, short spiky black hair and red hoodie, kneeling on a chair at a kitchen table, eyes narrowed in focus, sliding plain green paper bills, plain, no words or letters, no numbers, no faces into neat piles with both hands, determined little smile"
+  },
+  {
+   "text": "The pizza place kept twenty-five, the grown-ups got three back, and I kept two: thirty.",
+   "label": "the count",
+   "headline": "Twenty-five, three, two",
+   "image": "{boy} is the only person in the picture, short spiky black hair and red hoodie, standing at a kitchen table, confidently pointing with one hand at exactly three neat piles of plain green paper bills, plain, no words or letters, no numbers, no faces: one tall pile, one pile of three bills and one pile of two bills, his other hand on his hip, exactly one empty plain white pizza box, plain, no words or letters beside them"
+  },
+  {
+   "text": "Uncle Ray's twenty-seven was pizza plus my tip, so adding two again counted it twice.",
+   "label": "counted twice",
+   "headline": "The tip counted twice",
+   "image": "{uncle} is the only person in the picture, bald head, bushy red beard and yellow t-shirt, sitting at a kitchen table, slapping one hand to his forehead, mouth wide open in sudden realization, his other hand resting beside small piles of plain green paper bills, plain, no words or letters, no numbers, no faces on the table"
+  },
+  {
+   "text": "Dad said sorry and paid me one dollar, so now his dollar really is missing.",
+   "label": "the payoff",
+   "headline": "Now a dollar is missing",
+   "image": "{dad} is the only person in the picture, short brown hair, round glasses and green flannel shirt, sheepish apologetic grin, holding out exactly one plain green paper bill, plain, no words or letters, no numbers, no faces toward the viewer with one hand, his other hand rubbing the back of his neck, warm kitchen light"
+  }
+ ]
+}
