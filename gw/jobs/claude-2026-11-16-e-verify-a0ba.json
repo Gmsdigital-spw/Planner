@@ -1,0 +1,42 @@
+{
+ "id": "claude-2026-11-16-e-verify-a0ba",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings/active?limit=100",
+   "tag": "active"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings?state=inactive&limit=100",
+   "tag": "inactive"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings?state=draft&limit=100",
+   "tag": "draft"
+  },
+  {
+   "op": "alpaca",
+   "method": "GET",
+   "path": "/positions",
+   "tag": "positions"
+  },
+  {
+   "op": "alpaca",
+   "method": "GET",
+   "path": "/orders?status=open",
+   "tag": "open-orders"
+  },
+  {
+   "op": "alpaca",
+   "method": "GET",
+   "path": "/bankroll",
+   "tag": "bankroll"
+  }
+ ]
+}

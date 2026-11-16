@@ -1,0 +1,18 @@
+{
+ "id": "claude-2026-11-16-c-flatten-89a2",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "alpaca",
+   "method": "DELETE",
+   "path": "/orders",
+   "tag": "cancel-open-orders"
+  },
+  {
+   "op": "alpaca",
+   "method": "DELETE",
+   "path": "/positions?cancel_orders=true",
+   "tag": "close-positions"
+  }
+ ]
+}

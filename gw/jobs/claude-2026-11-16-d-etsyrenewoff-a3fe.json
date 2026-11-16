@@ -1,0 +1,294 @@
+{
+ "id": "claude-2026-11-16-d-etsyrenewoff-a3fe",
+ "stopOnError": true,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4596311765",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4596311765"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4606483866",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4606483866"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4598358317",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4598358317"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4604847087",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4604847087"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4604185747",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4604185747"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4602816114",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4602816114"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4602703062",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4602703062"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4600177516",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4600177516"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4602402578",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4602402578"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4597749137",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4597749137"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4601798994",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4601798994"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4600177510",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4600177510"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4599447958",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4599447958"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4598721247",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4598721247"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4598659189",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4598659189"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4598535050",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4598535050"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4598501430",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4598501430"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4598358161",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4598358161"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4598379368",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4598379368"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4597977363",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4597977363"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4597998190",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4597998190"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4597743627",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4597743627"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4597755725",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4597755725"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4597755593",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4597755593"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4597096306",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4597096306"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4596406689",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4596406689"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4596203264",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4596203264"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4596144943",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4596144943"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4596095937",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4596095937"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4596052195",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4596052195"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4618536126",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4618536126"
+  },
+  {
+   "op": "etsy",
+   "method": "PATCH",
+   "path": "/shops/68605457/listings/4613237408",
+   "body": {
+    "should_auto_renew": false
+   },
+   "tag": "4613237408"
+  }
+ ]
+}
