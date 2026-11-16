@@ -1,0 +1,30 @@
+{
+ "id": "claude-2026-11-16-etsyother-e45a",
+ "stopOnError": false,
+ "ops": [
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings?state=inactive&limit=100",
+   "tag": "inactive"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings?state=expired&limit=100",
+   "tag": "expired"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings?state=sold_out&limit=100",
+   "tag": "sold_out"
+  },
+  {
+   "op": "etsy",
+   "method": "GET",
+   "path": "/shops/68605457/listings?state=draft&limit=100",
+   "tag": "draft"
+  }
+ ]
+}
