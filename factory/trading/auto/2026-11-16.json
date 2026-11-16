@@ -3,18 +3,10 @@
  "mode": "paper",
  "equityOpen": 24.74,
  "entries": 2,
- "lostToday": [],
+ "lostToday": [
+  "XLE"
+ ],
  "positions": {
-  "XLE": {
-   "entry": 64.298,
-   "stop0": 63.99,
-   "stop": 63.99,
-   "target": 64.91,
-   "high": 64.31,
-   "stopId": "3e65e7a6-6286-4108-b4f8-b68e0af19062",
-   "since": "2026-11-16T16:15:00Z",
-   "qty": "0.153503997"
-  },
   "MSFT": {
    "entry": 525.246,
    "stop0": 521.18,
@@ -26,7 +18,15 @@
    "qty": "0.011270909"
   }
  },
- "trades": [],
+ "trades": [
+  {
+   "sym": "XLE",
+   "entry": 64.298,
+   "exit": 63.99,
+   "r": -1.0,
+   "why": "stop filled"
+  }
+ ],
  "actions": [
   {
    "t": "10:20",
@@ -50,14 +50,14 @@
   }
  ],
  "done": null,
- "runs": 113,
+ "runs": 119,
  "lastSignal": {
   "XLE": "2026-11-16T16:15:00Z",
   "MSFT": "2026-11-16T16:20:00Z"
  },
- "lastRun": "10:37",
- "equity": 24.7,
- "dayPnl": -0.04,
+ "lastRun": "10:43",
+ "equity": 24.69,
+ "dayPnl": -0.05,
  "watch": [
   "XLP",
   "XLV",
@@ -90,5 +90,5 @@
   "WMT",
   "XLK"
  ],
- "lastNote": "equity $24.70, day -0.04, 2 open, 2 entries"
+ "lastNote": "equity $24.69, day -0.05, 1 open, 2 entries"
 }
