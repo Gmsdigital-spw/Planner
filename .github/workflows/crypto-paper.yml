@@ -5,8 +5,10 @@ name: Crypto paper bot
 # One cycle every 5 minutes, 24/7. Missed runs are safe: the next run replays every bar it missed.
 # The first run after a code push also runs the 60-day lab test once (lab/first-test.json) if it is missing.
 on:
-  schedule:
-    - cron: "*/5 * * * *"
+  # Timer switched off 2026-11-16 at Grayson's request (businesses shut down).
+  # To turn it back on, remove the '# ' in front of the next two lines.
+  # schedule:
+  #   - cron: "*/5 * * * *"
   push:
     branches: [main]
     paths:

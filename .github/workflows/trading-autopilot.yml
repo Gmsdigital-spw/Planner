@@ -11,8 +11,10 @@ name: Trading autopilot
 # Pause: set "paused": true in factory/trading/auto/control.json, or disable this workflow.
 # Same strategy the Trading lab tests; every order goes through the gateway's hard rules ($20 floor, stop on every buy...).
 on:
-  schedule:
-    - cron: "*/10 13-21 * * 1-5"
+  # Timer switched off 2026-11-16 at Grayson's request (businesses shut down).
+  # To turn it back on, remove the '# ' in front of the next two lines.
+  # schedule:
+  #   - cron: "*/10 13-21 * * 1-5"
   push:
     paths:
       - "factory/trading/kick/**"

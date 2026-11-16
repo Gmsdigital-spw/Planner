@@ -8,8 +8,10 @@ name: Engine worker
 # It never spends money, never publishes on its own: publishing needs an approved plan + Grayson's approval, and
 # the gateway (gw.yml) is the only thing that ever holds a key. Own concurrency group; never cancels gw / trading.
 on:
-  schedule:
-    - cron: "17 12-23 * * *"      # hourly-ish, 7am–6pm Central (UTC-5)
+  # Timer switched off 2026-11-16 at Grayson's request (businesses shut down).
+  # To turn it back on, remove the '# ' in front of the next two lines.
+  # schedule:
+  #   - cron: "17 12-23 * * *"      # hourly-ish, 7am–6pm Central (UTC-5)
   push:
     paths:
       - "factory/engine/orders/*.json"
