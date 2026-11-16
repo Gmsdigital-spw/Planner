@@ -20,7 +20,7 @@
    "stop0": 521.18,
    "stop": 521.18,
    "target": 533.38,
-   "high": 526.1,
+   "high": 526.33,
    "stopId": "52e0a20c-4778-485c-a1d0-6386e07b5a17",
    "since": "2026-11-16T16:20:00Z",
    "qty": "0.011270909"
@@ -50,14 +50,14 @@
   }
  ],
  "done": null,
- "runs": 107,
+ "runs": 113,
  "lastSignal": {
   "XLE": "2026-11-16T16:15:00Z",
   "MSFT": "2026-11-16T16:20:00Z"
  },
- "lastRun": "10:31",
- "equity": 24.71,
- "dayPnl": -0.03,
+ "lastRun": "10:37",
+ "equity": 24.7,
+ "dayPnl": -0.04,
  "watch": [
   "XLP",
   "XLV",
@@ -90,5 +90,5 @@
   "WMT",
   "XLK"
  ],
- "lastNote": "equity $24.71, day -0.03, 2 open, 2 entries"
+ "lastNote": "equity $24.70, day -0.04, 2 open, 2 entries"
 }
