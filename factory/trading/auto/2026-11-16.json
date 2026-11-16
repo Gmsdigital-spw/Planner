@@ -70,13 +70,13 @@
   }
  ],
  "done": null,
- "runs": 142,
+ "runs": 148,
  "lastSignal": {
   "XLE": "2026-11-16T16:15:00Z",
   "MSFT": "2026-11-16T16:20:00Z",
   "QQQ": "2026-11-16T16:55:00Z"
  },
- "lastRun": "11:06",
+ "lastRun": "11:12",
  "equity": 24.67,
  "dayPnl": -0.07,
  "watch": [
