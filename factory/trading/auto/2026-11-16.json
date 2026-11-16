@@ -70,13 +70,13 @@
   }
  ],
  "done": null,
- "runs": 148,
+ "runs": 149,
  "lastSignal": {
   "XLE": "2026-11-16T16:15:00Z",
   "MSFT": "2026-11-16T16:20:00Z",
   "QQQ": "2026-11-16T16:55:00Z"
  },
- "lastRun": "11:12",
+ "lastRun": "11:13",
  "equity": 24.67,
  "dayPnl": -0.07,
  "watch": [
@@ -111,5 +111,5 @@
   "WMT",
   "XLK"
  ],
- "lastNote": "equity $24.67, day -0.07, 2 open, 3 entries"
+ "lastNote": "paused (control.json)"
 }
